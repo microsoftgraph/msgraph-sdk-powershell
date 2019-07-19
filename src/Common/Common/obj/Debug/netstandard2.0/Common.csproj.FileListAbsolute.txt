@@ -1,0 +1,9 @@
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\bin\Debug\netstandard2.0\Common.deps.json
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\bin\Debug\netstandard2.0\Common.dll
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\bin\Debug\netstandard2.0\Common.pdb
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.dll
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.pdb
+E:\MicrosoftGraph\msgraph-sdk-powershell\src\Common\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
