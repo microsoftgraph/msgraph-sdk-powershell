@@ -1,14 +1,13 @@
 #AutoRest PowerShell Config File
+subject-prefix: ''
 module-version: 0.0.1
 clear-output-folder: true
-# log-file: ../log.txt
-# models-name: ../Models
 namespace: Microsoft.Graph
-license-header:
-  /// *********************************
-  /// Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
-  /// *********************************
-payload-flattening-threshold: 10
-#csproj: Microsoft.Graph.csproj # c# project file
-#psd1: Microsoft.Graph.psd1  # manifest file
-#psm1: Microsoft.Graph.psm1  # module file
+license-header: MICROSOFT_MIT_NO_VERSION
+payload-flattening-threshold: 1
+skip-model-cmdlets: true
+directive:
+  - where:
+      subject: Me(.*)
+    set:
+      subject: My$1

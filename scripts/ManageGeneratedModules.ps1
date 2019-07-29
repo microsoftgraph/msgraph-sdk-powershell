@@ -1,24 +1,27 @@
-﻿Param(
-    [string[]]$tag
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# .\ManageGeneratedModules.ps1 -tag "me.userActivity"
+Param(
+    [string]$tag
 )
 
-# Add nuget packages to project.
+# Remove unnecessary nuget packages from generated project.
 $nugetPackagesToRemove = "Microsoft.CSharp"
-# $tag = "me.userActivity"
 
-$commonProjDir = "..\src\Common\Common"
-$moduleSlnDir = "..\src\$tag"
+$commonProjDir = ".\src\Common\Common"
+$moduleSlnDir = ".\src\$tag"
 $moduleProj = "$moduleSlnDir\$tag\$tag.csproj"
 
-# create new solution
+# Create new solution for generated module project.
 Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $tag -o $moduleSlnDir --force"
 dotnet new sln -n $tag -o $moduleSlnDir --force
 
-# add projects to solutions
+# Add generated module project and common project to solution.
 Write-Host -ForegroundColor Green "Executing: dotnet sln $moduleSlnDir\$tag.sln add $moduleProj $commonProjDir\Common.csproj"
-dotnet sln "$moduleSlnDir\$tag.sln" add $moduleProj "$commonProjDir\Common.csproj"
+dotnet sln "$moduleSlnDir\$tag.sln" add $moduleProj #"$commonProjDir\Common.csproj"
 
-# add project to project(s) reference
+# Add common project reference to generated module reference.
 Write-Host -ForegroundColor Green "Executing: dotnet add $moduleProj reference $commonProjDir\Common.csproj"
 dotnet add $moduleProj reference "$commonProjDir\Common.csproj"
 
@@ -26,15 +29,17 @@ dotnet add $moduleProj reference "$commonProjDir\Common.csproj"
 $customTemplates = Get-ChildItem "$commonProjDir\Templates\" -Recurse
 
 foreach($customTemplate in $customTemplates) {
-    Write-Host -ForegroundColor Gree "Template -> $customTemplate"
-    Copy-Item -Path "$commonProjDir\Templates\$customTemplate" -Destination "$moduleSlnDir\$tag\custom"
+    Write-Host -ForegroundColor Green "Coping $customTemplate from $commonProjDir\Templates to $moduleSlnDir\$tag\custom"
+    Copy-Item -Path $customTemplate -Destination "$moduleSlnDir\$tag\custom"
 }
 
+# Remove unnecessary packages from generate modules.
 foreach($package in $nugetPackagesToRemove)
 {
     Write-Host -ForegroundColor Green "Executing: dotnet remove $moduleProj package $package"
     dotnet remove $moduleProj package $package
 }
 
+# Restore packages.
 Write-Host -ForegroundColor Green "Executing: dotnet restore $moduleSlnDir\$tag.sln"
 dotnet restore "$moduleSlnDir\$tag.sln"

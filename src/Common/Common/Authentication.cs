@@ -3,6 +3,7 @@ using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Microsoft.Graph.Common
 {
@@ -16,13 +17,14 @@ namespace Microsoft.Graph.Common
         private static IAuthenticationProvider GetAuthProvider()
         {
             string appId = null;
+            string scopes = null;
+
             if (appId is null)
             {
                 Console.WriteLine("Enter App ID:");
                 appId = Console.ReadLine();
             }
 
-            string scopes = null;
             if (scopes is null)
             {
                 Console.WriteLine("Enter Scopes:");
@@ -33,7 +35,37 @@ namespace Microsoft.Graph.Common
                 .Create(appId)
                 .Build();
 
+            ConfigureTokenCache(clientApp.UserTokenCache);
+
             return new DeviceCodeProvider(clientApp, scopes.Split(new char[] { ',', ' ' }));
+        }
+
+        private static void ConfigureTokenCache(ITokenCache tokenCache)
+        {
+            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
+                args.TokenCache.DeserializeMsalV3(GetTokenCache());
+            });
+
+            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) => {
+                SetTokenCache(args.TokenCache.SerializeMsalV3());
+            });
+        }
+
+        public static byte[] GetTokenCache()
+        {
+            if (System.IO.File.Exists($"./tokencache.bin"))
+            {
+                return System.IO.File.ReadAllBytes($"./tokencache.bin");
+            }
+            else
+            {
+                return new byte[0];
+            }
+        }
+
+        public static void SetTokenCache(byte[] tokenCache)
+        {
+            System.IO.File.WriteAllBytes($"./tokencache.bin", tokenCache);
         }
     }
 }
