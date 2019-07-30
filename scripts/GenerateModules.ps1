@@ -3,8 +3,8 @@
 
 # .\scripts\GenerateModules.ps1 -tags me.message, me.messages.attachment, me.messages.extension, me.messages.multiValueLegacyExtendedProperty -useLocalOpenApiDoc $true
 Param(
-    [string[]]$tags,
-    [bool]$useLocalOpenApiDoc
+    [string[]] $tags,
+    [bool] $useLocalOpenApiDoc
 )
 
 $openAPIServiceUrl = "https://graphslice.azurewebsites.net/`$openapi?tags={0}&title={0}&openapiversion=3&style=Powershell"
@@ -18,7 +18,7 @@ if(-not $useLocalOpenApiDoc)
     foreach($tag in $tags)
     {
         Write-Host -ForegroundColor Green "Downloading $tag from " ($openAPIServiceUrl -f $tag)
-        Invoke-WebRequest ($openAPIServiceUrl -f $tag) -OutFile ".\openApiDocs\$tag.yml"
+        Invoke-WebRequest ($openAPIServiceUrl -f $tag) -OutFile ".\$openApiDocsFolder\$tag.yml"
         Write-Host -ForegroundColor Green "Downloaded $tag.yml"
     }
 }
@@ -29,9 +29,8 @@ Invoke-Expression "autorest --reset"
 # Generate PowerShell modules by tags.
 foreach($tag in $tags)
 {
-    $inputFileUrl = ".\openApiDocs\$tag.yml"
-    try{
-        Invoke-Expression "autorest --powershell --version=latest --use=@microsoft.azure/autorest.powershell@beta --input-file:$inputFileUrl --title:$tag --module-name:$tag --output-folder:.\src\$tag\$tag --verbose .\config\AutoRestConfig.yaml"
+    try {
+        Invoke-Expression "autorest --title:$tag .\config\AutoRestConfig.yaml --verbose"
         
         # Manage generated module.
         .\scripts\ManageGeneratedModules.ps1 -tag $tag

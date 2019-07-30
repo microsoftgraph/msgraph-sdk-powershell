@@ -1,12 +1,17 @@
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License.
+# Microsoft Graph PowerShell AutoRest Configuration
+powershell: true
+version: latest
+use: '@microsoft.azure/autorest.powershell@beta'
 
-#AutoRest PowerShell Config File
-subject-prefix: ''
 module-version: 0.0.1
-clear-output-folder: true
+# prefix: Graph
+subject-prefix: ''
+# module-name: $(prefix).$(title)
+module-name: $(title)
 namespace: Microsoft.Graph
-license-header: MICROSOFT_MIT_NO_VERSION
+input-file: ..\openApiDocs\$(title).yml
+output-folder: ..\src\$(title)\$(title)
+clear-output-folder: true
 # directive:
 #   - where:
 #       subject: Me(.*)
