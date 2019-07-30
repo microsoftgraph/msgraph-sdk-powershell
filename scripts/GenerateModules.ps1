@@ -1,17 +1,20 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# .\GenerateModules.ps1 -useLocalOpenApiDoc true -tags "me.User", "me.Actions", "me.userActivity", "users.user"
+# .\scripts\GenerateModules.ps1 -tags me.message, me.messages.attachment, me.messages.extension, me.messages.multiValueLegacyExtendedProperty -useLocalOpenApiDoc $true
 Param(
     [string[]]$tags,
     [bool]$useLocalOpenApiDoc
 )
 
 $openAPIServiceUrl = "https://graphslice.azurewebsites.net/`$openapi?tags={0}&title={0}&openapiversion=3&style=Powershell"
-
+$openApiDocsFolder = "openApiDocs"
 # Download OpenAPI docs by tags.
 if(-not $useLocalOpenApiDoc)
 {
+    # Create openApiDocs folder
+    New-Item -Name $openApiDocsFolder -ItemType Directory -Force
+
     foreach($tag in $tags)
     {
         Write-Host -ForegroundColor Green "Downloading $tag from " ($openAPIServiceUrl -f $tag)

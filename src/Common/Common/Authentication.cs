@@ -19,13 +19,13 @@ namespace Microsoft.Graph.Common
             string appId = null;
             string scopes = null;
 
-            if (appId is null)
+            if (string.IsNullOrEmpty(appId))
             {
                 Console.WriteLine("Enter App ID:");
                 appId = Console.ReadLine();
             }
 
-            if (scopes is null)
+            if (string.IsNullOrEmpty(scopes))
             {
                 Console.WriteLine("Enter Scopes:");
                 scopes = Console.ReadLine();

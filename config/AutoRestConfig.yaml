@@ -1,13 +1,14 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
 #AutoRest PowerShell Config File
 subject-prefix: ''
 module-version: 0.0.1
 clear-output-folder: true
 namespace: Microsoft.Graph
 license-header: MICROSOFT_MIT_NO_VERSION
-payload-flattening-threshold: 1
-skip-model-cmdlets: true
-directive:
-  - where:
-      subject: Me(.*)
-    set:
-      subject: My$1
+# directive:
+#   - where:
+#       subject: Me(.*)
+#     set:
+#       subject: My$1

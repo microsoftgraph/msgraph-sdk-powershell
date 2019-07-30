@@ -1,0 +1,716 @@
+openapi: 3.0.1
+info:
+  title: me.message
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /me/messages:
+    get:
+      tags:
+        - me.message
+      summary: Get messages from me
+      operationId: me_ListMessages
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - changeKey
+                - changeKey desc
+                - categories
+                - categories desc
+                - receivedDateTime
+                - receivedDateTime desc
+                - sentDateTime
+                - sentDateTime desc
+                - hasAttachments
+                - hasAttachments desc
+                - internetMessageId
+                - internetMessageId desc
+                - internetMessageHeaders
+                - internetMessageHeaders desc
+                - subject
+                - subject desc
+                - body
+                - body desc
+                - bodyPreview
+                - bodyPreview desc
+                - importance
+                - importance desc
+                - parentFolderId
+                - parentFolderId desc
+                - sender
+                - sender desc
+                - from
+                - from desc
+                - toRecipients
+                - toRecipients desc
+                - ccRecipients
+                - ccRecipients desc
+                - bccRecipients
+                - bccRecipients desc
+                - replyTo
+                - replyTo desc
+                - conversationId
+                - conversationId desc
+                - uniqueBody
+                - uniqueBody desc
+                - isDeliveryReceiptRequested
+                - isDeliveryReceiptRequested desc
+                - isReadReceiptRequested
+                - isReadReceiptRequested desc
+                - isRead
+                - isRead desc
+                - isDraft
+                - isDraft desc
+                - webLink
+                - webLink desc
+                - inferenceClassification
+                - inferenceClassification desc
+                - flag
+                - flag desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - changeKey
+                - categories
+                - receivedDateTime
+                - sentDateTime
+                - hasAttachments
+                - internetMessageId
+                - internetMessageHeaders
+                - subject
+                - body
+                - bodyPreview
+                - importance
+                - parentFolderId
+                - sender
+                - from
+                - toRecipients
+                - ccRecipients
+                - bccRecipients
+                - replyTo
+                - conversationId
+                - uniqueBody
+                - isDeliveryReceiptRequested
+                - isReadReceiptRequested
+                - isRead
+                - isDraft
+                - webLink
+                - inferenceClassification
+                - flag
+                - attachments
+                - extensions
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of message
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.message'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - me.message
+      summary: Create new navigation property to messages for me
+      operationId: me_CreateMessages
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.message'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/me/messages/{message-id}':
+    get:
+      tags:
+        - me.message
+      summary: Get messages from me
+      operationId: me_GetMessages
+      parameters:
+        - name: message-id
+          in: path
+          description: 'key: message-id'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - changeKey
+                - categories
+                - receivedDateTime
+                - sentDateTime
+                - hasAttachments
+                - internetMessageId
+                - internetMessageHeaders
+                - subject
+                - body
+                - bodyPreview
+                - importance
+                - parentFolderId
+                - sender
+                - from
+                - toRecipients
+                - ccRecipients
+                - bccRecipients
+                - replyTo
+                - conversationId
+                - uniqueBody
+                - isDeliveryReceiptRequested
+                - isReadReceiptRequested
+                - isRead
+                - isDraft
+                - webLink
+                - inferenceClassification
+                - flag
+                - attachments
+                - extensions
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - me.message
+      summary: Update the navigation property messages in me
+      operationId: me_UpdateMessages
+      parameters:
+        - name: message-id
+          in: path
+          description: 'key: message-id'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.message'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.message:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: message
+          type: object
+          properties:
+            receivedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            sentDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            hasAttachments:
+              type: boolean
+              nullable: true
+            internetMessageId:
+              type: string
+              nullable: true
+            internetMessageHeaders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+            subject:
+              type: string
+              nullable: true
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyPreview:
+              type: string
+              nullable: true
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            parentFolderId:
+              type: string
+              nullable: true
+            sender:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            toRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+            ccRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+            bccRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+            replyTo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+            conversationId:
+              type: string
+              nullable: true
+            uniqueBody:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            isDeliveryReceiptRequested:
+              type: boolean
+              nullable: true
+            isReadReceiptRequested:
+              type: boolean
+              nullable: true
+            isRead:
+              type: boolean
+              nullable: true
+            isDraft:
+              type: boolean
+              nullable: true
+            webLink:
+              type: string
+              nullable: true
+            inferenceClassification:
+              $ref: '#/components/schemas/microsoft.graph.inferenceClassificationType'
+            flag:
+              $ref: '#/components/schemas/microsoft.graph.followupFlag'
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+      example:
+        id: String (identifier)
+        createdDateTime: DateTimeOffset (timestamp)
+        lastModifiedDateTime: DateTimeOffset (timestamp)
+        changeKey: String
+        categories:
+          - String
+        receivedDateTime: DateTimeOffset (timestamp)
+        sentDateTime: DateTimeOffset (timestamp)
+        hasAttachments: true
+        internetMessageId: String
+        internetMessageHeaders:
+          - '@odata.type': microsoft.graph.internetMessageHeader
+        subject: String
+        body:
+          '@odata.type': microsoft.graph.itemBody
+        bodyPreview: String
+        importance:
+          '@odata.type': microsoft.graph.importance
+        parentFolderId: String
+        sender:
+          '@odata.type': microsoft.graph.recipient
+        from:
+          '@odata.type': microsoft.graph.recipient
+        toRecipients:
+          - '@odata.type': microsoft.graph.recipient
+        ccRecipients:
+          - '@odata.type': microsoft.graph.recipient
+        bccRecipients:
+          - '@odata.type': microsoft.graph.recipient
+        replyTo:
+          - '@odata.type': microsoft.graph.recipient
+        conversationId: String
+        uniqueBody:
+          '@odata.type': microsoft.graph.itemBody
+        isDeliveryReceiptRequested: true
+        isReadReceiptRequested: true
+        isRead: true
+        isDraft: true
+        webLink: String
+        inferenceClassification:
+          '@odata.type': microsoft.graph.inferenceClassificationType
+        flag:
+          '@odata.type': microsoft.graph.followupFlag
+        attachments:
+          - '@odata.type': microsoft.graph.attachment
+        extensions:
+          - '@odata.type': microsoft.graph.extension
+        singleValueExtendedProperties:
+          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+        multiValueExtendedProperties:
+          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+    microsoft.graph.outlookItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: outlookItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            changeKey:
+              type: string
+              nullable: true
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+      example:
+        id: String (identifier)
+        createdDateTime: DateTimeOffset (timestamp)
+        lastModifiedDateTime: DateTimeOffset (timestamp)
+        changeKey: String
+        categories:
+          - String
+    microsoft.graph.internetMessageHeader:
+      title: internetMessageHeader
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        value:
+          type: string
+          nullable: true
+      example:
+        name: String
+        value: String
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        content:
+          type: string
+          nullable: true
+      example:
+        contentType:
+          '@odata.type': microsoft.graph.bodyType
+        content: String
+    microsoft.graph.importance:
+      title: importance
+      enum:
+        - low
+        - normal
+        - high
+      type: string
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      example:
+        emailAddress:
+          '@odata.type': microsoft.graph.emailAddress
+    microsoft.graph.inferenceClassificationType:
+      title: inferenceClassificationType
+      enum:
+        - focused
+        - other
+      type: string
+    microsoft.graph.followupFlag:
+      title: followupFlag
+      type: object
+      properties:
+        completedDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        dueDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        startDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        flagStatus:
+          $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
+      example:
+        completedDateTime:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        dueDateTime:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        startDateTime:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        flagStatus:
+          '@odata.type': microsoft.graph.followupFlagStatus
+    microsoft.graph.attachment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            contentType:
+              type: string
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            isInline:
+              type: boolean
+      example:
+        id: String (identifier)
+        lastModifiedDateTime: DateTimeOffset (timestamp)
+        name: String
+        contentType: String
+        size: Int32
+        isInline: true
+    microsoft.graph.extension:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: extension
+          type: object
+      example:
+        id: String (identifier)
+    microsoft.graph.singleValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              nullable: true
+      example:
+        id: String (identifier)
+        value: String
+    microsoft.graph.multiValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: multiValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: array
+              items:
+                type: string
+                nullable: true
+      example:
+        id: String (identifier)
+        value:
+          - String
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+      example:
+        id: String (identifier)
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.emailAddress:
+      title: emailAddress
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        address:
+          type: string
+          nullable: true
+      example:
+        name: String
+        address: String
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+        timeZone:
+          type: string
+          nullable: true
+      example:
+        dateTime: String
+        timeZone: String
+    microsoft.graph.followupFlagStatus:
+      title: followupFlagStatus
+      enum:
+        - notFlagged
+        - complete
+        - flagged
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

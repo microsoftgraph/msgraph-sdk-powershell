@@ -18,8 +18,8 @@ Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $tag -o $moduleS
 dotnet new sln -n $tag -o $moduleSlnDir --force
 
 # Add generated module project and common project to solution.
-Write-Host -ForegroundColor Green "Executing: dotnet sln $moduleSlnDir\$tag.sln add $moduleProj $commonProjDir\Common.csproj"
-dotnet sln "$moduleSlnDir\$tag.sln" add $moduleProj #"$commonProjDir\Common.csproj"
+Write-Host -ForegroundColor Green "Executing: dotnet sln $moduleSlnDir\$tag.sln add $moduleProj"
+dotnet sln "$moduleSlnDir\$tag.sln" add $moduleProj
 
 # Add common project reference to generated module reference.
 Write-Host -ForegroundColor Green "Executing: dotnet add $moduleProj reference $commonProjDir\Common.csproj"
