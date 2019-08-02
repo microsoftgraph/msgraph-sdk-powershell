@@ -1,10 +1,10 @@
 ﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# .\scripts\GenerateModules.ps1 -tags me.message, me.messages.attachment, me.messages.extension, me.messages.multiValueLegacyExtendedProperty -useLocalOpenApiDoc $true
+# .\scripts\GenerateModules.ps1 -tags me.message, me.messages.attachment, me.messages.extension, me.messages.multiValueLegacyExtendedProperty -useLocalOpenApiDoc
 Param(
     [string[]] $tags,
-    [bool] $useLocalOpenApiDoc
+    [switch] $useLocalOpenApiDoc
 )
 
 $openAPIServiceUrl = "https://graphslice.azurewebsites.net/`$openapi?tags={0}&title={0}&openapiversion=3&style=Powershell"

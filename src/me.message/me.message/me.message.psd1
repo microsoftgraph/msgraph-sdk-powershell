@@ -1,5 +1,5 @@
 @{
-  GUID = '6a9fa9cc-485e-4677-899a-306902a2681f'
+  GUID = '33ba59ce-14de-4e07-84b5-c789ea8c4a35'
   RootModule = './me.message.psm1'
   ModuleVersion = '0.0.1'
   CompatiblePSEditions = 'Core', 'Desktop'

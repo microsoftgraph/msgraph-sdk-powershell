@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Common": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Key": "Value"
+      }
+    }
+  }
+}
