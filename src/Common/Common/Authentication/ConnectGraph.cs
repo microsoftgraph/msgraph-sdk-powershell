@@ -1,16 +1,16 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.Common.Authentication
+namespace Microsoft.Graph.PowerShell.Common.Authentication
 {
     using Microsoft.Graph;
-    using Microsoft.Graph.Common.Models;
+    using Microsoft.Graph.PowerShell.Common.Models;
     using System;
+    using System.IO;
     using System.Management.Automation;
     using System.Net.Http;
 
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = UserParameterSet)]
-    //[OutputType(typeof(User))]
     public class ConnectGraph : PSCmdlet
     {
         public const string UserParameterSet = "UserParameterSet";
@@ -61,7 +61,9 @@ namespace Microsoft.Graph.Common.Authentication
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
             authProvider.AuthenticateRequestAsync(requestMessage).GetAwaiter().GetResult();
 
-            WriteObject("Welcome to Microsoft Graph PowerShell SDK");
+            WriteObject("Welcome To Microsoft Graph!");
+            // WriteObject(File.ReadAllText(".\\Art\\WelcomeText.txt"));
+            // WriteObject(File.ReadAllText(".\\Art\\GRaphText.txt"));
         }
 
         protected override void StopProcessing()

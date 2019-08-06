@@ -2,16 +2,24 @@
 powershell: true
 version: latest
 use: '@microsoft.azure/autorest.powershell@beta'
-
 module-version: 0.0.1
 # prefix: Graph
 subject-prefix: ''
 # module-name: $(prefix).$(title)
-module-name: $(title)
-namespace: Microsoft.Graph
-input-file: ..\openApiDocs\$(title).yml
+module-name: Graph.$(title)
+namespace: Microsoft.Graph.PowerShell
+input-file: $(docOutputFolder)\$(title).yml
 output-folder: ..\src\$(title)\$(title)
 clear-output-folder: true
+metadata:
+  authors: Microsoft
+  description: Microsoft Graph PowerShell module
+  companyName: Microsoft
+  requireLicenseAcceptance: false
+  copyright: © Microsoft Corporation. All rights reserved.
+  licenseUrl: https://aka.ms/devservicesagreement
+  projectUrl: https://github.com/microsoftgraph/msgraph-sdk-powershell
+  tags: Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;
 # directive:
 #   - where:
 #       subject: Me(.*)

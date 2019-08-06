@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# me.message
+# Graph.me.message
 This directory contains the PowerShell module for the MeMessage service.
 
 ---
 ## Status
-[![me.message](https://img.shields.io/powershellgallery/v/me.message.svg?style=flat-square&label=me.message "me.message")](https://www.powershellgallery.com/packages/me.message/)
+[![Graph.me.message](https://img.shields.io/powershellgallery/v/Graph.me.message.svg?style=flat-square&label=Graph.me.message "Graph.me.message")](https://www.powershellgallery.com/packages/Graph.me.message/)
 
 ## Info
 - Modifiable: yes
@@ -17,5 +17,5 @@ This directory contains the PowerShell module for the MeMessage service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `me.message`, see [how-to.md](how-to.md).
+For information on how to develop for `Graph.me.message`, see [how-to.md](how-to.md).
 <!-- endregion -->

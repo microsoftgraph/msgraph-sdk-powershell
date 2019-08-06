@@ -1,11 +1,11 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.Common
+namespace Microsoft.Graph.PowerShell.Common
 {
-    using Microsoft.Graph;
-    using Microsoft.Graph.Common.Models;
     using System.Net.Http;
+    using Microsoft.Graph;
+    using Microsoft.Graph.PowerShell.Common.Models;
     public static class Common
     {
         /// <summary>

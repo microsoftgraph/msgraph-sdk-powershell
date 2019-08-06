@@ -1,9 +1,9 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.Common.Authentication
+namespace Microsoft.Graph.PowerShell.Common.Authentication
 {
-    using Microsoft.Graph.Common.Models;
+    using Microsoft.Graph.PowerShell.Common.Models;
     using System;
     using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "Graph")]

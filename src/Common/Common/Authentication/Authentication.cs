@@ -1,10 +1,10 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.Common.Authentication
+namespace Microsoft.Graph.PowerShell.Common.Authentication
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.Graph.Common.Models;
+    using Microsoft.Graph.PowerShell.Common.Models;
     using Microsoft.Identity.Client;
     using System.IO;
     using System.Security.Cryptography;
@@ -14,6 +14,7 @@ namespace Microsoft.Graph.Common.Authentication
         private static readonly object FileLock = new object();
         private static readonly string UserCacheFileName = "userTokenCache.bin3";
         private static readonly string AppCacheFileName = "appTokenCache.bin3";
+
         /// <summary>
         /// Path to the token cache
         /// </summary>
