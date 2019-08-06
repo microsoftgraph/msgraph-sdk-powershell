@@ -1,5 +1,5 @@
 # Microsoft Graph PowerShell SDK
-The Microsoft Graph Powershell SDK is caollection of PowerShell modules that conatain cmdlets that can be used to make Microsoft Graph REST calls.
+The Microsoft Graph Powershell SDK is collection of PowerShell modules that conatain cmdlets that can be used to make Microsoft Graph REST calls.
 
 ## Generate Module
 1. [Download](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.2) and install PowerShell.
@@ -26,7 +26,7 @@ The Microsoft Graph Powershell SDK is caollection of PowerShell modules that con
 2. Import Common Module.
 For now, we have to manually import Common module which had cmdlets to handle authentication,
     ```ps
-        Import-Module .\src\me.message\me.message\bin\Common.dll  
+    Import-Module .\src\me.message\me.message\bin\Common.dll  
     ```
 3. Authenicate to Azure AD to get an access token to call Microsoft Graph API.
     ```ps
