@@ -11,11 +11,11 @@ The Microsoft Graph Powershell SDK is collection of PowerShell modules that cona
     ```ps
     git clone https://github.com/microsoftgraph/msgraph-sdk-powershell.git -b dev
     ```
-4. Generate PowerShell by tags. For a complete list of tags, see [OpenApiSplice](). Due to issue #ref, we will add `-useLocalOpenApiDoc` switch to use a local sanitized OpenAPI document for `me.message` tag.
+4. Generate PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection). Due to issue [msgraph-openapi-introspection#12](https://github.com/microsoftgraph/msgraph-openapi-introspection/issues/12), we will add `-useLocalOpenApiDoc` switch to use a local sanitized OpenAPI document for `me.message` tag.
     ```ps
     .\scripts\GenerateModules.ps1 -tags "me.message" -useLocalOpenApiDoc
     ```
-    This generates a Microsoft Graph `me.message` PowerShell module under `.\src\me.message\me.message`.
+    This generates a Microsoft Graph `me.message` PowerShell module in `.\src\me.message\me.message`.
 
 ## Run Generated Module
 1. Build Generate Module with `-Run` switch.
@@ -24,7 +24,7 @@ The Microsoft Graph Powershell SDK is collection of PowerShell modules that cona
     ```
 
 2. Import Common Module.
-For now, we have to manually import Common module which had cmdlets to handle authentication,
+    For now, we have to manually import Common module which houses cmdlets to handle authentication - `Connect-Graph` and `Disconnect-Graph`.
     ```ps
     Import-Module .\src\me.message\me.message\bin\Common.dll  
     ```
