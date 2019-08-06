@@ -1,0 +1,19 @@
+# Microsoft Graph PowerShell AutoRest Configuration
+powershell: true
+version: latest
+use: '@microsoft.azure/autorest.powershell@beta'
+
+module-version: 0.0.1
+# prefix: Graph
+subject-prefix: ''
+# module-name: $(prefix).$(title)
+module-name: $(title)
+namespace: Microsoft.Graph
+input-file: ..\openApiDocs\$(title).yml
+output-folder: ..\src\$(title)\$(title)
+clear-output-folder: true
+# directive:
+#   - where:
+#       subject: Me(.*)
+#     set:
+#       subject: My$1
