@@ -71,10 +71,10 @@ foreach($tag in $Tags)
     & .\tools\ManageGeneratedModule.ps1 -Module $tag
 
     if($BuildAndPack){
-        # Build generated module.
-        & .\tools\BuildAndPackModule.ps1 -Module $tag -RequiredModules "Graph.Authentication"
-
         # Build and pack Graph.Authentication module.
         & .\tools\BuildAndPackModule.ps1 -Module "Authentication"
+        
+        # Build generated module.
+        & .\tools\BuildAndPackModule.ps1 -Module $tag -RequiredModules "Graph.Authentication"
     }
 }

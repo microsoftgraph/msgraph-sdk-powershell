@@ -8,6 +8,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System;
     using System.Management.Automation;
     using System.Net.Http;
+    
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = UserParameterSet)]
     public class ConnectGraph : PSCmdlet
     {

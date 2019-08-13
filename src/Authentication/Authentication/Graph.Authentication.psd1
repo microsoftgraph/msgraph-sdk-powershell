@@ -15,7 +15,7 @@ RootModule = '.\bin\Graph.Authentication.dll'
 ModuleVersion = '0.0.0.1'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
 GUID = '883916f2-9184-46ee-b1f8-b6a2fb784cee'

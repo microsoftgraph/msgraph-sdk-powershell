@@ -40,7 +40,12 @@ if($LastExitCode -ne 0) {
 
 if($RequiredModules.Count -gt 0) {
     # Add required modules.
-    Update-ModuleManifest -Path (Join-Path $ModuleDir "Graph.$Module.psd1") -RequiredModules $RequiredModules
+    try{
+        Update-ModuleManifest -Path (Join-Path $ModuleDir "Graph.$Module.psd1") -FunctionsToExport "*" -RequiredModules $RequiredModules
+    } catch {
+        Write-Error $_.Exception
+        return
+    }
 }
 
 # Pack module

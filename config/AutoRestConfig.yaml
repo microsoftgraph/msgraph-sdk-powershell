@@ -2,7 +2,7 @@
 powershell: true
 version: latest
 use: '@microsoft.azure/autorest.powershell@beta'
-module-version: 0.0.0.1
+module-version: 0.0.1
 # prefix: Graph
 subject-prefix: ''
 azure: false
