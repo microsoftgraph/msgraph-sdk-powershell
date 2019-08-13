@@ -10,12 +10,12 @@ The Microsoft Graph Powershell SDK is a collection of PowerShell modules that co
     ```ps
     npm install -g autorest@beta
     ```
-3. Clone [msgraph-sdk-powershell](https://github.com/microsoftgraph/msgraph-sdk-powershell).
+5. Clone [msgraph-sdk-powershell](https://github.com/microsoftgraph/msgraph-sdk-powershell).
     In the PowerShell terminal, remember to navigate to the folder you want the clone to be stored in.
     ```ps
     git clone https://github.com/microsoftgraph/msgraph-sdk-powershell.git -b dev
     ```
-4. Generate PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection). Due to issue [msgraph-openapi-introspection#12](https://github.com/microsoftgraph/msgraph-openapi-introspection/issues/12), we will add `-useLocalOpenApiDoc` switch to use a local sanitized OpenAPI document for `me.message` tag.
+6. Generate PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection). Due to issue [msgraph-openapi-introspection#12](https://github.com/microsoftgraph/msgraph-openapi-introspection/issues/12), we will add `-useLocalOpenApiDoc` switch to use a local sanitized OpenAPI document for `me.message` tag.
     ```ps
     .\msgraph-sdk-powershell\scripts\GenerateModules.ps1 -tags "me.message" -useLocalOpenApiDoc
     ```
