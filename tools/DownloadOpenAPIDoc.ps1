@@ -25,7 +25,7 @@ Param(
     [string] $OpenApiBaseUrl
 )
 
-$OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&openapiversion=3&style=Powershell" -f $Tag)
+$OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title={0}&openapiversion=3&style=Powershell" -f $Tag)
 
 if(-not (Test-Path $OutputFolder)){
     # Create openApiDocs folder.

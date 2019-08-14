@@ -21,6 +21,7 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
+          style: simple
           schema:
             uniqueItems: true
             type: array
@@ -90,6 +91,7 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: simple
           schema:
             uniqueItems: true
             type: array
@@ -125,6 +127,21 @@ paths:
                 - webLink
                 - inferenceClassification
                 - flag
+                - attachments
+                - extensions
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - extensions
                 - singleValueExtendedProperties
@@ -168,7 +185,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/me/messages/{message-id}':
+  '/me/messages({message-id})':
     get:
       tags:
         - me.message
@@ -185,6 +202,7 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
+          style: simple
           schema:
             uniqueItems: true
             type: array
@@ -220,6 +238,21 @@ paths:
                 - webLink
                 - inferenceClassification
                 - flag
+                - attachments
+                - extensions
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - attachments
                 - extensions
                 - singleValueExtendedProperties
@@ -272,35 +305,43 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the message was received.
               format: date-time
               nullable: true
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the message was sent.
               format: date-time
               nullable: true
             hasAttachments:
               type: boolean
+              description: 'Indicates whether the message has attachments. This property doesn''t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src=''cid:image001.jpg@01D26CD8.6C05F070''>.'
               nullable: true
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             internetMessageHeaders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             body:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
@@ -310,37 +351,47 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             ccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Cc: recipients for the message.'
             bccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Bcc: recipients for the message.'
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             conversationId:
               type: string
+              description: The ID of the conversation the email belongs to.
               nullable: true
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
               nullable: true
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassificationType'
@@ -363,25 +414,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
       example:
-        id: String (identifier)
-        createdDateTime: DateTimeOffset (timestamp)
-        lastModifiedDateTime: DateTimeOffset (timestamp)
-        changeKey: String
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        changeKey: string
         categories:
-          - String
-        receivedDateTime: DateTimeOffset (timestamp)
-        sentDateTime: DateTimeOffset (timestamp)
+          - string
+        receivedDateTime: string (timestamp)
+        sentDateTime: string (timestamp)
         hasAttachments: true
-        internetMessageId: String
+        internetMessageId: string
         internetMessageHeaders:
           - '@odata.type': microsoft.graph.internetMessageHeader
-        subject: String
+        subject: string
         body:
           '@odata.type': microsoft.graph.itemBody
-        bodyPreview: String
+        bodyPreview: string
         importance:
           '@odata.type': microsoft.graph.importance
-        parentFolderId: String
+        parentFolderId: string
         sender:
           '@odata.type': microsoft.graph.recipient
         from:
@@ -394,14 +445,14 @@ components:
           - '@odata.type': microsoft.graph.recipient
         replyTo:
           - '@odata.type': microsoft.graph.recipient
-        conversationId: String
+        conversationId: string
         uniqueBody:
           '@odata.type': microsoft.graph.itemBody
         isDeliveryReceiptRequested: true
         isReadReceiptRequested: true
         isRead: true
         isDraft: true
-        webLink: String
+        webLink: string
         inferenceClassification:
           '@odata.type': microsoft.graph.inferenceClassificationType
         flag:
@@ -423,41 +474,47 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             categories:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item
       example:
-        id: String (identifier)
-        createdDateTime: DateTimeOffset (timestamp)
-        lastModifiedDateTime: DateTimeOffset (timestamp)
-        changeKey: String
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        changeKey: string
         categories:
-          - String
+          - string
     microsoft.graph.internetMessageHeader:
       title: internetMessageHeader
       type: object
       properties:
         name:
           type: string
+          description: Represents the key in a key-value pair.
           nullable: true
         value:
           type: string
+          description: The value in a key-value pair.
           nullable: true
       example:
-        name: String
-        value: String
+        name: string
+        value: string
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -466,11 +523,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
         content:
           type: string
+          description: The content of the item.
           nullable: true
       example:
         contentType:
           '@odata.type': microsoft.graph.bodyType
-        content: String
+        content: string
     microsoft.graph.importance:
       title: importance
       enum:
@@ -523,27 +581,32 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: The attachment's file name.
               nullable: true
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
             isInline:
               type: boolean
+              description: 'true if the attachment is an inline attachment; otherwise, false.'
       example:
-        id: String (identifier)
-        lastModifiedDateTime: DateTimeOffset (timestamp)
-        name: String
-        contentType: String
-        size: Int32
+        id: string (identifier)
+        lastModifiedDateTime: string (timestamp)
+        name: string
+        contentType: string
+        size: integer
         isInline: true
     microsoft.graph.extension:
       allOf:
@@ -551,7 +614,7 @@ components:
         - title: extension
           type: object
       example:
-        id: String (identifier)
+        id: string (identifier)
     microsoft.graph.singleValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -560,10 +623,11 @@ components:
           properties:
             value:
               type: string
+              description: A property value.
               nullable: true
       example:
-        id: String (identifier)
-        value: String
+        id: string (identifier)
+        value: string
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -575,10 +639,11 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A collection of property values.
       example:
-        id: String (identifier)
+        id: string (identifier)
         value:
-          - String
+          - string
     odata.error:
       required:
         - error
@@ -592,8 +657,9 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
-        id: String (identifier)
+        id: string (identifier)
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -606,25 +672,29 @@ components:
       properties:
         name:
           type: string
+          description: The display name of the person or entity.
           nullable: true
         address:
           type: string
+          description: The email address of the person or entity.
           nullable: true
       example:
-        name: String
-        address: String
+        name: string
+        address: string
     microsoft.graph.dateTimeTimeZone:
       title: dateTimeTimeZone
       type: object
       properties:
         dateTime:
           type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
+          description: One of the following time zone names.
           nullable: true
       example:
-        dateTime: String
-        timeZone: String
+        dateTime: string
+        timeZone: string
     microsoft.graph.followupFlagStatus:
       title: followupFlagStatus
       enum:

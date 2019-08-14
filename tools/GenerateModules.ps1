@@ -46,6 +46,11 @@ if($UpdateAutoRest) {
     & autorest --reset
 }
 
+if($BuildAndPack){
+    # Build and pack Graph.Authentication module.
+    & .\tools\BuildAndPackModule.ps1 -Module "Authentication"
+}
+
 foreach($tag in $Tags)
 {
     if(-not $UseLocalDoc)
@@ -71,10 +76,9 @@ foreach($tag in $Tags)
     & .\tools\ManageGeneratedModule.ps1 -Module $tag
 
     if($BuildAndPack){
-        # Build and pack Graph.Authentication module.
-        & .\tools\BuildAndPackModule.ps1 -Module "Authentication"
-        
-        # Build generated module.
+        # Build and pack generated module.
+        # Ensure Graph.Authentication is installed locally before running this.
+        # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
         & .\tools\BuildAndPackModule.ps1 -Module $tag -RequiredModules "Graph.Authentication"
     }
 }
