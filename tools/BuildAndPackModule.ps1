@@ -14,8 +14,13 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string] $Module,
+    [ValidateNotNullOrEmpty()]
+    [string] $FeedUrl,
+    [ValidateNotNullOrEmpty()]
+    [string] $FeedApiKey,
     [string] $OutputFolder,
-    [string[]] $RequiredModules
+    [string[]] $RequiredModules,
+    [Switch] $SkipBuild
 )
 
 $ModuleDir = "./src/$Module/$Module"
@@ -26,16 +31,19 @@ if([string]::IsNullOrEmpty($OutputFolder)) {
     $OutputFolder = "./artifacts/"
 }
 
-if (-not (Test-Path -Path $BuildModulePS1)){
-    Write-Host -ForegroundColor Red "Build script file '$BuildModulePS1' not found for $Module module."
-}
+if(-not $SkipBuild){
+    if (-not (Test-Path -Path $BuildModulePS1)){
+        Write-Error "Build script file '$BuildModulePS1' not found for $Module module."
+        return
+    }
 
-# Build module
-& $BuildModulePS1 -Test -Docs -Release
-if($LastExitCode -ne 0) {
-    # Build failed, don't pack the module.
-    Write-Error "Failed to build $Module."
-    return
+    # Build module
+    & $BuildModulePS1 -Test -Docs -Release
+    if($LastExitCode -ne 0) {
+        # Build failed, don't pack the module.
+        Write-Error "Failed to build $Module."
+        return
+    }
 }
 
 if($RequiredModules.Count -gt 0) {
@@ -64,6 +72,10 @@ if(-not (Test-Path $OutputFolder)) {
     # Create artifacts folder.
     New-Item -Path $OutputFolder -Type Directory
 }
+
+# Copy package to feed.
+Write-Host -ForegroundColor Green "nuget push $NugetPackage -Source $FeedUrl -apikey $FeedApiKey"
+nuget push $NugetPackage -Source $FeedUrl -apikey $FeedApiKey
 
 # Copy package to artifacts folder.
 Move-Item -Path $NugetPackage -Destination $OutputFolder -Force

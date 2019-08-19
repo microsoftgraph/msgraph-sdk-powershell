@@ -185,7 +185,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/me/messages({message-id})':
+  '/me/messages/{message-id}':
     get:
       tags:
         - me.message

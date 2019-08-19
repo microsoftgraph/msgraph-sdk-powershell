@@ -12,7 +12,7 @@
 RootModule = '.\bin\Graph.Authentication.dll'
 
 # Version number of this module.
-ModuleVersion = '0.0.0.1'
+ModuleVersion = '0.0.1'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
