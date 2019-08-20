@@ -26,32 +26,27 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string[]] $Tags,
-    [string] $OpenApiBaseUrl,
-    [string] $DocOutputFolder,
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $FeedApiKey,
+    [string] $RepositoryApiKey,
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string] $RepositoryName,
+    [string] $OpenApiBaseUrl,
+    [string] $DocOutputFolder,
     [switch] $UpdateAutoRest,
     [switch] $UseLocalDoc,
-    [switch] $BuildAndPack,
-    [switch]$Isolated
+    [switch] $BuildAndPack
 )
-# $ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
-if(-not $Isolated){
-    Write-Host -ForegroundColor Green 'Creating isolated process...'
-    $pwsh = [System.Diagnostics.Process]::GetCurrentProcess().Path
-    & "$pwsh" -NonInteractive -NoLogo -NoProfile -File $MyInvocation.MyCommand.Path @PSBoundParameters -Isolated
-}
-
 $AuthenticationModule = "Authentication"
 $RollUpModule = "Graph"
-$SourceLocation = $null
+$RepositoryFeedUrl = $null
 
 if ([string]::IsNullOrEmpty($OpenApiBaseUrl)) {
     $OpenApiBaseUrl = "https://graphslice.azurewebsites.net"
@@ -67,16 +62,17 @@ if($UpdateAutoRest) {
 }
 
 if($BuildAndPack){
-    $SourceLocation = (Get-PSRepository -Name MyLocalGallery).SourceLocation
-    # Build and pack Graph.Authentication module.
+    $RepositoryFeedUrl = (Get-PSRepository -Name MyLocalGallery).SourceLocation
+    # Build, pack and publish Graph.Authentication module to specified feed..
     # This can be built indepentent of AutoRest generated modules.
-    & .\tools\BuildAndPackModule.ps1 -Module $AuthenticationModule -FeedApiKey $FeedApiKey -FeedUrl $SourceLocation
+    Write-Host -ForegroundColor Green "Building and packing '$RollUpModule.$AuthenticationModule' module..."
+    & .\tools\BuildPackAndPublishModule.ps1 -Module $AuthenticationModule -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryFeedUrl $RepositoryFeedUrl
 
     # Install module locally.
     Install-Module "$RollUpModule.$AuthenticationModule" -Repository $RepositoryName -Force
 }
 
-$GraphModules = [System.Collections.ArrayList]@()
+$GraphModules = New-Object collections.generic.list[string]
 $GraphModules.Add("$RollUpModule.$AuthenticationModule")
 
 foreach($tag in $Tags)
@@ -85,23 +81,27 @@ foreach($tag in $Tags)
         if(-not $UseLocalDoc)
         {
             # Download OpenAPI docs by tags.
-            & .\tools\DownloadOpenAPIDoc.ps1 -Tag $tag -OutputFolder $DocOutputFolder -OpenApiBaseUrl $OpenApiBaseUrl        
+            Write-Host -ForegroundColor Green "Downloading OpenAPI doc for '$RollUpModule.$tag' module..."
+            & .\tools\DownloadOpenAPIDoc.ps1 -Tag $tag -OutputFolder $DocOutputFolder -OpenApiBaseUrl $OpenApiBaseUrl
         }
 
         # Generate PowerShell modules by tags.
-        & autorest --title:$tag --docOutputFolder:$DocOutputFolder .\config\AutoRestConfig.yaml --verbose
+        Write-Host -ForegroundColor Green "Generating '$RollUpModule.$tag' module..."
+        & autorest --title:$tag --docOutputFolder:$DocOutputFolder --rollUpModule:$RollUpModule .\config\AutoRestConfig.yaml --verbose
         if($LastExitCode -ne 0){
             Write-Error "Failed to generate '$tag' module."
         }
 
         # Manage generated module.
+        Write-Host -ForegroundColor Green "Managing '$RollUpModule.$tag' module..."
         & .\tools\ManageGeneratedModule.ps1 -Module $tag
 
         if($BuildAndPack){
             # Build and pack generated module.
             # Ensure Graph.Authentication is installed locally before running this.
             # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-            & .\tools\BuildAndPackModule.ps1 -Module $tag -RequiredModules "$RollUpModule.$AuthenticationModule" -FeedApiKey $FeedApiKey -FeedUrl $SourceLocation
+            Write-Host -ForegroundColor Green "Building and packing '$RollUpModule.$tag' module..."
+            & .\tools\BuildPackAndPublishModule.ps1 -Module $tag -RequiredModules "$RollUpModule.$AuthenticationModule" -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryFeedUrl $RepositoryFeedUrl
 
             # Install module locally.
             Install-Module "$RollUpModule.$tag" -Repository $RepositoryName -Force
@@ -111,10 +111,11 @@ foreach($tag in $Tags)
     }
     catch {
         Write-Error $_.Exception
-        continue
     }
 }
 
 if($BuildAndPack){
-   .\tools\PackRollupModule.ps1 -Modules $GraphModules -RollUpModule $RollUpModule -ApiKey $FeedApiKey -Repository $RepositoryName
-}
+    Write-Host -ForegroundColor Green "Packing '$RollUpModule' module..."
+    & .\tools\PackRollupModule.ps1 -RequiredModules $GraphModules -RollUpModule $RollUpModule -ApiKey $RepositoryApiKey -Repository $RepositoryName
+ }
+Write-Host -ForegroundColor Green "-------------Done-------------"

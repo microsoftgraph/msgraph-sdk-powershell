@@ -7,7 +7,7 @@ module-version: 0.0.1
 subject-prefix: ''
 azure: false
 # module-name: $(prefix).$(title)
-module-name: Graph.$(title)
+module-name: $(rollUpModule).$(title)
 namespace: Microsoft.Graph.PowerShell
 input-file: $(docOutputFolder)\$(title).yml
 output-folder: ..\src\$(title)\$(title)

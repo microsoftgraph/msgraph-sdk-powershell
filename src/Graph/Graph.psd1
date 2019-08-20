@@ -52,7 +52,8 @@ Description = 'Microsoft Graph PowerShell Module.'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @('Graph.Authentication', 
-               'Graph.me.message')
+               'Graph.me.message', 
+               'Graph.users.message')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
