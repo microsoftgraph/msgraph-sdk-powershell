@@ -27,7 +27,5 @@ namespace Microsoft.Graph.PowerShell
                 pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient(authConfig)));
             }
         }
-
-        // CustomInit
     }
 }

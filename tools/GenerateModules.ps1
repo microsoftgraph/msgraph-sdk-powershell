@@ -46,7 +46,8 @@ if($PSEdition -ne 'Core') {
 
 $AuthenticationModule = "Authentication"
 $RollUpModule = "Graph"
-$RepositoryFeedUrl = $null
+$ArtifactsLocation = ".\artifacts\"
+$RepositoryFeedUrl = (Get-PSRepository -Name $RepositoryName).SourceLocation
 
 if ([string]::IsNullOrEmpty($OpenApiBaseUrl)) {
     $OpenApiBaseUrl = "https://graphslice.azurewebsites.net"
@@ -62,18 +63,21 @@ if($UpdateAutoRest) {
 }
 
 if($BuildAndPack){
-    $RepositoryFeedUrl = (Get-PSRepository -Name MyLocalGallery).SourceLocation
-    # Build, pack and publish Graph.Authentication module to specified feed..
-    # This can be built indepentent of AutoRest generated modules.
-    Write-Host -ForegroundColor Green "Building and packing '$RollUpModule.$AuthenticationModule' module..."
-    & .\tools\BuildPackAndPublishModule.ps1 -Module $AuthenticationModule -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryFeedUrl $RepositoryFeedUrl
+    # Clean artifacts folder before copying package.
+    Remove-Item -Path "$ArtifactsLocation/*" -Recurse
 
-    # Install module locally.
-    Install-Module "$RollUpModule.$AuthenticationModule" -Repository $RepositoryName -Force
+    # Build, pack and publish Graph.Authentication module to specified feed..
+    # This can be built independent of AutoRest generated modules. 
+    & .\tools\BuildAndPackBinaryModule.ps1 -Module $AuthenticationModule -ArtifactsLocation $ArtifactsLocation
+
+    & .\tools\PublishBinaryModule.ps1 -ModuleName "$RollUpModule.$AuthenticationModule" -ArtifactsLocation $ArtifactsLocation -RepositoryFeedUrl $RepositoryFeedUrl -RepositoryApiKey $RepositoryApiKey
 }
 
-$GraphModules = New-Object collections.generic.list[string]
-$GraphModules.Add("$RollUpModule.$AuthenticationModule")
+# Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
+# https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
+Install-Module "$RollUpModule.$AuthenticationModule" -Repository $RepositoryName -Force
+
+$RequiredGraphModules = New-Object collections.generic.list[string]
 
 foreach($tag in $Tags)
 {
@@ -98,16 +102,12 @@ foreach($tag in $Tags)
 
         if($BuildAndPack){
             # Build and pack generated module.
-            # Ensure Graph.Authentication is installed locally before running this.
-            # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
             Write-Host -ForegroundColor Green "Building and packing '$RollUpModule.$tag' module..."
-            & .\tools\BuildPackAndPublishModule.ps1 -Module $tag -RequiredModules "$RollUpModule.$AuthenticationModule" -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryFeedUrl $RepositoryFeedUrl
-
-            # Install module locally.
-            Install-Module "$RollUpModule.$tag" -Repository $RepositoryName -Force
+            # Ensure Graph.Authentication is installed locally before running this.
+            & .\tools\BuildAndPackBinaryModule.ps1 -Module $tag -RequiredModules "$RollUpModule.$AuthenticationModule" -ArtifactsLocation $ArtifactsLocation
         }
 
-        $GraphModules.Add("$RollUpModule.$tag")
+        $RequiredGraphModules.Add("$RollUpModule.$tag")
     }
     catch {
         Write-Error $_.Exception
@@ -115,7 +115,21 @@ foreach($tag in $Tags)
 }
 
 if($BuildAndPack){
+    # Publish generated modules.
+    Write-Host -ForegroundColor Green "Publishing generated modules..."
+    foreach($generatedModule in $Tags){
+        # Publish module.
+        & .\tools\PublishBinaryModule.ps1 -ModuleName "$RollUpModule.$generatedModule" -ArtifactsLocation $ArtifactsLocation -RepositoryFeedUrl $RepositoryFeedUrl -RepositoryApiKey $RepositoryApiKey
+
+        # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
+        # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
+        Install-Module "$RollUpModule.$generatedModule" -Repository $RepositoryName -Force
+    }
+
+    # Build and pack roll-up module.
     Write-Host -ForegroundColor Green "Packing '$RollUpModule' module..."
-    & .\tools\PackRollupModule.ps1 -RequiredModules $GraphModules -RollUpModule $RollUpModule -ApiKey $RepositoryApiKey -Repository $RepositoryName
+    $RequiredGraphModules.Add("$RollUpModule.$AuthenticationModule")
+    & .\tools\PackAndPublishRollUpModule.ps1 -RequiredModules $RequiredGraphModules -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryName $RepositoryName
  }
+
 Write-Host -ForegroundColor Green "-------------Done-------------"

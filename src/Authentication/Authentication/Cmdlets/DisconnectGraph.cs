@@ -31,6 +31,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     new ErrorRecord(new System.Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
             AuthenticationHelpers.Logout(authConfig);
+
+            SessionState.PSVariable.Remove(Constants.GraphAuthConfigId);
         }
 
         protected override void StopProcessing()

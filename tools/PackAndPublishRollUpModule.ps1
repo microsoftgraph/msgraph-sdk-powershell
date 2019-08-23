@@ -3,13 +3,16 @@
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string[]] $RequiredModules,
-    [ValidateNotNullOrEmpty()]
     [string] $RollUpModule,
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $ApiKey,
+    [string[]] $RequiredModules,
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $Repository
+    [string] $RepositoryApiKey,
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $RepositoryName
 )
 $GraphModuleDir = Join-Path $PSScriptRoot "..\src\$RollUpModule"
 
@@ -20,7 +23,7 @@ try{
 
     # Push roll-up module to feed.
     Write-Host -ForegroundColor Green "Publishing '$RollUpModule' module..."
-    Publish-Module -Path $GraphModuleDir -NuGetApiKey $ApiKey -Repository $Repository
+    Publish-Module -Path $GraphModuleDir -NuGetApiKey $RepositoryApiKey -Repository $RepositoryName
 }catch{
     Write-Error $_.Exception
 }

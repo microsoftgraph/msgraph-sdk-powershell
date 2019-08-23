@@ -14,13 +14,10 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string] $Module,
+    [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $RepositoryFeedUrl,
-    [ValidateNotNullOrEmpty()]
-    [string] $RepositoryApiKey,
-    [string] $RollUpModule,
-    [string[]] $RequiredModules,
-    [string] $OutputFolder
+    [string] $ArtifactsLocation,
+    [string[]] $RequiredModules
 )
 $ErrorActionPreference = "Stop"
 if($PSEdition -ne "Core") {
@@ -30,10 +27,6 @@ if($PSEdition -ne "Core") {
 $ModuleProjDir = "./src/$Module/$Module"
 $BuildModulePS1 = Join-Path $ModuleProjDir "/build-module.ps1"
 $PackModulePS1 = Join-Path $ModuleProjDir "/pack-module.ps1"
-
-if([string]::IsNullOrEmpty($OutputFolder)) {
-    $OutputFolder = "./artifacts/"
-}
 
 if (-not (Test-Path -Path $BuildModulePS1)){
     Write-Error "Build script file '$BuildModulePS1' not found for $Module module."
@@ -52,7 +45,7 @@ if($RequiredModules.Count -gt 0) {
     # Add required modules.
     try{
         Write-Host -ForegroundColor Green "Updating '$Module' module manifest..."
-        Update-ModuleManifest -Path (Join-Path $ModuleProjDir "$RollUpModule.$Module.psd1") -FunctionsToExport "*" -RequiredModules $RequiredModules
+        Update-ModuleManifest -Path (Join-Path $ModuleProjDir "Graph.$Module.psd1") -FunctionsToExport "*" -RequiredModules $RequiredModules
     } catch {
         Write-Error $_.Exception
     }
@@ -67,23 +60,16 @@ if($LastExitCode -ne 0) {
     return
 }
 
+if(-not (Test-Path $ArtifactsLocation)) {
+    # Create artifacts folder.
+    New-Item -Path $ArtifactsLocation -Type Directory
+}
+
 # Get generated .nupkg
 $NugetPackage = (Get-ChildItem (Join-Path $ModuleProjDir "./bin") | Where-Object Name -Match ".nupkg").FullName
 
-if(-not (Test-Path $OutputFolder)) {
-    # Create artifacts folder.
-    New-Item -Path $OutputFolder -Type Directory
-}
-
-# Copy package to feed.
-Write-Host -ForegroundColor Green "Publishing '$Module' module to feed..."
-nuget push $NugetPackage -Source $RepositoryFeedUrl -apikey $RepositoryApiKey
-if($LastExitCode -ne 0) {
-    # nuget push failed. Check package version number.
-    # Write-Error "Failed to push '$Module' package. A module name with the same version number already exists."
-}
-
 # Copy package to artifacts folder.
-Write-Host -ForegroundColor Green "Copying '$Module' module to $OutputFolder..."
-Copy-Item -Path $NugetPackage -Destination $OutputFolder -Force
+Write-Host -ForegroundColor Green "Copying '$Module' module to $ArtifactsLocation..."
+Copy-Item -Path $NugetPackage -Destination $ArtifactsLocation -Force
+
 Write-Host -ForegroundColor Green "-------------Done-------------"

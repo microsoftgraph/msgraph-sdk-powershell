@@ -3,33 +3,34 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
+    using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
     using System;
+    using System.Collections.Generic;
     using System.Management.Automation;
     using System.Net.Http;
     
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = UserParameterSet)]
     public class ConnectGraph : PSCmdlet
     {
-        public const string UserParameterSet = "UserParameterSet";
-        public const string AppParameterSet = "AppParameterSet";
+        private const string UserParameterSet = "UserParameterSet";
+        private const string AppParameterSet = "AppParameterSet";
 
-        [Parameter(ParameterSetName = UserParameterSet, Position = 1, Mandatory = true)]
+        [Parameter(ParameterSetName = UserParameterSet, Position = 1)]
+        public string[] Scopes { get; set; }
+
         [Parameter(ParameterSetName = AppParameterSet, Position = 1, Mandatory = true)]
         public string ClientId { get; set; }
 
-        [Parameter(ParameterSetName = UserParameterSet, Position = 2, Mandatory = true)]
         [Parameter(ParameterSetName = AppParameterSet, Position = 2)]
-        public string Scopes { get; set; }
+        public string CertificateName { get; set; }
 
         [Parameter(ParameterSetName = AppParameterSet, Position = 3)]
-        public string ClientSecret { get; set; }
-
-        [Parameter(ParameterSetName = UserParameterSet, Position = 3)]
-        [Parameter(ParameterSetName = AppParameterSet, Position = 4)]
         public string TenantId { get; set; }
 
+        [Parameter(ParameterSetName = AppParameterSet, Position = 4)]
+        public SwitchParameter ForceRefresh { get; set; }
         protected override void BeginProcessing()
         {
             validateParameters();
@@ -45,20 +46,55 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
 
-            AuthConfig authConfig = new AuthConfig { ClientId = ClientId, ClientSecret = ClientSecret, Scopes = Scopes, TenantId = TenantId };
+            AuthConfig authConfig = new AuthConfig { TenantId = TenantId };
 
             if (ParameterSetName == UserParameterSet)
+            {
                 authConfig.AuthType = AuthenticationType.Delegated;
+                authConfig.Scopes = Scopes ?? new string[] { "User.Read" };
+            }
             else
+            {
                 authConfig.AuthType = AuthenticationType.AppOnly;
+                authConfig.ClientId = ClientId;
+                authConfig.CertificateName = CertificateName;
+            }
 
             // Save auth config to session state.
             SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
+            try
+            {
+                // Gets a static instance of IAuthenticationProvider when the client app hasn't changed. 
+                IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
 
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
-            authProvider.AuthenticateRequestAsync(requestMessage).GetAwaiter().GetResult();
+                // Incremental scope consent without re-instanciating the auth provider. We will use a static instance.
+                GraphRequestContext graphRequestContext = new GraphRequestContext();
+                graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
+                {
+                    {
+                        typeof(AuthenticationHandlerOption).ToString(),
+                        new AuthenticationHandlerOption
+                        {
+                            AuthenticationProviderOption = new AuthenticationProviderOption
+                            {
+                                Scopes = authConfig.Scopes,
+                                ForceRefresh = ForceRefresh
+                            }
+                        }
+                    }
+                };
+                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
+                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
+
+                // Trigger consent.
+                authProvider.AuthenticateRequestAsync(httpRequestMessage).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                WriteError(new ErrorRecord(ex.InnerException ?? ex, Guid.NewGuid().ToString(), ErrorCategory.AuthenticationError, null));
+                throw ex;
+            }
 
             WriteObject("Welcome To Microsoft Graph!");
             // WriteObject(File.ReadAllText(".\\Art\\WelcomeText.txt"));
@@ -72,26 +108,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private void validateParameters()
         {
-            if (ParameterSetName == UserParameterSet || ParameterSetName == AppParameterSet)
+            if (ParameterSetName == AppParameterSet)
             {
                 // Client Id
                 if (string.IsNullOrEmpty(ClientId))
-                    ThrowParameterError("ClientId");
+                    ThrowParameterError(nameof(ClientId));
 
-                // Scopes
-                if (string.IsNullOrEmpty(Scopes))
-                    ThrowParameterError("Scopes");
-            }
-
-            if (ParameterSetName == AppParameterSet)
-            {
                 // Client Secret
-                if (string.IsNullOrEmpty(ClientSecret))
-                    ThrowParameterError("ClientSecret");
+                if (string.IsNullOrEmpty(CertificateName))
+                    ThrowParameterError(nameof(CertificateName));
 
                 // Tenant Id
                 if (string.IsNullOrEmpty(TenantId))
-                    ThrowParameterError("TenantId");
+                    ThrowParameterError(nameof(TenantId));
             }
         }
 

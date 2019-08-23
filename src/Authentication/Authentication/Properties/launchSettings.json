@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Graph.Authentication": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+      "commandLineArgs": "-NoProfile -NoExit"
+    }
+  }
+}
