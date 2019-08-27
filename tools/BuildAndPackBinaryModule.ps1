@@ -24,7 +24,7 @@ if($PSEdition -ne "Core") {
   Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
 
-$ModuleProjDir = "./src/$Module/$Module"
+$ModuleProjDir = Join-Path $PSScriptRoot "../src/$Module/$Module"
 $BuildModulePS1 = Join-Path $ModuleProjDir "/build-module.ps1"
 $PackModulePS1 = Join-Path $ModuleProjDir "/pack-module.ps1"
 
