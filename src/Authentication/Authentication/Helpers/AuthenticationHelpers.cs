@@ -48,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 if (AppAuthProvider == null ||
                 AppAuthProvider.ClientApplication.AppConfig.ClientId != authConfig.ClientId ||
                 AppAuthProvider.ClientApplication.AppConfig.TenantId != authConfig.TenantId ||
-                AppAuthProvider.ClientApplication.AppConfig.ClientCredentialCertificate.?.SubjectName.Name != authConfig.CertificateName)
+                AppAuthProvider.ClientApplication.AppConfig.ClientCredentialCertificate?.SubjectName.Name != authConfig.CertificateName)
                 {
                     X509Certificate2 certificate = GetCertificate(authConfig.CertificateName);
 

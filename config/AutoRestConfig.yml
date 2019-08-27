@@ -1,7 +1,7 @@
 # Microsoft Graph PowerShell AutoRest Configuration
 powershell: true
 version: latest
-use: '@microsoft.azure/autorest.powershell@beta'
+use: '@microsoft.azure/autorest.powershell@2.0.648'
 module-version: 0.0.1
 # prefix: Graph
 subject-prefix: ''

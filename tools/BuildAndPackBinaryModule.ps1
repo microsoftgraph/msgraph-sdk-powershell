@@ -35,7 +35,7 @@ if (-not (Test-Path -Path $BuildModulePS1)){
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
-& $BuildModulePS1 -Test -Docs -Release
+& $BuildModulePS1 -Docs -Release
 if($LastExitCode -ne 0) {
     # Build failed, don't pack the module.
     Write-Error "Failed to build '$Module' module."
