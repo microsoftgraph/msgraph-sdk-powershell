@@ -31,7 +31,7 @@ The Microsoft Graph PowerShell SDK is a collection of resource specific PowerShe
 2. Generate and pack PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection).
 
     ```ps
-    .\msgraph-sdk-powershell\scripts\GenerateModules.ps1 -Tags "me.message", "users.user" -RepositoryApiKey {APIKey} -RepositoryName {RepositoryName}
+    .\msgraph-sdk-powershell\tools\GenerateModules.ps1 -Tags "me.message", "users.message" -RepositoryApiKey {APIKey} -RepositoryName {RepositoryName}
     ```
 
     This performs the following actions :

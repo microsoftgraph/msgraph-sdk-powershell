@@ -25,7 +25,7 @@ $RollUpModule = "Graph"
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
 $PublishBinaryModulePS1 = Join-Path $PSScriptRoot ".\PublishBinaryModule.ps1" -Resolve
-$PackAndPublishRollUpModulePS1 = Join-Path $PSScriptRoot ".\PackAndPublishRollUpModule.ps1" -Resolve
+$PackRollUpModulePS1 = Join-Path $PSScriptRoot ".\PackRollUpModule.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 $DownloadOpenAPIDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenAPIDoc.ps1" -Resolve
 $AutoRestConfigYML = Join-Path $PSScriptRoot "..\config\AutoRestConfig.yml" -Resolve
@@ -37,16 +37,22 @@ if ([string]::IsNullOrEmpty($OpenApiBaseUrl)) {
 }
 
 if([string]::IsNullOrEmpty($DocOutputFolder)){
-    $DocOutputFolder =  Join-Path $PSScriptRoot "..\openApiDocs"  -Resolve
+    $DocOutputFolder =  Join-Path $PSScriptRoot "..\openApiDocs"
+
+    if(-not (Test-Path $DocOutputFolder)) {
+        # Create artifacts folder.
+        New-Item -Path $DocOutputFolder -Type Directory
+    }
+    $DocOutputFolder =  Join-Path $DocOutputFolder "" -Resolve
 }
 
-if($UpdateAutoRest) {
-    # Update Autorest.
-    & autorest --reset
+if(-not (Test-Path $ArtifactsLocation)) {
+    # Create artifacts folder.
+    New-Item -Path $ArtifactsLocation -Type Directory
+} else {
+    # Clean artifacts folder before copying package.
+    Remove-Item -Path "$ArtifactsLocation\*" -Recurse -Force
 }
-
-# Clean artifacts folder before copying package.
-Remove-Item -Path "$ArtifactsLocation\*" -Recurse -Force
 
 $ExistingAuthModule = Find-Module "$RollUpModule.$AuthenticationModule" -Repository $RepositoryName -ErrorAction SilentlyContinue
 
@@ -63,6 +69,11 @@ if($ExistingAuthModule -eq $null){
 Install-Module "$RollUpModule.$AuthenticationModule" -Repository $RepositoryName -Force
 
 $RequiredGraphModules = New-Object collections.generic.list[string]
+
+if($UpdateAutoRest) {
+    # Update Autorest.
+    & autorest --reset
+}
 
 foreach($tag in $Tags)
 {
@@ -111,6 +122,10 @@ foreach($generatedModule in $Tags){
 # Build and pack roll-up module.
 Write-Host -ForegroundColor Green "Packing '$RollUpModule' module..."
 $RequiredGraphModules.Add("$RollUpModule.$AuthenticationModule")
-& $PackAndPublishRollUpModulePS1 -RequiredModules $RequiredGraphModules -RollUpModule $RollUpModule -RepositoryApiKey $RepositoryApiKey -RepositoryName $RepositoryName
+# Pack roll-up module
+& $PackRollUpModulePS1 -RequiredModules $RequiredGraphModules -RollUpModule $RollUpModule -ArtifactsLocation $ArtifactsLocation
+
+# Publish roll-up module
+& $PublishBinaryModulePS1 -ModuleName $RollUpModule -ArtifactsLocation $ArtifactsLocation -RepositoryFeedUrl $RepositoryFeedUrl -RepositoryApiKey $RepositoryApiKey
 
 Write-Host -ForegroundColor Green "-------------Done-------------"
