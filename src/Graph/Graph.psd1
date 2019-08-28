@@ -51,9 +51,7 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('Graph.me.message', 
-               'Graph.devices.device', 
-               'Graph.Authentication')
+RequiredModules = @()
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
