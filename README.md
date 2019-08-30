@@ -1,5 +1,5 @@
-# Microsoft Graph PowerShell SDK
-The Microsoft Graph Powershell SDK is collection of PowerShell modules that conatain cmdlets that can be used to make Microsoft Graph REST calls.
+# Microsoft Graph PowerShell SDK (pre-alpha)
+The Microsoft Graph Powershell SDK will be a collection of PowerShell modules that conatain cmdlets that can be used to make Microsoft Graph REST calls.  Currently we are just building the infrastructure in order to generate the modules.  Stay tuned!
 
 ## Generate Module
 1. [Download](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.2) and install PowerShell.
