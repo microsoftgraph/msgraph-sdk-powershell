@@ -12,7 +12,8 @@ Param(
     [string] $OpenApiBaseUrl,
     [string] $DocOutputFolder,
     [switch] $UpdateAutoRest,
-    [switch] $UseLocalDoc
+    [switch] $UseLocalDoc,
+    [switch] $DoNotPublish
 )
 $ErrorActionPreference = 'Stop'
 
@@ -60,8 +61,9 @@ if($ExistingAuthModule -eq $null){
     # Build, pack and publish Graph.Authentication module to specified feed..
     # This can be built independent of AutoRest generated modules. 
     & $BuildAndPackBinaryModulePS1 -Module $AuthenticationModule -ArtifactsLocation $ArtifactsLocation
-
-    & $PublishBinaryModulePS1 -ModuleName "$RollUpModule.$AuthenticationModule" -ArtifactsLocation $ArtifactsLocation -RepositoryFeedUrl $RepositoryFeedUrl -RepositoryApiKey $RepositoryApiKey
+    if (-not $DoNotPublish) {
+        & $PublishBinaryModulePS1 -ModuleName "$RollUpModule.$AuthenticationModule" -ArtifactsLocation $ArtifactsLocation -RepositoryFeedUrl $RepositoryFeedUrl -RepositoryApiKey $RepositoryApiKey
+    }
 }
 
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
@@ -72,7 +74,7 @@ $RequiredGraphModules = New-Object collections.generic.list[string]
 
 if($UpdateAutoRest) {
     # Update Autorest.
-    & autorest --reset
+    & autorest-beta --reset
 }
 
 foreach($tag in $Tags)
@@ -87,7 +89,7 @@ foreach($tag in $Tags)
 
         # Generate PowerShell modules by tags.
         Write-Host -ForegroundColor Green "Generating '$RollUpModule.$tag' module..."
-        & autorest --title:$tag --docOutputFolder:$DocOutputFolder --rollUpModule:$RollUpModule $AutoRestConfigYML --verbose
+        & autorest-beta --title:$Tag --docOutputFolder:$DocOutputFolder --rollUpModule:$RollUpModule $AutoRestConfigYML --verbose
         if($LastExitCode -ne 0){
             Write-Error "Failed to generate '$tag' module."
         }
