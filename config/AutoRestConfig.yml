@@ -26,3 +26,7 @@ metadata:
 #       subject: Me(.*)
 #     set:
 #       subject: My$1
+directive: 
+ - no-inline:
+   - microsoft.graph.sharepointIds  # tells it not to inline the model with that name 
+   - microsoft.graph.identitySet
