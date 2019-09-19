@@ -10,7 +10,7 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
 2. Install AutoRest.
 
     ```ps
-    npm install -g autorest@beta
+    npm install -g "@autorest/autorest"
     ```
 
 3. Run a local instance of either [Nuget.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server) or [Private PowerShell Gallery](https://github.com/PowerShell/PSPrivateGallery), and register it a local repository using `Register-PSRepository` cmdlet. Once done, take note of the `repository name` and `APIKey`. You can always get the repository name by running `Get-PSRepository`.

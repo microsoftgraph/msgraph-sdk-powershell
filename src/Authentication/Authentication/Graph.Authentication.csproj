@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <Version>0.0.1</Version>
+    <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AssemblyName>Graph.Authentication</AssemblyName>
@@ -23,5 +24,4 @@
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.5.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
   </ItemGroup>
-
 </Project>

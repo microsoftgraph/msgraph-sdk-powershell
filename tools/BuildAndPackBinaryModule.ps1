@@ -1,15 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-<#
-.DESCRIPTION
-Builds and packs generated module into nuget packages for distribution. The generated packages are moved to '{repo}\bin' by default for easy access.
-
-.PARAMETER Module
-The name of the module to build and pack.
-
-.PARAMETER OutputFolder
-The output folder to move the generated nuget packages to. This defaults to '{repo}\artifacts'.
-#>
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -17,6 +7,9 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string] $ArtifactsLocation,
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $ModuleVersion,
     [string[]] $RequiredModules
 )
 $ErrorActionPreference = "Stop"
@@ -24,52 +17,53 @@ if($PSEdition -ne "Core") {
   Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
 
-$ModuleProjDir = Join-Path $PSScriptRoot "../src/$Module/$Module"
-$BuildModulePS1 = Join-Path $ModuleProjDir "/build-module.ps1"
-$PackModulePS1 = Join-Path $ModuleProjDir "/pack-module.ps1"
+$NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
+$ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
+$BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
+$PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
+$ModuleManifest = Join-Path $ModuleProjLocation "Graph.$Module.psd1"
+$ModuleNuspec = Join-Path $ModuleProjLocation "Graph.$Module.nuspec"
+
+# Import scripts
+. $NuspecHelperPS1
 
 if (-not (Test-Path -Path $BuildModulePS1)){
-    Write-Error "Build script file '$BuildModulePS1' not found for $Module module."
-    return
+    Write-Error "Build script file '$BuildModulePS1' not found for '$Module' module."
 }
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
 & $BuildModulePS1 -Docs -Release
 if($LastExitCode -ne 0) {
-    # Build failed, don't pack the module.
     Write-Error "Failed to build '$Module' module."
 }
 
+Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
 if($RequiredModules.Count -gt 0) {
-    # Add required modules.
-    try{
-        Write-Host -ForegroundColor Green "Updating '$Module' module manifest..."
-        Update-ModuleManifest -Path (Join-Path $ModuleProjDir "Graph.$Module.psd1") -FunctionsToExport "*" -RequiredModules $RequiredModules
-    } catch {
-        Write-Error $_.Exception
-    }
+    Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules
+} else {
+    Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion
 }
+Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $ModuleVersion -Dependencies $RequiredModules
 
 # Pack module
-Write-Host -ForegroundColor Green "Packaging '$Module' module..."
 & $PackModulePS1
 if($LastExitCode -ne 0) {
-    # Pack failed, don't attempt to move nuget package.
-    Write-Error "Failed to pack $Module."
-    return
-}
-
-if(-not (Test-Path $ArtifactsLocation)) {
-    # Create artifacts folder.
-    New-Item -Path $ArtifactsLocation -Type Directory
+    Write-Error "Failed to pack '$Module' module."
 }
 
 # Get generated .nupkg
-$NugetPackage = (Get-ChildItem (Join-Path $ModuleProjDir "./bin") | Where-Object Name -Match ".nupkg").FullName
+$NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") | Where-Object Name -Match ".nupkg").FullName
+
+$ModuleArtifactLocation = "$ArtifactsLocation\$Module"
+if(-not (Test-Path $ModuleArtifactLocation)) {
+    New-Item -Path $ModuleArtifactLocation -Type Directory
+} else {
+    Remove-Item -Path "$ModuleArtifactLocation\*" -Recurse -Force
+}
 
 # Copy package to artifacts folder.
-Write-Host -ForegroundColor Green "Copying '$Module' module to $ArtifactsLocation..."
-Copy-Item -Path $NugetPackage -Destination $ArtifactsLocation -Force
+Write-Host -ForegroundColor Green "Copying '$NuGetPackage' to $ModuleArtifactLocation..."
+Copy-Item -Path $NuGetPackage -Destination $ModuleArtifactLocation -Force
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

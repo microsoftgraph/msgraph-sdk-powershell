@@ -41,7 +41,7 @@ if($LastExitCode -ne 0){
 # Copy custom code to generated module.
 $CustomFiles = Get-ChildItem $CustomCodeDir -Recurse
 foreach($CustomFile in $CustomFiles) {
-    Write-Host -ForegroundColor Green "Copying $CustomFile from $CustomCodeDir to $GeneratedModuleSlnDir\$Module\custom"
+    Write-Host -ForegroundColor Green "Copying $CustomFile to $GeneratedModuleSlnDir\$Module\custom"
     Copy-Item -Path $CustomFile -Destination "$GeneratedModuleSlnDir\$Module\custom"
 }
 
@@ -62,3 +62,4 @@ if($LastExitCode -ne 0){
     Write-Error "Failed to execute: dotnet restore $GeneratedModuleSlnDir\$Module.sln"
     return
 }
+Write-Host -ForegroundColor Green "-------------Done-------------"

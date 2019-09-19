@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.0.1</version>
+    <version>0.1.7</version>
     <id>Graph.Authentication</id>
-    <title>Microsoft Graph PowerShell Authentication Module</title>
+    <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <description>Microsoft Graph PowerShell authentication module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
+    <dependencies />
   </metadata>
   <files>
     <file src="Graph.Authentication.psd1" />
@@ -23,6 +24,6 @@
     <file src="bin/Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
-    <file src="bin/Microsoft.Identity.Client.dll" target="bin"/>
+    <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
   </files>
 </package>

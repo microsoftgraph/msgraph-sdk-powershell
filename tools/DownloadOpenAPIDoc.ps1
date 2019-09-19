@@ -27,14 +27,7 @@ Param(
 
 $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}.*&title={0}&openapiversion=3&style=Powershell" -f $Tag)
 
-if(-not (Test-Path $OutputFolder)){
-    # Create openApiDocs folder.
-    New-Item -Name $OutputFolder -ItemType Directory -Force
-}
-
-Write-Host -ForegroundColor Green "Downloading '$Tag' from $OpenApiServiceUrl."
-
-# Download OpenAPI docs by tags.
+Write-Host -ForegroundColor Green "Downloading OpenAPI doc for '$RollUpModule.$tag' module..."
 Invoke-WebRequest $OpenApiServiceUrl -OutFile "$OutputFolder\$Tag.yml"
 
-Write-Host -ForegroundColor Green "Downloaded '$OutputFolder\$Tag.yml'."
+Write-Host -ForegroundColor Green "-------------Done-------------"

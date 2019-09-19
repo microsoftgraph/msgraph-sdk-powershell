@@ -1,20 +1,21 @@
 <?xml version="1.0"?>
-<package >
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Graph</id>
-    <version>0.0.1</version>
-    <title>Microsoft Graph PowerShell Module</title>
+    <version>0.1.7</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <description>Microsoft Graph PowerShell authentication module</description>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Microsoft Graph PowerShell Module.</description>
+    <releaseNotes />
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes></releaseNotes>
     <dependencies>
+      <dependency id="Graph.Authentication" />
+      <dependency id="Graph.subscriptions" />
+      <dependency id="Graph.teams" />
     </dependencies>
   </metadata>
 </package>
