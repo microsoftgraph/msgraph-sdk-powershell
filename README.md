@@ -51,7 +51,16 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
 
     This generates a `Graph` module manifest with the generated Graph service modules (`Graph.subscriptions`, `Graph.teams`) and `Graph.Authentication` module as its dependencies.
 
-***N.B - The `-Publish` switch in the generate{XYZ}.ps1 scripts is completely optional and can be omitted for scenarios where you only need to build and package a module. You only have to ensure that the dependencies are locally installed on your machine.***
+5. Optionally, publish all generated from an artifacts location.
+
+    ```ps
+    . \msgraph-sdk-powershell\tools\PublishModule.ps1 -Modules "Graph", "Authentication", "subscriptions", "teams" -RepositoryName {RepositoryName} -RepositoryApiKey {APIKey} -ArtifactsLocation {ArtifactsLocation}
+    ```
+
+#### Common Generation Scripts Parameters
+- ***`-ModuleVersion`***: The version of the module to generate. This defaults to `0.1.0` when not specified.
+- ***`-ModulePreviewNumber`***: An optional preview number of the module(s) to generate. When not specified, the module is generated as a non preview module(s) of the `ModuleVersion`.
+- ***`-Publish`***: An optional switch that publishes generated module(s) to the specified `RepositoryName`. This used  when module dependencies are not locally installed in your machine.
 
 ## Run Generated Modules
 
