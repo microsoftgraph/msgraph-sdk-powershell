@@ -55,7 +55,7 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
 
 ## Run Generated Modules
 
-1. By default, the generated modules should already be installed on your PC in `C:\Users\{accountName}\Documents\PowerShell\Modules` as part of the generation process. If it's not present or you want to install the modules on another machine, then install them as such by specifying your repository name:
+1. By default, the generated modules should already be installed on your PC in `%UserProfile%\Documents\PowerShell\Modules` as part of the generation process. If it's not present or you want to install the modules on another machine, then install them as such by specifying your repository name:
 
     ```ps
     Install-Module Graph -Repository {RepositoryName}
@@ -64,16 +64,16 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
 2. Authenticate to Microsoft Identity to get an access token to call Microsoft Graph API.
     - Delegated access via Device Code Flow.
 
-            ```ps
-            Connect-Graph -Scopes "User.Read.All"
-            ```
+        ```ps
+        Connect-Graph -Scopes "User.Read.All"
+        ```
 
     - App only access via Client Credential Flow with a certificate.
 
-            ```ps
-            # Replace CN=DaemonConsoleCert with your certificate name.
-            Connect-Graph -ClientId ClientId -TenantId TenantId -CertificateName "CN=DaemonConsoleCert"
-            ```
+        ```ps
+        # Replace CN=DaemonConsoleCert with your certificate name.
+        Connect-Graph -ClientId ClientId -TenantId TenantId -CertificateName "CN=DaemonConsoleCert"
+        ```
 
 3. Call `Get-MeMessage` cmdlet.
 
