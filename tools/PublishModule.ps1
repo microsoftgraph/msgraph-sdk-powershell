@@ -21,7 +21,7 @@ $RepositoryPublishUrl = (Get-PSRepository -Name $RepositoryName).PublishLocation
 
 foreach($Module in $Modules){
     # Get NuGet package to publish.
-    $NuGetPackageRegex = "$RollUpModule.*(.\d+\.)(\d+\.)(\d+\.nupkg)"
+    $NuGetPackageRegex = "$RollUpModule.*(.\d+\.)(\d+\.)(\d+\.nupkg)|$RollUpModule.*(.\d+\.)(\d+\.)(\d+\-preview\d+\.nupkg)"
     $NuGetPackage = (Get-ChildItem "$ArtifactsLocation\$Module" | Where-Object Name -Match $NuGetPackageRegex).FullName
 
     if($null -eq $NuGetPackage){

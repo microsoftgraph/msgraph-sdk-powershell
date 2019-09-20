@@ -6,6 +6,7 @@ Param(
     [ValidateNotNullOrEmpty()]
     [string[]] $Tags,
     [string] $ModuleVersion = "0.1.0",
+    [int] $ModulePreviewNumber = -1,
     [string] $OpenApiBaseUrl = "https://graphslice.azurewebsites.net",
     [string] $DocOutputFolder = (Join-Path $PSScriptRoot "..\openApiDocs"),
     [switch] $UpdateAutoRest,
@@ -68,7 +69,7 @@ foreach($Tag in $Tags)
 
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
-        & $BuildAndPackBinaryModulePS1 -Module $Tag -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation
+        & $BuildAndPackBinaryModulePS1 -Module $Tag -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
     }
     catch {
         Write-Error $_.Exception

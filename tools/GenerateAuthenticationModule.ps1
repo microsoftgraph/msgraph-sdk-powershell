@@ -2,6 +2,7 @@
 # Licensed under the MIT License.
 Param(
     [string] $ModuleVersion = "0.1.0",
+    [int] $ModulePreviewNumber = -1,
     [string] $RepositoryName,
     [string] $RepositoryApiKey,
     [switch] $Publish
@@ -15,7 +16,7 @@ $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModu
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 
-& $BuildAndPackBinaryModulePS1 -Module "Authentication" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion
+& $BuildAndPackBinaryModulePS1 -Module "Authentication" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
 
 if ($Publish) {
     & $PublishModulePS1 -Modules "Authentication" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey

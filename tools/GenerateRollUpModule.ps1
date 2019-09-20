@@ -6,6 +6,7 @@ Param(
     [ValidateNotNullOrEmpty()]
     [string[]] $RequiredModules,
     [string] $ModuleVersion = "0.1.0",
+    [int] $ModulePreviewNumber = -1,
     [string] $RepositoryApiKey,
     [string] $RepositoryName,
     [switch] $Publish
@@ -41,8 +42,13 @@ foreach($RequiredModule in $RequiredModules){
 }
 
 Write-Host -ForegroundColor Green "Updating '$RollUpModule' module manifest and nuspec..."
-Update-ModuleManifest -Path "$GraphModuleLocation\$RollUpModule.psd1" -RequiredModules $RequiredGraphModules -ModuleVersion $ModuleVersion
-Set-NuSpecValues -NuSpecFilePath $RollUpModuleNuspec -VersionNumber $ModuleVersion -Dependencies $RequiredGraphModules
+if($ModulePreviewNumber -ge 0){
+    Update-ModuleManifest -Path "$GraphModuleLocation\$RollUpModule.psd1" -RequiredModules $RequiredGraphModules -ModuleVersion $ModuleVersion -Prerelease "preview$ModulePreviewNumber"
+    Set-NuSpecValues -NuSpecFilePath $RollUpModuleNuspec -Dependencies $RequiredGraphModules -VersionNumber "$ModuleVersion-preview$ModulePreviewNumber"
+} else {
+    Update-ModuleManifest -Path "$GraphModuleLocation\$RollUpModule.psd1" -RequiredModules $RequiredGraphModules -ModuleVersion $ModuleVersion
+    Set-NuSpecValues -NuSpecFilePath $RollUpModuleNuspec -Dependencies $RequiredGraphModules -VersionNumber $ModuleVersion
+}
 
 Write-Host -ForegroundColor Green "Packing '$RollUpModule' module..."
 nuget pack $RollUpModuleNuspec -OutputDirectory $RollUpModuleArtifactLocation -Prop Configuration=Release

@@ -10,6 +10,7 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string] $ModuleVersion,
+    [int] $ModulePreviewNumber = -1,
     [string[]] $RequiredModules
 )
 $ErrorActionPreference = "Stop"
@@ -39,12 +40,21 @@ if($LastExitCode -ne 0) {
 }
 
 Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
-if($RequiredModules.Count -gt 0) {
-    Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules
+if($ModulePreviewNumber -ge 0){
+    if($RequiredModules.Count -gt 0) {
+        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules -Prerelease "preview$ModulePreviewNumber"
+    } else {
+        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -Prerelease "preview$ModulePreviewNumber"
+    }
+    Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber "$ModuleVersion-preview$ModulePreviewNumber" -Dependencies $RequiredModules
 } else {
-    Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion
+    if($RequiredModules.Count -gt 0) {
+        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules
+    } else {
+        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion
+    }
+    Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $ModuleVersion -Dependencies $RequiredModules
 }
-Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $ModuleVersion -Dependencies $RequiredModules
 
 # Pack module
 & $PackModulePS1
