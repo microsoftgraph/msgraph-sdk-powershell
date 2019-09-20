@@ -13,11 +13,10 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
     npm install -g "@autorest/autorest"
     ```
 
-3. Run a local instance of either [Nuget.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server) or [Private PowerShell Gallery](https://github.com/PowerShell/PSPrivateGallery), and register it a local repository using `Register-PSRepository` cmdlet. Once done, take note of the `repository name` and `APIKey`. You can always get the repository name by running `Get-PSRepository`.
-
+3. Create an [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/artifacts/tutorials/private-powershell-library?view=azure-devops) Artifacts Feed or host a local [Nuget.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server), and register it as a local PowerShell repository using `Register-PSRepository` command. Once done, take note of the `RepositoryName` and `APIKey`. You can always get the repository name by running `Get-PSRepository`.
     This will be used as a temporary repository to the publish generated modules in order to specify them as dependencies for the `Graph` roll-up module.
 
-    N.B Once we have preview version of the modules in PowerShell Gallery, this step won't be needed.
+    ***N.B - Once we have a preview version of the modules in PowerShell Gallery, this step won't be needed.***
 
 ### Generation Steps
 
@@ -27,17 +26,32 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
     git clone https://github.com/microsoftgraph/msgraph-sdk-powershell.git -b dev
     ```
 
-2. Generate and pack PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection).
+2. Generate, pack and optionally publish `Graph.Authentication` module.
 
     ```ps
-    .\msgraph-sdk-powershell\tools\GenerateModules.ps1 -Tags "me.message", "users.message" -RepositoryApiKey {APIKey} -RepositoryName {RepositoryName}
+    . \msgraph-sdk-powershell\tools\GenerateAuthenticationModule.ps1 -RepositoryName {RepositoryName} -RepositoryApiKey {APIKey} -ModuleVersion {ModuleVersion} -Publish
+    ```
+
+3. Generate, pack and optionally publish Microsoft Graph service PowerShell modules by tags. For a complete list of tags, see [OpenApiSplice](https://github.com/microsoftgraph/msgraph-openapi-introspection).
+
+    ```ps
+    . \msgraph-sdk-powershell\tools\GenerateModules.ps1 -Tags "subscriptions", "teams" -RepositoryName {RepositoryName} -RepositoryApiKey {APIKey} -ModuleVersion {ModuleVersion} -Publish
     ```
 
     This performs the following actions :
-    - Generates `Graph.me.message` and `Graph.users.message` PowerShell modules in `.\msgraph-sdk-powershell\src\me.message\me.message\` and `.\msgraph-sdk-powershell\src\users.message\users.message\` respectively.
+    - Generates `Graph.subscriptions` and `Graph.teams` PowerShell modules in `.\msgraph-sdk-powershell\src\subscriptions\subscriptions\` and `.\msgraph-sdk-powershell\src\teams\teams\` respectively.
     - Specifies modules dependencies for the generated modules.
-    - Packages and uploads the modules to the specified repository as `.nupkg` files. The generated `nupkg` can be found in `.\msgraph-sdk-powershell\artifacts`.
-    - Generates a `Graph` roll-up module manifest with the generated modules + `Graph.Authentication` module as its `DependsOn`.
+    - Packages and publishes the modules to the specified repository as `.nupkg` files. The generated `nupkg` can be found in `.\msgraph-sdk-powershell\artifacts\subscriptions\` and `.\msgraph-sdk-powershell\artifacts\teams\` respectively.
+
+4. Generate, pack and optionally publish `Graph` roll-up module.
+
+    ```ps
+    . \msgraph-sdk-powershell\tools\GenerateRollUpModule.ps1 -RequiredModules "Authentication", "Subscriptions", "Teams" -RepositoryName {RepositoryName} -RepositoryApiKey {APIKey} -ModuleVersion {ModuleVersion} -Publish
+    ```
+
+    This generates a `Graph` module manifest with the generated Graph service modules (`Graph.subscriptions`, `Graph.teams`) and `Graph.Authentication` module as its dependencies.
+
+***N.B - The `-Publish` switch in the generate{XYZ}.ps1 scripts is completely optional and can be omitted for scenarios where you only need to build and package a module. You only have to ensure that the dependencies are locally installed on your machine.***
 
 ## Run Generated Modules
 
@@ -51,7 +65,7 @@ The Microsoft Graph Powershell SDK will be a collection of PowerShell modules th
     - Delegated access via Device Code Flow.
 
             ```ps
-            Connect-Graph
+            Connect-Graph -Scopes "User.Read.All"
             ```
 
     - App only access via Client Credential Flow with a certificate.
