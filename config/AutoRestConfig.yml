@@ -2,7 +2,7 @@
 powershell: true
 version: latest
 use: '@microsoft.azure/autorest.powershell@2.0.648'
-module-version: 0.0.1
+module-version: 0.1.0
 # prefix: Graph
 subject-prefix: ''
 azure: false
@@ -20,6 +20,7 @@ metadata:
   copyright: © Microsoft Corporation. All rights reserved.
   licenseUrl: https://aka.ms/devservicesagreement
   projectUrl: https://github.com/microsoftgraph/msgraph-sdk-powershell
+  iconUrl: https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png
   tags: Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;
 # directive:
 #   - where:

@@ -2,11 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Graph</id>
-    <version>0.1.7</version>
+    <version>0.1.0</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell Module.</description>
     <releaseNotes />

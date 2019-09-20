@@ -5,14 +5,10 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string[]] $RequiredModules,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $RepositoryApiKey,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $RepositoryName,
     [string] $ModuleVersion = "0.1.0",
-    [switch] $DoNotPublish
+    [string] $RepositoryApiKey,
+    [string] $RepositoryName,
+    [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
 if($PSEdition -ne 'Core') {
@@ -54,10 +50,10 @@ if($LastExitCode -ne 0){
     Write-Error "Failed to pack $RollUpModule module."
 }
 
-if (-not $DoNotPublish)
+if ($Publish)
 {
     # Publish roll-up module
-    & $PublishModulePS1 -Module $RollUpModule -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    & $PublishModulePS1 -Modules $RollUpModule -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

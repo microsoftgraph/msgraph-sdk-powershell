@@ -5,24 +5,20 @@ Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string[]] $Tags,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $RepositoryApiKey,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $RepositoryName,
     [string] $ModuleVersion = "0.1.0",
     [string] $OpenApiBaseUrl = "https://graphslice.azurewebsites.net",
     [string] $DocOutputFolder = (Join-Path $PSScriptRoot "..\openApiDocs"),
     [switch] $UpdateAutoRest,
     [switch] $UseLocalDoc,
-    [switch] $DoNotPublish
+    [string] $RepositoryApiKey,
+    [string] $RepositoryName,
+    [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
-
+$LastExitCode = 0
 $RollUpModule = "Graph"
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 $AutoRestConfigYML = Join-Path $PSScriptRoot "..\config\AutoRestConfig.yml" -Resolve
@@ -79,10 +75,8 @@ foreach($Tag in $Tags)
     }
 }
 
-if (-not $DoNotPublish) {
+if ($Publish) {
     # Publish generated modules.
-    foreach($GeneratedModule in $Tags){
-        & $PublishModulePS1 -Module "$GeneratedModule" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
-    }
+    & $PublishModulePS1 -Modules $Tags -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
 Write-Host -ForegroundColor Green "-------------Done-------------"
