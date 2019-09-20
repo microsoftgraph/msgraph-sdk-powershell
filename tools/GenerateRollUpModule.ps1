@@ -37,7 +37,7 @@ if(-not (Test-Path $RollUpModuleArtifactLocation)) {
 foreach($RequiredModule in $RequiredModules){
     # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
     # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-    Install-Module "$RollUpModule.$RequiredModule" -Repository $RepositoryName -Force
+    Install-Module "$RollUpModule.$RequiredModule" -Repository $RepositoryName -AllowPrerelease -Force
     $RequiredGraphModules.Add("$RollUpModule.$RequiredModule")
 }
 

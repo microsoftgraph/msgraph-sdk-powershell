@@ -39,7 +39,7 @@ if(-not (Test-Path $ArtifactsLocation)) {
 
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-Install-Module "$RollUpModule.Authentication" -Repository $RepositoryName -Force
+Install-Module "$RollUpModule.Authentication" -Repository $RepositoryName -AllowPrerelease -Force
 $RequiredModules = "$RollUpModule.Authentication"
 
 if($UpdateAutoRest) {
