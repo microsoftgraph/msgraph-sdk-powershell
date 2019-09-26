@@ -2,9 +2,7 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string[]] $Tags,
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.json"),
     [string] $ModuleVersion = "0.1.0",
     [int] $ModulePreviewNumber = -1,
     [string] $OpenApiBaseUrl = "https://graphslice.azurewebsites.net",
@@ -26,7 +24,6 @@ $AutoRestConfigYML = Join-Path $PSScriptRoot "..\config\AutoRestConfig.yml" -Res
 $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
-$DownloadOpenAPIDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenAPIDoc.ps1" -Resolve
 
 if(-not (Test-Path $DocOutputFolder)) {
     New-Item -Path $DocOutputFolder -Type Directory
@@ -35,6 +32,10 @@ $DocOutputFolder =  Join-Path $DocOutputFolder "" -Resolve
 
 if(-not (Test-Path $ArtifactsLocation)) {
     New-Item -Path $ArtifactsLocation -Type Directory
+}
+
+if(-not (Test-Path $ModuleMappingConfigPath)){
+    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
@@ -47,29 +48,32 @@ if($UpdateAutoRest) {
     & autorest-beta --reset
 }
 
-foreach($Tag in $Tags)
+[hashtable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashtable
+
+foreach($ModuleName in $ModuleMapping.Keys)
 {
     try {
         if(-not $UseLocalDoc)
         {
-            # Download OpenAPI docs by tags.
-            & $DownloadOpenAPIDocPS1 -Tag $Tag -OutputFolder $DocOutputFolder -OpenApiBaseUrl $OpenApiBaseUrl
+            $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}.*&title=$ModuleName&openapiversion=3&style=Powershell" -f $ModuleMapping[$ModuleName])
+            Write-Host -ForegroundColor Green "Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
+            Invoke-WebRequest $OpenApiServiceUrl -OutFile "$DocOutputFolder\$ModuleName.yml"
         }
 
         # Generate PowerShell modules.
-        Write-Host -ForegroundColor Green "Generating '$RollUpModule.$Tag' module..."
-        & autorest-beta --title:$Tag --docOutputFolder:$DocOutputFolder --rollUpModule:$RollUpModule $AutoRestConfigYML --verbose
+        Write-Host -ForegroundColor Green "Generating '$RollUpModule.$ModuleName' module..."
+        & autorest-beta --title:$ModuleName --docOutputFolder:$DocOutputFolder --rollUpModule:$RollUpModule $AutoRestConfigYML --verbose
         if($LastExitCode -ne 0){
-            Write-Error "Failed to generate '$Tag' module."
+            Write-Error "Failed to generate '$ModuleName' module."
         }
 
         # Manage generated module.
-        Write-Host -ForegroundColor Green "Managing '$RollUpModule.$Tag' module..."
-        & $ManageGeneratedModulePS1 -Module $Tag
+        Write-Host -ForegroundColor Green "Managing '$RollUpModule.$ModuleName' module..."
+        & $ManageGeneratedModulePS1 -Module $ModuleName
 
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
-        & $BuildAndPackBinaryModulePS1 -Module $Tag -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
+        & $BuildAndPackBinaryModulePS1 -Module $ModuleName -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
     }
     catch {
         Write-Error $_.Exception
@@ -78,6 +82,6 @@ foreach($Tag in $Tags)
 
 if ($Publish) {
     # Publish generated modules.
-    & $PublishModulePS1 -Modules $Tags -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    & $PublishModulePS1 -Modules $ModuleMapping.Keys -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
 Write-Host -ForegroundColor Green "-------------Done-------------"
