@@ -8,14 +8,14 @@ Manages generated modules by managing dependencies and configuring authenticatio
 The name of the module to manage.
 #>
 Param(
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$Module
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Module,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModuleNamespace,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $GraphVersion
 )
 $NugetPackagesToRemove = "Microsoft.CSharp"
-$AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Graph.Authentication.csproj"
-$GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$Module"
-$GeneratedModuleProj = Join-Path  $GeneratedModuleSlnDir "$Module\Graph.$Module.csproj"
+$AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
+$GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\$Module"
+$GeneratedModuleProj = Join-Path  $GeneratedModuleSlnDir "$Module\$ModuleNamespace.$Module.csproj"
 $CustomCodeDir = Join-Path $PSScriptRoot "\Custom\"
 
 # Create new solution for generated module project.

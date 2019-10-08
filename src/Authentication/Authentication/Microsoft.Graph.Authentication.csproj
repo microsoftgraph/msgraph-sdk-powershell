@@ -5,7 +5,7 @@
     <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AssemblyName>Graph.Authentication</AssemblyName>
+    <AssemblyName>Microsoft.Graph.Authentication</AssemblyName>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication</RootNamespace>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -14,7 +14,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <NuspecFile>Graph.Authentication.nuspec</NuspecFile>
+    <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.1.0-preview1</version>
-    <id>Graph.Authentication</id>
+    <version>0.1.1</version>
+    <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
@@ -17,11 +17,11 @@
     <dependencies />
   </metadata>
   <files>
-    <file src="Graph.Authentication.psd1" />
+    <file src="Microsoft.Graph.Authentication.psd1" />
     <!--<file src="Graph.Authentication.psm1" />-->
     <!-- https://github.com/NuGet/Home/issues/3584 -->
-    <file src="bin/Graph.Authentication.dll" target="bin" />
-    <file src="bin/Graph.Authentication.deps.json" target="bin" />
+    <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
+    <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
     <file src="bin/Microsoft.Identity.Client.dll" target="bin" />

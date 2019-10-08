@@ -1,21 +1,3 @@
 {
-    "AppCatalogs":"^appCatalogs\\",
-    "Security":"^Security\\",
-    "Planner": "^planner\\",
-    "Reports": "^reports\\",
-    "DeviceAppManagement": "^deviceAppManagement\\",
-    "Contracts": "^contracts\\",
-    "Devices": "^devices\\",
-    "DomainDnsRecords": "^domainDnsRecords\\",
-    "Domains": "^domains\\",
-    "GroupSettings": "^groupSettings*\\",
-    "IdentityProviders": "^identityProviders\\",
-    "Invitations": "^invitations\\",
-    "Organization": "^organization\\",
-    "SubscribedSkus": "^subscribedSkus\\",
-    "SchemaExtensions": "^schemaExtensions\\",
-    "GroupLifecyclePolicies": "^groupLifecyclePolicies\\",
-    "DataPolicyOperations" :"^dataPolicyOperations\\",
-    "Subscriptions":"^subscriptions\\",
-    "Teams":"^teams\\"
+    "Organization": "^organization\\"
 }
