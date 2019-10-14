@@ -9,9 +9,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System;
     using System.IO;
     using System.Linq;
-    using System.Security.Cryptography;
     using System.Security.Cryptography.X509Certificates;
-    using System.Threading.Tasks;
 
     internal static class AuthenticationHelpers
     {
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 lock (FileLock)
                 {
                     args.TokenCache.DeserializeMsalV3(File.Exists(tokenCachePath)
-                        ? ProtectedData.Unprotect(File.ReadAllBytes(tokenCachePath), null, DataProtectionScope.CurrentUser)
+                        ? File.ReadAllBytes(tokenCachePath)
                         : null);
                 }
             });
@@ -92,8 +90,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (args.HasStateChanged)
                     {
-                        File.WriteAllBytes(tokenCachePath,
-                            ProtectedData.Protect(args.TokenCache.SerializeMsalV3(), null, DataProtectionScope.CurrentUser));
+                        File.WriteAllBytes(tokenCachePath, args.TokenCache.SerializeMsalV3());
                     }
                 }
             });

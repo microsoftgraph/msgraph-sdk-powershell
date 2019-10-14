@@ -1,0 +1,694 @@
+openapi: 3.0.1
+info:
+  title: Identity.RoleManagement
+  version: v1.0-Beta
+servers:
+  - url: https://graph.microsoft.com/Beta/
+    description: Core
+paths:
+  /roleManagement:
+    get:
+      tags:
+        - roleManagement.roleManagement
+      summary: Get roleManagement
+      operationId: roleManagement.roleManagement_GetRoleManagement
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - directory
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - directory
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleManagement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.roleManagement
+      summary: Update roleManagement
+      operationId: roleManagement.roleManagement_UpdateRoleManagement
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleManagement'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directory from roleManagement
+      operationId: roleManagement_GetDirectory
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roleDefinitions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinitions
+                - roleAssignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property directory in roleManagement
+      operationId: roleManagement_UpdateDirectory
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory/roleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.directory_ListRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - principalId
+                - principalId desc
+                - resourceScope
+                - resourceScope desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - principalId
+                - resourceScope
+                - roleDefinitionId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleAssignments for roleManagement
+      operationId: roleManagement.directory_CreateRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.directory_GetRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: unifiedRoleAssignment-id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - principalId
+                - resourceScope
+                - roleDefinitionId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleAssignments in roleManagement
+      operationId: roleManagement.directory_UpdateRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: unifiedRoleAssignment-id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory/roleDefinitions:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.directory_ListRoleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleDefinitions for roleManagement
+      operationId: roleManagement.directory_CreateRoleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.directory_GetRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: unifiedRoleDefinition-id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleDefinitions in roleManagement
+      operationId: roleManagement.directory_UpdateRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: unifiedRoleDefinition-id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.roleManagement:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: roleManagement
+          type: object
+          properties:
+            directory:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+      example:
+        id: string (identifier)
+        directory:
+          '@odata.type': microsoft.graph.rbacApplication
+    microsoft.graph.rbacApplication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: rbacApplication
+          type: object
+          properties:
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+            roleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+      example:
+        id: string (identifier)
+        roleDefinitions:
+          - '@odata.type': microsoft.graph.unifiedRoleDefinition
+        roleAssignments:
+          - '@odata.type': microsoft.graph.unifiedRoleAssignment
+    microsoft.graph.unifiedRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleAssignment
+          type: object
+          properties:
+            principalId:
+              type: string
+              nullable: true
+            resourceScope:
+              type: string
+              nullable: true
+            roleDefinitionId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        principalId: string
+        resourceScope: string
+        roleDefinitionId: string
+    microsoft.graph.unifiedRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isBuiltIn:
+              type: boolean
+              nullable: true
+            isEnabled:
+              type: boolean
+              nullable: true
+            resourceScopes:
+              type: array
+              items:
+                type: string
+            rolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRolePermission'
+            templateId:
+              type: string
+              nullable: true
+            version:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        description: string
+        displayName: string
+        isBuiltIn: true
+        isEnabled: true
+        resourceScopes:
+          - string
+        rolePermissions:
+          - '@odata.type': microsoft.graph.unifiedRolePermission
+        templateId: string
+        version: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+      example:
+        id: string (identifier)
+    microsoft.graph.unifiedRolePermission:
+      title: unifiedRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+        condition:
+          type: string
+          nullable: true
+      example:
+        allowedResourceActions:
+          - string
+        condition: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

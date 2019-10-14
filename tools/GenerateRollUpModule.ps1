@@ -2,18 +2,24 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][collections.generic.list[string]] $RequiredModules,
     [string] $RepositoryApiKey,
     [string] $RepositoryName,
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $ModuleVersion = "0.1.0",
     [int] $ModulePreviewNumber = -1,
     [switch] $BetaGraphVersion,
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
+
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
+
+if(-not (Test-Path $ModuleMappingConfigPath)){
+    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
+}
+
 $LastExitCode = 0
 $ModuleNamespace = "Microsoft.Graph"
 $GraphVersion = "v1.0"
@@ -28,6 +34,8 @@ $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\$GraphVersion\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModuleNamespace"
 $RequiredGraphModules = New-Object collections.generic.list[string]
+[HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+[HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 
 # Import scripts
 . $NuspecHelperPS1
@@ -43,14 +51,11 @@ if(-not (Test-Path $GraphModuleLocation)) {
     New-Item -Path $GraphModuleLocation -Type Directory
 }
 
-if(-not ($RequiredModules.Contains("Authentication"))) {
-    $RequiredGraphModules.Add("Microsoft.Graph.Authentication")
-    Install-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease -Force
-}
+# Add auth module as a dependency.
+$RequiredGraphModules.Add("Microsoft.Graph.Authentication")
+Install-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease -Force
 
-[HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
-
-foreach($RequiredModule in $RequiredModules){
+foreach($RequiredModule in $ModuleMapping.Keys){
     # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
     # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
     Install-Module "$ModuleNamespace.$RequiredModule" -Repository $RepositoryName -AllowPrerelease -Force
@@ -59,7 +64,7 @@ foreach($RequiredModule in $RequiredModules){
 
 [HashTable]$ModuleManifestSettings = @{
     Path = "$GraphModuleLocation\$ModuleNamespace.psd1"
-    GUID = "585dcd71-ed77-4087-884b-7e41936961c2"
+    GUID = if ($BetaGraphVersion) { "1C7813EF-88D8-4A52-BE2C-E914E4331E7B" } else { "585dcd71-ed77-4087-884b-7e41936961c2" }
     CompatiblePSEditions = "Core", "Desktop"
     PowerShellVersion = "5.1"
     DotNetFrameworkVersion = "4.7.2"

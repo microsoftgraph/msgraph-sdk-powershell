@@ -1,0 +1,25 @@
+$TestRecordingFile = Join-Path $PSScriptRoot 'Remove-GroupLifecyclePolicyGroup.Recording.json'
+$currentPath = $PSScriptRoot
+while(-not $mockingPath) {
+    $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
+    $currentPath = Split-Path -Path $currentPath -Parent
+}
+. ($mockingPath | Select-Object -First 1).FullName
+
+Describe 'Remove-GroupLifecyclePolicyGroup' {
+    It 'RemoveExpanded' {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'Remove' {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'RemoveViaIdentityExpanded' {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'RemoveViaIdentity' {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+}

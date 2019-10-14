@@ -4,7 +4,7 @@
 Param(
     [string] $RepositoryApiKey,
     [string] $RepositoryName,
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.json"),
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $OpenApiBaseUrl = "https://graphslice.azurewebsites.net",
     [string] $DocOutputFolder = (Join-Path $PSScriptRoot "..\openApiDocs"),
     [string] $ModuleVersion = "0.1.0",

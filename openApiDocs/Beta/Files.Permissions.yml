@@ -1,0 +1,340 @@
+openapi: 3.0.1
+info:
+  title: Files.Permissions
+  version: v1.0-Beta
+servers:
+  - url: https://graph.microsoft.com/Beta/
+    description: Core
+paths:
+  '/groups/{group-id}/permissionGrants':
+    get:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Get permissionGrants from groups
+      operationId: groups_ListPermissionGrants
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - clientAppId
+                - clientAppId desc
+                - resourceAppId
+                - resourceAppId desc
+                - permissionType
+                - permissionType desc
+                - permission
+                - permission desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - clientAppId
+                - resourceAppId
+                - permissionType
+                - permission
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of resourceSpecificPermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Create new navigation property to permissionGrants for groups
+      operationId: groups_CreatePermissionGrants
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/permissionGrants/{resourceSpecificPermissionGrant-id}':
+    get:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Get permissionGrants from groups
+      operationId: groups_GetPermissionGrants
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: resourceSpecificPermissionGrant-id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - clientAppId
+                - resourceAppId
+                - permissionType
+                - permission
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.resourceSpecificPermissionGrant
+      summary: Update the navigation property permissionGrants in groups
+      operationId: groups_UpdatePermissionGrants
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: resourceSpecificPermissionGrant-id
+          in: path
+          description: 'key: resourceSpecificPermissionGrant-id of resourceSpecificPermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: resourceSpecificPermissionGrant
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientId:
+              type: string
+              nullable: true
+            clientAppId:
+              type: string
+              nullable: true
+            resourceAppId:
+              type: string
+              nullable: true
+            permissionType:
+              type: string
+              nullable: true
+            permission:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        clientId: string
+        clientAppId: string
+        resourceAppId: string
+        permissionType: string
+        permission: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+      example:
+        id: string (identifier)
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
