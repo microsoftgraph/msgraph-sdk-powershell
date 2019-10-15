@@ -76,25 +76,27 @@
     "Groups.Site": "^groups.site$",
     "Groups.ConversationThread": "^groups.conversationThread$",
 
-    // Fails to build.
+    // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
     // "Users.Drive": "^users.drive$",
     // "Users.User": "^users.user$|^users.presence$",
-    // "Users.Actions": "^users.Actions$",
-    // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Users.Groups": "^users.group$|^users.team$",
-    // "Groups.Actions": "^groups.Actions$",
-    // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    // "OnlineMeetings": "^app\\.",
-    // "Files.Drives": "^drives\\.|^drive\\.",
     // "Files.Shares": "^shares\\.",
-    // "Financials": "^financials\\.",
-    // "Identity.AccessReview": "^programs\\.|^programControls\\.",
+    // "Files.Drives": "^drives\\.|^drive\\.",
     // "Identity.Invitations": "^invitations\\.",
-    // "Identity.Protection": "^identityRiskEvents\\.|^impossibleTravelRiskEvents\\.|^leakedCredentialsRiskEvents\\.|^anonymousIpRiskEvents\\.|^suspiciousIpRiskEvents\\.|^unfamiliarLocationRiskEvents\\.|^malwareRiskEvents\\.",
-    // "Reports": "^reports\\.",
-    // "Security": "^Security\\.",
-    // "Sites": "^sites\\.",
     // "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
-    // "Workbooks": "^workbooks\\.",
     // "Groups.Drive": "^groups.drive$"
+
+    // Fails to build.
+    // // "Users.Actions": "^users.Actions$",
+    // // "Identity.Protection": "^identityRiskEvents\\.|^impossibleTravelRiskEvents\\.|^leakedCredentialsRiskEvents\\.|^anonymousIpRiskEvents\\.|^suspiciousIpRiskEvents\\.|^unfamiliarLocationRiskEvents\\.|^malwareRiskEvents\\.",
+    // // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
+    // // "Groups.Actions": "^groups.Actions$",
+    // // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
+    // // "OnlineMeetings": "^app\\.",
+    // // "Financials": "^financials\\.",
+    // // "Identity.AccessReview": "^programs\\.|^programControls\\.",
+    // // "Reports": "^reports\\.",
+    // // "Security": "^Security\\.",
+    // // "Sites": "^sites\\.", - Too Large
+    // // "Workbooks": "^workbooks\\.", - Too large
 }
