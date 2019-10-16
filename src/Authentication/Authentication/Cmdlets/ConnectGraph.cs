@@ -51,8 +51,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (ParameterSetName == Constants.UserParameterSet)
             {
-                // 5 mins timeout.
-                CancellationTokenSource cts = new CancellationTokenSource(Constants.MaxDeviceCodeTimeOut);
+                // 2 mins timeout. 1 min < HTTP timeout.
+                TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
+                CancellationTokenSource cts = new CancellationTokenSource(authTimeout);
                 cancellationToken = cts.Token;
 
                 authConfig.AuthType = AuthenticationType.Delegated;
