@@ -100,19 +100,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             catch (AuthenticationException authEx)
             {
                 if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
-                {
-                    Exception timeoutException = new Exception($"Device code terminal timeout after {Constants.MaxDeviceCodeTimeOut / 1000} seconds. Please try again.");
-                    WriteError(new ErrorRecord(timeoutException, Guid.NewGuid().ToString(), ErrorCategory.AuthenticationError, null));
-                }
+                    throw new Exception($"Device code terminal timeout after {Constants.MaxDeviceCodeTimeOut} seconds. Please try again.");
                 else
-                    WriteError(new ErrorRecord(authEx.InnerException ?? authEx, Guid.NewGuid().ToString(), ErrorCategory.AuthenticationError, null));
-
-                throw authEx.InnerException ?? authEx;
+                    throw authEx.InnerException ?? authEx;
             }
             catch (Exception ex)
             {
-                WriteError(new ErrorRecord(ex.InnerException ?? ex, Guid.NewGuid().ToString(), ErrorCategory.AuthenticationError, null));
-                throw ex;
+                throw ex.InnerException ?? ex;
             }
 
             WriteObject("Welcome To Microsoft Graph!");
