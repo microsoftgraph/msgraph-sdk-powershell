@@ -26,11 +26,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
         public string CertificateName { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3)]
+        [Parameter(Position = 3)]
         public string TenantId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 4)]
+        [Parameter(Position = 4)]
         public SwitchParameter ForceRefresh { get; set; }
+
         protected override void BeginProcessing()
         {
             validateParameters();
