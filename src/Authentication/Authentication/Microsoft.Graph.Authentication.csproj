@@ -19,9 +19,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.1" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="1.18.0" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.4.0" />
-    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.1.0-preview" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="1.17.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.3.1" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.1.0-preview" />
   </ItemGroup>
 </Project>
