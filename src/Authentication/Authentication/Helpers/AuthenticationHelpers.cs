@@ -6,10 +6,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Identity.Client;
-    using Microsoft.Identity.Client.Extensions.Msal;
     using System;
     using System.IO;
     using System.Linq;
+    using System.Security.Cryptography;
     using System.Security.Cryptography.X509Certificates;
 
     internal static class AuthenticationHelpers
@@ -32,14 +32,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                    .WithTenantId(authConfig.TenantId)
                    .Build();
 
-                StorageCreationProperties storageCacheProperty = new StorageCreationPropertiesBuilder(UserCacheFileName, CacheFilePath, authConfig.ClientId)
-                    .Build();
-
-                MsalCacheHelper msalCacheHelper = MsalCacheHelper.CreateAsync(storageCacheProperty)
-                    .GetAwaiter()
-                    .GetResult();
-
-                msalCacheHelper.RegisterCache(publicClientApp.UserTokenCache);
+                ConfigureTokenCache(publicClientApp.UserTokenCache, Path.Combine(CacheFilePath, UserCacheFileName));
                 return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
@@ -52,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 .WithCertificate(GetCertificate(authConfig.CertificateName))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, CacheFilePath + AppCacheFileName);
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, Path.Combine(CacheFilePath, AppCacheFileName));
                 return new ClientCredentialProvider(confidentialClientApp);
             }
         }
@@ -62,9 +55,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             lock (FileLock)
             {
                 if (authConfig.AuthType == AuthenticationType.Delegated)
-                    File.Delete($"{CacheFilePath}\\{UserCacheFileName}");
+                    File.Delete(Path.Combine(CacheFilePath, UserCacheFileName));
                 else
-                    File.Delete($"{CacheFilePath}\\{AppCacheFileName}");
+                    File.Delete(Path.Combine(CacheFilePath, AppCacheFileName));
             }
         }
 
