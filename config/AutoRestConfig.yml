@@ -45,25 +45,25 @@ directive:
       variant: GetViaIdentity1
     set:
       subject: GroupMemberOf
-# GetMemberWithLicenseError
+# GroupMemberWithLicenseError
   - where:
       verb: Get
       subject: GroupMember
       variant: Get
     set:
-      subject: GetMemberWithLicenseError
+      subject: GroupMemberWithLicenseError
   - where:
       verb: Get
       subject: GroupMember
       variant: List2
     set:
-      subject: GetMemberWithLicenseError
+      subject: GroupMemberWithLicenseError
   - where:
       verb: Get
       subject: GroupMember
       variant: GetViaIdentity
     set:
-      subject: GetMemberWithLicenseError
+      subject: GroupMemberWithLicenseError
 # GroupTransitiveMemberOf
   - where:
       verb: Get
