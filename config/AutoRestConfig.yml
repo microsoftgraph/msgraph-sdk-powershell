@@ -26,6 +26,63 @@ metadata:
   iconUri: https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png
   tags: Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;
 directive:
+# GroupMemberOf
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: Get1
+    set:
+      subject: GroupMemberOf
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: List
+    set:
+      subject: GroupMemberOf
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: GetViaIdentity1
+    set:
+      subject: GroupMemberOf
+# GetMemberWithLicenseError
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: Get
+    set:
+      subject: GetMemberWithLicenseError
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: List2
+    set:
+      subject: GetMemberWithLicenseError
+  - where:
+      verb: Get
+      subject: GroupMember
+      variant: GetViaIdentity
+    set:
+      subject: GetMemberWithLicenseError
+# GroupTransitiveMemberOf
+  - where:
+      verb: Get
+      subject: GroupTransitiveMember
+      variant: List
+    set:
+      subject: GroupTransitiveMemberOf
+  - where:
+      verb: Get
+      subject: GroupTransitiveMember
+      variant: Get
+    set:
+      subject: GroupTransitiveMemberOf
+  - where:
+      verb: Get
+      subject: GroupTransitiveMember
+      variant: GetViaIdentity
+    set:
+      subject: GroupTransitiveMemberOf
   - no-inline: # tells it not to inline the model with that name 
     - microsoft.graph.sharepointIds
     - microsoft.graph.identitySet

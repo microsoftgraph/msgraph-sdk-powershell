@@ -9,7 +9,7 @@ param(
 )
 $ErrorActionPreference = "Stop"
 
-$RepositoryPublishUrl = (Get-PSRepository -Name $RepositoryName).PublishLocation
+$RepositoryPublishUrl = (Get-PSRepository -Name $RepositoryName).SourceLocation
 
 foreach($Module in $Modules){
     # Get NuGet package to publish.
