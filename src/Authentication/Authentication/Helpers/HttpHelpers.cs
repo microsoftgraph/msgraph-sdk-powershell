@@ -5,6 +5,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Net.Http;
     using System.Reflection;
 
@@ -33,7 +35,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
             HttpClient httpClient = GraphClientFactory.Create(authProvider);
-            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.SdkVersionHeaderName, AuthModuleVersionHeaderValue);
+            // Prepend new SDKVersionHeaders
+            IEnumerable<string> previousSDKHeaders = httpClient.DefaultRequestHeaders.GetValues(CoreConstants.Headers.SdkVersionHeaderName);
+            httpClient.DefaultRequestHeaders.Remove(CoreConstants.Headers.SdkVersionHeaderName);
+            httpClient.DefaultRequestHeaders.Add(CoreConstants.Headers.SdkVersionHeaderName, previousSDKHeaders.Prepend(AuthModuleVersionHeaderValue));
+
             return httpClient;
         }
     }

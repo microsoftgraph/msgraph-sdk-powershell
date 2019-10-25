@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             catch (AuthenticationException authEx)
             {
                 if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
-                    throw new Exception($"Device code terminal timeout after {Constants.MaxDeviceCodeTimeOut} seconds. Please try again.");
+                    throw new Exception($"Device code terminal timed-out after {Constants.MaxDeviceCodeTimeOut} seconds. Please try again.");
                 else
                     throw authEx.InnerException ?? authEx;
             }
