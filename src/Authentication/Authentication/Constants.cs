@@ -6,5 +6,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
     public static class Constants
     {
         public const string GraphAuthConfigId = "GraphAuthConfigId";
+        public const string SDKHeaderValue = "Graph-powershell-{0}-{1}.{2}.{3}";
+        internal const string UserParameterSet = "UserParameterSet";
+        internal const string AppParameterSet = "AppParameterSet";
+        internal static readonly int MaxDeviceCodeTimeOut = 120; // 2 mins timeout.
     }
 }

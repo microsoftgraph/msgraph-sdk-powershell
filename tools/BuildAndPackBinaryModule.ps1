@@ -1,15 +1,11 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $Module,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $ArtifactsLocation,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string] $ModuleVersion,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleNamespace,
+    [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [int] $ModulePreviewNumber = -1,
     [string[]] $RequiredModules
 )
@@ -20,10 +16,14 @@ if($PSEdition -ne "Core") {
 
 $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
+if($PSCmdlet.ParameterSetName -eq "GraphResource"){
+    $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$GraphVersion/$Module/$Module"
+}
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
-$ModuleManifest = Join-Path $ModuleProjLocation "Graph.$Module.psd1"
-$ModuleNuspec = Join-Path $ModuleProjLocation "Graph.$Module.nuspec"
+$ModuleManifest = Join-Path $ModuleProjLocation "$ModuleNamespace.$Module.psd1"
+$ModuleNuspec = Join-Path $ModuleProjLocation "$ModuleNamespace.$Module.nuspec"
+[HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 
 # Import scripts
 . $NuspecHelperPS1
@@ -39,22 +39,32 @@ if($LastExitCode -ne 0) {
     Write-Error "Failed to build '$Module' module."
 }
 
-Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
+[HashTable]$ModuleManifestSettings = @{
+    Path = $ModuleManifest
+    FunctionsToExport = "*"
+    ModuleVersion = $ModuleVersion
+    IconUri = $NuspecMetadata["iconUri"]
+}
+$FullVersionNumber = $ModuleVersion
+
 if($ModulePreviewNumber -ge 0){
     if($RequiredModules.Count -gt 0) {
-        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules -Prerelease "preview$ModulePreviewNumber"
+        # Prerelease is only supported in PowerShell 7 (preview) and above.
+        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
+        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
     } else {
-        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -Prerelease "preview$ModulePreviewNumber"
+        $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
     }
-    Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber "$ModuleVersion-preview$ModulePreviewNumber" -Dependencies $RequiredModules
+    $FullVersionNumber = "$ModuleVersion-preview$ModulePreviewNumber"
 } else {
     if($RequiredModules.Count -gt 0) {
-        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion -RequiredModules $RequiredModules
-    } else {
-        Update-ModuleManifest -Path $ModuleManifest -FunctionsToExport "*" -ModuleVersion $ModuleVersion
+        $ModuleManifestSettings["RequiredModules"] = $RequiredModules
     }
-    Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $ModuleVersion -Dependencies $RequiredModules
 }
+
+Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
+Update-ModuleManifest @ModuleManifestSettings
+Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"]
 
 # Pack module
 & $PackModulePS1

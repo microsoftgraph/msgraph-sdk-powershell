@@ -1,10 +1,10 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
-    [string] $ModuleVersion = "0.1.0",
-    [int] $ModulePreviewNumber = -1,
     [string] $RepositoryName,
     [string] $RepositoryApiKey,
+    [string] $ModuleVersion = "0.1.0",
+    [int] $ModulePreviewNumber = -1,
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
@@ -16,8 +16,8 @@ $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModu
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 
-& $BuildAndPackBinaryModulePS1 -Module "Authentication" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+& $BuildAndPackBinaryModulePS1 -Module "Authentication" -ModuleNamespace "Microsoft.Graph" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
 
 if ($Publish) {
-    & $PublishModulePS1 -Modules "Authentication" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    & $PublishModulePS1 -Modules "Authentication" -ModuleNamespace "Microsoft.Graph" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }

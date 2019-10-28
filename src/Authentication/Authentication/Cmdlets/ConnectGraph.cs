@@ -10,27 +10,28 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Collections.Generic;
     using System.Management.Automation;
     using System.Net.Http;
-    
-    [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = UserParameterSet)]
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
     public class ConnectGraph : PSCmdlet
     {
-        private const string UserParameterSet = "UserParameterSet";
-        private const string AppParameterSet = "AppParameterSet";
 
-        [Parameter(ParameterSetName = UserParameterSet, Position = 1)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1)]
         public string[] Scopes { get; set; }
 
-        [Parameter(ParameterSetName = AppParameterSet, Position = 1, Mandatory = true)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true)]
         public string ClientId { get; set; }
 
-        [Parameter(ParameterSetName = AppParameterSet, Position = 2)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
         public string CertificateName { get; set; }
 
-        [Parameter(ParameterSetName = AppParameterSet, Position = 3)]
+        [Parameter(Position = 3)]
         public string TenantId { get; set; }
 
-        [Parameter(ParameterSetName = AppParameterSet, Position = 4)]
+        [Parameter(Position = 4)]
         public SwitchParameter ForceRefresh { get; set; }
+
         protected override void BeginProcessing()
         {
             validateParameters();
@@ -47,9 +48,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
 
             AuthConfig authConfig = new AuthConfig { TenantId = TenantId };
+            CancellationToken cancellationToken = CancellationToken.None;
 
-            if (ParameterSetName == UserParameterSet)
+            if (ParameterSetName == Constants.UserParameterSet)
             {
+                // 2 mins timeout. 1 min < HTTP timeout.
+                TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
+                CancellationTokenSource cts = new CancellationTokenSource(authTimeout);
+                cancellationToken = cts.Token;
+
                 authConfig.AuthType = AuthenticationType.Delegated;
                 authConfig.Scopes = Scopes ?? new string[] { "User.Read" };
             }
@@ -70,6 +77,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 // Incremental scope consent without re-instanciating the auth provider. We will use a static instance.
                 GraphRequestContext graphRequestContext = new GraphRequestContext();
+                graphRequestContext.CancellationToken = cancellationToken;
                 graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
                 {
                     {
@@ -90,10 +98,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // Trigger consent.
                 authProvider.AuthenticateRequestAsync(httpRequestMessage).GetAwaiter().GetResult();
             }
+            catch (AuthenticationException authEx)
+            {
+                if ((authEx.InnerException is TaskCanceledException) && cancellationToken.IsCancellationRequested)
+                    throw new Exception($"Device code terminal timed-out after {Constants.MaxDeviceCodeTimeOut} seconds. Please try again.");
+                else
+                    throw authEx.InnerException ?? authEx;
+            }
             catch (Exception ex)
             {
-                WriteError(new ErrorRecord(ex.InnerException ?? ex, Guid.NewGuid().ToString(), ErrorCategory.AuthenticationError, null));
-                throw ex;
+                throw ex.InnerException ?? ex;
             }
 
             WriteObject("Welcome To Microsoft Graph!");
@@ -108,7 +122,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private void validateParameters()
         {
-            if (ParameterSetName == AppParameterSet)
+            if (ParameterSetName == Constants.AppParameterSet)
             {
                 // Client Id
                 if (string.IsNullOrEmpty(ClientId))

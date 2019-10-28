@@ -11,7 +11,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Linq;
     using System.Security.Cryptography;
     using System.Security.Cryptography.X509Certificates;
-    using System.Threading.Tasks;
 
     internal static class AuthenticationHelpers
     {
@@ -19,49 +18,35 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static readonly string UserCacheFileName = "userTokenCache.bin3";
         private static readonly string AppCacheFileName = "appTokenCache.bin3";
 
-        private static DeviceCodeProvider UserAuthProvider = null;
-        private static ClientCredentialProvider AppAuthProvider = null;
-
         /// <summary>
         /// Path to the token cache.
         /// </summary>
-        internal static readonly string CacheFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        internal static readonly string CacheFilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         internal static IAuthenticationProvider GetAuthProvider(AuthConfig authConfig)
         {
             if (authConfig.AuthType == AuthenticationType.Delegated)
             {
-                if (UserAuthProvider == null)
-                { 
-                    IPublicClientApplication clientApp = PublicClientApplicationBuilder
-                    .Create(authConfig.ClientId)
-                    .WithTenantId(authConfig.TenantId)
-                    .Build();
+                IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
+                   .Create(authConfig.ClientId)
+                   .WithTenantId(authConfig.TenantId)
+                   .Build();
 
-                    ConfigureTokenCache(clientApp.UserTokenCache, CacheFilePath + UserCacheFileName);
-                    UserAuthProvider = new DeviceCodeProvider(clientApp, authConfig.Scopes);
-                }
-                return UserAuthProvider;
+                ConfigureTokenCache(publicClientApp.UserTokenCache, Path.Combine(CacheFilePath, UserCacheFileName));
+                return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
+                    await Console.Out.WriteLineAsync(result.Message);
+                });
             }
             else
             {
-                if (AppAuthProvider == null ||
-                AppAuthProvider.ClientApplication.AppConfig.ClientId != authConfig.ClientId ||
-                AppAuthProvider.ClientApplication.AppConfig.TenantId != authConfig.TenantId ||
-                AppAuthProvider.ClientApplication.AppConfig.ClientCredentialCertificate?.SubjectName.Name != authConfig.CertificateName)
-                {
-                    X509Certificate2 certificate = GetCertificate(authConfig.CertificateName);
+                IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
+                .Create(authConfig.ClientId)
+                .WithTenantId(authConfig.TenantId)
+                .WithCertificate(GetCertificate(authConfig.CertificateName))
+                .Build();
 
-                    IConfidentialClientApplication clientApp = ConfidentialClientApplicationBuilder
-                    .Create(authConfig.ClientId)
-                    .WithTenantId(authConfig.TenantId)
-                    .WithCertificate(certificate)
-                    .Build();
-
-                    ConfigureTokenCache(clientApp.AppTokenCache, CacheFilePath + AppCacheFileName);
-                    AppAuthProvider = new ClientCredentialProvider(clientApp);
-                }
-                return AppAuthProvider;
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, Path.Combine(CacheFilePath, AppCacheFileName));
+                return new ClientCredentialProvider(confidentialClientApp);
             }
         }
 
@@ -70,9 +55,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             lock (FileLock)
             {
                 if (authConfig.AuthType == AuthenticationType.Delegated)
-                    File.Delete(CacheFilePath + UserCacheFileName);
-
-                File.Delete(CacheFilePath + AppCacheFileName);
+                    File.Delete(Path.Combine(CacheFilePath, UserCacheFileName));
+                else
+                    File.Delete(Path.Combine(CacheFilePath, AppCacheFileName));
             }
         }
 
@@ -82,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 lock (FileLock)
                 {
                     args.TokenCache.DeserializeMsalV3(File.Exists(tokenCachePath)
-                        ? ProtectedData.Unprotect(File.ReadAllBytes(tokenCachePath), null, DataProtectionScope.CurrentUser)
+                        ? File.ReadAllBytes(tokenCachePath)
                         : null);
                 }
             });
@@ -92,8 +77,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (args.HasStateChanged)
                     {
-                        File.WriteAllBytes(tokenCachePath,
-                            ProtectedData.Protect(args.TokenCache.SerializeMsalV3(), null, DataProtectionScope.CurrentUser));
+                        File.WriteAllBytes(tokenCachePath, args.TokenCache.SerializeMsalV3());
                     }
                 }
             });
