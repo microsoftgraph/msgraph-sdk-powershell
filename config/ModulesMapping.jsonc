@@ -75,6 +75,15 @@
     "Groups.Planner": "^groups.plannerGroup$",
     "Groups.Site": "^groups.site$",
     "Groups.ConversationThread": "^groups.conversationThread$",
+    "Sites.Site": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$",
+    "Sites.List": "^sites.list$",
+    "Sites.Drive": "^sites.drive$",
+    "Sites.Pages": "^sites.sitePage$",
+    "Sites.OneNote": "^sites.onenote$",
+
+    // Contains Duplicate Cmdlet
+    // "Sites.Functions": "^sites.Functions$",
+    // "Sites.Actions": "^sites.Actions$",
 
     // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
     // "Users.Drive": "^users.drive$",
@@ -92,11 +101,13 @@
     // // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // // "Groups.Actions": "^groups.Actions$",
     // // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    // // "OnlineMeetings": "^app\\.",
     // // "Financials": "^financials\\.",
     // // "Identity.AccessReview": "^programs\\.|^programControls\\.",
     // // "Reports": "^reports\\.",
     // // "Security": "^Security\\.",
-    // // "Sites": "^sites\\.", - Too Large
     // // "Workbooks": "^workbooks\\.", - Too large
+
+    // Invalid / No longer supported
+    // // "Sites.ListItem": "^sites.baseItem$",
+    // // "OnlineMeetings": "^app\\.",
 }
