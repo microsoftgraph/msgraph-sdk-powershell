@@ -153,3 +153,9 @@ directive:
       variant: CreateViaIdentityExpanded
     set:
       subject: SubSite
+# GetReportTenantSecureScore (Reports)
+  - where:
+      verb: Get
+      subject: ReportTenantSecureScore
+      variant: GetViaIdentity
+    remove: true
