@@ -68,7 +68,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     args.TokenCache.DeserializeMsalV3(File.Exists(tokenCachePath)
                         ? File.ReadAllBytes(tokenCachePath)
-                        : null);
+                        : null,
+                        shouldClearExistingCache: true);
                 }
             });
 

@@ -26,7 +26,22 @@ metadata:
   iconUri: https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png
   tags: Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;
 directive:
-# GroupMemberOf
+  - no-inline: # tells it not to inline the model with that name 
+    - microsoft.graph.sharepointIds
+    - microsoft.graph.identitySet
+    - microsoft.graph.itemReference
+    - microsoft.graph.directoryObject
+    - microsoft.graph.user
+    - microsoft.graph.drive
+    - microsoft.graph.listItem
+    - microsoft.graph.post
+    - microsoft.graph.sectionGroup
+    - microsoft.graph.team
+# Modify OpenAPI doc - Add suffix 'fn' to Sites.Functions cmdlets to avoid duplicates.
+  - from: Sites.Functions.yml
+    where: $.paths.*
+    transform: $.get.operationId = `${$.get.operationId}Fn`
+# GroupMemberOf (Groups.DirectoryObject)
   - where:
       verb: Get
       subject: GroupMember
@@ -45,7 +60,7 @@ directive:
       variant: GetViaIdentity1
     set:
       subject: GroupMemberOf
-# GroupMemberWithLicenseError
+# GroupMemberWithLicenseError (Groups.DirectoryObject)
   - where:
       verb: Get
       subject: GroupMember
@@ -64,7 +79,7 @@ directive:
       variant: GetViaIdentity
     set:
       subject: GroupMemberWithLicenseError
-# GroupTransitiveMemberOf
+# GroupTransitiveMemberOf (Groups.DirectoryObject)
   - where:
       verb: Get
       subject: GroupTransitiveMember
@@ -83,8 +98,64 @@ directive:
       variant: GetViaIdentity
     set:
       subject: GroupTransitiveMemberOf
-  - no-inline: # tells it not to inline the model with that name 
-    - microsoft.graph.sharepointIds
-    - microsoft.graph.identitySet
-    - microsoft.graph.itemReference
-    - microsoft.graph.directoryObject
+# RemoveSite (Sites.Actions)
+  - where:
+      verb: Remove
+      subject: Site
+      variant: Remove
+    hide: true
+  - where:
+      verb: Remove
+      subject: Site
+      variant: RemoveExpanded
+    hide: true
+# GetSite (Sites.Site)
+  - where:
+      verb: Get
+      subject: Site
+      variant: Get1
+    set:
+      subject: SubSite
+  - where:
+      verb: Get
+      subject: Site
+      variant: List1
+    set:
+      subject: SubSite
+  - where:
+      verb: Get
+      subject: Site
+      variant: GetViaIdentity1
+    set:
+      subject: SubSite
+# NewSite (Sites.Site)
+  - where:
+      verb: New
+      subject: Site
+      variant: Create1
+    set:
+      subject: SubSite
+  - where:
+      verb: New
+      subject: Site
+      variant: CreateExpanded1
+    set:
+      subject: SubSite
+  - where:
+      verb: New
+      subject: Site
+      variant: CreateViaIdentity
+    set:
+      subject: SubSite
+  - where:
+      verb: New
+      subject: Site
+      variant: CreateViaIdentityExpanded
+    set:
+      subject: SubSite
+# GetReportTenantSecureScore (Reports)
+  - where:
+      verb: Get
+      subject: ReportTenantSecureScore
+      variant: GetViaIdentity
+    remove: true

@@ -25,7 +25,7 @@
     "Identity.OnPremisesPublishingProfiles": "^onPremisesPublishingProfiles\\.",
     "Identity.OrganizationContacts": "^contacts\\.",
     "Identity.Policies": "^policies\\.",
-    "Identity.RoleManagement": "^roleManagement\\.",
+    // "Identity.RoleManagement": "^roleManagement\\.", // Fails with staging beta
     "Identity.ServicePrincipal": "^servicePrincipals\\.",
     "Identity.SubscribedSkus": "^subscribedSkus\\.",
     "Identity.TermsOfUse": "^agreements\\.|^agreementAcceptances\\.|^users.agreementAcceptance$",
@@ -75,16 +75,24 @@
     "Groups.Planner": "^groups.plannerGroup$",
     "Groups.Site": "^groups.site$",
     "Groups.ConversationThread": "^groups.conversationThread$",
+    "Sites.Site": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$",
+    "Sites.List": "^sites.list$",
+    "Sites.Drive": "^sites.drive$",
+    "Sites.Pages": "^sites.sitePage$",
+    "Sites.OneNote": "^sites.onenote$",
+    // // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
+    "Users.Drive": "^users.drive$",
+    "Users.User": "^users.user$|^users.presence$",
+    "Users.Groups": "^users.group$|^users.team$",
+    "Files.Shares": "^shares\\.",
+    "Files.Drives": "^drives\\.|^drive\\.",
+    "Identity.Invitations": "^invitations\\.",
+    "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
+    "Groups.Drive": "^groups.drive$"
 
-    // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
-    // "Users.Drive": "^users.drive$",
-    // "Users.User": "^users.user$|^users.presence$",
-    // "Users.Groups": "^users.group$|^users.team$",
-    // "Files.Shares": "^shares\\.",
-    // "Files.Drives": "^drives\\.|^drive\\.",
-    // "Identity.Invitations": "^invitations\\.",
-    // "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
-    // "Groups.Drive": "^groups.drive$"
+    // Contains Duplicate Cmdlet
+    // "Sites.Functions": "^sites.Functions$",
+    // "Sites.Actions": "^sites.Actions$",
 
     // Fails to build.
     // // "Users.Actions": "^users.Actions$",
@@ -92,11 +100,13 @@
     // // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // // "Groups.Actions": "^groups.Actions$",
     // // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    // // "OnlineMeetings": "^app\\.",
     // // "Financials": "^financials\\.",
     // // "Identity.AccessReview": "^programs\\.|^programControls\\.",
     // // "Reports": "^reports\\.",
     // // "Security": "^Security\\.",
-    // // "Sites": "^sites\\.", - Too Large
     // // "Workbooks": "^workbooks\\.", - Too large
+
+    // Invalid / No longer supported
+    // // "Sites.ListItem": "^sites.baseItem$",
+    // // "OnlineMeetings": "^app\\.",
 }

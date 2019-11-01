@@ -1,0 +1,329 @@
+openapi: 3.0.1
+info:
+  title: Users.InformationProtection
+  version: v1.0-StagingBeta
+servers:
+  - url: https://graph.microsoft.com/StagingBeta/
+    description: Core
+paths:
+  '/users/{user-id}/informationProtection':
+    get:
+      tags:
+        - users.informationProtection
+      summary: Get informationProtection from users
+      operationId: users_GetInformationProtection
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - policy
+                - sensitivityLabels
+                - sensitivityPolicySettings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - policy
+                - sensitivityLabels
+                - sensitivityPolicySettings
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.informationProtection'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.informationProtection
+      summary: Update the navigation property informationProtection in users
+      operationId: users_UpdateInformationProtection
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.informationProtection'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.informationProtection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtection
+          type: object
+          properties:
+            policy:
+              $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+            sensitivityPolicySettings:
+              $ref: '#/components/schemas/microsoft.graph.sensitivityPolicySettings'
+      example:
+        id: string (identifier)
+        policy:
+          '@odata.type': microsoft.graph.informationProtectionPolicy
+        sensitivityLabels:
+          - '@odata.type': microsoft.graph.sensitivityLabel
+        sensitivityPolicySettings:
+          '@odata.type': microsoft.graph.sensitivityPolicySettings
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+      example:
+        id: string (identifier)
+    microsoft.graph.informationProtectionPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicy
+          type: object
+          properties:
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
+      example:
+        id: string (identifier)
+        labels:
+          - '@odata.type': microsoft.graph.informationProtectionLabel
+    microsoft.graph.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            name:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            toolTip:
+              type: string
+              nullable: true
+            isEndpointProtectionEnabled:
+              type: boolean
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            applicationMode:
+              $ref: '#/components/schemas/microsoft.graph.applicationMode'
+            labelActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelActionBase'
+            assignedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.labelPolicy'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            sublabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
+      example:
+        id: string (identifier)
+        name: string
+        displayName: string
+        description: string
+        toolTip: string
+        isEndpointProtectionEnabled: true
+        isDefault: true
+        applicationMode:
+          '@odata.type': microsoft.graph.applicationMode
+        labelActions:
+          - '@odata.type': microsoft.graph.labelActionBase
+        assignedPolicies:
+          - '@odata.type': microsoft.graph.labelPolicy
+        priority: integer
+        sublabels:
+          - '@odata.type': microsoft.graph.sensitivityLabel
+    microsoft.graph.sensitivityPolicySettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityPolicySettings
+          type: object
+          properties:
+            isMandatory:
+              type: boolean
+              nullable: true
+            helpWebUrl:
+              type: string
+              nullable: true
+            downgradeSensitivityRequiresJustification:
+              type: boolean
+              nullable: true
+      example:
+        id: string (identifier)
+        isMandatory: true
+        helpWebUrl: string
+        downgradeSensitivityRequiresJustification: true
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.informationProtectionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionLabel
+          type: object
+          properties:
+            name:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            color:
+              type: string
+              nullable: true
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+      example:
+        id: string (identifier)
+        name: string
+        description: string
+        color: string
+        sensitivity: integer
+        tooltip: string
+        isActive: true
+    microsoft.graph.applicationMode:
+      title: applicationMode
+      enum:
+        - manual
+        - automatic
+        - recommended
+      type: string
+    microsoft.graph.labelActionBase:
+      title: labelActionBase
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      example:
+        name: string
+    microsoft.graph.labelPolicy:
+      title: labelPolicy
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+          nullable: true
+      example:
+        id: string
+        name: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
