@@ -25,7 +25,7 @@
     "Identity.OnPremisesPublishingProfiles": "^onPremisesPublishingProfiles\\.",
     "Identity.OrganizationContacts": "^contacts\\.",
     "Identity.Policies": "^policies\\.",
-    // // "Identity.RoleManagement": "^roleManagement\\.",
+    // "Identity.RoleManagement": "^roleManagement\\.", // Fails with staging beta
     "Identity.ServicePrincipal": "^servicePrincipals\\.",
     "Identity.SubscribedSkus": "^subscribedSkus\\.",
     "Identity.TermsOfUse": "^agreements\\.|^agreementAcceptances\\.|^users.agreementAcceptance$",
@@ -79,9 +79,8 @@
     "Sites.List": "^sites.list$",
     "Sites.Drive": "^sites.drive$",
     "Sites.Pages": "^sites.sitePage$",
-    "Sites.OneNote": "^sites.onenote$",    
-
-    // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
+    "Sites.OneNote": "^sites.onenote$",
+    // // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
     "Users.Drive": "^users.drive$",
     "Users.User": "^users.user$|^users.presence$",
     "Users.Groups": "^users.group$|^users.team$",
