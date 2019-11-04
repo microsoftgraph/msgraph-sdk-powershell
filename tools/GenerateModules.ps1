@@ -64,7 +64,7 @@ foreach($ModuleName in $ModuleMapping.Keys)
     try {
         if(-not $UseLocalDoc)
         {
-            $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=stagingbeta" -f $ModuleMapping[$ModuleName])
+            $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=$GraphVersion" -f $ModuleMapping[$ModuleName])
 
             Write-Host -ForegroundColor Green "Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
             Invoke-WebRequest $OpenApiServiceUrl -OutFile "$DocOutputFolder\$ModuleName.yml"
