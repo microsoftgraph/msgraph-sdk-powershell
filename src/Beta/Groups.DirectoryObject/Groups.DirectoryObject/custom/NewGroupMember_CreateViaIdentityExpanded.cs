@@ -33,17 +33,6 @@ namespace Microsoft.Graph.PowerShell.Cmdlets
         /// <summary>The reference to the client API class.</summary>
         public GroupsDirectoryObject Client => Module.Instance.ClientAPI;
 
-        /// <summary>HELP MESSAGE MISSING</summary>
-        [System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "HELP MESSAGE MISSING")]
-        [Category(ParameterCategory.Body)]
-        [Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"HELP MESSAGE MISSING",
-        SerializedName = @"deletedDateTime",
-        PossibleTypes = new [] { typeof(System.DateTime) })]
-        public System.DateTime DeletedDateTime { get => BodyParameterBody.DeletedDateTime ?? default(System.DateTime); set => BodyParameterBody.DeletedDateTime = value; }
-
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
         [System.Management.Automation.ValidateNotNull]
@@ -62,10 +51,10 @@ namespace Microsoft.Graph.PowerShell.Cmdlets
         [Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"HELP MESSAGE MISSING",
+        Description = @"id of directoryObject",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(string) })]
-        public string Id { get => BodyParameterBody.Id ?? null; set => BodyParameterBody.Id = value; }
+        public string DirectoryObjectId { get => BodyParameterBody.Id ?? null; set => BodyParameterBody.Id = value; }
 
         /// <summary>Backing field for <see cref="InputObject" /> property.</summary>
         private Models.IGroupsDirectoryObjectIdentity _inputObject;

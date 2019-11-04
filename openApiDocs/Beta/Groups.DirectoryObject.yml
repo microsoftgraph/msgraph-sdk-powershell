@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.DirectoryObject
-  version: v1.0-stagingbeta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/stagingbeta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/groups/{group-id}/acceptedSenders':
