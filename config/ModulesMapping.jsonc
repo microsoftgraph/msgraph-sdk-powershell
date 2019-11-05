@@ -80,7 +80,7 @@
     "Sites.Drive": "^sites.drive$",
     "Sites.Pages": "^sites.sitePage$",
     "Sites.OneNote": "^sites.onenote$",
-    // // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
+    // Requires manual sanitization of OpenAPI doc - Remove #/components/schemas/microsoft.graph.baseItem:createdByUser & #/components/schemas/microsoft.graph.baseItem:lastModifiedByUser
     "Users.Drive": "^users.drive$",
     "Users.User": "^users.user$|^users.presence$",
     "Users.Groups": "^users.group$|^users.team$",
