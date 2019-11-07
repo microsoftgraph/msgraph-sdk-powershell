@@ -37,6 +37,81 @@ directive:
     - microsoft.graph.post
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
+  - where:
+      model-name: MicrosoftGraphUser
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - Mail
+          - UserPrincipalName
+          - UserType
+  - where:
+      model-name: MicrosoftGraphCalendar
+    set:
+      format-table:
+        properties:
+          - Id
+          - Name
+          - OwnerName
+          - OwnerAddress
+  - where:
+      model-name: MicrosoftGraphEvent
+    set:
+      format-table:
+        properties:
+          - Id
+          - Subject
+          - StartDateTime
+          - StartTimeZone
+          - EndDateTime
+          - EndTimeZone
+  - where:
+      model-name: MicrosoftGraphContact
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - EmailAddresses
+          - Phones
+          - CreatedDateTime
+  - where:
+      model-name: MicrosoftGraphDrive
+    set:
+      format-table:
+        properties:
+          - Id
+          - Name
+          - DriveType
+          - CreatedDateTime
+  - where:
+      model-name: MicrosoftGraphSite
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - SiteCollectionHostname
+          - WebUrl
+  - where:
+      model-name: MicrosoftGraphGroup
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - AccessType
+  - where:
+      model-name: MicrosoftGraphTeam
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - Description
+          - IsArchived
 # Modify OpenAPI doc - Add suffix 'fn' to Sites.Functions cmdlets to avoid duplicates.
   - from: Sites.Functions.yml
     where: $.paths.*

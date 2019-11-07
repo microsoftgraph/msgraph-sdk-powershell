@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Beta.Users.OutlookUser", "Users.OutlookUser\Microsoft.Graph.Beta.Users.OutlookUser.csproj", "{E8BDD26F-913B-4329-85A4-62ADA50A929D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Beta.Users.OutlookUser", "Users.OutlookUser\Microsoft.Graph.Beta.Users.OutlookUser.csproj", "{F6041BFE-92A4-4128-9921-3268201023C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|x64.Build.0 = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Debug|x86.Build.0 = Debug|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|x64.ActiveCfg = Release|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|x64.Build.0 = Release|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|x86.ActiveCfg = Release|Any CPU
-		{E8BDD26F-913B-4329-85A4-62ADA50A929D}.Release|x86.Build.0 = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|x64.Build.0 = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Debug|x86.Build.0 = Debug|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|x64.ActiveCfg = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|x64.Build.0 = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6041BFE-92A4-4128-9921-3268201023C4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
