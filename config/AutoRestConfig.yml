@@ -48,6 +48,26 @@ directive:
           - UserPrincipalName
           - UserType
   - where:
+      model-name: MicrosoftGraphPerson
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - MailboxType
+          - PersonType
+          - IsFavorite
+  - where:
+      model-name: MicrosoftGraphContact
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - EmailAddresses
+          - Phones
+          - CreatedDateTime
+  - where:
       model-name: MicrosoftGraphCalendar
     set:
       format-table:
@@ -68,16 +88,6 @@ directive:
           - EndDateTime
           - EndTimeZone
   - where:
-      model-name: MicrosoftGraphContact
-    set:
-      format-table:
-        properties:
-          - Id
-          - DisplayName
-          - EmailAddresses
-          - Phones
-          - CreatedDateTime
-  - where:
       model-name: MicrosoftGraphDrive
     set:
       format-table:
@@ -87,12 +97,34 @@ directive:
           - DriveType
           - CreatedDateTime
   - where:
+      model-name: MicrosoftGraphDriveItem
+    set:
+      format-table:
+        properties:
+          - Id
+          - Name
+          - WebUrl
+          - FolderChildCount
+          - Size
+          - CreatedDateTime
+  - where:
+      model-name: MicrosoftGraphList
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - Name
+          - WebUrl
+          - CreatedDateTime
+  - where:
       model-name: MicrosoftGraphSite
     set:
       format-table:
         properties:
           - Id
           - DisplayName
+          - Name
           - SiteCollectionHostname
           - WebUrl
   - where:
@@ -102,7 +134,8 @@ directive:
         properties:
           - Id
           - DisplayName
-          - AccessType
+          - Description
+          - GroupTypes
   - where:
       model-name: MicrosoftGraphTeam
     set:
@@ -112,6 +145,127 @@ directive:
           - DisplayName
           - Description
           - IsArchived
+  - where:
+      model-name: MicrosoftGraphMessage
+    set:
+      format-table:
+        properties:
+          - Id
+          - Subject
+          - FromEmailAddressAddress
+          - ReceivedDateTime
+          - BodyContentType
+          - hasAttachments
+  - where:
+      model-name: MicrosoftGraphNotebook
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - CreatedDateTime
+          - IsShared
+          - IsDefault
+  - where:
+      model-name: MicrosoftGraphSectionGroup
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - CreatedDateTime
+          - ParentNotebookDisplayName
+          - IsDefault
+  - where:
+      model-name: MicrosoftGraphConversation
+    set:
+      format-table:
+        properties:
+          - Id
+          - Topic
+          - UniqueSenders
+          - HasAttachments
+          - Threads
+          - LastDeliveredDateTime
+  - where:
+      model-name: MicrosoftGraphConversationThread
+    set:
+      format-table:
+        properties:
+          - Id
+          - Topic
+          - UniqueSenders
+          - HasAttachments
+          - Posts
+          - LastDeliveredDateTime
+  - where:
+      model-name: MicrosoftGraphPost
+    set:
+      format-table:
+        properties:
+          - Id
+          - SenderEmailAddressAddress
+          - BodyContentType
+          - HasAttachments
+          - ReceivedDateTime
+  - where:
+      model-name: MicrosoftGraphDirectoryObject
+    set:
+      format-table:
+        properties:
+          - Id
+          - DeletedDateTime
+  - where:
+      model-name: MicrosoftGraphPlace
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - AddressCity
+          - Phone
+  - where:
+      model-name: MicrosoftGraphPlannerTask
+    set:
+      format-table:
+        properties:
+          - Id
+          - PlanId
+          - BucketId
+          - Title
+          - Priority
+          - StartDateTime
+          - CompletedDateTime
+          - PercentComplete
+  - where:
+      model-name: MicrosoftGraphPlannerPlan
+    set:
+      format-table:
+        properties:
+          - Id
+          - Title
+          - Owner
+          - CreatedDateTime
+  - where:
+      model-name: MicrosoftGraphPlannerPlanDetails
+    set:
+      format-table:
+        properties:
+          - Id
+          - CategoryDescriptions
+          - SharedWith
+          - ContextDetails
+  - where:
+      model-name: MicrosoftGraphSchemaExtension
+    set:
+      format-table:
+        properties:
+          - Id
+          - Description
+          - Properties
+          - TargetTypes
+          - Status
+          - Owner
 # Modify OpenAPI doc - Add suffix 'fn' to Sites.Functions cmdlets to avoid duplicates.
   - from: Sites.Functions.yml
     where: $.paths.*
