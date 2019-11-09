@@ -42,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
                 .Create(authConfig.ClientId)
                 .WithTenantId(authConfig.TenantId)
-                .WithCertificate(GetCertificate(authConfig.CertificateName))
+                .WithCertificate(GetCertificate(authConfig.CertificateThumbprint))
                 .Build();
 
                 ConfigureTokenCache(confidentialClientApp.AppTokenCache, Path.Combine(CacheFilePath, AppCacheFileName));
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="certificateName">Subjec name of the certificate to get.</param>
         /// <returns></returns>
-        private static X509Certificate2 GetCertificate(string certificateName)
+        private static X509Certificate2 GetCertificate(string CertificateThumbprint)
         {
             X509Certificate2 xCertificate = null;
 
@@ -100,10 +100,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
+                    .Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
 
                 if (unexpiredCerts == null)
-                    throw new Exception($"{certificateName} certificate was not found or has expired.");
+                    throw new Exception($"{CertificateThumbprint} certificate was not found or has expired.");
 
                 // Only return current cert.
                 xCertificate = unexpiredCerts
