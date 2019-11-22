@@ -1,9 +1,9 @@
 # Microsoft Graph PowerShell SDK (alpha)
-The Microsoft Graph Powershell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph. 
+The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph. 
 
 ## Installing the Microsoft.Graph.Beta Module
 
-In the future, the modules will be published to the PowerShellGallery, however in the short term they are hosted on our own nuget feed. Use the following commands to register Repository and then install the Microsoft Graph Beta module from there.
+In the future, the modules will be published to the PowerShell Gallery, however in the short term they are hosted on our own nuget feed. Use the following commands to register repository and then install the `Microsoft.Graph.Beta` module from there.
 
 ```ps
 Register-PSRepository `
@@ -20,7 +20,7 @@ There are a set of samples in the `samples` folder to help getting started with 
 
 ### Prerequisite
 
-1. [Download](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.2) and install PowerShell core.
+1. [Download](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.3) and install PowerShell Core.
 
 2. Install AutoRest.
 
@@ -29,7 +29,7 @@ There are a set of samples in the `samples` folder to help getting started with 
     ```
 
 3. Create an [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/artifacts/tutorials/private-powershell-library?view=azure-devops) Artifacts Feed or host a local [Nuget.Server](https://docs.microsoft.com/en-us/nuget/hosting-packages/nuget-server), and register it as a local PowerShell repository using `Register-PSRepository` command. Once done, take note of the `RepositoryName` and `APIKey`. You can always get the repository name by running `Get-PSRepository`.
-    This will be used as a temporary repository to the publish generated modules in order to specify them as dependencies for `Microsoft.Graph` roll-up module.
+    This will be used as a temporary repository to publish generated modules in order to specify them as dependencies for `Microsoft.Graph` roll-up module.
 
     ***N.B - Once we have a preview version of the modules in PowerShell Gallery, this step won't be needed.***
 
