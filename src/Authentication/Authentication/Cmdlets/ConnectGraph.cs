@@ -24,6 +24,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
+        public string CertificateThumbprint { get; set; }
+
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
         public string CertificateName { get; set; }
 
         [Parameter(Position = 3)]
@@ -64,6 +67,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 authConfig.AuthType = AuthenticationType.AppOnly;
                 authConfig.ClientId = ClientId;
+                authConfig.CertificateThumbprint = CertificateThumbprint;
                 authConfig.CertificateName = CertificateName;
             }
 
@@ -128,9 +132,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 if (string.IsNullOrEmpty(ClientId))
                     ThrowParameterError(nameof(ClientId));
 
-                // Client Secret
-                if (string.IsNullOrEmpty(CertificateName))
-                    ThrowParameterError(nameof(CertificateName));
+                // Certificate Thumbprint or name
+                if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
+                    ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
 
                 // Tenant Id
                 if (string.IsNullOrEmpty(TenantId))
