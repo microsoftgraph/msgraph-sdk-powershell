@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.Group
-  version: v1.0-StagingBeta
+  version: v1.0-Beta
 servers:
-  - url: https://graph.microsoft.com/StagingBeta/
+  - url: https://graph.microsoft.com/Beta/
     description: Core
 paths:
   /groups:

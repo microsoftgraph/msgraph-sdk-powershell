@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Beta.Identity.CertificateBasedAuthConfiguration", "Identity.CertificateBasedAuthConfiguration\Microsoft.Graph.Beta.Identity.CertificateBasedAuthConfiguration.csproj", "{F537B811-DE8C-40D5-9273-B566B7A3CD58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Graph.Beta.Identity.CertificateBasedAuthConfiguration", "Identity.CertificateBasedAuthConfiguration\Microsoft.Graph.Beta.Identity.CertificateBasedAuthConfiguration.csproj", "{E8D7703C-55E7-4281-AE31-EB60938D834A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|x64.Build.0 = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Debug|x86.Build.0 = Debug|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|x64.ActiveCfg = Release|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|x64.Build.0 = Release|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|x86.ActiveCfg = Release|Any CPU
-		{F537B811-DE8C-40D5-9273-B566B7A3CD58}.Release|x86.Build.0 = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|x64.Build.0 = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Debug|x86.Build.0 = Debug|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|x64.ActiveCfg = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|x64.Build.0 = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|x86.ActiveCfg = Release|Any CPU
+		{E8D7703C-55E7-4281-AE31-EB60938D834A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
