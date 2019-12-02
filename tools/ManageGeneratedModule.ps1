@@ -18,9 +18,11 @@ $GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\$Module"
 $GeneratedModuleProj = Join-Path  $GeneratedModuleSlnDir "$Module\$ModuleNamespace.$Module.csproj"
 $CustomCodeDir = Join-Path $PSScriptRoot "\Custom\"
 
-# Create new solution for generated module project.
-Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force"
-dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force
+if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
+    # Create new solution for generated module project.
+    Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force"
+    dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force
+}
 
 # Add generated module project to solution.
 Write-Host -ForegroundColor Green "Executing: dotnet sln $GeneratedModuleSlnDir\$Module.sln add $GeneratedModuleProj"

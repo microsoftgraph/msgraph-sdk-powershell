@@ -389,3 +389,10 @@ directive:
       subject: ReportTenantSecureScore
       variant: GetViaIdentity
     remove: true
+# Rename all delta cmdlets
+  - where:
+      verb: Invoke
+      subject: (^Delta)(.*)
+    set:
+      verb: Get
+      subject: $2$1
