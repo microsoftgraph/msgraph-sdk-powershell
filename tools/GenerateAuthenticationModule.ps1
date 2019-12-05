@@ -12,12 +12,10 @@ if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 $LastExitCode = 0
-$BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
-$PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 
-& $BuildAndPackBinaryModulePS1 -Module "Authentication" -ModuleNamespace "Microsoft.Graph" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+.\tools\BuildAndPackBinaryModule.ps1 -Module "Authentication" -ModulePrefix "MG" -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
 
 if ($Publish) {
-    & $PublishModulePS1 -Modules "Authentication" -ModuleNamespace "Microsoft.Graph" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    .\tools\PublishModule.ps1 -Modules "Authentication" -ModulePrefix "MG" -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }

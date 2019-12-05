@@ -21,10 +21,10 @@ if(-not (Test-Path $ModuleMappingConfigPath)){
 }
 
 $LastExitCode = 0
-$ModuleNamespace = "Microsoft.Graph"
+$ModulePrefix = "MG"
 $GraphVersion = "v1.0"
 if($BetaGraphVersion){
-    $ModuleNamespace += ".Beta"
+    $ModulePrefix = "MGB"
     $GraphVersion = "Beta"
 }
 $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
@@ -32,7 +32,7 @@ $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\$GraphVersion\Graph\Graph"
-$RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModuleNamespace"
+$RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
 $RequiredGraphModules = New-Object collections.generic.list[string]
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
@@ -58,12 +58,12 @@ Install-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -All
 foreach($RequiredModule in $ModuleMapping.Keys){
     # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
     # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-    Install-Module "$ModuleNamespace.$RequiredModule" -Repository $RepositoryName -AllowPrerelease -Force
-    $RequiredGraphModules.Add("$ModuleNamespace.$RequiredModule")
+    Install-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease -Force
+    $RequiredGraphModules.Add("$ModulePrefix.$RequiredModule")
 }
 
 [HashTable]$ModuleManifestSettings = @{
-    Path = "$GraphModuleLocation\$ModuleNamespace.psd1"
+    Path = "$GraphModuleLocation\$ModulePrefix.psd1"
     GUID = if ($BetaGraphVersion) { "1C7813EF-88D8-4A52-BE2C-E914E4331E7B" } else { "585dcd71-ed77-4087-884b-7e41936961c2" }
     CompatiblePSEditions = "Core", "Desktop"
     PowerShellVersion = "5.1"
@@ -81,7 +81,7 @@ foreach($RequiredModule in $ModuleMapping.Keys){
     # ReleaseNotes = $NuspecMetadata["releaseNotes"]
 }
 
-Write-Host -ForegroundColor Green "Creating '$ModuleNamespace' module manifest and nuspec..."
+Write-Host -ForegroundColor Green "Creating '$ModulePrefix' module manifest and nuspec..."
 if($ModulePreviewNumber -ge 0){
     # Prerelease is only supported in PowerShell 7 (preview) and above.
     $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
@@ -90,24 +90,24 @@ if($ModulePreviewNumber -ge 0){
     $NuspecMetadata["version"] = $ModuleVersion
 }
 $NuspecMetadata["dependencies"] = $RequiredGraphModules
-$NuspecMetadata["id"] = $ModuleNamespace
+$NuspecMetadata["id"] = $ModulePrefix
 
 New-ModuleManifest @ModuleManifestSettings
 
 & nuget spec $RollUpModuleNuspec -Force
 Set-NuSpecValuesFromManifest -NuSpecFilePath "$RollUpModuleNuspec.nuspec" -Manifest $NuspecMetadata
 
-Write-Host -ForegroundColor Green "Packing '$ModuleNamespace' module..."
+Write-Host -ForegroundColor Green "Packing '$ModulePrefix' module..."
 & nuget pack "$RollUpModuleNuspec.nuspec" -OutputDirectory $RollUpModuleArtifactLocation -Prop Configuration=Release
 
 if($LastExitCode -ne 0){
-    Write-Error "Failed to pack $ModuleNamespace module."
+    Write-Error "Failed to pack $ModulePrefix module."
 }
 
 if ($Publish)
 {
     # Publish roll-up module
-    & $PublishModulePS1 -Modules "Graph" -ModuleNamespace $ModuleNamespace -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    & $PublishModulePS1 -Modules "Graph" -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

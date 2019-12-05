@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string[]] $Modules,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModuleNamespace,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModulePrefix,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $RepositoryName,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $RepositoryApiKey
@@ -11,9 +11,10 @@ $ErrorActionPreference = "Stop"
 
 $RepositoryPublishUrl = (Get-PSRepository -Name $RepositoryName).SourceLocation
 
-foreach($Module in $Modules){
+$Modules | ForEach-Object {
+    $Module = $_
     # Get NuGet package to publish.
-    $NuGetPackageRegex = "$ModuleNamespace.*(.\d+\.)(\d+\.)(\d+\.nupkg)|$ModuleNamespace.*(.\d+\.)(\d+\.)(\d+\-preview\d+\.nupkg)"
+    $NuGetPackageRegex = "$ModulePrefix.*(.\d+\.)(\d+\.)(\d+\.nupkg)|$ModulePrefix.*(.\d+\.)(\d+\.)(\d+\-preview\d+\.nupkg)"
     $NuGetPackage = (Get-ChildItem "$ArtifactsLocation\$Module" | Where-Object Name -Match $NuGetPackageRegex).FullName
 
     if($null -eq $NuGetPackage){

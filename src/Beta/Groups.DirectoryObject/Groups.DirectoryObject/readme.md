@@ -26,7 +26,6 @@ For information on how to develop for `MGB.Groups.DirectoryObject`, see [how-to.
 ``` yaml
 require:
   - $(this-folder)/../../../readme.graph.md
-module-version: 0.1.1
 title: $(service-name)
 subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
