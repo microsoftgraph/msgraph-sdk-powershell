@@ -20,20 +20,22 @@ if($PSEdition -ne 'Core') {
 }
 $LastExitCode = 0
 $ModuleNamespace = "Microsoft.Graph"
+$ModulePrefix = "MG"
 $GraphVersion = "v1.0"
 if($BetaGraphVersion){
     $ModuleNamespace += ".Beta"
     $GraphVersion = "Beta"
+    $ModulePrefix = "MGB"
 }
+# We will overwrite it for now.
+$ModulesOutputDir = Join-Path $PSScriptRoot "../src/$GraphVersion/"
 $AuthenticationModule = "Microsoft.Graph.Authentication"
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
-$AutoRestConfig = Join-Path $PSScriptRoot "..\config\AutoRestConfig.yml" -Resolve
 $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 
 $DocOutputFolder = Join-Path $DocOutputFolder $GraphVersion
-Write-Host $DocOutputFolder
 if(-not (Test-Path $DocOutputFolder)) {
     New-Item -Path $DocOutputFolder -Type Directory
 }
@@ -72,18 +74,19 @@ foreach($ModuleName in $ModuleMapping.Keys)
 
         # Generate PowerShell modules.
         Write-Host -ForegroundColor Green "Generating '$ModuleNamespace.$ModuleName' module..."
-        & AutoRest-beta --title:$ModuleName --DocOutputFolder:$DocOutputFolder --ModuleNamespace:$ModuleNamespace --GraphVersion:$GraphVersion $AutoRestConfig --verbose
+        & AutoRest-beta --prefix:$ModulePrefix --service-name:$ModuleName --spec-doc-repo:$DocOutputFolder (Join-Path $ModulesOutputDir "$ModuleName/$ModuleName/readme.md") --verbose
+
         if($LastExitCode -ne 0){
             Write-Error "Failed to generate '$ModuleName' module."
         }
 
         # Manage generated module.
         Write-Host -ForegroundColor Green "Managing '$ModuleNamespace.$ModuleName' module..."
-        & $ManageGeneratedModulePS1 -Module $ModuleName -ModuleNamespace $ModuleNamespace -GraphVersion $GraphVersion
+        & $ManageGeneratedModulePS1 -Module $ModuleName -ModuleNamespace $ModulePrefix -GraphVersion $GraphVersion
 
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
-        & $BuildAndPackBinaryModulePS1 -Module $ModuleName -ModuleNamespace $ModuleNamespace -GraphVersion $GraphVersion -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
+        & $BuildAndPackBinaryModulePS1 -Module $ModuleName -ModuleNamespace $ModulePrefix -GraphVersion $GraphVersion -RequiredModules $RequiredModules -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
     }
     catch {
         Write-Error $_.Exception

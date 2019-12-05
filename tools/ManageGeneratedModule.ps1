@@ -12,6 +12,7 @@ Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModuleNamespace,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $GraphVersion
 )
+
 $NugetPackagesToRemove = "Microsoft.CSharp"
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
 $GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\$Module"
@@ -22,6 +23,10 @@ if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
     # Create new solution for generated module project.
     Write-Host -ForegroundColor Green "Executing: dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force"
     dotnet new sln -n $Module -o $GeneratedModuleSlnDir --force
+    if($LastExitCode -ne 0){
+        Write-Error "Failed to create or update $Module solution."
+        return
+    }
 }
 
 # Add generated module project to solution.
