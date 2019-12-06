@@ -3,7 +3,7 @@ Param(
     [string] $ModuleRegex,
     [string] $OpenApiDocOutput,
     [string] $GraphVersion
-    )
+)
 
 $OpenApiDocOutput = Join-Path -Path $OpenApiDocOutput -ChildPath $GraphVersion
 if(-not (Test-Path $OpenApiDocOutput)) {

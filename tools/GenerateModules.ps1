@@ -1,5 +1,4 @@
-﻿
-# Copyright (c) Microsoft Corporation. All rights reserved.
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 Param(
     [string] $RepositoryApiKey,
@@ -30,6 +29,11 @@ $ModulesOutputDir = Join-Path $PSScriptRoot "../src/$GraphVersion/"
 $AuthenticationModule = "Microsoft.Graph.Authentication"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
+# PS Scripts
+$DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
+$BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
+$ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
+$PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 
 if(-not (Test-Path $ArtifactsLocation)) {
     New-Item -Path $ArtifactsLocation -Type Directory
@@ -49,13 +53,17 @@ if($UpdateAutoRest) {
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+$ModuleMapping.Clear()
+$ModuleMapping.Add("Groups.DirectoryObject", "^groups.directoryObject$")
+$ModuleMapping.Add("Sites.Site", "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$")
+#$ModuleMapping.Add("Users.Mail", "^users.inferenceClassification$|^users.mailFolder$|^users.message$")
 $ModuleMapping.Keys | ForEach-Object {
     $ModuleName = $_
     try {
         # Download OpenAPI document for module.
         if(-not $UseLocalDoc)
         {
-            .\tools\DownloadOpenApiDoc.ps1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
+            . $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
         }
 
         # Generate PowerShell modules.
@@ -68,11 +76,11 @@ $ModuleMapping.Keys | ForEach-Object {
 
         # Manage generated module.
         Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-        .\tools\ManageGeneratedModule.ps1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+        . $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
 
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
-        .\tools\BuildAndPackBinaryModule.ps1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -RequiredModules $AuthenticationModule -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
+        . $BuildAndPackBinaryModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -RequiredModules $AuthenticationModule -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
     }
     catch {
         Write-Error $_.Exception
@@ -81,6 +89,7 @@ $ModuleMapping.Keys | ForEach-Object {
 
 if ($Publish) {
     # Publish generated modules.
-    .\tools\PublishModule.ps1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    . $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
+
 Write-Host -ForegroundColor Green "-------------Done-------------"

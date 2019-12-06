@@ -1,5 +1,7 @@
 # Microsoft Graph AutoRest Configuration
+
 > Common
+
 ``` yaml
 azure: false
 powershell: true
@@ -9,9 +11,9 @@ metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
     companyName: Microsoft Corporation
-    description: 'Microsoft Graph PowerShell: $(service-name) cmdlets'
+    description: 'Microsoft Graph PowerShell Cmdlets'
     copyright: © Microsoft Corporation. All rights reserved.
-    tags: Microsoft Office365 Graph PowerShell $(service-name)
+    tags: Microsoft Office365 Graph PowerShell
     requireLicenseAcceptance: true
     licenseUri: https://aka.ms/devservicesagreement
     projectUri: https://github.com/microsoftgraph/msgraph-sdk-powershell
@@ -19,6 +21,7 @@ metadata:
 ```
 
 > Names
+
 ``` yaml
 # prefix: MG
 module-name: $(prefix).$(service-name)
@@ -27,12 +30,14 @@ namespace: Microsoft.Graph.PowerShell
 ```
 
 > Folders
+
 ``` yaml
 clear-output-folder: true
 output-folder: .
 ```
 
 > Directives
+
 ``` yaml
 directive:
   - no-inline:
@@ -46,6 +51,7 @@ directive:
     - microsoft.graph.post
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
+  # Formart cmdlet response.
   - where:
       model-name: MicrosoftGraphUser
     set:
@@ -276,4 +282,11 @@ directive:
           - TargetTypes
           - Status
           - Owner
+# Rename all delta cmdlets
+  - where:
+      verb: Invoke
+      subject: (^Delta)(.*)
+    set:
+      verb: Get
+      subject: $2$1
 ```
