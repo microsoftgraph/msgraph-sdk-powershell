@@ -19,16 +19,15 @@ if($PSEdition -ne 'Core') {
 $LastExitCode = 0
 $ModulePrefix = "MG"
 $GraphVersion = "v1.0"
-
 if ($BetaGraphVersion){
     $GraphVersion = "Beta"
-    $ModulePrefix = "MGB"
 }
 
 $ModulesOutputDir = Join-Path $PSScriptRoot "../src/$GraphVersion/"
 $AuthenticationModule = "Microsoft.Graph.Authentication"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
+
 # PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
 $BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
@@ -53,12 +52,10 @@ if($UpdateAutoRest) {
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Clear()
-$ModuleMapping.Add("Groups.DirectoryObject", "^groups.directoryObject$")
-$ModuleMapping.Add("Sites.Site", "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$")
-#$ModuleMapping.Add("Users.Mail", "^users.inferenceClassification$|^users.mailFolder$|^users.message$")
 $ModuleMapping.Keys | ForEach-Object {
     $ModuleName = $_
+    $ModuleProjectDir = (Join-Path $ModulesOutputDir "$ModuleName/$ModuleName")
+
     try {
         # Download OpenAPI document for module.
         if(-not $UseLocalDoc)
@@ -66,10 +63,16 @@ $ModuleMapping.Keys | ForEach-Object {
             . $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
         }
 
+        # Copy AutoRest readme.md config is none exists.
+        if(-not (Test-Path "$ModuleProjectDir/readme.md")) {
+            New-Item -Path $ModuleProjectDir -Type Directory -Force
+            Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
+        }
+
         # Generate PowerShell modules.
         Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
         $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-        AutoRest-beta --prefix:$ModulePrefix --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath (Join-Path $ModulesOutputDir "$ModuleName/$ModuleName/readme.md") --verbose
+        AutoRest-beta --prefix:$ModulePrefix --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath "$ModuleProjectDir/readme.md" --verbose
         if ($LastExitCode -ne 0){
             Write-Error "Failed to generate '$ModuleName' module."
         }
