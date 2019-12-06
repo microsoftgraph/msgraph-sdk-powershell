@@ -1,3 +1,24 @@
+<!-- region Generated -->
+# Mg.Identity.Directory
+This directory contains the PowerShell module for the IdentityDirectory service.
+
+---
+## Status
+[![Mg.Identity.Directory](https://img.shields.io/powershellgallery/v/Mg.Identity.Directory.svg?style=flat-square&label=Mg.Identity.Directory "Mg.Identity.Directory")](https://www.powershellgallery.com/packages/Mg.Identity.Directory/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Development
+For information on how to develop for `Mg.Identity.Directory`, see [how-to.md](how-to.md).
+<!-- endregion -->
 
 ### AutoRest Configuration
 

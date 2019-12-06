@@ -1,3 +1,24 @@
+<!-- region Generated -->
+# Mg.Sites.OneNote
+This directory contains the PowerShell module for the SitesOneNote service.
+
+---
+## Status
+[![Mg.Sites.OneNote](https://img.shields.io/powershellgallery/v/Mg.Sites.OneNote.svg?style=flat-square&label=Mg.Sites.OneNote "Mg.Sites.OneNote")](https://www.powershellgallery.com/packages/Mg.Sites.OneNote/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Development
+For information on how to develop for `Mg.Sites.OneNote`, see [how-to.md](how-to.md).
+<!-- endregion -->
 
 ### AutoRest Configuration
 

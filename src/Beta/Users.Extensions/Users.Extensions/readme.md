@@ -1,3 +1,24 @@
+<!-- region Generated -->
+# Mg.Users.Extensions
+This directory contains the PowerShell module for the UsersExtensions service.
+
+---
+## Status
+[![Mg.Users.Extensions](https://img.shields.io/powershellgallery/v/Mg.Users.Extensions.svg?style=flat-square&label=Mg.Users.Extensions "Mg.Users.Extensions")](https://www.powershellgallery.com/packages/Mg.Users.Extensions/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Development
+For information on how to develop for `Mg.Users.Extensions`, see [how-to.md](how-to.md).
+<!-- endregion -->
 
 ### AutoRest Configuration
 

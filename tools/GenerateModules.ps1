@@ -13,11 +13,11 @@ Param(
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
+$LastExitCode = 0
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
-$LastExitCode = 0
-$ModulePrefix = "MG"
+$ModulePrefix = "Mg"
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion){
     $GraphVersion = "Beta"

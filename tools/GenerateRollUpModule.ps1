@@ -11,7 +11,7 @@ Param(
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
-
+$LastExitCode = 0
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -20,11 +20,9 @@ if(-not (Test-Path $ModuleMappingConfigPath)){
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 
-$LastExitCode = 0
-$ModulePrefix = "MG"
+$ModulePrefix = "Mg"
 $GraphVersion = "v1.0"
 if($BetaGraphVersion){
-    $ModulePrefix = "MGB"
     $GraphVersion = "Beta"
 }
 $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"

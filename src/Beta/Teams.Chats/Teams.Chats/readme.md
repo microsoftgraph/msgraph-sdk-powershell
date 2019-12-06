@@ -1,3 +1,24 @@
+<!-- region Generated -->
+# Mg.Teams.Chats
+This directory contains the PowerShell module for the TeamsChats service.
+
+---
+## Status
+[![Mg.Teams.Chats](https://img.shields.io/powershellgallery/v/Mg.Teams.Chats.svg?style=flat-square&label=Mg.Teams.Chats "Mg.Teams.Chats")](https://www.powershellgallery.com/packages/Mg.Teams.Chats/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Development
+For information on how to develop for `Mg.Teams.Chats`, see [how-to.md](how-to.md).
+<!-- endregion -->
 
 ### AutoRest Configuration
 

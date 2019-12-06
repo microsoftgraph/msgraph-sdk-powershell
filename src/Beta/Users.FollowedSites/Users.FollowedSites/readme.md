@@ -1,3 +1,24 @@
+<!-- region Generated -->
+# Mg.Users.FollowedSites
+This directory contains the PowerShell module for the UsersFollowedSites service.
+
+---
+## Status
+[![Mg.Users.FollowedSites](https://img.shields.io/powershellgallery/v/Mg.Users.FollowedSites.svg?style=flat-square&label=Mg.Users.FollowedSites "Mg.Users.FollowedSites")](https://www.powershellgallery.com/packages/Mg.Users.FollowedSites/)
+
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
+
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
+
+## Development
+For information on how to develop for `Mg.Users.FollowedSites`, see [how-to.md](how-to.md).
+<!-- endregion -->
 
 ### AutoRest Configuration
 
