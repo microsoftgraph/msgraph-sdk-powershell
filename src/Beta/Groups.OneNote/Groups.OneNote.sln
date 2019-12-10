@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mg.Groups.OneNote", "Groups.OneNote\Mg.Groups.OneNote.csproj", "{8738409B-7055-4787-A9A9-CA49048A37EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mg.Groups.OneNote", "Groups.OneNote\Mg.Groups.OneNote.csproj", "{931B64A8-2173-46A1-A720-38F079E89859}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|x64.Build.0 = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Debug|x86.Build.0 = Debug|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|x64.ActiveCfg = Release|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|x64.Build.0 = Release|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|x86.ActiveCfg = Release|Any CPU
-		{8738409B-7055-4787-A9A9-CA49048A37EA}.Release|x86.Build.0 = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|x64.Build.0 = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Debug|x86.Build.0 = Debug|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|x64.ActiveCfg = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|x64.Build.0 = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|x86.ActiveCfg = Release|Any CPU
+		{931B64A8-2173-46A1-A720-38F079E89859}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

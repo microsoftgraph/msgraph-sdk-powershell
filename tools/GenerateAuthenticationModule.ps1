@@ -13,7 +13,7 @@ if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
-$ModulePrefix = "Mg"
+$ModulePrefix = "Microsoft.Graph.Beta"
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 
 .\tools\BuildAndPackBinaryModule.ps1 -Module "Authentication" -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber

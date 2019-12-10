@@ -85,10 +85,8 @@
     "Users.ProfilePhoto": "^users.profilePhoto$",
     "Users.User": "^users.user$|^users.presence$",
     "Users.UserSettings": "^users.userSettings$",
-
-    // Fails with AutoRest/core 3.0.6158
-    // "Identity.ServicePrincipal": "^servicePrincipals\\.",
-    // "Identity.Application": "^applications\\.|^applicationTemplates\\.",
+    "Identity.Application": "^applications\\.|^applicationTemplates\\.",
+    "Identity.ServicePrincipal": "^servicePrincipals\\.",
 
     // Contains Duplicate Cmdlet
     // "Sites.Functions": "^sites.Functions$",
