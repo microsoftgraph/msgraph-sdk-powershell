@@ -24,15 +24,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
-        public string CertificateThumbprint { get; set; }
-
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
         public string CertificateName { get; set; }
 
-        [Parameter(Position = 3)]
-        public string TenantId { get; set; }
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3)]
+        public string CertificateThumbprint { get; set; }
+
 
         [Parameter(Position = 4)]
+        public string TenantId { get; set; }
+
+        [Parameter(Position = 5)]
         public SwitchParameter ForceRefresh { get; set; }
 
         protected override void BeginProcessing()
