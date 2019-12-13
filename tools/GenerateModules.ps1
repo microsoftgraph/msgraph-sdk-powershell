@@ -17,12 +17,12 @@ $LastExitCode = 0
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
-$ModulePrefix = "Mg"
+
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion){
     $GraphVersion = "Beta"
 }
-
+$ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "../src/$GraphVersion/"
 $AuthenticationModule = "Microsoft.Graph.Authentication"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
@@ -72,7 +72,7 @@ $ModuleMapping.Keys | ForEach-Object {
         # Generate PowerShell modules.
         Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
         $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-        AutoRest-beta --prefix:$ModulePrefix --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath "$ModuleProjectDir/readme.md" --verbose
+        AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath "$ModuleProjectDir/readme.md" --verbose
         if ($LastExitCode -ne 0){
             Write-Error "Failed to generate '$ModuleName' module."
         }

@@ -20,7 +20,7 @@ if(-not (Test-Path $ModuleMappingConfigPath)){
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 
-$ModulePrefix = "Mg"
+$ModulePrefix = "Microsoft.Graph"
 $GraphVersion = "v1.0"
 if($BetaGraphVersion){
     $GraphVersion = "Beta"

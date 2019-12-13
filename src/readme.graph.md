@@ -23,8 +23,8 @@ metadata:
 > Names
 
 ``` yaml
-# prefix: MG
-module-name: $(prefix).$(service-name)
+prefix: Mg
+module-name: Microsoft.Graph.$(service-name)
 subject-prefix: $(service-name)
 namespace: Microsoft.Graph.PowerShell
 ```
