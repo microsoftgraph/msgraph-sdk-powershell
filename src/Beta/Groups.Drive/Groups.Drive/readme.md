@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Groups.Drive
+# Microsoft.Graph.Groups.Drive
 This directory contains the PowerShell module for the GroupsDrive service.
 
 ---
 ## Status
-[![Mg.Groups.Drive](https://img.shields.io/powershellgallery/v/Mg.Groups.Drive.svg?style=flat-square&label=Mg.Groups.Drive "Mg.Groups.Drive")](https://www.powershellgallery.com/packages/Mg.Groups.Drive/)
+[![Microsoft.Graph.Groups.Drive](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Groups.Drive.svg?style=flat-square&label=Microsoft.Graph.Groups.Drive "Microsoft.Graph.Groups.Drive")](https://www.powershellgallery.com/packages/Microsoft.Graph.Groups.Drive/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the GroupsDrive service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Groups.Drive`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Groups.Drive`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

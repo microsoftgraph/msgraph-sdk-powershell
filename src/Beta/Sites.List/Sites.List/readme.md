@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Sites.List
+# Microsoft.Graph.Sites.List
 This directory contains the PowerShell module for the SitesList service.
 
 ---
 ## Status
-[![Mg.Sites.List](https://img.shields.io/powershellgallery/v/Mg.Sites.List.svg?style=flat-square&label=Mg.Sites.List "Mg.Sites.List")](https://www.powershellgallery.com/packages/Mg.Sites.List/)
+[![Microsoft.Graph.Sites.List](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Sites.List.svg?style=flat-square&label=Microsoft.Graph.Sites.List "Microsoft.Graph.Sites.List")](https://www.powershellgallery.com/packages/Microsoft.Graph.Sites.List/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the SitesList service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Sites.List`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Sites.List`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Files.Drives
+# Microsoft.Graph.Files.Drives
 This directory contains the PowerShell module for the FilesDrives service.
 
 ---
 ## Status
-[![Mg.Files.Drives](https://img.shields.io/powershellgallery/v/Mg.Files.Drives.svg?style=flat-square&label=Mg.Files.Drives "Mg.Files.Drives")](https://www.powershellgallery.com/packages/Mg.Files.Drives/)
+[![Microsoft.Graph.Files.Drives](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Files.Drives.svg?style=flat-square&label=Microsoft.Graph.Files.Drives "Microsoft.Graph.Files.Drives")](https://www.powershellgallery.com/packages/Microsoft.Graph.Files.Drives/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the FilesDrives service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Files.Drives`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Files.Drives`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

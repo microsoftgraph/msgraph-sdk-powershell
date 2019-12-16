@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.TrustFramework
+# Microsoft.Graph.Identity.TrustFramework
 This directory contains the PowerShell module for the IdentityTrustFramework service.
 
 ---
 ## Status
-[![Mg.Identity.TrustFramework](https://img.shields.io/powershellgallery/v/Mg.Identity.TrustFramework.svg?style=flat-square&label=Mg.Identity.TrustFramework "Mg.Identity.TrustFramework")](https://www.powershellgallery.com/packages/Mg.Identity.TrustFramework/)
+[![Microsoft.Graph.Identity.TrustFramework](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.TrustFramework.svg?style=flat-square&label=Microsoft.Graph.Identity.TrustFramework "Microsoft.Graph.Identity.TrustFramework")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.TrustFramework/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityTrustFramework ser
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.TrustFramework`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.TrustFramework`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

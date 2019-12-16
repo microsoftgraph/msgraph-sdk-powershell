@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.Devices
+# Microsoft.Graph.Identity.Devices
 This directory contains the PowerShell module for the IdentityDevices service.
 
 ---
 ## Status
-[![Mg.Identity.Devices](https://img.shields.io/powershellgallery/v/Mg.Identity.Devices.svg?style=flat-square&label=Mg.Identity.Devices "Mg.Identity.Devices")](https://www.powershellgallery.com/packages/Mg.Identity.Devices/)
+[![Microsoft.Graph.Identity.Devices](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.Devices.svg?style=flat-square&label=Microsoft.Graph.Identity.Devices "Microsoft.Graph.Identity.Devices")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Devices/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityDevices service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.Devices`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.Devices`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

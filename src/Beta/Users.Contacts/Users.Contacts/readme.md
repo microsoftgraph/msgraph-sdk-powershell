@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Users.Contacts
+# Microsoft.Graph.Users.Contacts
 This directory contains the PowerShell module for the UsersContacts service.
 
 ---
 ## Status
-[![Mg.Users.Contacts](https://img.shields.io/powershellgallery/v/Mg.Users.Contacts.svg?style=flat-square&label=Mg.Users.Contacts "Mg.Users.Contacts")](https://www.powershellgallery.com/packages/Mg.Users.Contacts/)
+[![Microsoft.Graph.Users.Contacts](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Users.Contacts.svg?style=flat-square&label=Microsoft.Graph.Users.Contacts "Microsoft.Graph.Users.Contacts")](https://www.powershellgallery.com/packages/Microsoft.Graph.Users.Contacts/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the UsersContacts service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Users.Contacts`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Users.Contacts`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

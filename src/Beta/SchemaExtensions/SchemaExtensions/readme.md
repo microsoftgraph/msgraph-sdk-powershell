@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.SchemaExtensions
+# Microsoft.Graph.SchemaExtensions
 This directory contains the PowerShell module for the SchemaExtensions service.
 
 ---
 ## Status
-[![Mg.SchemaExtensions](https://img.shields.io/powershellgallery/v/Mg.SchemaExtensions.svg?style=flat-square&label=Mg.SchemaExtensions "Mg.SchemaExtensions")](https://www.powershellgallery.com/packages/Mg.SchemaExtensions/)
+[![Microsoft.Graph.SchemaExtensions](https://img.shields.io/powershellgallery/v/Microsoft.Graph.SchemaExtensions.svg?style=flat-square&label=Microsoft.Graph.SchemaExtensions "Microsoft.Graph.SchemaExtensions")](https://www.powershellgallery.com/packages/Microsoft.Graph.SchemaExtensions/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the SchemaExtensions service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.SchemaExtensions`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.SchemaExtensions`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

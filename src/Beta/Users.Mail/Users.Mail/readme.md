@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Users.Mail
+# Microsoft.Graph.Users.Mail
 This directory contains the PowerShell module for the UsersMail service.
 
 ---
 ## Status
-[![Mg.Users.Mail](https://img.shields.io/powershellgallery/v/Mg.Users.Mail.svg?style=flat-square&label=Mg.Users.Mail "Mg.Users.Mail")](https://www.powershellgallery.com/packages/Mg.Users.Mail/)
+[![Microsoft.Graph.Users.Mail](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Users.Mail.svg?style=flat-square&label=Microsoft.Graph.Users.Mail "Microsoft.Graph.Users.Mail")](https://www.powershellgallery.com/packages/Microsoft.Graph.Users.Mail/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the UsersMail service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Users.Mail`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Users.Mail`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

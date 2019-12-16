@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.DevicesApps.SharedResources
+# Microsoft.Graph.DevicesApps.SharedResources
 This directory contains the PowerShell module for the DevicesAppsSharedResources service.
 
 ---
 ## Status
-[![Mg.DevicesApps.SharedResources](https://img.shields.io/powershellgallery/v/Mg.DevicesApps.SharedResources.svg?style=flat-square&label=Mg.DevicesApps.SharedResources "Mg.DevicesApps.SharedResources")](https://www.powershellgallery.com/packages/Mg.DevicesApps.SharedResources/)
+[![Microsoft.Graph.DevicesApps.SharedResources](https://img.shields.io/powershellgallery/v/Microsoft.Graph.DevicesApps.SharedResources.svg?style=flat-square&label=Microsoft.Graph.DevicesApps.SharedResources "Microsoft.Graph.DevicesApps.SharedResources")](https://www.powershellgallery.com/packages/Microsoft.Graph.DevicesApps.SharedResources/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the DevicesAppsSharedResources
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.DevicesApps.SharedResources`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.DevicesApps.SharedResources`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

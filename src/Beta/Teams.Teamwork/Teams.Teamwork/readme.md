@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Teams.Teamwork
+# Microsoft.Graph.Teams.Teamwork
 This directory contains the PowerShell module for the TeamsTeamwork service.
 
 ---
 ## Status
-[![Mg.Teams.Teamwork](https://img.shields.io/powershellgallery/v/Mg.Teams.Teamwork.svg?style=flat-square&label=Mg.Teams.Teamwork "Mg.Teams.Teamwork")](https://www.powershellgallery.com/packages/Mg.Teams.Teamwork/)
+[![Microsoft.Graph.Teams.Teamwork](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Teams.Teamwork.svg?style=flat-square&label=Microsoft.Graph.Teams.Teamwork "Microsoft.Graph.Teams.Teamwork")](https://www.powershellgallery.com/packages/Microsoft.Graph.Teams.Teamwork/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the TeamsTeamwork service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Teams.Teamwork`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Teams.Teamwork`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

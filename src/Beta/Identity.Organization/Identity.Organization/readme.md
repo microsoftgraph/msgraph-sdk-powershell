@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.Organization
+# Microsoft.Graph.Identity.Organization
 This directory contains the PowerShell module for the IdentityOrganization service.
 
 ---
 ## Status
-[![Mg.Identity.Organization](https://img.shields.io/powershellgallery/v/Mg.Identity.Organization.svg?style=flat-square&label=Mg.Identity.Organization "Mg.Identity.Organization")](https://www.powershellgallery.com/packages/Mg.Identity.Organization/)
+[![Microsoft.Graph.Identity.Organization](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.Organization.svg?style=flat-square&label=Microsoft.Graph.Identity.Organization "Microsoft.Graph.Identity.Organization")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Organization/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityOrganization servi
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.Organization`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.Organization`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

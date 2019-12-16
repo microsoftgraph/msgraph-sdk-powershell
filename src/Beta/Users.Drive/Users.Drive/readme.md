@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Users.Drive
+# Microsoft.Graph.Users.Drive
 This directory contains the PowerShell module for the UsersDrive service.
 
 ---
 ## Status
-[![Mg.Users.Drive](https://img.shields.io/powershellgallery/v/Mg.Users.Drive.svg?style=flat-square&label=Mg.Users.Drive "Mg.Users.Drive")](https://www.powershellgallery.com/packages/Mg.Users.Drive/)
+[![Microsoft.Graph.Users.Drive](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Users.Drive.svg?style=flat-square&label=Microsoft.Graph.Users.Drive "Microsoft.Graph.Users.Drive")](https://www.powershellgallery.com/packages/Microsoft.Graph.Users.Drive/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the UsersDrive service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Users.Drive`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Users.Drive`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

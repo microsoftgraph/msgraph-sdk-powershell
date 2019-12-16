@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Notification
+# Microsoft.Graph.Notification
 This directory contains the PowerShell module for the Notification service.
 
 ---
 ## Status
-[![Mg.Notification](https://img.shields.io/powershellgallery/v/Mg.Notification.svg?style=flat-square&label=Mg.Notification "Mg.Notification")](https://www.powershellgallery.com/packages/Mg.Notification/)
+[![Microsoft.Graph.Notification](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Notification.svg?style=flat-square&label=Microsoft.Graph.Notification "Microsoft.Graph.Notification")](https://www.powershellgallery.com/packages/Microsoft.Graph.Notification/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the Notification service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Notification`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Notification`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

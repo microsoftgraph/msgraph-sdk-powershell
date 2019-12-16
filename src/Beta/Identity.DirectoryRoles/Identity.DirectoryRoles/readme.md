@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.DirectoryRoles
+# Microsoft.Graph.Identity.DirectoryRoles
 This directory contains the PowerShell module for the IdentityDirectoryRoles service.
 
 ---
 ## Status
-[![Mg.Identity.DirectoryRoles](https://img.shields.io/powershellgallery/v/Mg.Identity.DirectoryRoles.svg?style=flat-square&label=Mg.Identity.DirectoryRoles "Mg.Identity.DirectoryRoles")](https://www.powershellgallery.com/packages/Mg.Identity.DirectoryRoles/)
+[![Microsoft.Graph.Identity.DirectoryRoles](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.DirectoryRoles.svg?style=flat-square&label=Microsoft.Graph.Identity.DirectoryRoles "Microsoft.Graph.Identity.DirectoryRoles")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.DirectoryRoles/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityDirectoryRoles ser
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.DirectoryRoles`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.DirectoryRoles`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

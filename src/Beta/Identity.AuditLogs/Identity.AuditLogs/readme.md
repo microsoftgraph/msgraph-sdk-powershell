@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.AuditLogs
+# Microsoft.Graph.Identity.AuditLogs
 This directory contains the PowerShell module for the IdentityAuditLogs service.
 
 ---
 ## Status
-[![Mg.Identity.AuditLogs](https://img.shields.io/powershellgallery/v/Mg.Identity.AuditLogs.svg?style=flat-square&label=Mg.Identity.AuditLogs "Mg.Identity.AuditLogs")](https://www.powershellgallery.com/packages/Mg.Identity.AuditLogs/)
+[![Microsoft.Graph.Identity.AuditLogs](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.AuditLogs.svg?style=flat-square&label=Microsoft.Graph.Identity.AuditLogs "Microsoft.Graph.Identity.AuditLogs")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.AuditLogs/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityAuditLogs service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.AuditLogs`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.AuditLogs`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

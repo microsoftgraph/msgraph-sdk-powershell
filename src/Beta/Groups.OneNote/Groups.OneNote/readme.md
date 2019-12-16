@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Groups.OneNote
+# Microsoft.Graph.Groups.OneNote
 This directory contains the PowerShell module for the GroupsOneNote service.
 
 ---
 ## Status
-[![Mg.Groups.OneNote](https://img.shields.io/powershellgallery/v/Mg.Groups.OneNote.svg?style=flat-square&label=Mg.Groups.OneNote "Mg.Groups.OneNote")](https://www.powershellgallery.com/packages/Mg.Groups.OneNote/)
+[![Microsoft.Graph.Groups.OneNote](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Groups.OneNote.svg?style=flat-square&label=Microsoft.Graph.Groups.OneNote "Microsoft.Graph.Groups.OneNote")](https://www.powershellgallery.com/packages/Microsoft.Graph.Groups.OneNote/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the GroupsOneNote service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Groups.OneNote`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Groups.OneNote`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

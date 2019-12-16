@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.Contracts
+# Microsoft.Graph.Identity.Contracts
 This directory contains the PowerShell module for the IdentityContracts service.
 
 ---
 ## Status
-[![Mg.Identity.Contracts](https://img.shields.io/powershellgallery/v/Mg.Identity.Contracts.svg?style=flat-square&label=Mg.Identity.Contracts "Mg.Identity.Contracts")](https://www.powershellgallery.com/packages/Mg.Identity.Contracts/)
+[![Microsoft.Graph.Identity.Contracts](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.Contracts.svg?style=flat-square&label=Microsoft.Graph.Identity.Contracts "Microsoft.Graph.Identity.Contracts")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Contracts/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityContracts service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.Contracts`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.Contracts`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

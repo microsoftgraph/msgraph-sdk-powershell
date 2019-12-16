@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.TermsOfUse
+# Microsoft.Graph.Identity.TermsOfUse
 This directory contains the PowerShell module for the IdentityTermsOfUse service.
 
 ---
 ## Status
-[![Mg.Identity.TermsOfUse](https://img.shields.io/powershellgallery/v/Mg.Identity.TermsOfUse.svg?style=flat-square&label=Mg.Identity.TermsOfUse "Mg.Identity.TermsOfUse")](https://www.powershellgallery.com/packages/Mg.Identity.TermsOfUse/)
+[![Microsoft.Graph.Identity.TermsOfUse](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.TermsOfUse.svg?style=flat-square&label=Microsoft.Graph.Identity.TermsOfUse "Microsoft.Graph.Identity.TermsOfUse")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.TermsOfUse/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityTermsOfUse service
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.TermsOfUse`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.TermsOfUse`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

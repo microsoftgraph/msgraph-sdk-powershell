@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Groups.LifecyclePolicies
+# Microsoft.Graph.Groups.LifecyclePolicies
 This directory contains the PowerShell module for the GroupsLifecyclePolicies service.
 
 ---
 ## Status
-[![Mg.Groups.LifecyclePolicies](https://img.shields.io/powershellgallery/v/Mg.Groups.LifecyclePolicies.svg?style=flat-square&label=Mg.Groups.LifecyclePolicies "Mg.Groups.LifecyclePolicies")](https://www.powershellgallery.com/packages/Mg.Groups.LifecyclePolicies/)
+[![Microsoft.Graph.Groups.LifecyclePolicies](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Groups.LifecyclePolicies.svg?style=flat-square&label=Microsoft.Graph.Groups.LifecyclePolicies "Microsoft.Graph.Groups.LifecyclePolicies")](https://www.powershellgallery.com/packages/Microsoft.Graph.Groups.LifecyclePolicies/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the GroupsLifecyclePolicies se
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Groups.LifecyclePolicies`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Groups.LifecyclePolicies`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

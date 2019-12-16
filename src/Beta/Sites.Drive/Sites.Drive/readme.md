@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Sites.Drive
+# Microsoft.Graph.Sites.Drive
 This directory contains the PowerShell module for the SitesDrive service.
 
 ---
 ## Status
-[![Mg.Sites.Drive](https://img.shields.io/powershellgallery/v/Mg.Sites.Drive.svg?style=flat-square&label=Mg.Sites.Drive "Mg.Sites.Drive")](https://www.powershellgallery.com/packages/Mg.Sites.Drive/)
+[![Microsoft.Graph.Sites.Drive](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Sites.Drive.svg?style=flat-square&label=Microsoft.Graph.Sites.Drive "Microsoft.Graph.Sites.Drive")](https://www.powershellgallery.com/packages/Microsoft.Graph.Sites.Drive/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the SitesDrive service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Sites.Drive`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Sites.Drive`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

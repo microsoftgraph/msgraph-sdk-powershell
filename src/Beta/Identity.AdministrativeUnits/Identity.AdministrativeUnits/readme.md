@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.AdministrativeUnits
+# Microsoft.Graph.Identity.AdministrativeUnits
 This directory contains the PowerShell module for the IdentityAdministrativeUnits service.
 
 ---
 ## Status
-[![Mg.Identity.AdministrativeUnits](https://img.shields.io/powershellgallery/v/Mg.Identity.AdministrativeUnits.svg?style=flat-square&label=Mg.Identity.AdministrativeUnits "Mg.Identity.AdministrativeUnits")](https://www.powershellgallery.com/packages/Mg.Identity.AdministrativeUnits/)
+[![Microsoft.Graph.Identity.AdministrativeUnits](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.AdministrativeUnits.svg?style=flat-square&label=Microsoft.Graph.Identity.AdministrativeUnits "Microsoft.Graph.Identity.AdministrativeUnits")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.AdministrativeUnits/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityAdministrativeUnit
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.AdministrativeUnits`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.AdministrativeUnits`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

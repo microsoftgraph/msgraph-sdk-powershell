@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.AppRoleAssignments
+# Microsoft.Graph.Identity.AppRoleAssignments
 This directory contains the PowerShell module for the IdentityAppRoleAssignments service.
 
 ---
 ## Status
-[![Mg.Identity.AppRoleAssignments](https://img.shields.io/powershellgallery/v/Mg.Identity.AppRoleAssignments.svg?style=flat-square&label=Mg.Identity.AppRoleAssignments "Mg.Identity.AppRoleAssignments")](https://www.powershellgallery.com/packages/Mg.Identity.AppRoleAssignments/)
+[![Microsoft.Graph.Identity.AppRoleAssignments](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.AppRoleAssignments.svg?style=flat-square&label=Microsoft.Graph.Identity.AppRoleAssignments "Microsoft.Graph.Identity.AppRoleAssignments")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.AppRoleAssignments/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityAppRoleAssignments
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.AppRoleAssignments`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.AppRoleAssignments`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

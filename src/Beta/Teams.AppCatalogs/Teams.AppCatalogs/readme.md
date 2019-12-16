@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Teams.AppCatalogs
+# Microsoft.Graph.Teams.AppCatalogs
 This directory contains the PowerShell module for the TeamsAppCatalogs service.
 
 ---
 ## Status
-[![Mg.Teams.AppCatalogs](https://img.shields.io/powershellgallery/v/Mg.Teams.AppCatalogs.svg?style=flat-square&label=Mg.Teams.AppCatalogs "Mg.Teams.AppCatalogs")](https://www.powershellgallery.com/packages/Mg.Teams.AppCatalogs/)
+[![Microsoft.Graph.Teams.AppCatalogs](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Teams.AppCatalogs.svg?style=flat-square&label=Microsoft.Graph.Teams.AppCatalogs "Microsoft.Graph.Teams.AppCatalogs")](https://www.powershellgallery.com/packages/Microsoft.Graph.Teams.AppCatalogs/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the TeamsAppCatalogs service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Teams.AppCatalogs`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Teams.AppCatalogs`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

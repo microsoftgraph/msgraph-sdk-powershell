@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Identity.CertificateBasedAuthConfiguration
+# Microsoft.Graph.Identity.CertificateBasedAuthConfiguration
 This directory contains the PowerShell module for the IdentityCertificateBasedAuthConfiguration service.
 
 ---
 ## Status
-[![Mg.Identity.CertificateBasedAuthConfiguration](https://img.shields.io/powershellgallery/v/Mg.Identity.CertificateBasedAuthConfiguration.svg?style=flat-square&label=Mg.Identity.CertificateBasedAuthConfiguration "Mg.Identity.CertificateBasedAuthConfiguration")](https://www.powershellgallery.com/packages/Mg.Identity.CertificateBasedAuthConfiguration/)
+[![Microsoft.Graph.Identity.CertificateBasedAuthConfiguration](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.CertificateBasedAuthConfiguration.svg?style=flat-square&label=Microsoft.Graph.Identity.CertificateBasedAuthConfiguration "Microsoft.Graph.Identity.CertificateBasedAuthConfiguration")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.CertificateBasedAuthConfiguration/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the IdentityCertificateBasedAu
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Identity.CertificateBasedAuthConfiguration`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.CertificateBasedAuthConfiguration`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.DevicesApps.MobileAppManagement
+# Microsoft.Graph.DevicesApps.MobileAppManagement
 This directory contains the PowerShell module for the DevicesAppsMobileApp service.
 
 ---
 ## Status
-[![Mg.DevicesApps.MobileAppManagement](https://img.shields.io/powershellgallery/v/Mg.DevicesApps.MobileAppManagement.svg?style=flat-square&label=Mg.DevicesApps.MobileAppManagement "Mg.DevicesApps.MobileAppManagement")](https://www.powershellgallery.com/packages/Mg.DevicesApps.MobileAppManagement/)
+[![Microsoft.Graph.DevicesApps.MobileAppManagement](https://img.shields.io/powershellgallery/v/Microsoft.Graph.DevicesApps.MobileAppManagement.svg?style=flat-square&label=Microsoft.Graph.DevicesApps.MobileAppManagement "Microsoft.Graph.DevicesApps.MobileAppManagement")](https://www.powershellgallery.com/packages/Microsoft.Graph.DevicesApps.MobileAppManagement/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the DevicesAppsMobileApp servi
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.DevicesApps.MobileAppManagement`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.DevicesApps.MobileAppManagement`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration

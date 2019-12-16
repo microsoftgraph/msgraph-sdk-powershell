@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Mg.Subscriptions
+# Microsoft.Graph.Subscriptions
 This directory contains the PowerShell module for the Subscriptions service.
 
 ---
 ## Status
-[![Mg.Subscriptions](https://img.shields.io/powershellgallery/v/Mg.Subscriptions.svg?style=flat-square&label=Mg.Subscriptions "Mg.Subscriptions")](https://www.powershellgallery.com/packages/Mg.Subscriptions/)
+[![Microsoft.Graph.Subscriptions](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Subscriptions.svg?style=flat-square&label=Microsoft.Graph.Subscriptions "Microsoft.Graph.Subscriptions")](https://www.powershellgallery.com/packages/Microsoft.Graph.Subscriptions/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the Subscriptions service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Mg.Subscriptions`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Subscriptions`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration
