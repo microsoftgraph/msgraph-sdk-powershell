@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleNamespace,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModulePrefix,
     [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
@@ -21,8 +21,8 @@ if($PSCmdlet.ParameterSetName -eq "GraphResource"){
 }
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
-$ModuleManifest = Join-Path $ModuleProjLocation "$ModuleNamespace.$Module.psd1"
-$ModuleNuspec = Join-Path $ModuleProjLocation "$ModuleNamespace.$Module.nuspec"
+$ModuleManifest = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.psd1"
+$ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
 
 # Import scripts
