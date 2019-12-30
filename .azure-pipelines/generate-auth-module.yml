@@ -1,0 +1,115 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+    - dev
+    paths:
+      include:
+      - src/Authentication/*
+
+pr: none
+
+pool: 'Default'
+
+steps:
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+  displayName: 'Run CredScan'
+  inputs:
+    debugMode: false
+
+- task: PowerShell@2
+  displayName: 'Generate and Build Auth Module'
+  inputs:
+    filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
+    arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build'
+    pwsh: true
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\Authentication\Authentication\
+    Pattern: 'Microsoft.Graph.Authentication.dll'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameSign",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\Authentication\Authentication\
+    Pattern: Microsoft.Graph.Authentication.dll
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolSign",
+             "parameters": [
+                 {
+                     "parameterName": "OpusName",
+                     "parameterValue": "Microsoft"
+                 },
+                 {
+                     "parameterName": "OpusInfo",
+                     "parameterValue": "http://www.microsoft.com"
+                 },
+                 {
+                     "parameterName": "FileDigest",
+                     "parameterValue": "/fd \"SHA256\""
+                 },
+                 {
+                     "parameterName": "PageHash",
+                     "parameterValue": "/NPH"
+                 },
+                 {
+                     "parameterName": "TimeStamp",
+                     "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                 }
+             ],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: PowerShell@2
+  displayName: 'Pack Auth Module'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $ModuleName = "Authentication"
+      & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+    pwsh: true
+
+- script: |
+    echo Build complete.
+  displayName: 'Complete'

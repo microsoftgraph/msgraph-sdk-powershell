@@ -4,7 +4,10 @@ Param(
     [string] $RepositoryName,
     [string] $RepositoryApiKey,
     [string] $ModuleVersion = "0.1.0",
+    [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [int] $ModulePreviewNumber = -1,
+    [switch] $Build,
+    [switch] $Pack,
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
@@ -13,11 +16,21 @@ if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
-$ModulePrefix = "Microsoft.Graph.Beta"
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
+$ModulePrefix = "Microsoft.Graph"
+$ModuleName = "Authentication"
+$BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
+$PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
+$PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 
-.\tools\BuildAndPackBinaryModule.ps1 -Module "Authentication" -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+# Build and pack generated module.
+if ($Build) {
+  & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+}
+
+if ($Pack) {
+  & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
+}
 
 if ($Publish) {
-    .\tools\PublishModule.ps1 -Modules "Authentication" -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+  & $PublishModulePS1 -Modules $ModuleName -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }

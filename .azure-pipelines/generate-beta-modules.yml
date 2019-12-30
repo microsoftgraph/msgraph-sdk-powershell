@@ -1,0 +1,237 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+    - dev
+  paths:
+    include:
+    - src/Beta/*
+    - src/v1.0/*
+    - config/ModulesMapping.jsonc
+
+pr: none
+
+pool:
+  name: Microsoft Graph
+  demands: 'Agent.Name -equals Local-Agent'
+
+steps:
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+  displayName: 'Run CredScan'
+  inputs:
+   debugMode: false
+
+- task: Npm@1
+  displayName: 'Install AutoRest'
+  inputs:
+    command: 'custom'
+    customCommand: 'install -g @autorest/autorest@3.0.6114'
+
+- task: PowerShell@2
+  displayName: 'Build Auth Modules'
+  inputs:
+    filePath: '$(System.DefaultWorkingDirectory)/tools/BuildModule.ps1'
+    arguments: '-Module "Authentication" -ModulePrefix "Microsoft.Graph" -ModuleVersion $(Module_Version)'
+    pwsh: true
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\Authentication\Authentication\bin\
+    Pattern: 'Microsoft.Graph.Authentication.dll'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameSign",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\Authentication\Authentication\bin\
+    Pattern: Microsoft.Graph.Authentication.dll
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolSign",
+             "parameters": [
+                 {
+                     "parameterName": "OpusName",
+                     "parameterValue": "Microsoft"
+                 },
+                 {
+                     "parameterName": "OpusInfo",
+                     "parameterValue": "http://www.microsoft.com"
+                 },
+                 {
+                     "parameterName": "FileDigest",
+                     "parameterValue": "/fd \"SHA256\""
+                 },
+                 {
+                     "parameterName": "PageHash",
+                     "parameterValue": "/NPH"
+                 },
+                 {
+                     "parameterName": "TimeStamp",
+                     "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                 }
+             ],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: PowerShell@2
+  displayName: 'Generate and Build Graph Resource Modules'
+  inputs:
+    filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
+    arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\beta\ -UseLocalDoc -BetaGraphVersion -Build'
+    pwsh: true
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\beta\
+    Pattern: 'Microsoft.Graph.*.private.dll'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameSign",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-233863-SN",
+             "operationSetCode": "StrongNameVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 20
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP DLL CodeSigning (Graph Resource Module)'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: src\beta\
+    Pattern: 'Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+     [
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolSign",
+             "parameters": [
+                 {
+                     "parameterName": "OpusName",
+                     "parameterValue": "Microsoft"
+                 },
+                 {
+                     "parameterName": "OpusInfo",
+                     "parameterValue": "http://www.microsoft.com"
+                 },
+                 {
+                     "parameterName": "FileDigest",
+                     "parameterValue": "/fd \"SHA256\""
+                 },
+                 {
+                     "parameterName": "PageHash",
+                     "parameterValue": "/NPH"
+                 },
+                 {
+                     "parameterName": "TimeStamp",
+                     "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                 }
+             ],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         },
+         {
+             "keyCode": "CP-230012",
+             "operationSetCode": "SigntoolVerify",
+             "parameters": [],
+             "toolName": "sign",
+             "toolVersion": "1.0"
+         }
+     ]
+    SessionTimeout: 60
+
+- task: PowerShell@2
+  displayName: 'Pack Modules'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $ModuleMappingConfigPath = "$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc"
+      $GraphVersion = "beta"
+      [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+      $ModuleMapping.Keys | ForEach-Object {
+          $ModuleName = $_
+          $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$GraphVersion/$ModuleName/$ModuleName"
+          & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $(Build.ArtifactStagingDirectory)\beta\
+      }
+    pwsh: true
+
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP NuGet CodeSigning'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: '$(Build.ArtifactStagingDirectory)\beta\'
+    Pattern: '*.nupkg'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+          [
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetSign",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              },
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetVerify",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              }
+          ]
+    SessionTimeout: 20
+
+- script: |
+    echo Build complete.
+  displayName: 'Complete'
