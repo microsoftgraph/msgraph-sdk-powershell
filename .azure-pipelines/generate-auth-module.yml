@@ -115,6 +115,32 @@ steps:
       & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
     pwsh: true
 
+- task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+  displayName: 'ESRP NuGet CodeSigning'
+  inputs:
+    ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+    FolderPath: '$(Build.ArtifactStagingDirectory)\$(MODULE_NAME)'
+    Pattern: 'Microsoft.Graph.$(MODULE_NAME)*.nupkg'
+    signConfigType: inlineSignParams
+    inlineOperation: |
+          [
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetSign",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              },
+              {
+                  "keyCode": "CP-401405",
+                  "operationSetCode": "NuGetVerify",
+                  "parameters": [ ],
+                  "toolName": "sign",
+                  "toolVersion": "1.0"
+              }
+          ]
+    SessionTimeout: 20
+
 - script: |
     echo Auth module generation complete.
   displayName: 'Complete'
