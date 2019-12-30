@@ -6,7 +6,8 @@ Param(
     [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [int] $ModulePreviewNumber = -1,
-    [string[]] $RequiredModules
+    [string[]] $RequiredModules,
+    [switch] $EnableSigning
 )
 $ErrorActionPreference = "Stop"
 if($PSEdition -ne "Core") {
@@ -31,17 +32,19 @@ if (-not (Test-Path -Path $BuildModulePS1)){
 }
 
 # Set delay sign to true.
-$ModuleProjDoc = New-Object System.Xml.XmlDocument
-$ModuleProjDoc.Load($ModuleCsProj)
-$ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
+if ($EnableSigning) {
+  $ModuleProjDoc = New-Object System.Xml.XmlDocument
+  $ModuleProjDoc.Load($ModuleCsProj)
+  $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
 
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
 
-$ModuleProjDoc.Save($ModuleCsProj)
-Write-Host "Updated the .csproj files so that we can sign the built assemblies."
+  $ModuleProjDoc.Save($ModuleCsProj)
+  Write-Host "Updated the .csproj files so that we can sign the built assemblies."
+}
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."

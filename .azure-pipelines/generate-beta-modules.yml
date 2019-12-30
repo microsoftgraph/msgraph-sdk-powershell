@@ -1,19 +1,24 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 
+# Generates a release build artifact (nuget) from HEAD of master for beta Graph workload modules.
 trigger:
   branches:
     include:
-    - dev
+    - master
   paths:
     include:
     - src/Beta/*
-    - src/v1.0/*
     - config/ModulesMapping.jsonc
 
 pr: none
+
+variables:
+  MODULE_PREFIX: 'Microsoft.Graph'
+  WORKLOAD_MODULE_PATH: 'src\beta\'
+  GRAPH_VERSION: 'beta'
+  AUTH_MODULE_PATH: 'src\Authentication\Authentication\bin\'
+  AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
 
 pool:
   name: Microsoft Graph
@@ -35,15 +40,15 @@ steps:
   displayName: 'Build Auth Modules'
   inputs:
     filePath: '$(System.DefaultWorkingDirectory)/tools/BuildModule.ps1'
-    arguments: '-Module "Authentication" -ModulePrefix "Microsoft.Graph" -ModuleVersion $(Module_Version)'
+    arguments: '-Module "Authentication" -ModulePrefix $(MODULE_PREFIX) -ModuleVersion $(Module_Version) -EnableSigning'
     pwsh: true
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-    FolderPath: src\Authentication\Authentication\bin\
-    Pattern: 'Microsoft.Graph.Authentication.dll'
+    FolderPath: $(AUTH_MODULE_PATH)
+    Pattern: '$(AUTH_MODULE_DLL_PATTERN)'
     signConfigType: inlineSignParams
     inlineOperation: |
      [
@@ -68,8 +73,8 @@ steps:
   displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-    FolderPath: src\Authentication\Authentication\bin\
-    Pattern: Microsoft.Graph.Authentication.dll
+    FolderPath: $(AUTH_MODULE_PATH)
+    Pattern: $(AUTH_MODULE_DLL_PATTERN)
     signConfigType: inlineSignParams
     inlineOperation: |
      [
@@ -115,15 +120,15 @@ steps:
   displayName: 'Generate and Build Graph Resource Modules'
   inputs:
     filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-    arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\beta\ -UseLocalDoc -BetaGraphVersion -Build'
+    arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build -EnableSigning'
     pwsh: true
 
 - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
   displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-    FolderPath: src\beta\
-    Pattern: 'Microsoft.Graph.*.private.dll'
+    FolderPath: $(WORKLOAD_MODULE_PATH)
+    Pattern: '$(MODULE_PREFIX).*.private.dll'
     signConfigType: inlineSignParams
     inlineOperation: |
      [
@@ -148,8 +153,8 @@ steps:
   displayName: 'ESRP DLL CodeSigning (Graph Resource Module)'
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-    FolderPath: src\beta\
-    Pattern: 'Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.format.ps1xml, *.ps1'
+    FolderPath: $(WORKLOAD_MODULE_PATH)
+    Pattern: '$(MODULE_PREFIX).*.private.dll, $(MODULE_PREFIX).*.psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
     signConfigType: inlineSignParams
     inlineOperation: |
      [
@@ -197,12 +202,11 @@ steps:
     targetType: 'inline'
     script: |
       $ModuleMappingConfigPath = "$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc"
-      $GraphVersion = "beta"
       [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
       $ModuleMapping.Keys | ForEach-Object {
           $ModuleName = $_
-          $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$GraphVersion/$ModuleName/$ModuleName"
-          & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $(Build.ArtifactStagingDirectory)\beta\
+          $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$(GRAPH_VERSION)/$ModuleName/$ModuleName"
+          & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion $(GRAPH_VERSION) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\
       }
     pwsh: true
 
@@ -210,7 +214,7 @@ steps:
   displayName: 'ESRP NuGet CodeSigning'
   inputs:
     ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-    FolderPath: '$(Build.ArtifactStagingDirectory)\beta\'
+    FolderPath: '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
     Pattern: '*.nupkg'
     signConfigType: inlineSignParams
     inlineOperation: |
@@ -233,5 +237,5 @@ steps:
     SessionTimeout: 20
 
 - script: |
-    echo Build complete.
+    echo Beta modules generation complete.
   displayName: 'Complete'

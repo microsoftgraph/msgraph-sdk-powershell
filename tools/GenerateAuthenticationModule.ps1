@@ -8,7 +8,8 @@ Param(
     [int] $ModulePreviewNumber = -1,
     [switch] $Build,
     [switch] $Pack,
-    [switch] $Publish
+    [switch] $Publish,
+    [switch] $EnableSigning
 )
 $ErrorActionPreference = 'Stop'
 $LastExitCode = 0
@@ -24,7 +25,11 @@ $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 
 # Build and pack generated module.
 if ($Build) {
-  & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+  if($EnableSigning){
+    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -EnableSigning
+  } else {
+    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber
+  }
 }
 
 if ($Pack) {

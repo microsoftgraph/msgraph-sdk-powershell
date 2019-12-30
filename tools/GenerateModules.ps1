@@ -12,7 +12,8 @@ Param(
     [switch] $UseLocalDoc,
     [switch] $Build,
     [switch] $Pack,
-    [switch] $Publish
+    [switch] $Publish,
+    [switch] $EnableSigning
 )
 $ErrorActionPreference = 'Stop'
 $LastExitCode = 0
@@ -87,7 +88,11 @@ $ModuleMapping.Keys | ForEach-Object {
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
         if ($Build) {
-            & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+            if ($EnableSigning){
+                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
+            } else {
+                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+            }
         }
 
         if ($Pack) {
