@@ -7,9 +7,9 @@ pr:
     include:
     - dev
     - master
-    paths:
-      include:
-      - src/Authentication/*
+  paths:
+    include:
+    - src/Authentication/*
 
 trigger: none
 

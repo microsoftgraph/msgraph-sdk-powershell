@@ -6,9 +6,9 @@ trigger:
   branches:
     include:
     - master
-    paths:
-      include:
-      - src/Authentication/*
+  paths:
+    include:
+    - src/Authentication/*
 
 pr: none
 
