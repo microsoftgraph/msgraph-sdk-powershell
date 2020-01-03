@@ -194,7 +194,7 @@ steps:
              "toolVersion": "1.0"
          }
      ]
-    SessionTimeout: 60
+    SessionTimeout: 100
 
 - task: PowerShell@2
   displayName: 'Pack Modules'
@@ -235,6 +235,7 @@ steps:
               }
           ]
     SessionTimeout: 20
+
 
 - script: |
     echo V1.0 modules PR validation complete.
