@@ -23,7 +23,7 @@ variables:
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation
-  timeoutInMinutes: 180
+  timeoutInMinutes: 300
   pool:
     name: Microsoft Graph
     demands: 'Agent.Name -equals Local-Agent'

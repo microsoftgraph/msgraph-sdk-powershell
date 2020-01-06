@@ -17,29 +17,33 @@ trigger: none
 variables:
   GRAPH_VERSION: 'beta'
 
-pool:
-  name: Microsoft Graph
-  demands: 'Agent.Name -equals Local-Agent'
-
-steps:
-- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-  displayName: 'Run CredScan'
-  inputs:
-   debugMode: false
-
-- task: Npm@1
-  displayName: 'Install AutoRest'
-  inputs:
-    command: 'custom'
-    customCommand: 'install -g @autorest/autorest@3.0.6114'
-
-- task: PowerShell@2
-  displayName: 'Generate and Build Graph Resource Modules'
-  inputs:
-    filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-    arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build'
-    pwsh: true
-
-- script: |
-    echo Beta modules PR validation complete.
-  displayName: 'Complete'
+jobs:
+- job: MSGraphPSSDKValidation
+  displayName: MS Graph PS SDK Beta Validation
+  timeoutInMinutes: 300
+  pool:
+    name: Microsoft Graph
+    demands: 'Agent.Name -equals Local-Agent'
+  
+  steps:
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+     debugMode: false
+  
+  - task: Npm@1
+    displayName: 'Install AutoRest'
+    inputs:
+      command: 'custom'
+      customCommand: 'install -g @autorest/autorest@3.0.6114'
+  
+  - task: PowerShell@2
+    displayName: 'Generate and Build Graph Resource Modules'
+    inputs:
+      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
+      arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build'
+      pwsh: true
+  
+  - script: |
+      echo Beta modules PR validation complete.
+    displayName: 'Complete'
