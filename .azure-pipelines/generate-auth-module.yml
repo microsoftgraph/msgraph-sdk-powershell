@@ -144,7 +144,14 @@ jobs:
                 }
             ]
       SessionTimeout: 20
-  
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact Microsoft.Graph.Authentication.nupkg'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(MODULE_NAME)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+
   - script: |
       echo Auth module generation complete.
     displayName: 'Complete'
