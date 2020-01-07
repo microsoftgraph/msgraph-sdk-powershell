@@ -4,10 +4,10 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModulePrefix,
     [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [int] $ModulePreviewNumber = -1,
-    [string[]] $RequiredModules
+    [string[]] $RequiredModules,
+    [switch] $EnableSigning
 )
 $ErrorActionPreference = "Stop"
 if($PSEdition -ne "Core") {
@@ -20,16 +20,30 @@ if($PSCmdlet.ParameterSetName -eq "GraphResource"){
     $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$GraphVersion/$Module/$Module"
 }
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
-$PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
+$ModuleCsProj = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.csproj"
 $ModuleManifest = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.psd1"
 $ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
-
 # Import scripts
 . $NuspecHelperPS1
 
 if (-not (Test-Path -Path $BuildModulePS1)){
     Write-Error "Build script file '$BuildModulePS1' not found for '$Module' module."
+}
+
+# Set delay sign to true.
+if ($EnableSigning) {
+  $ModuleProjDoc = New-Object System.Xml.XmlDocument
+  $ModuleProjDoc.Load($ModuleCsProj)
+  $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
+
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
+  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
+
+  $ModuleProjDoc.Save($ModuleCsProj)
+  Write-Host "Updated the .csproj files so that we can sign the built assemblies."
 }
 
 # Build module
@@ -65,25 +79,5 @@ if($ModulePreviewNumber -ge 0){
 Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
 Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"]
-
-# Pack module
-& $PackModulePS1
-if($LastExitCode -ne 0) {
-    Write-Error "Failed to pack '$Module' module."
-}
-
-# Get generated .nupkg
-$NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") | Where-Object Name -Match ".nupkg").FullName
-
-$ModuleArtifactLocation = "$ArtifactsLocation\$Module"
-if(-not (Test-Path $ModuleArtifactLocation)) {
-    New-Item -Path $ModuleArtifactLocation -Type Directory
-} else {
-    Remove-Item -Path "$ModuleArtifactLocation\*" -Recurse -Force
-}
-
-# Copy package to artifacts folder.
-Write-Host -ForegroundColor Green "Copying '$NuGetPackage' to $ModuleArtifactLocation..."
-Copy-Item -Path $NuGetPackage -Destination $ModuleArtifactLocation -Force
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

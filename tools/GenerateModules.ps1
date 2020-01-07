@@ -10,7 +10,10 @@ Param(
     [switch] $BetaGraphVersion,
     [switch] $UpdateAutoRest,
     [switch] $UseLocalDoc,
-    [switch] $Publish
+    [switch] $Build,
+    [switch] $Pack,
+    [switch] $Publish,
+    [switch] $EnableSigning
 )
 $ErrorActionPreference = 'Stop'
 $LastExitCode = 0
@@ -30,8 +33,9 @@ $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
 
 # PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
-$BuildAndPackBinaryModulePS1 = Join-Path $PSScriptRoot ".\BuildAndPackBinaryModule.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
+$BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
+$PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 
 if(-not (Test-Path $ArtifactsLocation)) {
@@ -60,7 +64,7 @@ $ModuleMapping.Keys | ForEach-Object {
         # Download OpenAPI document for module.
         if(-not $UseLocalDoc)
         {
-            . $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
+            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
         }
 
         # Copy AutoRest readme.md config is none exists.
@@ -79,11 +83,21 @@ $ModuleMapping.Keys | ForEach-Object {
 
         # Manage generated module.
         Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-        . $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+        & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
 
         # Build and pack generated module.
         # Ensure Graph.Authentication is installed locally before running this.
-        . $BuildAndPackBinaryModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -RequiredModules $AuthenticationModule -ModuleVersion $ModuleVersion -ArtifactsLocation $ArtifactsLocation -ModulePreviewNumber $ModulePreviewNumber
+        if ($Build) {
+            if ($EnableSigning){
+                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
+            } else {
+                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+            }
+        }
+
+        if ($Pack) {
+            & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
+        }
     }
     catch {
         Write-Error $_.Exception
@@ -92,7 +106,8 @@ $ModuleMapping.Keys | ForEach-Object {
 
 if ($Publish) {
     # Publish generated modules.
-    . $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
+    & $PublishModulePS1 -Modules $ModuleMapping.Keys -ModulePrefix $ModulePrefix -ArtifactsLocation $ArtifactsLocation -RepositoryName $RepositoryName -RepositoryApiKey $RepositoryApiKey
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"
+Write-Host -ForegroundColor Green "------------------------------"
