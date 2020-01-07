@@ -239,6 +239,13 @@ jobs:
             ]
       SessionTimeout: 20
   
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact Beta Modules
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+
   - script: |
       echo Beta modules generation complete.
     displayName: 'Complete'

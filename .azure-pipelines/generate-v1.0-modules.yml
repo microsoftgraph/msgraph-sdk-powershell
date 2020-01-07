@@ -240,6 +240,12 @@ jobs:
             ]
       SessionTimeout: 20
   
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact V1.0 Modules
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
   
   - script: |
       echo V1.0 modules PR validation complete.
