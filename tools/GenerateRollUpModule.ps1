@@ -8,6 +8,7 @@ Param(
     [string] $ModuleVersion = "0.1.0",
     [int] $ModulePreviewNumber = -1,
     [switch] $BetaGraphVersion,
+    [switch] $Pack,
     [switch] $Publish
 )
 $ErrorActionPreference = 'Stop'
@@ -27,13 +28,13 @@ if($BetaGraphVersion){
 }
 $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
-
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\$GraphVersion\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
 $RequiredGraphModules = New-Object collections.generic.list[string]
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
+$NuspecMetadata.Remove("assemblyOriginatorKeyFile")
 
 # Import scripts
 . $NuspecHelperPS1
@@ -92,11 +93,16 @@ $NuspecMetadata["id"] = $ModulePrefix
 
 New-ModuleManifest @ModuleManifestSettings
 
-& nuget spec $RollUpModuleNuspec -Force
+if(-not (Test-Path "$RollUpModuleNuspec.nuspec")) {
+    Copy-Item (Join-Path $PSScriptRoot "\Templates\$ModulePrefix.nuspec") -Destination $GraphModuleLocation
+}
+
 Set-NuSpecValuesFromManifest -NuSpecFilePath "$RollUpModuleNuspec.nuspec" -Manifest $NuspecMetadata
 
-Write-Host -ForegroundColor Green "Packing '$ModulePrefix' module..."
-& nuget pack "$RollUpModuleNuspec.nuspec" -OutputDirectory $RollUpModuleArtifactLocation -Prop Configuration=Release
+if ($Pack) {
+    Write-Host -ForegroundColor Green "Packing '$ModulePrefix' module..."
+    & nuget pack "$RollUpModuleNuspec.nuspec" -OutputDirectory $RollUpModuleArtifactLocation -Prop Configuration=Release
+}
 
 if($LastExitCode -ne 0){
     Write-Error "Failed to pack $ModulePrefix module."

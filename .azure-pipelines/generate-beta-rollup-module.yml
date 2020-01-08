@@ -1,0 +1,125 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Generates a release build artifact (nuget) for beta roll-up module.
+trigger: none
+pr: none
+
+variables:
+  MODULE_PREFIX: 'Microsoft.Graph'
+  GRAPH_VERSION: 'beta'
+  MODULE_NAME: 'Graph'
+  MODULE_PATH: 'src\beta\Graph\Graph\'
+
+jobs:
+- job: MSGraphPSSDKGeneration
+  displayName: MS Graph PS SDK Roll-Up Generation
+  timeoutInMinutes: 300
+  pool:
+    name: Microsoft Graph
+    demands: 'Agent.Name -equals Local-Agent'
+  
+  steps:
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+      debugMode: false
+  
+  - task: PowerShell@2
+    displayName: 'Generate and Build Roll-Up Module'
+    inputs:
+      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
+      arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -BetaGraphVersion'
+      pwsh: true
+  
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+    displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
+    inputs:
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      FolderPath: $(MODULE_PATH)
+      Pattern: '$(MODULE_PREFIX).psd1, $(MODULE_PREFIX).*.psd1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
+      signConfigType: inlineSignParams
+      inlineOperation: |
+       [
+           {
+               "keyCode": "CP-230012",
+               "operationSetCode": "SigntoolSign",
+               "parameters": [
+                   {
+                       "parameterName": "OpusName",
+                       "parameterValue": "Microsoft"
+                   },
+                   {
+                       "parameterName": "OpusInfo",
+                       "parameterValue": "http://www.microsoft.com"
+                   },
+                   {
+                       "parameterName": "FileDigest",
+                       "parameterValue": "/fd \"SHA256\""
+                   },
+                   {
+                       "parameterName": "PageHash",
+                       "parameterValue": "/NPH"
+                   },
+                   {
+                       "parameterName": "TimeStamp",
+                       "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                   }
+               ],
+               "toolName": "sign",
+               "toolVersion": "1.0"
+           },
+           {
+               "keyCode": "CP-230012",
+               "operationSetCode": "SigntoolVerify",
+               "parameters": [],
+               "toolName": "sign",
+               "toolVersion": "1.0"
+           }
+       ]
+      SessionTimeout: 20
+  
+  - task: NuGetCommand@2
+    displayName: 'Pack Roll-Up Module'
+    inputs:
+      command: 'pack'
+      packagesToPack: '$(MODULE_PATH)'
+      packDestination: '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)'
+      versioningScheme: 'off'
+  
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+    displayName: 'ESRP NuGet CodeSigning'
+    inputs:
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      FolderPath: '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
+      Pattern: 'Microsoft.Graph.nupkg'
+      signConfigType: inlineSignParams
+      inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetSign",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetVerify",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+      SessionTimeout: 20
+
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact Microsoft.Graph.nupkg'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+
+  - script: |
+      echo Roll-Up Module Generation Complete.
+    displayName: 'Complete'
