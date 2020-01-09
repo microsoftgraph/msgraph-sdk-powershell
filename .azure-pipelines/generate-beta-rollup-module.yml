@@ -2,14 +2,14 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) for beta roll-up module.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger: none
 pr: none
-
 variables:
   MODULE_PREFIX: 'Microsoft.Graph'
   GRAPH_VERSION: 'beta'
   MODULE_NAME: 'Graph'
-  MODULE_PATH: 'src\beta\Graph\Graph\'
+  MODULE_PATH: 'src/Beta/Graph/Graph'
 
 jobs:
 - job: MSGraphPSSDKGeneration
@@ -29,7 +29,7 @@ jobs:
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
-      arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -BetaGraphVersion'
+      arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/ -BetaGraphVersion'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
@@ -83,16 +83,17 @@ jobs:
     displayName: 'Pack Roll-Up Module'
     inputs:
       command: 'pack'
-      packagesToPack: '$(MODULE_PATH)'
-      packDestination: '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)'
+      Configuration: Release
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(MODULE_PATH)/$(MODULE_PREFIX).nuspec'
+      packDestination: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
       versioningScheme: 'off'
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
-      Pattern: 'Microsoft.Graph.nupkg'
+      FolderPath: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
+      Pattern: 'Microsoft.Graph*.nupkg'
       signConfigType: inlineSignParams
       inlineOperation: |
             [
@@ -120,6 +121,12 @@ jobs:
       ArtifactName: 'drop'
       publishLocation: 'Container'
 
-  - script: |
-      echo Roll-Up Module Generation Complete.
-    displayName: 'Complete'
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true

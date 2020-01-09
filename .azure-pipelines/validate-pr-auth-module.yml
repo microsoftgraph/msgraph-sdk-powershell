@@ -2,6 +2,7 @@
 # Licensed under the MIT License.
 
 # Validate pull requests to master and dev branches for auth module.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pr:
   branches:
     include:
@@ -10,7 +11,6 @@ pr:
   paths:
     include:
     - src/Authentication/*
-
 trigger: none
 
 jobs:
@@ -34,6 +34,12 @@ jobs:
       arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build'
       pwsh: true
   
-  - script: |
-      echo Auth module PR validation complete.
-    displayName: 'Complete'
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true

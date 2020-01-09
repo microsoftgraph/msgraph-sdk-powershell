@@ -2,6 +2,7 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
   branches:
     include:
@@ -9,9 +10,7 @@ trigger:
   paths:
     include:
     - src/Authentication/*
-
 pr: none
-
 variables:
   MODULE_NAME: 'Authentication'
   MODULE_PATH: 'src\Authentication\Authentication\'
@@ -152,6 +151,12 @@ jobs:
       ArtifactName: 'drop'
       publishLocation: 'Container'
 
-  - script: |
-      echo Auth module generation complete.
-    displayName: 'Complete'
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true
