@@ -72,9 +72,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 authConfig.CertificateName = CertificateName;
             }
 
-            // Save auth config to session state.
-            SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
-
             try
             {
                 // Gets a static instance of IAuthenticationProvider when the client app hasn't changed. 
@@ -97,11 +94,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         }
                     }
                 };
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
-                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
 
                 // Trigger consent.
+                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
+                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
                 authProvider.AuthenticateRequestAsync(httpRequestMessage).GetAwaiter().GetResult();
+
+                JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(httpRequestMessage.Headers.Authorization?.Parameter);
+                authConfig.Scopes = jwtPayload.Scp.Split(' ');
+
+                // Save auth config to session state.
+                SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
             }
             catch (AuthenticationException authEx)
             {
@@ -116,8 +119,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             WriteObject("Welcome To Microsoft Graph!");
-            // WriteObject(File.ReadAllText(".\\Art\\WelcomeText.txt"));
-            // WriteObject(File.ReadAllText(".\\Art\\GRaphText.txt"));
         }
 
         protected override void StopProcessing()
