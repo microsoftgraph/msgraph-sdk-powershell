@@ -35,6 +35,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         [JsonProperty("scp")]
         public string Scp { get; set; }
 
+        [JsonProperty("roles")]
+        public string[] Roles { get; set; }
+
         [JsonProperty("tid")]
         public Guid Tid { get; set; }
 

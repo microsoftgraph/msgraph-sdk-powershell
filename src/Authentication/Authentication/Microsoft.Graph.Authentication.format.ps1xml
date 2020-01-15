@@ -13,6 +13,9 @@
           <TableRowEntry>
             <TableColumnItems>
               <TableColumnItem>
+                <PropertyName>AppName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>AuthType</PropertyName>
               </TableColumnItem>
               <TableColumnItem>

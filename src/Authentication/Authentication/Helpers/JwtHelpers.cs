@@ -5,12 +5,14 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
+    using Microsoft.IdentityModel.Tokens;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using System;
     using System.Collections.Generic;
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
+    using System.Text;
 
     /// <summary>
     /// A JwtHelpers class.
@@ -24,27 +26,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         internal static string Decode(string jwToken)
         {
             JwtSecurityTokenHandler jwtHandler = new JwtSecurityTokenHandler();
-
-            if (!jwtHandler.CanReadToken(jwToken))
+            if (jwtHandler.CanReadToken(jwToken))
             {
-                throw new AuthenticationException(
-                        new Error
-                        {
-                            Code = ErrorConstants.Codes.InvalidJWT,
-                            Message = ErrorConstants.Message.InvalidJWT
-                        });
-            } else {
                 JwtSecurityToken token = jwtHandler.ReadJwtToken(jwToken);
-                IEnumerable<Claim> claims = token.Claims;
-                var jwtPayload = "{";
-                foreach (Claim c in claims)
-                {
-                    if (!c.Type.Equals("xms_st"))
-                        jwtPayload += '"' + c.Type + "\":\"" + c.Value + "\",";
-                }
-                jwtPayload += "}";
-
-                return JToken.Parse(jwtPayload).ToString(Formatting.Indented);
+                JwtPayload jwtPayload = new JwtPayload(token.Claims);
+                return jwtPayload.SerializeToJson();
+            } else {
+                return null;
             }
         }
 
@@ -57,7 +45,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             try
             {
-                return JsonConvert.DeserializeObject<T>(Decode(jwtString));
+                string decodedJWT = Decode(jwtString);
+                if (decodedJWT == null)
+                    return default(T);
+                return JsonConvert.DeserializeObject<T>(decodedJWT);
             }
             catch (Exception ex)
             {

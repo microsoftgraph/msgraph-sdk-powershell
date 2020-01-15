@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public AuthenticationType AuthType { get; set; }
         public string CertificateName { get; set; }
         public string Account { get; set; }
+        public string AppName { get; set; }
 
         public AuthConfig()
         {
