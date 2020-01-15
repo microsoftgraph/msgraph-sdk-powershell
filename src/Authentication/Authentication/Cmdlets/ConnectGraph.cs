@@ -38,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void BeginProcessing()
         {
-            validateParameters();
+            ValidateParameters();
             base.BeginProcessing();
         }
 
@@ -102,6 +102,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(httpRequestMessage.Headers.Authorization?.Parameter);
                 authConfig.Scopes = jwtPayload.Scp.Split(' ');
+                authConfig.TenantId = jwtPayload.Tid.ToString();
+                authConfig.Account = jwtPayload.Upn;
 
                 // Save auth config to session state.
                 SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.StopProcessing();
         }
 
-        private void validateParameters()
+        private void ValidateParameters()
         {
             if (ParameterSetName == Constants.AppParameterSet)
             {
