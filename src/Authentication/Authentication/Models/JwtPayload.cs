@@ -18,7 +18,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public string AppDisplayname { get; set; }
 
         [JsonProperty("appid")]
-        public Guid Appid { get; set; }
+        public string Appid { get; set; }
 
         [JsonProperty("family_name")]
         public string FamilyName { get; set; }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public string Name { get; set; }
 
         [JsonProperty("oid")]
-        public Guid Oid { get; set; }
+        public string Oid { get; set; }
 
         [JsonProperty("scp")]
         public string Scp { get; set; }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public string[] Roles { get; set; }
 
         [JsonProperty("tid")]
-        public Guid Tid { get; set; }
+        public string Tid { get; set; }
 
         [JsonProperty("unique_name")]
         public string UniqueName { get; set; }
