@@ -1,6 +1,6 @@
 # Connect To Graph
 
-# Connect using previously consented permisssions
+# Connect using previously consented permissions
 Connect-Graph
 
 # Try to Get-User
