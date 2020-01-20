@@ -1,9 +1,16 @@
 # Installing the Module
 
-# Temporarily, register this repository
-Register-PSRepository `
--Name GraphPowerShell `
--SourceLocation https://graphpowershellrepository.azurewebsites.net/nuget
+# Installing the Graph PowerShell module for the Beta API with no previous versions installed
+Install-module Microsoft.Graph
 
-# Installing the Graph PowerShell module for the Beta API 
-Install-module Microsoft.Graph.Beta -Repository GraphPowerShell
+# Uninstalling the old preview version, before installing the new
+
+# Remove the main meta module
+Uninstall-Module Microsoft.Graph.Beta
+
+# Remove all the dependent modules
+Get-InstalledModule Microsoft.Graph.Beta.* | uninstall-module
+
+# Update the authentication module from 0.1.4 to 0.1.5
+Install-Module Microsoft.Graph.Authentication -Repository PSGallery -force
+

@@ -1,10 +1,10 @@
 # Teams Chat snippets
 
 # Get list of 1:1 chats
-Get-Chat
+Get-MgChat
 
 # Get Messages from Chat
-Get-ChatMessage -chatId $chatId 
+Get-MgChatMessage -chatId $chatId 
 
 # Send a message in that 1:1 chat
-New-ChatMessage -chatId $chatId -BodyContent "Hi from VSCode again!"
+New-MgChatMessage -chatId $chatId -BodyContent "Hi from VSCode again!"

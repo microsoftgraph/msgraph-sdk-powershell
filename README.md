@@ -1,20 +1,15 @@
-# Microsoft Graph PowerShell SDK (alpha)
-The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph. 
+# Microsoft Graph PowerShell SDK Preview
+The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph.
 
-## Installing the Microsoft.Graph.Beta Module
+## Installing the Microsoft.Graph Module
 
-In the future, the modules will be published to the PowerShell Gallery, however in the short term they are hosted on our own nuget feed. Use the following commands to register repository and then install the `Microsoft.Graph.Beta` module from there.
+The modules are now published on the PowerShell Gallery. Installing is as simple as:
 
 ```ps
-Register-PSRepository `
--Name GraphPowerShell `
--SourceLocation https://graphpowershellrepository.azurewebsites.net/nuget
-
-# Installing the Graph PowerShell module for the Beta API 
-Install-module Microsoft.Graph.Beta -Repository GraphPowerShell
+Install-module Microsoft.Graph
 ```
 
-There are a set of samples in the `samples` folder to help getting started with the library.
+There are a set of samples in the `samples` folder to help getting started with the library.  It you have an older version of these modules installed, there are uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
 ## Generate Module
 
