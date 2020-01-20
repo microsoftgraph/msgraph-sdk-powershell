@@ -9,7 +9,7 @@ The modules are now published on the PowerShell Gallery. Installing is as simple
 Install-module Microsoft.Graph
 ```
 
-There are a set of samples in the `samples` folder to help getting started with the library.  It you have an older version of these modules installed, there are uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
+There are a set of samples in the `samples` folder to help getting started with the library.  If you have an older version of these modules installed, there are uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
 ## Generate Module
 
