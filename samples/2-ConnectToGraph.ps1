@@ -4,7 +4,7 @@
 Connect-Graph
 
 # Try to Get-User
-Get-User
+Get-MgUser
 
 # Grant more permissions
 Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
