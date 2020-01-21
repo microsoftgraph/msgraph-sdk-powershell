@@ -1,6 +1,6 @@
 # Drive snippets
 
-# Get list of drives
+# Get drives
 
 Get-MgDrive -Top 100
 
