@@ -11,7 +11,7 @@ Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
             "Directory.ReadWrite.All","Chat.ReadWrite", "People.Read", `
             "Group.Read.All", "Directory.AccessAsUser.All", "Tasks.ReadWrite", `
             "Sites.Manage.All"
-# Now Get-User works
+# Now Get-MgUser works
 
 # Tokens persist across Terminal sessions
 
