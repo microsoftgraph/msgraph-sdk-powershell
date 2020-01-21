@@ -1,9 +1,9 @@
 # Drive snippets
 
-# Get list of drives drives
+# Get list of drives
 
 Get-MgDrive -Top 100
 
-# Get items in drives
+# Get drive list
 
 Get-MgDriveList -DriveId $DriveId
