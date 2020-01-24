@@ -35,6 +35,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
+
+            // Register ODataQueryOptionsHandler after AuthHandler.
             defaultHandlers.Insert(1, (new ODataQueryOptionsHandler()));
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
