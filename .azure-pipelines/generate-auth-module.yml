@@ -38,6 +38,7 @@ jobs:
       pwsh: true
 
   - task: DotNetCoreCLI@2
+    displayName: 'Run Enabled Tests'
     inputs:
       command: 'test'
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
