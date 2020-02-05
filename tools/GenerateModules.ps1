@@ -2,8 +2,7 @@
 # Licensed under the MIT License.
 Param(
     [string] $RepositoryApiKey,
-    [string] $RepositoryName,
-    [string] $ModuleVersion = "0.1.1",
+    [string] $RepositoryName = "PSGallery",
     [int] $ModulePreviewNumber = -1,
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
@@ -15,18 +14,24 @@ Param(
     [switch] $Publish,
     [switch] $EnableSigning
 )
+enum VersionState {
+    Invalid
+    Valid
+    EqualToFeed
+    NotOnFeed
+}
 $ErrorActionPreference = 'Stop'
 $LastExitCode = 0
-if($PSEdition -ne 'Core') {
-  Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
+if ($PSEdition -ne 'Core') {
+    Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
 $GraphVersion = "v1.0"
-if ($BetaGraphVersion){
+if ($BetaGraphVersion) {
     $GraphVersion = "Beta"
 }
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "../src/$GraphVersion/"
+$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
 $AuthenticationModule = "Microsoft.Graph.Authentication"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
@@ -37,12 +42,14 @@ $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
+$ReadModuleReadMePS1 = Join-Path $PSScriptRoot ".\ReadModuleReadMe.ps1" -Resolve
+$ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 
-if(-not (Test-Path $ArtifactsLocation)) {
+if (-not (Test-Path $ArtifactsLocation)) {
     New-Item -Path $ArtifactsLocation -Type Directory
 }
 
-if(-not (Test-Path $ModuleMappingConfigPath)){
+if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
 
@@ -50,7 +57,7 @@ if(-not (Test-Path $ModuleMappingConfigPath)){
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 Install-Module $AuthenticationModule -Repository $RepositoryName -AllowPrerelease -Force
 
-if($UpdateAutoRest) {
+if ($UpdateAutoRest) {
     # Update AutoRest.
     & AutoRest-beta --reset
 }
@@ -58,49 +65,61 @@ if($UpdateAutoRest) {
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object {
     $ModuleName = $_
-    $ModuleProjectDir = (Join-Path $ModulesOutputDir "$ModuleName/$ModuleName")
+    $ModuleProjectDir = (Join-Path $ModulesOutputDir "$ModuleName\$ModuleName")
 
-    try {
-        # Download OpenAPI document for module.
-        if(-not $UseLocalDoc)
-        {
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
-        }
+    # Copy AutoRest readme.md config is none exists.
+    if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
+        New-Item -Path $ModuleProjectDir -Type Directory -Force
+        Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
+    }
+    $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
 
-        # Copy AutoRest readme.md config is none exists.
-        if(-not (Test-Path "$ModuleProjectDir/readme.md")) {
-            New-Item -Path $ModuleProjectDir -Type Directory -Force
-            Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
-        }
+    $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath
+    [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
-        # Generate PowerShell modules.
-        Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
-        $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-        AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath "$ModuleProjectDir/readme.md" --verbose
-        if ($LastExitCode -ne 0){
-            Write-Error "Failed to generate '$ModuleName' module."
-        }
+    if ($VersionState.Equals([VersionState]::Invalid)) {
+        Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
+    }
+    elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
+        Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
+    }
+    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+        try {
+            # Download OpenAPI document for module.
+            if (-not $UseLocalDoc) {
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
+            }
 
-        # Manage generated module.
-        Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-        & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+            # Generate PowerShell modules.
+            Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
+            $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
+            AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            if ($LastExitCode -ne 0) {
+                Write-Error "Failed to generate '$ModuleName' module."
+            }
 
-        # Build and pack generated module.
-        # Ensure Graph.Authentication is installed locally before running this.
-        if ($Build) {
-            if ($EnableSigning){
-                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
-            } else {
-                & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+            # Manage generated module.
+            Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
+            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+
+            # Build and pack generated module.
+            # Ensure Graph.Authentication is installed locally before running this.
+            if ($Build) {
+                if ($EnableSigning) {
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
+                }
+                else {
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+                }
+            }
+
+            if ($Pack) {
+                & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
             }
         }
-
-        if ($Pack) {
-            & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
+        catch {
+            Write-Error $_.Exception
         }
-    }
-    catch {
-        Write-Error $_.Exception
     }
 }
 

@@ -86,3 +86,9 @@ directive:
     set:
       subject: GroupTransitiveMemberOf
 ```
+### Versioning
+
+``` yaml
+module-version: 0.1.1
+```
+

@@ -83,3 +83,9 @@ directive:
       variant: CreateViaIdentityExpanded
     set:
       subject: SubSite
+### Versioning
+
+``` yaml
+module-version: 0.1.1
+```
+
