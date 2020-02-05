@@ -12,7 +12,7 @@ Param(
     [switch] $EnableSigning
 )
 $ErrorActionPreference = 'Stop'
-$LastExitCode = 0
+$LASTEXITCODE = $null
 if($PSEdition -ne 'Core') {
   Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }

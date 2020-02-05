@@ -10,6 +10,7 @@ Param(
     [switch] $EnableSigning
 )
 $ErrorActionPreference = "Stop"
+$LASTEXITCODE= $null
 if($PSEdition -ne "Core") {
   Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
@@ -49,7 +50,7 @@ if ($EnableSigning) {
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
 & $BuildModulePS1 -Docs -Release
-if($LastExitCode -ne 0) {
+if($LASTEXITCODE) {
     Write-Error "Failed to build '$Module' module."
 }
 

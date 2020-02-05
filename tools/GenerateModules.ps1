@@ -21,7 +21,7 @@ enum VersionState {
     NotOnFeed
 }
 $ErrorActionPreference = 'Stop'
-$LastExitCode = 0
+$LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -65,16 +65,18 @@ if ($UpdateAutoRest) {
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object {
     $ModuleName = $_
-    $ModuleProjectDir = (Join-Path $ModulesOutputDir "$ModuleName\$ModuleName")
+    $ModuleProjectDir = Join-Path $ModulesOutputDir "$ModuleName\$ModuleName"
 
     # Copy AutoRest readme.md config is none exists.
     if (-not (Test-Path "$ModuleProjectDir\readme.md")) {
         New-Item -Path $ModuleProjectDir -Type Directory -Force
         Copy-Item (Join-Path $PSScriptRoot "\Templates\readme.md") -Destination $ModuleProjectDir
     }
-    $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
 
+    $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
+    # Read specified module version from readme.
     $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath
+    # Validate module version with the one on PSGallery.
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
     if ($VersionState.Equals([VersionState]::Invalid)) {
@@ -85,27 +87,28 @@ $ModuleMapping.Keys | ForEach-Object {
     }
     elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
         try {
-            # Download OpenAPI document for module.
             if (-not $UseLocalDoc) {
+                # Download OpenAPI document for module.
                 & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
             }
 
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-            AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
-            if ($LastExitCode -ne 0) {
+            & AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
+            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully 😊."
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
             & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
 
-            # Build and pack generated module.
-            # Ensure Graph.Authentication is installed locally before running this.
             if ($Build) {
+                # Build generated module.
                 if ($EnableSigning) {
+                    # Sign generated module.
                     & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
                 }
                 else {
@@ -114,6 +117,7 @@ $ModuleMapping.Keys | ForEach-Object {
             }
 
             if ($Pack) {
+                # Pack generated module.
                 & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
             }
         }
@@ -129,4 +133,3 @@ if ($Publish) {
 }
 
 Write-Host -ForegroundColor Green "-------------Done-------------"
-Write-Host -ForegroundColor Green "------------------------------"
