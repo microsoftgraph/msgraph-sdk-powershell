@@ -10,14 +10,14 @@ Param(
     [switch] $EnableSigning
 )
 $ErrorActionPreference = "Stop"
-$LASTEXITCODE= $null
-if($PSEdition -ne "Core") {
-  Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
+$LASTEXITCODE = $null
+if ($PSEdition -ne "Core") {
+    Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
 
 $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
-if($PSCmdlet.ParameterSetName -eq "GraphResource"){
+if ($PSCmdlet.ParameterSetName -eq "GraphResource") {
     $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$GraphVersion/$Module/$Module"
 }
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
@@ -28,51 +28,55 @@ $ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 # Import scripts
 . $NuspecHelperPS1
 
-if (-not (Test-Path -Path $BuildModulePS1)){
+if (-not (Test-Path -Path $BuildModulePS1)) {
     Write-Error "Build script file '$BuildModulePS1' not found for '$Module' module."
 }
 
 # Set delay sign to true.
+
+$ModuleProjDoc = New-Object System.Xml.XmlDocument
+$ModuleProjDoc.Load($ModuleCsProj)
+$ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
 if ($EnableSigning) {
-  $ModuleProjDoc = New-Object System.Xml.XmlDocument
-  $ModuleProjDoc.Load($ModuleCsProj)
-  $ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
-
-  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
-  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
-  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
-  Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
-
-  $ModuleProjDoc.Save($ModuleCsProj)
-  Write-Host "Updated the .csproj files so that we can sign the built assemblies."
+    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
+    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
+    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
 }
+Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
+Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Version" -ElementValue $ModuleVersion
+
+$ModuleProjDoc.Save($ModuleCsProj)
+Write-Host "Updated the .csproj."
+
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
 & $BuildModulePS1 -Docs -Release
-if($LASTEXITCODE) {
+if ($LASTEXITCODE) {
     Write-Error "Failed to build '$Module' module."
 }
 
 [HashTable]$ModuleManifestSettings = @{
-    Path = $ModuleManifest
+    Path              = $ModuleManifest
     FunctionsToExport = "*"
-    ModuleVersion = $ModuleVersion
-    IconUri = $NuspecMetadata["iconUri"]
+    ModuleVersion     = $ModuleVersion
+    IconUri           = $NuspecMetadata["iconUri"]
 }
 $FullVersionNumber = $ModuleVersion
 
-if($ModulePreviewNumber -ge 0){
-    if($RequiredModules.Count -gt 0) {
+if ($ModulePreviewNumber -ge 0) {
+    if ($RequiredModules.Count -gt 0) {
         # Prerelease is only supported in PowerShell 7 (preview) and above.
         $ModuleManifestSettings["RequiredModules"] = $RequiredModules
         $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
-    } else {
+    }
+    else {
         $ModuleManifestSettings["Prerelease"] = "preview$ModulePreviewNumber"
     }
     $FullVersionNumber = "$ModuleVersion-preview$ModulePreviewNumber"
-} else {
-    if($RequiredModules.Count -gt 0) {
+}
+else {
+    if ($RequiredModules.Count -gt 0) {
         $ModuleManifestSettings["RequiredModules"] = $RequiredModules
     }
 }
