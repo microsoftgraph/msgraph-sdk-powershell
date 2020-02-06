@@ -25,6 +25,7 @@ $ModuleCsProj = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.csproj"
 $ModuleManifest = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.psd1"
 $ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 [HashTable] $NuspecMetadata = Get-Content (Join-Path $PSScriptRoot "..\config\ModuleMetadata.json") | ConvertFrom-Json -AsHashTable
+
 # Import scripts
 . $NuspecHelperPS1
 
