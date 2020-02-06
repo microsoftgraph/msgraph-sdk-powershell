@@ -74,8 +74,14 @@ $ModuleMapping.Keys | ForEach-Object {
     }
 
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
+
     # Read specified module version from readme.
     $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath
+    if ($ModuleVersion -eq $null){
+        # Module version not set in readme.md.
+        Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'module-version' in $ModuleLevelReadMePath."
+    }
+
     # Validate module version with the one on PSGallery.
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
@@ -95,6 +101,7 @@ $ModuleMapping.Keys | ForEach-Object {
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
+
             & AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
