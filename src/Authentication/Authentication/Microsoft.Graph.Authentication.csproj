@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
+  
   <PropertyGroup>
     <Version>0.0.1</Version>
     <LangVersion>7.1</LangVersion>
@@ -16,11 +18,20 @@
     <WarningsAsErrors />
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <PreLoadAssemblies Include="$(RepoTools)lib\System.Security.Cryptography.ProtectedData.dll" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.2" />
     <PackageReference Include="Microsoft.Graph.Core" Version="1.18.0" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.5.1" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
   </ItemGroup>
+
+  <Target Name="CopyFiles" AfterTargets="Build">
+    <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(TargetDir)\PreloadAssemblies" />
+  </Target>
 </Project>
