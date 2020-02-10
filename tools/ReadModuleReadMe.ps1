@@ -2,21 +2,18 @@
 # Licensed under the MIT License.
 
 param(
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ReadMePath
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ReadMePath,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $FieldToRead
 ) 
 $ErrorActionPreference = "Stop"
 # Default module version
-$ModuleVersion = $null
+$FieldValue = $null
 $ReadMeContent = Get-Content $ReadMePath -Delimiter "### Versioning"
 if ($ReadMeContent.Length -eq 2) {
-    $VersioningSection = $ReadMeContent[1].Replace(" ", "")
+    $VersioningSection = $ReadMeContent[1].Replace("``", "").Replace("yaml", "") | ConvertFrom-Yaml
 
-    if ($VersioningSection -match "#?module-version:\d*.\d*.\d*") {
-        # Skip if it starts with # - comment.
-        if (!$Matches[0].StartsWith("#")) {
-            $ModuleVersionSection = $Matches[0].Split(":")
-            $ModuleVersion = $ModuleVersionSection[1]
-        }
+    if ($null -ne $VersioningSection[$FieldToRead]){
+        $FieldValue = $VersioningSection[$FieldToRead]
     }
 }
-return $ModuleVersion
+return $FieldValue

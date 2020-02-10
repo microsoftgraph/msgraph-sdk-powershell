@@ -5,6 +5,7 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModulePrefix,
     [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
     [string[]] $RequiredModules,
     [switch] $EnableSigning
@@ -62,6 +63,7 @@ if ($LASTEXITCODE) {
     FunctionsToExport = "*"
     ModuleVersion     = $ModuleVersion
     IconUri           = $NuspecMetadata["iconUri"]
+    ReleaseNotes      = $ReleaseNotes
 }
 $FullVersionNumber = $ModuleVersion
 
@@ -84,6 +86,6 @@ else {
 
 Write-Host -ForegroundColor Green "Updating '$Module' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
-Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"]
+Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
 
 Write-Host -ForegroundColor Green "-------------Done-------------"

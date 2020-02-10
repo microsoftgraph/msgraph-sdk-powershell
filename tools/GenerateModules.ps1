@@ -76,8 +76,8 @@ $ModuleMapping.Keys | ForEach-Object {
     $ModuleLevelReadMePath = Join-Path $ModuleProjectDir "\readme.md" -Resolve
 
     # Read specified module version from readme.
-    $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath
-    if ($ModuleVersion -eq $null){
+    $ModuleVersion = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "module-version"
+    if ($ModuleVersion -eq $null) {
         # Module version not set in readme.md.
         Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'module-version' in $ModuleLevelReadMePath."
     }
@@ -92,6 +92,13 @@ $ModuleMapping.Keys | ForEach-Object {
         Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
     }
     elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+        # Read release notes from readme.
+        $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
+        if ($ModuleReleaseNotes -eq $null) {
+            # Release notes not set in readme.md.
+            Write-Error "Release notes not set on $ModulePrefix.$ModuleName module. Please set 'release-notes' in $ModuleLevelReadMePath."
+        }
+
         try {
             if (-not $UseLocalDoc) {
                 # Download OpenAPI document for module.
@@ -116,10 +123,10 @@ $ModuleMapping.Keys | ForEach-Object {
                 # Build generated module.
                 if ($EnableSigning) {
                     # Sign generated module.
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -EnableSigning
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes -EnableSigning
                 }
                 else {
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes
                 }
             }
 
