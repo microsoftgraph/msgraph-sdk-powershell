@@ -6,14 +6,12 @@ param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $FieldToRead
 ) 
 $ErrorActionPreference = "Stop"
-# Default module version
 $FieldValue = $null
+# Read readme.md.
 $ReadMeContent = Get-Content $ReadMePath -Delimiter "### Versioning"
 if ($ReadMeContent.Length -eq 2) {
+    # Convert versioning section to yaml.
     $VersioningSection = $ReadMeContent[1].Replace("``", "").Replace("yaml", "") | ConvertFrom-Yaml
-
-    if ($null -ne $VersioningSection[$FieldToRead]){
-        $FieldValue = $VersioningSection[$FieldToRead]
-    }
+    $FieldValue = $VersioningSection[$FieldToRead]
 }
 return $FieldValue
