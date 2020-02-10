@@ -90,5 +90,7 @@ directive:
 
 ``` yaml
 module-version: 0.1.1
+release-notes:
+ - Initial release of Microsoft.Graph.Groups.DirectoryObject module.
 ```
 

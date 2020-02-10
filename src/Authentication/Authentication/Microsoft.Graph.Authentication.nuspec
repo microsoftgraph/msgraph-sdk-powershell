@@ -12,8 +12,7 @@
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes>
-    </releaseNotes>
+    <releaseNotes>Initial release of Microsoft.Graph.Authentication module.</releaseNotes>
     <dependencies />
   </metadata>
   <files>

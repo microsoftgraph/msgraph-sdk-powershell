@@ -25,6 +25,8 @@ $LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
+# Install Powershell-yaml
+Install-Module powershell-yaml -Force
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
@@ -56,7 +58,6 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 Install-Module $AuthenticationModule -Repository $RepositoryName -AllowPrerelease -Force
-
 if ($UpdateAutoRest) {
     # Update AutoRest.
     & AutoRest-beta --reset

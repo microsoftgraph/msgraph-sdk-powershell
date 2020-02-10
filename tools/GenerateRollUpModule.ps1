@@ -102,7 +102,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         LicenseUri             = $NuspecMetadata["licenseUri"]
         ProjectUri             = $NuspecMetadata["projectUri"]
         IconUri                = $NuspecMetadata["iconUri"]
-        # ReleaseNotes = $NuspecMetadata["releaseNotes"]
+        ReleaseNotes           = $NuspecMetadata["releaseNotes"]
     }
 
     Write-Host -ForegroundColor Green "Creating '$ModulePrefix' module manifest and nuspec..."

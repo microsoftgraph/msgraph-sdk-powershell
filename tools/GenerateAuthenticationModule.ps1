@@ -51,10 +51,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -EnableSigning
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
     }
     else {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
     }
   }
 

@@ -8,7 +8,7 @@
     "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
     "iconUri": "https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png",
     "tags": "MicrosoftGraph;Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;",
-    "releaseNotes": "",
+    "releaseNotes": "Initial release of Microsoft.Graph module.",
     "assemblyOriginatorKeyFile": "35MSSharedLib1024.snk",
-    "version": "0.1.1"
+    "version": "0.2.0"
 }
