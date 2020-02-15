@@ -89,8 +89,7 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 0.1.1
+module-version: 0.1.2
 release-notes:
- - Initial release of Microsoft.Graph.Groups.DirectoryObject module.
+ - Added New-MgGroupMember command.
 ```
-
