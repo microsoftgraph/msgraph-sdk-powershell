@@ -86,3 +86,10 @@ directive:
     set:
       subject: GroupTransitiveMemberOf
 ```
+### Versioning
+
+``` yaml
+module-version: 0.1.2
+release-notes:
+ - Added New-MgGroupMember command.
+```
