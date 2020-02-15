@@ -5,6 +5,7 @@ Param(
     [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation
 )
+$LASTEXITCODE = $null
 $ErrorActionPreference = "Stop"
 if($PSEdition -ne "Core") {
   Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
@@ -18,7 +19,7 @@ $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
 
 # Pack module
 & $PackModulePS1
-if($LastExitCode -ne 0) {
+if($LASTEXITCODE) {
     Write-Error "Failed to pack '$Module' module."
 }
 
