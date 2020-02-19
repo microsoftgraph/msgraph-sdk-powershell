@@ -17,8 +17,8 @@
   </metadata>
   <files>
     <file src="Microsoft.Graph.Authentication.psd1" />
+    <file src="Microsoft.Graph.Authentication.format.ps1xml" />
     <file src="Microsoft.Graph.Authentication.psm1" />
-    <!--<file src="Graph.Authentication.psm1" />-->
     <!-- https://github.com/NuGet/Home/issues/3584 -->
     <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />

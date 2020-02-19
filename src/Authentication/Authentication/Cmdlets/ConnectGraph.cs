@@ -6,8 +6,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Identity.Client;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Management.Automation;
     using System.Net.Http;
     using System.Threading;
@@ -38,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void BeginProcessing()
         {
-            validateParameters();
+            ValidateParameters();
             base.BeginProcessing();
         }
 
@@ -72,13 +74,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 authConfig.CertificateName = CertificateName;
             }
 
-            // Save auth config to session state.
-            SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
-
             try
             {
                 // Gets a static instance of IAuthenticationProvider when the client app hasn't changed. 
                 IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
+                IClientApplicationBase clientApplication = null;
+                if (ParameterSetName == Constants.UserParameterSet)
+                    clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
+                else
+                    clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
 
                 // Incremental scope consent without re-instanciating the auth provider. We will use a static instance.
                 GraphRequestContext graphRequestContext = new GraphRequestContext();
@@ -97,11 +101,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         }
                     }
                 };
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
-                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
 
                 // Trigger consent.
+                HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
+                httpRequestMessage.Properties.Add(typeof(GraphRequestContext).ToString(), graphRequestContext);
                 authProvider.AuthenticateRequestAsync(httpRequestMessage).GetAwaiter().GetResult();
+
+                var accounts = clientApplication.GetAccountsAsync().GetAwaiter().GetResult();
+                var account = accounts.FirstOrDefault();
+
+                JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(httpRequestMessage.Headers.Authorization?.Parameter);
+                authConfig.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
+                authConfig.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
+                authConfig.AppName = jwtPayload?.AppDisplayname;
+                authConfig.Account = jwtPayload?.Upn ?? account?.Username;
+
+                // Save auth config to session state.
+                SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
             }
             catch (AuthenticationException authEx)
             {
@@ -116,8 +132,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             WriteObject("Welcome To Microsoft Graph!");
-            // WriteObject(File.ReadAllText(".\\Art\\WelcomeText.txt"));
-            // WriteObject(File.ReadAllText(".\\Art\\GRaphText.txt"));
         }
 
         protected override void StopProcessing()
@@ -125,7 +139,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.StopProcessing();
         }
 
-        private void validateParameters()
+        private void ValidateParameters()
         {
             if (ParameterSetName == Constants.AppParameterSet)
             {

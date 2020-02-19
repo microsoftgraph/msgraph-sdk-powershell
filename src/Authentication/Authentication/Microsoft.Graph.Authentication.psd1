@@ -63,7 +63,7 @@ DotNetFrameworkVersion = '4.7.2'
 # TypesToProcess = @()
 
 # Format files (.ps1xml) to be loaded when importing this module
-# FormatsToProcess = @()
+FormatsToProcess = './Microsoft.Graph.Authentication.Format.ps1xml'
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
@@ -72,13 +72,13 @@ DotNetFrameworkVersion = '4.7.2'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Connect-Graph', 'Disconnect-Graph'
+CmdletsToExport = 'Connect-Graph', 'Disconnect-Graph', 'Get-MgContext'
 
 # Variables to export from this module
-VariablesToExport = '*'
+# VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -95,7 +95,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;'
+        Tags = 'Microsoft','Office365','Graph','PowerShell','Teams','Outlook','OneDrive','AzureAD','GraphAPI','Productivity','SharePoint','Intune','SDK'
 
         # A URL to the license for this module.
         LicenseUri = 'https://aka.ms/devservicesagreement'

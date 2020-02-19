@@ -21,10 +21,11 @@
     <PreLoadAssemblies Include="$(RepoTools)lib\System.Security.Cryptography.ProtectedData.dll" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.2" />
-    <PackageReference Include="Microsoft.Graph.Core" Version="1.18.0" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.5.1" />
+    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.3" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="1.19.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.8.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">

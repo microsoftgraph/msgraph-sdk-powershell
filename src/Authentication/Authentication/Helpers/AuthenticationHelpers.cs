@@ -100,7 +100,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
                     .Find(X509FindType.FindByThumbprint, CertificateThumbprint, false);
 
-                if (unexpiredCerts == null)
+                if (unexpiredCerts.Count < 1)
                     throw new Exception($"{CertificateThumbprint} certificate was not found or has expired.");
 
                 // Only return current cert.
