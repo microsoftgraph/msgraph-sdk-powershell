@@ -1,20 +1,15 @@
-# Microsoft Graph PowerShell SDK (alpha)
-The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph. 
+# Microsoft Graph PowerShell SDK Preview
+The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain cmdlets for calling Microsoft Graph.
 
-## Installing the Microsoft.Graph.Beta Module
+## Installing the Microsoft.Graph Module
 
-In the future, the modules will be published to the PowerShell Gallery, however in the short term they are hosted on our own nuget feed. Use the following commands to register repository and then install the `Microsoft.Graph.Beta` module from there.
+The modules are now published on the PowerShell Gallery. Installing is as simple as:
 
 ```ps
-Register-PSRepository `
--Name GraphPowerShell `
--SourceLocation https://graphpowershellrepository.azurewebsites.net/nuget
-
-# Installing the Graph PowerShell module for the Beta API 
-Install-module Microsoft.Graph.Beta -Repository GraphPowerShell
+Install-module Microsoft.Graph
 ```
 
-There are a set of samples in the `samples` folder to help getting started with the library.
+There are a set of samples in the `samples` folder to help getting started with the library.  If you have an older version of these modules installed, there are uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
 ## Generate Module
 
@@ -134,3 +129,12 @@ There are a set of samples in the `samples` folder to help getting started with 
     ```ps
     Disconnect-Graph
     ```
+
+## Troubleshooting Permission Related Errors
+
+When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation."  For example, this particular error can occur when using the `New-Application` command if the appropriate permissions are not granted.
+
+If permission related errors occur and the user you authenticated with in the popup has the appropriate permissions to peform the operation try these steps.
+
+- You can try running `Disconnect-Graph`, then `Connect-Graph`.  Then, run the code that encountered the permission issues to see if it works.
+- You can try running `Connect-Graph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`.  Then, run the code that encountered the permission issues to see if it works.

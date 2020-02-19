@@ -12,18 +12,19 @@
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes>
-    </releaseNotes>
+    <releaseNotes>Initial release of Microsoft.Graph.Authentication module.</releaseNotes>
     <dependencies />
   </metadata>
   <files>
     <file src="Microsoft.Graph.Authentication.psd1" />
     <file src="Microsoft.Graph.Authentication.format.ps1xml" />
+    <file src="Microsoft.Graph.Authentication.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
     <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
     <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
+    <file src="bin/PreloadAssemblies/System.Security.Cryptography.ProtectedData.dll" target="bin/PreloadAssemblies" />
   </files>
 </package>

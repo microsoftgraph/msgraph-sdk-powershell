@@ -5,23 +5,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;
     using System.IO;
     using System.Linq;
-    using System.Security.Cryptography;
     using System.Security.Cryptography.X509Certificates;
 
     internal static class AuthenticationHelpers
     {
         private static readonly object FileLock = new object();
-        private static readonly string UserCacheFileName = "userTokenCache.bin3";
-        private static readonly string AppCacheFileName = "appTokenCache.bin3";
-
-        /// <summary>
-        /// Path to the token cache.
-        /// </summary>
-        internal static readonly string CacheFilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         internal static IAuthenticationProvider GetAuthProvider(AuthConfig authConfig)
         {
@@ -32,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                    .WithTenantId(authConfig.TenantId)
                    .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, Path.Combine(CacheFilePath, UserCacheFileName));
+                ConfigureTokenCache(publicClientApp.UserTokenCache, Constants.UserCacheFileName);
                 return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
@@ -45,7 +38,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 .WithCertificate(string.IsNullOrEmpty(authConfig.CertificateThumbprint) ? GetCertificateByName(authConfig.CertificateName) : GetCertificateByThumbprint(authConfig.CertificateThumbprint))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, Path.Combine(CacheFilePath, AppCacheFileName));
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, Constants.AppCacheFileName);
                 return new ClientCredentialProvider(confidentialClientApp);
             }
         }
@@ -55,19 +48,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             lock (FileLock)
             {
                 if (authConfig.AuthType == AuthenticationType.Delegated)
-                    File.Delete(Path.Combine(CacheFilePath, UserCacheFileName));
+                    File.Delete(Path.Combine(Constants.TokenCacheDirectory, Constants.UserCacheFileName));
                 else
-                    File.Delete(Path.Combine(CacheFilePath, AppCacheFileName));
+                    File.Delete(Path.Combine(Constants.TokenCacheDirectory, Constants.AppCacheFileName));
             }
         }
 
-        private static void ConfigureTokenCache(ITokenCache tokenCache, string tokenCachePath)
+        private static void ConfigureTokenCache(ITokenCache tokenCache, string tokenCacheFile)
         {
+            if (!Directory.Exists(Constants.TokenCacheDirectory))
+                Directory.CreateDirectory(Constants.TokenCacheDirectory);
+
+            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, tokenCacheFile);
+
             tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
                 lock (FileLock)
                 {
-                    args.TokenCache.DeserializeMsalV3(File.Exists(tokenCachePath)
-                        ? File.ReadAllBytes(tokenCachePath)
+                    args.TokenCache.DeserializeMsalV3(File.Exists(tokenCacheFilePath)
+                        ? TokenCryptographer.DecryptToken(File.ReadAllBytes(tokenCacheFilePath))
                         : null,
                         shouldClearExistingCache: true);
                 }
@@ -78,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (args.HasStateChanged)
                     {
-                        File.WriteAllBytes(tokenCachePath, args.TokenCache.SerializeMsalV3());
+                        File.WriteAllBytes(tokenCacheFilePath, TokenCryptographer.EncryptToken(args.TokenCache.SerializeMsalV3()));
                     }
                 }
             });

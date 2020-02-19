@@ -10,3 +10,10 @@ title: $(service-name)
 subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
 ```
+
+### Versioning
+
+``` yaml
+module-version: 0.1.1
+release-notes: ''
+```

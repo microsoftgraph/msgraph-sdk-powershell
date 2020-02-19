@@ -37,7 +37,7 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(MODULE_PATH)
-      Pattern: '$(MODULE_PREFIX).psd1, $(MODULE_PREFIX).*.psd1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
+      Pattern: '$(MODULE_PREFIX).psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [

@@ -7,6 +7,7 @@ param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $RepositoryName,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $RepositoryApiKey
 )
+$LASTEXITCODE = $null
 $ErrorActionPreference = "Stop"
 
 $RepositoryPublishUrl = (Get-PSRepository -Name $RepositoryName).SourceLocation
@@ -23,7 +24,7 @@ $Modules | ForEach-Object {
 
     Write-Host -ForegroundColor Green "Publishing '$Module' module to feed..."
     nuget push $NuGetPackage -Source $RepositoryPublishUrl -ApiKey $RepositoryApiKey
-    if($LastExitCode -ne 0) {
+    if($LASTEXITCODE) {
         # NuGet push failed. Check package version number.
         Write-Warning "Failed to push '$Module' package."
     }

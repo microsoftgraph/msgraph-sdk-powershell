@@ -5,7 +5,7 @@ function Set-NuSpecValues(
     [parameter(Position=2,Mandatory=$true)][string] $VersionNumber,
     [parameter(Position=3,Mandatory=$true)][string] $IconUrl,
     [parameter(Position=4)][string[]] $Dependencies,
-    [parameter(Position=5)][string] $ReleaseNotes) {
+    [parameter(Position=5)][string[]] $ReleaseNotes) {
     $XmlDocument = New-Object System.Xml.XmlDocument
     $XmlDocument.Load($NuSpecFilePath)
 
