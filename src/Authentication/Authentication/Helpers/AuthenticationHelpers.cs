@@ -5,6 +5,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;
     using System.IO;
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 lock (FileLock)
                 {
                     args.TokenCache.DeserializeMsalV3(File.Exists(tokenCacheFilePath)
-                        ? TokenCryptoHelpers.DecryptToken(File.ReadAllBytes(tokenCacheFilePath))
+                        ? TokenCryptographer.DecryptToken(File.ReadAllBytes(tokenCacheFilePath))
                         : null,
                         shouldClearExistingCache: true);
                 }
@@ -75,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (args.HasStateChanged)
                     {
-                        File.WriteAllBytes(tokenCacheFilePath, TokenCryptoHelpers.EncryptToken(args.TokenCache.SerializeMsalV3()));
+                        File.WriteAllBytes(tokenCacheFilePath, TokenCryptographer.EncryptToken(args.TokenCache.SerializeMsalV3()));
                     }
                 }
             });
