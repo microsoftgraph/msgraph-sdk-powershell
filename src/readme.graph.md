@@ -289,4 +289,13 @@ directive:
     set:
       verb: Get
       subject: $2$1
+
+# Alias entityIds as Ids
+  - where:
+      verb: Get|Remove
+      subject: (.*)
+      parameter-name: Id$
+    set:
+      alias:
+        - Id
 ```

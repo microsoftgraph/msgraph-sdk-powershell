@@ -110,7 +110,7 @@ $ModuleMapping.Keys | ForEach-Object {
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
 
-            & AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & AutoRest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
