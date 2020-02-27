@@ -8,6 +8,7 @@
     "Files.Drives": "^drives\\.|^drive\\.",
     "Files.Permissions": "^groups.resourceSpecificPermissionGrant$", // Missing in docs
     "Files.Shares": "^shares\\.",
+    "Financials": "^financials\\.",
     "Groups.Calendar": "^groups.calendar$|^groups.event$",
     "Groups.Conversation": "^groups.conversation$",
     "Groups.ConversationThread": "^groups.conversationThread$",
@@ -22,7 +23,7 @@
     "Groups.Planner": "^groups.plannerGroup$",
     "Groups.ProfilePhoto": "^groups.profilePhoto$",
     "Groups.Site": "^groups.site$",
-    "Identity.AccessReview": "^accessReviews\\.|^accessReviewDecisions\\.|^businessFlowTemplates\\.|^programControlTypes\\.",
+    "Identity.AccessReview": "^accessReviews\\.|^accessReviewDecisions\\.|^businessFlowTemplates\\.|^programControlTypes\\.|^programs\\.|^programControls\\.",
     "Identity.AdministrativeUnits": "^administrativeUnits\\.|^users.scopedRoleMembership$",
     "Identity.AppRoleAssignments": "^appRoleAssignments\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Identity.AuditLogs": "^auditLogs\\.",
@@ -44,7 +45,7 @@
     "Identity.Organization": "^organization\\.",
     "Identity.OrganizationContacts": "^contacts\\.",
     "Identity.Policies": "^policies\\.",
-    "Identity.Protection": "^riskDetections\\.|^riskyUsers\\.",
+    "Identity.Protection": "^riskDetections\\.|^riskyUsers\\.|^identityRiskEvents\\.|^impossibleTravelRiskEvents\\.|^leakedCredentialsRiskEvents\\.|^anonymousIpRiskEvents\\.|^suspiciousIpRiskEvents\\.|^unfamiliarLocationRiskEvents\\.|^malwareRiskEvents\\.",
     "Identity.Providers": "^identityProviders\\.",
     "Identity.SubscribedSkus": "^subscribedSkus\\.",
     "Identity.TermsOfUse": "^agreements\\.|^agreementAcceptances\\.|^users.agreementAcceptance$",
@@ -54,6 +55,7 @@
     "Places": "^places\\.",
     "Planner": "^planner\\.",
     "SchemaExtensions": "^schemaExtensions\\.",
+    "Security": "^Security\\.",
     "Sites.Drive": "^sites.drive$",
     "Sites.List": "^sites.list$",
     "Sites.OneNote": "^sites.onenote$",
@@ -95,14 +97,10 @@
     // Fails to build.
     // "Identity.RoleManagement": "^roleManagement\\.",
     // "Users.Actions": "^users.Actions$",
-    // "Identity.Protection": "^identityRiskEvents\\.|^impossibleTravelRiskEvents\\.|^leakedCredentialsRiskEvents\\.|^anonymousIpRiskEvents\\.|^suspiciousIpRiskEvents\\.|^unfamiliarLocationRiskEvents\\.|^malwareRiskEvents\\.",
     // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Groups.Actions": "^groups.Actions$",
     // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    // "Financials": "^financials\\.",
-    // "Identity.AccessReview": "^programs\\.|^programControls\\.",
     // "Reports": "^reports\\.",
-    // "Security": "^Security\\.",
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported

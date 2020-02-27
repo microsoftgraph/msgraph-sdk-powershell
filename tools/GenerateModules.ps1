@@ -21,7 +21,6 @@ enum VersionState {
     NotOnFeed
 }
 $ErrorActionPreference = 'Stop'
-$LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -30,7 +29,7 @@ Install-Module powershell-yaml -Force
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
-    $GraphVersion = "Beta"
+    $GraphVersion = "beta"
 }
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
@@ -110,11 +109,11 @@ $ModuleMapping.Keys | ForEach-Object {
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
 
-            & AutoRest-beta --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & AutoRest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
-            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully 😊."
+            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully."
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
