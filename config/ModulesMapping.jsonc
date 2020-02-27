@@ -25,6 +25,7 @@
     "Groups.Site": "^groups.site$",
     "Identity.AccessReview": "^accessReviews\\.|^accessReviewDecisions\\.|^businessFlowTemplates\\.|^programControlTypes\\.|^programs\\.|^programControls\\.",
     "Identity.AdministrativeUnits": "^administrativeUnits\\.|^users.scopedRoleMembership$",
+    "Identity.Application": "^applications\\.|^applicationTemplates\\.",
     "Identity.AppRoleAssignments": "^appRoleAssignments\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Identity.AuditLogs": "^auditLogs\\.",
     "Identity.AzureADPIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedOperationEvents\\.|^privilegedApproval\\.|^privilegedRoleAssignmentRequests\\.",
@@ -47,6 +48,8 @@
     "Identity.Policies": "^policies\\.",
     "Identity.Protection": "^riskDetections\\.|^riskyUsers\\.|^identityRiskEvents\\.|^impossibleTravelRiskEvents\\.|^leakedCredentialsRiskEvents\\.|^anonymousIpRiskEvents\\.|^suspiciousIpRiskEvents\\.|^unfamiliarLocationRiskEvents\\.|^malwareRiskEvents\\.",
     "Identity.Providers": "^identityProviders\\.",
+    "Identity.RoleManagement": "^roleManagement\\.",
+    "Identity.ServicePrincipal": "^servicePrincipals\\.",
     "Identity.SubscribedSkus": "^subscribedSkus\\.",
     "Identity.TermsOfUse": "^agreements\\.|^agreementAcceptances\\.|^users.agreementAcceptance$",
     "Identity.TrustFramework": "^trustFramework\\.",
@@ -54,6 +57,7 @@
     "OnlineMeetings": "^users.onlineMeeting$",
     "Places": "^places\\.",
     "Planner": "^planner\\.",
+    "Reports": "^reports\\.",
     "SchemaExtensions": "^schemaExtensions\\.",
     "Security": "^Security\\.",
     "Sites.Drive": "^sites.drive$",
@@ -87,20 +91,17 @@
     "Users.ProfilePhoto": "^users.profilePhoto$",
     "Users.User": "^users.user$|^users.presence$",
     "Users.UserSettings": "^users.userSettings$",
-    "Identity.Application": "^applications\\.|^applicationTemplates\\.",
-    "Identity.ServicePrincipal": "^servicePrincipals\\.",
 
     // Contains Duplicate Cmdlet
     // "Sites.Functions": "^sites.Functions$",
     // "Sites.Actions": "^sites.Actions$",
 
     // Fails to build.
-    // "Identity.RoleManagement": "^roleManagement\\.",
     // "Users.Actions": "^users.Actions$",
     // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Groups.Actions": "^groups.Actions$",
     // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    // "Reports": "^reports\\.",
+    
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported
