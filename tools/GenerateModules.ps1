@@ -30,7 +30,7 @@ Install-Module powershell-yaml -Force
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
-    $GraphVersion = "Beta"
+    $GraphVersion = "beta"
 }
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
@@ -128,6 +128,10 @@ $ModuleMapping.Keys | ForEach-Object {
                 }
                 else {
                     & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes
+                }
+
+                if ($LASTEXITCODE) {
+                    Write-Error "Failed to build '$ModuleName' module."
                 }
             }
 

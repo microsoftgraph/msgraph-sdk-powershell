@@ -25,6 +25,7 @@
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
     <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
+    <file src="bin/System.IdentityModel.Tokens.Jwt.dll" target="bin" />
     <file src="bin/PreloadAssemblies/System.Security.Cryptography.ProtectedData.dll" target="bin/PreloadAssemblies" />
   </files>
 </package>

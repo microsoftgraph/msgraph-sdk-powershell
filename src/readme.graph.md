@@ -27,6 +27,7 @@ prefix: Mg
 module-name: Microsoft.Graph.$(service-name)
 subject-prefix: $(service-name)
 namespace: Microsoft.Graph.PowerShell
+sanitize-names: false
 ```
 
 > Folders
@@ -51,7 +52,9 @@ directive:
     - microsoft.graph.post
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
-  # Formart cmdlet response.
+    - microsoft.graph.recipient
+
+  # Format cmdlet response.
   - where:
       model-name: MicrosoftGraphUser
     set:
@@ -289,13 +292,41 @@ directive:
     set:
       verb: Get
       subject: $2$1
-
-# Alias entityIds as Ids
-  - where:
-      verb: Get|Remove
-      subject: (.*)
-      parameter-name: Id$
-    set:
-      alias:
-        - Id
+# Add AfterToJson
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.cs/gm))
+      {
+        return $;
+      } else {
+        let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
+        let regexArray;
+        while ((regexArray = regexPattern.exec($)) !== null) {
+          if (regexArray['groups'] != null)
+          {
+            let EntityName = regexArray['groups'].EntityName.trim();
+            let newEntityId = EntityName + 'Id';
+            let newEntityIdPropRegex = new RegExp("^\\s*public\\s*string\\s*"+newEntityId+"\\.*","gm");
+            let existingIdPropRegex = /(^\s*)(public\s*string\s*Id\s.*)/gm;
+            if ((!$.match(newEntityIdPropRegex)) && $.match(existingIdPropRegex) && (newEntityId != "DirectoryObjectId") && (newEntityId != "EntityId") && (newEntityId != "BaseItemId")) {
+              $ = $.replace(existingIdPropRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode) { if (serializationMode == Microsoft.Graph.PowerShell.Runtime.SerializationMode.IncludeAll) { AddIf(null != this.Id ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.PowerShell.Runtime.Json.JsonString(this.Id) : null, "'+ EntityName.toLowerCase() +'-id", container.Add); }\n}\n');
+            }
+          }
+        }
+        return $;
+      }
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.json.cs/gm))
+      {
+        return $;
+      } else {
+        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
+        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
+        let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
+        $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
+        return $;
+      }
 ```
