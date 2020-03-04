@@ -296,6 +296,19 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.json.cs/gm))
+      {
+        return $;
+      } else {
+        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
+        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
+        let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
+        $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
+        return $;
+      }
+  - from: source-file-csharp
+    where: $
+    transform: >
       if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.cs/gm))
       {
         return $;
@@ -314,19 +327,6 @@ directive:
             }
           }
         }
-        return $;
-      }
-  - from: source-file-csharp
-    where: $
-    transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.json.cs/gm))
-      {
-        return $;
-      } else {
-        let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
-        $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
-        let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
-        $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
         return $;
       }
 ```
