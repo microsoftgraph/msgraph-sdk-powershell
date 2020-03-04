@@ -20,12 +20,17 @@
     <file src="Microsoft.Graph.Authentication.format.ps1xml" />
     <file src="Microsoft.Graph.Authentication.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
+    
     <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
     <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
     <file src="bin/System.IdentityModel.Tokens.Jwt.dll" target="bin" />
+    <file src="bin/Newtonsoft.Json.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.JsonWebTokens.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.Tokens.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.Logging.dll" target="bin" />
     <file src="bin/PreloadAssemblies/System.Security.Cryptography.ProtectedData.dll" target="bin/PreloadAssemblies" />
   </files>
 </package>
