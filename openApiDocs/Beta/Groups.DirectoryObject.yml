@@ -1148,6 +1148,8 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: directoryObject
           type: object
+          discriminator:
+            propertyName: '@odata.type'
           properties:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -1166,6 +1168,113 @@ components:
           type: string
       example:
         id: string (identifier)
+    microsoft.graph.user:
+      x-ms-discriminator-value: '#microsoft.graph.user'
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: user
+          type: object
+          properties:
+            accountEnabled:
+              type: boolean
+              nullable: true
+            ageGroup:
+              type: string
+              nullable: true
+            businessPhones:
+              type: array
+              items:
+                type: string
+            city:
+              type: string
+              nullable: true
+            companyName:
+              type: string
+              nullable: true
+            consentProvidedForMinor:
+              type: string
+              nullable: true
+            country:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            department:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            employeeId:
+              type: string
+              nullable: true
+            faxNumber:
+              type: string
+              nullable: true
+            givenName:
+              type: string
+              nullable: true
+            imAddresses:
+              type: array
+              items:
+                type: string
+                nullable: true
+            isResourceAccount:
+              type: boolean
+              nullable: true
+            jobTitle:
+              type: string
+              nullable: true
+            lastPasswordChangeDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            legalAgeGroupClassification:
+              type: string
+              nullable: true
+            mail:
+              type: string
+              nullable: true
+    microsoft.graph.group:
+      x-ms-discriminator-value: '#microsoft.graph.group'
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: group
+          type: object
+          properties:
+            classification:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            groupTypes:
+              type: array
+              items:
+                type: string
+            hasMembersWithLicenseErrors:
+              type: boolean
+              nullable: true
+            isAssignableToRole:
+              type: boolean
+              nullable: true
+            mail:
+              type: string
+              nullable: true
     odata.error:
       required:
         - error
