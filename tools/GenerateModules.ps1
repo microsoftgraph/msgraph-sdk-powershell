@@ -128,6 +128,10 @@ $ModuleMapping.Keys | ForEach-Object {
                 else {
                     & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes
                 }
+
+                if ($LASTEXITCODE) {
+                    Write-Error "Failed to build '$ModuleName' module."
+                }
             }
 
             if ($Pack) {
