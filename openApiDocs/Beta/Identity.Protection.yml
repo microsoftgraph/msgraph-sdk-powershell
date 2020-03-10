@@ -3018,32 +3018,39 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that were created by the user. Read-only. Nullable.
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
             licenseDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+              description: A collection of this user's license details. Read-only.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The groups and directory roles that the user is a member of. Read-only. Nullable.
             ownedDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Devices that are owned by the user. Read-only. Nullable.
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that are owned by the user. Read-only. Nullable.
             registeredDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Devices that are registered for the user. Read-only. Nullable.
             scopedRoleMemberOf:
               type: array
               items:
@@ -3058,6 +3065,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
+              description: The messages in a mailbox or folder. Read-only. Nullable.
             joinedGroups:
               type: array
               items:
@@ -3066,36 +3074,44 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+              description: The user's mail folders. Read-only. Nullable.
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendars:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+              description: The user's calendars. Read-only. Nullable.
             calendarGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarGroup'
+              description: The user's calendar groups. Read-only. Nullable.
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The calendar view for the calendar. Read-only. Nullable.
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
             people:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.person'
+              description: People that are relevant to the user. Read-only. Nullable.
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+              description: The user's contacts. Read-only. Nullable.
             contactFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+              description: The user's contacts folders. Read-only. Nullable.
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
             photo:
@@ -3110,6 +3126,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+              description: A collection of drives available for this user. Read-only.
             followedSites:
               type: array
               items:
@@ -3118,6 +3135,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the user. Read-only. Nullable.
             agreementAcceptances:
               type: array
               items:
@@ -3130,26 +3148,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
+              description: The managed devices associated with the user.
             managedAppRegistrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+              description: Zero or more managed app registrations that belong to the user.
             windowsInformationProtectionDeviceRegistrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+              description: Zero or more WIP device registrations that belong to the user.
             deviceManagementTroubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
+              description: The list of troubleshooting events for this user.
             mobileAppIntentAndStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppIntentAndState'
+              description: The list of troubleshooting events for this user.
             mobileAppTroubleshootingEvents:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
+              description: The list of mobile app troubleshooting events for this user.
             notifications:
               type: array
               items:
@@ -3168,6 +3192,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
+              description: The user's activities across devices. Read-only. Nullable.
             devices:
               type: array
               items:
@@ -4279,6 +4304,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+              description: A list of categories defined for the user.
             taskGroups:
               type: array
               items:
@@ -4421,18 +4447,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the message. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the message. Nullable.
             attachments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: The fileAttachment and itemAttachment attachments for the message.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the message. Nullable.
             mentions:
               type: array
               items:
@@ -4687,14 +4717,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups) Nullable.'
             membersWithLicenseErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: A list of group members with license errors from this group-based license assignment. Read-only.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             transitiveMembers:
               type: array
               items:
@@ -4709,10 +4742,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 10 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directorySetting'
+              description: Read-only. Nullable.
             endpoints:
               type: array
               items:
@@ -4725,32 +4760,39 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversation'
+              description: The group's conversations.
             photos:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The profile photos owned by the group. Read-only. Nullable.
             acceptedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
             rejectedSenders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
             threads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
+              description: The group's conversation threads. Nullable.
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The calendar view for the calendar. Read-only.
             events:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The group's calendar events.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             drive:
@@ -4759,18 +4801,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+              description: The group's drives. Read-only.
             sites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
+              description: The list of SharePoint sites in this group. Access the default site with /sites/root.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the group. Read-only. Nullable.
             groupLifecyclePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
+              description: The collection of lifecycle policies for this group. Read-only. Nullable.
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerGroup'
             onenote:
@@ -4932,22 +4978,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
+              description: The collection of messages in the mailFolder.
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
+              description: The collection of rules that apply to the user's Inbox folder.
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+              description: The collection of child folders in the mailFolder.
             userConfigurations:
               type: array
               items:
@@ -5030,10 +5081,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
             calendarPermissions:
               type: array
               items:
@@ -5042,10 +5095,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The events in the calendar. Navigation property. Read-only.
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The calendar view for the calendar. Navigation property. Read-only.
       example:
         id: string (identifier)
         name: string
@@ -5101,6 +5156,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+              description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
       example:
         id: string (identifier)
         name: string
@@ -5228,24 +5284,29 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the event. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
             instances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
+              description: The instances of the event. Navigation property. Read-only. Nullable.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the event. Read-only. Nullable.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -5573,16 +5634,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -5659,18 +5723,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+              description: The contacts in the folder. Navigation property. Read-only. Nullable.
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+              description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       example:
         id: string (identifier)
         parentFolderId: string
@@ -5694,6 +5762,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
+              description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       example:
         id: string (identifier)
         overrides:
@@ -5756,6 +5825,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: All items contained in the drive. Read-only. Nullable.
             list:
               $ref: '#/components/schemas/microsoft.graph.list'
             root:
@@ -5764,6 +5834,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: Collection of common folders available in OneDrive. Read-only. Nullable.
       example:
         id: string (identifier)
         createdBy:
@@ -5827,24 +5898,29 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of column definitions reusable across lists under this site.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types defined for this site.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             drives:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+              description: The collection of drives (document libraries) under this site.
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.baseItem'
+              description: Used to address any item contained in this site. This collection cannot be enumerated.
             lists:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
+              description: The collection of lists under this site.
             pages:
               type: array
               items:
@@ -5853,6 +5929,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.site'
+              description: The collection of the sub-sites under this site.
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
       example:
@@ -5989,6 +6066,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              description: The list of group assignments for the device configuration profile.
           description: The Base Class of Device Enrollment Configuration
       example:
         id: string (identifier)
@@ -6268,22 +6346,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
+              description: Security baseline states for this device.
             deviceConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
+              description: Device configuration states for this device.
             deviceCompliancePolicyStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
+              description: Device compliance policy states for this device.
             managedDeviceMobileAppConfigurationStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationState'
+              description: Managed device mobile app configuration states for this device.
             detectedApps:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.detectedApp'
+              description: All applications currently installed on the device
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
             windowsProtectionState:
@@ -6292,6 +6375,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
+              description: The primary users associated with the managed device.
           description: Devices that are managed or pre-enrolled through Intune
       example:
         id: string (identifier)
@@ -6479,14 +6563,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
             intendedPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policies admin intended for the app as of now.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+              description: Zero or more long running operations triggered on the app registration.
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
       example:
         id: string (identifier)
@@ -6643,6 +6730,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
+              description: The collection property of AppLogUploadRequest.
           description: MobileAppTroubleshootingEvent Entity.
       example:
         id: string (identifier)
@@ -6714,10 +6802,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
             plans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
             favoritePlans:
               type: array
               items:
@@ -6756,14 +6846,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
+              description: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
             shared:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+              description: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
+              description: 'Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.'
       example:
         id: string (identifier)
         trending:
@@ -6800,26 +6893,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
+              description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             pages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
+              description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       example:
         id: string (identifier)
         notebooks:
@@ -6979,6 +7078,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       example:
         id: string (identifier)
         visualElements:
@@ -7111,14 +7211,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
             transitiveMemberOf:
               type: array
               items:
@@ -7127,6 +7230,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
             commands:
               type: array
               items:
@@ -7378,6 +7482,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+              description: The collection of channels & messages associated with the team.
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
             apps:
@@ -7388,6 +7493,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: The apps installed in this team.
             operations:
               type: array
               items:
@@ -8453,6 +8559,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
+              description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       example:
         id: string (identifier)
         topic: string
@@ -8505,6 +8612,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
+              description: Read-only. Nullable.
       example:
         id: string (identifier)
         toRecipients:
@@ -8556,6 +8664,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans owned by the group.
       example:
         id: string (identifier)
         plans:
@@ -9232,30 +9341,36 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivityOLD'
+              description: The list of recent activities that took place on this item.
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             children:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
             listItem:
               $ref: '#/components/schemas/microsoft.graph.listItem'
             permissions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permission'
+              description: The set of permissions for the item. Read-only. Nullable.
             subscriptions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+              description: The set of subscriptions on the item. Only supported on the root of a drive.
             thumbnails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
+              description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
             versions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
+              description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       example:
         id: string (identifier)
         createdBy:
@@ -9358,16 +9473,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of field definitions for this list.
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types present in this list.
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
+              description: All items contained in the list.
             subscriptions:
               type: array
               items:
@@ -9591,6 +9709,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnLink'
+              description: The collection of columns that are required by this content type
       example:
         id: string (identifier)
         description: string
@@ -10274,6 +10393,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
+              description: The security baseline state for different settings for a device
           description: Security baseline state for a device.
       example:
         id: string (identifier)
@@ -10465,6 +10585,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
+              description: The devices that have the discovered application installed
           description: A managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
       example:
         id: string (identifier)
@@ -10583,6 +10704,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
+              description: Device malware list
           description: Device protection status entity.
       example:
         id: string (identifier)
@@ -11034,10 +11156,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Collection of tasks in the plan.
             buckets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+              description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
       example:
@@ -11192,10 +11316,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in the notebook. Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in the notebook. Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -11242,6 +11368,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
+              description: The collection of pages in the section.  Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -11284,10 +11411,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in the section group. Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in the section. Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -12570,6 +12699,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the channel. A navigation property.
             members:
               type: array
               items:
@@ -12993,18 +13123,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the post. Read-only. Nullable.
             attachments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: Read-only. Nullable.
             mentions:
               type: array
               items:
@@ -13648,6 +13782,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivityOLD'
+              description: The list of recent activities that took place on this item.
             analytics:
               $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
             driveItem:
@@ -13658,6 +13793,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+              description: The list of previous versions of the list item.
       example:
         id: string (identifier)
         createdBy:
@@ -14212,14 +14348,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
+              description: Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
             tables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
+              description: Represents a collection of tables associated with the workbook. Read-only.
             worksheets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookWorksheet'
+              description: Represents a collection of worksheets associated with the workbook. Read-only.
             comments:
               type: array
               items:
@@ -14461,6 +14600,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.itemActivity'
+              description: Exposes the itemActivities represented in this itemActivityStat resource.
       example:
         id: string (identifier)
         startDateTime: string (timestamp)
@@ -15326,6 +15466,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. The collection of tasks in the bucket.
       example:
         id: string (identifier)
         name: string
@@ -16079,6 +16220,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
       example:
         id: string (identifier)
         externalId: string
@@ -16858,10 +17000,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableColumn'
+              description: Represents a collection of all the columns in the table. Read-only.
             rows:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTableRow'
+              description: Represents a collection of all the rows in the table. Read-only.
             sort:
               $ref: '#/components/schemas/microsoft.graph.workbookTableSort'
             worksheet:
@@ -16909,20 +17053,24 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChart'
+              description: Returns collection of charts that are part of the worksheet. Read-only.
             names:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
+              description: Returns collection of names that are associated with the worksheet. Read-only.
             pivotTables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookPivotTable'
+              description: Collection of PivotTables that are part of the worksheet.
             protection:
               $ref: '#/components/schemas/microsoft.graph.workbookWorksheetProtection'
             tables:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
+              description: Collection of tables that are part of the worksheet. Read-only.
       example:
         id: string (identifier)
         name: string
@@ -16955,6 +17103,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
+              description: Read-only. Nullable.
       example:
         id: string (identifier)
         content: string
@@ -17739,6 +17888,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartSeries'
+              description: Represents either a single series or collection of series in the chart. Read-only.
             title:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitle'
             worksheet:
@@ -18063,6 +18213,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookChartPoint'
+              description: Represents a collection of all points in the series. Read-only.
       example:
         id: string (identifier)
         name: string

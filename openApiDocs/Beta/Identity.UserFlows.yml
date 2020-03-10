@@ -1,0 +1,372 @@
+openapi: 3.0.1
+info:
+  title: Identity.UserFlows
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /identity:
+    get:
+      tags:
+        - identity.identityContainer
+      summary: Get identity
+      operationId: identity.identityContainer_GetIdentityContainer
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlows
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - userFlows
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityContainer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityContainer
+      summary: Update identity
+      operationId: identity.identityContainer_UpdateIdentityContainer
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityContainer'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/userFlows:
+    get:
+      tags:
+        - identity.identityUserFlow
+      summary: Get userFlows from identity
+      operationId: identity_ListUserFlows
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userFlowType
+                - userFlowType desc
+                - userFlowTypeVersion
+                - userFlowTypeVersion desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of identityUserFlow
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.identityUserFlow
+      summary: Create new navigation property to userFlows for identity
+      operationId: identity_CreateUserFlows
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/userFlows/{identityUserFlow-id}':
+    get:
+      tags:
+        - identity.identityUserFlow
+      summary: Get userFlows from identity
+      operationId: identity_GetUserFlows
+      parameters:
+        - name: identityUserFlow-id
+          in: path
+          description: 'key: identityUserFlow-id of identityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userFlowType
+                - userFlowTypeVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.identityUserFlow
+      summary: Update the navigation property userFlows in identity
+      operationId: identity_UpdateUserFlows
+      parameters:
+        - name: identityUserFlow-id
+          in: path
+          description: 'key: identityUserFlow-id of identityUserFlow'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlow
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.identityContainer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityContainer
+          type: object
+          properties:
+            userFlows:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+      example:
+        id: string (identifier)
+        userFlows:
+          - '@odata.type': microsoft.graph.identityUserFlow
+    microsoft.graph.identityUserFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityUserFlow
+          type: object
+          properties:
+            userFlowType:
+              $ref: '#/components/schemas/microsoft.graph.userFlowType'
+            userFlowTypeVersion:
+              type: number
+              format: float
+      example:
+        id: string (identifier)
+        userFlowType:
+          '@odata.type': microsoft.graph.userFlowType
+        userFlowTypeVersion: float
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.userFlowType:
+      title: userFlowType
+      enum:
+        - signUp
+        - signIn
+        - signUpOrSignIn
+        - passwordReset
+        - profileUpdate
+        - resourceOwner
+        - unknownFutureValue
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

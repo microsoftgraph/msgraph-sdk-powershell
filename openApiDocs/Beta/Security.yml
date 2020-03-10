@@ -3052,6 +3052,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alert'
+              description: Read-only. Nullable.
             cloudAppSecurityProfiles:
               type: array
               items:
