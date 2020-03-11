@@ -21,7 +21,6 @@ enum VersionState {
     NotOnFeed
 }
 $ErrorActionPreference = 'Stop'
-$LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
@@ -114,7 +113,7 @@ $ModuleMapping.Keys | ForEach-Object {
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
-            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully 😊."
+            Write-Host -ForegroundColor Green "AutoRest generated '$ModulePrefix.$ModuleName' successfully."
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."

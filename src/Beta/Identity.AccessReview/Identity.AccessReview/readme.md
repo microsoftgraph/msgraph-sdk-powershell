@@ -34,8 +34,7 @@ input-file: $(spec-doc-repo)/$(title).yml
 ### Versioning
 
 ``` yaml
-module-version: 0.1.1
+module-version: 0.1.2
 release-notes:
  - Initial release of Microsoft.Graph.Identity.AccessReview module.
 ```
-
