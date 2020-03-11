@@ -89,7 +89,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 0.1.2
-release-notes:
- - Added New-MgGroupMember command.
+module-version: 0.2.0
+release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

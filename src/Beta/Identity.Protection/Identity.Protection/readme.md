@@ -34,7 +34,6 @@ input-file: $(spec-doc-repo)/$(title).yml
 ### Versioning
 
 ``` yaml
-module-version: 0.1.2
-release-notes:
- - Initial release of Microsoft.Graph.Identity.Protection module.
+module-version: 0.2.0
+release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
