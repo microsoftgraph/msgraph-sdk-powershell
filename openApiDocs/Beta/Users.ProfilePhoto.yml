@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Users.ProfilePhoto
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/photo':
@@ -32,6 +32,17 @@ paths:
                 - id
                 - height
                 - width
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -85,6 +96,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -115,6 +127,17 @@ paths:
                 - id
                 - height
                 - width
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -196,6 +219,17 @@ paths:
                 - height
                 - width
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -251,12 +285,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The width of the photo. Read-only.
               format: int32
               nullable: true
       example:
@@ -269,6 +305,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     odata.error:
@@ -332,6 +369,12 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

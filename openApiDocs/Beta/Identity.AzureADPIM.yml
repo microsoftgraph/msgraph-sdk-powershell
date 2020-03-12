@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.AzureADPIM
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /privilegedApproval:
@@ -2282,6 +2282,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.approvalState:

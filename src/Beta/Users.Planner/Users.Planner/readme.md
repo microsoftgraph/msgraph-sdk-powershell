@@ -30,7 +30,15 @@ require:
 title: $(service-name)
 subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
+directive:
+  - where:
+      verb: Update
+      subject: UserPlanner
+      variant: Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+    set:
+      subject: AllUserPlanner
 ```
+
 ### Versioning
 
 ``` yaml

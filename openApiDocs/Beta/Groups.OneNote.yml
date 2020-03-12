@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.OneNote
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/groups/{group-id}/onenote':
@@ -20530,26 +20530,32 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
+              description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
             sections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             pages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
+              description: The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             resources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
+              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
       example:
         id: string (identifier)
         notebooks:
@@ -20572,17 +20578,21 @@ components:
           properties:
             isDefault:
               type: boolean
+              description: Indicates whether this is the user's default notebook. Read-only.
               nullable: true
             userRole:
               $ref: '#/components/schemas/microsoft.graph.onenoteUserRole'
             isShared:
               type: boolean
+              description: 'Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.'
               nullable: true
             sectionsUrl:
               type: string
+              description: 'The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.'
               nullable: true
             sectionGroupsUrl:
               type: string
+              description: 'The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.'
               nullable: true
             links:
               $ref: '#/components/schemas/microsoft.graph.notebookLinks'
@@ -20590,10 +20600,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in the notebook. Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in the notebook. Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -20624,9 +20636,11 @@ components:
           properties:
             sectionsUrl:
               type: string
+              description: 'The URL for the sections navigation property, which returns all the sections in the section group. Read-only.'
               nullable: true
             sectionGroupsUrl:
               type: string
+              description: 'The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.'
               nullable: true
             parentNotebook:
               $ref: '#/components/schemas/microsoft.graph.notebook'
@@ -20636,10 +20650,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
+              description: The sections in the section group. Read-only. Nullable.
             sectionGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
+              description: The section groups in the section. Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -20668,11 +20684,13 @@ components:
           properties:
             isDefault:
               type: boolean
+              description: Indicates whether this is the user's default section. Read-only.
               nullable: true
             links:
               $ref: '#/components/schemas/microsoft.graph.sectionLinks'
             pagesUrl:
               type: string
+              description: The pages endpoint where you can get details for all the pages in the section. Read-only.
               nullable: true
             parentNotebook:
               $ref: '#/components/schemas/microsoft.graph.notebook'
@@ -20682,6 +20700,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
+              description: The collection of pages in the section.  Read-only. Nullable.
       example:
         id: string (identifier)
         self: string
@@ -20710,34 +20729,41 @@ components:
           properties:
             title:
               type: string
+              description: The title of the page.
               nullable: true
             createdByAppId:
               type: string
+              description: The unique identifier of the application that created the page. Read-only.
               nullable: true
             links:
               $ref: '#/components/schemas/microsoft.graph.pageLinks'
             contentUrl:
               type: string
+              description: The URL for the page's HTML content.  Read-only.
               nullable: true
             content:
               type: string
+              description: The page's HTML content.
               format: base64url
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             level:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The indentation level of the page. Read-only.
               format: int32
               nullable: true
             order:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The order of the page within its parent section. Read-only.
               format: int32
               nullable: true
             userTags:
@@ -20776,14 +20802,17 @@ components:
           properties:
             resourceLocation:
               type: string
+              description: 'The resource URI for the object. For example, the resource URI for a copied page or section.'
               nullable: true
             resourceId:
               type: string
+              description: The resource id.
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.onenoteOperationError'
             percentComplete:
               type: string
+              description: The operation percent complete if the operation is still in running status
               nullable: true
       example:
         id: string (identifier)
@@ -20804,10 +20833,12 @@ components:
           properties:
             content:
               type: string
+              description: The content stream
               format: base64url
               nullable: true
             contentUrl:
               type: string
+              description: The URL for downloading the content
               nullable: true
       example:
         id: string (identifier)
@@ -20820,6 +20851,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.onenoteEntityHierarchyModel:
@@ -20830,6 +20862,7 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the notebook.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -20838,6 +20871,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
       example:
@@ -20893,6 +20927,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
       example:
@@ -20923,11 +20958,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The start time of the operation.
               format: date-time
               nullable: true
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The time of the last action of the operation.
               format: date-time
               nullable: true
       example:
@@ -20942,9 +20979,11 @@ components:
       properties:
         code:
           type: string
+          description: The error code.
           nullable: true
         message:
           type: string
+          description: The error message.
           nullable: true
       example:
         code: string
@@ -20957,6 +20996,7 @@ components:
           properties:
             self:
               type: string
+              description: The endpoint where you can get details about the page. Read-only.
               nullable: true
       example:
         id: string (identifier)
@@ -20991,6 +21031,7 @@ components:
       properties:
         href:
           type: string
+          description: The url of the link.
           nullable: true
       example:
         href: string
@@ -21027,9 +21068,11 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the identity.
           nullable: true
         displayName:
           type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
       example:
         id: string

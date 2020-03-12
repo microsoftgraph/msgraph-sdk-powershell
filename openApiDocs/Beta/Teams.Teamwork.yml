@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Teams.Teamwork
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/teamwork':
@@ -428,12 +428,14 @@ components:
           properties:
             externalId:
               type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
             name:
               type: string
               nullable: true
             displayName:
               type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
             distributionMethod:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
@@ -441,6 +443,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
       example:
         id: string (identifier)
         externalId: string
@@ -458,12 +461,15 @@ components:
           properties:
             teamsAppId:
               type: string
+              description: The id from the Teams App manifest.
               nullable: true
             displayName:
               type: string
+              description: The name of the app provided by the app developer.
               nullable: true
             version:
               type: string
+              description: The version number of the application.
               nullable: true
       example:
         id: string (identifier)
@@ -476,6 +482,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.teamsAppDistributionMethod:

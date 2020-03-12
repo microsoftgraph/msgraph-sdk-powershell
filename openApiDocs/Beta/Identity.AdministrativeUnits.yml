@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.AdministrativeUnits
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /administrativeUnits:
@@ -14,7 +14,10 @@ paths:
       operationId: administrativeUnits.administrativeUnit_ListAdministrativeUnit
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -49,6 +52,20 @@ paths:
                 - displayName
                 - description
                 - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedRoleMembers
                 - extensions
@@ -119,6 +136,20 @@ paths:
                 - displayName
                 - description
                 - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - members
                 - scopedRoleMembers
                 - extensions
@@ -507,6 +538,182 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: administrativeUnits_checkMemberGroups
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: administrativeUnit-id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: administrativeUnits_checkMemberObjects
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: administrativeUnit-id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action getMemberGroups
+      operationId: administrativeUnits_getMemberGroups
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: administrativeUnit-id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action getMemberObjects
+      operationId: administrativeUnits_getMemberObjects
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: administrativeUnit-id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action restore
+      operationId: administrativeUnits_restore
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: administrativeUnit-id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers':
     get:
       tags:
@@ -722,6 +929,105 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /administrativeUnits/microsoft.graph.getByIds:
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action getByIds
+      operationId: administrativeUnits_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /administrativeUnits/microsoft.graph.getUserOwnedObjects:
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: administrativeUnits_getUserOwnedObjects
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /administrativeUnits/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - administrativeUnits.Actions
+      summary: Invoke action validateProperties
+      operationId: administrativeUnits_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/scopedRoleMemberOf':
     get:
       tags:
@@ -1007,6 +1313,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.identity:
@@ -1015,9 +1322,11 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the identity.
           nullable: true
         displayName:
           type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
       example:
         id: string
@@ -1076,12 +1385,6 @@ components:
         minimum: 0
         type: integer
       example: 50
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     skip:
       name: $skip
       in: query
@@ -1089,6 +1392,12 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

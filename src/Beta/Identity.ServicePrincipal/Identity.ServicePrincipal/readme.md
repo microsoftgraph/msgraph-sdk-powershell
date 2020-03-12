@@ -31,6 +31,7 @@ title: $(service-name)
 subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
 ```
+
 ### Versioning
 
 ``` yaml

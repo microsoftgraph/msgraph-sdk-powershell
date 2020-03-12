@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Protection
-Module Guid: 194ddad0-3a4c-4cff-a088-34841b64c5ac
+Module Guid: 54df2635-ed0c-4400-965d-3dc839d5a647
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.protection
 Help Version: 1.0.0.0
 Locale: en-US

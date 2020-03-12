@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: DevicesApps.SharedResources
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/mobileAppTroubleshootingEvents':
@@ -489,6 +489,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
+              description: The collection property of AppLogUploadRequest.
           description: MobileAppTroubleshootingEvent Entity.
       example:
         id: string (identifier)
@@ -584,14 +585,19 @@ components:
           type: string
           description: Time when the history item occurred.
           format: date-time
+        troubleshootingErrorDetails:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingErrorDetails'
       example:
         occurrenceDateTime: string (timestamp)
+        troubleshootingErrorDetails:
+          '@odata.type': microsoft.graph.deviceManagementTroubleshootingErrorDetails
     microsoft.graph.entity:
       title: entity
       type: object
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.appLogUploadState:
@@ -644,8 +650,10 @@ components:
       properties:
         name:
           type: string
+          description: Name for this key-value pair
         value:
           type: string
+          description: Value for this key-value pair
           nullable: true
       example:
         name: string

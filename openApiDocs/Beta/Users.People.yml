@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Users.People
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/people':
@@ -108,6 +108,17 @@ paths:
                 - personType
                 - userPrincipalName
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -206,6 +217,17 @@ paths:
                 - personType
                 - userPrincipalName
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -259,21 +281,27 @@ components:
           properties:
             displayName:
               type: string
+              description: The person's display name.
               nullable: true
             givenName:
               type: string
+              description: The person's given name.
               nullable: true
             surname:
               type: string
+              description: The person's surname.
               nullable: true
             birthday:
               type: string
+              description: The person's birthday.
               nullable: true
             personNotes:
               type: string
+              description: Free-form notes that the user has taken about this person.
               nullable: true
             isFavorite:
               type: boolean
+              description: true if the user has flagged this person as a favorite.
               nullable: true
             emailAddresses:
               type: array
@@ -283,31 +311,39 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: The person's phone numbers.
             postalAddresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
+              description: The person's addresses.
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.website'
+              description: The person's websites.
             title:
               type: string
               nullable: true
             companyName:
               type: string
+              description: The name of the person's company.
               nullable: true
             yomiCompany:
               type: string
+              description: The phonetic Japanese name of the person's company.
               nullable: true
             department:
               type: string
+              description: The person's department.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the person's office.
               nullable: true
             profession:
               type: string
+              description: The person's profession.
               nullable: true
             sources:
               type: array
@@ -318,9 +354,11 @@ components:
               nullable: true
             personType:
               type: string
+              description: The type of person.
               nullable: true
             userPrincipalName:
               type: string
+              description: 'The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person''s email name. The general format is alias@domain.'
               nullable: true
       example:
         id: string (identifier)
@@ -355,6 +393,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.rankedEmailAddress:
@@ -379,6 +418,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.phoneType'
         number:
           type: string
+          description: The phone number.
           nullable: true
       example:
         type:
@@ -390,9 +430,11 @@ components:
       properties:
         displayName:
           type: string
+          description: The name associated with the location.
           nullable: true
         locationEmailAddress:
           type: string
+          description: Optional email address of the location.
           nullable: true
         address:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
@@ -400,11 +442,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
         locationUri:
           type: string
+          description: Optional URI representing the location.
           nullable: true
         locationType:
           $ref: '#/components/schemas/microsoft.graph.locationType'
         uniqueId:
           type: string
+          description: For internal use only.
           nullable: true
         uniqueIdType:
           $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
@@ -429,9 +473,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
         address:
           type: string
+          description: The URL of the website.
           nullable: true
         displayName:
           type: string
+          description: The display name of the web site.
           nullable: true
       example:
         type:
@@ -479,18 +525,23 @@ components:
           nullable: true
         street:
           type: string
+          description: The street.
           nullable: true
         city:
           type: string
+          description: The city.
           nullable: true
         state:
           type: string
+          description: The state.
           nullable: true
         countryOrRegion:
           type: string
+          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
           nullable: true
         postalCode:
           type: string
+          description: The postal code.
           nullable: true
       example:
         type:
@@ -507,22 +558,27 @@ components:
       properties:
         altitude:
           type: number
+          description: The altitude of the location.
           format: double
           nullable: true
         latitude:
           type: number
+          description: The latitude of the location.
           format: double
           nullable: true
         longitude:
           type: number
+          description: The longitude of the location.
           format: double
           nullable: true
         accuracy:
           type: number
+          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
           format: double
           nullable: true
         altitudeAccuracy:
           type: number
+          description: The accuracy of the altitude.
           format: double
           nullable: true
       example:

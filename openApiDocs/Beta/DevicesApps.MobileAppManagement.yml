@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: DevicesApps.MobileAppManagement
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/managedAppRegistrations':
@@ -427,14 +427,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
             intendedPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policies admin intended for the app as of now.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+              description: Zero or more long running operations triggered on the app registration.
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
       example:
         id: string (identifier)
@@ -508,6 +511,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.managedAppFlaggedReason:

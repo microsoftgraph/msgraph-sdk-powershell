@@ -4702,9 +4702,11 @@ components:
               nullable: true
             hideFromOutlookClients:
               type: boolean
+              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select.'
               nullable: true
             hideFromAddressLists:
               type: boolean
+              description: 'True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select.'
               nullable: true
             isArchived:
               type: boolean
@@ -10615,7 +10617,7 @@ components:
                 type: string
                 nullable: true
               description: Optional role scope tags for the device category.
-          description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company.Â These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
+          description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company.??These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
       example:
         id: string (identifier)
         displayName: string
@@ -14479,6 +14481,10 @@ components:
             encryptionCertificateId:
               type: string
               nullable: true
+            latestSupportedTlsVersion:
+              type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              nullable: true
       example:
         id: string (identifier)
         resource: string
@@ -14493,6 +14499,7 @@ components:
         lifecycleNotificationUrl: string
         encryptionCertificate: string
         encryptionCertificateId: string
+        latestSupportedTlsVersion: string
     microsoft.graph.thumbnailSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

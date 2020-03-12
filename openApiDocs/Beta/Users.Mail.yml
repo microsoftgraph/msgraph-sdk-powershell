@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Users.Mail
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/inferenceClassification':
@@ -30,6 +30,18 @@ paths:
             items:
               enum:
                 - id
+                - overrides
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - overrides
               type: string
       responses:
@@ -84,6 +96,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -114,6 +127,17 @@ paths:
                 - id
                 - classifyAs
                 - senderEmailAddress
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -195,6 +219,17 @@ paths:
                 - classifyAs
                 - senderEmailAddress
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -254,6 +289,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -296,6 +332,23 @@ paths:
                 - unreadItemCount
                 - totalItemCount
                 - wellKnownName
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - messages
+                - messageRules
+                - childFolders
+                - userConfigurations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
                 - messages
@@ -393,6 +446,23 @@ paths:
                 - childFolders
                 - userConfigurations
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - messages
+                - messageRules
+                - childFolders
+                - userConfigurations
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -459,6 +529,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -719,6 +790,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -767,6 +839,17 @@ paths:
                 - isEnabled
                 - hasError
                 - isReadOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -867,6 +950,17 @@ paths:
                 - isEnabled
                 - hasError
                 - isReadOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -1313,6 +1407,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1573,6 +1668,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1813,6 +1909,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3002,6 +3099,7 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3029,6 +3127,17 @@ paths:
               enum:
                 - id
                 - binaryData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -3122,6 +3231,17 @@ paths:
               enum:
                 - id
                 - binaryData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -3319,6 +3439,22 @@ paths:
                 - extensions
                 - mentions
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - attachments
+                - extensions
+                - mentions
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3435,6 +3571,22 @@ paths:
                 - extensions
                 - mentions
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - attachments
+                - extensions
+                - mentions
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3501,6 +3653,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3733,6 +3886,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3945,6 +4099,7 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4612,6 +4767,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
+              description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       example:
         id: string (identifier)
         overrides:
@@ -4640,26 +4796,31 @@ components:
           properties:
             displayName:
               type: string
+              description: The mailFolder's display name.
               nullable: true
             parentFolderId:
               type: string
+              description: The unique identifier for the mailFolder's parent mailFolder.
               nullable: true
             childFolderCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of immediate child mailFolders in the current mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
             totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of items in the mailFolder.
               format: int32
               nullable: true
             wellKnownName:
@@ -4669,22 +4830,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
+              description: The collection of messages in the mailFolder.
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
+              description: The collection of rules that apply to the user's Inbox folder.
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+              description: The collection of child folders in the mailFolder.
             userConfigurations:
               type: array
               items:
@@ -4717,11 +4883,13 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name of the rule.
               nullable: true
             sequence:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
               nullable: true
             conditions:
@@ -4732,12 +4900,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.messageRulePredicates'
             isEnabled:
               type: boolean
+              description: Indicates whether the rule is enabled to be applied to messages.
               nullable: true
             hasError:
               type: boolean
+              description: Indicates whether the rule is in an error condition. Read-only.
               nullable: true
             isReadOnly:
               type: boolean
+              description: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
               nullable: true
       example:
         id: string (identifier)
@@ -4761,35 +4932,43 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the message was received.
               format: date-time
               nullable: true
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time the message was sent.
               format: date-time
               nullable: true
             hasAttachments:
               type: boolean
+              description: 'Indicates whether the message has attachments. This property doesn''t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src=''cid:image001.jpg@01D26CD8.6C05F070''>.'
               nullable: true
             internetMessageId:
               type: string
+              description: The message ID in the format specified by RFC2822.
               nullable: true
             internetMessageHeaders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             subject:
               type: string
+              description: The subject of the message.
               nullable: true
             body:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
             parentFolderId:
               type: string
+              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
@@ -4799,41 +4978,52 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
             ccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Cc: recipients for the message.'
             bccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Bcc: recipients for the message.'
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
             conversationId:
               type: string
+              description: The ID of the conversation the email belongs to.
               nullable: true
             conversationIndex:
               type: string
+              description: Indicates the position of the message within the conversation.
               format: base64url
               nullable: true
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             isDeliveryReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isReadReceiptRequested:
               type: boolean
+              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isRead:
               type: boolean
+              description: Indicates whether the message has been read.
               nullable: true
             isDraft:
               type: boolean
+              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             webLink:
               type: string
+              description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
               nullable: true
             mentionsPreview:
               $ref: '#/components/schemas/microsoft.graph.mentionsPreview'
@@ -4853,18 +5043,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the message. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the message. Nullable.
             attachments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: The fileAttachment and itemAttachment attachments for the message.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the message. Nullable.
             mentions:
               type: array
               items:
@@ -4938,21 +5132,26 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: The attachment's file name.
               nullable: true
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
             isInline:
               type: boolean
+              description: 'true if the attachment is an inline attachment; otherwise, false.'
       example:
         id: string (identifier)
         lastModifiedDateTime: string (timestamp)
@@ -5022,6 +5221,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A collection of property values.
       example:
         id: string (identifier)
         value:
@@ -5034,6 +5234,7 @@ components:
           properties:
             value:
               type: string
+              description: A property value.
               nullable: true
       example:
         id: string (identifier)
@@ -5057,6 +5258,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.inferenceClassificationType:
@@ -5071,9 +5273,11 @@ components:
       properties:
         name:
           type: string
+          description: The display name of the person or entity.
           nullable: true
         address:
           type: string
+          description: The email address of the person or entity.
           nullable: true
       example:
         name: string
@@ -5087,36 +5291,43 @@ components:
           items:
             type: string
             nullable: true
+          description: Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
         subjectContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
         bodyContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
         bodyOrSubjectContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
         senderContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
         recipientContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
         headerContains:
           type: array
           items:
             type: string
             nullable: true
+          description: Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
         messageActionFlag:
           $ref: '#/components/schemas/microsoft.graph.messageActionFlag'
         importance:
@@ -5127,60 +5338,79 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
         sentToAddresses:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
         sentToMe:
           type: boolean
+          description: Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
           nullable: true
         sentOnlyToMe:
           type: boolean
+          description: Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
           nullable: true
         sentCcMe:
           type: boolean
+          description: Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
           nullable: true
         sentToOrCcMe:
           type: boolean
+          description: Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
           nullable: true
         notSentToMe:
           type: boolean
+          description: Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
           nullable: true
         hasAttachments:
           type: boolean
+          description: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
           nullable: true
         isApprovalRequest:
           type: boolean
+          description: Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
           nullable: true
         isAutomaticForward:
           type: boolean
+          description: Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
           nullable: true
         isAutomaticReply:
           type: boolean
+          description: Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
           nullable: true
         isEncrypted:
           type: boolean
+          description: Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
           nullable: true
         isMeetingRequest:
           type: boolean
+          description: Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
           nullable: true
         isMeetingResponse:
           type: boolean
+          description: Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
           nullable: true
         isNonDeliveryReport:
           type: boolean
+          description: Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
           nullable: true
         isPermissionControlled:
           type: boolean
+          description: Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
           nullable: true
         isReadReceipt:
           type: boolean
+          description: Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
           nullable: true
         isSigned:
           type: boolean
+          description: Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
           nullable: true
         isVoicemail:
           type: boolean
+          description: Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
           nullable: true
         withinSizeRange:
           $ref: '#/components/schemas/microsoft.graph.sizeRange'
@@ -5234,18 +5464,23 @@ components:
       properties:
         moveToFolder:
           type: string
+          description: The ID of the folder that a message will be moved to.
           nullable: true
         copyToFolder:
           type: string
+          description: The ID of a folder that a message is to be copied to.
           nullable: true
         delete:
           type: boolean
+          description: Indicates whether a message should be moved to the Deleted Items folder.
           nullable: true
         permanentDelete:
           type: boolean
+          description: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
           nullable: true
         markAsRead:
           type: boolean
+          description: Indicates whether a message should be marked as read.
           nullable: true
         markImportance:
           $ref: '#/components/schemas/microsoft.graph.importance'
@@ -5253,21 +5488,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses of the recipients to which a message should be forwarded.
         forwardAsAttachmentTo:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses of the recipients to which a message should be forwarded as an attachment.
         redirectTo:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses to which a message should be redirected.
         assignCategories:
           type: array
           items:
             type: string
             nullable: true
+          description: A list of categories to be assigned to a message.
         stopProcessingRules:
           type: boolean
+          description: Indicates whether subsequent rules should be evaluated.
           nullable: true
       example:
         moveToFolder: string
@@ -5295,21 +5535,25 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             categories:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -5323,9 +5567,11 @@ components:
       properties:
         name:
           type: string
+          description: Represents the key in a key-value pair.
           nullable: true
         value:
           type: string
+          description: The value in a key-value pair.
           nullable: true
       example:
         name: string
@@ -5338,6 +5584,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
         content:
           type: string
+          description: The content of the item.
           nullable: true
       example:
         contentType:
@@ -5427,12 +5674,14 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
       example:
@@ -5450,8 +5699,10 @@ components:
       properties:
         dateTime:
           type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       example:
         dateTime: string
@@ -5517,6 +5768,12 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
@@ -5529,12 +5786,6 @@ components:
       description: Include count of items
       schema:
         type: boolean
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2
