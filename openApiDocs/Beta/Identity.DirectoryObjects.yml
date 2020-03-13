@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.DirectoryObjects
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /directoryObjects:
@@ -14,7 +14,10 @@ paths:
       operationId: directoryObjects.directoryObject_ListDirectoryObject
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -40,6 +43,17 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -104,6 +118,17 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -463,6 +488,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     odata.error:
@@ -519,12 +545,31 @@ components:
         minimum: 0
         type: integer
       example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
     search:
       name: $search
       in: query
       description: Search items by search phrases
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

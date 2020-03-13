@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.Contracts
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /contracts:
@@ -14,7 +14,10 @@ paths:
       operationId: contracts.contract_ListContract
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -52,6 +55,17 @@ paths:
                 - customerId
                 - defaultDomainName
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -121,6 +135,17 @@ paths:
                 - defaultDomainName
                 - displayName
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved entity
@@ -181,6 +206,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/contracts/{contract-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: contracts_checkMemberGroups
+      parameters:
+        - name: contract-id
+          in: path
+          description: 'key: contract-id of contract'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contract
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/contracts/{contract-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: contracts_checkMemberObjects
+      parameters:
+        - name: contract-id
+          in: path
+          description: 'key: contract-id of contract'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contract
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/contracts/{contract-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action getMemberGroups
+      operationId: contracts_getMemberGroups
+      parameters:
+        - name: contract-id
+          in: path
+          description: 'key: contract-id of contract'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contract
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/contracts/{contract-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action getMemberObjects
+      operationId: contracts_getMemberObjects
+      parameters:
+        - name: contract-id
+          in: path
+          description: 'key: contract-id of contract'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contract
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/contracts/{contract-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action restore
+      operationId: contracts_restore
+      parameters:
+        - name: contract-id
+          in: path
+          description: 'key: contract-id of contract'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contract
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /contracts/microsoft.graph.getByIds:
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action getByIds
+      operationId: contracts_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /contracts/microsoft.graph.getUserOwnedObjects:
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: contracts_getUserOwnedObjects
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /contracts/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action validateProperties
+      operationId: contracts_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.contract:
@@ -191,17 +491,21 @@ components:
           properties:
             contractType:
               type: string
+              description: 'Type of contract.Possible values are: SyndicationPartner - Partner that exclusively resells and manages O365 and Intune for this customer. They resell and support their customers. BreadthPartner - Partner has the ability to provide administrative support for this customer. However, the partner is not allowed to resell to the customer.ResellerPartner - Partner that is similar to a syndication partner, except that the partner doesn’t have exclusive access to a tenant. In the syndication case, the customer cannot buy additional direct subscriptions from Microsoft or from other partners.'
               nullable: true
             customerId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
               format: uuid
               nullable: true
             defaultDomainName:
               type: string
+              description: A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
               nullable: true
             displayName:
               type: string
+              description: A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
               nullable: true
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
@@ -226,6 +530,15 @@ components:
       example:
         id: string (identifier)
         deletedDateTime: string (timestamp)
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
     odata.error:
       required:
         - error
@@ -233,14 +546,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-      example:
-        id: string (identifier)
     odata.error.main:
       required:
         - code
@@ -288,12 +593,31 @@ components:
         minimum: 0
         type: integer
       example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
     search:
       name: $search
       in: query
       description: Search items by search phrases
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

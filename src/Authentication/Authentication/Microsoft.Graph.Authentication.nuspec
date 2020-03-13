@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.1.4</version>
+    <version>0.2.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -12,18 +12,24 @@
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes>
-    </releaseNotes>
+    <releaseNotes>Initial release of Microsoft.Graph.Authentication module.</releaseNotes>
     <dependencies />
   </metadata>
   <files>
     <file src="Microsoft.Graph.Authentication.psd1" />
-    <!--<file src="Graph.Authentication.psm1" />-->
+    <file src="Microsoft.Graph.Authentication.format.ps1xml" />
+    <file src="Microsoft.Graph.Authentication.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
     <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Core.dll" target="bin" />
     <file src="bin/Microsoft.Identity.Client.dll" target="bin" />
+    <file src="bin/System.IdentityModel.Tokens.Jwt.dll" target="bin" />
+    <file src="bin/Newtonsoft.Json.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.JsonWebTokens.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.Tokens.dll" target="bin" />
+    <file src="bin/Microsoft.IdentityModel.Logging.dll" target="bin" />
+    <file src="bin/PreloadAssemblies/System.Security.Cryptography.ProtectedData.dll" target="bin/PreloadAssemblies" />
   </files>
 </package>

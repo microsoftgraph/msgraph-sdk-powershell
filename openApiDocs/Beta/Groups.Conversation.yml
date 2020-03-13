@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.Conversation
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/groups/{group-id}/conversations':
@@ -62,6 +62,18 @@ paths:
                 - lastDeliveredDateTime
                 - uniqueSenders
                 - preview
+                - threads
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - threads
               type: string
       responses:
@@ -148,6 +160,18 @@ paths:
                 - preview
                 - threads
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - threads
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -214,6 +238,7 @@ paths:
           x-ms-docs-key-type: conversation
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -469,6 +494,7 @@ paths:
           x-ms-docs-key-type: conversationThread
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -792,6 +818,7 @@ paths:
           x-ms-docs-key-type: post
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1080,6 +1107,7 @@ paths:
           x-ms-docs-key-type: post
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1487,6 +1515,7 @@ paths:
           x-ms-docs-key-type: post
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2306,22 +2335,28 @@ components:
           properties:
             topic:
               type: string
+              description: 'The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.'
             hasAttachments:
               type: boolean
+              description: Indicates whether any of the posts within this Conversation has at least one attachment.
             lastDeliveredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             uniqueSenders:
               type: array
               items:
                 type: string
+              description: All the users that sent a message to this Conversation.
             preview:
               type: string
+              description: A short summary from the body of the latest post in this converstaion.
             threads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
+              description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       example:
         id: string (identifier)
         topic: string
@@ -2342,30 +2377,39 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the thread.'
             topic:
               type: string
+              description: 'The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.'
             hasAttachments:
               type: boolean
+              description: Indicates whether any of the posts within this thread has at least one attachment.
             lastDeliveredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             uniqueSenders:
               type: array
               items:
                 type: string
+              description: All the users that sent a message to this thread.
             ccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Cc: recipients for the thread.'
             preview:
               type: string
+              description: A short summary from the body of the latest post in this converstaion.
             isLocked:
               type: boolean
+              description: Indicates if the thread is locked.
             posts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
+              description: Read-only. Nullable.
       example:
         id: string (identifier)
         toRecipients:
@@ -2392,22 +2436,27 @@ components:
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             hasAttachments:
               type: boolean
+              description: Indicates whether the post has at least one attachment. This is a default property.
             from:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             conversationThreadId:
               type: string
+              description: Unique ID of the conversation thread. Read-only.
               nullable: true
             newParticipants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: Conversation participants that were added to the thread as part of this post.
             conversationId:
               type: string
+              description: Unique ID of the conversation. Read-only.
               nullable: true
             importance:
               $ref: '#/components/schemas/microsoft.graph.importance'
@@ -2417,18 +2466,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the post. Read-only. Nullable.
             attachments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: Read-only. Nullable.
             mentions:
               type: array
               items:
@@ -2475,21 +2528,26 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             name:
               type: string
+              description: The attachment's file name.
               nullable: true
             contentType:
               type: string
+              description: The MIME type.
               nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The length of the attachment in bytes.
               format: int32
             isInline:
               type: boolean
+              description: 'true if the attachment is an inline attachment; otherwise, false.'
       example:
         id: string (identifier)
         lastModifiedDateTime: string (timestamp)
@@ -2559,6 +2617,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A collection of property values.
       example:
         id: string (identifier)
         value:
@@ -2571,6 +2630,7 @@ components:
           properties:
             value:
               type: string
+              description: A property value.
               nullable: true
       example:
         id: string (identifier)
@@ -2581,6 +2641,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.recipient:
@@ -2601,21 +2662,25 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             categories:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -2631,6 +2696,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
         content:
           type: string
+          description: The content of the item.
           nullable: true
       example:
         contentType:
@@ -2649,9 +2715,11 @@ components:
       properties:
         name:
           type: string
+          description: The display name of the person or entity.
           nullable: true
         address:
           type: string
+          description: The email address of the person or entity.
           nullable: true
       example:
         name: string

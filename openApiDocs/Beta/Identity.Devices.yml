@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.Devices
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /devices:
@@ -14,7 +14,10 @@ paths:
       operationId: devices.device_ListDevice
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -119,6 +122,23 @@ paths:
                 - extensions
                 - commands
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
       responses:
         '200':
           description: Retrieved entities
@@ -206,6 +226,23 @@ paths:
                 - Kind
                 - Status
                 - Platform
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - memberOf
                 - registeredOwners
                 - registeredUsers
@@ -830,6 +867,182 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/devices/{device-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: devices_checkMemberGroups
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: device-id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/devices/{device-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: devices_checkMemberObjects
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: device-id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/devices/{device-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action getMemberGroups
+      operationId: devices_getMemberGroups
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: device-id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/devices/{device-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action getMemberObjects
+      operationId: devices_getMemberObjects
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: device-id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/devices/{device-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action restore
+      operationId: devices_restore
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: device-id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/devices/{device-id}/registeredOwners':
     get:
       tags:
@@ -1208,6 +1421,105 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /devices/microsoft.graph.getByIds:
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action getByIds
+      operationId: devices_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /devices/microsoft.graph.getUserOwnedObjects:
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: devices_getUserOwnedObjects
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /devices/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action validateProperties
+      operationId: devices_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.device:
@@ -1218,69 +1530,87 @@ components:
           properties:
             accountEnabled:
               type: boolean
+              description: 'true if the account is enabled; otherwise, false. Required.'
               nullable: true
             alternativeSecurityIds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
+              description: For internal use only. Not nullable.
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             deviceId:
               type: string
+              description: Unique identifier set by Azure Device Registration Service at the time of registration.
               nullable: true
             deviceMetadata:
               type: string
+              description: For interal use only. Set to null.
               nullable: true
             deviceVersion:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: For interal use only.
               format: int32
               nullable: true
             displayName:
               type: string
+              description: The display name for the device. Required.
               nullable: true
             isCompliant:
               type: boolean
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
               nullable: true
             isManaged:
               type: boolean
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
               nullable: true
             operatingSystem:
               type: string
+              description: The type of operating system on the device. Required.
               nullable: true
             operatingSystemVersion:
               type: string
+              description: The version of the operating system on the device. Required.
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
+              description: For interal use only. Not nullable.
             profileType:
               type: string
+              description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
               nullable: true
             systemLabels:
               type: array
               items:
                 type: string
+              description: List of labels applied to the device by the system.
             trustType:
               type: string
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace - indicates bring your own personal devicesAzureAd - Cloud only joined devicesServerAd - on-premises domain joined devices joined to Azure AD. For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             Name:
               type: string
@@ -1304,14 +1634,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
             transitiveMemberOf:
               type: array
               items:
@@ -1320,6 +1653,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the device. Read-only. Nullable.
             commands:
               type: array
               items:
@@ -1441,13 +1775,16 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: For internal use only
           format: int32
           nullable: true
         identityProvider:
           type: string
+          description: For internal use only
           nullable: true
         key:
           type: string
+          description: For internal use only
           format: base64url
           nullable: true
       example:
@@ -1460,6 +1797,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.PayloadRequest:
@@ -1526,12 +1864,6 @@ components:
         minimum: 0
         type: integer
       example: 50
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     skip:
       name: $skip
       in: query
@@ -1539,6 +1871,12 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

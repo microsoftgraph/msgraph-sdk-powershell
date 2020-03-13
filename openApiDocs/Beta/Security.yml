@@ -1,0 +1,5624 @@
+openapi: 3.0.1
+info:
+  title: Security
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /Security:
+    get:
+      tags:
+        - Security.security
+      summary: Get Security
+      operationId: Security.security_GetSecurity
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - providerStatus
+                - alerts
+                - cloudAppSecurityProfiles
+                - domainSecurityProfiles
+                - fileSecurityProfiles
+                - hostSecurityProfiles
+                - ipSecurityProfiles
+                - providerTenantSettings
+                - secureScoreControlProfiles
+                - secureScores
+                - tiIndicators
+                - userSecurityProfiles
+                - securityActions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - alerts
+                - cloudAppSecurityProfiles
+                - domainSecurityProfiles
+                - fileSecurityProfiles
+                - hostSecurityProfiles
+                - ipSecurityProfiles
+                - providerTenantSettings
+                - secureScoreControlProfiles
+                - secureScores
+                - tiIndicators
+                - userSecurityProfiles
+                - securityActions
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.security
+      summary: Update Security
+      operationId: Security.security_UpdateSecurity
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/alerts:
+    get:
+      tags:
+        - Security.alert
+      summary: Get alerts from Security
+      operationId: Security_ListAlerts
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activityGroupName
+                - activityGroupName desc
+                - assignedTo
+                - assignedTo desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - category
+                - category desc
+                - closedDateTime
+                - closedDateTime desc
+                - cloudAppStates
+                - cloudAppStates desc
+                - comments
+                - comments desc
+                - confidence
+                - confidence desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - detectionIds
+                - detectionIds desc
+                - eventDateTime
+                - eventDateTime desc
+                - feedback
+                - feedback desc
+                - fileStates
+                - fileStates desc
+                - historyStates
+                - historyStates desc
+                - hostStates
+                - hostStates desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - malwareStates
+                - malwareStates desc
+                - networkConnections
+                - networkConnections desc
+                - processes
+                - processes desc
+                - recommendedActions
+                - recommendedActions desc
+                - registryKeyStates
+                - registryKeyStates desc
+                - severity
+                - severity desc
+                - sourceMaterials
+                - sourceMaterials desc
+                - status
+                - status desc
+                - tags
+                - tags desc
+                - title
+                - title desc
+                - triggers
+                - triggers desc
+                - userStates
+                - userStates desc
+                - vendorInformation
+                - vendorInformation desc
+                - vulnerabilityStates
+                - vulnerabilityStates desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupName
+                - assignedTo
+                - azureSubscriptionId
+                - azureTenantId
+                - category
+                - closedDateTime
+                - cloudAppStates
+                - comments
+                - confidence
+                - createdDateTime
+                - description
+                - detectionIds
+                - eventDateTime
+                - feedback
+                - fileStates
+                - historyStates
+                - hostStates
+                - lastModifiedDateTime
+                - malwareStates
+                - networkConnections
+                - processes
+                - recommendedActions
+                - registryKeyStates
+                - severity
+                - sourceMaterials
+                - status
+                - tags
+                - title
+                - triggers
+                - userStates
+                - vendorInformation
+                - vulnerabilityStates
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of alert
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.alert
+      summary: Create new navigation property to alerts for Security
+      operationId: Security_CreateAlerts
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.alert'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/alerts/{alert-id}':
+    get:
+      tags:
+        - Security.alert
+      summary: Get alerts from Security
+      operationId: Security_GetAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: alert-id of alert'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupName
+                - assignedTo
+                - azureSubscriptionId
+                - azureTenantId
+                - category
+                - closedDateTime
+                - cloudAppStates
+                - comments
+                - confidence
+                - createdDateTime
+                - description
+                - detectionIds
+                - eventDateTime
+                - feedback
+                - fileStates
+                - historyStates
+                - hostStates
+                - lastModifiedDateTime
+                - malwareStates
+                - networkConnections
+                - processes
+                - recommendedActions
+                - registryKeyStates
+                - severity
+                - sourceMaterials
+                - status
+                - tags
+                - title
+                - triggers
+                - userStates
+                - vendorInformation
+                - vulnerabilityStates
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.alert
+      summary: Update the navigation property alerts in Security
+      operationId: Security_UpdateAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: alert-id of alert'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.alert'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/alerts/microsoft.graph.updateAlerts:
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action updateAlerts
+      operationId: Security.alerts_updateAlerts
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.alert'
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.alert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/cloudAppSecurityProfiles:
+    get:
+      tags:
+        - Security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from Security
+      operationId: Security_ListCloudAppSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deploymentPackageUrl
+                - deploymentPackageUrl desc
+                - destinationServiceName
+                - destinationServiceName desc
+                - isSigned
+                - isSigned desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - manifest
+                - manifest desc
+                - name
+                - name desc
+                - permissionsRequired
+                - permissionsRequired desc
+                - platform
+                - platform desc
+                - policyName
+                - policyName desc
+                - publisher
+                - publisher desc
+                - riskScore
+                - riskScore desc
+                - tags
+                - tags desc
+                - type
+                - type desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureSubscriptionId
+                - azureTenantId
+                - createdDateTime
+                - deploymentPackageUrl
+                - destinationServiceName
+                - isSigned
+                - lastModifiedDateTime
+                - manifest
+                - name
+                - permissionsRequired
+                - platform
+                - policyName
+                - publisher
+                - riskScore
+                - tags
+                - type
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudAppSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.cloudAppSecurityProfile
+      summary: Create new navigation property to cloudAppSecurityProfiles for Security
+      operationId: Security_CreateCloudAppSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}':
+    get:
+      tags:
+        - Security.cloudAppSecurityProfile
+      summary: Get cloudAppSecurityProfiles from Security
+      operationId: Security_GetCloudAppSecurityProfiles
+      parameters:
+        - name: cloudAppSecurityProfile-id
+          in: path
+          description: 'key: cloudAppSecurityProfile-id of cloudAppSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudAppSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureSubscriptionId
+                - azureTenantId
+                - createdDateTime
+                - deploymentPackageUrl
+                - destinationServiceName
+                - isSigned
+                - lastModifiedDateTime
+                - manifest
+                - name
+                - permissionsRequired
+                - platform
+                - policyName
+                - publisher
+                - riskScore
+                - tags
+                - type
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.cloudAppSecurityProfile
+      summary: Update the navigation property cloudAppSecurityProfiles in Security
+      operationId: Security_UpdateCloudAppSecurityProfiles
+      parameters:
+        - name: cloudAppSecurityProfile-id
+          in: path
+          description: 'key: cloudAppSecurityProfile-id of cloudAppSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudAppSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/domainSecurityProfiles:
+    get:
+      tags:
+        - Security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from Security
+      operationId: Security_ListDomainSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activityGroupNames
+                - activityGroupNames desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - countHits
+                - countHits desc
+                - countInOrg
+                - countInOrg desc
+                - domainCategories
+                - domainCategories desc
+                - domainRegisteredDateTime
+                - domainRegisteredDateTime desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - name
+                - name desc
+                - registrant
+                - registrant desc
+                - riskScore
+                - riskScore desc
+                - tags
+                - tags desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - azureSubscriptionId
+                - azureTenantId
+                - countHits
+                - countInOrg
+                - domainCategories
+                - domainRegisteredDateTime
+                - firstSeenDateTime
+                - lastSeenDateTime
+                - name
+                - registrant
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of domainSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.domainSecurityProfile
+      summary: Create new navigation property to domainSecurityProfiles for Security
+      operationId: Security_CreateDomainSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/domainSecurityProfiles/{domainSecurityProfile-id}':
+    get:
+      tags:
+        - Security.domainSecurityProfile
+      summary: Get domainSecurityProfiles from Security
+      operationId: Security_GetDomainSecurityProfiles
+      parameters:
+        - name: domainSecurityProfile-id
+          in: path
+          description: 'key: domainSecurityProfile-id of domainSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domainSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - azureSubscriptionId
+                - azureTenantId
+                - countHits
+                - countInOrg
+                - domainCategories
+                - domainRegisteredDateTime
+                - firstSeenDateTime
+                - lastSeenDateTime
+                - name
+                - registrant
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.domainSecurityProfile
+      summary: Update the navigation property domainSecurityProfiles in Security
+      operationId: Security_UpdateDomainSecurityProfiles
+      parameters:
+        - name: domainSecurityProfile-id
+          in: path
+          description: 'key: domainSecurityProfile-id of domainSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domainSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/fileSecurityProfiles:
+    get:
+      tags:
+        - Security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from Security
+      operationId: Security_ListFileSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activityGroupNames
+                - activityGroupNames desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - certificateThumbprint
+                - certificateThumbprint desc
+                - extensions
+                - extensions desc
+                - fileType
+                - fileType desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - hashes
+                - hashes desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - malwareStates
+                - malwareStates desc
+                - names
+                - names desc
+                - riskScore
+                - riskScore desc
+                - size
+                - size desc
+                - tags
+                - tags desc
+                - vendorInformation
+                - vendorInformation desc
+                - vulnerabilityStates
+                - vulnerabilityStates desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - azureSubscriptionId
+                - azureTenantId
+                - certificateThumbprint
+                - extensions
+                - fileType
+                - firstSeenDateTime
+                - hashes
+                - lastSeenDateTime
+                - malwareStates
+                - names
+                - riskScore
+                - size
+                - tags
+                - vendorInformation
+                - vulnerabilityStates
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of fileSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.fileSecurityProfile
+      summary: Create new navigation property to fileSecurityProfiles for Security
+      operationId: Security_CreateFileSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/fileSecurityProfiles/{fileSecurityProfile-id}':
+    get:
+      tags:
+        - Security.fileSecurityProfile
+      summary: Get fileSecurityProfiles from Security
+      operationId: Security_GetFileSecurityProfiles
+      parameters:
+        - name: fileSecurityProfile-id
+          in: path
+          description: 'key: fileSecurityProfile-id of fileSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: fileSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - azureSubscriptionId
+                - azureTenantId
+                - certificateThumbprint
+                - extensions
+                - fileType
+                - firstSeenDateTime
+                - hashes
+                - lastSeenDateTime
+                - malwareStates
+                - names
+                - riskScore
+                - size
+                - tags
+                - vendorInformation
+                - vulnerabilityStates
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.fileSecurityProfile
+      summary: Update the navigation property fileSecurityProfiles in Security
+      operationId: Security_UpdateFileSecurityProfiles
+      parameters:
+        - name: fileSecurityProfile-id
+          in: path
+          description: 'key: fileSecurityProfile-id of fileSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: fileSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/hostSecurityProfiles:
+    get:
+      tags:
+        - Security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from Security
+      operationId: Security_ListHostSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - fqdn
+                - fqdn desc
+                - isAzureAdJoined
+                - isAzureAdJoined desc
+                - isAzureAdRegistered
+                - isAzureAdRegistered desc
+                - isHybridAzureDomainJoined
+                - isHybridAzureDomainJoined desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - logonUsers
+                - logonUsers desc
+                - netBiosName
+                - netBiosName desc
+                - networkInterfaces
+                - networkInterfaces desc
+                - os
+                - os desc
+                - osVersion
+                - osVersion desc
+                - parentHost
+                - parentHost desc
+                - relatedHostIds
+                - relatedHostIds desc
+                - riskScore
+                - riskScore desc
+                - tags
+                - tags desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureSubscriptionId
+                - azureTenantId
+                - firstSeenDateTime
+                - fqdn
+                - isAzureAdJoined
+                - isAzureAdRegistered
+                - isHybridAzureDomainJoined
+                - lastSeenDateTime
+                - logonUsers
+                - netBiosName
+                - networkInterfaces
+                - os
+                - osVersion
+                - parentHost
+                - relatedHostIds
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of hostSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.hostSecurityProfile
+      summary: Create new navigation property to hostSecurityProfiles for Security
+      operationId: Security_CreateHostSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/hostSecurityProfiles/{hostSecurityProfile-id}':
+    get:
+      tags:
+        - Security.hostSecurityProfile
+      summary: Get hostSecurityProfiles from Security
+      operationId: Security_GetHostSecurityProfiles
+      parameters:
+        - name: hostSecurityProfile-id
+          in: path
+          description: 'key: hostSecurityProfile-id of hostSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: hostSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureSubscriptionId
+                - azureTenantId
+                - firstSeenDateTime
+                - fqdn
+                - isAzureAdJoined
+                - isAzureAdRegistered
+                - isHybridAzureDomainJoined
+                - lastSeenDateTime
+                - logonUsers
+                - netBiosName
+                - networkInterfaces
+                - os
+                - osVersion
+                - parentHost
+                - relatedHostIds
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.hostSecurityProfile
+      summary: Update the navigation property hostSecurityProfiles in Security
+      operationId: Security_UpdateHostSecurityProfiles
+      parameters:
+        - name: hostSecurityProfile-id
+          in: path
+          description: 'key: hostSecurityProfile-id of hostSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: hostSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/ipSecurityProfiles:
+    get:
+      tags:
+        - Security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from Security
+      operationId: Security_ListIpSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activityGroupNames
+                - activityGroupNames desc
+                - address
+                - address desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - countHits
+                - countHits desc
+                - countHosts
+                - countHosts desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - ipCategories
+                - ipCategories desc
+                - ipReferenceData
+                - ipReferenceData desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - riskScore
+                - riskScore desc
+                - tags
+                - tags desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - address
+                - azureSubscriptionId
+                - azureTenantId
+                - countHits
+                - countHosts
+                - firstSeenDateTime
+                - ipCategories
+                - ipReferenceData
+                - lastSeenDateTime
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of ipSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.ipSecurityProfile
+      summary: Create new navigation property to ipSecurityProfiles for Security
+      operationId: Security_CreateIpSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/ipSecurityProfiles/{ipSecurityProfile-id}':
+    get:
+      tags:
+        - Security.ipSecurityProfile
+      summary: Get ipSecurityProfiles from Security
+      operationId: Security_GetIpSecurityProfiles
+      parameters:
+        - name: ipSecurityProfile-id
+          in: path
+          description: 'key: ipSecurityProfile-id of ipSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: ipSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityGroupNames
+                - address
+                - azureSubscriptionId
+                - azureTenantId
+                - countHits
+                - countHosts
+                - firstSeenDateTime
+                - ipCategories
+                - ipReferenceData
+                - lastSeenDateTime
+                - riskScore
+                - tags
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.ipSecurityProfile
+      summary: Update the navigation property ipSecurityProfiles in Security
+      operationId: Security_UpdateIpSecurityProfiles
+      parameters:
+        - name: ipSecurityProfile-id
+          in: path
+          description: 'key: ipSecurityProfile-id of ipSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: ipSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/providerTenantSettings:
+    get:
+      tags:
+        - Security.providerTenantSetting
+      summary: Get providerTenantSettings from Security
+      operationId: Security_ListProviderTenantSettings
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - azureTenantId
+                - azureTenantId desc
+                - enabled
+                - enabled desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - provider
+                - provider desc
+                - vendor
+                - vendor desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureTenantId
+                - enabled
+                - lastModifiedDateTime
+                - provider
+                - vendor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of providerTenantSetting
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.providerTenantSetting
+      summary: Create new navigation property to providerTenantSettings for Security
+      operationId: Security_CreateProviderTenantSettings
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/providerTenantSettings/{providerTenantSetting-id}':
+    get:
+      tags:
+        - Security.providerTenantSetting
+      summary: Get providerTenantSettings from Security
+      operationId: Security_GetProviderTenantSettings
+      parameters:
+        - name: providerTenantSetting-id
+          in: path
+          description: 'key: providerTenantSetting-id of providerTenantSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: providerTenantSetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureTenantId
+                - enabled
+                - lastModifiedDateTime
+                - provider
+                - vendor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.providerTenantSetting
+      summary: Update the navigation property providerTenantSettings in Security
+      operationId: Security_UpdateProviderTenantSettings
+      parameters:
+        - name: providerTenantSetting-id
+          in: path
+          description: 'key: providerTenantSetting-id of providerTenantSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: providerTenantSetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/secureScoreControlProfiles:
+    get:
+      tags:
+        - Security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from Security
+      operationId: Security_ListSecureScoreControlProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionType
+                - actionType desc
+                - actionUrl
+                - actionUrl desc
+                - azureTenantId
+                - azureTenantId desc
+                - complianceInformation
+                - complianceInformation desc
+                - controlCategory
+                - controlCategory desc
+                - controlStateUpdates
+                - controlStateUpdates desc
+                - deprecated
+                - deprecated desc
+                - implementationCost
+                - implementationCost desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - maxScore
+                - maxScore desc
+                - rank
+                - rank desc
+                - remediation
+                - remediation desc
+                - remediationImpact
+                - remediationImpact desc
+                - service
+                - service desc
+                - threats
+                - threats desc
+                - tier
+                - tier desc
+                - title
+                - title desc
+                - userImpact
+                - userImpact desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionType
+                - actionUrl
+                - azureTenantId
+                - complianceInformation
+                - controlCategory
+                - controlStateUpdates
+                - deprecated
+                - implementationCost
+                - lastModifiedDateTime
+                - maxScore
+                - rank
+                - remediation
+                - remediationImpact
+                - service
+                - threats
+                - tier
+                - title
+                - userImpact
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of secureScoreControlProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.secureScoreControlProfile
+      summary: Create new navigation property to secureScoreControlProfiles for Security
+      operationId: Security_CreateSecureScoreControlProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
+    get:
+      tags:
+        - Security.secureScoreControlProfile
+      summary: Get secureScoreControlProfiles from Security
+      operationId: Security_GetSecureScoreControlProfiles
+      parameters:
+        - name: secureScoreControlProfile-id
+          in: path
+          description: 'key: secureScoreControlProfile-id of secureScoreControlProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScoreControlProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionType
+                - actionUrl
+                - azureTenantId
+                - complianceInformation
+                - controlCategory
+                - controlStateUpdates
+                - deprecated
+                - implementationCost
+                - lastModifiedDateTime
+                - maxScore
+                - rank
+                - remediation
+                - remediationImpact
+                - service
+                - threats
+                - tier
+                - title
+                - userImpact
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.secureScoreControlProfile
+      summary: Update the navigation property secureScoreControlProfiles in Security
+      operationId: Security_UpdateSecureScoreControlProfiles
+      parameters:
+        - name: secureScoreControlProfile-id
+          in: path
+          description: 'key: secureScoreControlProfile-id of secureScoreControlProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScoreControlProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/secureScores:
+    get:
+      tags:
+        - Security.secureScore
+      summary: Get secureScores from Security
+      operationId: Security_ListSecureScores
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activeUserCount
+                - activeUserCount desc
+                - averageComparativeScores
+                - averageComparativeScores desc
+                - azureTenantId
+                - azureTenantId desc
+                - controlScores
+                - controlScores desc
+                - createdDateTime
+                - createdDateTime desc
+                - currentScore
+                - currentScore desc
+                - enabledServices
+                - enabledServices desc
+                - licensedUserCount
+                - licensedUserCount desc
+                - maxScore
+                - maxScore desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeUserCount
+                - averageComparativeScores
+                - azureTenantId
+                - controlScores
+                - createdDateTime
+                - currentScore
+                - enabledServices
+                - licensedUserCount
+                - maxScore
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of secureScore
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.secureScore'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.secureScore
+      summary: Create new navigation property to secureScores for Security
+      operationId: Security_CreateSecureScores
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.secureScore'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/secureScores/{secureScore-id}':
+    get:
+      tags:
+        - Security.secureScore
+      summary: Get secureScores from Security
+      operationId: Security_GetSecureScores
+      parameters:
+        - name: secureScore-id
+          in: path
+          description: 'key: secureScore-id of secureScore'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScore
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeUserCount
+                - averageComparativeScores
+                - azureTenantId
+                - controlScores
+                - createdDateTime
+                - currentScore
+                - enabledServices
+                - licensedUserCount
+                - maxScore
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.secureScore
+      summary: Update the navigation property secureScores in Security
+      operationId: Security_UpdateSecureScores
+      parameters:
+        - name: secureScore-id
+          in: path
+          description: 'key: secureScore-id of secureScore'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScore
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.secureScore'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/securityActions:
+    get:
+      tags:
+        - Security.securityAction
+      summary: Get securityActions from Security
+      operationId: Security_ListSecurityActions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionReason
+                - actionReason desc
+                - appId
+                - appId desc
+                - azureTenantId
+                - azureTenantId desc
+                - clientContext
+                - clientContext desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - errorInfo
+                - errorInfo desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - name
+                - name desc
+                - parameters
+                - parameters desc
+                - states
+                - states desc
+                - status
+                - status desc
+                - user
+                - user desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionReason
+                - appId
+                - azureTenantId
+                - clientContext
+                - completedDateTime
+                - createdDateTime
+                - errorInfo
+                - lastActionDateTime
+                - name
+                - parameters
+                - states
+                - status
+                - user
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of securityAction
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.securityAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.securityAction
+      summary: Create new navigation property to securityActions for Security
+      operationId: Security_CreateSecurityActions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.securityAction'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/securityActions/{securityAction-id}':
+    get:
+      tags:
+        - Security.securityAction
+      summary: Get securityActions from Security
+      operationId: Security_GetSecurityActions
+      parameters:
+        - name: securityAction-id
+          in: path
+          description: 'key: securityAction-id of securityAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: securityAction
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionReason
+                - appId
+                - azureTenantId
+                - clientContext
+                - completedDateTime
+                - createdDateTime
+                - errorInfo
+                - lastActionDateTime
+                - name
+                - parameters
+                - states
+                - status
+                - user
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.securityAction
+      summary: Update the navigation property securityActions in Security
+      operationId: Security_UpdateSecurityActions
+      parameters:
+        - name: securityAction-id
+          in: path
+          description: 'key: securityAction-id of securityAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: securityAction
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.securityAction'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction':
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action cancelSecurityAction
+      operationId: Security.securityActions_cancelSecurityAction
+      parameters:
+        - name: securityAction-id
+          in: path
+          description: 'key: securityAction-id of securityAction'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: securityAction
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/tiIndicators:
+    get:
+      tags:
+        - Security.tiIndicator
+      summary: Get tiIndicators from Security
+      operationId: Security_ListTiIndicators
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - action
+                - action desc
+                - activityGroupNames
+                - activityGroupNames desc
+                - additionalInformation
+                - additionalInformation desc
+                - azureTenantId
+                - azureTenantId desc
+                - confidence
+                - confidence desc
+                - description
+                - description desc
+                - diamondModel
+                - diamondModel desc
+                - domainName
+                - domainName desc
+                - emailEncoding
+                - emailEncoding desc
+                - emailLanguage
+                - emailLanguage desc
+                - emailRecipient
+                - emailRecipient desc
+                - emailSenderAddress
+                - emailSenderAddress desc
+                - emailSenderName
+                - emailSenderName desc
+                - emailSourceDomain
+                - emailSourceDomain desc
+                - emailSourceIpAddress
+                - emailSourceIpAddress desc
+                - emailSubject
+                - emailSubject desc
+                - emailXMailer
+                - emailXMailer desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - externalId
+                - externalId desc
+                - fileCompileDateTime
+                - fileCompileDateTime desc
+                - fileCreatedDateTime
+                - fileCreatedDateTime desc
+                - fileHashType
+                - fileHashType desc
+                - fileHashValue
+                - fileHashValue desc
+                - fileMutexName
+                - fileMutexName desc
+                - fileName
+                - fileName desc
+                - filePacker
+                - filePacker desc
+                - filePath
+                - filePath desc
+                - fileSize
+                - fileSize desc
+                - fileType
+                - fileType desc
+                - ingestedDateTime
+                - ingestedDateTime desc
+                - isActive
+                - isActive desc
+                - killChain
+                - killChain desc
+                - knownFalsePositives
+                - knownFalsePositives desc
+                - lastReportedDateTime
+                - lastReportedDateTime desc
+                - malwareFamilyNames
+                - malwareFamilyNames desc
+                - networkCidrBlock
+                - networkCidrBlock desc
+                - networkDestinationAsn
+                - networkDestinationAsn desc
+                - networkDestinationCidrBlock
+                - networkDestinationCidrBlock desc
+                - networkDestinationIPv4
+                - networkDestinationIPv4 desc
+                - networkDestinationIPv6
+                - networkDestinationIPv6 desc
+                - networkDestinationPort
+                - networkDestinationPort desc
+                - networkIPv4
+                - networkIPv4 desc
+                - networkIPv6
+                - networkIPv6 desc
+                - networkPort
+                - networkPort desc
+                - networkProtocol
+                - networkProtocol desc
+                - networkSourceAsn
+                - networkSourceAsn desc
+                - networkSourceCidrBlock
+                - networkSourceCidrBlock desc
+                - networkSourceIPv4
+                - networkSourceIPv4 desc
+                - networkSourceIPv6
+                - networkSourceIPv6 desc
+                - networkSourcePort
+                - networkSourcePort desc
+                - passiveOnly
+                - passiveOnly desc
+                - severity
+                - severity desc
+                - tags
+                - tags desc
+                - targetProduct
+                - targetProduct desc
+                - threatType
+                - threatType desc
+                - tlpLevel
+                - tlpLevel desc
+                - url
+                - url desc
+                - userAgent
+                - userAgent desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - action
+                - activityGroupNames
+                - additionalInformation
+                - azureTenantId
+                - confidence
+                - description
+                - diamondModel
+                - domainName
+                - emailEncoding
+                - emailLanguage
+                - emailRecipient
+                - emailSenderAddress
+                - emailSenderName
+                - emailSourceDomain
+                - emailSourceIpAddress
+                - emailSubject
+                - emailXMailer
+                - expirationDateTime
+                - externalId
+                - fileCompileDateTime
+                - fileCreatedDateTime
+                - fileHashType
+                - fileHashValue
+                - fileMutexName
+                - fileName
+                - filePacker
+                - filePath
+                - fileSize
+                - fileType
+                - ingestedDateTime
+                - isActive
+                - killChain
+                - knownFalsePositives
+                - lastReportedDateTime
+                - malwareFamilyNames
+                - networkCidrBlock
+                - networkDestinationAsn
+                - networkDestinationCidrBlock
+                - networkDestinationIPv4
+                - networkDestinationIPv6
+                - networkDestinationPort
+                - networkIPv4
+                - networkIPv6
+                - networkPort
+                - networkProtocol
+                - networkSourceAsn
+                - networkSourceCidrBlock
+                - networkSourceIPv4
+                - networkSourceIPv6
+                - networkSourcePort
+                - passiveOnly
+                - severity
+                - tags
+                - targetProduct
+                - threatType
+                - tlpLevel
+                - url
+                - userAgent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of tiIndicator
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.tiIndicator
+      summary: Create new navigation property to tiIndicators for Security
+      operationId: Security_CreateTiIndicators
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/tiIndicators/{tiIndicator-id}':
+    get:
+      tags:
+        - Security.tiIndicator
+      summary: Get tiIndicators from Security
+      operationId: Security_GetTiIndicators
+      parameters:
+        - name: tiIndicator-id
+          in: path
+          description: 'key: tiIndicator-id of tiIndicator'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tiIndicator
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - action
+                - activityGroupNames
+                - additionalInformation
+                - azureTenantId
+                - confidence
+                - description
+                - diamondModel
+                - domainName
+                - emailEncoding
+                - emailLanguage
+                - emailRecipient
+                - emailSenderAddress
+                - emailSenderName
+                - emailSourceDomain
+                - emailSourceIpAddress
+                - emailSubject
+                - emailXMailer
+                - expirationDateTime
+                - externalId
+                - fileCompileDateTime
+                - fileCreatedDateTime
+                - fileHashType
+                - fileHashValue
+                - fileMutexName
+                - fileName
+                - filePacker
+                - filePath
+                - fileSize
+                - fileType
+                - ingestedDateTime
+                - isActive
+                - killChain
+                - knownFalsePositives
+                - lastReportedDateTime
+                - malwareFamilyNames
+                - networkCidrBlock
+                - networkDestinationAsn
+                - networkDestinationCidrBlock
+                - networkDestinationIPv4
+                - networkDestinationIPv6
+                - networkDestinationPort
+                - networkIPv4
+                - networkIPv6
+                - networkPort
+                - networkProtocol
+                - networkSourceAsn
+                - networkSourceCidrBlock
+                - networkSourceIPv4
+                - networkSourceIPv6
+                - networkSourcePort
+                - passiveOnly
+                - severity
+                - tags
+                - targetProduct
+                - threatType
+                - tlpLevel
+                - url
+                - userAgent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.tiIndicator
+      summary: Update the navigation property tiIndicators in Security
+      operationId: Security_UpdateTiIndicators
+      parameters:
+        - name: tiIndicator-id
+          in: path
+          description: 'key: tiIndicator-id of tiIndicator'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tiIndicator
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /Security/tiIndicators/microsoft.graph.deleteTiIndicators:
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action deleteTiIndicators
+      operationId: Security.tiIndicators_deleteTiIndicators
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId:
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action deleteTiIndicatorsByExternalId
+      operationId: Security.tiIndicators_deleteTiIndicatorsByExternalId
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/tiIndicators/microsoft.graph.submitTiIndicators:
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action submitTiIndicators
+      operationId: Security.tiIndicators_submitTiIndicators
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/tiIndicators/microsoft.graph.updateTiIndicators:
+    post:
+      tags:
+        - Security.Actions
+      summary: Invoke action updateTiIndicators
+      operationId: Security.tiIndicators_updateTiIndicators
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /Security/userSecurityProfiles:
+    get:
+      tags:
+        - Security.userSecurityProfile
+      summary: Get userSecurityProfiles from Security
+      operationId: Security_ListUserSecurityProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - accounts
+                - accounts desc
+                - azureSubscriptionId
+                - azureSubscriptionId desc
+                - azureTenantId
+                - azureTenantId desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - riskScore
+                - riskScore desc
+                - tags
+                - tags desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - vendorInformation
+                - vendorInformation desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accounts
+                - azureSubscriptionId
+                - azureTenantId
+                - createdDateTime
+                - displayName
+                - lastModifiedDateTime
+                - riskScore
+                - tags
+                - userPrincipalName
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userSecurityProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - Security.userSecurityProfile
+      summary: Create new navigation property to userSecurityProfiles for Security
+      operationId: Security_CreateUserSecurityProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/Security/userSecurityProfiles/{userSecurityProfile-id}':
+    get:
+      tags:
+        - Security.userSecurityProfile
+      summary: Get userSecurityProfiles from Security
+      operationId: Security_GetUserSecurityProfiles
+      parameters:
+        - name: userSecurityProfile-id
+          in: path
+          description: 'key: userSecurityProfile-id of userSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userSecurityProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - accounts
+                - azureSubscriptionId
+                - azureTenantId
+                - createdDateTime
+                - displayName
+                - lastModifiedDateTime
+                - riskScore
+                - tags
+                - userPrincipalName
+                - vendorInformation
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - Security.userSecurityProfile
+      summary: Update the navigation property userSecurityProfiles in Security
+      operationId: Security_UpdateUserSecurityProfiles
+      parameters:
+        - name: userSecurityProfile-id
+          in: path
+          description: 'key: userSecurityProfile-id of userSecurityProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userSecurityProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.security:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: security
+          type: object
+          properties:
+            providerStatus:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityProviderStatus'
+            alerts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alert'
+              description: Read-only. Nullable.
+            cloudAppSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityProfile'
+            domainSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.domainSecurityProfile'
+            fileSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fileSecurityProfile'
+            hostSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hostSecurityProfile'
+            ipSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.ipSecurityProfile'
+            providerTenantSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.providerTenantSetting'
+            secureScoreControlProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+            secureScores:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
+            tiIndicators:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tiIndicator'
+            userSecurityProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
+            securityActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityAction'
+      example:
+        id: string (identifier)
+        providerStatus:
+          - '@odata.type': microsoft.graph.securityProviderStatus
+        alerts:
+          - '@odata.type': microsoft.graph.alert
+        cloudAppSecurityProfiles:
+          - '@odata.type': microsoft.graph.cloudAppSecurityProfile
+        domainSecurityProfiles:
+          - '@odata.type': microsoft.graph.domainSecurityProfile
+        fileSecurityProfiles:
+          - '@odata.type': microsoft.graph.fileSecurityProfile
+        hostSecurityProfiles:
+          - '@odata.type': microsoft.graph.hostSecurityProfile
+        ipSecurityProfiles:
+          - '@odata.type': microsoft.graph.ipSecurityProfile
+        providerTenantSettings:
+          - '@odata.type': microsoft.graph.providerTenantSetting
+        secureScoreControlProfiles:
+          - '@odata.type': microsoft.graph.secureScoreControlProfile
+        secureScores:
+          - '@odata.type': microsoft.graph.secureScore
+        tiIndicators:
+          - '@odata.type': microsoft.graph.tiIndicator
+        userSecurityProfiles:
+          - '@odata.type': microsoft.graph.userSecurityProfile
+        securityActions:
+          - '@odata.type': microsoft.graph.securityAction
+    microsoft.graph.alert:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: alert
+          type: object
+          properties:
+            activityGroupName:
+              type: string
+              description: Name or alias of the activity group (attacker) this alert is attributed to.
+              nullable: true
+            assignedTo:
+              type: string
+              description: 'Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).'
+              nullable: true
+            azureSubscriptionId:
+              type: string
+              description: 'Azure subscription ID, present if this alert is related to an Azure resource.'
+              nullable: true
+            azureTenantId:
+              type: string
+              description: Azure Active Directory tenant ID. Required.
+            category:
+              type: string
+              description: 'Category of the alert (for example, credentialTheft, ransomware, etc.).'
+              nullable: true
+            closedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Time at which the alert was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'' (supports update).'
+              format: date-time
+              nullable: true
+            cloudAppStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudAppSecurityState'
+              description: Security-related stateful information generated by the provider about the cloud application/s related to this alert.
+            comments:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Customer-provided comments on alert (for customer alert management) (supports update).
+            confidence:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Confidence of the detection logic (percentage between 1-100).
+              format: int32
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Time at which the alert was created by the alert provider. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: Alert description.
+              nullable: true
+            detectionIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Set of alerts related to this alert entity (each alert is pushed to the SIEM as a separate record).
+            eventDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
+              format: date-time
+              nullable: true
+            feedback:
+              $ref: '#/components/schemas/microsoft.graph.alertFeedback'
+            fileStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fileSecurityState'
+              description: Security-related stateful information generated by the provider about the file(s) related to this alert.
+            historyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertHistoryState'
+            hostStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.hostSecurityState'
+              description: Security-related stateful information generated by the provider about the host(s) related to this alert.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Time at which the alert entity was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+              format: date-time
+              nullable: true
+            malwareStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.malwareState'
+              description: Threat Intelligence pertaining to malware related to this alert.
+            networkConnections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkConnection'
+              description: Security-related stateful information generated by the provider about the network connection(s) related to this alert.
+            processes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.process'
+              description: Security-related stateful information generated by the provider about the process or processes related to this alert.
+            recommendedActions:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Vendor/provider recommended action(s) to take as a result of the alert (for example, isolate machine, enforce2FA, reimage host).'
+            registryKeyStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.registryKeyState'
+              description: Security-related stateful information generated by the provider about the registry keys related to this alert.
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.alertSeverity'
+            sourceMaterials:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Hyperlinks (URIs) to the source material related to the alert, for example, provider''s user interface for alerts or log search, etc.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.alertStatus'
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'User-definable labels that can be applied to an alert and can serve as filter conditions (for example ''HVA'', ''SAW'', etc.) (supports update).'
+            title:
+              type: string
+              description: Alert title. Required.
+              nullable: true
+            triggers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.alertTrigger'
+              description: 'Security-related information about the specific properties that triggered the alert (properties appearing in the alert). Alerts might contain information about multiple users, hosts, files, ip addresses. This field indicates which properties triggered the alert generation.'
+            userStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userSecurityState'
+              description: Security-related stateful information generated by the provider about the user accounts related to this alert.
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+            vulnerabilityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.vulnerabilityState'
+              description: Threat intelligence pertaining to one or more vulnerabilities related to this alert.
+      example:
+        id: string (identifier)
+        activityGroupName: string
+        assignedTo: string
+        azureSubscriptionId: string
+        azureTenantId: string
+        category: string
+        closedDateTime: string (timestamp)
+        cloudAppStates:
+          - '@odata.type': microsoft.graph.cloudAppSecurityState
+        comments:
+          - string
+        confidence: integer
+        createdDateTime: string (timestamp)
+        description: string
+        detectionIds:
+          - string
+        eventDateTime: string (timestamp)
+        feedback:
+          '@odata.type': microsoft.graph.alertFeedback
+        fileStates:
+          - '@odata.type': microsoft.graph.fileSecurityState
+        historyStates:
+          - '@odata.type': microsoft.graph.alertHistoryState
+        hostStates:
+          - '@odata.type': microsoft.graph.hostSecurityState
+        lastModifiedDateTime: string (timestamp)
+        malwareStates:
+          - '@odata.type': microsoft.graph.malwareState
+        networkConnections:
+          - '@odata.type': microsoft.graph.networkConnection
+        processes:
+          - '@odata.type': microsoft.graph.process
+        recommendedActions:
+          - string
+        registryKeyStates:
+          - '@odata.type': microsoft.graph.registryKeyState
+        severity:
+          '@odata.type': microsoft.graph.alertSeverity
+        sourceMaterials:
+          - string
+        status:
+          '@odata.type': microsoft.graph.alertStatus
+        tags:
+          - string
+        title: string
+        triggers:
+          - '@odata.type': microsoft.graph.alertTrigger
+        userStates:
+          - '@odata.type': microsoft.graph.userSecurityState
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+        vulnerabilityStates:
+          - '@odata.type': microsoft.graph.vulnerabilityState
+    microsoft.graph.cloudAppSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudAppSecurityProfile
+          type: object
+          properties:
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            deploymentPackageUrl:
+              type: string
+              nullable: true
+            destinationServiceName:
+              type: string
+              nullable: true
+            isSigned:
+              type: boolean
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            manifest:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            permissionsRequired:
+              $ref: '#/components/schemas/microsoft.graph.applicationPermissionsRequired'
+            platform:
+              type: string
+              nullable: true
+            policyName:
+              type: string
+              nullable: true
+            publisher:
+              type: string
+              nullable: true
+            riskScore:
+              type: string
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            type:
+              type: string
+              nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        azureSubscriptionId: string
+        azureTenantId: string
+        createdDateTime: string (timestamp)
+        deploymentPackageUrl: string
+        destinationServiceName: string
+        isSigned: true
+        lastModifiedDateTime: string (timestamp)
+        manifest: string
+        name: string
+        permissionsRequired:
+          '@odata.type': microsoft.graph.applicationPermissionsRequired
+        platform: string
+        policyName: string
+        publisher: string
+        riskScore: string
+        tags:
+          - string
+        type: string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.domainSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: domainSecurityProfile
+          type: object
+          properties:
+            activityGroupNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+            countHits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            countInOrg:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            domainCategories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.reputationCategory'
+            domainRegisteredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            registrant:
+              $ref: '#/components/schemas/microsoft.graph.domainRegistrant'
+            riskScore:
+              type: string
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        activityGroupNames:
+          - string
+        azureSubscriptionId: string
+        azureTenantId: string
+        countHits: integer
+        countInOrg: integer
+        domainCategories:
+          - '@odata.type': microsoft.graph.reputationCategory
+        domainRegisteredDateTime: string (timestamp)
+        firstSeenDateTime: string (timestamp)
+        lastSeenDateTime: string (timestamp)
+        name: string
+        registrant:
+          '@odata.type': microsoft.graph.domainRegistrant
+        riskScore: string
+        tags:
+          - string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.fileSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: fileSecurityProfile
+          type: object
+          properties:
+            activityGroupNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+            certificateThumbprint:
+              type: string
+              nullable: true
+            extensions:
+              type: array
+              items:
+                type: string
+                nullable: true
+            fileType:
+              type: string
+              nullable: true
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            hashes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fileHash'
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            malwareStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.malwareState'
+            names:
+              type: array
+              items:
+                type: string
+                nullable: true
+            riskScore:
+              type: string
+              nullable: true
+            size:
+              type: integer
+              format: int64
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+            vulnerabilityStates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.vulnerabilityState'
+      example:
+        id: string (identifier)
+        activityGroupNames:
+          - string
+        azureSubscriptionId: string
+        azureTenantId: string
+        certificateThumbprint: string
+        extensions:
+          - string
+        fileType: string
+        firstSeenDateTime: string (timestamp)
+        hashes:
+          - '@odata.type': microsoft.graph.fileHash
+        lastSeenDateTime: string (timestamp)
+        malwareStates:
+          - '@odata.type': microsoft.graph.malwareState
+        names:
+          - string
+        riskScore: string
+        size: integer
+        tags:
+          - string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+        vulnerabilityStates:
+          - '@odata.type': microsoft.graph.vulnerabilityState
+    microsoft.graph.hostSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hostSecurityProfile
+          type: object
+          properties:
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            fqdn:
+              type: string
+              nullable: true
+            isAzureAdJoined:
+              type: boolean
+              nullable: true
+            isAzureAdRegistered:
+              type: boolean
+              nullable: true
+            isHybridAzureDomainJoined:
+              type: boolean
+              nullable: true
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            logonUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.logonUser'
+            netBiosName:
+              type: string
+              nullable: true
+            networkInterfaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.networkInterface'
+            os:
+              type: string
+              nullable: true
+            osVersion:
+              type: string
+              nullable: true
+            parentHost:
+              type: string
+              nullable: true
+            relatedHostIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            riskScore:
+              type: string
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        azureSubscriptionId: string
+        azureTenantId: string
+        firstSeenDateTime: string (timestamp)
+        fqdn: string
+        isAzureAdJoined: true
+        isAzureAdRegistered: true
+        isHybridAzureDomainJoined: true
+        lastSeenDateTime: string (timestamp)
+        logonUsers:
+          - '@odata.type': microsoft.graph.logonUser
+        netBiosName: string
+        networkInterfaces:
+          - '@odata.type': microsoft.graph.networkInterface
+        os: string
+        osVersion: string
+        parentHost: string
+        relatedHostIds:
+          - string
+        riskScore: string
+        tags:
+          - string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.ipSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: ipSecurityProfile
+          type: object
+          properties:
+            activityGroupNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+            address:
+              type: string
+              nullable: true
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+            countHits:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            countHosts:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            ipCategories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.ipCategory'
+            ipReferenceData:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.ipReferenceData'
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            riskScore:
+              type: string
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        activityGroupNames:
+          - string
+        address: string
+        azureSubscriptionId: string
+        azureTenantId: string
+        countHits: integer
+        countHosts: integer
+        firstSeenDateTime: string (timestamp)
+        ipCategories:
+          - '@odata.type': microsoft.graph.ipCategory
+        ipReferenceData:
+          - '@odata.type': microsoft.graph.ipReferenceData
+        lastSeenDateTime: string (timestamp)
+        riskScore: string
+        tags:
+          - string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.providerTenantSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: providerTenantSetting
+          type: object
+          properties:
+            azureTenantId:
+              type: string
+            enabled:
+              type: boolean
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            provider:
+              type: string
+              nullable: true
+            vendor:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        azureTenantId: string
+        enabled: true
+        lastModifiedDateTime: string (timestamp)
+        provider: string
+        vendor: string
+    microsoft.graph.secureScoreControlProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: secureScoreControlProfile
+          type: object
+          properties:
+            actionType:
+              type: string
+              description: 'Control action type (Config, Review, Behavior).'
+              nullable: true
+            actionUrl:
+              type: string
+              description: URL to where the control can be actioned.
+              nullable: true
+            azureTenantId:
+              type: string
+              description: GUID string for tenant ID.
+            complianceInformation:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.complianceInformation'
+            controlCategory:
+              type: string
+              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+              nullable: true
+            controlStateUpdates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlStateUpdate'
+            deprecated:
+              type: boolean
+              description: Flag to indicate if a control is depreciated.
+              nullable: true
+            implementationCost:
+              type: string
+              description: 'Resource cost of implemmentating control (low, moderate, high).'
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time at which the control profile entity was last modified. The Timestamp type represents date and time
+              format: date-time
+              nullable: true
+            maxScore:
+              type: number
+              description: max attainable score for the control.
+              format: double
+              nullable: true
+            rank:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Microsoft's stack ranking of control.
+              format: int32
+              nullable: true
+            remediation:
+              type: string
+              description: Description of what the control will help remediate.
+              nullable: true
+            remediationImpact:
+              type: string
+              description: Description of the impact on users of the remediation.
+              nullable: true
+            service:
+              type: string
+              description: 'Service that owns the control (Exchange, Sharepoint, Azure AD).'
+              nullable: true
+            threats:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+            tier:
+              type: string
+              nullable: true
+            title:
+              type: string
+              description: Title of the control.
+              nullable: true
+            userImpact:
+              type: string
+              nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        actionType: string
+        actionUrl: string
+        azureTenantId: string
+        complianceInformation:
+          - '@odata.type': microsoft.graph.complianceInformation
+        controlCategory: string
+        controlStateUpdates:
+          - '@odata.type': microsoft.graph.secureScoreControlStateUpdate
+        deprecated: true
+        implementationCost: string
+        lastModifiedDateTime: string (timestamp)
+        maxScore: double
+        rank: integer
+        remediation: string
+        remediationImpact: string
+        service: string
+        threats:
+          - string
+        tier: string
+        title: string
+        userImpact: string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.secureScore:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: secureScore
+          type: object
+          properties:
+            activeUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Active user count of the given tenant.
+              format: int32
+              nullable: true
+            averageComparativeScores:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.averageComparativeScore'
+              description: 'Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.'
+            azureTenantId:
+              type: string
+              description: GUID string for tenant ID.
+            controlScores:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.controlScore'
+              description: Contains tenant scores for a set of controls.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date when the entity is created.
+              format: date-time
+              nullable: true
+            currentScore:
+              type: number
+              description: Tenant current attained score on specified date.
+              format: double
+              nullable: true
+            enabledServices:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).'
+            licensedUserCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Licensed user count of the given tenant.
+              format: int32
+              nullable: true
+            maxScore:
+              type: number
+              description: Tenant maximum possible score on specified date.
+              format: double
+              nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        activeUserCount: integer
+        averageComparativeScores:
+          - '@odata.type': microsoft.graph.averageComparativeScore
+        azureTenantId: string
+        controlScores:
+          - '@odata.type': microsoft.graph.controlScore
+        createdDateTime: string (timestamp)
+        currentScore: double
+        enabledServices:
+          - string
+        licensedUserCount: integer
+        maxScore: double
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.securityAction:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: securityAction
+          type: object
+          properties:
+            actionReason:
+              type: string
+              nullable: true
+            appId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+              nullable: true
+            clientContext:
+              type: string
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            errorInfo:
+              $ref: '#/components/schemas/microsoft.graph.ResultInfo'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            parameters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+            states:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityActionState'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            user:
+              type: string
+              nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        actionReason: string
+        appId: string
+        azureTenantId: string
+        clientContext: string
+        completedDateTime: string (timestamp)
+        createdDateTime: string (timestamp)
+        errorInfo:
+          '@odata.type': microsoft.graph.ResultInfo
+        lastActionDateTime: string (timestamp)
+        name: string
+        parameters:
+          - '@odata.type': microsoft.graph.keyValuePair
+        states:
+          - '@odata.type': microsoft.graph.securityActionState
+        status:
+          '@odata.type': microsoft.graph.operationStatus
+        user: string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.tiIndicator:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tiIndicator
+          type: object
+          properties:
+            action:
+              $ref: '#/components/schemas/microsoft.graph.tiAction'
+            activityGroupNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+            additionalInformation:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+              nullable: true
+            confidence:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            diamondModel:
+              $ref: '#/components/schemas/microsoft.graph.diamondModel'
+            domainName:
+              type: string
+              nullable: true
+            emailEncoding:
+              type: string
+              nullable: true
+            emailLanguage:
+              type: string
+              nullable: true
+            emailRecipient:
+              type: string
+              nullable: true
+            emailSenderAddress:
+              type: string
+              nullable: true
+            emailSenderName:
+              type: string
+              nullable: true
+            emailSourceDomain:
+              type: string
+              nullable: true
+            emailSourceIpAddress:
+              type: string
+              nullable: true
+            emailSubject:
+              type: string
+              nullable: true
+            emailXMailer:
+              type: string
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            fileCompileDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            fileCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            fileHashType:
+              $ref: '#/components/schemas/microsoft.graph.fileHashType'
+            fileHashValue:
+              type: string
+              nullable: true
+            fileMutexName:
+              type: string
+              nullable: true
+            fileName:
+              type: string
+              nullable: true
+            filePacker:
+              type: string
+              nullable: true
+            filePath:
+              type: string
+              nullable: true
+            fileSize:
+              type: integer
+              format: int64
+              nullable: true
+            fileType:
+              type: string
+              nullable: true
+            ingestedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            isActive:
+              type: boolean
+              nullable: true
+            killChain:
+              type: array
+              items:
+                type: string
+                nullable: true
+            knownFalsePositives:
+              type: string
+              nullable: true
+            lastReportedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            malwareFamilyNames:
+              type: array
+              items:
+                type: string
+                nullable: true
+            networkCidrBlock:
+              type: string
+              nullable: true
+            networkDestinationAsn:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            networkDestinationCidrBlock:
+              type: string
+              nullable: true
+            networkDestinationIPv4:
+              type: string
+              nullable: true
+            networkDestinationIPv6:
+              type: string
+              nullable: true
+            networkDestinationPort:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            networkIPv4:
+              type: string
+              nullable: true
+            networkIPv6:
+              type: string
+              nullable: true
+            networkPort:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            networkProtocol:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            networkSourceAsn:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            networkSourceCidrBlock:
+              type: string
+              nullable: true
+            networkSourceIPv4:
+              type: string
+              nullable: true
+            networkSourceIPv6:
+              type: string
+              nullable: true
+            networkSourcePort:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            passiveOnly:
+              type: boolean
+              nullable: true
+            severity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            targetProduct:
+              type: string
+            threatType:
+              type: string
+              nullable: true
+            tlpLevel:
+              $ref: '#/components/schemas/microsoft.graph.tlpLevel'
+            url:
+              type: string
+              nullable: true
+            userAgent:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        action:
+          '@odata.type': microsoft.graph.tiAction
+        activityGroupNames:
+          - string
+        additionalInformation: string
+        azureTenantId: string
+        confidence: integer
+        description: string
+        diamondModel:
+          '@odata.type': microsoft.graph.diamondModel
+        domainName: string
+        emailEncoding: string
+        emailLanguage: string
+        emailRecipient: string
+        emailSenderAddress: string
+        emailSenderName: string
+        emailSourceDomain: string
+        emailSourceIpAddress: string
+        emailSubject: string
+        emailXMailer: string
+        expirationDateTime: string (timestamp)
+        externalId: string
+        fileCompileDateTime: string (timestamp)
+        fileCreatedDateTime: string (timestamp)
+        fileHashType:
+          '@odata.type': microsoft.graph.fileHashType
+        fileHashValue: string
+        fileMutexName: string
+        fileName: string
+        filePacker: string
+        filePath: string
+        fileSize: integer
+        fileType: string
+        ingestedDateTime: string (timestamp)
+        isActive: true
+        killChain:
+          - string
+        knownFalsePositives: string
+        lastReportedDateTime: string (timestamp)
+        malwareFamilyNames:
+          - string
+        networkCidrBlock: string
+        networkDestinationAsn: integer
+        networkDestinationCidrBlock: string
+        networkDestinationIPv4: string
+        networkDestinationIPv6: string
+        networkDestinationPort: integer
+        networkIPv4: string
+        networkIPv6: string
+        networkPort: integer
+        networkProtocol: integer
+        networkSourceAsn: integer
+        networkSourceCidrBlock: string
+        networkSourceIPv4: string
+        networkSourceIPv6: string
+        networkSourcePort: integer
+        passiveOnly: true
+        severity: integer
+        tags:
+          - string
+        targetProduct: string
+        threatType: string
+        tlpLevel:
+          '@odata.type': microsoft.graph.tlpLevel
+        url: string
+        userAgent: string
+    microsoft.graph.ResultInfo:
+      title: ResultInfo
+      type: object
+      properties:
+        code:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        subcode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        message:
+          type: string
+          nullable: true
+      example:
+        code: integer
+        subcode: integer
+        message: string
+    microsoft.graph.userSecurityProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSecurityProfile
+          type: object
+          properties:
+            accounts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userAccount'
+            azureSubscriptionId:
+              type: string
+              nullable: true
+            azureTenantId:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            riskScore:
+              type: string
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            vendorInformation:
+              $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
+      example:
+        id: string (identifier)
+        accounts:
+          - '@odata.type': microsoft.graph.userAccount
+        azureSubscriptionId: string
+        azureTenantId: string
+        createdDateTime: string (timestamp)
+        displayName: string
+        lastModifiedDateTime: string (timestamp)
+        riskScore: string
+        tags:
+          - string
+        userPrincipalName: string
+        vendorInformation:
+          '@odata.type': microsoft.graph.securityVendorInformation
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.securityProviderStatus:
+      title: securityProviderStatus
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          nullable: true
+        endpoint:
+          type: string
+          nullable: true
+        provider:
+          type: string
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+      example:
+        enabled: true
+        endpoint: string
+        provider: string
+        region: string
+        vendor: string
+    microsoft.graph.cloudAppSecurityState:
+      title: cloudAppSecurityState
+      type: object
+      properties:
+        destinationServiceIp:
+          type: string
+          description: Destination IP Address of the connection to the cloud application/service.
+          nullable: true
+        destinationServiceName:
+          type: string
+          description: 'Cloud application/service name (for example ''Salesforce'', ''DropBox'', etc.).'
+          nullable: true
+        riskScore:
+          type: string
+          description: 'Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.'
+          nullable: true
+      example:
+        destinationServiceIp: string
+        destinationServiceName: string
+        riskScore: string
+    microsoft.graph.alertFeedback:
+      title: alertFeedback
+      enum:
+        - unknown
+        - truePositive
+        - falsePositive
+        - benignPositive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.fileSecurityState:
+      title: fileSecurityState
+      type: object
+      properties:
+        fileHash:
+          $ref: '#/components/schemas/microsoft.graph.fileHash'
+        name:
+          type: string
+          description: File name (without path).
+          nullable: true
+        path:
+          type: string
+          description: Full file path of the file/imageFile.
+          nullable: true
+        riskScore:
+          type: string
+          description: 'Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.'
+          nullable: true
+      example:
+        fileHash:
+          '@odata.type': microsoft.graph.fileHash
+        name: string
+        path: string
+        riskScore: string
+    microsoft.graph.alertHistoryState:
+      title: alertHistoryState
+      type: object
+      properties:
+        appId:
+          type: string
+          nullable: true
+        assignedTo:
+          type: string
+          nullable: true
+        comments:
+          type: array
+          items:
+            type: string
+            nullable: true
+        feedback:
+          $ref: '#/components/schemas/microsoft.graph.alertFeedback'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.alertStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        user:
+          type: string
+          nullable: true
+      example:
+        appId: string
+        assignedTo: string
+        comments:
+          - string
+        feedback:
+          '@odata.type': microsoft.graph.alertFeedback
+        status:
+          '@odata.type': microsoft.graph.alertStatus
+        updatedDateTime: string (timestamp)
+        user: string
+    microsoft.graph.hostSecurityState:
+      title: hostSecurityState
+      type: object
+      properties:
+        fqdn:
+          type: string
+          description: 'Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).'
+          nullable: true
+        isAzureAdJoined:
+          type: boolean
+          nullable: true
+        isAzureAdRegistered:
+          type: boolean
+          nullable: true
+        isHybridAzureDomainJoined:
+          type: boolean
+          description: True if the host is domain joined to an on-premises Active Directory domain.
+          nullable: true
+        netBiosName:
+          type: string
+          description: 'The local host name, without the DNS domain name.'
+          nullable: true
+        os:
+          type: string
+          description: 'Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).'
+          nullable: true
+        privateIpAddress:
+          type: string
+          description: Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
+          nullable: true
+        publicIpAddress:
+          type: string
+          description: Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
+          nullable: true
+        riskScore:
+          type: string
+          description: 'Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.'
+          nullable: true
+      example:
+        fqdn: string
+        isAzureAdJoined: true
+        isAzureAdRegistered: true
+        isHybridAzureDomainJoined: true
+        netBiosName: string
+        os: string
+        privateIpAddress: string
+        publicIpAddress: string
+        riskScore: string
+    microsoft.graph.malwareState:
+      title: malwareState
+      type: object
+      properties:
+        category:
+          type: string
+          description: 'Provider-generated malware category (for example, trojan, ransomware, etc.).'
+          nullable: true
+        family:
+          type: string
+          description: 'Provider-generated malware family (for example, ''wannacry'', ''notpetya'', etc.).'
+          nullable: true
+        name:
+          type: string
+          description: 'Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).'
+          nullable: true
+        severity:
+          type: string
+          description: Provider-determined severity of this malware.
+          nullable: true
+        wasRunning:
+          type: boolean
+          description: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
+          nullable: true
+      example:
+        category: string
+        family: string
+        name: string
+        severity: string
+        wasRunning: true
+    microsoft.graph.networkConnection:
+      title: networkConnection
+      type: object
+      properties:
+        applicationName:
+          type: string
+          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
+          nullable: true
+        destinationAddress:
+          type: string
+          description: Destination IP address (of the network connection).
+          nullable: true
+        destinationDomain:
+          type: string
+          description: Destination domain portion of the destination URL. (for example 'www.contoso.com').
+          nullable: true
+        destinationPort:
+          type: string
+          description: Destination port (of the network connection).
+          nullable: true
+        destinationUrl:
+          type: string
+          description: Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
+          nullable: true
+        direction:
+          $ref: '#/components/schemas/microsoft.graph.connectionDirection'
+        domainRegisteredDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        localDnsName:
+          type: string
+          description: 'The local DNS name resolution as it appears in the host''s local DNS cache (for example, in case the ''hosts'' file was tampered with).'
+          nullable: true
+        natDestinationAddress:
+          type: string
+          description: Network Address Translation destination IP address.
+          nullable: true
+        natDestinationPort:
+          type: string
+          description: Network Address Translation destination port.
+          nullable: true
+        natSourceAddress:
+          type: string
+          description: Network Address Translation source IP address.
+          nullable: true
+        natSourcePort:
+          type: string
+          description: Network Address Translation source port.
+          nullable: true
+        protocol:
+          $ref: '#/components/schemas/microsoft.graph.securityNetworkProtocol'
+        riskScore:
+          type: string
+          description: 'Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.'
+          nullable: true
+        sourceAddress:
+          type: string
+          description: Source (i.e. origin) IP address (of the network connection).
+          nullable: true
+        sourcePort:
+          type: string
+          description: Source (i.e. origin) IP port (of the network connection).
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.connectionStatus'
+        urlParameters:
+          type: string
+          description: Parameters (suffix) of the destination URL.
+          nullable: true
+      example:
+        applicationName: string
+        destinationAddress: string
+        destinationDomain: string
+        destinationPort: string
+        destinationUrl: string
+        direction:
+          '@odata.type': microsoft.graph.connectionDirection
+        domainRegisteredDateTime: string (timestamp)
+        localDnsName: string
+        natDestinationAddress: string
+        natDestinationPort: string
+        natSourceAddress: string
+        natSourcePort: string
+        protocol:
+          '@odata.type': microsoft.graph.securityNetworkProtocol
+        riskScore: string
+        sourceAddress: string
+        sourcePort: string
+        status:
+          '@odata.type': microsoft.graph.connectionStatus
+        urlParameters: string
+    microsoft.graph.process:
+      title: process
+      type: object
+      properties:
+        accountName:
+          type: string
+          description: 'User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.'
+          nullable: true
+        commandLine:
+          type: string
+          description: The full process invocation commandline including all parameters.
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        fileHash:
+          $ref: '#/components/schemas/microsoft.graph.fileHash'
+        integrityLevel:
+          $ref: '#/components/schemas/microsoft.graph.processIntegrityLevel'
+        isElevated:
+          type: boolean
+          description: True if the process is elevated.
+          nullable: true
+        name:
+          type: string
+          description: The name of the process' Image file.
+          nullable: true
+        parentProcessCreatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        parentProcessId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The Process ID (PID) of the parent process.
+          format: int32
+          nullable: true
+        parentProcessName:
+          type: string
+          description: The name of the image file of the parent process.
+          nullable: true
+        path:
+          type: string
+          description: 'Full path, including filename.'
+          nullable: true
+        processId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The Process ID (PID) of the process.
+          format: int32
+          nullable: true
+      example:
+        accountName: string
+        commandLine: string
+        createdDateTime: string (timestamp)
+        fileHash:
+          '@odata.type': microsoft.graph.fileHash
+        integrityLevel:
+          '@odata.type': microsoft.graph.processIntegrityLevel
+        isElevated: true
+        name: string
+        parentProcessCreatedDateTime: string (timestamp)
+        parentProcessId: integer
+        parentProcessName: string
+        path: string
+        processId: integer
+    microsoft.graph.registryKeyState:
+      title: registryKeyState
+      type: object
+      properties:
+        hive:
+          $ref: '#/components/schemas/microsoft.graph.registryHive'
+        key:
+          type: string
+          description: Current (i.e. changed) registry key (excludes HIVE).
+          nullable: true
+        oldKey:
+          type: string
+          description: Previous (i.e. before changed) registry key (excludes HIVE).
+          nullable: true
+        oldValueData:
+          type: string
+          description: Previous (i.e. before changed) registry key value data (contents).
+          nullable: true
+        oldValueName:
+          type: string
+          description: Previous (i.e. before changed) registry key value name.
+          nullable: true
+        operation:
+          $ref: '#/components/schemas/microsoft.graph.registryOperation'
+        processId:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
+          format: int32
+          nullable: true
+        valueData:
+          type: string
+          description: Current (i.e. changed) registry key value data (contents).
+          nullable: true
+        valueName:
+          type: string
+          description: Current (i.e. changed) registry key value name
+          nullable: true
+        valueType:
+          $ref: '#/components/schemas/microsoft.graph.registryValueType'
+      example:
+        hive:
+          '@odata.type': microsoft.graph.registryHive
+        key: string
+        oldKey: string
+        oldValueData: string
+        oldValueName: string
+        operation:
+          '@odata.type': microsoft.graph.registryOperation
+        processId: integer
+        valueData: string
+        valueName: string
+        valueType:
+          '@odata.type': microsoft.graph.registryValueType
+    microsoft.graph.alertSeverity:
+      title: alertSeverity
+      enum:
+        - unknown
+        - informational
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.alertStatus:
+      title: alertStatus
+      enum:
+        - unknown
+        - newAlert
+        - inProgress
+        - resolved
+        - dismissed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.alertTrigger:
+      title: alertTrigger
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the property serving as a detection trigger.
+          nullable: true
+        type:
+          type: string
+          description: 'Type of the property in the key:value pair for interpretation. For example, String, Boolean, etc.'
+          nullable: true
+        value:
+          type: string
+          description: Value of the property serving as a detection trigger.
+          nullable: true
+      example:
+        name: string
+        type: string
+        value: string
+    microsoft.graph.userSecurityState:
+      title: userSecurityState
+      type: object
+      properties:
+        aadUserId:
+          type: string
+          description: AAD User object identifier (GUID) - represents the physical/multi-account user entity.
+          nullable: true
+        accountName:
+          type: string
+          description: Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
+          nullable: true
+        domainName:
+          type: string
+          description: 'NetBIOS/Active Directory domain of user account (that is, domain/account format).'
+          nullable: true
+        emailRole:
+          $ref: '#/components/schemas/microsoft.graph.emailRole'
+        isVpn:
+          type: boolean
+          description: Indicates whether the user logged on through a VPN.
+          nullable: true
+        logonDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        logonId:
+          type: string
+          description: User sign-in ID.
+          nullable: true
+        logonIp:
+          type: string
+          description: IP Address the sign-in request originated from.
+          nullable: true
+        logonLocation:
+          type: string
+          description: Location (by IP address mapping) associated with a user sign-in event by this user.
+          nullable: true
+        logonType:
+          $ref: '#/components/schemas/microsoft.graph.logonType'
+        onPremisesSecurityIdentifier:
+          type: string
+          description: Active Directory (on-premises) Security Identifier (SID) of the user.
+          nullable: true
+        riskScore:
+          type: string
+          description: 'Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.'
+          nullable: true
+        userAccountType:
+          $ref: '#/components/schemas/microsoft.graph.userAccountSecurityType'
+        userPrincipalName:
+          type: string
+          description: 'User sign-in name - internet format: (user account name)@(user account DNS domain name).'
+          nullable: true
+      example:
+        aadUserId: string
+        accountName: string
+        domainName: string
+        emailRole:
+          '@odata.type': microsoft.graph.emailRole
+        isVpn: true
+        logonDateTime: string (timestamp)
+        logonId: string
+        logonIp: string
+        logonLocation: string
+        logonType:
+          '@odata.type': microsoft.graph.logonType
+        onPremisesSecurityIdentifier: string
+        riskScore: string
+        userAccountType:
+          '@odata.type': microsoft.graph.userAccountSecurityType
+        userPrincipalName: string
+    microsoft.graph.securityVendorInformation:
+      title: securityVendorInformation
+      type: object
+      properties:
+        provider:
+          type: string
+          description: 'Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.'
+          nullable: true
+        providerVersion:
+          type: string
+          description: 'Version of the provider or subprovider, if it exists, that generated the alert. Required'
+          nullable: true
+        subProvider:
+          type: string
+          description: 'Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.'
+          nullable: true
+        vendor:
+          type: string
+          description: 'Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required'
+          nullable: true
+      example:
+        provider: string
+        providerVersion: string
+        subProvider: string
+        vendor: string
+    microsoft.graph.vulnerabilityState:
+      title: vulnerabilityState
+      type: object
+      properties:
+        cve:
+          type: string
+          description: Common Vulnerabilities and Exposures (CVE) for the vulnerability.
+          nullable: true
+        severity:
+          type: string
+          description: Base Common Vulnerability Scoring System (CVSS) severity score for this vulnerability.
+          nullable: true
+        wasRunning:
+          type: boolean
+          description: Indicates whether the detected vulnerability (file) was running at the time of detection or was the file detected at rest on the disk.
+          nullable: true
+      example:
+        cve: string
+        severity: string
+        wasRunning: true
+    microsoft.graph.applicationPermissionsRequired:
+      title: applicationPermissionsRequired
+      enum:
+        - unknown
+        - anonymous
+        - guest
+        - user
+        - administrator
+        - system
+        - unknownFutureValue
+      type: string
+    microsoft.graph.reputationCategory:
+      title: reputationCategory
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+      example:
+        description: string
+        name: string
+        vendor: string
+    microsoft.graph.domainRegistrant:
+      title: domainRegistrant
+      type: object
+      properties:
+        countryOrRegionCode:
+          type: string
+          nullable: true
+        organization:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+      example:
+        countryOrRegionCode: string
+        organization: string
+        url: string
+        vendor: string
+    microsoft.graph.fileHash:
+      title: fileHash
+      type: object
+      properties:
+        hashType:
+          $ref: '#/components/schemas/microsoft.graph.fileHashType'
+        hashValue:
+          type: string
+          description: Value of the file hash.
+          nullable: true
+      example:
+        hashType:
+          '@odata.type': microsoft.graph.fileHashType
+        hashValue: string
+    microsoft.graph.logonUser:
+      title: logonUser
+      type: object
+      properties:
+        accountDomain:
+          type: string
+          nullable: true
+        accountName:
+          type: string
+          nullable: true
+        accountType:
+          $ref: '#/components/schemas/microsoft.graph.userAccountSecurityType'
+        firstSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        logonId:
+          type: string
+          nullable: true
+        logonTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.logonType'
+      example:
+        accountDomain: string
+        accountName: string
+        accountType:
+          '@odata.type': microsoft.graph.userAccountSecurityType
+        firstSeenDateTime: string (timestamp)
+        lastSeenDateTime: string (timestamp)
+        logonId: string
+        logonTypes:
+          - '@odata.type': microsoft.graph.logonType
+    microsoft.graph.networkInterface:
+      title: networkInterface
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        ipV4Address:
+          type: string
+          nullable: true
+        ipV6Address:
+          type: string
+          nullable: true
+        localIpV6Address:
+          type: string
+          nullable: true
+        macAddress:
+          type: string
+          nullable: true
+      example:
+        description: string
+        ipV4Address: string
+        ipV6Address: string
+        localIpV6Address: string
+        macAddress: string
+    microsoft.graph.ipCategory:
+      title: ipCategory
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+      example:
+        description: string
+        name: string
+        vendor: string
+    microsoft.graph.ipReferenceData:
+      title: ipReferenceData
+      type: object
+      properties:
+        asn:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        countryOrRegionCode:
+          type: string
+          nullable: true
+        organization:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        vendor:
+          type: string
+          nullable: true
+      example:
+        asn: integer
+        city: string
+        countryOrRegionCode: string
+        organization: string
+        state: string
+        vendor: string
+    microsoft.graph.complianceInformation:
+      title: complianceInformation
+      type: object
+      properties:
+        certificationControls:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.certificationControl'
+          description: Collection of the certification controls associated with certification
+        certificationName:
+          type: string
+          description: 'Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)'
+          nullable: true
+      example:
+        certificationControls:
+          - '@odata.type': microsoft.graph.certificationControl
+        certificationName: string
+    microsoft.graph.secureScoreControlStateUpdate:
+      title: secureScoreControlStateUpdate
+      type: object
+      properties:
+        assignedTo:
+          type: string
+          description: Assigns the control to the user who will take the action.
+          nullable: true
+        comment:
+          type: string
+          description: Provides optional comment about the control.
+          nullable: true
+        state:
+          type: string
+          description: 'State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).'
+          nullable: true
+        updatedBy:
+          type: string
+          description: ID of the user who updated tenant state.
+          nullable: true
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Time at which the control state was updated.
+          format: date-time
+          nullable: true
+      example:
+        assignedTo: string
+        comment: string
+        state: string
+        updatedBy: string
+        updatedDateTime: string (timestamp)
+    microsoft.graph.averageComparativeScore:
+      title: averageComparativeScore
+      type: object
+      properties:
+        averageScore:
+          type: number
+          description: Average score within specified basis.
+          format: double
+          nullable: true
+        basis:
+          type: string
+          description: 'Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.'
+          nullable: true
+      example:
+        averageScore: double
+        basis: string
+    microsoft.graph.controlScore:
+      title: controlScore
+      type: object
+      properties:
+        controlCategory:
+          type: string
+          description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
+          nullable: true
+        controlName:
+          type: string
+          description: Control unique name.
+          nullable: true
+        description:
+          type: string
+          description: Description of the control.
+          nullable: true
+        score:
+          type: number
+          description: Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
+          format: double
+          nullable: true
+      example:
+        controlCategory: string
+        controlName: string
+        description: string
+        score: double
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      example:
+        name: string
+        value: string
+    microsoft.graph.securityActionState:
+      title: securityActionState
+      type: object
+      properties:
+        appId:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.operationStatus'
+        updatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        user:
+          type: string
+          nullable: true
+      example:
+        appId: string
+        status:
+          '@odata.type': microsoft.graph.operationStatus
+        updatedDateTime: string (timestamp)
+        user: string
+    microsoft.graph.operationStatus:
+      title: operationStatus
+      enum:
+        - NotStarted
+        - Running
+        - Completed
+        - Failed
+      type: string
+    microsoft.graph.tiAction:
+      title: tiAction
+      enum:
+        - unknown
+        - allow
+        - block
+        - alert
+        - unknownFutureValue
+      type: string
+    microsoft.graph.diamondModel:
+      title: diamondModel
+      enum:
+        - unknown
+        - adversary
+        - capability
+        - infrastructure
+        - victim
+        - unknownFutureValue
+      type: string
+    microsoft.graph.fileHashType:
+      title: fileHashType
+      enum:
+        - unknown
+        - sha1
+        - sha256
+        - md5
+        - authenticodeHash256
+        - lsHash
+        - ctph
+        - unknownFutureValue
+      type: string
+    microsoft.graph.tlpLevel:
+      title: tlpLevel
+      enum:
+        - unknown
+        - white
+        - green
+        - amber
+        - red
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userAccount:
+      title: userAccount
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        lastSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        riskScore:
+          type: string
+          nullable: true
+        service:
+          type: string
+          nullable: true
+        signinName:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.accountStatus'
+      example:
+        displayName: string
+        lastSeenDateTime: string (timestamp)
+        riskScore: string
+        service: string
+        signinName: string
+        status:
+          '@odata.type': microsoft.graph.accountStatus
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.connectionDirection:
+      title: connectionDirection
+      enum:
+        - unknown
+        - inbound
+        - outbound
+        - unknownFutureValue
+      type: string
+    microsoft.graph.securityNetworkProtocol:
+      title: securityNetworkProtocol
+      enum:
+        - ip
+        - icmp
+        - igmp
+        - ggp
+        - ipv4
+        - tcp
+        - pup
+        - udp
+        - idp
+        - ipv6
+        - ipv6RoutingHeader
+        - ipv6FragmentHeader
+        - ipSecEncapsulatingSecurityPayload
+        - ipSecAuthenticationHeader
+        - icmpV6
+        - ipv6NoNextHeader
+        - ipv6DestinationOptions
+        - nd
+        - raw
+        - ipx
+        - spx
+        - spxII
+        - unknownFutureValue
+        - unknown
+      type: string
+    microsoft.graph.connectionStatus:
+      title: connectionStatus
+      enum:
+        - unknown
+        - attempted
+        - succeeded
+        - blocked
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.processIntegrityLevel:
+      title: processIntegrityLevel
+      enum:
+        - unknown
+        - untrusted
+        - low
+        - medium
+        - high
+        - system
+        - unknownFutureValue
+      type: string
+    microsoft.graph.registryHive:
+      title: registryHive
+      enum:
+        - unknown
+        - currentConfig
+        - currentUser
+        - localMachineSam
+        - localMachineSecurity
+        - localMachineSoftware
+        - localMachineSystem
+        - usersDefault
+        - unknownFutureValue
+      type: string
+    microsoft.graph.registryOperation:
+      title: registryOperation
+      enum:
+        - unknown
+        - create
+        - modify
+        - delete
+        - unknownFutureValue
+      type: string
+    microsoft.graph.registryValueType:
+      title: registryValueType
+      enum:
+        - unknown
+        - binary
+        - dword
+        - dwordLittleEndian
+        - dwordBigEndian
+        - expandSz
+        - link
+        - multiSz
+        - none
+        - qword
+        - qwordlittleEndian
+        - sz
+        - unknownFutureValue
+      type: string
+    microsoft.graph.emailRole:
+      title: emailRole
+      enum:
+        - unknown
+        - sender
+        - recipient
+        - unknownFutureValue
+      type: string
+    microsoft.graph.logonType:
+      title: logonType
+      enum:
+        - unknown
+        - interactive
+        - remoteInteractive
+        - network
+        - batch
+        - service
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userAccountSecurityType:
+      title: userAccountSecurityType
+      enum:
+        - unknown
+        - standard
+        - power
+        - administrator
+        - unknownFutureValue
+      type: string
+    microsoft.graph.certificationControl:
+      title: certificationControl
+      type: object
+      properties:
+        name:
+          type: string
+          description: Certification control name
+          nullable: true
+        url:
+          type: string
+          description: URL for the Microsoft Service Trust Portal
+          nullable: true
+      example:
+        name: string
+        url: string
+    microsoft.graph.accountStatus:
+      title: accountStatus
+      enum:
+        - unknown
+        - staged
+        - active
+        - suspended
+        - deleted
+        - unknownFutureValue
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

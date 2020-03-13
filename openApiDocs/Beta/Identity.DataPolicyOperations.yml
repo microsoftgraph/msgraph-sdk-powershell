@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.DataPolicyOperations
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /dataPolicyOperations:
@@ -221,21 +221,26 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Null until the operation completes.'
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.dataPolicyOperationStatus'
             storageLocation:
               type: string
+              description: The URL location to where data is being exported for export requests.
               nullable: true
             userId:
               type: string
+              description: The id for the user on whom the operation is performed.
             submittedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             progress:
               type: number
+              description: Specifies the progress of an operation.
               format: double
       example:
         id: string (identifier)
@@ -252,6 +257,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.dataPolicyOperationStatus:

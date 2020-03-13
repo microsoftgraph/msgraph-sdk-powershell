@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.DirectorySettingTemplates
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /directorySettingTemplates:
@@ -14,7 +14,10 @@ paths:
       operationId: directorySettingTemplates.directorySettingTemplate_ListDirectorySettingTemplate
       parameters:
         - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -49,6 +52,17 @@ paths:
                 - displayName
                 - description
                 - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -117,6 +131,17 @@ paths:
                 - description
                 - values
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved entity
@@ -177,6 +202,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: directorySettingTemplates_checkMemberGroups
+      parameters:
+        - name: directorySettingTemplate-id
+          in: path
+          description: 'key: directorySettingTemplate-id of directorySettingTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: directorySettingTemplates_checkMemberObjects
+      parameters:
+        - name: directorySettingTemplate-id
+          in: path
+          description: 'key: directorySettingTemplate-id of directorySettingTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action getMemberGroups
+      operationId: directorySettingTemplates_getMemberGroups
+      parameters:
+        - name: directorySettingTemplate-id
+          in: path
+          description: 'key: directorySettingTemplate-id of directorySettingTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action getMemberObjects
+      operationId: directorySettingTemplates_getMemberObjects
+      parameters:
+        - name: directorySettingTemplate-id
+          in: path
+          description: 'key: directorySettingTemplate-id of directorySettingTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action restore
+      operationId: directorySettingTemplates_restore
+      parameters:
+        - name: directorySettingTemplate-id
+          in: path
+          description: 'key: directorySettingTemplate-id of directorySettingTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySettingTemplate
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directorySettingTemplates/microsoft.graph.getByIds:
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action getByIds
+      operationId: directorySettingTemplates_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directorySettingTemplates/microsoft.graph.getUserOwnedObjects:
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: directorySettingTemplates_getUserOwnedObjects
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directorySettingTemplates/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - directorySettingTemplates.Actions
+      summary: Invoke action validateProperties
+      operationId: directorySettingTemplates_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.directorySettingTemplate:
@@ -224,21 +524,34 @@ components:
       properties:
         name:
           type: string
+          description: Name of the setting.
           nullable: true
         type:
           type: string
+          description: Type of the setting.
           nullable: true
         defaultValue:
           type: string
+          description: Default value for the setting.
           nullable: true
         description:
           type: string
+          description: Description of the setting.
           nullable: true
       example:
         name: string
         type: string
         defaultValue: string
         description: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
     odata.error:
       required:
         - error
@@ -246,14 +559,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-      example:
-        id: string (identifier)
     odata.error.main:
       required:
         - code
@@ -301,12 +606,31 @@ components:
         minimum: 0
         type: integer
       example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
     search:
       name: $search
       in: query
       description: Search items by search phrases
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

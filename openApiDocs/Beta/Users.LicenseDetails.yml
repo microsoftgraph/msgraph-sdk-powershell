@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Users.LicenseDetails
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/licenseDetails':
@@ -215,13 +215,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
+              description: 'Information about the service plans assigned with the license. Read-only, Not nullable'
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
               format: uuid
               nullable: true
             skuPartNumber:
               type: string
+              description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
               nullable: true
       example:
         id: string (identifier)
@@ -235,6 +238,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.servicePlanInfo:
@@ -244,16 +248,20 @@ components:
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
+          description: The unique identifier of the service plan.
           format: uuid
           nullable: true
         servicePlanName:
           type: string
+          description: The name of the service plan.
           nullable: true
         provisioningStatus:
           type: string
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         appliesTo:
           type: string
+          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
           nullable: true
       example:
         servicePlanId: string

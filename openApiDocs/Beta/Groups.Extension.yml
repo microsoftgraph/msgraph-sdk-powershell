@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.Extension
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/groups/{group-id}/extensions':
@@ -206,6 +206,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     odata.error:

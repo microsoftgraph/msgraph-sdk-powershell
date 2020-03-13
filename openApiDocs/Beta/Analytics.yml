@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Analytics
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /activitystatistics:
@@ -1452,14 +1452,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
+              description: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
             shared:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+              description: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
+              description: 'Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.'
       example:
         id: string (identifier)
         trending:
@@ -1508,6 +1511,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.trending:
@@ -1518,6 +1522,7 @@ components:
           properties:
             weight:
               type: number
+              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
               format: double
             resourceVisualization:
               $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
@@ -1596,13 +1601,16 @@ components:
         sharedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         sharingSubject:
           type: string
+          description: The subject with which the document was shared.
           nullable: true
         sharingType:
           type: string
+          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
           nullable: true
         sharingReference:
           $ref: '#/components/schemas/microsoft.graph.resourceReference'
@@ -1620,27 +1628,35 @@ components:
       properties:
         title:
           type: string
+          description: The item's title text.
           nullable: true
         type:
           type: string
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
           nullable: true
         mediaType:
           type: string
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
+          description: A URL leading to the preview image for the item.
           nullable: true
         previewText:
           type: string
+          description: A preview text for the item.
           nullable: true
         containerWebUrl:
           type: string
+          description: A path leading to the folder in which the item is stored.
           nullable: true
         containerDisplayName:
           type: string
+          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
           nullable: true
         containerType:
           type: string
+          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
           nullable: true
       example:
         title: string
@@ -1657,12 +1673,15 @@ components:
       properties:
         webUrl:
           type: string
+          description: A URL leading to the referenced item.
           nullable: true
         id:
           type: string
+          description: The item's unique identifier.
           nullable: true
         type:
           type: string
+          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
           nullable: true
       example:
         webUrl: string
@@ -1675,11 +1694,13 @@ components:
         lastAccessedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       example:
@@ -1698,12 +1719,15 @@ components:
       properties:
         displayName:
           type: string
+          description: The display name of the user who shared the item.
           nullable: true
         id:
           type: string
+          description: The id of the user who shared the item.
           nullable: true
         address:
           type: string
+          description: The email address of the user who shared the item.
           nullable: true
       example:
         displayName: string

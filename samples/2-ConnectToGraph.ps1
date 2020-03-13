@@ -1,17 +1,17 @@
 # Connect To Graph
 
-# Connect using previously consented permisssions
+# Connect using previously consented permissions
 Connect-Graph
 
 # Try to Get-User
-Get-User
+Get-MgUser
 
 # Grant more permissions
 Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
             "Directory.ReadWrite.All","Chat.ReadWrite", "People.Read", `
             "Group.Read.All", "Directory.AccessAsUser.All", "Tasks.ReadWrite", `
             "Sites.Manage.All"
-# Now Get-User works
+# Now Get-MgUser works
 
 # Tokens persist across Terminal sessions
 

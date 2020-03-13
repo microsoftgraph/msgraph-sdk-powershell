@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>AuthConfigView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Graph.PowerShell.Authentication.Models.AuthConfig</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>AppName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AuthType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>TenantId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Account</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Scopes</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

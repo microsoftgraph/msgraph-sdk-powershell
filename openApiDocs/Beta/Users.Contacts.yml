@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Users.Contacts
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/contactFolders':
@@ -22,6 +22,7 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -55,6 +56,21 @@ paths:
                 - parentFolderId
                 - displayName
                 - wellKnownName
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - contacts
+                - childFolders
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
                 - contacts
@@ -145,6 +161,21 @@ paths:
                 - contacts
                 - childFolders
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - contacts
+                - childFolders
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -211,6 +242,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -451,6 +483,7 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -834,6 +867,7 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1329,6 +1363,17 @@ paths:
                 - id
                 - height
                 - width
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -2216,6 +2261,21 @@ paths:
                 - photo
                 - extensions
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - photo
+                - extensions
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -2335,6 +2395,21 @@ paths:
                 - photo
                 - extensions
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - photo
+                - extensions
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -2401,6 +2476,7 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2841,6 +2917,17 @@ paths:
                 - height
                 - width
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3111,9 +3198,11 @@ components:
           properties:
             parentFolderId:
               type: string
+              description: The ID of the folder's parent folder.
               nullable: true
             displayName:
               type: string
+              description: The folder's display name.
               nullable: true
             wellKnownName:
               type: string
@@ -3122,18 +3211,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+              description: The contacts in the folder. Navigation property. Read-only. Nullable.
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+              description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       example:
         id: string (identifier)
         parentFolderId: string
@@ -3155,52 +3248,67 @@ components:
           properties:
             parentFolderId:
               type: string
+              description: The ID of the contact's parent folder.
               nullable: true
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             fileAs:
               type: string
+              description: The name the contact is filed under.
               nullable: true
             displayName:
               type: string
+              description: 'The contact''s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
               nullable: true
             givenName:
               type: string
+              description: The contact's given name.
               nullable: true
             initials:
               type: string
+              description: The contact's initials.
               nullable: true
             middleName:
               type: string
+              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
+              description: The contact's nickname.
               nullable: true
             surname:
               type: string
+              description: The contact's surname.
               nullable: true
             title:
               type: string
+              description: The contact's title.
               nullable: true
             yomiGivenName:
               type: string
+              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
+              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             yomiCompanyName:
               type: string
+              description: The phonetic Japanese company name of the contact.
               nullable: true
             generation:
               type: string
+              description: The contact's generation.
               nullable: true
             emailAddresses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.typedEmailAddress'
+              description: The contact's email addresses.
             websites:
               type: array
               items:
@@ -3210,26 +3318,34 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The contact's instant messaging (IM) addresses.
             jobTitle:
               type: string
+              description: The contact’s job title.
               nullable: true
             companyName:
               type: string
+              description: The name of the contact's company.
               nullable: true
             department:
               type: string
+              description: The contact's department.
               nullable: true
             officeLocation:
               type: string
+              description: The location of the contact's office.
               nullable: true
             profession:
               type: string
+              description: The contact's profession.
               nullable: true
             assistantName:
               type: string
+              description: The name of the contact's assistant.
               nullable: true
             manager:
               type: string
+              description: The name of the contact's manager.
               nullable: true
             phones:
               type: array
@@ -3241,15 +3357,18 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             spouseName:
               type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             personalNotes:
               type: string
+              description: The user's notes about the contact.
               nullable: true
             children:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The names of the contact's children.
             weddingAnniversary:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -3267,16 +3386,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -3350,6 +3472,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: A collection of property values.
       example:
         id: string (identifier)
         value:
@@ -3364,12 +3487,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The height of the photo. Read-only.
               format: int32
               nullable: true
             width:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The width of the photo. Read-only.
               format: int32
               nullable: true
       example:
@@ -3384,6 +3509,7 @@ components:
           properties:
             value:
               type: string
+              description: A property value.
               nullable: true
       example:
         id: string (identifier)
@@ -3394,6 +3520,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.outlookItem:
@@ -3405,21 +3532,25 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             changeKey:
               type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
               nullable: true
             categories:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The categories associated with the item
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -3452,9 +3583,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
         address:
           type: string
+          description: The URL of the website.
           nullable: true
         displayName:
           type: string
+          description: The display name of the web site.
           nullable: true
       example:
         type:
@@ -3469,6 +3602,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.phoneType'
         number:
           type: string
+          description: The phone number.
           nullable: true
       example:
         type:
@@ -3485,18 +3619,23 @@ components:
           nullable: true
         street:
           type: string
+          description: The street.
           nullable: true
         city:
           type: string
+          description: The city.
           nullable: true
         state:
           type: string
+          description: The state.
           nullable: true
         countryOrRegion:
           type: string
+          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
           nullable: true
         postalCode:
           type: string
+          description: The postal code.
           nullable: true
       example:
         type:
@@ -3541,9 +3680,11 @@ components:
       properties:
         name:
           type: string
+          description: The display name of the person or entity.
           nullable: true
         address:
           type: string
+          description: The email address of the person or entity.
           nullable: true
       example:
         name: string
@@ -3594,8 +3735,10 @@ components:
       properties:
         dateTime:
           type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       example:
         dateTime: string
@@ -3661,6 +3804,12 @@ components:
       schema:
         minimum: 0
         type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
@@ -3673,12 +3822,6 @@ components:
       description: Include count of items
       schema:
         type: boolean
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2

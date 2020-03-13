@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.AuditLogs
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /auditLogs:
@@ -310,6 +310,8 @@ paths:
                 - action desc
                 - durationInMilliseconds
                 - durationInMilliseconds desc
+                - servicePrincipal
+                - servicePrincipal desc
                 - initiatedBy
                 - initiatedBy desc
                 - sourceSystem
@@ -344,6 +346,7 @@ paths:
                 - changeId
                 - action
                 - durationInMilliseconds
+                - servicePrincipal
                 - initiatedBy
                 - sourceSystem
                 - targetSystem
@@ -433,6 +436,7 @@ paths:
                 - changeId
                 - action
                 - durationInMilliseconds
+                - servicePrincipal
                 - initiatedBy
                 - sourceSystem
                 - targetSystem
@@ -526,6 +530,8 @@ paths:
                 - action desc
                 - durationInMilliseconds
                 - durationInMilliseconds desc
+                - servicePrincipal
+                - servicePrincipal desc
                 - initiatedBy
                 - initiatedBy desc
                 - sourceSystem
@@ -560,6 +566,7 @@ paths:
                 - changeId
                 - action
                 - durationInMilliseconds
+                - servicePrincipal
                 - initiatedBy
                 - sourceSystem
                 - targetSystem
@@ -649,6 +656,7 @@ paths:
                 - changeId
                 - action
                 - durationInMilliseconds
+                - servicePrincipal
                 - initiatedBy
                 - sourceSystem
                 - targetSystem
@@ -1321,10 +1329,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
+              description: Read-only. Nullable.
             directoryAudits:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+              description: Read-only. Nullable.
             restrictedSignIns:
               type: array
               items:
@@ -1357,22 +1367,28 @@ components:
           properties:
             category:
               type: string
+              description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
             correlationId:
               type: string
+              description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
               nullable: true
             result:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
             resultReason:
               type: string
+              description: Describes cause of 'failure' or 'timeout' results.
               nullable: true
             activityDisplayName:
               type: string
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             loggedByService:
               type: string
+              description: 'Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.'
               nullable: true
             operationType:
               type: string
@@ -1383,10 +1399,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
+              description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
             additionalDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Indicates additional details on the activity.
       example:
         id: string (identifier)
         category: string
@@ -1435,6 +1453,8 @@ components:
               type: integer
               format: int32
               nullable: true
+            servicePrincipal:
+              $ref: '#/components/schemas/microsoft.graph.provisioningServicePrincipal'
             initiatedBy:
               $ref: '#/components/schemas/microsoft.graph.initiator'
             sourceSystem:
@@ -1464,6 +1484,8 @@ components:
         changeId: string
         action: string
         durationInMilliseconds: integer
+        servicePrincipal:
+          '@odata.type': microsoft.graph.provisioningServicePrincipal
         initiatedBy:
           '@odata.type': microsoft.graph.initiator
         sourceSystem:
@@ -1558,9 +1580,11 @@ components:
               nullable: true
             appDisplayName:
               type: string
+              description: App name displayed in the Azure Portal.
               nullable: true
             appId:
               type: string
+              description: Unique GUID representing the app ID in the Azure Active Directory.
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
@@ -1585,23 +1609,28 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.authenticationRequirementPolicy'
             clientAppUsed:
               type: string
+              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
+              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             isInteractive:
               type: boolean
+              description: Indicates if a sign-in is interactive or not.
               nullable: true
             ipAddress:
               type: string
+              description: IP address of the client used to sign in.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
@@ -1626,6 +1655,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
+              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.'
             riskLevelAggregated:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskLevelDuringSignIn:
@@ -1634,9 +1664,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskState'
             resourceDisplayName:
               type: string
+              description: Name of the resource the user signed into.
               nullable: true
             resourceId:
               type: string
+              description: ID of the resource that the user signed into.
               nullable: true
             servicePrincipalId:
               type: string
@@ -1655,11 +1687,14 @@ components:
               nullable: true
             userDisplayName:
               type: string
+              description: Display name of the user that initiated the sign-in.
               nullable: true
             userId:
               type: string
+              description: ID of the user that initiated the sign-in.
             userPrincipalName:
               type: string
+              description: User principal name of the user that initiated the sign-in.
               nullable: true
       example:
         id: string (identifier)
@@ -1722,6 +1757,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.operationResult:
@@ -1751,15 +1787,19 @@ components:
       properties:
         id:
           type: string
+          description: Indicates the unique ID of the resource.
           nullable: true
         displayName:
           type: string
+          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
           nullable: true
         type:
           type: string
+          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
           nullable: true
         userPrincipalName:
           type: string
+          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
           nullable: true
         groupType:
           $ref: '#/components/schemas/microsoft.graph.groupType'
@@ -1767,6 +1807,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
       example:
         id: string
         displayName: string
@@ -1782,13 +1823,23 @@ components:
       properties:
         key:
           type: string
+          description: Key for the key-value pair.
           nullable: true
         value:
           type: string
+          description: Value for the key-value pair.
           nullable: true
       example:
         key: string
         value: string
+    microsoft.graph.provisioningServicePrincipal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: provisioningServicePrincipal
+          type: object
+      example:
+        id: string
+        displayName: string
     microsoft.graph.initiator:
       title: initiator
       type: object
@@ -1884,12 +1935,15 @@ components:
       properties:
         displayName:
           type: string
+          description: Indicates the property name of the target attribute that was changed.
           nullable: true
         oldValue:
           type: string
+          description: Indicates the previous value (before the update) for the property.
           nullable: true
         newValue:
           type: string
+          description: Indicates the updated value for the propery.
           nullable: true
       example:
         displayName: string
@@ -1901,20 +1955,24 @@ components:
       properties:
         id:
           type: string
+          description: Unique GUID of the conditional access polic.y
           nullable: true
         displayName:
           type: string
+          description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
           nullable: true
         enforcedGrantControls:
           type: array
           items:
             type: string
             nullable: true
+          description: 'Refers to the grant controls enforced by the conditional access policy (example: ''Require multi-factor authentication'').'
         enforcedSessionControls:
           type: array
           items:
             type: string
             nullable: true
+          description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
         conditionsSatisfied:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         conditionsNotSatisfied:
@@ -1992,27 +2050,34 @@ components:
       properties:
         deviceId:
           type: string
+          description: Refers to the UniqueID of the device used for signing in.
           nullable: true
         displayName:
           type: string
+          description: Refers to the name of the device used for signing in.
           nullable: true
         operatingSystem:
           type: string
+          description: Indicates the operating system name and version used for signing in.
           nullable: true
         browser:
           type: string
+          description: Indicates the browser information of the used for signing in.
           nullable: true
         browserId:
           type: string
           nullable: true
         isCompliant:
           type: boolean
+          description: Indicates whether the device is compliant.
           nullable: true
         isManaged:
           type: boolean
+          description: Indicates whether the device is managed.
           nullable: true
         trustType:
           type: string
+          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       example:
         deviceId: string
@@ -2029,12 +2094,15 @@ components:
       properties:
         city:
           type: string
+          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         state:
           type: string
+          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         countryOrRegion:
           type: string
+          description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         geoCoordinates:
           $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
@@ -2137,13 +2205,16 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
           format: int32
           nullable: true
         failureReason:
           type: string
+          description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
           nullable: true
         additionalDetails:
           type: string
+          description: Provides additional details on the sign-in activity
           nullable: true
       example:
         errorCode: integer
@@ -2169,15 +2240,19 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the identity.
           nullable: true
         displayName:
           type: string
+          description: The identity's display name. Note that this may not always be available or up-to-date.
           nullable: true
         ipAddress:
           type: string
+          description: Indicates the client IP address used by user performing the activity (audit log only).
           nullable: true
         userPrincipalName:
           type: string
+          description: The userPrincipalName attribute of the user.
           nullable: true
       example:
         id: string
@@ -2190,15 +2265,19 @@ components:
       properties:
         appId:
           type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
           nullable: true
         displayName:
           type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
           nullable: true
         servicePrincipalId:
           type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
       example:
         appId: string
@@ -2212,6 +2291,21 @@ components:
         - azureAD
         - unknownFutureValue
       type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+      example:
+        id: string
+        displayName: string
     microsoft.graph.initiatorType:
       title: initiatorType
       enum:
@@ -2284,14 +2378,17 @@ components:
       properties:
         altitude:
           type: number
+          description: 'Optional. The altitude (height), in feet,  above sea level for the item. Read-only.'
           format: double
           nullable: true
         latitude:
           type: number
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       example:

@@ -36,6 +36,13 @@ jobs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
       arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
       pwsh: true
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Enabled Tests'
+    inputs:
+      command: 'test'
+      projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
+      testRunTitle: 'Run Enabled Tests'
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'

@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.OnPremisesPublishingProfiles
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /onPremisesPublishingProfiles:
@@ -510,6 +510,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_CreateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}':
     get:
       tags:
@@ -573,6 +610,307 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Update the navigation property agents in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_UpdateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_ListAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - publishingType
+                - publishingType desc
+                - isDefault
+                - isDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgentGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_GetAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -663,6 +1001,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_CreatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}':
     get:
       tags:
@@ -725,6 +1100,307 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_UpdatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_ListAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - publishingType
+                - publishingType desc
+                - isDefault
+                - isDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgentGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_GetAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1022,6 +1698,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}':
     get:
       tags:
@@ -1086,6 +1799,853 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get agents from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_ListAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - machineName
+                - machineName desc
+                - externalIp
+                - externalIp desc
+                - status
+                - status desc
+                - supportedPublishingTypes
+                - supportedPublishingTypes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - machineName
+                - externalIp
+                - status
+                - supportedPublishingTypes
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgent
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_CreateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get agents from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_GetAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id1
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - machineName
+                - externalIp
+                - status
+                - supportedPublishingTypes
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Update the navigation property agents in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_UpdateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id1
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get publishedResources from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_ListPublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - resourceName
+                - resourceName desc
+                - publishingType
+                - publishingType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - resourceName
+                - publishingType
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of publishedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_CreatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get publishedResources from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_GetPublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - resourceName
+                - publishingType
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_UpdatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_ListAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - publishingType
+                - publishingType desc
+                - isDefault
+                - isDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgentGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_GetAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1379,6 +2939,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}':
     get:
       tags:
@@ -1443,6 +3040,853 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get agents from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_ListAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - machineName
+                - machineName desc
+                - externalIp
+                - externalIp desc
+                - status
+                - status desc
+                - supportedPublishingTypes
+                - supportedPublishingTypes desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - machineName
+                - externalIp
+                - status
+                - supportedPublishingTypes
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgent
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Create new navigation property to agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_CreateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get agents from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_GetAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - machineName
+                - externalIp
+                - status
+                - supportedPublishingTypes
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Update the navigation property agents in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_UpdateAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_ListAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - publishingType
+                - publishingType desc
+                - isDefault
+                - isDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of onPremisesAgentGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Create new navigation property to agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_CreateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get agentGroups from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_GetAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - publishingType
+                - isDefault
+                - agents
+                - publishedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agents
+                - publishedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_UpdateAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get publishedResources from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_ListPublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - resourceName
+                - resourceName desc
+                - publishingType
+                - publishingType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - resourceName
+                - publishingType
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of publishedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Create new navigation property to publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_CreatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id1}':
+    get:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Get publishedResources from onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_GetPublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id1
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - resourceName
+                - publishingType
+                - agentGroups
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - agentGroups
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_UpdatePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id1
+          in: path
+          description: 'key: publishedResource-id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.publishedResource'
+        required: true
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1570,6 +4014,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.hybridAgentUpdaterConfiguration:
