@@ -42,7 +42,7 @@ jobs:
     displayName: 'Build Auth Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/BuildModule.ps1'
-      arguments: '-Module "Authentication" -ModulePrefix $(MODULE_PREFIX) -ModuleVersion $(Module_Version) -EnableSigning'
+      arguments: '-Module "Authentication" -ModulePrefix $(MODULE_PREFIX) -ModuleVersion $(Module_Version) -EnableSigning -ReleaseNotes $(Release_Notes)'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
