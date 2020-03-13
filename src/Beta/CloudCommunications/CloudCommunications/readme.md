@@ -43,10 +43,9 @@ directive:
     set:
       subject: MuteAllCommunicationCallParticipant
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.1.1
-release-notes: 'Initial release.'
+module-version: 0.2.0
+release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

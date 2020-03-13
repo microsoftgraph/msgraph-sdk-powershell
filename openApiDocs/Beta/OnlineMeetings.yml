@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: OnlineMeetings
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/onlineMeetings':
@@ -266,16 +266,19 @@ components:
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The meeting creation time in UTC. Read-only.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The meeting start time in UTC.
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The meeting end time in UTC.
               format: date-time
               nullable: true
             canceledDateTime:
@@ -296,6 +299,7 @@ components:
               nullable: true
             subject:
               type: string
+              description: The subject of the online meeting.
               nullable: true
             isCancelled:
               type: boolean
@@ -317,6 +321,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             videoTeleconferenceId:
               type: string
+              description: The video teleconferencing ID. Read-only.
               nullable: true
       example:
         id: string (identifier)
@@ -347,6 +352,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.meetingParticipants:
@@ -400,12 +406,15 @@ components:
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
         tollFreeNumber:
           type: string
+          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
         dialinUrl:
           type: string
+          description: A URL to the externally-accessible web page that contains dial-in information.
           nullable: true
       example:
         conferenceId: string
@@ -418,12 +427,15 @@ components:
       properties:
         threadId:
           type: string
+          description: The unique identifier for a thread in Microsoft Teams.
           nullable: true
         messageId:
           type: string
+          description: The unique identifier of a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
+          description: The ID of the reply message.
           nullable: true
       example:
         threadId: string
@@ -444,6 +456,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         upn:
           type: string
+          description: User principal name of the participant.
           nullable: true
       example:
         identity:
@@ -503,9 +516,11 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the identity.
           nullable: true
         displayName:
           type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
       example:
         id: string

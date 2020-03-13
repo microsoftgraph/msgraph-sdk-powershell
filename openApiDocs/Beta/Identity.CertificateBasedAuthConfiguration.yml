@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.CertificateBasedAuthConfiguration
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /certificateBasedAuthConfiguration:
@@ -202,6 +202,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
+              description: Collection of certificate authorities which creates a trusted certificate chain.
       example:
         id: string (identifier)
         certificateAuthorities:
@@ -212,6 +213,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.certificateAuthority:
@@ -220,19 +222,25 @@ components:
       properties:
         isRootAuthority:
           type: boolean
+          description: 'Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.'
         certificateRevocationListUrl:
           type: string
+          description: The URL of the certificate revocation list.
           nullable: true
         deltaCertificateRevocationListUrl:
           type: string
+          description: The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
           nullable: true
         certificate:
           type: string
+          description: Required. The base64 encoded string representing the public certificate.
           format: base64url
         issuer:
           type: string
+          description: 'The issuer of the certificate, calculated from the certificate value. Read-only.'
         issuerSki:
           type: string
+          description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
       example:
         isRootAuthority: true
         certificateRevocationListUrl: string

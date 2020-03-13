@@ -83,11 +83,11 @@ directive:
       variant: CreateViaIdentityExpanded
     set:
       subject: SubSite
+```
+
 ### Versioning
 
 ``` yaml
-module-version: 0.1.1
-release-notes:
- - Initial release of Microsoft.Graph.Sites.Site module.
+module-version: 0.2.0
+release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
-

@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Notification
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   '/users/{user-id}/notifications':
@@ -267,6 +267,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.payloadTypes:

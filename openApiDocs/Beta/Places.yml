@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Places
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /places:
@@ -233,6 +233,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.outlookGeoCoordinates:
@@ -241,22 +242,27 @@ components:
       properties:
         altitude:
           type: number
+          description: The altitude of the location.
           format: double
           nullable: true
         latitude:
           type: number
+          description: The latitude of the location.
           format: double
           nullable: true
         longitude:
           type: number
+          description: The longitude of the location.
           format: double
           nullable: true
         accuracy:
           type: number
+          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
           format: double
           nullable: true
         altitudeAccuracy:
           type: number
+          description: The accuracy of the altitude.
           format: double
           nullable: true
       example:
@@ -276,18 +282,23 @@ components:
           nullable: true
         street:
           type: string
+          description: The street.
           nullable: true
         city:
           type: string
+          description: The city.
           nullable: true
         state:
           type: string
+          description: The state.
           nullable: true
         countryOrRegion:
           type: string
+          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
           nullable: true
         postalCode:
           type: string
+          description: The postal code.
           nullable: true
       example:
         type:

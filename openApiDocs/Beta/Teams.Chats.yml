@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Teams.Chats
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /chats:
@@ -49,9 +49,9 @@ paths:
                 - topic
                 - createdDateTime
                 - lastUpdatedDateTime
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
         - name: $expand
           in: query
@@ -63,9 +63,9 @@ paths:
             items:
               enum:
                 - '*'
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
       responses:
         '200':
@@ -132,9 +132,9 @@ paths:
                 - topic
                 - createdDateTime
                 - lastUpdatedDateTime
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
         - name: $expand
           in: query
@@ -146,9 +146,9 @@ paths:
             items:
               enum:
                 - '*'
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
       responses:
         '200':
@@ -158,15 +158,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chat'
           links:
-            installedApps:
-              operationId: chats.chat.GetChat
-              parameters:
-                id: $request.path.id
             members:
               operationId: chats.chat.GetChat
               parameters:
                 id: $request.path.id
             messages:
+              operationId: chats.chat.GetChat
+              parameters:
+                id: $request.path.id
+            installedApps:
               operationId: chats.chat.GetChat
               parameters:
                 id: $request.path.id
@@ -1641,9 +1641,9 @@ paths:
                 - topic
                 - createdDateTime
                 - lastUpdatedDateTime
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
         - name: $expand
           in: query
@@ -1655,9 +1655,9 @@ paths:
             items:
               enum:
                 - '*'
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
       responses:
         '200':
@@ -1739,9 +1739,9 @@ paths:
                 - topic
                 - createdDateTime
                 - lastUpdatedDateTime
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
         - name: $expand
           in: query
@@ -1753,9 +1753,9 @@ paths:
             items:
               enum:
                 - '*'
-                - installedApps
                 - members
                 - messages
+                - installedApps
               type: string
       responses:
         '200':
@@ -1821,10 +1821,6 @@ components:
               type: string
               format: date-time
               nullable: true
-            installedApps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
             members:
               type: array
               items:
@@ -1833,17 +1829,21 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
       example:
         id: string (identifier)
         topic: string
         createdDateTime: string (timestamp)
         lastUpdatedDateTime: string (timestamp)
-        installedApps:
-          - '@odata.type': microsoft.graph.teamsAppInstallation
         members:
           - '@odata.type': microsoft.graph.conversationMember
         messages:
           - '@odata.type': microsoft.graph.chatMessage
+        installedApps:
+          - '@odata.type': microsoft.graph.teamsAppInstallation
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1868,12 +1868,14 @@ components:
           properties:
             externalId:
               type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
             name:
               type: string
               nullable: true
             displayName:
               type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
             distributionMethod:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
@@ -1881,6 +1883,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
       example:
         id: string (identifier)
         externalId: string
@@ -1898,12 +1901,15 @@ components:
           properties:
             teamsAppId:
               type: string
+              description: The id from the Teams App manifest.
               nullable: true
             displayName:
               type: string
+              description: The name of the app provided by the app developer.
               nullable: true
             version:
               type: string
+              description: The version number of the application.
               nullable: true
       example:
         id: string (identifier)
@@ -2041,6 +2047,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.teamsAppDistributionMethod:
@@ -2083,6 +2090,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bodyType'
         content:
           type: string
+          description: The content of the item.
           nullable: true
       example:
         contentType:
@@ -2199,9 +2207,11 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the identity.
           nullable: true
         displayName:
           type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
       example:
         id: string

@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.DirectoryRoleTemplates
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /directoryRoleTemplates:
@@ -13,7 +13,11 @@ paths:
       summary: Get entities from directoryRoleTemplates
       operationId: directoryRoleTemplates.directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -45,6 +49,17 @@ paths:
                 - deletedDateTime
                 - description
                 - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
@@ -112,6 +127,17 @@ paths:
                 - description
                 - displayName
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: simple
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
       responses:
         '200':
           description: Retrieved entity
@@ -172,6 +198,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: directoryRoleTemplates_checkMemberGroups
+      parameters:
+        - name: directoryRoleTemplate-id
+          in: path
+          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRoleTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: directoryRoleTemplates_checkMemberObjects
+      parameters:
+        - name: directoryRoleTemplate-id
+          in: path
+          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRoleTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action getMemberGroups
+      operationId: directoryRoleTemplates_getMemberGroups
+      parameters:
+        - name: directoryRoleTemplate-id
+          in: path
+          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRoleTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action getMemberObjects
+      operationId: directoryRoleTemplates_getMemberObjects
+      parameters:
+        - name: directoryRoleTemplate-id
+          in: path
+          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRoleTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action restore
+      operationId: directoryRoleTemplates_restore
+      parameters:
+        - name: directoryRoleTemplate-id
+          in: path
+          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRoleTemplate
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directoryRoleTemplates/microsoft.graph.getByIds:
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action getByIds
+      operationId: directoryRoleTemplates_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directoryRoleTemplates/microsoft.graph.getUserOwnedObjects:
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action getUserOwnedObjects
+      operationId: directoryRoleTemplates_getUserOwnedObjects
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                  nullable: true
+                type:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /directoryRoleTemplates/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - directoryRoleTemplates.Actions
+      summary: Invoke action validateProperties
+      operationId: directoryRoleTemplates_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.directoryRoleTemplate:
@@ -182,9 +483,11 @@ components:
           properties:
             description:
               type: string
+              description: The description to set for the directory role. Read-only.
               nullable: true
             displayName:
               type: string
+              description: The display name to set for the directory role. Read-only.
               nullable: true
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
@@ -207,6 +510,15 @@ components:
       example:
         id: string (identifier)
         deletedDateTime: string (timestamp)
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
     odata.error:
       required:
         - error
@@ -214,14 +526,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-      example:
-        id: string (identifier)
     odata.error.main:
       required:
         - code
@@ -261,12 +565,39 @@ components:
           schema:
             $ref: '#/components/schemas/odata.error'
   parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
     search:
       name: $search
       in: query
       description: Search items by search phrases
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

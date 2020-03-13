@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Identity.Directory
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /directory:
@@ -608,6 +608,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Recently deleted items. Read-only. Nullable.
             featureRolloutPolicies:
               type: array
               items:
@@ -670,6 +671,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     microsoft.graph.stagedFeatureName:

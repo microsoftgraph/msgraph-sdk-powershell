@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: Groups.LifecyclePolicies
-  version: v1.0-Beta
+  version: v1.0-beta
 servers:
-  - url: https://graph.microsoft.com/Beta/
+  - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
   /groupLifecyclePolicies:
@@ -307,13 +307,16 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.'
               format: int32
               nullable: true
             managedGroupTypes:
               type: string
+              description: 'The group type for which the expiration policy applies. Possible values are All, Selected or None.'
               nullable: true
             alternateNotificationEmails:
               type: string
+              description: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
               nullable: true
       example:
         id: string (identifier)
@@ -326,6 +329,7 @@ components:
       properties:
         id:
           type: string
+          description: Read-only.
       example:
         id: string (identifier)
     odata.error:

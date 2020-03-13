@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.1.6</version>
+    <version>0.2.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -20,7 +20,6 @@
     <file src="Microsoft.Graph.Authentication.format.ps1xml" />
     <file src="Microsoft.Graph.Authentication.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
-    
     <file src="bin/Microsoft.Graph.Authentication.dll" target="bin" />
     <file src="bin/Microsoft.Graph.Authentication.deps.json" target="bin" />
     <file src="bin/Microsoft.Graph.Auth.dll" target="bin" />

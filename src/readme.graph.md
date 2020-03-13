@@ -12,7 +12,7 @@ metadata:
     owners: Microsoft Corporation
     companyName: Microsoft Corporation
     description: 'Microsoft Graph PowerShell Cmdlets'
-    copyright: © Microsoft Corporation. All rights reserved.
+    copyright: &copy; Microsoft Corporation. All rights reserved.
     tags: Microsoft Office365 Graph PowerShell
     requireLicenseAcceptance: true
     licenseUri: https://aka.ms/devservicesagreement
@@ -285,13 +285,24 @@ directive:
           - TargetTypes
           - Status
           - Owner
-# Rename all delta cmdlets
+# Rename cmdlets
   - where:
       verb: Invoke
       subject: (^Delta)(.*)
     set:
       verb: Get
       subject: $2$1
+  - where:
+      verb: Test
+      variant: ^Validate(.*)|^Check(.*)
+    set:
+      verb: Confirm
+# Remove cmdlets
+  - where:
+      verb: Confirm
+      subject: (Application|ServicePrincipal)SynchronizationJobCredentials
+      variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
+    remove: true
 # Add AfterToJson
   - from: source-file-csharp
     where: $

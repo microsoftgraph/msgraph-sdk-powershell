@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.RoleManagement
-Module Guid: f86a1510-7cf3-425c-9270-5068dd7319f6
+Module Guid: 3eed4af3-6e6c-4f46-bebb-eee5dabf16f0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.rolemanagement
 Help Version: 1.0.0.0
 Locale: en-US
