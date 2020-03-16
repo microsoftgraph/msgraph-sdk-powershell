@@ -60,7 +60,6 @@ if ($LASTEXITCODE) {
 
 [HashTable]$ModuleManifestSettings = @{
     Path              = $ModuleManifest
-    FunctionsToExport = "*"
     ModuleVersion     = $ModuleVersion
     IconUri           = $NuspecMetadata["iconUri"]
     ReleaseNotes      = $ReleaseNotes
