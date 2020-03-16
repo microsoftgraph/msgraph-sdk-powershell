@@ -84,10 +84,9 @@ directive:
     set:
       subject: SubSite
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.2.0
+module-version: 0.2.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
