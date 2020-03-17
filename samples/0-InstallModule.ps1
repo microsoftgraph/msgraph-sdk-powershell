@@ -9,8 +9,11 @@ Install-module Microsoft.Graph
 Uninstall-Module Microsoft.Graph
 
 # Remove all the dependent modules
-Get-InstalledModule Microsoft.Graph.* | uninstall-module
+Get-InstalledModule Microsoft.Graph.* | %{ if($_.Name -ne "Microsoft.Graph.Authentication"){ Uninstall-Module $_.Name } }
 
-# Update the authentication module from 0.1.4 to 0.1.5
+# Update the authentication module from 0.1.5 to 0.2.0
 Install-Module Microsoft.Graph.Authentication -Repository PSGallery -force
+
+# Or uninstall the authentication module
+Uninstall-Module Microsoft.Graph.Authentication
 
