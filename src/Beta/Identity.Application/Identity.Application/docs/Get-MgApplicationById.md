@@ -1,31 +1,31 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.OrganizationContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organizationcontacts/remove-mgcontactorgcontact
+Module Name: Microsoft.Graph.Identity.Application
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.application/get-mgapplicationbyid
 schema: 2.0.0
 ---
 
-# Remove-MgContactOrgContact
+# Get-MgApplicationById
 
 ## SYNOPSIS
-Delete entity from contacts
+Invoke action getByIds
 
 ## SYNTAX
 
-### Delete (Default)
+### GetExpanded (Default)
 ```
-Remove-MgContactOrgContact -OrgContactId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgApplicationById [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Get1
 ```
-Remove-MgContactOrgContact -InputObject <IIdentityOrganizationContactsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgApplicationById
+ -BodyParameter <IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete entity from contacts
+Invoke action getByIds
 
 ## EXAMPLES
 
@@ -49,29 +49,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -IfMatch
-ETag
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityOrganizationContactsIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -82,15 +66,15 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -OrgContactId
-key: orgContact-id of orgContact
+### -Ids
+.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
+Type: System.String[]
+Parameter Sets: GetExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -98,12 +82,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Types
+.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: GetExpanded
 Aliases:
 
 Required: False
@@ -152,11 +136,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityOrganizationContactsIdentity
+### Microsoft.Graph.PowerShell.Models.IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## ALIASES
 
@@ -165,9 +149,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-#### INPUTOBJECT <IIdentityOrganizationContactsIdentity>: Identity Parameter
-  - `[DirectoryObjectId <String>]`: key: directoryObject-id of directoryObject
-  - `[OrgContactId <String>]`: key: orgContact-id of orgContact
+#### BODYPARAMETER <IPaths1Hl8AmeApplicationsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[Ids <String[]>]`: 
+  - `[Types <String[]>]`: 
 
 ## RELATED LINKS
 

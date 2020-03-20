@@ -12,9 +12,10 @@ Invoke action getByIds
 
 ## SYNTAX
 
-### GetExpanded (Default)
+### List (Default)
 ```
-Get-MgContract [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgContract [-Count] [-Expand <String[]>] [-Filter <String>] [-Orderby <String[]>] [-Search <String>]
+ [-Select <String[]>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -24,21 +25,10 @@ Get-MgContract
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgContract -ContractId <String> [-Expand <String[]>] [-Select <String[]>] [<CommonParameters>]
-```
-
 ### GetViaIdentity
 ```
 Get-MgContract -InputObject <IIdentityContractsIdentity> [-Expand <String[]>] [-Select <String[]>]
  [<CommonParameters>]
-```
-
-### List
-```
-Get-MgContract [-Count] [-Expand <String[]>] [-Filter <String>] [-Orderby <String[]>] [-Search <String>]
- [-Select <String[]>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,22 +73,6 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -ContractId
-key: contract-id of contract
-
-```yaml
-Type: System.String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
 ### -Count
 Include count of items
 
@@ -120,7 +94,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get1, GetViaIdentity, List
+Parameter Sets: GetViaIdentity, List
 Aliases:
 
 Required: False
@@ -137,22 +111,6 @@ Filter items by property values
 ```yaml
 Type: System.String
 Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Ids
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpanded
 Aliases:
 
 Required: False
@@ -217,7 +175,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get1, GetViaIdentity, List
+Parameter Sets: GetViaIdentity, List
 Aliases:
 
 Required: False
@@ -250,22 +208,6 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Types
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpanded
 Aliases:
 
 Required: False

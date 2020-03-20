@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryRoles
-Module Guid: 9475de41-8dcf-4b31-8cdf-f6d150b3f6fe
+Module Guid: 83e5d056-831c-4f08-8c73-1085d8185735
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroles
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,6 +22,9 @@ Invoke action validateProperties
 
 ### [Get-MgDirectoryRole](Get-MgDirectoryRole.md)
 Invoke action getByIds
+
+### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
+Get entity from directoryRoles by key
 
 ### [Get-MgDirectoryRoleDelta](Get-MgDirectoryRoleDelta.md)
 Invoke function delta

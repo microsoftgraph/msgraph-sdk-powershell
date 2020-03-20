@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.ServicePrincipal
-Module Guid: 8e647cf1-c66a-40db-a503-d737f889810e
+Module Guid: 69c05226-ae80-4c66-b56c-06575e6ac4de
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.serviceprincipal
 Help Version: 1.0.0.0
 Locale: en-US
@@ -34,6 +34,9 @@ Get appRoleAssignedTo from servicePrincipals
 
 ### [Get-MgServicePrincipalAppRoleAssignment](Get-MgServicePrincipalAppRoleAssignment.md)
 Get appRoleAssignments from servicePrincipals
+
+### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
+Invoke action getByIds
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)
 Get claimsMappingPolicies from servicePrincipals

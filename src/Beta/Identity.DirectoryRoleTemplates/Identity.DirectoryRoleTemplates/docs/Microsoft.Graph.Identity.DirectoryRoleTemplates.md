@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryRoleTemplates
-Module Guid: 41056bf9-ec89-4abc-a3d1-c07262292fca
+Module Guid: 2c85196b-c7bf-4524-9fb6-adc462ce00a9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -21,10 +21,10 @@ Invoke action checkMemberObjects
 Invoke action validateProperties
 
 ### [Get-MgDirectoryRoleTemplate](Get-MgDirectoryRoleTemplate.md)
-Invoke action getByIds
-
-### [Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate](Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate.md)
 Get entity from directoryRoleTemplates by key
+
+### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
+Invoke action getByIds
 
 ### [Get-MgDirectoryRoleTemplateMemberGroup](Get-MgDirectoryRoleTemplateMemberGroup.md)
 Invoke action getMemberGroups
@@ -35,15 +35,15 @@ Invoke action getMemberObjects
 ### [Get-MgDirectoryRoleTemplateUserOwnedObject](Get-MgDirectoryRoleTemplateUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [New-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate](New-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate.md)
+### [New-MgDirectoryRoleTemplate](New-MgDirectoryRoleTemplate.md)
 Add new entity to directoryRoleTemplates
 
-### [Remove-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate](Remove-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate.md)
+### [Remove-MgDirectoryRoleTemplate](Remove-MgDirectoryRoleTemplate.md)
 Delete entity from directoryRoleTemplates
 
 ### [Restore-MgDirectoryRoleTemplate](Restore-MgDirectoryRoleTemplate.md)
 Invoke action restore
 
-### [Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate](Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate.md)
+### [Update-MgDirectoryRoleTemplate](Update-MgDirectoryRoleTemplate.md)
 Update entity in directoryRoleTemplates
 

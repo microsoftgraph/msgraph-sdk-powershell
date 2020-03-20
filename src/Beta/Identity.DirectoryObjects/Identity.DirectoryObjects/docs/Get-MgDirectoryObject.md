@@ -12,9 +12,10 @@ Invoke action getByIds
 
 ## SYNTAX
 
-### GetExpanded (Default)
+### List (Default)
 ```
-Get-MgDirectoryObject [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgDirectoryObject [-Count] [-Expand <String[]>] [-Filter <String>] [-Orderby <String[]>]
+ [-Search <String>] [-Select <String[]>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -24,22 +25,10 @@ Get-MgDirectoryObject
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Get1
-```
-Get-MgDirectoryObject -DirectoryObjectId <String> [-Expand <String[]>] [-Select <String[]>]
- [<CommonParameters>]
-```
-
 ### GetViaIdentity
 ```
 Get-MgDirectoryObject -InputObject <IIdentityDirectoryObjectsIdentity> [-Expand <String[]>]
  [-Select <String[]>] [<CommonParameters>]
-```
-
-### List
-```
-Get-MgDirectoryObject [-Count] [-Expand <String[]>] [-Filter <String>] [-Orderby <String[]>]
- [-Search <String>] [-Select <String[]>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,28 +89,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -DirectoryObjectId
-key: directoryObject-id of directoryObject
-
-```yaml
-Type: System.String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
 ### -Expand
 Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get1, GetViaIdentity, List
+Parameter Sets: GetViaIdentity, List
 Aliases:
 
 Required: False
@@ -138,22 +111,6 @@ Filter items by property values
 ```yaml
 Type: System.String
 Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Ids
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpanded
 Aliases:
 
 Required: False
@@ -218,7 +175,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get1, GetViaIdentity, List
+Parameter Sets: GetViaIdentity, List
 Aliases:
 
 Required: False
@@ -251,22 +208,6 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Types
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpanded
 Aliases:
 
 Required: False

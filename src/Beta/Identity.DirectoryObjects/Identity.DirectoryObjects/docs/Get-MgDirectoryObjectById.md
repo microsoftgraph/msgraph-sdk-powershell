@@ -1,33 +1,30 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectorySettingTemplates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettingtemplates/remove-mgdirectorysettingtemplatedirectorysettingtemplatedirectorysettingtemplate
+Module Name: Microsoft.Graph.Identity.DirectoryObjects
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryobjects/get-mgdirectoryobjectbyid
 schema: 2.0.0
 ---
 
-# Remove-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate
+# Get-MgDirectoryObjectById
 
 ## SYNOPSIS
-Delete entity from directorySettingTemplates
+Get entity from directoryObjects by key
 
 ## SYNTAX
 
-### Delete (Default)
+### GetExpanded (Default)
 ```
-Remove-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate
- -DirectorySettingTemplateId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Get-MgDirectoryObjectById [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Get1
+```
+Get-MgDirectoryObjectById -DirectoryObjectId <String> [-Expand <String[]>] [-Select <String[]>]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
-```
-Remove-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate
- -InputObject <IIdentityDirectorySettingTemplatesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Delete entity from directorySettingTemplates
+Get entity from directoryObjects by key
 
 ## EXAMPLES
 
@@ -51,12 +48,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -DirectorySettingTemplateId
-key: directorySettingTemplate-id of directorySettingTemplate
+### -DirectoryObjectId
+key: directoryObject-id of directoryObject
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -67,12 +64,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -IfMatch
-ETag
+### -Expand
+Expand related entities
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: Get1
 Aliases:
 
 Required: False
@@ -83,29 +80,44 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -Ids
+.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectorySettingTemplatesIdentity
-Parameter Sets: DeleteViaIdentity
+Type: System.String[]
+Parameter Sets: GetExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Select
+Select properties to be returned
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: Get1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Types
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: GetExpanded
 Aliases:
 
 Required: False
@@ -154,21 +166,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectorySettingTemplatesIdentity
-
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## ALIASES
 
 ## NOTES
-
-### COMPLEX PARAMETER PROPERTIES
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-#### INPUTOBJECT <IIdentityDirectorySettingTemplatesIdentity>: Identity Parameter
-  - `[DirectorySettingTemplateId <String>]`: key: directorySettingTemplate-id of directorySettingTemplate
 
 ## RELATED LINKS
 

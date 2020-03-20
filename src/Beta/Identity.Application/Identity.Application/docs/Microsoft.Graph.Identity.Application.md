@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Application
-Module Guid: e491b8ed-a9ec-4e1d-8f8e-c3a67bdd6420
+Module Guid: 2492d570-67a2-4b57-b609-1c57c39758fb
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.application
 Help Version: 1.0.0.0
 Locale: en-US
@@ -34,6 +34,9 @@ Invoke action validateCredentials
 
 ### [Get-MgApplication](Get-MgApplication.md)
 Get entity from applications by key
+
+### [Get-MgApplicationById](Get-MgApplicationById.md)
+Invoke action getByIds
 
 ### [Get-MgApplicationClaimMappingPolicy](Get-MgApplicationClaimMappingPolicy.md)
 Get claimsMappingPolicies from applications
