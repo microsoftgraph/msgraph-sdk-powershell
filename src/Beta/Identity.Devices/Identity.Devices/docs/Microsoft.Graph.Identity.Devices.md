@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Devices
-Module Guid: 481dc722-905d-4bf2-a386-5add8fd3b8ad
+Module Guid: 5e259341-0909-465e-9d56-89664eabd729
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.devices
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,6 +22,9 @@ Invoke action validateProperties
 
 ### [Get-MgDevice](Get-MgDevice.md)
 Get entity from devices by key
+
+### [Get-MgDeviceById](Get-MgDeviceById.md)
+Invoke action getByIds
 
 ### [Get-MgDeviceCommand](Get-MgDeviceCommand.md)
 Get commands from devices

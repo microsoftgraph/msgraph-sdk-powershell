@@ -23,8 +23,9 @@ Update-MgOrganization -OrganizationId <String> [-AssignedPlans <IMicrosoftGraphA
  [-CertificateConnectorSettingLastConnectorConnectionTime <DateTime>]
  [-CertificateConnectorSettingLastUploadVersion <Int64>] [-CertificateConnectorSettingStatus <Int32>]
  [-City <String>] [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>]
- [-DeletedDateTime <DateTime>] [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>]
- [-Id <String>] [-IsMultipleDataLocationsForServicesEnabled] [-MarketingNotificationEmails <String[]>]
+ [-DeletedDateTime <DateTime>] [-DirectorySizeQuotaTotal <Int32>] [-DirectorySizeQuotaUsed <Int32>]
+ [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
+ [-IsMultipleDataLocationsForServicesEnabled] [-MarketingNotificationEmails <String[]>]
  [-MobileDeviceManagementAuthority <String>] [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled]
  [-PostalCode <String>] [-PreferredLanguage <String>] [-PrivacyProfileContactEmail <String>]
  [-PrivacyProfileStatementUrl <String>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
@@ -57,8 +58,9 @@ Update-MgOrganization -InputObject <IIdentityOrganizationIdentity>
  [-CertificateConnectorSettingLastConnectorConnectionTime <DateTime>]
  [-CertificateConnectorSettingLastUploadVersion <Int64>] [-CertificateConnectorSettingStatus <Int32>]
  [-City <String>] [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>]
- [-DeletedDateTime <DateTime>] [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>]
- [-Id <String>] [-IsMultipleDataLocationsForServicesEnabled] [-MarketingNotificationEmails <String[]>]
+ [-DeletedDateTime <DateTime>] [-DirectorySizeQuotaTotal <Int32>] [-DirectorySizeQuotaUsed <Int32>]
+ [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
+ [-IsMultipleDataLocationsForServicesEnabled] [-MarketingNotificationEmails <String[]>]
  [-MobileDeviceManagementAuthority <String>] [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled]
  [-PostalCode <String>] [-PreferredLanguage <String>] [-PrivacyProfileContactEmail <String>]
  [-PrivacyProfileStatementUrl <String>] [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]
@@ -348,6 +350,38 @@ Dynamic: False
 
 ```yaml
 Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -DirectorySizeQuotaTotal
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -DirectorySizeQuotaUsed
+.
+
+```yaml
+Type: System.Int32
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -824,6 +858,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Country <String>]`: Country/region name of the address for the organization.
   - `[CountryLetterCode <String>]`: Country/region abbreviation for the organization.
   - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
+  - `[DirectorySizeQuotaTotal <Int32?>]`: 
+  - `[DirectorySizeQuotaUsed <Int32?>]`: 
   - `[DisplayName <String>]`: The display name for the tenant.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the organization. Read-only. Nullable.
     - `[Id <String>]`: Read-only.

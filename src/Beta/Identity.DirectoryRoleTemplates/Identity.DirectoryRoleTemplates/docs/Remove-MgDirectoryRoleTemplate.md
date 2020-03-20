@@ -1,39 +1,31 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryRoleTemplates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates/get-mgdirectoryroletemplatedirectoryroletemplatedirectoryroletemplate
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates/remove-mgdirectoryroletemplate
 schema: 2.0.0
 ---
 
-# Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
+# Remove-MgDirectoryRoleTemplate
 
 ## SYNOPSIS
-Get entity from directoryRoleTemplates by key
+Delete entity from directoryRoleTemplates
 
 ## SYNTAX
 
-### List (Default)
+### Delete (Default)
 ```
-Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate [-Count] [-Expand <String[]>]
- [-Filter <String>] [-Orderby <String[]>] [-Search <String>] [-Select <String[]>] [-Skip <Int32>]
- [-Top <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate -DirectoryRoleTemplateId <String>
- [-Expand <String[]>] [-Select <String[]>] [<CommonParameters>]
+Remove-MgDirectoryRoleTemplate -DirectoryRoleTemplateId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### DeleteViaIdentity
 ```
-Get-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
- -InputObject <IIdentityDirectoryRoleTemplatesIdentity> [-Expand <String[]>] [-Select <String[]>]
- [<CommonParameters>]
+Remove-MgDirectoryRoleTemplate -InputObject <IIdentityDirectoryRoleTemplatesIdentity> [-IfMatch <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get entity from directoryRoleTemplates by key
+Delete entity from directoryRoleTemplates
 
 ## EXAMPLES
 
@@ -57,28 +49,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
 ### -DirectoryRoleTemplateId
 key: directoryRoleTemplate-id of directoryRoleTemplate
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -89,28 +65,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -Expand
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Filter
-Filter items by property values
+### -IfMatch
+ETag
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -127,7 +87,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryRoleTemplatesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -138,43 +98,11 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -Orderby
-Order items by property values
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: System.String[]
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Search
-Search items by search phrases
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -Select
-Select properties to be returned
-
-```yaml
-Type: System.String[]
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -186,13 +114,13 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -Skip
-Skip the first n items
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -202,13 +130,14 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -Top
-Show only the first n items
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -227,7 +156,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleTemplate
+### System.Boolean
 
 ## ALIASES
 
