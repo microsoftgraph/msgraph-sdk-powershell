@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AdministrativeUnits
-Module Guid: 9bf8df7f-5dd7-4a27-97e1-e04934d1c7c2
+Module Guid: bc946137-ea60-484e-901d-fdfed544df8b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.administrativeunits
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,6 +22,9 @@ Invoke action validateProperties
 
 ### [Get-MgAdministrativeUnit](Get-MgAdministrativeUnit.md)
 Get entity from administrativeUnits by key
+
+### [Get-MgAdministrativeUnitById](Get-MgAdministrativeUnitById.md)
+Invoke action getByIds
 
 ### [Get-MgAdministrativeUnitDelta](Get-MgAdministrativeUnitDelta.md)
 Invoke function delta

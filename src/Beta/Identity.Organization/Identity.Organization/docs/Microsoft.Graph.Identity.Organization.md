@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Organization
-Module Guid: 4e4e6b4f-0b26-4348-b332-3b87ca2560e0
+Module Guid: efbd9eb9-b3bc-4efd-8946-e78cd2adb803
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organization
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,6 +25,9 @@ Get entity from organization by key
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
 Get brandings from organization
+
+### [Get-MgOrganizationById](Get-MgOrganizationById.md)
+Invoke action getByIds
 
 ### [Get-MgOrganizationCertificateBasedAuthConfiguration](Get-MgOrganizationCertificateBasedAuthConfiguration.md)
 Get certificateBasedAuthConfiguration from organization

@@ -1,32 +1,47 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectorySettingTemplates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettingtemplates/new-mgdirectorysettingtemplatedirectorysettingtemplatedirectorysettingtemplate
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettingtemplates/update-mgdirectorysettingtemplate
 schema: 2.0.0
 ---
 
-# New-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate
+# Update-MgDirectorySettingTemplate
 
 ## SYNOPSIS
-Add new entity to directorySettingTemplates
+Update entity in directorySettingTemplates
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### UpdateExpanded (Default)
 ```
-New-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate [-DeletedDateTime <DateTime>]
+Update-MgDirectorySettingTemplate -DirectorySettingTemplateId <String> [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Update
 ```
-New-MgDirectorySettingTemplateDirectorySettingTemplateDirectorySettingTemplate
- -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgDirectorySettingTemplate -DirectorySettingTemplateId <String>
+ -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgDirectorySettingTemplate -InputObject <IIdentityDirectorySettingTemplatesIdentity>
+ -BodyParameter <IMicrosoftGraphDirectorySettingTemplate> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgDirectorySettingTemplate -InputObject <IIdentityDirectorySettingTemplatesIdentity>
+ [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
+ [-Values <IMicrosoftGraphSettingTemplateValue[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Add new entity to directorySettingTemplates
+Update entity in directorySettingTemplates
 
 ## EXAMPLES
 
@@ -57,7 +72,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
-Parameter Sets: Create
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -73,7 +88,7 @@ Dynamic: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -89,10 +104,26 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -DirectorySettingTemplateId
+key: directorySettingTemplate-id of directorySettingTemplate
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -105,7 +136,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -121,7 +152,40 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectorySettingTemplatesIdentity
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -138,7 +202,7 @@ To construct, see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSettingTemplateValue[]
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -187,11 +251,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IIdentityDirectorySettingTemplatesIdentity
+
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectorySettingTemplate
+### System.Boolean
 
 ## ALIASES
 
@@ -210,6 +276,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[Description <String>]`: Description of the setting.
     - `[Name <String>]`: Name of the setting.
     - `[Type <String>]`: Type of the setting.
+
+#### INPUTOBJECT <IIdentityDirectorySettingTemplatesIdentity>: Identity Parameter
+  - `[DirectorySettingTemplateId <String>]`: key: directorySettingTemplate-id of directorySettingTemplate
 
 #### VALUES <IMicrosoftGraphSettingTemplateValue[]>: .
   - `[DefaultValue <String>]`: Default value for the setting.
