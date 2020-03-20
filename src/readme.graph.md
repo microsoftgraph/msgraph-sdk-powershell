@@ -58,19 +58,23 @@ directive:
   - where:
       parameter-name: OrderBy
     set:
-      alias: Sort
+      parameter-name: Sort
+      alias: OrderBy
   - where:
       parameter-name: Top
     set:
-      alias: PageSize
+      parameter-name: PageSize
+      alias: Top
   - where:
       parameter-name: Select
     set:
-      alias: Property
+      parameter-name: Property
+      alias: Select
   - where:
       parameter-name: Expand
     set:
-      alias: ExpandProperty
+      parameter-name: ExpandProperty
+      alias: Expand
   # Format cmdlet response.
   - where:
       model-name: MicrosoftGraphUser
