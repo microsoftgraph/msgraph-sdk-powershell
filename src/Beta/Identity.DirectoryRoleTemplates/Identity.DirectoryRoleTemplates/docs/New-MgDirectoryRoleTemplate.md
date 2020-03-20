@@ -1,46 +1,31 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryRoleTemplates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates/update-mgdirectoryroletemplatedirectoryroletemplatedirectoryroletemplate
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates/new-mgdirectoryroletemplate
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
+# New-MgDirectoryRoleTemplate
 
 ## SYNOPSIS
-Update entity in directoryRoleTemplates
+Add new entity to directoryRoleTemplates
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### CreateExpanded (Default)
 ```
-Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate -DirectoryRoleTemplateId <String>
- [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate -DirectoryRoleTemplateId <String>
- -BodyParameter <IMicrosoftGraphDirectoryRoleTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDirectoryRoleTemplate [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
+ [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### Create
 ```
-Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
- -InputObject <IIdentityDirectoryRoleTemplatesIdentity> -BodyParameter <IMicrosoftGraphDirectoryRoleTemplate>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
- -InputObject <IIdentityDirectoryRoleTemplatesIdentity> [-DeletedDateTime <DateTime>] [-Description <String>]
- [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDirectoryRoleTemplate -BodyParameter <IMicrosoftGraphDirectoryRoleTemplate> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update entity in directoryRoleTemplates
+Add new entity to directoryRoleTemplates
 
 ## EXAMPLES
 
@@ -71,7 +56,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleTemplate
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -87,7 +72,7 @@ Dynamic: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -104,26 +89,10 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -DirectoryRoleTemplateId
-key: directoryRoleTemplate-id of directoryRoleTemplate
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -137,7 +106,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -153,40 +122,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryRoleTemplatesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -235,13 +171,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryRoleTemplatesIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleTemplate
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRoleTemplate
 
 ## ALIASES
 
@@ -255,9 +189,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: Read-only.
   - `[Description <String>]`: The description to set for the directory role. Read-only.
   - `[DisplayName <String>]`: The display name to set for the directory role. Read-only.
-
-#### INPUTOBJECT <IIdentityDirectoryRoleTemplatesIdentity>: Identity Parameter
-  - `[DirectoryRoleTemplateId <String>]`: key: directoryRoleTemplate-id of directoryRoleTemplate
 
 ## RELATED LINKS
 

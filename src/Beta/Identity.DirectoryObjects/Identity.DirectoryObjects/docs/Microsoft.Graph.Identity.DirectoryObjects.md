@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryObjects
-Module Guid: 30ad182a-c50e-46ab-9c8b-cd734b1a3ae6
+Module Guid: 36024ab5-c115-4c30-98ab-9e4e875441a6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,6 +22,9 @@ Invoke action validateProperties
 
 ### [Get-MgDirectoryObject](Get-MgDirectoryObject.md)
 Invoke action getByIds
+
+### [Get-MgDirectoryObjectById](Get-MgDirectoryObjectById.md)
+Get entity from directoryObjects by key
 
 ### [Get-MgDirectoryObjectMemberGroup](Get-MgDirectoryObjectMemberGroup.md)
 Invoke action getMemberGroups

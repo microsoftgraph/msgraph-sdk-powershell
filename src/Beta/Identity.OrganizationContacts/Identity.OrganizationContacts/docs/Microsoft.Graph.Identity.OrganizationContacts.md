@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.OrganizationContacts
-Module Guid: a20738b4-beba-4aa3-a75e-423fea3607e6
+Module Guid: 3285fe32-ec1b-426f-a37a-4b89cf7a782e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organizationcontacts
 Help Version: 1.0.0.0
 Locale: en-US
@@ -21,6 +21,9 @@ Invoke action checkMemberObjects
 Invoke action validateProperties
 
 ### [Get-MgContact](Get-MgContact.md)
+Get entity from contacts by key
+
+### [Get-MgContactById](Get-MgContactById.md)
 Invoke action getByIds
 
 ### [Get-MgContactDelta](Get-MgContactDelta.md)
@@ -41,24 +44,21 @@ Invoke action getMemberGroups
 ### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgContactOrgContact](Get-MgContactOrgContact.md)
-Get entity from contacts by key
-
 ### [Get-MgContactTransitiveMember](Get-MgContactTransitiveMember.md)
 Get transitiveMemberOf from contacts
 
 ### [Get-MgContactUserOwnedObject](Get-MgContactUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
-### [New-MgContactOrgContact](New-MgContactOrgContact.md)
+### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
 
-### [Remove-MgContactOrgContact](Remove-MgContactOrgContact.md)
+### [Remove-MgContact](Remove-MgContact.md)
 Delete entity from contacts
 
 ### [Restore-MgContact](Restore-MgContact.md)
 Invoke action restore
 
-### [Update-MgContactOrgContact](Update-MgContactOrgContact.md)
+### [Update-MgContact](Update-MgContact.md)
 Update entity in contacts
 

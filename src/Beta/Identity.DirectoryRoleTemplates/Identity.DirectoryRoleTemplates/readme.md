@@ -30,10 +30,24 @@ require:
 title: $(service-name)
 subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
+directive:
+# Rename cmdlets
+  - where:
+      verb: Get
+      subject: (^DirectoryRoleTemplate$)
+      variant: Get|GetExpanded
+    set:
+      verb: Get
+      subject: $1ById
+  - where:
+      verb: Get|New|Remove|Update
+      subject: (^DirectoryRoleTemplate)(DirectoryRoleTemplate.*)
+    set:
+      subject: $1
 ```
 ### Versioning
 
 ``` yaml
-module-version: 0.2.1
+module-version: 0.2.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

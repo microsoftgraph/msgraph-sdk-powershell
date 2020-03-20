@@ -43,6 +43,8 @@ paths:
                 - countryLetterCode desc
                 - createdDateTime
                 - createdDateTime desc
+                - directorySizeQuota
+                - directorySizeQuota desc
                 - displayName
                 - displayName desc
                 - isMultipleDataLocationsForServicesEnabled
@@ -95,6 +97,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - directorySizeQuota
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
                 - marketingNotificationEmails
@@ -199,6 +202,7 @@ paths:
                 - country
                 - countryLetterCode
                 - createdDateTime
+                - directorySizeQuota
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
                 - marketingNotificationEmails
@@ -1169,6 +1173,8 @@ components:
               description: 'Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
+            directorySizeQuota:
+              $ref: '#/components/schemas/microsoft.graph.directorySizeQuota'
             displayName:
               type: string
               description: The display name for the tenant.
@@ -1263,6 +1269,8 @@ components:
         country: string
         countryLetterCode: string
         createdDateTime: string (timestamp)
+        directorySizeQuota:
+          '@odata.type': microsoft.graph.directorySizeQuota
         displayName: string
         isMultipleDataLocationsForServicesEnabled: true
         marketingNotificationEmails:
@@ -1397,6 +1405,25 @@ components:
         capabilityStatus: string
         service: string
         servicePlanId: string
+    microsoft.graph.directorySizeQuota:
+      title: directorySizeQuota
+      type: object
+      properties:
+        used:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      example:
+        used: integer
+        total: integer
     microsoft.graph.privacyProfile:
       title: privacyProfile
       type: object

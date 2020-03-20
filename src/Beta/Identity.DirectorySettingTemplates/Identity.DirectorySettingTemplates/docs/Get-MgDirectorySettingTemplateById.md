@@ -1,32 +1,32 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Identity.DirectoryRoleTemplates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates/remove-mgdirectoryroletemplatedirectoryroletemplatedirectoryroletemplate
+Module Name: Microsoft.Graph.Identity.DirectorySettingTemplates
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettingtemplates/get-mgdirectorysettingtemplatebyid
 schema: 2.0.0
 ---
 
-# Remove-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
+# Get-MgDirectorySettingTemplateById
 
 ## SYNOPSIS
-Delete entity from directoryRoleTemplates
+Invoke action getByIds
 
 ## SYNTAX
 
-### Delete (Default)
+### GetExpanded (Default)
 ```
-Remove-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate -DirectoryRoleTemplateId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-MgDirectoryRoleTemplateDirectoryRoleTemplateDirectoryRoleTemplate
- -InputObject <IIdentityDirectoryRoleTemplatesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Get-MgDirectorySettingTemplateById [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
+### Get
+```
+Get-MgDirectorySettingTemplateById
+ -BodyParameter <IPaths53Kc5ADirectorysettingtemplatesMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Delete entity from directoryRoleTemplates
+Invoke action getByIds
 
 ## EXAMPLES
 
@@ -50,45 +50,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -DirectoryRoleTemplateId
-key: directoryRoleTemplate-id of directoryRoleTemplate
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -IfMatch
-ETag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryRoleTemplatesIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IPaths53Kc5ADirectorysettingtemplatesMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -99,12 +67,28 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Ids
+.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: GetExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+Dynamic: False
+```
+
+### -Types
+.
+
+```yaml
+Type: System.String[]
+Parameter Sets: GetExpanded
 Aliases:
 
 Required: False
@@ -153,11 +137,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryRoleTemplatesIdentity
+### Microsoft.Graph.PowerShell.Models.IPaths53Kc5ADirectorysettingtemplatesMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
 ## ALIASES
 
@@ -166,8 +150,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-#### INPUTOBJECT <IIdentityDirectoryRoleTemplatesIdentity>: Identity Parameter
-  - `[DirectoryRoleTemplateId <String>]`: key: directoryRoleTemplate-id of directoryRoleTemplate
+#### BODYPARAMETER <IPaths53Kc5ADirectorysettingtemplatesMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[Ids <String[]>]`: 
+  - `[Types <String[]>]`: 
 
 ## RELATED LINKS
 

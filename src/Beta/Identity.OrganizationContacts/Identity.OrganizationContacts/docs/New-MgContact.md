@@ -1,59 +1,36 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.OrganizationContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organizationcontacts/update-mgcontactorgcontact
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organizationcontacts/new-mgcontact
 schema: 2.0.0
 ---
 
-# Update-MgContactOrgContact
+# New-MgContact
 
 ## SYNOPSIS
-Update entity in contacts
+Add new entity to contacts
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### CreateExpanded (Default)
 ```
-Update-MgContactOrgContact -OrgContactId <String> [-Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>]
- [-CompanyName <String>] [-DeletedDateTime <DateTime>] [-Department <String>]
- [-DirectReports <IMicrosoftGraphDirectoryObject[]>] [-DisplayName <String>] [-GivenName <String>]
- [-Id <String>] [-JobTitle <String>] [-Mail <String>] [-MailNickname <String>]
- [-Manager <IMicrosoftGraphDirectoryObject>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-OnPremisesLastSyncDateTime <DateTime>]
+New-MgContact [-Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>] [-CompanyName <String>]
+ [-DeletedDateTime <DateTime>] [-Department <String>] [-DirectReports <IMicrosoftGraphDirectoryObject[]>]
+ [-DisplayName <String>] [-GivenName <String>] [-Id <String>] [-JobTitle <String>] [-Mail <String>]
+ [-MailNickname <String>] [-Manager <IMicrosoftGraphDirectoryObject>]
+ [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-OnPremisesLastSyncDateTime <DateTime>]
  [-OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>] [-OnPremisesSyncEnabled]
  [-Phones <IMicrosoftGraphPhone[]>] [-ProxyAddresses <String[]>] [-Surname <String>]
- [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Create
 ```
-Update-MgContactOrgContact -OrgContactId <String> -BodyParameter <IMicrosoftGraphOrgContact> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgContactOrgContact -InputObject <IIdentityOrganizationContactsIdentity>
- -BodyParameter <IMicrosoftGraphOrgContact> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgContactOrgContact -InputObject <IIdentityOrganizationContactsIdentity>
- [-Addresses <IMicrosoftGraphPhysicalOfficeAddress[]>] [-CompanyName <String>] [-DeletedDateTime <DateTime>]
- [-Department <String>] [-DirectReports <IMicrosoftGraphDirectoryObject[]>] [-DisplayName <String>]
- [-GivenName <String>] [-Id <String>] [-JobTitle <String>] [-Mail <String>] [-MailNickname <String>]
- [-Manager <IMicrosoftGraphDirectoryObject>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-OnPremisesLastSyncDateTime <DateTime>]
- [-OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>] [-OnPremisesSyncEnabled]
- [-Phones <IMicrosoftGraphPhone[]>] [-ProxyAddresses <String[]>] [-Surname <String>]
- [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgContact -BodyParameter <IMicrosoftGraphOrgContact> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update entity in contacts
+Add new entity to contacts
 
 ## EXAMPLES
 
@@ -83,7 +60,7 @@ To construct, see NOTES section for ADDRESSES properties and create a hash table
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalOfficeAddress[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -101,7 +78,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -117,7 +94,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -133,7 +110,7 @@ Dynamic: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -149,7 +126,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -166,7 +143,7 @@ To construct, see NOTES section for DIRECTREPORTS properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -182,7 +159,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -198,7 +175,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -214,7 +191,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -225,29 +202,12 @@ Accept wildcard characters: False
 Dynamic: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentityOrganizationContactsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-Dynamic: False
-```
-
 ### -JobTitle
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -263,7 +223,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -279,7 +239,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -297,7 +257,7 @@ To construct, see NOTES section for MANAGER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -314,7 +274,7 @@ To construct, see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -330,7 +290,7 @@ Dynamic: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -347,7 +307,7 @@ To construct, see NOTES section for ONPREMISESPROVISIONINGERRORS properties and 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesProvisioningError[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -363,39 +323,7 @@ Dynamic: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -OrgContactId
-key: orgContact-id of orgContact
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-Dynamic: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -412,7 +340,7 @@ To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -428,7 +356,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -444,7 +372,7 @@ Dynamic: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -461,7 +389,7 @@ To construct, see NOTES section for TRANSITIVEMEMBEROF properties and create a h
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -510,13 +438,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentityOrganizationContactsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact
 
 ## ALIASES
 
@@ -572,10 +498,6 @@ To create the parameters described below, construct a hash table containing the 
 #### DIRECTREPORTS <IMicrosoftGraphDirectoryObject[]>: .
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
-
-#### INPUTOBJECT <IIdentityOrganizationContactsIdentity>: Identity Parameter
-  - `[DirectoryObjectId <String>]`: key: directoryObject-id of directoryObject
-  - `[OrgContactId <String>]`: key: orgContact-id of orgContact
 
 #### MANAGER <IMicrosoftGraphDirectoryObject>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
   - `[Id <String>]`: Read-only.
