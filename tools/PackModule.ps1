@@ -17,24 +17,26 @@ if($PSCmdlet.ParameterSetName -eq "GraphResource"){
 }
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
 
-# Pack module
-& $PackModulePS1
-if($LASTEXITCODE) {
-    Write-Error "Failed to pack '$Module' module."
+if (Test-Path $PackModulePS1) {
+    # Pack module
+    & $PackModulePS1
+    if($LASTEXITCODE) {
+        Write-Error "Failed to pack '$Module' module."
+    }
+
+    # Get generated .nupkg
+    $NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") | Where-Object Name -Match ".nupkg").FullName
+
+    $ModuleArtifactLocation = "$ArtifactsLocation\$Module"
+    if(-not (Test-Path $ModuleArtifactLocation)) {
+        New-Item -Path $ModuleArtifactLocation -Type Directory
+    } else {
+        Remove-Item -Path "$ModuleArtifactLocation\*" -Recurse -Force
+    }
+
+    # Copy package to artifacts folder.
+    Write-Host -ForegroundColor Green "Copying '$NuGetPackage' to $ModuleArtifactLocation..."
+    Copy-Item -Path $NuGetPackage -Destination $ModuleArtifactLocation -Force
+
+    Write-Host -ForegroundColor Green "-------------Done-------------"
 }
-
-# Get generated .nupkg
-$NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") | Where-Object Name -Match ".nupkg").FullName
-
-$ModuleArtifactLocation = "$ArtifactsLocation\$Module"
-if(-not (Test-Path $ModuleArtifactLocation)) {
-    New-Item -Path $ModuleArtifactLocation -Type Directory
-} else {
-    Remove-Item -Path "$ModuleArtifactLocation\*" -Recurse -Force
-}
-
-# Copy package to artifacts folder.
-Write-Host -ForegroundColor Green "Copying '$NuGetPackage' to $ModuleArtifactLocation..."
-Copy-Item -Path $NuGetPackage -Destination $ModuleArtifactLocation -Force
-
-Write-Host -ForegroundColor Green "-------------Done-------------"
