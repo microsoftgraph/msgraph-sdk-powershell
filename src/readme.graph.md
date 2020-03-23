@@ -54,6 +54,27 @@ directive:
     - microsoft.graph.team
     - microsoft.graph.recipient
 
+  # Set parameter alias
+  - where:
+      parameter-name: OrderBy
+    set:
+      parameter-name: Sort
+      alias: OrderBy
+  - where:
+      parameter-name: Top
+    set:
+      parameter-name: PageSize
+      alias: Top
+  - where:
+      parameter-name: Select
+    set:
+      parameter-name: Property
+      alias: Select
+  - where:
+      parameter-name: Expand
+    set:
+      parameter-name: ExpandProperty
+      alias: Expand
   # Format cmdlet response.
   - where:
       model-name: MicrosoftGraphUser
