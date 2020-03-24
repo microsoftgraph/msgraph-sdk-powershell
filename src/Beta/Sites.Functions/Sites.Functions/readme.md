@@ -47,6 +47,16 @@ directive:
       subject: (^SiteListItemActivity$|^SiteListItemActivityListItemActivity$|^SiteListActivityListItemActivity$)
     set:
       subject: SiteListItemActivityByInterval
+  - where:
+      verb: Get
+      subject: ^SiteOnenoteNotebook(RecentNotebook$)
+    set:
+      subject: Get$1
+  - where:
+      verb: Invoke
+      subject: ^PreviewSite(.*)
+    set:
+      subject: Preview$1
 ```
 
 ### Versioning

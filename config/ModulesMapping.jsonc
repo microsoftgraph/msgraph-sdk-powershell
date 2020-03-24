@@ -97,8 +97,8 @@
     "Users.UserSettings": "^users.userSettings$",
 
     // Contains Duplicate Cmdlet
-    // "Sites.Functions": "^sites.Functions$",
-    // "Sites.Actions": "^sites.Actions$",
+    "Sites.Functions": "^sites.Functions$",
+    "Sites.Actions": "^sites.Actions$",
 
     // Fails to build.
     // "Users.Actions": "^users.Actions$",
