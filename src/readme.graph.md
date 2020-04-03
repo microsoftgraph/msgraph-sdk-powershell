@@ -37,6 +37,22 @@ clear-output-folder: true
 output-folder: .
 ```
 
+> Custom Directives
+
+``` yaml
+declare-directive:
+  where-operation-byRegex: >-
+    (() => {
+      return { from: "openapi-document", where: `$..paths.*[?(/${$}/i.exec(@.operationId))]` };
+    })()
+  remove-path-by-operation: >-
+    [{
+      from: 'openapi-document',
+      "where-operation-byRegex": $,
+      transform: '$ = undefined'
+    }]
+```
+
 > Directives
 
 ``` yaml
