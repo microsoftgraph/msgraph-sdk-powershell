@@ -43,7 +43,7 @@ output-folder: .
 declare-directive:
   where-operation-byRegex: >-
     (() => {
-      return { from: "openapi-document", where: `$..paths.*[?(/${$}/i.exec(@.operationId))]` };
+      return { from: "openapi-document", where: `$..paths.*[?(/${$}/gmi.exec(@.operationId))]` };
     })()
   remove-path-by-operation: >-
     [{
@@ -331,7 +331,7 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Validate(.*)|^Check(.*)
+      variant: ^Check(.*)
     set:
       verb: Confirm
 # Remove cmdlets
