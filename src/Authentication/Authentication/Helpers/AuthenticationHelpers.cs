@@ -4,7 +4,6 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;
@@ -16,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     {
         private static readonly object FileLock = new object();
 
-        internal static IAuthenticationProvider GetAuthProvider(AuthConfig authConfig)
+        internal static IAuthenticationProvider GetAuthProvider(IAuthContext authConfig)
         {
             if (authConfig.AuthType == AuthenticationType.Delegated)
             {
@@ -43,7 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
         }
 
-        internal static void Logout(AuthConfig authConfig)
+        internal static void Logout(IAuthContext authConfig)
         {
             lock (FileLock)
             {

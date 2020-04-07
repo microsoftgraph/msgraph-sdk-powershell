@@ -7,12 +7,18 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         internal static class Codes
         {
+            internal const string SessionNotInitialized = "sessionNotInitialized";
+            internal const string SessionLockReadRecursion = "sessionLockReadRecursion";
+            internal const string SessionLockReadDisposed = "sessionLockReadDisposed";
+            internal const string SessionLockWriteDisposed = "sessionLockWriteDisposed";
+            internal const string SessionLockWriteRecursion = "sessionLockWriteRecursion";
             internal const string InvalidJWT = "invalidJWT";
         }
 
         internal static class Message
         {
             internal const string InvalidJWT = "Invalid JWT access token.";
+            internal const string MissingAuthContext = "Authentication needed, call Connect-Graph.";
         }
     }
 }

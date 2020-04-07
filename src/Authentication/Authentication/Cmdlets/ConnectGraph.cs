@@ -16,7 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading.Tasks;
 
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
-    public class ConnectGraph : PSCmdlet
+    public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer
     {
 
         [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1)]
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
 
-            AuthConfig authConfig = new AuthConfig { TenantId = TenantId };
+            IAuthContext authConfig = new AuthContext { TenantId = TenantId };
             CancellationToken cancellationToken = CancellationToken.None;
 
             if (ParameterSetName == Constants.UserParameterSet)
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 authConfig.Account = jwtPayload?.Upn ?? account?.Username;
 
                 // Save auth config to session state.
-                SessionState.PSVariable.Set(Constants.GraphAuthConfigId, authConfig);
+                GraphSession.Instance.AuthContext = authConfig;
             }
             catch (AuthenticationException authEx)
             {
@@ -163,6 +163,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 new ErrorRecord(
                     new ArgumentException($"Must specify {parameterName}"), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null)
                 );
+        }
+
+        /// <summary>
+        /// Globally initializes GraphSession.
+        /// </summary>
+        public void OnImport()
+        {
+            GraphSessionInitializer.InitializeSession();
         }
     }
 }

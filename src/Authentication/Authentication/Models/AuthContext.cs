@@ -1,16 +1,12 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Authentication.Models
+namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public enum AuthenticationType
+    using Newtonsoft.Json;
+    public class AuthContext: IAuthContext
     {
-        Delegated,
-        AppOnly
-    }
-
-    public class AuthConfig
-    {
+        [JsonIgnore]
         private const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
         public string ClientId { get; set; }
         public string TenantId { get; set; }
@@ -21,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         public string Account { get; set; }
         public string AppName { get; set; }
 
-        public AuthConfig()
+        public AuthContext()
         {
             ClientId = PowerShellClientId;
         }
