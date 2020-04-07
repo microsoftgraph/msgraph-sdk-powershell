@@ -69,6 +69,7 @@ directive:
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
     - microsoft.graph.recipient
+    - microsoft.graph.groupPolicyCategory
 
   # Set parameter alias
   - where:
