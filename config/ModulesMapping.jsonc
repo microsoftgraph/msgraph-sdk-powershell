@@ -64,7 +64,9 @@
     "SchemaExtensions": "^schemaExtensions\\.",
     "Search": "^search\\.|^external\\.|^connections\\.",
     "Security": "^Security\\.",
+    "Sites.Actions": "^sites.Actions$",
     "Sites.Drive": "^sites.drive$",
+    "Sites.Functions": "^sites.Functions$",
     "Sites.List": "^sites.list$",
     "Sites.OneNote": "^sites.onenote$",
     "Sites.Pages": "^sites.sitePage$",
@@ -96,16 +98,11 @@
     "Users.User": "^users.user$|^users.presence$",
     "Users.UserSettings": "^users.userSettings$",
 
-    // Contains Duplicate Cmdlet
-    // "Sites.Functions": "^sites.Functions$",
-    // "Sites.Actions": "^sites.Actions$",
-
     // Fails to build.
     // "Users.Actions": "^users.Actions$",
     // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Groups.Actions": "^groups.Actions$",
     // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
-    
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported
