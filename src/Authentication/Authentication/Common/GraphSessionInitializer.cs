@@ -15,7 +15,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         }
 
         /// <summary>
-        /// Creates or gets a instance of a <see cref="GraphSession"/>.
+        /// Creates a new instance of a <see cref="GraphSession"/>.
         /// </summary>
         /// <returns><see cref="GraphSession"/></returns>
         internal static GraphSession CreateInstance()
