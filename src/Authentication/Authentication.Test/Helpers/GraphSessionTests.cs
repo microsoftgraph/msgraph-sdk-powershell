@@ -15,7 +15,7 @@
         }
         
         [Fact]
-        public void ShoudlOverwriteExistingGraphSession()
+        public void ShouldOverwriteExistingGraphSession()
         {
             GraphSessionInitializer.InitializeSession();
             Guid originalSessionId = GraphSession.Instance._graphSessionId;
@@ -27,7 +27,7 @@
         } 
         
         [Fact]
-        public void ShoudlNotOverwriteExistingGraphSession()
+        public void ShouldNotOverwriteExistingGraphSession()
         {
             GraphSessionInitializer.InitializeSession();
             Guid originalSessionId = GraphSession.Instance._graphSessionId;

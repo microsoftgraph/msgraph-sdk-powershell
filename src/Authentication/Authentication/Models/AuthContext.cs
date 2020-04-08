@@ -3,10 +3,8 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    using Newtonsoft.Json;
     public class AuthContext: IAuthContext
     {
-        [JsonIgnore]
         private const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
         public string ClientId { get; set; }
         public string TenantId { get; set; }

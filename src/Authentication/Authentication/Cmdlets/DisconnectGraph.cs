@@ -31,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             AuthenticationHelpers.Logout(authConfig);
 
-            SessionState.PSVariable.Remove(Constants.GraphAuthConfigId);
+            GraphSession.Instance.AuthContext = null;
         }
 
         protected override void StopProcessing()

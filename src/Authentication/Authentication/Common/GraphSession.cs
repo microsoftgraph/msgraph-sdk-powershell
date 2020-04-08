@@ -7,9 +7,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
     using System;
     using System.Threading;
     /// <summary>
-    /// The current <see cref="GraphSession"/>.
+    /// Contains methods to create, modify or obtain a thread safe static instance of <see cref="GraphSession"/>.
     /// </summary>
-    public class GraphSession: IGraphSession
+    public class GraphSession : IGraphSession
     {
         static GraphSession _instance;
         static bool _initialized = false;
@@ -50,6 +50,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 }
             }
         }
+        /// <summary>
+        /// Creates a new GraphSession.
+        /// </summary>
         public GraphSession()
         {
             _graphSessionId = Guid.NewGuid();
