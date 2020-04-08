@@ -8,34 +8,44 @@
         [Fact]
         public void GraphSessionShouldBeInitilizedAfterInitializerIsCalled()
         {
-            GraphSessionInitializer.InitializeSession();
+            GraphSession.Initialize(() => new GraphSession());
 
             Assert.NotNull(GraphSession.Instance);
             Assert.Null(GraphSession.Instance.AuthContext);
+
+            // reset static instance.
+            GraphSession.Reset();
         }
         
         [Fact]
         public void ShouldOverwriteExistingGraphSession()
         {
-            GraphSessionInitializer.InitializeSession();
+            GraphSession.Initialize(() => new GraphSession());
             Guid originalSessionId = GraphSession.Instance._graphSessionId;
 
             GraphSession.Initialize(() => new GraphSession(), true);
 
             Assert.NotNull(GraphSession.Instance);
-            Assert.NotEqual(GraphSession.Instance._graphSessionId, originalSessionId);
+            Assert.NotEqual(originalSessionId, GraphSession.Instance._graphSessionId);
+
+            // reset static instance.
+            GraphSession.Reset();
         } 
         
         [Fact]
         public void ShouldNotOverwriteExistingGraphSession()
         {
-            GraphSessionInitializer.InitializeSession();
+            GraphSession.Initialize(() => new GraphSession());
             Guid originalSessionId = GraphSession.Instance._graphSessionId;
 
-            GraphSession.Initialize(() => new GraphSession());
+            InvalidOperationException exception = Assert.Throws<InvalidOperationException>(() => GraphSession.Initialize(() => new GraphSession()));
 
+            Assert.Equal("An instance of GraphSession already exists. Call Initialize(Func<GraphSession>, bool) to overwrite it.", exception.Message);
             Assert.NotNull(GraphSession.Instance);
-            Assert.Equal(GraphSession.Instance._graphSessionId, originalSessionId);
+            Assert.Equal(originalSessionId, GraphSession.Instance._graphSessionId);
+
+            // reset static instance.
+            GraphSession.Reset();
         }
     }
 }

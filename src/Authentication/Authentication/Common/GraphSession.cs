@@ -20,6 +20,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Gets or Sets <see cref="IAuthContext"/>.
         /// </summary>
         public IAuthContext AuthContext { get; set; }
+
+        /// <summary>
+        /// Gets an instance of <see cref="GraphSession"/>.
+        /// </summary>
         public static GraphSession Instance
         {
             get
@@ -50,6 +54,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 }
             }
         }
+
         /// <summary>
         /// Creates a new GraphSession.
         /// </summary>
@@ -74,6 +79,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
                     {
                         _instance = instanceCreator();
                         _initialized = true;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException(string.Format(ErrorConstants.Message.InstanceExists, nameof(GraphSession), "Initialize(Func<GraphSession>, bool)"));
                     }
                 }
                 finally
@@ -112,6 +121,34 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 try
                 {
                     modifier(_instance);
+                }
+                finally
+                {
+                    sessionLock.ExitWriteLock();
+                }
+            }
+            catch (LockRecursionException lockException)
+            {
+                throw new InvalidOperationException(ErrorConstants.Codes.SessionLockWriteRecursion, lockException);
+            }
+            catch (ObjectDisposedException disposedException)
+            {
+                throw new InvalidOperationException(ErrorConstants.Codes.SessionLockWriteDisposed, disposedException);
+            }
+        }
+
+        /// <summary>
+        /// Resets the current instance of <see cref="GraphSession"/> to initial state.
+        /// </summary>
+        internal static void Reset()
+        {
+            try
+            {
+                sessionLock.EnterWriteLock();
+                try
+                {
+                    _instance = null;
+                    _initialized = false;
                 }
                 finally
                 {

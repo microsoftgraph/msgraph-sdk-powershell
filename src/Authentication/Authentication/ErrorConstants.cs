@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             internal const string InvalidJWT = "Invalid JWT access token.";
             internal const string MissingAuthContext = "Authentication needed, call Connect-Graph.";
+            internal const string InstanceExists = "An instance of {0} already exists. Call {1} to overwrite it.";
         }
     }
 }
