@@ -32,19 +32,19 @@ subject-prefix: ''
 input-file: $(spec-doc-repo)/$(title).yml
 directive:
 # Remove paths that are too long.
-  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.policy_assign$|deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
+  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.policy_assign$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice$
   - where:
       verb: Update
-      subject: ^(DeviceAppManagementMobileAppRelationship)$
+      subject: ^(DeviceAppManagement)(MobileAppRelationship)$
       variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
     set:
-      subject: Multiple$1
+      subject: $1Multiple$2
   - where:
       verb: Update
-      subject: ^(DeviceAppManagementPolicySet)$
+      subject: ^(DeviceAppManagement)(PolicySet)$
       variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
     set:
-      subject: Multiple$1
+      subject: $1Multiple$2
 ```
 
 ### Versioning

@@ -33,7 +33,7 @@ input-file: $(spec-doc-repo)/$(title).yml
 directive:
 # Remove paths that have /parent* or /calendarView*.
   - remove-path-by-operation: users.onenote..*.parent.*|users.*.calendarView.*
-# Remove Add|Remove-MgSite. They are duplicate of Sites.Site.
+# Remove cmdlets.
   - where:
       verb: Clear
       subject: ^UserManagedAppRegistration$

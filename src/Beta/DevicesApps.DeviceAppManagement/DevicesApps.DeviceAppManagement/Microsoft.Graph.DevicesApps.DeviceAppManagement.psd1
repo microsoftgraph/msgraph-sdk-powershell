@@ -18,7 +18,7 @@ ModuleVersion = '0.2.1'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = '64b98bfc-7bf3-4f9d-8ade-adf0f6c32b82'
+GUID = '1437dd02-e2cc-4049-8e80-1125609dac50'
 
 # Author of this module
 Author = 'Microsoft Corporation'
@@ -269,6 +269,8 @@ FunctionsToExport =
                'Update-MgDeviceAppManagementMobileAppUserStatusesAppRelationship', 
                'Update-MgDeviceAppManagementMobileAppUserStatusesDeviceStatuses', 
                'Update-MgDeviceAppManagementMobileAppUserStatusesDeviceStatusesAppRelationship', 
+               'Update-MgDeviceAppManagementMultipleMobileAppRelationship', 
+               'Update-MgDeviceAppManagementMultiplePolicySet', 
                'Update-MgDeviceAppManagementPolicySet', 
                'Update-MgDeviceAppManagementPolicySetAssignment', 
                'Update-MgDeviceAppManagementPolicySetItem', 
@@ -285,9 +287,7 @@ FunctionsToExport =
                'Update-MgDeviceAppManagementWdacSupplementalPolicyDeviceStatuses', 
                'Update-MgDeviceAppManagementWindowInformationProtectionDeviceRegistration', 
                'Update-MgDeviceAppManagementWindowInformationProtectionPolicy', 
-               'Update-MgDeviceAppManagementWindowInformationProtectionWipeAction', 
-               'Update-MgMultipleDeviceAppManagementMobileAppRelationship', 
-               'Update-MgMultipleDeviceAppManagementPolicySet'
+               'Update-MgDeviceAppManagementWindowInformationProtectionWipeAction'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
