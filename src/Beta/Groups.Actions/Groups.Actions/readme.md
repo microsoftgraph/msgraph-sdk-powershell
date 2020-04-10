@@ -33,7 +33,7 @@ input-file: $(spec-doc-repo)/$(title).yml
 directive:
 # Remove paths that have /parent* or /calendarView*.
   - remove-path-by-operation: groups.onenote..*.parent.*|groups.*.calendarView.*
-# Remove Confirm-MgGroupProperty. Its a duplicate of Confirm-MgDirectoryObjectProperty.
+# Remove Test-MgGroupProperty. It's a duplicate of Test-MgDirectoryObjectProperty.
   - where:
       verb: Test
       subject: ^GroupProperty$
@@ -44,6 +44,36 @@ directive:
       subject: ^GroupDynamicMembership$
       variant: ^Evaluate1$|^EvaluateExpanded1$
     remove: true
+  - where:
+      verb: Get
+      subject: ^Group$
+    set:
+      subject: GroupById
+  - where:
+      verb: Update
+      subject: ^(GroupOnenotePage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteNotebookSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteSectionGroupSectionPage)$
+    set:
+      subject: $1Content
+  - where:
+      verb: Update
+      subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
+    set:
+      subject: $1Content
 ```
 
 ### Versioning
