@@ -37,6 +37,22 @@ clear-output-folder: true
 output-folder: .
 ```
 
+> Custom Directives
+
+``` yaml
+declare-directive:
+  where-operation-byRegex: >-
+    (() => {
+      return { from: "openapi-document", where: `$..paths.*[?(/${$}/gmi.exec(@.operationId))]` };
+    })()
+  remove-path-by-operation: >-
+    [{
+      from: 'openapi-document',
+      "where-operation-byRegex": $,
+      transform: '$ = undefined'
+    }]
+```
+
 > Directives
 
 ``` yaml
@@ -53,6 +69,7 @@ directive:
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
     - microsoft.graph.recipient
+    - microsoft.graph.groupPolicyCategory
 
   # Set parameter alias
   - where:
@@ -315,7 +332,7 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Validate(.*)|^Check(.*)
+      variant: ^Check(.*)
     set:
       verb: Confirm
 # Remove cmdlets
