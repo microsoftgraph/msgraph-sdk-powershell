@@ -4,7 +4,6 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System;
     using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "Graph")]
@@ -24,7 +23,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
 
-            AuthConfig authConfig = SessionState.PSVariable.GetValue(Constants.GraphAuthConfigId) as AuthConfig;
+            IAuthContext authConfig = GraphSession.Instance.AuthContext;
 
             if (authConfig == null)
                 ThrowTerminatingError(
@@ -32,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             AuthenticationHelpers.Logout(authConfig);
 
-            SessionState.PSVariable.Remove(Constants.GraphAuthConfigId);
+            GraphSession.Instance.AuthContext = null;
         }
 
         protected override void StopProcessing()

@@ -15,17 +15,7 @@ namespace Microsoft.Graph.PowerShell
     {
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
-            using (var powershell = PowerShell.Create(RunspaceMode.CurrentRunspace))
-            {
-                powershell.Commands.AddCommand(new Command($"$executioncontext.SessionState.PSVariable.GetValue('{Constants.GraphAuthConfigId}')", true));
-
-                AuthConfig authConfig = powershell.Invoke<AuthConfig>().FirstOrDefault();
-
-                if (authConfig == null)
-                    throw new Exception("Authentication needed, call Connect-Graph.");
-
-                pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient(authConfig)));
-            }
+            pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient()));
         }
     }
 }

@@ -2,6 +2,7 @@
     "Analytics": "^activitystatistics\\.|^users.userAnalytics$|^users.officeGraphInsights$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
     "CloudCommunications": "^communications\\.",
+    "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
     "DevicesApps.MobileAppManagement": "^users.managedAppRegistration$|^users.windowsInformationProtectionDeviceRegistration$",
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
     "DevicesApps.SharedResources": "^users.mobileAppTroubleshootingEvent$",
@@ -10,6 +11,7 @@
     "Files.Permissions": "^groups.resourceSpecificPermissionGrant$", // Missing in docs
     "Files.Shares": "^shares\\.",
     "Financials": "^financials\\.",
+    "Groups.Actions": "^groups.Actions$",
     "Groups.Calendar": "^groups.calendar$|^groups.event$",
     "Groups.Conversation": "^groups.conversation$",
     "Groups.ConversationThread": "^groups.conversationThread$",
@@ -77,6 +79,7 @@
     "Teams.Chats": "^chats\\.|^users.chat$",
     "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
     "Teams.Teamwork": "^users.userTeamwork$",
+    "Users.Actions": "^users.Actions$",
     "Users.ActivityFeed": "^users.userActivity$",
     "Users.Calendar": "^users.calendar$|^users.calendarGroup$|^users.event$",
     "Users.Contacts": "^users.contact$|^users.contactFolder$",
@@ -99,10 +102,7 @@
     "Users.UserSettings": "^users.userSettings$",
 
     // Fails to build.
-    // "Users.Actions": "^users.Actions$",
-    // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
-    // "Groups.Actions": "^groups.Actions$",
-    // "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
+    //"DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported

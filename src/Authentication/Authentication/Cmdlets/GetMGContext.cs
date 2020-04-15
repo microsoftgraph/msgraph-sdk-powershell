@@ -4,18 +4,10 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-    using System.Collections.Generic;
     using System.Management.Automation;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
 
     [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet)]
-    [OutputType(typeof(AuthConfig))]
+    [OutputType(typeof(IAuthContext))]
     public class GetMGContext: PSCmdlet
     {
         protected override void BeginProcessing()
@@ -26,11 +18,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            // Get auth config from session state.
-            PSVariable graphAuthVariable = SessionState.PSVariable.Get(Constants.GraphAuthConfigId);
-            AuthConfig authConfig = graphAuthVariable?.Value as AuthConfig;
-            Invoke<AuthConfig>();
-            WriteObject(authConfig as AuthConfig);
+            IAuthContext authConfig = GraphSession.Instance.AuthContext;
+            WriteObject(authConfig as IAuthContext);
         }
 
         protected override void EndProcessing()
