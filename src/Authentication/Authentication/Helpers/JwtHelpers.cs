@@ -29,8 +29,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (jwtHandler.CanReadToken(jwToken))
             {
                 JwtSecurityToken token = jwtHandler.ReadJwtToken(jwToken);
-                JwtPayload jwtPayload = new JwtPayload(token.Claims);
-                return jwtPayload.SerializeToJson();
+                return token.Payload.SerializeToJson();
             } else {
                 return null;
             }

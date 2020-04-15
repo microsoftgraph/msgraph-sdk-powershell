@@ -4,11 +4,11 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
     using System.Reflection;
+    using System.Security.Authentication;
 
     /// <summary>
     /// A HTTP helper class.
@@ -31,8 +31,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authConfig"></param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(AuthConfig authConfig)
+        public static HttpClient GetGraphHttpClient(IAuthContext authConfig = null)
         {
+            authConfig = authConfig ?? GraphSession.Instance.AuthContext;
+            if (authConfig is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
