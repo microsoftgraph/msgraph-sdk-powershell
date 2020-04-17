@@ -85,6 +85,7 @@ directive:
       subject: SubSite
   - where:
       parameter-name: SiteId
+      verb: Get
     set:
       default:
         name: SiteId Default Value
