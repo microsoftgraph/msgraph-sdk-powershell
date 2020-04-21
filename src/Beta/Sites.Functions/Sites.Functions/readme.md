@@ -58,10 +58,9 @@ directive:
     set:
       subject: Preview$1
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.2.1
+module-version: 0.5.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
