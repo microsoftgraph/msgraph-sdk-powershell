@@ -81,6 +81,7 @@
     "Teams.Teamwork": "^users.userTeamwork$",
     "Users.Actions": "^users.Actions$",
     "Users.ActivityFeed": "^users.userActivity$",
+    "Users.Authentication": "^users.authentication$",
     "Users.Calendar": "^users.calendar$|^users.calendarGroup$|^users.event$",
     "Users.Contacts": "^users.contact$|^users.contactFolder$",
     "Users.Devices": "^users.device$",
