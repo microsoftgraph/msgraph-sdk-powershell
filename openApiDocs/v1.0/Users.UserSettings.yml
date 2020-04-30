@@ -1,0 +1,492 @@
+openapi: 3.0.1
+info:
+  title: Users.UserSettings
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/users/{user-id}/settings':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get settings from users
+      operationId: users_GetSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contributionToContentDiscoveryDisabled
+                - contributionToContentDiscoveryAsOrganizationDisabled
+                - shiftPreferences
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - shiftPreferences
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userSettings'
+          links:
+            shiftPreferences:
+              operationId: user.settings.GetShiftPreferences
+              parameters:
+                user-id: $request.path.user-id
+                shiftPreferences-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property settings in users
+      operationId: users_UpdateSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/shiftPreferences':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get shiftPreferences from users
+      operationId: users.settings_GetShiftPreferences
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - availability
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property shiftPreferences in users
+      operationId: users.settings_UpdateShiftPreferences
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.userSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userSettings
+          type: object
+          properties:
+            contributionToContentDiscoveryDisabled:
+              type: boolean
+            contributionToContentDiscoveryAsOrganizationDisabled:
+              type: boolean
+            shiftPreferences:
+              $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+      example:
+        id: string (identifier)
+        contributionToContentDiscoveryDisabled: true
+        contributionToContentDiscoveryAsOrganizationDisabled: true
+        shiftPreferences:
+          '@odata.type': microsoft.graph.shiftPreferences
+    microsoft.graph.shiftPreferences:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: shiftPreferences
+          type: object
+          properties:
+            availability:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        availability:
+          - '@odata.type': microsoft.graph.shiftAvailability
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.changeTrackedEntity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: changeTrackedEntity
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.shiftAvailability:
+      title: shiftAvailability
+      type: object
+      properties:
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        timeZone:
+          type: string
+          nullable: true
+        timeSlots:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeRange'
+      example:
+        recurrence:
+          '@odata.type': microsoft.graph.patternedRecurrence
+        timeZone: string
+        timeSlots:
+          - '@odata.type': microsoft.graph.timeRange
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      example:
+        application:
+          '@odata.type': microsoft.graph.identity
+        device:
+          '@odata.type': microsoft.graph.identity
+        user:
+          '@odata.type': microsoft.graph.identity
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      example:
+        pattern:
+          '@odata.type': microsoft.graph.recurrencePattern
+        range:
+          '@odata.type': microsoft.graph.recurrenceRange
+    microsoft.graph.timeRange:
+      title: timeRange
+      type: object
+      properties:
+        startTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          format: time
+          nullable: true
+        endTime:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          format: time
+          nullable: true
+      example:
+        startTime: string (timestamp)
+        endTime: string (timestamp)
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      example:
+        displayName: string
+        id: string
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+      example:
+        type:
+          '@odata.type': microsoft.graph.recurrencePatternType
+        interval: integer
+        month: integer
+        dayOfMonth: integer
+        daysOfWeek:
+          - '@odata.type': microsoft.graph.dayOfWeek
+        firstDayOfWeek:
+          '@odata.type': microsoft.graph.dayOfWeek
+        index:
+          '@odata.type': microsoft.graph.weekIndex
+    microsoft.graph.recurrenceRange:
+      title: recurrenceRange
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
+          format: date
+          nullable: true
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
+          format: date
+          nullable: true
+        recurrenceTimeZone:
+          type: string
+          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
+          nullable: true
+        numberOfOccurrences:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of times to repeat the event. Required and must be positive if type is numbered.
+          format: int32
+      example:
+        type:
+          '@odata.type': microsoft.graph.recurrenceRangeType
+        startDate: string (timestamp)
+        endDate: string (timestamp)
+        recurrenceTimeZone: string
+        numberOfOccurrences: integer
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrenceRangeType:
+      title: recurrenceRangeType
+      enum:
+        - endDate
+        - noEnd
+        - numbered
+      type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

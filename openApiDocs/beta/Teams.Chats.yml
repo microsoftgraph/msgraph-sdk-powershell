@@ -1,0 +1,2483 @@
+openapi: 3.0.1
+info:
+  title: Teams.Chats
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /chats:
+    get:
+      tags:
+        - chats.chat
+      summary: Get entities from chats
+      operationId: chats.chat_ListChat
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - topic
+                - topic desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastUpdatedDateTime
+                - lastUpdatedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - createdDateTime
+                - lastUpdatedDateTime
+                - members
+                - messages
+                - installedApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - messages
+                - installedApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of chat
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chat'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.chat
+      summary: Add new entity to chats
+      operationId: chats.chat_CreateChat
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}':
+    get:
+      tags:
+        - chats.chat
+      summary: Get entity from chats by key
+      operationId: chats.chat_GetChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - createdDateTime
+                - lastUpdatedDateTime
+                - members
+                - messages
+                - installedApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - messages
+                - installedApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+          links:
+            members:
+              operationId: chats.GetMembers
+              parameters:
+                chat-id: $request.path.chat-id
+                conversationMember-id: $response.body#/id
+            messages:
+              operationId: chats.GetMessages
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+            installedApps:
+              operationId: chats.GetInstalledApps
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.chat
+      summary: Update entity in chats
+      operationId: chats.chat_UpdateChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.chat
+      summary: Delete entity from chats
+      operationId: chats.chat_DeleteChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/installedApps':
+    get:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Get installedApps from chats
+      operationId: chats_ListInstalledApps
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsAppInstallation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Create new navigation property to installedApps for chats
+      operationId: chats_CreateInstalledApps
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/installedApps/{teamsAppInstallation-id}':
+    get:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Get installedApps from chats
+      operationId: chats_GetInstalledApps
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: chat.installedApps.GetTeamsApp
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsApp-id: $response.body#/id
+            teamsAppDefinition:
+              operationId: chat.installedApps.GetTeamsAppDefinition
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Update the navigation property installedApps in chats
+      operationId: chats_UpdateInstalledApps
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/installedApps/{teamsAppInstallation-id}/microsoft.graph.upgrade':
+    post:
+      tags:
+        - chats.Actions
+      summary: Invoke action upgrade
+      operationId: chats.installedApps_upgrade
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/chats/{chat-id}/installedApps/{teamsAppInstallation-id}/teamsApp':
+    get:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Get teamsApp from chats
+      operationId: chats.installedApps_GetTeamsApp
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - name
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsAppInstallation.teamsApp.GetAppDefinitions
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition':
+    get:
+      tags:
+        - chats.teamsAppInstallation
+      summary: Get teamsAppDefinition from chats
+      operationId: chats.installedApps_GetTeamsAppDefinition
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsAppId
+                - displayName
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        default:
+          $ref: '#/components/responses/error'
+  '/chats/{chat-id}/members':
+    get:
+      tags:
+        - chats.conversationMember
+      summary: Get members from chats
+      operationId: chats_ListMembers
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - roles
+                - roles desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roles
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of conversationMember
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.conversationMember'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.conversationMember
+      summary: Create new navigation property to members for chats
+      operationId: chats_CreateMembers
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/members/{conversationMember-id}':
+    get:
+      tags:
+        - chats.conversationMember
+      summary: Get members from chats
+      operationId: chats_GetMembers
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: conversationMember-id
+          in: path
+          description: 'key: conversationMember-id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roles
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - chats.conversationMember
+      summary: Update the navigation property members in chats
+      operationId: chats_UpdateMembers
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: conversationMember-id
+          in: path
+          description: 'key: conversationMember-id of conversationMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get messages from chats
+      operationId: chats_ListMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - replyToId
+                - replyToId desc
+                - from
+                - from desc
+                - etag
+                - etag desc
+                - messageType
+                - messageType desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - subject
+                - subject desc
+                - body
+                - body desc
+                - summary
+                - summary desc
+                - attachments
+                - attachments desc
+                - mentions
+                - mentions desc
+                - importance
+                - importance desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - locale
+                - locale desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - replyToId
+                - from
+                - etag
+                - messageType
+                - createdDateTime
+                - lastModifiedDateTime
+                - deletedDateTime
+                - subject
+                - body
+                - summary
+                - attachments
+                - mentions
+                - importance
+                - policyViolation
+                - reactions
+                - locale
+                - webUrl
+                - replies
+                - hostedContents
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - replies
+                - hostedContents
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.chatMessage
+      summary: Create new navigation property to messages for chats
+      operationId: chats_CreateMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get messages from chats
+      operationId: chats_GetMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - replyToId
+                - from
+                - etag
+                - messageType
+                - createdDateTime
+                - lastModifiedDateTime
+                - deletedDateTime
+                - subject
+                - body
+                - summary
+                - attachments
+                - mentions
+                - importance
+                - policyViolation
+                - reactions
+                - locale
+                - webUrl
+                - replies
+                - hostedContents
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - replies
+                - hostedContents
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chat.messages.GetReplies
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+            hostedContents:
+              operationId: chat.messages.GetHostedContents
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessageHostedContent-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - chats.chatMessage
+      summary: Update the navigation property messages in chats
+      operationId: chats_UpdateMessages
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/hostedContents':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get hostedContents from chats
+      operationId: chats.messages_ListHostedContents
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessageHostedContent
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.chatMessage
+      summary: Create new navigation property to hostedContents for chats
+      operationId: chats.messages_CreateHostedContents
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get hostedContents from chats
+      operationId: chats.messages_GetHostedContents
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: chatMessageHostedContent-id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - chats.chatMessage
+      summary: Update the navigation property hostedContents in chats
+      operationId: chats.messages_UpdateHostedContents
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: chatMessageHostedContent-id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get replies from chats
+      operationId: chats.messages_ListReplies
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - replyToId
+                - replyToId desc
+                - from
+                - from desc
+                - etag
+                - etag desc
+                - messageType
+                - messageType desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - subject
+                - subject desc
+                - body
+                - body desc
+                - summary
+                - summary desc
+                - attachments
+                - attachments desc
+                - mentions
+                - mentions desc
+                - importance
+                - importance desc
+                - policyViolation
+                - policyViolation desc
+                - reactions
+                - reactions desc
+                - locale
+                - locale desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - replyToId
+                - from
+                - etag
+                - messageType
+                - createdDateTime
+                - lastModifiedDateTime
+                - deletedDateTime
+                - subject
+                - body
+                - summary
+                - attachments
+                - mentions
+                - importance
+                - policyViolation
+                - reactions
+                - locale
+                - webUrl
+                - replies
+                - hostedContents
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - replies
+                - hostedContents
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of chatMessage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.chatMessage
+      summary: Create new navigation property to replies for chats
+      operationId: chats.messages_CreateReplies
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/{chatMessage-id1}':
+    get:
+      tags:
+        - chats.chatMessage
+      summary: Get replies from chats
+      operationId: chats.messages_GetReplies
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - replyToId
+                - from
+                - etag
+                - messageType
+                - createdDateTime
+                - lastModifiedDateTime
+                - deletedDateTime
+                - subject
+                - body
+                - summary
+                - attachments
+                - mentions
+                - importance
+                - policyViolation
+                - reactions
+                - locale
+                - webUrl
+                - replies
+                - hostedContents
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - replies
+                - hostedContents
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chatMessage.replies.GetReplies
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+                chatMessage-id1: $request.path.chatMessage-id1
+            hostedContents:
+              operationId: chatMessage.replies.GetHostedContents
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+                chatMessageHostedContent-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - chats.chatMessage
+      summary: Update the navigation property replies in chats
+      operationId: chats.messages_UpdateReplies
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessage-id1
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function delta
+      operationId: chats.messages.replies_delta
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: chatMessage-id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/chats/{chat-id}/messages/microsoft.graph.delta()':
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function delta
+      operationId: chats.messages_delta
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /chats/microsoft.graph.allMessages():
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function allMessages
+      operationId: chats_allMessages
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/chats':
+    get:
+      tags:
+        - users.chat
+      summary: Get chats from users
+      operationId: users_ListChats
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - topic
+                - topic desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastUpdatedDateTime
+                - lastUpdatedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - createdDateTime
+                - lastUpdatedDateTime
+                - members
+                - messages
+                - installedApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - messages
+                - installedApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of chat
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chat'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.chat
+      summary: Create new navigation property to chats for users
+      operationId: users_CreateChats
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/chats/{chat-id}':
+    get:
+      tags:
+        - users.chat
+      summary: Get chats from users
+      operationId: users_GetChats
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - createdDateTime
+                - lastUpdatedDateTime
+                - members
+                - messages
+                - installedApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - messages
+                - installedApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+          links:
+            members:
+              operationId: user.chats.GetMembers
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                conversationMember-id: $response.body#/id
+            messages:
+              operationId: user.chats.GetMessages
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+            installedApps:
+              operationId: user.chats.GetInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.chat
+      summary: Update the navigation property chats in users
+      operationId: users_UpdateChats
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: 'key: chat-id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.chat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chat
+          type: object
+          properties:
+            topic:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+      example:
+        id: string (identifier)
+        topic: string
+        createdDateTime: string (timestamp)
+        lastUpdatedDateTime: string (timestamp)
+        members:
+          - '@odata.type': microsoft.graph.conversationMember
+        messages:
+          - '@odata.type': microsoft.graph.chatMessage
+        installedApps:
+          - '@odata.type': microsoft.graph.teamsAppInstallation
+    microsoft.graph.teamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppInstallation
+          type: object
+          properties:
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+            teamsAppDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+      example:
+        id: string (identifier)
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+        teamsAppDefinition:
+          '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+      example:
+        id: string (identifier)
+        externalId: string
+        name: string
+        displayName: string
+        distributionMethod:
+          '@odata.type': microsoft.graph.teamsAppDistributionMethod
+        appDefinitions:
+          - '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            teamsAppId:
+              type: string
+              description: The id from the Teams App manifest.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+      example:
+        id: string (identifier)
+        teamsAppId: string
+        displayName: string
+        version: string
+    microsoft.graph.conversationMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conversationMember
+          type: object
+          properties:
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+            displayName:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        roles:
+          - string
+        displayName: string
+    microsoft.graph.chatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessage
+          type: object
+          properties:
+            replyToId:
+              type: string
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            etag:
+              type: string
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              nullable: true
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            summary:
+              type: string
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
+            policyViolation:
+              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+            locale:
+              type: string
+            webUrl:
+              type: string
+              nullable: true
+            replies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            hostedContents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+      example:
+        id: string (identifier)
+        replyToId: string
+        from:
+          '@odata.type': microsoft.graph.identitySet
+        etag: string
+        messageType:
+          '@odata.type': microsoft.graph.chatMessageType
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        deletedDateTime: string (timestamp)
+        subject: string
+        body:
+          '@odata.type': microsoft.graph.itemBody
+        summary: string
+        attachments:
+          - '@odata.type': microsoft.graph.chatMessageAttachment
+        mentions:
+          - '@odata.type': microsoft.graph.chatMessageMention
+        importance:
+          '@odata.type': microsoft.graph.chatMessageImportance
+        policyViolation:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolation
+        reactions:
+          - '@odata.type': microsoft.graph.chatMessageReaction
+        locale: string
+        webUrl: string
+        replies:
+          - '@odata.type': microsoft.graph.chatMessage
+        hostedContents:
+          - '@odata.type': microsoft.graph.chatMessageHostedContent
+    microsoft.graph.chatMessageHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageHostedContent
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      example:
+        application:
+          '@odata.type': microsoft.graph.identity
+        device:
+          '@odata.type': microsoft.graph.identity
+        user:
+          '@odata.type': microsoft.graph.identity
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+      type: string
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+      example:
+        contentType:
+          '@odata.type': microsoft.graph.bodyType
+        content: string
+    microsoft.graph.chatMessageAttachment:
+      title: chatMessageAttachment
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        contentType:
+          type: string
+          nullable: true
+        contentUrl:
+          type: string
+          nullable: true
+        content:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        thumbnailUrl:
+          type: string
+          nullable: true
+      example:
+        id: string
+        contentType: string
+        contentUrl: string
+        content: string
+        name: string
+        thumbnailUrl: string
+    microsoft.graph.chatMessageMention:
+      title: chatMessageMention
+      type: object
+      properties:
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        mentionText:
+          type: string
+          nullable: true
+        mentioned:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        id: integer
+        mentionText: string
+        mentioned:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.chatMessageImportance:
+      title: chatMessageImportance
+      enum:
+        - normal
+        - high
+        - urgent
+      type: string
+    microsoft.graph.chatMessagePolicyViolation:
+      title: chatMessagePolicyViolation
+      type: object
+      properties:
+        dlpAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
+        justificationText:
+          type: string
+          nullable: true
+        policyTip:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
+        userAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
+        verdictDetails:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
+      example:
+        dlpAction:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationDlpActionTypes
+        justificationText: string
+        policyTip:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationPolicyTip
+        userAction:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationUserActionTypes
+        verdictDetails:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes
+    microsoft.graph.chatMessageReaction:
+      title: chatMessageReaction
+      type: object
+      properties:
+        reactionType:
+          type: string
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        reactionType: string
+        createdDateTime: string (timestamp)
+        user:
+          '@odata.type': microsoft.graph.identitySet
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+      example:
+        id: string
+        displayName: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
+      title: chatMessagePolicyViolationDlpActionTypes
+      enum:
+        - none
+        - notifySender
+        - blockAccess
+        - blockAccessExternal
+      type: string
+    microsoft.graph.chatMessagePolicyViolationPolicyTip:
+      title: chatMessagePolicyViolationPolicyTip
+      type: object
+      properties:
+        generalText:
+          type: string
+          nullable: true
+        complianceUrl:
+          type: string
+          nullable: true
+        matchedConditionDescriptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+      example:
+        generalText: string
+        complianceUrl: string
+        matchedConditionDescriptions:
+          - string
+    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
+      title: chatMessagePolicyViolationUserActionTypes
+      enum:
+        - none
+        - override
+        - reportFalsePositive
+      type: string
+    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
+      title: chatMessagePolicyViolationVerdictDetailsTypes
+      enum:
+        - none
+        - allowFalsePositiveOverride
+        - allowOverrideWithoutJustification
+        - allowOverrideWithJustification
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
