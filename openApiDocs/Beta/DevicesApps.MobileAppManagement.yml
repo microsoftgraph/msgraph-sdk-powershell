@@ -28,7 +28,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -72,7 +73,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -102,7 +104,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -126,8 +129,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}':
     get:
@@ -153,7 +161,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -183,7 +192,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -201,9 +211,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          links:
+            appliedPolicies:
+              operationId: user.managedAppRegistrations.GetAppliedPolicies
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            intendedPolicies:
+              operationId: user.managedAppRegistrations.GetIntendedPolicies
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            operations:
+              operationId: user.managedAppRegistrations.GetOperations
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/windowsInformationProtectionDeviceRegistrations':
     get:
       tags:
@@ -226,7 +254,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -250,7 +279,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -267,7 +297,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -288,8 +319,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/users/{user-id}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}':
     get:
@@ -315,7 +351,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -332,7 +369,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -349,7 +387,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.managedAppRegistration:

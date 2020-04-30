@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -35,7 +36,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -50,7 +52,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -74,8 +77,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -116,7 +124,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -131,7 +140,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -151,17 +161,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
           links:
             agents:
-              operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile.GetOnPremisesPublishingProfile
+              operationId: onPremisesPublishingProfiles.GetAgents
               parameters:
-                id: $request.path.id
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $response.body#/id
             agentGroups:
-              operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile.GetOnPremisesPublishingProfile
+              operationId: onPremisesPublishingProfiles.GetAgentGroups
               parameters:
-                id: $request.path.id
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $response.body#/id
             publishedResources:
-              operationId: onPremisesPublishingProfiles.onPremisesPublishingProfile.GetOnPremisesPublishingProfile
+              operationId: onPremisesPublishingProfiles.GetPublishedResources
               parameters:
-                id: $request.path.id
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -237,7 +250,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -255,7 +269,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -271,7 +286,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -294,8 +310,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -351,7 +372,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -367,7 +389,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -384,9 +407,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: onPremisesPublishingProfile.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $response.body#/id
+            publishedResources:
+              operationId: onPremisesPublishingProfile.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -449,7 +484,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -469,7 +505,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -485,7 +522,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -507,8 +545,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -578,7 +621,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -594,7 +638,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -610,9 +655,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.agents.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $response.body#/id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -689,7 +740,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -707,7 +759,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -723,7 +776,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -746,8 +800,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -831,7 +890,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -847,7 +907,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -864,9 +925,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: onPremisesAgent.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $response.body#/id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
+            publishedResources:
+              operationId: onPremisesAgent.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
+                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -943,7 +1019,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -961,7 +1038,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -976,7 +1054,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -998,8 +1077,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1069,7 +1153,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1084,7 +1169,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1100,9 +1186,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $response.body#/id
+                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -1179,7 +1271,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1197,7 +1290,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1213,7 +1307,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1236,8 +1331,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1321,7 +1421,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1337,7 +1438,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1354,9 +1456,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: publishedResource.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
+                onPremisesAgent-id: $response.body#/id
+            publishedResources:
+              operationId: publishedResource.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $response.body#/id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -1426,7 +1543,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1446,7 +1564,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1462,7 +1581,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1484,8 +1604,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1541,7 +1666,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1557,7 +1683,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1573,9 +1700,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          links:
+            agentGroups:
+              operationId: onPremisesPublishingProfile.agents.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -1638,7 +1771,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1656,7 +1790,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1672,7 +1807,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1695,8 +1831,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1766,7 +1907,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1782,7 +1924,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1799,9 +1942,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: onPremisesAgent.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $response.body#/id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+            publishedResources:
+              operationId: onPremisesAgent.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -1878,7 +2034,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1898,7 +2055,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1914,7 +2072,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1936,8 +2095,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2021,7 +2185,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2037,7 +2202,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2053,9 +2219,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.agents.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id: $response.body#/id
+                onPremisesAgent-id1: $request.path.onPremisesAgent-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2139,7 +2312,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2157,7 +2331,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2172,7 +2347,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2194,8 +2370,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2279,7 +2460,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2294,7 +2476,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2310,9 +2493,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id: $response.body#/id
+                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2403,7 +2593,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2421,7 +2612,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2437,7 +2629,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2460,8 +2653,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2559,7 +2757,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2575,7 +2774,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2592,9 +2792,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: publishedResource.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $response.body#/id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
+            publishedResources:
+              operationId: publishedResource.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                publishedResource-id: $response.body#/id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2671,7 +2887,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2689,7 +2906,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2704,7 +2922,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2726,8 +2945,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2783,7 +3007,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2798,7 +3023,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2814,9 +3040,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          links:
+            agentGroups:
+              operationId: onPremisesPublishingProfile.publishedResources.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -2879,7 +3111,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2897,7 +3130,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2913,7 +3147,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2936,8 +3171,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3007,7 +3247,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3023,7 +3264,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3040,9 +3282,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: publishedResource.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $response.body#/id
+            publishedResources:
+              operationId: publishedResource.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $response.body#/id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -3119,7 +3374,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3139,7 +3395,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3155,7 +3412,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3177,8 +3435,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3262,7 +3525,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3278,7 +3542,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3294,9 +3559,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.agents.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id: $response.body#/id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -3387,7 +3659,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3405,7 +3678,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3421,7 +3695,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3444,8 +3719,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3543,7 +3823,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3559,7 +3840,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3576,9 +3858,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
+          links:
+            agents:
+              operationId: onPremisesAgent.agentGroups.GetAgents
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $response.body#/id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
+            publishedResources:
+              operationId: onPremisesAgent.agentGroups.GetPublishedResources
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $response.body#/id
+                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
+                onPremisesAgent-id: $request.path.onPremisesAgent-id
+                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -3669,7 +3967,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3687,7 +3986,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3702,7 +4002,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3724,8 +4025,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3809,7 +4115,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3824,7 +4131,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3840,9 +4148,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
+          links:
+            agentGroups:
+              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
+              parameters:
+                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
+                publishedResource-id: $request.path.publishedResource-id
+                onPremisesAgentGroup-id: $response.body#/id
+                publishedResource-id1: $request.path.publishedResource-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource

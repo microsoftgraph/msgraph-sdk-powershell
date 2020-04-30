@@ -16,7 +16,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -26,11 +27,16 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsageSummariesByUser
+                - monthlyPrintUsageSummariesByUser
+                - dailyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByPrinter
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -40,6 +46,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsageSummariesByUser
+                - monthlyPrintUsageSummariesByUser
+                - dailyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByPrinter
               type: string
       responses:
         '200':
@@ -48,6 +58,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
+          links:
+            applicationSignInDetailedSummary:
+              operationId: reports.GetApplicationSignInDetailedSummary
+              parameters:
+                applicationSignInDetailedSummary-id: $response.body#/id
+            credentialUserRegistrationDetails:
+              operationId: reports.GetCredentialUserRegistrationDetails
+              parameters:
+                credentialUserRegistrationDetails-id: $response.body#/id
+            userCredentialUsageDetails:
+              operationId: reports.GetUserCredentialUsageDetails
+              parameters:
+                userCredentialUsageDetails-id: $response.body#/id
+            dailyPrintUsageSummariesByUser:
+              operationId: reports.GetDailyPrintUsageSummariesByUser
+              parameters:
+                PrintUsageSummaryByUser-id: $response.body#/id
+            monthlyPrintUsageSummariesByUser:
+              operationId: reports.GetMonthlyPrintUsageSummariesByUser
+              parameters:
+                PrintUsageSummaryByUser-id: $response.body#/id
+            dailyPrintUsageSummariesByPrinter:
+              operationId: reports.GetDailyPrintUsageSummariesByPrinter
+              parameters:
+                PrintUsageSummaryByPrinter-id: $response.body#/id
+            monthlyPrintUsageSummariesByPrinter:
+              operationId: reports.GetMonthlyPrintUsageSummariesByPrinter
+              parameters:
+                PrintUsageSummaryByPrinter-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -84,7 +123,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -106,7 +146,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -122,7 +163,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -143,8 +185,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -185,7 +232,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -201,7 +249,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -218,7 +267,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.applicationSignInDetailedSummary
@@ -260,7 +308,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -286,7 +335,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -304,7 +354,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -325,8 +376,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -367,7 +423,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -385,7 +442,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -402,7 +460,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.credentialUserRegistrationDetails
@@ -422,6 +479,376 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageSummariesByPrinter:
+    get:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Get dailyPrintUsageSummariesByPrinter from reports
+      operationId: reports_ListDailyPrintUsageSummariesByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - printerId
+                - printerId desc
+                - usageDate
+                - usageDate desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - printerId
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of PrintUsageSummaryByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Create new navigation property to dailyPrintUsageSummariesByPrinter for reports
+      operationId: reports_CreateDailyPrintUsageSummariesByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageSummariesByPrinter/{PrintUsageSummaryByPrinter-id}':
+    get:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Get dailyPrintUsageSummariesByPrinter from reports
+      operationId: reports_GetDailyPrintUsageSummariesByPrinter
+      parameters:
+        - name: PrintUsageSummaryByPrinter-id
+          in: path
+          description: 'key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - printerId
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Update the navigation property dailyPrintUsageSummariesByPrinter in reports
+      operationId: reports_UpdateDailyPrintUsageSummariesByPrinter
+      parameters:
+        - name: PrintUsageSummaryByPrinter-id
+          in: path
+          description: 'key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageSummariesByUser:
+    get:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Get dailyPrintUsageSummariesByUser from reports
+      operationId: reports_ListDailyPrintUsageSummariesByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - usageDate
+                - usageDate desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userPrincipalName
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of PrintUsageSummaryByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Create new navigation property to dailyPrintUsageSummariesByUser for reports
+      operationId: reports_CreateDailyPrintUsageSummariesByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageSummariesByUser/{PrintUsageSummaryByUser-id}':
+    get:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Get dailyPrintUsageSummariesByUser from reports
+      operationId: reports_GetDailyPrintUsageSummariesByUser
+      parameters:
+        - name: PrintUsageSummaryByUser-id
+          in: path
+          description: 'key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userPrincipalName
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Update the navigation property dailyPrintUsageSummariesByUser in reports
+      operationId: reports_UpdateDailyPrintUsageSummariesByUser
+      parameters:
+        - name: PrintUsageSummaryByUser-id
+          in: path
+          description: 'key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
         required: true
       responses:
         '204':
@@ -2858,6 +3285,376 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /reports/monthlyPrintUsageSummariesByPrinter:
+    get:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Get monthlyPrintUsageSummariesByPrinter from reports
+      operationId: reports_ListMonthlyPrintUsageSummariesByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - printerId
+                - printerId desc
+                - usageDate
+                - usageDate desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - printerId
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of PrintUsageSummaryByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Create new navigation property to monthlyPrintUsageSummariesByPrinter for reports
+      operationId: reports_CreateMonthlyPrintUsageSummariesByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageSummariesByPrinter/{PrintUsageSummaryByPrinter-id}':
+    get:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Get monthlyPrintUsageSummariesByPrinter from reports
+      operationId: reports_GetMonthlyPrintUsageSummariesByPrinter
+      parameters:
+        - name: PrintUsageSummaryByPrinter-id
+          in: path
+          description: 'key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - printerId
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - reports.PrintUsageSummaryByPrinter
+      summary: Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
+      operationId: reports_UpdateMonthlyPrintUsageSummariesByPrinter
+      parameters:
+        - name: PrintUsageSummaryByPrinter-id
+          in: path
+          description: 'key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/monthlyPrintUsageSummariesByUser:
+    get:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Get monthlyPrintUsageSummariesByUser from reports
+      operationId: reports_ListMonthlyPrintUsageSummariesByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - usageDate
+                - usageDate desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userPrincipalName
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of PrintUsageSummaryByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Create new navigation property to monthlyPrintUsageSummariesByUser for reports
+      operationId: reports_CreateMonthlyPrintUsageSummariesByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageSummariesByUser/{PrintUsageSummaryByUser-id}':
+    get:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Get monthlyPrintUsageSummariesByUser from reports
+      operationId: reports_GetMonthlyPrintUsageSummariesByUser
+      parameters:
+        - name: PrintUsageSummaryByUser-id
+          in: path
+          description: 'key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - userPrincipalName
+                - usageDate
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - reports.PrintUsageSummaryByUser
+      summary: Update the navigation property monthlyPrintUsageSummariesByUser in reports
+      operationId: reports_UpdateMonthlyPrintUsageSummariesByUser
+      parameters:
+        - name: PrintUsageSummaryByUser-id
+          in: path
+          description: 'key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: PrintUsageSummaryByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/userCredentialUsageDetails:
     get:
       tags:
@@ -2873,7 +3670,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2899,7 +3697,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2917,7 +3716,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2938,8 +3738,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2980,7 +3785,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2998,7 +3804,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3015,7 +3822,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.userCredentialUsageDetails
@@ -3062,6 +3868,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+            dailyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+            monthlyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
+            dailyPrintUsageSummariesByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+            monthlyPrintUsageSummariesByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
           description: The resource that represents an instance of History Reports.
       example:
         id: string (identifier)
@@ -3071,6 +3893,14 @@ components:
           - '@odata.type': microsoft.graph.credentialUserRegistrationDetails
         userCredentialUsageDetails:
           - '@odata.type': microsoft.graph.userCredentialUsageDetails
+        dailyPrintUsageSummariesByUser:
+          - '@odata.type': microsoft.graph.PrintUsageSummaryByUser
+        monthlyPrintUsageSummariesByUser:
+          - '@odata.type': microsoft.graph.PrintUsageSummaryByUser
+        dailyPrintUsageSummariesByPrinter:
+          - '@odata.type': microsoft.graph.PrintUsageSummaryByPrinter
+        monthlyPrintUsageSummariesByPrinter:
+          - '@odata.type': microsoft.graph.PrintUsageSummaryByPrinter
     microsoft.graph.applicationSignInDetailedSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3132,6 +3962,64 @@ components:
         isEnabled: true
         isCapable: true
         isMfaRegistered: true
+    microsoft.graph.PrintUsageSummaryByPrinter:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: PrintUsageSummaryByPrinter
+          type: object
+          properties:
+            printerId:
+              type: string
+              nullable: true
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            incompleteJobCount:
+              type: integer
+              format: int64
+      example:
+        id: string (identifier)
+        printerId: string
+        usageDate: string (timestamp)
+        completedBlackAndWhiteJobCount: integer
+        completedColorJobCount: integer
+        incompleteJobCount: integer
+    microsoft.graph.PrintUsageSummaryByUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: PrintUsageSummaryByUser
+          type: object
+          properties:
+            userPrincipalName:
+              type: string
+              nullable: true
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            incompleteJobCount:
+              type: integer
+              format: int64
+      example:
+        id: string (identifier)
+        userPrincipalName: string
+        usageDate: string (timestamp)
+        completedBlackAndWhiteJobCount: integer
+        completedColorJobCount: integer
+        incompleteJobCount: integer
     microsoft.graph.report:
       title: report
       type: object

@@ -16,7 +16,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -57,7 +58,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -97,6 +99,107 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
+          links:
+            managedEBooks:
+              operationId: deviceAppManagement.GetManagedEBooks
+              parameters:
+                managedEBook-id: $response.body#/id
+            mobileApps:
+              operationId: deviceAppManagement.GetMobileApps
+              parameters:
+                mobileApp-id: $response.body#/id
+            mobileAppCategories:
+              operationId: deviceAppManagement.GetMobileAppCategories
+              parameters:
+                mobileAppCategory-id: $response.body#/id
+            enterpriseCodeSigningCertificates:
+              operationId: deviceAppManagement.GetEnterpriseCodeSigningCertificates
+              parameters:
+                enterpriseCodeSigningCertificate-id: $response.body#/id
+            iosLobAppProvisioningConfigurations:
+              operationId: deviceAppManagement.GetIosLobAppProvisioningConfigurations
+              parameters:
+                iosLobAppProvisioningConfiguration-id: $response.body#/id
+            symantecCodeSigningCertificate:
+              operationId: deviceAppManagement.GetSymantecCodeSigningCertificate
+              parameters:
+                symantecCodeSigningCertificate-id: $response.body#/id
+            mobileAppConfigurations:
+              operationId: deviceAppManagement.GetMobileAppConfigurations
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $response.body#/id
+            managedEBookCategories:
+              operationId: deviceAppManagement.GetManagedEBookCategories
+              parameters:
+                managedEBookCategory-id: $response.body#/id
+            policySets:
+              operationId: deviceAppManagement.GetPolicySets
+              parameters:
+                policySet-id: $response.body#/id
+            sideLoadingKeys:
+              operationId: deviceAppManagement.GetSideLoadingKeys
+              parameters:
+                sideLoadingKey-id: $response.body#/id
+            vppTokens:
+              operationId: deviceAppManagement.GetVppTokens
+              parameters:
+                vppToken-id: $response.body#/id
+            windowsManagementApp:
+              operationId: deviceAppManagement.GetWindowsManagementApp
+              parameters:
+                windowsManagementApp-id: $response.body#/id
+            managedAppPolicies:
+              operationId: deviceAppManagement.GetManagedAppPolicies
+              parameters:
+                managedAppPolicy-id: $response.body#/id
+            iosManagedAppProtections:
+              operationId: deviceAppManagement.GetIosManagedAppProtections
+              parameters:
+                iosManagedAppProtection-id: $response.body#/id
+            androidManagedAppProtections:
+              operationId: deviceAppManagement.GetAndroidManagedAppProtections
+              parameters:
+                androidManagedAppProtection-id: $response.body#/id
+            defaultManagedAppProtections:
+              operationId: deviceAppManagement.GetDefaultManagedAppProtections
+              parameters:
+                defaultManagedAppProtection-id: $response.body#/id
+            targetedManagedAppConfigurations:
+              operationId: deviceAppManagement.GetTargetedManagedAppConfigurations
+              parameters:
+                targetedManagedAppConfiguration-id: $response.body#/id
+            mdmWindowsInformationProtectionPolicies:
+              operationId: deviceAppManagement.GetMdmWindowsInformationProtectionPolicies
+              parameters:
+                mdmWindowsInformationProtectionPolicy-id: $response.body#/id
+            windowsInformationProtectionPolicies:
+              operationId: deviceAppManagement.GetWindowsInformationProtectionPolicies
+              parameters:
+                windowsInformationProtectionPolicy-id: $response.body#/id
+            managedAppRegistrations:
+              operationId: deviceAppManagement.GetManagedAppRegistrations
+              parameters:
+                managedAppRegistration-id: $response.body#/id
+            managedAppStatuses:
+              operationId: deviceAppManagement.GetManagedAppStatuses
+              parameters:
+                managedAppStatus-id: $response.body#/id
+            windowsInformationProtectionDeviceRegistrations:
+              operationId: deviceAppManagement.GetWindowsInformationProtectionDeviceRegistrations
+              parameters:
+                windowsInformationProtectionDeviceRegistration-id: $response.body#/id
+            windowsInformationProtectionWipeActions:
+              operationId: deviceAppManagement.GetWindowsInformationProtectionWipeActions
+              parameters:
+                windowsInformationProtectionWipeAction-id: $response.body#/id
+            deviceAppManagementTasks:
+              operationId: deviceAppManagement.GetDeviceAppManagementTasks
+              parameters:
+                deviceAppManagementTask-id: $response.body#/id
+            wdacSupplementalPolicies:
+              operationId: deviceAppManagement.GetWdacSupplementalPolicies
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -133,7 +236,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -287,7 +391,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -372,7 +477,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -396,8 +502,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -438,7 +549,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -523,7 +635,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -541,9 +654,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+          links:
+            apps:
+              operationId: deviceAppManagement.androidManagedAppProtections.GetApps
+              parameters:
+                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
+                managedMobileApp-id: $response.body#/id
+            deploymentSummary:
+              operationId: deviceAppManagement.androidManagedAppProtections.GetDeploymentSummary
+              parameters:
+                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
+                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -592,7 +715,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -608,7 +732,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -621,7 +746,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -642,8 +768,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -699,7 +830,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -712,7 +844,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -729,7 +862,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -780,7 +912,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -796,7 +929,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -813,7 +947,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -886,7 +1019,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1058,7 +1192,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1151,7 +1286,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1174,8 +1310,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1216,7 +1357,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1309,7 +1451,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1326,9 +1469,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+          links:
+            apps:
+              operationId: deviceAppManagement.defaultManagedAppProtections.GetApps
+              parameters:
+                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
+                managedMobileApp-id: $response.body#/id
+            deploymentSummary:
+              operationId: deviceAppManagement.defaultManagedAppProtections.GetDeploymentSummary
+              parameters:
+                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
+                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1377,7 +1530,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1393,7 +1547,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1406,7 +1561,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1427,8 +1583,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1484,7 +1645,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1497,7 +1659,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1514,7 +1677,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1565,7 +1727,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1581,7 +1744,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1598,7 +1762,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1640,7 +1803,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1672,7 +1836,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1693,7 +1858,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1714,8 +1880,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1756,7 +1927,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1777,7 +1949,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1794,7 +1967,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.deviceAppManagementTask
@@ -1869,7 +2041,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1897,7 +2070,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1916,7 +2090,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1937,8 +2112,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1979,7 +2159,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1998,7 +2179,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2015,7 +2197,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.enterpriseCodeSigningCertificate
@@ -2057,7 +2238,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2087,7 +2269,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2111,7 +2294,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2136,8 +2320,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2178,7 +2367,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2202,7 +2392,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2221,9 +2412,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
+          links:
+            groupAssignments:
+              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.GetGroupAssignments
+              parameters:
+                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
+                mobileAppProvisioningConfigGroupAssignment-id: $response.body#/id
+            assignments:
+              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.GetAssignments
+              parameters:
+                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
+                iosLobAppProvisioningConfigurationAssignment-id: $response.body#/id
+            deviceStatuses:
+              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.GetDeviceStatuses
+              parameters:
+                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
+                managedDeviceMobileAppConfigurationDeviceStatus-id: $response.body#/id
+            userStatuses:
+              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.GetUserStatuses
+              parameters:
+                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
+                managedDeviceMobileAppConfigurationUserStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
@@ -2272,7 +2483,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2286,7 +2498,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2298,7 +2511,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2319,8 +2533,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2376,7 +2595,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2388,7 +2608,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2405,7 +2626,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
@@ -2461,7 +2681,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2489,7 +2710,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2508,7 +2730,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2529,8 +2752,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2586,7 +2814,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2605,7 +2834,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2622,7 +2852,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
@@ -2678,7 +2907,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2692,7 +2922,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2704,7 +2935,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2725,8 +2957,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2782,7 +3019,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2794,7 +3032,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2811,7 +3050,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
@@ -2903,7 +3141,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2925,7 +3164,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2941,7 +3181,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2962,8 +3203,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3019,7 +3265,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3035,7 +3282,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3052,7 +3300,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosLobAppProvisioningConfiguration
@@ -3132,7 +3379,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3266,7 +3514,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3341,7 +3590,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3365,8 +3615,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3407,7 +3662,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3482,7 +3738,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3500,9 +3757,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+          links:
+            apps:
+              operationId: deviceAppManagement.iosManagedAppProtections.GetApps
+              parameters:
+                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
+                managedMobileApp-id: $response.body#/id
+            deploymentSummary:
+              operationId: deviceAppManagement.iosManagedAppProtections.GetDeploymentSummary
+              parameters:
+                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
+                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -3551,7 +3818,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3567,7 +3835,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3580,7 +3849,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3601,8 +3871,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3658,7 +3933,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3671,7 +3947,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3688,7 +3965,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -3739,7 +4015,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3755,7 +4032,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3772,7 +4050,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -3845,7 +4122,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3869,7 +4147,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3886,7 +4165,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3907,8 +4187,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3949,7 +4234,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3966,7 +4252,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3983,7 +4270,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppPolicy
@@ -4057,7 +4343,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4101,7 +4388,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4131,7 +4419,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4155,8 +4444,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4197,7 +4491,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4227,7 +4522,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4245,9 +4541,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          links:
+            appliedPolicies:
+              operationId: deviceAppManagement.managedAppRegistrations.GetAppliedPolicies
+              parameters:
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            intendedPolicies:
+              operationId: deviceAppManagement.managedAppRegistrations.GetIntendedPolicies
+              parameters:
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            operations:
+              operationId: deviceAppManagement.managedAppRegistrations.GetOperations
+              parameters:
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -4296,7 +4607,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4320,7 +4632,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4337,7 +4650,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4358,8 +4672,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4415,7 +4734,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4432,7 +4752,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4449,7 +4770,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -4544,7 +4864,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4568,7 +4889,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4585,7 +4907,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4606,8 +4929,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4663,7 +4991,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4680,7 +5009,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4697,7 +5027,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -4792,7 +5121,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4812,7 +5142,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4827,7 +5158,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4848,8 +5180,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4905,7 +5242,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4920,7 +5258,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4937,7 +5276,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -5005,7 +5343,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5021,7 +5360,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5034,7 +5374,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5055,8 +5396,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5097,7 +5443,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5110,7 +5457,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5127,7 +5475,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppStatus
@@ -5169,7 +5516,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5185,7 +5533,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5198,7 +5547,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5219,8 +5569,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5261,7 +5616,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5274,7 +5630,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5291,7 +5648,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBookCategory
@@ -5333,7 +5689,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5363,7 +5720,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5388,7 +5746,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5414,8 +5773,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBook'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5456,7 +5820,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5481,7 +5846,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5501,9 +5867,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedEBook'
+          links:
+            categories:
+              operationId: deviceAppManagement.managedEBooks.GetCategories
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                managedEBookCategory-id: $response.body#/id
+            assignments:
+              operationId: deviceAppManagement.managedEBooks.GetAssignments
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                managedEBookAssignment-id: $response.body#/id
+            installSummary:
+              operationId: deviceAppManagement.managedEBooks.GetInstallSummary
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                eBookInstallSummary-id: $response.body#/id
+            deviceStates:
+              operationId: deviceAppManagement.managedEBooks.GetDeviceStates
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                deviceInstallState-id: $response.body#/id
+            userStateSummary:
+              operationId: deviceAppManagement.managedEBooks.GetUserStateSummary
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                userInstallStateSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -5552,7 +5943,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5568,7 +5960,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5581,7 +5974,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5602,8 +5996,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5659,7 +6058,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5672,7 +6072,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5689,7 +6090,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -5745,7 +6145,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5761,7 +6162,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5774,7 +6176,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5795,8 +6198,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/{managedEBookCategory-id}':
     get:
@@ -5822,7 +6230,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5835,7 +6244,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5852,7 +6262,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates':
     get:
       tags:
@@ -5875,7 +6284,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5903,7 +6313,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5922,7 +6333,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5943,8 +6355,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6000,7 +6417,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6019,7 +6437,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6036,7 +6455,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -6087,7 +6505,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6104,7 +6523,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6121,7 +6541,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.eBookInstallSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -6202,7 +6621,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6222,7 +6642,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6238,7 +6659,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6260,8 +6682,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6317,7 +6744,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6333,7 +6761,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6349,9 +6778,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
+          links:
+            deviceStates:
+              operationId: managedEBook.userStateSummary.GetDeviceStates
+              parameters:
+                managedEBook-id: $request.path.managedEBook-id
+                userInstallStateSummary-id: $request.path.userInstallStateSummary-id
+                deviceInstallState-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -6414,7 +6849,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6442,7 +6878,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6461,7 +6898,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6482,8 +6920,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6553,7 +6996,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6572,7 +7016,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6589,7 +7034,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -6645,7 +7089,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6713,7 +7158,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6755,7 +7201,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6779,8 +7226,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6821,7 +7273,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6863,7 +7316,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6883,7 +7337,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
@@ -6968,7 +7421,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6984,7 +7438,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6997,7 +7452,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7018,8 +7474,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7060,7 +7521,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7073,7 +7535,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7090,7 +7553,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileAppCategory
@@ -7132,7 +7594,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7158,7 +7621,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7181,7 +7645,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7207,8 +7672,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7249,7 +7719,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7272,7 +7743,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7292,9 +7764,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+          links:
+            assignments:
+              operationId: deviceAppManagement.mobileAppConfigurations.GetAssignments
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+                managedDeviceMobileAppConfigurationAssignment-id: $response.body#/id
+            deviceStatuses:
+              operationId: deviceAppManagement.mobileAppConfigurations.GetDeviceStatuses
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+                managedDeviceMobileAppConfigurationDeviceStatus-id: $response.body#/id
+            userStatuses:
+              operationId: deviceAppManagement.mobileAppConfigurations.GetUserStatuses
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+                managedDeviceMobileAppConfigurationUserStatus-id: $response.body#/id
+            deviceStatusSummary:
+              operationId: deviceAppManagement.mobileAppConfigurations.GetDeviceStatusSummary
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+                managedDeviceMobileAppConfigurationDeviceSummary-id: $response.body#/id
+            userStatusSummary:
+              operationId: deviceAppManagement.mobileAppConfigurations.GetUserStatusSummary
+              parameters:
+                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
+                managedDeviceMobileAppConfigurationUserSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -7343,7 +7840,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7357,7 +7855,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7369,7 +7868,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7390,8 +7890,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7447,7 +7952,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7459,7 +7965,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7476,7 +7983,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -7532,7 +8038,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7560,7 +8067,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7579,7 +8087,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7600,8 +8109,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7657,7 +8171,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7676,7 +8191,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7693,7 +8209,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -7744,7 +8259,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7764,7 +8280,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7781,7 +8298,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -7862,7 +8378,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7884,7 +8401,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7900,7 +8418,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7921,8 +8440,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7978,7 +8502,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7994,7 +8519,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8011,7 +8537,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -8062,7 +8587,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8081,7 +8607,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8098,7 +8625,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -8140,7 +8666,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8186,7 +8713,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8220,7 +8748,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8247,8 +8776,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8289,7 +8823,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8323,7 +8858,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8344,9 +8880,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          links:
+            categories:
+              operationId: deviceAppManagement.mobileApps.GetCategories
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppCategory-id: $response.body#/id
+            assignments:
+              operationId: deviceAppManagement.mobileApps.GetAssignments
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppAssignment-id: $response.body#/id
+            installSummary:
+              operationId: deviceAppManagement.mobileApps.GetInstallSummary
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: deviceAppManagement.mobileApps.GetDeviceStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $response.body#/id
+            userStatuses:
+              operationId: deviceAppManagement.mobileApps.GetUserStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $response.body#/id
+            relationships:
+              operationId: deviceAppManagement.mobileApps.GetRelationships
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppRelationship-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -8395,7 +8961,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8417,7 +8984,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8433,7 +9001,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8454,8 +9023,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8511,7 +9085,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8527,7 +9102,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8544,7 +9120,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -8600,7 +9175,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8616,7 +9192,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8629,7 +9206,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8650,8 +9228,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/categories/{mobileAppCategory-id}':
     get:
@@ -8677,7 +9260,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8690,7 +9274,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8707,7 +9292,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses':
     get:
       tags:
@@ -8730,7 +9314,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8766,7 +9351,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8790,7 +9376,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8812,8 +9399,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8869,7 +9461,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8893,7 +9486,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8909,9 +9503,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+          links:
+            app:
+              operationId: mobileApp.deviceStatuses.GetApp
+              parameters:
+                mobileApp-id: $response.body#/id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -8969,7 +9568,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9003,7 +9603,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9024,9 +9625,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          links:
+            categories:
+              operationId: mobileAppInstallStatus.app.GetCategories
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppCategory-id: $response.body#/id
+            assignments:
+              operationId: mobileAppInstallStatus.app.GetAssignments
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppAssignment-id: $response.body#/id
+            installSummary:
+              operationId: mobileAppInstallStatus.app.GetInstallSummary
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppInstallSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: mobileAppInstallStatus.app.GetDeviceStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $response.body#/id
+            userStatuses:
+              operationId: mobileAppInstallStatus.app.GetUserStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                userAppInstallStatus-id: $response.body#/id
+            relationships:
+              operationId: mobileAppInstallStatus.app.GetRelationships
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppRelationship-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign':
     post:
       tags:
@@ -9167,7 +9803,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9188,7 +9825,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9205,7 +9843,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -9356,7 +9993,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9372,7 +10010,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9385,7 +10024,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9406,8 +10046,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9463,7 +10108,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9476,7 +10122,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9493,7 +10140,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -9549,7 +10195,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9571,7 +10218,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9589,7 +10237,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9612,8 +10261,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9669,7 +10323,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9687,7 +10342,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9704,9 +10360,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
+          links:
+            app:
+              operationId: mobileApp.userStatuses.GetApp
+              parameters:
+                mobileApp-id: $response.body#/id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+            deviceStatuses:
+              operationId: mobileApp.userStatuses.GetDeviceStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -9764,7 +10431,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9798,7 +10466,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9819,9 +10488,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          links:
+            categories:
+              operationId: userAppInstallStatus.app.GetCategories
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppCategory-id: $response.body#/id
+            assignments:
+              operationId: userAppInstallStatus.app.GetAssignments
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppAssignment-id: $response.body#/id
+            installSummary:
+              operationId: userAppInstallStatus.app.GetInstallSummary
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: userAppInstallStatus.app.GetDeviceStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $response.body#/id
+            userStatuses:
+              operationId: userAppInstallStatus.app.GetUserStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $response.body#/id
+            relationships:
+              operationId: userAppInstallStatus.app.GetRelationships
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppRelationship-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.assign':
     post:
       tags:
@@ -9974,7 +10678,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10010,7 +10715,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10034,7 +10740,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10056,8 +10763,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10127,7 +10839,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10151,7 +10864,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10167,9 +10881,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
+          links:
+            app:
+              operationId: userAppInstallStatus.deviceStatuses.GetApp
+              parameters:
+                mobileApp-id: $response.body#/id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -10241,7 +10961,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10275,7 +10996,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10296,9 +11018,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
+          links:
+            categories:
+              operationId: mobileAppInstallStatus.app.GetCategories
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppCategory-id: $response.body#/id
+            assignments:
+              operationId: mobileAppInstallStatus.app.GetAssignments
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppAssignment-id: $response.body#/id
+            installSummary:
+              operationId: mobileAppInstallStatus.app.GetInstallSummary
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppInstallSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: mobileAppInstallStatus.app.GetDeviceStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $response.body#/id
+            userStatuses:
+              operationId: mobileAppInstallStatus.app.GetUserStatuses
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $response.body#/id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+            relationships:
+              operationId: mobileAppInstallStatus.app.GetRelationships
+              parameters:
+                mobileApp-id: $request.path.mobileApp-id
+                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
+                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
+                mobileAppRelationship-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign':
     post:
       tags:
@@ -10544,7 +11306,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10572,7 +11335,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10593,7 +11357,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10616,8 +11381,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.policySet'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10658,7 +11428,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10679,7 +11450,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10696,9 +11468,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policySet'
+          links:
+            assignments:
+              operationId: deviceAppManagement.policySets.GetAssignments
+              parameters:
+                policySet-id: $request.path.policySet-id
+                policySetAssignment-id: $response.body#/id
+            items:
+              operationId: deviceAppManagement.policySets.GetItems
+              parameters:
+                policySet-id: $request.path.policySet-id
+                policySetItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.policySet
@@ -10747,7 +11529,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10763,7 +11546,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10776,7 +11560,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10797,8 +11582,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10854,7 +11644,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10867,7 +11658,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10884,7 +11676,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.policySet
@@ -10940,7 +11731,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10968,7 +11760,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10987,7 +11780,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11008,8 +11802,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.policySetItem'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11065,7 +11864,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11084,7 +11884,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11101,7 +11902,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.policySetItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.policySet
@@ -11226,7 +12026,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11248,7 +12049,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11264,7 +12066,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11285,8 +12088,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sideLoadingKey'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11327,7 +12135,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11343,7 +12152,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11360,7 +12170,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sideLoadingKey'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.sideLoadingKey
@@ -11397,7 +12206,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11417,7 +12227,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11434,7 +12245,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.symantecCodeSigningCertificate
@@ -11468,7 +12278,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11498,7 +12309,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11521,7 +12333,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11545,8 +12358,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11587,7 +12405,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11610,7 +12429,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11628,9 +12448,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+          links:
+            apps:
+              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetApps
+              parameters:
+                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
+                managedMobileApp-id: $response.body#/id
+            deploymentSummary:
+              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetDeploymentSummary
+              parameters:
+                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
+                managedAppPolicyDeploymentSummary-id: $response.body#/id
+            assignments:
+              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetAssignments
+              parameters:
+                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
+                targetedManagedAppPolicyAssignment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -11679,7 +12514,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11695,7 +12531,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11708,7 +12545,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11729,8 +12567,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11786,7 +12629,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11799,7 +12643,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11816,7 +12661,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -11872,7 +12716,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11890,7 +12735,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11904,7 +12750,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11925,8 +12772,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11982,7 +12834,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11996,7 +12849,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12013,7 +12867,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -12064,7 +12917,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12080,7 +12934,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12097,7 +12952,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -12234,7 +13088,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12280,7 +13135,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12308,7 +13164,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12329,8 +13186,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.vppToken'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12371,7 +13233,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12399,7 +13262,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12416,7 +13280,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.vppToken'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.vppToken
@@ -12538,7 +13401,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12566,7 +13430,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12588,7 +13453,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12612,8 +13478,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12654,7 +13525,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12676,7 +13548,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12694,9 +13567,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
+          links:
+            assignments:
+              operationId: deviceAppManagement.wdacSupplementalPolicies.GetAssignments
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyAssignment-id: $response.body#/id
+            deploySummary:
+              operationId: deviceAppManagement.wdacSupplementalPolicies.GetDeploySummary
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: deviceAppManagement.wdacSupplementalPolicies.GetDeviceStatuses
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
@@ -12745,7 +13633,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12759,7 +13648,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12771,7 +13661,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12792,8 +13683,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12849,7 +13745,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12861,7 +13758,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12878,7 +13776,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
@@ -12929,7 +13826,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12942,7 +13840,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -12959,7 +13858,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
@@ -13008,7 +13906,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13038,7 +13937,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13059,7 +13959,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13081,8 +13982,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13138,7 +14044,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13159,7 +14066,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13175,9 +14083,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
+          links:
+            policy:
+              operationId: windowsDefenderApplicationControlSupplementalPolicy.deviceStatuses.GetPolicy
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $response.body#/id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
@@ -13235,7 +14148,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13257,7 +14171,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13275,9 +14190,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
+          links:
+            assignments:
+              operationId: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.policy.GetAssignments
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
+                windowsDefenderApplicationControlSupplementalPolicyAssignment-id: $response.body#/id
+            deploySummary:
+              operationId: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.policy.GetDeploySummary
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary-id: $response.body#/id
+            deviceStatuses:
+              operationId: windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.policy.GetDeviceStatuses
+              parameters:
+                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
+                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy/microsoft.graph.assign':
     post:
       tags:
@@ -13364,7 +14296,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13388,7 +14321,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13405,7 +14339,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13426,8 +14361,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13468,7 +14408,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13485,7 +14426,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13502,7 +14444,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsInformationProtectionDeviceRegistration
@@ -13564,7 +14505,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13656,7 +14598,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13710,7 +14653,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13734,8 +14678,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13776,7 +14725,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13830,7 +14780,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13850,7 +14801,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
@@ -13892,7 +14842,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13916,7 +14867,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13933,7 +14885,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -13954,8 +14907,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13996,7 +14954,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -14013,7 +14972,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -14030,7 +14990,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsInformationProtectionWipeAction
@@ -14067,7 +15026,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -14080,7 +15040,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -14096,9 +15057,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsManagementApp'
+          links:
+            healthStates:
+              operationId: deviceAppManagement.windowsManagementApp.GetHealthStates
+              parameters:
+                windowsManagementAppHealthState-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.deviceAppManagement:

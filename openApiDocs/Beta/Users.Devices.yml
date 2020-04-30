@@ -28,7 +28,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -90,7 +91,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -132,7 +134,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -159,8 +162,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.device'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -216,7 +224,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -258,7 +267,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -279,9 +289,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
+          links:
+            memberOf:
+              operationId: user.devices.GetMemberOf
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                directoryObject-id: $response.body#/id
+            registeredOwners:
+              operationId: user.devices.GetRegisteredOwners
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                directoryObject-id: $response.body#/id
+            registeredUsers:
+              operationId: user.devices.GetRegisteredUsers
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                directoryObject-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: user.devices.GetTransitiveMemberOf
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                directoryObject-id: $response.body#/id
+            extensions:
+              operationId: user.devices.GetExtensions
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                extension-id: $response.body#/id
+            commands:
+              operationId: user.devices.GetCommands
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                command-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
