@@ -8,7 +8,7 @@ Param(
 
 $GraphVersion = "v1.0"
 if($BetaGraphVersion){
-    $GraphVersion = "Beta"
+    $GraphVersion = "beta"
 }
 
 $SrcPath =  Join-Path $PSScriptRoot "..\src\$GraphVersion\*\*"
