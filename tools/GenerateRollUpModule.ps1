@@ -29,7 +29,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 $ModulePrefix = "Microsoft.Graph"
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
-    $GraphVersion = "Beta"
+    $GraphVersion = "beta"
 }
 $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
