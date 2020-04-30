@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>0.2.0</version>
+    <version>0.5.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -12,7 +12,7 @@
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK</tags>
-    <releaseNotes>Initial release of Microsoft.Graph.Authentication module.</releaseNotes>
+    <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
     <dependencies />
   </metadata>
   <files>

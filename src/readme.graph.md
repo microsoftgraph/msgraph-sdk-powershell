@@ -337,7 +337,7 @@ directive:
       verb: Confirm
 # Remove cmdlets
   - where:
-      verb: Confirm
+      verb: Test
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
