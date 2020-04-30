@@ -9,6 +9,7 @@ on:
   push:
     branches: 
       - dev
+      - gn/generateOpenApiDocs
   schedule:
     - cron: "0 12 * * 5" # Run at Midnight UTC on Friday
 
