@@ -1,10 +1,10 @@
 <!-- region Generated -->
-# Microsoft.Graph.Users.Authentication
-This directory contains the PowerShell module for the UsersAuthentication service.
+# Microsoft.Graph.Identity.AuthenticationMethods
+This directory contains the PowerShell module for the IdentityAuthenticationMethods service.
 
 ---
 ## Status
-[![Microsoft.Graph.Users.Authentication](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Users.Authentication.svg?style=flat-square&label=Microsoft.Graph.Users.Authentication "Microsoft.Graph.Users.Authentication")](https://www.powershellgallery.com/packages/Microsoft.Graph.Users.Authentication/)
+[![Microsoft.Graph.Identity.AuthenticationMethods](https://img.shields.io/powershellgallery/v/Microsoft.Graph.Identity.AuthenticationMethods.svg?style=flat-square&label=Microsoft.Graph.Identity.AuthenticationMethods "Microsoft.Graph.Identity.AuthenticationMethods")](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.AuthenticationMethods/)
 
 ## Info
 - Modifiable: yes
@@ -17,7 +17,7 @@ This directory contains the PowerShell module for the UsersAuthentication servic
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Development
-For information on how to develop for `Microsoft.Graph.Users.Authentication`, see [how-to.md](how-to.md).
+For information on how to develop for `Microsoft.Graph.Identity.AuthenticationMethods`, see [how-to.md](how-to.md).
 <!-- endregion -->
 
 ### AutoRest Configuration
