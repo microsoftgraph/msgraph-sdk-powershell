@@ -1,0 +1,2612 @@
+openapi: 3.0.1
+info:
+  title: Bookings
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /bookingBusinesses:
+    get:
+      tags:
+        - bookingBusinesses.bookingBusiness
+      summary: Get entities from bookingBusinesses
+      operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - businessType
+                - businessType desc
+                - address
+                - address desc
+                - phone
+                - phone desc
+                - email
+                - email desc
+                - webSiteUrl
+                - webSiteUrl desc
+                - defaultCurrencyIso
+                - defaultCurrencyIso desc
+                - businessHours
+                - businessHours desc
+                - schedulingPolicy
+                - schedulingPolicy desc
+                - isPublished
+                - isPublished desc
+                - publicUrl
+                - publicUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - businessType
+                - address
+                - phone
+                - email
+                - webSiteUrl
+                - defaultCurrencyIso
+                - businessHours
+                - schedulingPolicy
+                - isPublished
+                - publicUrl
+                - appointments
+                - calendarView
+                - customers
+                - services
+                - staffMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appointments
+                - calendarView
+                - customers
+                - services
+                - staffMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingBusiness
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingBusiness
+      summary: Add new entity to bookingBusinesses
+      operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingBusiness
+      summary: Get entity from bookingBusinesses by key
+      operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - businessType
+                - address
+                - phone
+                - email
+                - webSiteUrl
+                - defaultCurrencyIso
+                - businessHours
+                - schedulingPolicy
+                - isPublished
+                - publicUrl
+                - appointments
+                - calendarView
+                - customers
+                - services
+                - staffMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appointments
+                - calendarView
+                - customers
+                - services
+                - staffMembers
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+          links:
+            appointments:
+              operationId: bookingBusinesses.GetAppointments
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+                bookingAppointment-id: $response.body#/id
+            calendarView:
+              operationId: bookingBusinesses.GetCalendarView
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+                bookingAppointment-id: $response.body#/id
+            customers:
+              operationId: bookingBusinesses.GetCustomers
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+                bookingCustomer-id: $response.body#/id
+            services:
+              operationId: bookingBusinesses.GetServices
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+                bookingService-id: $response.body#/id
+            staffMembers:
+              operationId: bookingBusinesses.GetStaffMembers
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+                bookingStaffMember-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - bookingBusinesses.bookingBusiness
+      summary: Update entity in bookingBusinesses
+      operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingBusiness
+      summary: Delete entity from bookingBusinesses
+      operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/appointments':
+    get:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Get appointments from bookingBusinesses
+      operationId: bookingBusinesses_ListAppointments
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - selfServiceAppointmentId
+                - selfServiceAppointmentId desc
+                - customerId
+                - customerId desc
+                - customerName
+                - customerName desc
+                - customerEmailAddress
+                - customerEmailAddress desc
+                - customerPhone
+                - customerPhone desc
+                - customerLocation
+                - customerLocation desc
+                - customerNotes
+                - customerNotes desc
+                - serviceId
+                - serviceId desc
+                - serviceName
+                - serviceName desc
+                - start
+                - start desc
+                - end
+                - end desc
+                - duration
+                - duration desc
+                - preBuffer
+                - preBuffer desc
+                - postBuffer
+                - postBuffer desc
+                - serviceLocation
+                - serviceLocation desc
+                - priceType
+                - priceType desc
+                - price
+                - price desc
+                - serviceNotes
+                - serviceNotes desc
+                - reminders
+                - reminders desc
+                - optOutOfCustomerEmail
+                - optOutOfCustomerEmail desc
+                - staffMemberIds
+                - staffMemberIds desc
+                - invoiceAmount
+                - invoiceAmount desc
+                - invoiceDate
+                - invoiceDate desc
+                - invoiceId
+                - invoiceId desc
+                - invoiceStatus
+                - invoiceStatus desc
+                - invoiceUrl
+                - invoiceUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - selfServiceAppointmentId
+                - customerId
+                - customerName
+                - customerEmailAddress
+                - customerPhone
+                - customerLocation
+                - customerNotes
+                - serviceId
+                - serviceName
+                - start
+                - end
+                - duration
+                - preBuffer
+                - postBuffer
+                - serviceLocation
+                - priceType
+                - price
+                - serviceNotes
+                - reminders
+                - optOutOfCustomerEmail
+                - staffMemberIds
+                - invoiceAmount
+                - invoiceDate
+                - invoiceId
+                - invoiceStatus
+                - invoiceUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingAppointment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Create new navigation property to appointments for bookingBusinesses
+      operationId: bookingBusinesses_CreateAppointments
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Get appointments from bookingBusinesses
+      operationId: bookingBusinesses_GetAppointments
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - selfServiceAppointmentId
+                - customerId
+                - customerName
+                - customerEmailAddress
+                - customerPhone
+                - customerLocation
+                - customerNotes
+                - serviceId
+                - serviceName
+                - start
+                - end
+                - duration
+                - preBuffer
+                - postBuffer
+                - serviceLocation
+                - priceType
+                - price
+                - serviceNotes
+                - reminders
+                - optOutOfCustomerEmail
+                - staffMemberIds
+                - invoiceAmount
+                - invoiceDate
+                - invoiceId
+                - invoiceStatus
+                - invoiceUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Update the navigation property appointments in bookingBusinesses
+      operationId: bookingBusinesses_UpdateAppointments
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - bookingBusinesses.Actions
+      summary: Invoke action cancel
+      operationId: bookingBusinesses.appointments_cancel
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cancellationMessage:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/bookingBusinesses/{bookingBusiness-id}/calendarView':
+    get:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Get calendarView from bookingBusinesses
+      operationId: bookingBusinesses_ListCalendarView
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - selfServiceAppointmentId
+                - selfServiceAppointmentId desc
+                - customerId
+                - customerId desc
+                - customerName
+                - customerName desc
+                - customerEmailAddress
+                - customerEmailAddress desc
+                - customerPhone
+                - customerPhone desc
+                - customerLocation
+                - customerLocation desc
+                - customerNotes
+                - customerNotes desc
+                - serviceId
+                - serviceId desc
+                - serviceName
+                - serviceName desc
+                - start
+                - start desc
+                - end
+                - end desc
+                - duration
+                - duration desc
+                - preBuffer
+                - preBuffer desc
+                - postBuffer
+                - postBuffer desc
+                - serviceLocation
+                - serviceLocation desc
+                - priceType
+                - priceType desc
+                - price
+                - price desc
+                - serviceNotes
+                - serviceNotes desc
+                - reminders
+                - reminders desc
+                - optOutOfCustomerEmail
+                - optOutOfCustomerEmail desc
+                - staffMemberIds
+                - staffMemberIds desc
+                - invoiceAmount
+                - invoiceAmount desc
+                - invoiceDate
+                - invoiceDate desc
+                - invoiceId
+                - invoiceId desc
+                - invoiceStatus
+                - invoiceStatus desc
+                - invoiceUrl
+                - invoiceUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - selfServiceAppointmentId
+                - customerId
+                - customerName
+                - customerEmailAddress
+                - customerPhone
+                - customerLocation
+                - customerNotes
+                - serviceId
+                - serviceName
+                - start
+                - end
+                - duration
+                - preBuffer
+                - postBuffer
+                - serviceLocation
+                - priceType
+                - price
+                - serviceNotes
+                - reminders
+                - optOutOfCustomerEmail
+                - staffMemberIds
+                - invoiceAmount
+                - invoiceDate
+                - invoiceId
+                - invoiceStatus
+                - invoiceUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingAppointment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Create new navigation property to calendarView for bookingBusinesses
+      operationId: bookingBusinesses_CreateCalendarView
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Get calendarView from bookingBusinesses
+      operationId: bookingBusinesses_GetCalendarView
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - selfServiceAppointmentId
+                - customerId
+                - customerName
+                - customerEmailAddress
+                - customerPhone
+                - customerLocation
+                - customerNotes
+                - serviceId
+                - serviceName
+                - start
+                - end
+                - duration
+                - preBuffer
+                - postBuffer
+                - serviceLocation
+                - priceType
+                - price
+                - serviceNotes
+                - reminders
+                - optOutOfCustomerEmail
+                - staffMemberIds
+                - invoiceAmount
+                - invoiceDate
+                - invoiceId
+                - invoiceStatus
+                - invoiceUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Update the navigation property calendarView in bookingBusinesses
+      operationId: bookingBusinesses_UpdateCalendarView
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - bookingBusinesses.Actions
+      summary: Invoke action cancel
+      operationId: bookingBusinesses.calendarView_cancel
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: bookingAppointment-id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cancellationMessage:
+                  type: string
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/bookingBusinesses/{bookingBusiness-id}/customers':
+    get:
+      tags:
+        - bookingBusinesses.bookingCustomer
+      summary: Get customers from bookingBusinesses
+      operationId: bookingBusinesses_ListCustomers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - emailAddress
+                - emailAddress desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - emailAddress
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingCustomer
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingCustomer
+      summary: Create new navigation property to customers for bookingBusinesses
+      operationId: bookingBusinesses_CreateCustomers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingCustomer
+      summary: Get customers from bookingBusinesses
+      operationId: bookingBusinesses_GetCustomers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomer-id
+          in: path
+          description: 'key: bookingCustomer-id of bookingCustomer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomer
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - emailAddress
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - bookingBusinesses.bookingCustomer
+      summary: Update the navigation property customers in bookingBusinesses
+      operationId: bookingBusinesses_UpdateCustomers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomer-id
+          in: path
+          description: 'key: bookingCustomer-id of bookingCustomer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomer
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
+    post:
+      tags:
+        - bookingBusinesses.Actions
+      summary: Invoke action publish
+      operationId: bookingBusinesses_publish
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish':
+    post:
+      tags:
+        - bookingBusinesses.Actions
+      summary: Invoke action unpublish
+      operationId: bookingBusinesses_unpublish
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/bookingBusinesses/{bookingBusiness-id}/services':
+    get:
+      tags:
+        - bookingBusinesses.bookingService
+      summary: Get services from bookingBusinesses
+      operationId: bookingBusinesses_ListServices
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - defaultDuration
+                - defaultDuration desc
+                - defaultLocation
+                - defaultLocation desc
+                - defaultPrice
+                - defaultPrice desc
+                - defaultPriceType
+                - defaultPriceType desc
+                - defaultReminders
+                - defaultReminders desc
+                - description
+                - description desc
+                - isHiddenFromCustomers
+                - isHiddenFromCustomers desc
+                - notes
+                - notes desc
+                - preBuffer
+                - preBuffer desc
+                - postBuffer
+                - postBuffer desc
+                - schedulingPolicy
+                - schedulingPolicy desc
+                - staffMemberIds
+                - staffMemberIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - defaultDuration
+                - defaultLocation
+                - defaultPrice
+                - defaultPriceType
+                - defaultReminders
+                - description
+                - isHiddenFromCustomers
+                - notes
+                - preBuffer
+                - postBuffer
+                - schedulingPolicy
+                - staffMemberIds
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingService
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingService'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingService
+      summary: Create new navigation property to services for bookingBusinesses
+      operationId: bookingBusinesses_CreateServices
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingService'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingService
+      summary: Get services from bookingBusinesses
+      operationId: bookingBusinesses_GetServices
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingService-id
+          in: path
+          description: 'key: bookingService-id of bookingService'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingService
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - defaultDuration
+                - defaultLocation
+                - defaultPrice
+                - defaultPriceType
+                - defaultReminders
+                - description
+                - isHiddenFromCustomers
+                - notes
+                - preBuffer
+                - postBuffer
+                - schedulingPolicy
+                - staffMemberIds
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - bookingBusinesses.bookingService
+      summary: Update the navigation property services in bookingBusinesses
+      operationId: bookingBusinesses_UpdateServices
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingService-id
+          in: path
+          description: 'key: bookingService-id of bookingService'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingService
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingService'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/staffMembers':
+    get:
+      tags:
+        - bookingBusinesses.bookingStaffMember
+      summary: Get staffMembers from bookingBusinesses
+      operationId: bookingBusinesses_ListStaffMembers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - emailAddress
+                - emailAddress desc
+                - availabilityIsAffectedByPersonalCalendar
+                - availabilityIsAffectedByPersonalCalendar desc
+                - colorIndex
+                - colorIndex desc
+                - role
+                - role desc
+                - useBusinessHours
+                - useBusinessHours desc
+                - workingHours
+                - workingHours desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - emailAddress
+                - availabilityIsAffectedByPersonalCalendar
+                - colorIndex
+                - role
+                - useBusinessHours
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingStaffMember
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingStaffMember
+      summary: Create new navigation property to staffMembers for bookingBusinesses
+      operationId: bookingBusinesses_CreateStaffMembers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingStaffMember
+      summary: Get staffMembers from bookingBusinesses
+      operationId: bookingBusinesses_GetStaffMembers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingStaffMember-id
+          in: path
+          description: 'key: bookingStaffMember-id of bookingStaffMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingStaffMember
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - emailAddress
+                - availabilityIsAffectedByPersonalCalendar
+                - colorIndex
+                - role
+                - useBusinessHours
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - bookingBusinesses.bookingStaffMember
+      summary: Update the navigation property staffMembers in bookingBusinesses
+      operationId: bookingBusinesses_UpdateStaffMembers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: bookingBusiness-id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingStaffMember-id
+          in: path
+          description: 'key: bookingStaffMember-id of bookingStaffMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingStaffMember
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /bookingCurrencies:
+    get:
+      tags:
+        - bookingCurrencies.bookingCurrency
+      summary: Get entities from bookingCurrencies
+      operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - symbol
+                - symbol desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - symbol
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingCurrency
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingCurrencies.bookingCurrency
+      summary: Add new entity to bookingCurrencies
+      operationId: bookingCurrencies.bookingCurrency_CreateBookingCurrency
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingCurrencies/{bookingCurrency-id}':
+    get:
+      tags:
+        - bookingCurrencies.bookingCurrency
+      summary: Get entity from bookingCurrencies by key
+      operationId: bookingCurrencies.bookingCurrency_GetBookingCurrency
+      parameters:
+        - name: bookingCurrency-id
+          in: path
+          description: 'key: bookingCurrency-id of bookingCurrency'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCurrency
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - symbol
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - bookingCurrencies.bookingCurrency
+      summary: Update entity in bookingCurrencies
+      operationId: bookingCurrencies.bookingCurrency_UpdateBookingCurrency
+      parameters:
+        - name: bookingCurrency-id
+          in: path
+          description: 'key: bookingCurrency-id of bookingCurrency'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCurrency
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingCurrencies.bookingCurrency
+      summary: Delete entity from bookingCurrencies
+      operationId: bookingCurrencies.bookingCurrency_DeleteBookingCurrency
+      parameters:
+        - name: bookingCurrency-id
+          in: path
+          description: 'key: bookingCurrency-id of bookingCurrency'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCurrency
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.bookingBusiness:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
+        - title: bookingBusiness
+          type: object
+          properties:
+            businessType:
+              type: string
+              nullable: true
+            address:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            phone:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            webSiteUrl:
+              type: string
+              description: The URL of the business web site.
+              nullable: true
+            defaultCurrencyIso:
+              type: string
+              nullable: true
+            businessHours:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
+            schedulingPolicy:
+              $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
+            isPublished:
+              type: boolean
+              nullable: true
+            publicUrl:
+              type: string
+              nullable: true
+            appointments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+              description: All appointments in this business.
+            calendarView:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+              description: A calendar view of appointments in this business.
+            customers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+              description: All customers of this business.
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
+              description: All services offered by this business.
+            staffMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+              description: All staff members that provides services in this business.
+          description: Represents a Microsot Bookings Business.
+      example:
+        id: string (identifier)
+        displayName: string
+        businessType: string
+        address:
+          '@odata.type': microsoft.graph.physicalAddress
+        phone: string
+        email: string
+        webSiteUrl: string
+        defaultCurrencyIso: string
+        businessHours:
+          - '@odata.type': microsoft.graph.bookingWorkHours
+        schedulingPolicy:
+          '@odata.type': microsoft.graph.bookingSchedulingPolicy
+        isPublished: true
+        publicUrl: string
+        appointments:
+          - '@odata.type': microsoft.graph.bookingAppointment
+        calendarView:
+          - '@odata.type': microsoft.graph.bookingAppointment
+        customers:
+          - '@odata.type': microsoft.graph.bookingCustomer
+        services:
+          - '@odata.type': microsoft.graph.bookingService
+        staffMembers:
+          - '@odata.type': microsoft.graph.bookingStaffMember
+    microsoft.graph.bookingAppointment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bookingAppointment
+          type: object
+          properties:
+            selfServiceAppointmentId:
+              type: string
+              nullable: true
+            customerId:
+              type: string
+              description: The id of the booking customer associated with this appointment.
+              nullable: true
+            customerName:
+              type: string
+              nullable: true
+            customerEmailAddress:
+              type: string
+              nullable: true
+            customerPhone:
+              type: string
+              nullable: true
+            customerLocation:
+              $ref: '#/components/schemas/microsoft.graph.location'
+            customerNotes:
+              type: string
+              description: Notes from the customer associated with this appointment.
+              nullable: true
+            serviceId:
+              type: string
+              description: The id of the booking service associated with this appointment.
+              nullable: true
+            serviceName:
+              type: string
+              description: The name of the booking service associated with this appointment.
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            duration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            preBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            postBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            serviceLocation:
+              $ref: '#/components/schemas/microsoft.graph.location'
+            priceType:
+              $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
+            price:
+              type: number
+              format: double
+            serviceNotes:
+              type: string
+              nullable: true
+            reminders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingReminder'
+            optOutOfCustomerEmail:
+              type: boolean
+            staffMemberIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            invoiceAmount:
+              type: number
+              format: double
+            invoiceDate:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            invoiceId:
+              type: string
+              nullable: true
+            invoiceStatus:
+              $ref: '#/components/schemas/microsoft.graph.bookingInvoiceStatus'
+            invoiceUrl:
+              type: string
+              nullable: true
+          description: Represents a booked appointment of a service by a customer in a business.
+      example:
+        id: string (identifier)
+        selfServiceAppointmentId: string
+        customerId: string
+        customerName: string
+        customerEmailAddress: string
+        customerPhone: string
+        customerLocation:
+          '@odata.type': microsoft.graph.location
+        customerNotes: string
+        serviceId: string
+        serviceName: string
+        start:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        end:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        duration: string
+        preBuffer: string
+        postBuffer: string
+        serviceLocation:
+          '@odata.type': microsoft.graph.location
+        priceType:
+          '@odata.type': microsoft.graph.bookingPriceType
+        price: double
+        serviceNotes: string
+        reminders:
+          - '@odata.type': microsoft.graph.bookingReminder
+        optOutOfCustomerEmail: true
+        staffMemberIds:
+          - string
+        invoiceAmount: double
+        invoiceDate:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        invoiceId: string
+        invoiceStatus:
+          '@odata.type': microsoft.graph.bookingInvoiceStatus
+        invoiceUrl: string
+    microsoft.graph.bookingCustomer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingPerson'
+        - title: bookingCustomer
+          type: object
+          description: Represents a customer of the business.
+      example:
+        id: string (identifier)
+        displayName: string
+        emailAddress: string
+    microsoft.graph.bookingService:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
+        - title: bookingService
+          type: object
+          properties:
+            defaultDuration:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            defaultLocation:
+              $ref: '#/components/schemas/microsoft.graph.location'
+            defaultPrice:
+              type: number
+              format: double
+            defaultPriceType:
+              $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
+            defaultReminders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingReminder'
+              description: The default reminders set in an appointment of this service.
+            description:
+              type: string
+              nullable: true
+            isHiddenFromCustomers:
+              type: boolean
+            notes:
+              type: string
+              nullable: true
+            preBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            postBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            schedulingPolicy:
+              $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
+            staffMemberIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+          description: Represents a particular service offered by a booking business.
+      example:
+        id: string (identifier)
+        displayName: string
+        defaultDuration: string
+        defaultLocation:
+          '@odata.type': microsoft.graph.location
+        defaultPrice: double
+        defaultPriceType:
+          '@odata.type': microsoft.graph.bookingPriceType
+        defaultReminders:
+          - '@odata.type': microsoft.graph.bookingReminder
+        description: string
+        isHiddenFromCustomers: true
+        notes: string
+        preBuffer: string
+        postBuffer: string
+        schedulingPolicy:
+          '@odata.type': microsoft.graph.bookingSchedulingPolicy
+        staffMemberIds:
+          - string
+    microsoft.graph.bookingStaffMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingPerson'
+        - title: bookingStaffMember
+          type: object
+          properties:
+            availabilityIsAffectedByPersonalCalendar:
+              type: boolean
+            colorIndex:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            role:
+              $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
+            useBusinessHours:
+              type: boolean
+            workingHours:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
+          description: Represents a staff member who provides services in a business.
+      example:
+        id: string (identifier)
+        displayName: string
+        emailAddress: string
+        availabilityIsAffectedByPersonalCalendar: true
+        colorIndex: integer
+        role:
+          '@odata.type': microsoft.graph.bookingStaffRole
+        useBusinessHours: true
+        workingHours:
+          - '@odata.type': microsoft.graph.bookingWorkHours
+    microsoft.graph.bookingCurrency:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bookingCurrency
+          type: object
+          properties:
+            symbol:
+              type: string
+      example:
+        id: string (identifier)
+        symbol: string
+    microsoft.graph.bookingNamedEntity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bookingNamedEntity
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Display name of this entity.
+          description: Booking entities that provide a display name.
+      example:
+        id: string (identifier)
+        displayName: string
+    microsoft.graph.physicalAddress:
+      title: physicalAddress
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddressType'
+        postOfficeBox:
+          type: string
+          nullable: true
+        street:
+          type: string
+          description: The street.
+          nullable: true
+        city:
+          type: string
+          description: The city.
+          nullable: true
+        state:
+          type: string
+          description: The state.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: 'The country or region. It''s a free-format string value, for example, ''United States''.'
+          nullable: true
+        postalCode:
+          type: string
+          description: The postal code.
+          nullable: true
+      example:
+        type:
+          '@odata.type': microsoft.graph.physicalAddressType
+        postOfficeBox: string
+        street: string
+        city: string
+        state: string
+        countryOrRegion: string
+        postalCode: string
+    microsoft.graph.bookingWorkHours:
+      title: bookingWorkHours
+      type: object
+      properties:
+        day:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        timeSlots:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingWorkTimeSlot'
+          description: A list of start/end times during a day.
+      example:
+        day:
+          '@odata.type': microsoft.graph.dayOfWeek
+        timeSlots:
+          - '@odata.type': microsoft.graph.bookingWorkTimeSlot
+    microsoft.graph.bookingSchedulingPolicy:
+      title: bookingSchedulingPolicy
+      type: object
+      properties:
+        timeSlotInterval:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Duration of each time slot.
+          format: duration
+        minimumLeadTime:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Minimum lead time for bookings and cancellations.
+          format: duration
+        maximumAdvance:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Maximum number of days in advance that a booking can be made.
+          format: duration
+        sendConfirmationsToOwner:
+          type: boolean
+          description: Notify the business via email when a booking is created or changed.
+        allowStaffSelection:
+          type: boolean
+          description: Allow customers to choose a specific person for the booking.
+      example:
+        timeSlotInterval: string
+        minimumLeadTime: string
+        maximumAdvance: string
+        sendConfirmationsToOwner: true
+        allowStaffSelection: true
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.location:
+      title: location
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The name associated with the location.
+          nullable: true
+        locationEmailAddress:
+          type: string
+          description: Optional email address of the location.
+          nullable: true
+        address:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        coordinates:
+          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+        locationUri:
+          type: string
+          description: Optional URI representing the location.
+          nullable: true
+        locationType:
+          $ref: '#/components/schemas/microsoft.graph.locationType'
+        uniqueId:
+          type: string
+          description: For internal use only.
+          nullable: true
+        uniqueIdType:
+          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
+      example:
+        displayName: string
+        locationEmailAddress: string
+        address:
+          '@odata.type': microsoft.graph.physicalAddress
+        coordinates:
+          '@odata.type': microsoft.graph.outlookGeoCoordinates
+        locationUri: string
+        locationType:
+          '@odata.type': microsoft.graph.locationType
+        uniqueId: string
+        uniqueIdType:
+          '@odata.type': microsoft.graph.locationUniqueIdType
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          nullable: true
+      example:
+        dateTime: string
+        timeZone: string
+    microsoft.graph.bookingPriceType:
+      title: bookingPriceType
+      enum:
+        - undefined
+        - fixedPrice
+        - startingAt
+        - hourly
+        - free
+        - priceVaries
+        - callUs
+        - notSet
+      type: string
+    microsoft.graph.bookingReminder:
+      title: bookingReminder
+      type: object
+      properties:
+        offset:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: How much time before an appointment the reminder should be sent.
+          format: duration
+        recipients:
+          $ref: '#/components/schemas/microsoft.graph.bookingReminderRecipients'
+        message:
+          type: string
+          description: Message to send.
+      example:
+        offset: string
+        recipients:
+          '@odata.type': microsoft.graph.bookingReminderRecipients
+        message: string
+    microsoft.graph.bookingInvoiceStatus:
+      title: bookingInvoiceStatus
+      enum:
+        - draft
+        - reviewing
+        - open
+        - canceled
+        - paid
+        - corrective
+      type: string
+    microsoft.graph.bookingPerson:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
+        - title: bookingPerson
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The e-mail address of this person.
+              nullable: true
+          description: Represents a booking customer or staff member.
+      example:
+        id: string (identifier)
+        displayName: string
+        emailAddress: string
+    microsoft.graph.bookingStaffRole:
+      title: bookingStaffRole
+      enum:
+        - guest
+        - administrator
+        - viewer
+        - externalGuest
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.physicalAddressType:
+      title: physicalAddressType
+      enum:
+        - unknown
+        - home
+        - business
+        - other
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.bookingWorkTimeSlot:
+      title: bookingWorkTimeSlot
+      type: object
+      properties:
+        start:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          format: time
+        end:
+          pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
+          type: string
+          format: time
+      example:
+        start: string (timestamp)
+        end: string (timestamp)
+    microsoft.graph.outlookGeoCoordinates:
+      title: outlookGeoCoordinates
+      type: object
+      properties:
+        altitude:
+          type: number
+          description: The altitude of the location.
+          format: double
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude of the location.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude of the location.
+          format: double
+          nullable: true
+        accuracy:
+          type: number
+          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
+          format: double
+          nullable: true
+        altitudeAccuracy:
+          type: number
+          description: The accuracy of the altitude.
+          format: double
+          nullable: true
+      example:
+        altitude: double
+        latitude: double
+        longitude: double
+        accuracy: double
+        altitudeAccuracy: double
+    microsoft.graph.locationType:
+      title: locationType
+      enum:
+        - default
+        - conferenceRoom
+        - homeAddress
+        - businessAddress
+        - geoCoordinates
+        - streetAddress
+        - hotel
+        - restaurant
+        - localBusiness
+        - postalAddress
+      type: string
+    microsoft.graph.locationUniqueIdType:
+      title: locationUniqueIdType
+      enum:
+        - unknown
+        - locationStore
+        - directory
+        - private
+        - bing
+      type: string
+    microsoft.graph.bookingReminderRecipients:
+      title: bookingReminderRecipients
+      enum:
+        - allAttendees
+        - staff
+        - customer
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
