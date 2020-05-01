@@ -1,0 +1,102 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Generates a release build artifact (nuget) from HEAD of master for auth module.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+pool:
+  vmImage:"ubuntu-latest"
+
+variables:
+  BRANCH: 'weeklyOpenApiDocsDownload'
+
+schedules:
+    - cron: "0 12 * * 5" # Run Every Friday at Midnight UTC Time
+      displayName: "Weekly OpenApiDocs Download and PR"
+      branches: 
+        include: 
+        - gn/generateOpenApiDocs
+        - dev
+      always: true
+
+steps:
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+      debugMode: false
+
+  - task: PowerShell@2
+    displayName: "Compute Branch"
+    pwsh: true
+    script: |
+        $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
+        Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
+  - task: PowerShell@2
+    displayName: "Configure User"
+    pwsh: true
+    inputs:
+      targetType: 'inline'
+      script: |
+        git config --global user.email "mgpssdk@microsoft.com"
+        git config --global user.name "GitHub Worklows"
+
+  - task: PowerShell@2
+    displayName: "Show Directory"
+    pwsh: true
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $(System.DefaultWorkingDirectorey)
+        ls -lsa $(System.DefaultWorkingDirectorey)
+        ls -lsa $(System.DefaultWorkingDirectorey)/tools
+    
+  - task: PowerShell@2
+    displayName: Download v1.0 OpenApiDocs
+    inputs:
+    filePath: '/tools/UpdateOpenApi.ps1'
+    arguments: '-BetaGraphVersion'
+    pwsh: true
+
+  - task: PowerShell@2
+    displayName: Download beta OpenApiDocs
+    inputs:
+    filePath: '/tools/UpdateOpenApi.ps1'
+    pwsh: true
+
+  - task: PowerShell@2
+    displayName : "Create PR $(BRANCH)"
+    pwsh: true
+    run: |
+        git branch $(BRANCH)
+        git checkout $(BRANCH)
+
+  - task: PowerShell@2
+    displayName : "Commit Downloaded Files"
+    run: |
+        cd $(System.DefaultWorkingDirectorey)/openApiDocs/
+        git add .
+        git commit -m 'Weekly OpenApiDocs Download'
+        git push --set-upstream origin $BRANCH
+
+  -  task: Bash@3
+     displayName: "Create Pull Request"
+     targetType: 'inline'
+     inputs:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MESSAGE_TITLE: Weekly OpenApiDocs Download
+        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains OpenApiDocs Updates from Graph Explorer API"
+        REVIEWERS: finsharp
+        ASSIGNEDTO: finsharp
+        LABELS: generated
+     script: |
+        curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
+        bin/hub pull-request -b "dev" -h "$BRANCH" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
+
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true
