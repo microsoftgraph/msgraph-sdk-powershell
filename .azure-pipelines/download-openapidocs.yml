@@ -51,14 +51,15 @@ steps:
   - task: PowerShell@2
     displayName: Download v1.0 OpenApiDocs
     inputs:
-      targetType: filePath
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       arguments: '-BetaGraphVersion'
+      pwsh: true
 
   - task: PowerShell@2
     displayName: Download beta OpenApiDocs
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
+      pwsh: true
 
   - task: PowerShell@2
     displayName : "Create PR $(BRANCH)"
