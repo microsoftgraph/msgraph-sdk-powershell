@@ -39,6 +39,19 @@ directive:
       verb: Get
       subject: ReportTenantSecureScore
     remove: true
+# Rename cmdlets
+  - where:
+      verb: New|Update|Get
+      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
+      variant: ^Create$|^CreateExpanded$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Get$|^GetViaIdentity$|^List$
+    set:
+      subject: $1ByPrinter
+  - where:
+      verb: New|Update|Get
+      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
+      variant: ^Create1$|^CreateExpanded1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Get1$|^GetViaIdentity1$|^List1$
+    set:
+      subject: $1ByUser
 ```
 ### Versioning
 
