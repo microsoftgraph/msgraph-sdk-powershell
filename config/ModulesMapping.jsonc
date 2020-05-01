@@ -31,6 +31,7 @@
     "Identity.Application": "^applications\\.|^applicationTemplates\\.",
     "Identity.AppRoleAssignments": "^appRoleAssignments\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Identity.AuditLogs": "^auditLogs\\.",
+    "Identity.AuthenticationMethods": "^users.authentication$",
     "Identity.AzureADPIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedOperationEvents\\.|^privilegedApproval\\.|^privilegedRoleAssignmentRequests\\.",
     "Identity.CertificateBasedAuthConfiguration": "^certificateBasedAuthConfiguration\\.",
     "Identity.ConditionalAccess": "^conditionalAccess\\.",

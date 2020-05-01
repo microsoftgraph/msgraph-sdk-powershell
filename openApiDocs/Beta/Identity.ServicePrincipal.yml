@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -97,7 +98,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -155,7 +157,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -191,8 +194,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -233,7 +241,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -291,7 +300,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -323,65 +333,80 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
           links:
             appRoleAssignedTo:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetAppRoleAssignedTo
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                appRoleAssignment-id: $response.body#/id
             appRoleAssignments:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetAppRoleAssignments
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                appRoleAssignment-id: $response.body#/id
             claimsMappingPolicies:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetClaimsMappingPolicies
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                claimsMappingPolicy-id: $response.body#/id
             homeRealmDiscoveryPolicies:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetHomeRealmDiscoveryPolicies
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                homeRealmDiscoveryPolicy-id: $response.body#/id
             endpoints:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetEndpoints
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                endpoint-id: $response.body#/id
             oauth2PermissionGrants:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetOauth2PermissionGrants
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                oAuth2PermissionGrant-id: $response.body#/id
             memberOf:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetMemberOf
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                directoryObject-id: $response.body#/id
             transitiveMemberOf:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetTransitiveMemberOf
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                directoryObject-id: $response.body#/id
             createdObjects:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetCreatedObjects
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                directoryObject-id: $response.body#/id
             licenseDetails:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetLicenseDetails
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                licenseDetails-id: $response.body#/id
             owners:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetOwners
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                directoryObject-id: $response.body#/id
             ownedObjects:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetOwnedObjects
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                directoryObject-id: $response.body#/id
             tokenIssuancePolicies:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetTokenIssuancePolicies
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                tokenIssuancePolicy-id: $response.body#/id
             tokenLifetimePolicies:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetTokenLifetimePolicies
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                tokenLifetimePolicy-id: $response.body#/id
             synchronization:
-              operationId: servicePrincipals.servicePrincipal.GetServicePrincipal
+              operationId: servicePrincipals.GetSynchronization
               parameters:
-                id: $request.path.id
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronization-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -457,7 +482,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -483,7 +509,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -501,7 +528,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -522,8 +550,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -579,7 +612,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -597,7 +631,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -614,7 +649,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.appRoleAssignment
@@ -670,7 +704,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -696,7 +731,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -714,7 +750,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -735,8 +772,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -792,7 +834,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -810,7 +853,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -827,7 +871,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.appRoleAssignment
@@ -883,7 +926,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -903,7 +947,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -919,7 +964,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -941,8 +987,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}':
     get:
@@ -968,7 +1019,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -984,7 +1036,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1002,7 +1055,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects':
     get:
       tags:
@@ -1025,7 +1077,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1039,7 +1092,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1051,7 +1105,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1072,8 +1127,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}':
     get:
@@ -1099,7 +1159,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1111,7 +1172,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1128,7 +1190,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/endpoints':
     get:
       tags:
@@ -1151,7 +1212,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1175,7 +1237,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1192,7 +1255,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1213,8 +1277,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.endpoint'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1270,7 +1339,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1287,7 +1357,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1304,7 +1375,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.endpoint
@@ -1360,7 +1430,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1380,7 +1451,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1396,7 +1468,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1418,8 +1491,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
     get:
@@ -1445,7 +1523,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1461,7 +1540,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1479,7 +1559,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails':
     get:
       tags:
@@ -1502,7 +1581,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1520,7 +1600,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1534,7 +1615,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1555,8 +1637,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1612,7 +1699,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1626,7 +1714,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1643,7 +1732,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.licenseDetails
@@ -1699,7 +1787,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1713,7 +1802,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1725,7 +1815,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1746,8 +1837,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}':
     get:
@@ -1773,7 +1869,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1785,7 +1882,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1802,7 +1900,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -2137,7 +2234,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2163,7 +2261,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2181,7 +2280,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2202,8 +2302,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}':
     get:
@@ -2229,7 +2334,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2247,7 +2353,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2264,7 +2371,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects':
     get:
       tags:
@@ -2287,7 +2393,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2301,7 +2408,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2313,7 +2421,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2334,8 +2443,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}':
     get:
@@ -2361,7 +2475,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2373,7 +2488,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2390,7 +2506,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners':
     get:
       tags:
@@ -2413,7 +2528,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2427,7 +2543,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2439,7 +2556,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2460,8 +2578,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}':
     get:
@@ -2487,7 +2610,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2499,7 +2623,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2516,7 +2641,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization':
     get:
       tags:
@@ -2534,7 +2658,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2548,7 +2673,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2565,9 +2691,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronization'
+          links:
+            jobs:
+              operationId: servicePrincipal.synchronization.GetJobs
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationJob-id: $response.body#/id
+            templates:
+              operationId: servicePrincipal.synchronization.GetTemplates
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationTemplate-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -2616,7 +2752,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2636,7 +2773,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2652,7 +2790,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2674,8 +2813,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2731,7 +2875,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2747,7 +2892,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2763,9 +2909,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+          links:
+            schema:
+              operationId: synchronization.jobs.GetSchema
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationJob-id: $request.path.synchronizationJob-id
+                synchronizationSchema-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3032,7 +3184,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3047,7 +3200,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3063,9 +3217,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          links:
+            directories:
+              operationId: synchronizationJob.schema.GetDirectories
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationJob-id: $request.path.synchronizationJob-id
+                directoryDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3128,7 +3288,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3152,7 +3313,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3169,7 +3331,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3190,8 +3353,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3261,7 +3429,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3278,7 +3447,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3295,7 +3465,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3537,7 +3706,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3561,7 +3731,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3579,7 +3750,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3601,8 +3773,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3658,7 +3835,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3676,7 +3854,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3692,9 +3871,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+          links:
+            schema:
+              operationId: synchronization.templates.GetSchema
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
+                synchronizationSchema-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3752,7 +3937,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3767,7 +3953,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3783,9 +3970,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          links:
+            directories:
+              operationId: synchronizationTemplate.schema.GetDirectories
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
+                directoryDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3848,7 +4041,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3872,7 +4066,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3889,7 +4084,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3910,8 +4106,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3981,7 +4182,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3998,7 +4200,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4015,7 +4218,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -4190,7 +4392,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4210,7 +4413,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4226,7 +4430,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4248,8 +4453,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
     get:
@@ -4275,7 +4485,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4291,7 +4502,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4309,7 +4521,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies':
     get:
       tags:
@@ -4332,7 +4543,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4352,7 +4564,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4368,7 +4581,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4390,8 +4604,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
     get:
@@ -4417,7 +4636,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4433,7 +4653,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4451,7 +4672,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf':
     get:
       tags:
@@ -4474,7 +4694,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4488,7 +4709,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4500,7 +4722,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4521,8 +4744,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}':
     get:
@@ -4548,7 +4776,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4560,7 +4789,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4577,7 +4807,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /servicePrincipals/microsoft.graph.delta():
     get:
       tags:
@@ -5757,8 +5986,10 @@ components:
               type: array
               items:
                 type: string
+              description: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
             isOrganizationDefault:
               type: boolean
+              description: 'If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.'
               nullable: true
             appliesTo:
               type: array
@@ -6201,8 +6432,10 @@ components:
           properties:
             description:
               type: string
+              description: Description for this policy.
             displayName:
               type: string
+              description: Display name for this policy.
       example:
         id: string (identifier)
         description: string
@@ -6321,6 +6554,8 @@ components:
           format: date-time
         reason:
           $ref: '#/components/schemas/microsoft.graph.quarantineReason'
+        error:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationError'
         seriesBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -6333,6 +6568,8 @@ components:
         nextAttempt: string (timestamp)
         reason:
           '@odata.type': microsoft.graph.quarantineReason
+        error:
+          '@odata.type': microsoft.graph.synchronizationError
         seriesBegan: string (timestamp)
         seriesCount: integer
     microsoft.graph.stringKeyLongValuePair:

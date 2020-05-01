@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -57,7 +58,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -81,9 +83,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            activities:
+              operationId: group.drive.GetActivities
+              parameters:
+                group-id: $request.path.group-id
+                itemActivityOLD-id: $response.body#/id
+            bundles:
+              operationId: group.drive.GetBundles
+              parameters:
+                group-id: $request.path.group-id
+                driveItem-id: $response.body#/id
+            following:
+              operationId: group.drive.GetFollowing
+              parameters:
+                group-id: $request.path.group-id
+                driveItem-id: $response.body#/id
+            items:
+              operationId: group.drive.GetItems
+              parameters:
+                group-id: $request.path.group-id
+                driveItem-id: $response.body#/id
+            list:
+              operationId: group.drive.GetList
+              parameters:
+                group-id: $request.path.group-id
+                list-id: $response.body#/id
+            root:
+              operationId: group.drive.GetRoot
+              parameters:
+                group-id: $request.path.group-id
+                driveItem-id: $response.body#/id
+            special:
+              operationId: group.drive.GetSpecial
+              parameters:
+                group-id: $request.path.group-id
+                driveItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.drive
@@ -132,7 +169,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -172,7 +210,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -206,7 +245,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -236,8 +276,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.drive'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -293,7 +338,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -327,7 +373,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -351,9 +398,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            activities:
+              operationId: group.drives.GetActivities
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                itemActivityOLD-id: $response.body#/id
+            bundles:
+              operationId: group.drives.GetBundles
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                driveItem-id: $response.body#/id
+            following:
+              operationId: group.drives.GetFollowing
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                driveItem-id: $response.body#/id
+            items:
+              operationId: group.drives.GetItems
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                driveItem-id: $response.body#/id
+            list:
+              operationId: group.drives.GetList
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                list-id: $response.body#/id
+            root:
+              operationId: group.drives.GetRoot
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                driveItem-id: $response.body#/id
+            special:
+              operationId: group.drives.GetSpecial
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+                driveItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.drive
@@ -419,6 +508,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: The list of items the user is following. Only in OneDrive for Business.
             items:
               type: array
               items:
@@ -876,6 +966,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+              description: The set of subscriptions on the list.
       example:
         id: string (identifier)
         createdBy:
@@ -1180,6 +1271,7 @@ components:
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             showInAddressList:
@@ -1481,6 +1573,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
               type: array
               items:
@@ -1687,6 +1781,8 @@ components:
           - '@odata.type': microsoft.graph.onlineMeeting
         presence:
           '@odata.type': microsoft.graph.presence
+        authentication:
+          '@odata.type': microsoft.graph.authentication
         chats:
           - '@odata.type': microsoft.graph.chat
         joinedTeams:
@@ -2195,6 +2291,8 @@ components:
           type: string
           description: Unique identifier for the remote item in its drive. Read-only.
           nullable: true
+        image:
+          $ref: '#/components/schemas/microsoft.graph.image'
         lastModifiedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         lastModifiedDateTime:
@@ -2222,6 +2320,8 @@ components:
           nullable: true
         specialFolder:
           $ref: '#/components/schemas/microsoft.graph.specialFolder'
+        video:
+          $ref: '#/components/schemas/microsoft.graph.video'
         webDavUrl:
           type: string
           description: DAV compatible URL for the item.
@@ -2241,6 +2341,8 @@ components:
         folder:
           '@odata.type': microsoft.graph.folder
         id: string
+        image:
+          '@odata.type': microsoft.graph.image
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
         lastModifiedDateTime: string (timestamp)
@@ -2256,6 +2358,8 @@ components:
         size: integer
         specialFolder:
           '@odata.type': microsoft.graph.specialFolder
+        video:
+          '@odata.type': microsoft.graph.video
         webDavUrl: string
         webUrl: string
     microsoft.graph.root:
@@ -2510,7 +2614,7 @@ components:
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
@@ -3753,7 +3857,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 10 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
@@ -4051,6 +4155,7 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -4076,17 +4181,23 @@ components:
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
+            calendarGroupId:
+              type: string
+              nullable: true
             allowedOnlineMeetingProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             isTallyingResponses:
               type: boolean
+              description: Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
               nullable: true
             isRemovable:
               type: boolean
+              description: Indicates whether this user calendar can be deleted from the user mailbox.
               nullable: true
             singleValueExtendedProperties:
               type: array
@@ -4102,6 +4213,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+              description: The permissions of the users with whom the calendar is shared.
             events:
               type: array
               items:
@@ -4127,6 +4239,7 @@ components:
         canEdit: true
         owner:
           '@odata.type': microsoft.graph.emailAddress
+        calendarGroupId: string
         allowedOnlineMeetingProviders:
           - '@odata.type': microsoft.graph.onlineMeetingProviderType
         defaultOnlineMeetingProvider:
@@ -4181,6 +4294,9 @@ components:
         - title: event
           type: object
           properties:
+            transactionId:
+              type: string
+              nullable: true
             originalStartTimeZone:
               type: string
               description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -4283,12 +4399,16 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information, false otherwise. Default is false. Optional.'
               nullable: true
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
+              type: boolean
+              nullable: true
+            isDraft:
               type: boolean
               nullable: true
             attachments:
@@ -4325,6 +4445,7 @@ components:
         changeKey: string
         categories:
           - string
+        transactionId: string
         originalStartTimeZone: string
         originalEndTimeZone: string
         responseStatus:
@@ -4373,6 +4494,7 @@ components:
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
         allowNewTimeProposals: true
+        isDraft: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -5268,6 +5390,10 @@ components:
               format: int64
             processorArchitecture:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
+            specificationVersion:
+              type: string
+              description: Specification version. This property is read-only.
+              nullable: true
             securityBaselineStates:
               type: array
               items:
@@ -5398,6 +5524,7 @@ components:
         physicalMemoryInBytes: integer
         processorArchitecture:
           '@odata.type': microsoft.graph.managedDeviceArchitecture
+        specificationVersion: string
         securityBaselineStates:
           - '@odata.type': microsoft.graph.securityBaselineState
         deviceConfigurationStates:
@@ -6270,6 +6397,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -6293,6 +6425,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.presence:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6309,6 +6444,38 @@ components:
         id: string (identifier)
         availability: string
         activity: string
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+      example:
+        id: string (identifier)
+        methods:
+          - '@odata.type': microsoft.graph.authenticationMethod
+        phoneMethods:
+          - '@odata.type': microsoft.graph.phoneAuthenticationMethod
+        passwordMethods:
+          - '@odata.type': microsoft.graph.passwordAuthenticationMethod
+        operations:
+          - '@odata.type': microsoft.graph.longRunningOperation
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7590,6 +7757,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             contentType:
@@ -7608,6 +7776,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -8419,9 +8588,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isRemovable:
               type: boolean
+              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
               nullable: true
             isInsideOrganization:
               type: boolean
+              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -8429,6 +8600,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
       example:
         id: string (identifier)
         emailAddress:
@@ -8574,25 +8746,31 @@ components:
       properties:
         joinUrl:
           type: string
+          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
           nullable: true
         conferenceId:
           type: string
+          description: The ID of the conference.
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that can be used to join the conference.
           nullable: true
         tollFreeNumbers:
           type: array
           items:
             type: string
             nullable: true
+          description: The toll free numbers that can be used to join the conference.
         quickDial:
           type: string
+          description: The pre-formatted quickdial for this call.
           nullable: true
         phones:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phone'
+          description: All of the phone numbers associated with this conference.
       example:
         joinUrl: string
         conferenceId: string
@@ -9076,6 +9254,7 @@ components:
         - windowsCoManagement
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - azureAdJoinUsingAzureVmExtension
       type: string
     microsoft.graph.lostModeState:
       title: lostModeState
@@ -9372,7 +9551,7 @@ components:
         lastSyncDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Datetime fo last sync with configuration manager management point.
+          description: Datetime for last sync with configuration manager management point.
           format: date-time
       example:
         state:
@@ -9387,8 +9566,12 @@ components:
           type: string
           description: Configuration Manager Client Id from SCCM
           nullable: true
+        isBlocked:
+          type: boolean
+          description: Configuration Manager Client blocked status from SCCM
       example:
         clientIdentifier: string
+        isBlocked: true
     microsoft.graph.managedDeviceArchitecture:
       title: managedDeviceArchitecture
       enum:
@@ -11308,6 +11491,83 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+      example:
+        id: string (identifier)
+        phoneNumber: string
+        phoneType:
+          '@odata.type': microsoft.graph.authenticationPhoneType
+        smsSignInState:
+          '@odata.type': microsoft.graph.authenticationMethodSignInState
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            password:
+              type: string
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        password: string
+        creationDateTime: string (timestamp)
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastActionDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.longRunningOperationStatus
+        statusDetail: string
+        resourceLocation: string
     microsoft.graph.conversationMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12231,12 +12491,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             resultType:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
             message:
               type: string
+              description: The result message for each threat assessment.
               nullable: true
       example:
         id: string (identifier)
@@ -13045,6 +13307,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -13060,6 +13326,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -13071,6 +13338,7 @@ components:
         - windows81AndLater
         - windows10AndLater
         - androidWorkProfile
+        - windows10XProfile
         - all
       type: string
     microsoft.graph.complianceStatus:
@@ -13136,6 +13404,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -13151,6 +13423,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.managedDeviceMobileAppConfigurationSettingState:
       title: managedDeviceMobileAppConfigurationSettingState
       type: object
@@ -13202,6 +13475,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -13217,6 +13494,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -14093,6 +14371,33 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notstarted
+        - running
+        - succeeded
+        - failed
+      type: string
     microsoft.graph.chatMessageType:
       title: chatMessageType
       enum:
