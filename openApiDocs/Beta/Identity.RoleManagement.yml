@@ -16,7 +16,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -24,11 +25,13 @@ paths:
               enum:
                 - id
                 - directory
+                - deviceManagement
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -36,6 +39,7 @@ paths:
               enum:
                 - '*'
                 - directory
+                - deviceManagement
               type: string
       responses:
         '200':
@@ -44,6 +48,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleManagement'
+          links:
+            directory:
+              operationId: roleManagement.GetDirectory
+              parameters:
+                rbacApplication-id: $response.body#/id
+            deviceManagement:
+              operationId: roleManagement.GetDeviceManagement
+              parameters:
+                rbacApplicationMultiple-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -65,17 +78,18 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /roleManagement/directory:
+  /roleManagement/deviceManagement:
     get:
       tags:
-        - roleManagement.rbacApplication
-      summary: Get directory from roleManagement
-      operationId: roleManagement_GetDirectory
+        - roleManagement.rbacApplicationMultiple
+      summary: Get deviceManagement from roleManagement
+      operationId: roleManagement_GetDeviceManagement
       parameters:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -88,7 +102,1033 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinitions
+                - roleAssignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+          links:
+            roleDefinitions:
+              operationId: roleManagement.deviceManagement.GetRoleDefinitions
+              parameters:
+                unifiedRoleDefinition-id: $response.body#/id
+            roleAssignments:
+              operationId: roleManagement.deviceManagement.GetRoleAssignments
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property deviceManagement in roleManagement
+      operationId: roleManagement_UpdateDeviceManagement
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/deviceManagement/roleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.deviceManagement_ListRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+                - condition
+                - condition desc
+                - displayName
+                - displayName desc
+                - description
+                - description desc
+                - principalIds
+                - principalIds desc
+                - directoryScopeIds
+                - directoryScopeIds desc
+                - appScopeIds
+                - appScopeIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roleDefinitionId
+                - condition
+                - displayName
+                - description
+                - principalIds
+                - directoryScopeIds
+                - appScopeIds
+                - roleDefinition
+                - principals
+                - directoryScopes
+                - appScopes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+                - principals
+                - directoryScopes
+                - appScopes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignmentMultiple
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleAssignments for roleManagement
+      operationId: roleManagement.deviceManagement_CreateRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleAssignments from roleManagement
+      operationId: roleManagement.deviceManagement_GetRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roleDefinitionId
+                - condition
+                - displayName
+                - description
+                - principalIds
+                - directoryScopeIds
+                - appScopeIds
+                - roleDefinition
+                - principals
+                - directoryScopes
+                - appScopes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleDefinition
+                - principals
+                - directoryScopes
+                - appScopes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+          links:
+            roleDefinition:
+              operationId: rbacApplicationMultiple.roleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+                unifiedRoleDefinition-id: $response.body#/id
+            principals:
+              operationId: rbacApplicationMultiple.roleAssignments.GetPrincipals
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+                directoryObject-id: $response.body#/id
+            directoryScopes:
+              operationId: rbacApplicationMultiple.roleAssignments.GetDirectoryScopes
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+                directoryObject-id: $response.body#/id
+            appScopes:
+              operationId: rbacApplicationMultiple.roleAssignments.GetAppScopes
+              parameters:
+                unifiedRoleAssignmentMultiple-id: $request.path.unifiedRoleAssignmentMultiple-id
+                appScope-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleAssignments in roleManagement
+      operationId: roleManagement.deviceManagement_UpdateRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_ListAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - type
+                - type desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of appScope
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.appScope'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to appScopes for roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_CreateAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get appScopes from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_GetAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: 'key: appScope-id of appScope'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property appScopes in roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_UpdateAppScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: appScope-id
+          in: path
+          description: 'key: appScope-id of appScope'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appScope
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get directoryScopes from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_ListDirectoryScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/{directoryObject-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get directoryScopes from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_GetDirectoryScopes
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: directoryObject-id
+          in: path
+          description: 'key: directoryObject-id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get principals from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_ListPrincipals
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/{directoryObject-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get principals from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_GetPrincipals
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: directoryObject-id
+          in: path
+          description: 'key: directoryObject-id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+  '/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinition from roleManagement
+      operationId: roleManagement.deviceManagement.roleAssignments_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignmentMultiple-id
+          in: path
+          description: 'key: unifiedRoleAssignmentMultiple-id of unifiedRoleAssignmentMultiple'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignmentMultiple
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+  /roleManagement/deviceManagement/roleDefinitions:
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.deviceManagement_ListRoleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Create new navigation property to roleDefinitions for roleManagement
+      operationId: roleManagement.deviceManagement_CreateRoleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Get roleDefinitions from roleManagement
+      operationId: roleManagement.deviceManagement_GetRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: unifiedRoleDefinition-id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - roleManagement.rbacApplicationMultiple
+      summary: Update the navigation property roleDefinitions in roleManagement
+      operationId: roleManagement.deviceManagement_UpdateRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: unifiedRoleDefinition-id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directory from roleManagement
+      operationId: roleManagement_GetDirectory
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roleDefinitions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -105,9 +1145,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+          links:
+            roleDefinitions:
+              operationId: roleManagement.directory.GetRoleDefinitions
+              parameters:
+                unifiedRoleDefinition-id: $response.body#/id
+            roleAssignments:
+              operationId: roleManagement.directory.GetRoleAssignments
+              parameters:
+                unifiedRoleAssignment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - roleManagement.rbacApplication
@@ -141,7 +1189,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -149,41 +1198,56 @@ paths:
               enum:
                 - id
                 - id desc
-                - principalId
-                - principalId desc
-                - resourceScope
-                - resourceScope desc
                 - roleDefinitionId
                 - roleDefinitionId desc
+                - condition
+                - condition desc
+                - principalId
+                - principalId desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - appScopeId
+                - appScopeId desc
+                - resourceScope
+                - resourceScope desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
             items:
               enum:
                 - id
-                - principalId
-                - resourceScope
                 - roleDefinitionId
-                - principal
+                - condition
+                - principalId
+                - directoryScopeId
+                - appScopeId
+                - resourceScope
                 - roleDefinition
+                - principal
+                - directoryScope
+                - appScope
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
             items:
               enum:
                 - '*'
-                - principal
                 - roleDefinition
+                - principal
+                - directoryScope
+                - appScope
               type: string
       responses:
         '200':
@@ -198,8 +1262,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -240,31 +1309,40 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
             items:
               enum:
                 - id
-                - principalId
-                - resourceScope
                 - roleDefinitionId
-                - principal
+                - condition
+                - principalId
+                - directoryScopeId
+                - appScopeId
+                - resourceScope
                 - roleDefinition
+                - principal
+                - directoryScope
+                - appScope
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
             items:
               enum:
                 - '*'
-                - principal
                 - roleDefinition
+                - principal
+                - directoryScope
+                - appScope
               type: string
       responses:
         '200':
@@ -273,9 +1351,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          links:
+            roleDefinition:
+              operationId: rbacApplication.roleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+                unifiedRoleDefinition-id: $response.body#/id
+            principal:
+              operationId: rbacApplication.roleAssignments.GetPrincipal
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+                directoryObject-id: $response.body#/id
+            directoryScope:
+              operationId: rbacApplication.roleAssignments.GetDirectoryScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+                directoryObject-id: $response.body#/id
+            appScope:
+              operationId: rbacApplication.roleAssignments.GetAppScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+                appScope-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - roleManagement.rbacApplication
@@ -302,6 +1400,129 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get appScope from roleManagement
+      operationId: roleManagement.directory.roleAssignments_GetAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: unifiedRoleAssignment-id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property appScope in roleManagement
+      operationId: roleManagement.directory.roleAssignments_UpdateAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: unifiedRoleAssignment-id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directoryScope from roleManagement
+      operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: unifiedRoleAssignment-id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
   '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal':
     get:
       tags:
@@ -319,7 +1540,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -331,7 +1553,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -348,7 +1571,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
     get:
       tags:
@@ -366,7 +1588,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -385,7 +1608,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -402,7 +1626,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /roleManagement/directory/roleDefinitions:
     get:
       tags:
@@ -418,7 +1641,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -446,7 +1670,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -465,7 +1690,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -486,8 +1712,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -528,7 +1759,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -547,7 +1779,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -564,7 +1797,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - roleManagement.rbacApplication
@@ -601,14 +1833,18 @@ components:
           properties:
             directory:
               $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+            deviceManagement:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplicationMultiple'
       example:
         id: string (identifier)
         directory:
           '@odata.type': microsoft.graph.rbacApplication
-    microsoft.graph.rbacApplication:
+        deviceManagement:
+          '@odata.type': microsoft.graph.rbacApplicationMultiple
+    microsoft.graph.rbacApplicationMultiple:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: rbacApplication
+        - title: rbacApplicationMultiple
           type: object
           properties:
             roleDefinitions:
@@ -618,41 +1854,95 @@ components:
             roleAssignments:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentMultiple'
       example:
         id: string (identifier)
         roleDefinitions:
           - '@odata.type': microsoft.graph.unifiedRoleDefinition
         roleAssignments:
-          - '@odata.type': microsoft.graph.unifiedRoleAssignment
-    microsoft.graph.unifiedRoleAssignment:
+          - '@odata.type': microsoft.graph.unifiedRoleAssignmentMultiple
+    microsoft.graph.unifiedRoleAssignmentMultiple:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: unifiedRoleAssignment
+        - title: unifiedRoleAssignmentMultiple
           type: object
           properties:
-            principalId:
-              type: string
-              nullable: true
-            resourceScope:
-              type: string
-              nullable: true
             roleDefinitionId:
               type: string
+            condition:
+              type: string
               nullable: true
-            principal:
-              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            displayName:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            principalIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            directoryScopeIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            appScopeIds:
+              type: array
+              items:
+                type: string
+                nullable: true
             roleDefinition:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+            principals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            directoryScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            appScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
       example:
         id: string (identifier)
-        principalId: string
-        resourceScope: string
         roleDefinitionId: string
-        principal:
-          '@odata.type': microsoft.graph.directoryObject
+        condition: string
+        displayName: string
+        description: string
+        principalIds:
+          - string
+        directoryScopeIds:
+          - string
+        appScopeIds:
+          - string
         roleDefinition:
           '@odata.type': microsoft.graph.unifiedRoleDefinition
+        principals:
+          - '@odata.type': microsoft.graph.directoryObject
+        directoryScopes:
+          - '@odata.type': microsoft.graph.directoryObject
+        appScopes:
+          - '@odata.type': microsoft.graph.appScope
+    microsoft.graph.appScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appScope
+          type: object
+          properties:
+            type:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        type: string
+        displayName: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -712,6 +2002,74 @@ components:
           - '@odata.type': microsoft.graph.unifiedRolePermission
         templateId: string
         version: string
+    microsoft.graph.rbacApplication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: rbacApplication
+          type: object
+          properties:
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+            roleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+      example:
+        id: string (identifier)
+        roleDefinitions:
+          - '@odata.type': microsoft.graph.unifiedRoleDefinition
+        roleAssignments:
+          - '@odata.type': microsoft.graph.unifiedRoleAssignment
+    microsoft.graph.unifiedRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleAssignment
+          type: object
+          properties:
+            roleDefinitionId:
+              type: string
+              nullable: true
+            condition:
+              type: string
+              nullable: true
+            principalId:
+              type: string
+              nullable: true
+            directoryScopeId:
+              type: string
+              nullable: true
+            appScopeId:
+              type: string
+              nullable: true
+            resourceScope:
+              type: string
+              nullable: true
+            roleDefinition:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+            principal:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            directoryScope:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            appScope:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+      example:
+        id: string (identifier)
+        roleDefinitionId: string
+        condition: string
+        principalId: string
+        directoryScopeId: string
+        appScopeId: string
+        resourceScope: string
+        roleDefinition:
+          '@odata.type': microsoft.graph.unifiedRoleDefinition
+        principal:
+          '@odata.type': microsoft.graph.directoryObject
+        directoryScope:
+          '@odata.type': microsoft.graph.directoryObject
+        appScope:
+          '@odata.type': microsoft.graph.appScope
     microsoft.graph.entity:
       title: entity
       type: object
@@ -729,11 +2087,17 @@ components:
           type: array
           items:
             type: string
+        excludedResourceActions:
+          type: array
+          items:
+            type: string
         condition:
           type: string
           nullable: true
       example:
         allowedResourceActions:
+          - string
+        excludedResourceActions:
           - string
         condition: string
     odata.error:

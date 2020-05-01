@@ -37,6 +37,22 @@ clear-output-folder: true
 output-folder: .
 ```
 
+> Custom Directives
+
+``` yaml
+declare-directive:
+  where-operation-byRegex: >-
+    (() => {
+      return { from: "openapi-document", where: `$..paths.*[?(/${$}/gmi.exec(@.operationId))]` };
+    })()
+  remove-path-by-operation: >-
+    [{
+      from: 'openapi-document',
+      "where-operation-byRegex": $,
+      transform: '$ = undefined'
+    }]
+```
+
 > Directives
 
 ``` yaml
@@ -53,7 +69,29 @@ directive:
     - microsoft.graph.sectionGroup
     - microsoft.graph.team
     - microsoft.graph.recipient
+    - microsoft.graph.groupPolicyCategory
 
+  # Set parameter alias
+  - where:
+      parameter-name: OrderBy
+    set:
+      parameter-name: Sort
+      alias: OrderBy
+  - where:
+      parameter-name: Top
+    set:
+      parameter-name: PageSize
+      alias: Top
+  - where:
+      parameter-name: Select
+    set:
+      parameter-name: Property
+      alias: Select
+  - where:
+      parameter-name: Expand
+    set:
+      parameter-name: ExpandProperty
+      alias: Expand
   # Format cmdlet response.
   - where:
       model-name: MicrosoftGraphUser
@@ -294,12 +332,12 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Validate(.*)|^Check(.*)
+      variant: ^Check(.*)
     set:
       verb: Confirm
 # Remove cmdlets
   - where:
-      verb: Confirm
+      verb: Test
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
@@ -337,6 +375,20 @@ directive:
               $ = $.replace(existingIdPropRegex, '$1$2\n\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode)\n$1{\n$1\tif (serializationMode == Microsoft.Graph.PowerShell.Runtime.SerializationMode.IncludeAll) {\n$1\t\tAddIf(null != this.Id ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.PowerShell.Runtime.Json.JsonString(this.Id) : null, "'+ EntityName.toLowerCase() +'-id", container.Add);\n$1\t}\n$1}');
             }
           }
+        }
+        return $;
+      }
+# Temporarily disable paging.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List.cs/gm))
+      {
+        return $;
+      } else {
+        let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
+        if($.match(odataNextLinkRegex)) {
+          $ = $.replace(odataNextLinkRegex, '$1result.OdataNextLink = null;\n$1if (result.OdataNextLink != null)$1');
         }
         return $;
       }

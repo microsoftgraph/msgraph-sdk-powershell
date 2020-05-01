@@ -25,20 +25,20 @@ Get-MgGroupOwner -GroupId $GroupId | ForEach-Object { @{ UserId=$_.Id}} | get-Mg
 Get-MgGroupMember -GroupId $GroupId 
 
 # Get your mail
-Get-MgUserMessage -UserId $UserId -Filter "contains(subject,'Marketing')" | select sentDateTime, subject
+Get-MgUserMessage -UserId $UserId -Filter "contains(subject,'Marketing')" | Select-Object sentDateTime, subject
 
 # New Group
-$group = new-MgGroup -DisplayName "PowerFam" -MailEnabled:$false -mailNickName "powerfam" -SecurityEnabled
+$group = New-MgGroup -DisplayName "PowerFam" -MailEnabled:$false -mailNickName "powerfam" -SecurityEnabled
 
 # Add member to Group  
-new-MgGroupMember -GroupId $Group.Id -DirectoryObjectId $UserId
+New-MgGroupMember -GroupId $Group.Id -DirectoryObjectId $UserId
 
 # View new member to Group
-Get-MgGroupMember -GroupId $group.Id  | ForEach-Object { @{ UserId=$_.Id}} | get-user | Select-Object id, DisplayName, Mail
+Get-MgGroupMember -GroupId $group.Id  | ForEach-Object { @{ UserId=$_.Id}} | Get-Mguser | Select-Object id, DisplayName, Mail
 
 #Remove Group
 Remove-MgGroup -GroupId $Group.Id
 
 # Create a new User
-new-MgUser -displayName "Bob Brown" -AccountEnabled -PasswordProfilePassword "{password}" `
+New-MgUser -displayName "Bob Brown" -AccountEnabled -PasswordProfile @{"Password"="{password}"} `
          -MailNickname "Bob.Brown" -UserPrincipalName "bob.brown@{tenantdomain}"

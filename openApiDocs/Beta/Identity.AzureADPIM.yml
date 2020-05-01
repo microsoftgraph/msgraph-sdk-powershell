@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -51,7 +52,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -73,7 +75,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -96,8 +99,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedApproval'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -138,7 +146,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -160,7 +169,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -179,13 +189,15 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedApproval'
           links:
             request:
-              operationId: privilegedApproval.privilegedApproval.GetPrivilegedApproval
+              operationId: privilegedApproval.GetRequest
               parameters:
-                id: $request.path.id
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRoleAssignmentRequest-id: $response.body#/id
             roleInfo:
-              operationId: privilegedApproval.privilegedApproval.GetPrivilegedApproval
+              operationId: privilegedApproval.GetRoleInfo
               parameters:
-                id: $request.path.id
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -256,7 +268,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -279,7 +292,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -295,9 +309,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
+          links:
+            roleInfo:
+              operationId: privilegedApproval.request.GetRoleInfo
+              parameters:
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/privilegedApproval/{privilegedApproval-id}/roleInfo':
     get:
       tags:
@@ -315,7 +334,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -330,7 +350,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -348,9 +369,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
+          links:
+            settings:
+              operationId: privilegedApproval.roleInfo.GetSettings
+              parameters:
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRoleSettings-id: $response.body#/id
+            assignments:
+              operationId: privilegedApproval.roleInfo.GetAssignments
+              parameters:
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRoleAssignment-id: $response.body#/id
+            summary:
+              operationId: privilegedApproval.roleInfo.GetSummary
+              parameters:
+                privilegedApproval-id: $request.path.privilegedApproval-id
+                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedApproval.privilegedRole
@@ -410,7 +446,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -450,7 +487,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -475,7 +513,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -496,8 +535,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedOperationEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -538,7 +582,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -563,7 +608,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -646,7 +692,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -680,7 +727,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -703,7 +751,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -725,8 +774,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -767,7 +821,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -790,7 +845,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -808,9 +864,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
           links:
             roleInfo:
-              operationId: privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest.GetPrivilegedRoleAssignmentRequest
+              operationId: privilegedRoleAssignmentRequests.GetRoleInfo
               parameters:
-                id: $request.path.id
+                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
+                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -905,7 +962,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -920,7 +978,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -938,9 +997,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
+          links:
+            settings:
+              operationId: privilegedRoleAssignmentRequest.roleInfo.GetSettings
+              parameters:
+                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
+                privilegedRoleSettings-id: $response.body#/id
+            assignments:
+              operationId: privilegedRoleAssignmentRequest.roleInfo.GetAssignments
+              parameters:
+                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
+                privilegedRoleAssignment-id: $response.body#/id
+            summary:
+              operationId: privilegedRoleAssignmentRequest.roleInfo.GetSummary
+              parameters:
+                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
+                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoleAssignmentRequests.privilegedRole
@@ -1000,7 +1074,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1022,7 +1097,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1039,7 +1115,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1061,8 +1138,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1103,7 +1185,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1120,7 +1203,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1138,9 +1222,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
           links:
             roleInfo:
-              operationId: privilegedRoleAssignments.privilegedRoleAssignment.GetPrivilegedRoleAssignment
+              operationId: privilegedRoleAssignments.GetRoleInfo
               parameters:
-                id: $request.path.id
+                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
+                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1276,7 +1361,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1291,7 +1377,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1309,9 +1396,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
+          links:
+            settings:
+              operationId: privilegedRoleAssignment.roleInfo.GetSettings
+              parameters:
+                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
+                privilegedRoleSettings-id: $response.body#/id
+            assignments:
+              operationId: privilegedRoleAssignment.roleInfo.GetAssignments
+              parameters:
+                privilegedRoleAssignment-id: $response.body#/id
+            summary:
+              operationId: privilegedRoleAssignment.roleInfo.GetSummary
+              parameters:
+                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
+                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoleAssignments.privilegedRole
@@ -1371,7 +1472,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1385,7 +1487,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1400,7 +1503,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1424,8 +1528,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRole'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1466,7 +1575,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1481,7 +1591,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1501,17 +1612,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
           links:
             settings:
-              operationId: privilegedRoles.privilegedRole.GetPrivilegedRole
+              operationId: privilegedRoles.GetSettings
               parameters:
-                id: $request.path.id
+                privilegedRole-id: $request.path.privilegedRole-id
+                privilegedRoleSettings-id: $response.body#/id
             assignments:
-              operationId: privilegedRoles.privilegedRole.GetPrivilegedRole
+              operationId: privilegedRoles.GetAssignments
               parameters:
-                id: $request.path.id
+                privilegedRole-id: $request.path.privilegedRole-id
+                privilegedRoleAssignment-id: $response.body#/id
             summary:
-              operationId: privilegedRoles.privilegedRole.GetPrivilegedRole
+              operationId: privilegedRoles.GetSummary
               parameters:
-                id: $request.path.id
+                privilegedRole-id: $request.path.privilegedRole-id
+                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1587,7 +1701,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1609,7 +1724,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1626,7 +1742,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1648,8 +1765,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/privilegedRoles/{privilegedRole-id}/assignments/{privilegedRoleAssignment-id}':
     get:
@@ -1675,7 +1797,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1692,7 +1815,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1708,9 +1832,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
+          links:
+            roleInfo:
+              operationId: privilegedRole.assignments.GetRoleInfo
+              parameters:
+                privilegedRole-id: $response.body#/id
+                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/privilegedRoles/{privilegedRole-id}/microsoft.graph.selfActivate':
     post:
       tags:
@@ -1796,7 +1925,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1817,7 +1947,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1834,7 +1965,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleSettings'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoles.privilegedRoleSettings
@@ -1878,7 +2008,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1894,7 +2025,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1911,7 +2043,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleSummary'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoles.privilegedRoleSummary

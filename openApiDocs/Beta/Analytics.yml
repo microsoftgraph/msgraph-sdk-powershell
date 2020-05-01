@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -43,7 +44,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -59,7 +61,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -80,8 +83,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.activityStatistics'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -122,7 +130,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -138,7 +147,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -223,7 +233,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -236,7 +247,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -252,9 +264,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
+          links:
+            activityStatistics:
+              operationId: user.analytics.GetActivityStatistics
+              parameters:
+                user-id: $request.path.user-id
+                activityStatistics-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userAnalytics
@@ -303,7 +320,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -325,7 +343,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -341,7 +360,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -362,8 +382,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.activityStatistics'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -419,7 +444,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -435,7 +461,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -452,7 +479,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userAnalytics
@@ -503,7 +529,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -517,7 +544,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -535,9 +563,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+          links:
+            trending:
+              operationId: user.insights.GetTrending
+              parameters:
+                user-id: $request.path.user-id
+                trending-id: $response.body#/id
+            shared:
+              operationId: user.insights.GetShared
+              parameters:
+                user-id: $request.path.user-id
+                sharedInsight-id: $response.body#/id
+            used:
+              operationId: user.insights.GetUsed
+              parameters:
+                user-id: $request.path.user-id
+                usedInsight-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -586,7 +629,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -606,7 +650,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -623,7 +668,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -646,8 +692,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -703,7 +754,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -720,7 +772,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -737,9 +790,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+          links:
+            lastSharedMethod:
+              operationId: officeGraphInsights.shared.GetLastSharedMethod
+              parameters:
+                user-id: $request.path.user-id
+                sharedInsight-id: $request.path.sharedInsight-id
+                entity-id: $response.body#/id
+            resource:
+              operationId: officeGraphInsights.shared.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                sharedInsight-id: $request.path.sharedInsight-id
+                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -797,7 +862,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -808,7 +874,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -825,7 +892,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/shared/{sharedInsight-id}/resource':
     get:
       tags:
@@ -850,7 +916,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -861,7 +928,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -878,7 +946,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/trending':
     get:
       tags:
@@ -901,7 +968,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -921,7 +989,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -937,7 +1006,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -959,8 +1029,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.trending'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1016,7 +1091,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1032,7 +1108,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1048,9 +1125,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trending'
+          links:
+            resource:
+              operationId: officeGraphInsights.trending.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                trending-id: $request.path.trending-id
+                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -1108,7 +1191,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1119,7 +1203,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1136,7 +1221,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/used':
     get:
       tags:
@@ -1159,7 +1243,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1177,7 +1262,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1192,7 +1278,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1214,8 +1301,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.usedInsight'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1271,7 +1363,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1286,7 +1379,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1302,9 +1396,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
+          links:
+            resource:
+              operationId: officeGraphInsights.used.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                usedInsight-id: $request.path.usedInsight-id
+                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -1362,7 +1462,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1373,7 +1474,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1390,7 +1492,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.activityStatistics:

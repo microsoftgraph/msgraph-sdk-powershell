@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -35,7 +36,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -51,9 +53,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userTeamwork'
+          links:
+            installedApps:
+              operationId: user.teamwork.GetInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                teamsAppInstallation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userTeamwork
@@ -102,7 +109,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -114,7 +122,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -127,7 +136,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -150,8 +160,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -207,7 +222,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -220,7 +236,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -237,9 +254,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: userTeamwork.installedApps.GetTeamsApp
+              parameters:
+                user-id: $request.path.user-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsApp-id: $response.body#/id
+            teamsAppDefinition:
+              operationId: userTeamwork.installedApps.GetTeamsAppDefinition
+              parameters:
+                user-id: $request.path.user-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userTeamwork
@@ -297,7 +326,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -313,7 +343,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -329,9 +360,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsAppInstallation.teamsApp.GetAppDefinitions
+              parameters:
+                user-id: $request.path.user-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}/teamsAppDefinition':
     get:
       tags:
@@ -356,7 +393,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -370,7 +408,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -387,7 +426,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.userTeamwork:

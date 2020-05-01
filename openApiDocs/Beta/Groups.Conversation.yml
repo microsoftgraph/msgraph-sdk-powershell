@@ -28,7 +28,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -50,7 +51,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -67,7 +69,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -89,8 +92,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -146,7 +154,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -163,7 +172,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -179,9 +189,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conversation'
+          links:
+            threads:
+              operationId: group.conversations.GetThreads
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -244,7 +260,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -272,7 +289,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -292,7 +310,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -314,8 +333,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversationThread'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -385,7 +409,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -405,7 +430,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -421,9 +447,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
+          links:
+            posts:
+              operationId: conversation.threads.GetPosts
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -500,7 +533,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -538,7 +572,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -568,7 +603,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -595,8 +631,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.post'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -680,7 +721,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -710,7 +752,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -731,9 +774,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.post'
+          links:
+            inReplyTo:
+              operationId: conversationThread.posts.GetInReplyTo
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: conversationThread.posts.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: conversationThread.posts.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            extensions:
+              operationId: conversationThread.posts.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                extension-id: $response.body#/id
+            attachments:
+              operationId: conversationThread.posts.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                attachment-id: $response.body#/id
+            mentions:
+              operationId: conversationThread.posts.GetMentions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                mention-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -824,7 +914,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -846,7 +937,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -862,7 +954,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -883,8 +976,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -982,7 +1080,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -998,7 +1097,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1015,7 +1115,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -1113,7 +1212,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1125,7 +1225,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1136,7 +1237,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1157,8 +1259,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1256,7 +1363,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1267,7 +1375,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1284,7 +1393,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -1377,7 +1485,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1407,7 +1516,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1428,9 +1538,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.post'
+          links:
+            inReplyTo:
+              operationId: post.inReplyTo.GetInReplyTo
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: post.inReplyTo.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: post.inReplyTo.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            extensions:
+              operationId: post.inReplyTo.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                extension-id: $response.body#/id
+            attachments:
+              operationId: post.inReplyTo.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                attachment-id: $response.body#/id
+            mentions:
+              operationId: post.inReplyTo.GetMentions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                mention-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -1521,7 +1678,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1549,7 +1707,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1568,7 +1727,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1589,8 +1749,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mention'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1688,7 +1853,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1707,7 +1873,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1724,7 +1891,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -1822,7 +1988,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1836,7 +2003,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1848,7 +2016,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1869,8 +2038,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1968,7 +2142,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1980,7 +2155,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1997,7 +2173,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation
@@ -2095,7 +2270,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2109,7 +2285,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2121,7 +2298,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2142,8 +2320,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2241,7 +2424,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2253,7 +2437,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2270,7 +2455,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversation

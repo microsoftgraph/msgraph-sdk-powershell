@@ -88,7 +88,6 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
 
     [HashTable]$ModuleManifestSettings = @{
         Path                   = "$GraphModuleLocation\$ModulePrefix.psd1"
-        GUID                   = if ($BetaGraphVersion) { "1C7813EF-88D8-4A52-BE2C-E914E4331E7B" } else { "585dcd71-ed77-4087-884b-7e41936961c2" }
         CompatiblePSEditions   = "Core", "Desktop"
         PowerShellVersion      = "5.1"
         DotNetFrameworkVersion = "4.7.2"
