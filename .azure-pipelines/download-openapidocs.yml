@@ -4,7 +4,7 @@
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pool:
-  vmImage:"windows-latest"
+  vmImage: "windows-latest"
 
 variables:
   BRANCH: 'weeklyOpenApiDocsDownload'
