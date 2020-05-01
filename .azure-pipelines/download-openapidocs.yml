@@ -26,13 +26,13 @@ steps:
 
   - task: PowerShell@2
     displayName: "Compute Branch"
-    pwsh: true
-    script: |
+    inputs:
+      targetType: inline
+      script: |
         $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
         Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
   - task: PowerShell@2
     displayName: "Configure User"
-    pwsh: true
     inputs:
       targetType: 'inline'
       script: |
@@ -41,37 +41,38 @@ steps:
 
   - task: PowerShell@2
     displayName: "Show Directory"
-    pwsh: true
     inputs:
       targetType: 'inline'
       script: |
-        echo $(System.DefaultWorkingDirectorey)
+        Write-Host $(System.DefaultWorkingDirectorey)
         ls -lsa $(System.DefaultWorkingDirectorey)
         ls -lsa $(System.DefaultWorkingDirectorey)/tools
     
   - task: PowerShell@2
     displayName: Download v1.0 OpenApiDocs
     inputs:
-    filePath: '/tools/UpdateOpenApi.ps1'
-    arguments: '-BetaGraphVersion'
-    pwsh: true
+      targetType: filePath
+      filePath: '/tools/UpdateOpenApi.ps1'
+      arguments: '-BetaGraphVersion'
 
   - task: PowerShell@2
     displayName: Download beta OpenApiDocs
     inputs:
-    filePath: '/tools/UpdateOpenApi.ps1'
-    pwsh: true
+      filePath: '/tools/UpdateOpenApi.ps1'
 
   - task: PowerShell@2
     displayName : "Create PR $(BRANCH)"
-    pwsh: true
-    run: |
+    inputs:
+      targetType: 'inline'
+      script: |
         git branch $(BRANCH)
         git checkout $(BRANCH)
 
   - task: PowerShell@2
     displayName : "Commit Downloaded Files"
-    run: |
+    inputs:
+      targetType: 'inline'
+      script: |
         cd $(System.DefaultWorkingDirectorey)/openApiDocs/
         git add .
         git commit -m 'Weekly OpenApiDocs Download'
@@ -79,7 +80,6 @@ steps:
 
   -  task: Bash@3
      displayName: "Create Pull Request"
-     targetType: 'inline'
      inputs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: Weekly OpenApiDocs Download
