@@ -44,9 +44,9 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        Write-Host $(System.DefaultWorkingDirectorey)
-        ls -lsa $(System.DefaultWorkingDirectorey)
-        ls -lsa $(System.DefaultWorkingDirectorey)/tools
+        Write-Host $(System.DefaultWorkingDirectory)
+        ls -lsa $(System.DefaultWorkingDirectory)
+        ls -lsa $(System.DefaultWorkingDirectory)/tools
     
   - task: PowerShell@2
     displayName: Download v1.0 OpenApiDocs
@@ -73,7 +73,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        cd $(System.DefaultWorkingDirectorey)/openApiDocs/
+        cd $(System.DefaultWorkingDirectory)/openApiDocs/
         git add .
         git commit -m 'Weekly OpenApiDocs Download'
         git push --set-upstream origin $BRANCH
