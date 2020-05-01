@@ -87,9 +87,9 @@ steps:
         REVIEWERS: finsharp
         ASSIGNEDTO: finsharp
         LABELS: generated
-     script: |
-        curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
-        bin/hub pull-request -b "dev" -h "$BRANCH" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
+        script: |
+          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
+          bin/hub pull-request -b "dev" -h "$BRANCH" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
 
   - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
     displayName: 'Graph Client Tooling pipeline fail notification'
