@@ -81,7 +81,6 @@ steps:
   -  task: Bash@3
      displayName: "Create Pull Request"
      inputs:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: Weekly OpenApiDocs Download
         MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains OpenApiDocs Updates from Graph Explorer API"
         REVIEWERS: finsharp
