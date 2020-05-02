@@ -4,27 +4,48 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
+    using System.IO;
     using System.Security.Cryptography;
+    /// <summary>
+    /// Contains methods to store, get and encrypt access tokens using Windows DPAPI in token cache file.
+    /// </summary>
     internal static class WindowsTokenCache
     {
         /// <summary>
-        /// Encrypts the passed buffer using Windows DPAPI.
+        /// Gets a decrypted token from the token cache.
         /// </summary>
-        /// <param name="buffer">A <see cref="byte[]"/> to encrypt.</param>
-        /// <returns>An encrypted <see cref="byte[]"/>.</returns>
-        public static byte[] EncryptToken(byte[] buffer)
+        /// <param name="tokenCacheFilePath">Path to the token cache file to read from.</param>
+        /// <returns>A decrypted access token.</returns>
+        public static byte[] GetToken(string tokenCacheFilePath)
         {
-            return ProtectedData.Protect(buffer, null, DataProtectionScope.CurrentUser);
+            if (!Directory.Exists(Constants.TokenCacheDirectory))
+                Directory.CreateDirectory(Constants.TokenCacheDirectory);
+
+            return File.Exists(tokenCacheFilePath)
+                        ? ProtectedData.Unprotect(File.ReadAllBytes(tokenCacheFilePath), null, DataProtectionScope.CurrentUser)
+                        : new byte[0];
         }
 
         /// <summary>
-        /// Decrypts the passed buffer Windows DPAPI.
+        /// Sets an encrypted access token to the token cache.
         /// </summary>
-        /// <param name="buffer">A <see cref="byte[]"/> to decrypt.</param>
-        /// <returns>An decrypted <see cref="byte[]"/>.</returns>
-        public static byte[] DecryptToken(byte[] buffer)
+        /// <param name="tokenCacheFilePath">Path to the token cache file path to write to.</param>
+        /// <param name="plainContent">Plain access token to securely write to the token cache file.</param>
+        public static void SetToken(string tokenCacheFilePath, byte[] plainContent)
         {
-            return ProtectedData.Unprotect(buffer, null, DataProtectionScope.CurrentUser);
+            if (!Directory.Exists(Constants.TokenCacheDirectory))
+                Directory.CreateDirectory(Constants.TokenCacheDirectory);
+
+            File.WriteAllBytes(tokenCacheFilePath, ProtectedData.Protect(plainContent, null, DataProtectionScope.CurrentUser));
+        }
+
+        /// <summary>
+        /// Deletes an access token cache file/
+        /// </summary>
+        /// <param name="tokenCacheFilePath">Token cache file path to delete.</param>
+        public static void DeleteToken(string tokenCacheFilePath)
+        {
+            File.Delete(tokenCacheFilePath);
         }
     }
 }

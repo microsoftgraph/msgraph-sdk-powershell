@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
 
     /// <summary>
@@ -11,27 +12,50 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
     internal static class TokenCryptographer
     {
         /// <summary>
-        /// Encrypts the passed buffer based on the host platform.
+        /// Encrypts and saves an access token buffer to the host platform OS.
         /// </summary>
-        /// <param name="buffer">A <see cref="byte[]"/> to encrypt.</param>
-        /// <returns>An encrypted <see cref="byte[]"/>.</returns>
-        public static byte[] EncryptToken(byte[] buffer)
+        /// <param name="appId">An app/client id.</param>
+        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
+        /// <param name="accessToken">An access token.</param>
+        public static void EncryptAndSetToken(string appId, string tokenCacheFilePath, byte[] accessToken)
         {
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-                return WindowsTokenCache.EncryptToken(buffer);
-            return buffer;
+            if (PlatformHelpers.IsWindows())
+                WindowsTokenCache.SetToken(tokenCacheFilePath, accessToken);
+            else if (PlatformHelpers.IsMacOS())
+                MacTokenCache.SetToken(appId, accessToken);
+            else
+                LinuxTokenCache.SetToken(appId, accessToken);
         }
 
         /// <summary>
-        /// Decrypts the passed buffer based on the host platform.
+        /// Gets a decrypted access token from the host platform OS.
         /// </summary>
-        /// <param name="buffer">A <see cref="byte[]"/> to decrypt.</param>
-        /// <returns>An decrypted <see cref="byte[]"/>.</returns>
-        public static byte[] DecryptToken(byte[] buffer)
+        /// <param name="appId">An app/client id.</param>
+        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
+        /// <returns></returns>
+        public static byte[] DencryptAndGetToken(string appId, string tokenCacheFilePath)
         {
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
-                return WindowsTokenCache.DecryptToken(buffer);
-            return buffer;
+            if (PlatformHelpers.IsWindows())
+                return WindowsTokenCache.GetToken(tokenCacheFilePath);
+            else if (PlatformHelpers.IsMacOS())
+                return MacTokenCache.GetToken(appId);
+            else
+                return LinuxTokenCache.GetToken(appId);
+        }
+
+        /// <summary>
+        /// Deletes an access token from the host OS.
+        /// </summary>
+        /// <param name="appId">An app/client id.</param>
+        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
+        public static void DeleteTokenFromCache(string appId, string tokenCacheFilePath)
+        {
+            if (PlatformHelpers.IsWindows())
+                WindowsTokenCache.DeleteToken(tokenCacheFilePath);
+            else if (PlatformHelpers.IsMacOS())
+                MacTokenCache.DeleteToken(appId);
+            else
+                LinuxTokenCache.DeleteToken(appId);
         }
     }
 }

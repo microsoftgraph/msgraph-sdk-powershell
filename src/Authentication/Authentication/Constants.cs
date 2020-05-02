@@ -16,5 +16,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string UserCacheFileName = "userTokenCache.bin3";
         internal const string AppCacheFileName = "appTokenCache.bin3";
         internal static readonly string TokenCacheDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".graph");
+        internal const string TokenCahceServiceName = "com.microsoft.graph.powershell.sdkcache";
     }
 }
