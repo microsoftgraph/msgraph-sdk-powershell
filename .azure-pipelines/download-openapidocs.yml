@@ -3,16 +3,21 @@
 
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+on:
+  push:
+    branches: 
+      - dev
+      - gn/generateOpenApiDocs
+schedules:
+    - cron: "0 12 * * 5" # Run Every Friday at Midnight UTC Time
+      displayName: "Weekly OpenApiDocs Download and PR"
+      always: true
+
 pool:
   vmImage: "windows-latest"
 
 variables:
   BRANCH: 'weeklyOpenApiDocsDownload'
-
-schedules:
-    - cron: "0 12 * * 5" # Run Every Friday at Midnight UTC Time
-      displayName: "Weekly OpenApiDocs Download and PR"
-      always: true
 
 steps:
   - checkout: self
