@@ -4,7 +4,7 @@
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 pool:
-  vmImage: "ubuntu-latest"
+  vmImage: "windows-latest"
 
 variables:
   BRANCH: 'weeklyOpenApiDocsDownload'
@@ -23,6 +23,10 @@ steps:
   - checkout: self
     persistCredentials: true
     clean: true
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+      debugMode: false
 
   - task: PowerShell@2
     displayName: "Compute Branch"
@@ -72,6 +76,8 @@ steps:
           git status
   - task: Bash@3
     displayName : "Commit Downloaded Files"
+    env: 
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
       targetType: 'inline'
       script: |
@@ -84,6 +90,8 @@ steps:
 
   -  task: Bash@3
      displayName: "Create Pull Request"
+     env: 
+        GITHUB_TOKEN: $(GITHUB_TOKEN)
      inputs:
         targetType: 'inline'
         script: |
