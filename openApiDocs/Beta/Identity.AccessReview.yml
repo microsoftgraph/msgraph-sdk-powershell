@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -51,7 +52,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -71,7 +73,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -92,8 +95,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -134,7 +142,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -154,7 +163,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -237,7 +247,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -269,7 +280,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -294,7 +306,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -319,8 +332,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReview'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -361,7 +379,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -386,7 +405,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -407,21 +427,24 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
           links:
             reviewers:
-              operationId: accessReviews.accessReview.GetAccessReview
+              operationId: accessReviews.GetReviewers
               parameters:
-                id: $request.path.id
+                accessReview-id: $request.path.accessReview-id
+                accessReviewReviewer-id: $response.body#/id
             decisions:
-              operationId: accessReviews.accessReview.GetAccessReview
+              operationId: accessReviews.GetDecisions
               parameters:
-                id: $request.path.id
+                accessReview-id: $request.path.accessReview-id
+                accessReviewDecision-id: $response.body#/id
             myDecisions:
-              operationId: accessReviews.accessReview.GetAccessReview
+              operationId: accessReviews.GetMyDecisions
               parameters:
-                id: $request.path.id
+                accessReview-id: $request.path.accessReview-id
+                accessReviewDecision-id: $response.body#/id
             instances:
-              operationId: accessReviews.accessReview.GetAccessReview
+              operationId: accessReviews.GetInstances
               parameters:
-                id: $request.path.id
+                accessReview-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -497,7 +520,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -527,7 +551,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -547,7 +572,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -568,8 +594,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -625,7 +656,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -645,7 +677,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -662,7 +695,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewDecision
@@ -718,7 +750,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -750,7 +783,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -775,7 +809,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -800,8 +835,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReview'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -857,7 +897,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -882,7 +923,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -901,9 +943,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
+          links:
+            reviewers:
+              operationId: accessReview.instances.GetReviewers
+              parameters:
+                accessReview-id: $request.path.accessReview-id
+                accessReview-id1: $request.path.accessReview-id1
+                accessReviewReviewer-id: $response.body#/id
+            decisions:
+              operationId: accessReview.instances.GetDecisions
+              parameters:
+                accessReview-id: $request.path.accessReview-id
+                accessReview-id1: $request.path.accessReview-id1
+                accessReviewDecision-id: $response.body#/id
+            myDecisions:
+              operationId: accessReview.instances.GetMyDecisions
+              parameters:
+                accessReview-id: $request.path.accessReview-id
+                accessReview-id1: $request.path.accessReview-id1
+                accessReviewDecision-id: $response.body#/id
+            instances:
+              operationId: accessReview.instances.GetInstances
+              parameters:
+                accessReview-id: $response.body#/id
+                accessReview-id1: $request.path.accessReview-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReview
@@ -1039,7 +1104,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1069,7 +1135,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1089,7 +1156,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1110,8 +1178,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1167,7 +1240,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1187,7 +1261,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1204,7 +1279,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewDecision
@@ -1260,7 +1334,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1276,7 +1351,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1289,7 +1365,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1310,8 +1387,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1367,7 +1449,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1380,7 +1463,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1397,7 +1481,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewReviewer
@@ -1446,7 +1529,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1460,7 +1544,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1472,7 +1557,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1493,8 +1579,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.businessFlowTemplate'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1535,7 +1626,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1547,7 +1639,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1630,7 +1723,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1658,7 +1752,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1678,7 +1773,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1700,8 +1796,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.programControl'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1742,7 +1843,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1762,7 +1864,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1780,9 +1883,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
           links:
             program:
-              operationId: programControls.programControl.GetProgramControl
+              operationId: programControls.GetProgram
               parameters:
-                id: $request.path.id
+                programControl-id: $request.path.programControl-id
+                program-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1853,7 +1957,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1867,7 +1972,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1883,9 +1989,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.program'
+          links:
+            controls:
+              operationId: programControl.program.GetControls
+              parameters:
+                programControl-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - programControls.program
@@ -1927,7 +2037,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1943,7 +2054,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1956,7 +2068,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1977,8 +2090,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.programControlType'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2019,7 +2137,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2032,7 +2151,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2115,7 +2235,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2131,7 +2252,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2145,7 +2267,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2167,8 +2290,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.program'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2209,7 +2337,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2223,7 +2352,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2241,9 +2371,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.program'
           links:
             controls:
-              operationId: programs.program.GetProgram
+              operationId: programs.GetControls
               parameters:
-                id: $request.path.id
+                program-id: $request.path.program-id
+                programControl-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2319,7 +2450,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2347,7 +2479,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2367,7 +2500,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2389,8 +2523,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.programControl'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2446,7 +2585,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2466,7 +2606,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2482,9 +2623,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
+          links:
+            program:
+              operationId: program.controls.GetProgram
+              parameters:
+                program-id: $response.body#/id
+                programControl-id: $request.path.programControl-id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - programs.programControl
@@ -2756,25 +2902,19 @@ components:
       example:
         id: string (identifier)
     microsoft.graph.userIdentity:
-      title: userIdentity
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        displayName:
-          type: string
-          description: The identity's display name. Note that this may not always be available or up-to-date.
-          nullable: true
-        ipAddress:
-          type: string
-          description: Indicates the client IP address used by user performing the activity (audit log only).
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: The userPrincipalName attribute of the user.
-          nullable: true
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
       example:
         id: string
         displayName: string

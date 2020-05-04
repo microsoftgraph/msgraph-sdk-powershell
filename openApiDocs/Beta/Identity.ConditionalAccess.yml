@@ -16,7 +16,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -29,7 +30,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -46,6 +48,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+          links:
+            policies:
+              operationId: conditionalAccess.GetPolicies
+              parameters:
+                conditionalAccessPolicy-id: $response.body#/id
+            namedLocations:
+              operationId: conditionalAccess.GetNamedLocations
+              parameters:
+                namedLocation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -82,7 +93,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -100,7 +112,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -114,7 +127,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -135,8 +149,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.namedLocation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -177,7 +196,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -191,7 +211,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -208,7 +229,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - conditionalAccess.namedLocation
@@ -250,7 +270,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -278,7 +299,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -297,7 +319,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -318,8 +341,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -360,7 +388,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -379,7 +408,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -396,7 +426,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - conditionalAccess.conditionalAccessPolicy
@@ -549,6 +578,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
         deviceStates:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDeviceStates'
+        devices:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
       example:
         applications:
           '@odata.type': microsoft.graph.conditionalAccessApplications
@@ -564,6 +595,8 @@ components:
           - '@odata.type': microsoft.graph.conditionalAccessClientApp
         deviceStates:
           '@odata.type': microsoft.graph.conditionalAccessDeviceStates
+        devices:
+          '@odata.type': microsoft.graph.conditionalAccessDevices
     microsoft.graph.conditionalAccessGrantControls:
       title: conditionalAccessGrantControls
       type: object
@@ -752,6 +785,23 @@ components:
         includeStates:
           - string
         excludeStates:
+          - string
+    microsoft.graph.conditionalAccessDevices:
+      title: conditionalAccessDevices
+      type: object
+      properties:
+        includeDeviceStates:
+          type: array
+          items:
+            type: string
+        excludeDeviceStates:
+          type: array
+          items:
+            type: string
+      example:
+        includeDeviceStates:
+          - string
+        excludeDeviceStates:
           - string
     microsoft.graph.conditionalAccessGrantControl:
       title: conditionalAccessGrantControl

@@ -28,7 +28,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -46,7 +47,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -64,7 +66,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -89,8 +92,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -146,7 +154,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -164,7 +173,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -183,9 +193,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+          links:
+            singleValueExtendedProperties:
+              operationId: user.contactFolders.GetSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: user.contactFolders.GetMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            contacts:
+              operationId: user.contactFolders.GetContacts
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $response.body#/id
+            childFolders:
+              operationId: user.contactFolders.GetChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -248,7 +281,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -266,7 +300,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -284,7 +319,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -309,8 +345,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -380,7 +421,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -398,7 +440,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -417,9 +460,36 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+          links:
+            singleValueExtendedProperties:
+              operationId: contactFolder.childFolders.GetSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: contactFolder.childFolders.GetMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            contacts:
+              operationId: contactFolder.childFolders.GetContacts
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+                contact-id: $response.body#/id
+            childFolders:
+              operationId: contactFolder.childFolders.GetChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $response.body#/id
+                contactFolder-id1: $request.path.contactFolder-id1
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -489,7 +559,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -575,7 +646,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -627,7 +699,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -652,8 +725,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contact'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -723,7 +801,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -775,7 +854,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -794,9 +874,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+          links:
+            singleValueExtendedProperties:
+              operationId: contactFolder.contacts.GetSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: contactFolder.contacts.GetMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            photo:
+              operationId: contactFolder.contacts.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+                profilePhoto-id: $response.body#/id
+            extensions:
+              operationId: contactFolder.contacts.GetExtensions
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -873,7 +981,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -885,7 +994,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -896,7 +1006,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -917,8 +1028,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1002,7 +1118,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1013,7 +1130,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1030,7 +1148,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1114,7 +1231,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1128,7 +1246,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1140,7 +1259,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1161,8 +1281,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1246,7 +1371,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1258,7 +1384,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1275,7 +1402,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1354,7 +1480,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1367,7 +1494,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1384,7 +1512,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1461,7 +1588,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1475,7 +1603,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1487,7 +1616,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1508,8 +1638,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1593,7 +1728,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1605,7 +1741,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1622,7 +1759,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1699,7 +1835,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1713,7 +1850,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1725,7 +1863,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1746,8 +1885,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1817,7 +1961,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1829,7 +1974,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1846,7 +1992,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1916,7 +2061,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1930,7 +2076,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1942,7 +2089,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1963,8 +2111,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2034,7 +2187,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2046,7 +2200,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2063,7 +2218,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -2126,7 +2280,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2212,7 +2367,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2264,7 +2420,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2289,8 +2446,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contact'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2346,7 +2508,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2398,7 +2561,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2417,9 +2581,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+          links:
+            singleValueExtendedProperties:
+              operationId: user.contacts.GetSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: user.contacts.GetMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            photo:
+              operationId: user.contacts.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+                profilePhoto-id: $response.body#/id
+            extensions:
+              operationId: user.contacts.GetExtensions
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -2482,7 +2670,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2494,7 +2683,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2505,7 +2695,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2526,8 +2717,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2597,7 +2793,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2608,7 +2805,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2625,7 +2823,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -2695,7 +2892,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2709,7 +2907,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2721,7 +2920,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2742,8 +2942,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2813,7 +3018,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2825,7 +3031,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2842,7 +3049,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -2907,7 +3113,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2920,7 +3127,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2937,7 +3145,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -3000,7 +3207,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3014,7 +3222,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3026,7 +3235,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3047,8 +3257,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3118,7 +3333,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3130,7 +3346,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3147,7 +3364,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact

@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -41,7 +42,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -61,9 +63,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerUser'
+          links:
+            tasks:
+              operationId: user.planner.GetTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $response.body#/id
+            plans:
+              operationId: user.planner.GetPlans
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $response.body#/id
+            favoritePlans:
+              operationId: user.planner.GetFavoritePlans
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $response.body#/id
+            recentPlans:
+              operationId: user.planner.GetRecentPlans
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $response.body#/id
+            all:
+              operationId: user.planner.GetAll
+              parameters:
+                user-id: $request.path.user-id
+                plannerDelta-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -112,7 +139,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -124,7 +152,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -135,7 +164,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -156,8 +186,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -213,7 +248,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -224,7 +260,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -241,7 +278,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerDelta'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -297,7 +333,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -319,7 +356,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -338,7 +376,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -362,8 +401,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/favoritePlans/{plannerPlan-id}':
     get:
@@ -389,7 +433,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -408,7 +453,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -426,9 +472,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            tasks:
+              operationId: plannerUser.favoritePlans.GetTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $response.body#/id
+            buckets:
+              operationId: plannerUser.favoritePlans.GetBuckets
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $response.body#/id
+            details:
+              operationId: plannerUser.favoritePlans.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerPlanDetails-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/plans':
     get:
       tags:
@@ -451,7 +515,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -473,7 +538,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -492,7 +558,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -516,8 +583,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -573,7 +645,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -592,7 +665,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -610,9 +684,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            tasks:
+              operationId: plannerUser.plans.GetTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $response.body#/id
+            buckets:
+              operationId: plannerUser.plans.GetBuckets
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $response.body#/id
+            details:
+              operationId: plannerUser.plans.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerPlanDetails-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -675,7 +767,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -693,7 +786,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -708,7 +802,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -730,8 +825,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -801,7 +901,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -816,7 +917,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -832,9 +934,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: plannerPlan.buckets.GetTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -911,7 +1020,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -965,7 +1075,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1001,7 +1112,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1026,8 +1138,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1111,7 +1228,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1147,7 +1265,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1166,9 +1285,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            details:
+              operationId: plannerBucket.tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerTaskDetails-id: $response.body#/id
+            assignedToTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
+            progressTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
+            bucketTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1254,7 +1405,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1267,7 +1419,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1284,7 +1437,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1370,7 +1522,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1382,7 +1535,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1399,7 +1553,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1485,7 +1638,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1500,7 +1654,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1517,7 +1672,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1603,7 +1757,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1615,7 +1770,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1632,7 +1788,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1704,7 +1859,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1718,7 +1874,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1735,7 +1892,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -1798,7 +1954,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1852,7 +2009,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1888,7 +2046,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1913,8 +2072,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1984,7 +2148,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2020,7 +2185,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2039,9 +2205,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            details:
+              operationId: plannerPlan.tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerTaskDetails-id: $response.body#/id
+            assignedToTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
+            progressTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
+            bucketTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2113,7 +2307,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2126,7 +2321,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2143,7 +2339,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2215,7 +2410,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2227,7 +2423,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2244,7 +2441,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2316,7 +2512,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2331,7 +2528,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2348,7 +2546,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2420,7 +2617,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2432,7 +2630,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2449,7 +2648,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2512,7 +2710,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2534,7 +2733,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2553,7 +2753,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2577,8 +2778,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/recentPlans/{plannerPlan-id}':
     get:
@@ -2604,7 +2810,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2623,7 +2830,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2641,9 +2849,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            tasks:
+              operationId: plannerUser.recentPlans.GetTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $response.body#/id
+            buckets:
+              operationId: plannerUser.recentPlans.GetBuckets
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $response.body#/id
+            details:
+              operationId: plannerUser.recentPlans.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerPlanDetails-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/planner/tasks':
     get:
       tags:
@@ -2666,7 +2892,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2720,7 +2947,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2756,7 +2984,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2781,8 +3010,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2838,7 +3072,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2874,7 +3109,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2893,9 +3129,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            details:
+              operationId: plannerUser.tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerTaskDetails-id: $response.body#/id
+            assignedToTaskBoardFormat:
+              operationId: plannerUser.tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
+            progressTaskBoardFormat:
+              operationId: plannerUser.tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
+            bucketTaskBoardFormat:
+              operationId: plannerUser.tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -2953,7 +3213,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2966,7 +3227,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2983,7 +3245,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -3041,7 +3302,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3053,7 +3315,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3070,7 +3333,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -3128,7 +3390,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3143,7 +3406,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3160,7 +3424,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
@@ -3218,7 +3481,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3230,7 +3494,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3247,7 +3512,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.plannerUser
