@@ -51,16 +51,7 @@ steps:
         Write-Host $(System.DefaultWorkingDirectory)
         ls  $(System.DefaultWorkingDirectory)
         ls  $(System.DefaultWorkingDirectory)/tools
-  - task: Bash@3
-    displayName : "Create PR $(BRANCH)"
-    inputs:
-      targetType: 'inline'
-      script: |
-          git status
-          git checkout dev
-          git branch $(BRANCH)
-          git checkout $(BRANCH)
-          git status
+
   - task: PowerShell@2
     displayName: Download v1.0 OpenApiDocs
     inputs:
@@ -74,6 +65,16 @@ steps:
       arguments: '-BetaGraphVersion'
       pwsh: true
 
+  - task: Bash@3
+    displayName : "Create PR $(BRANCH)"
+    inputs:
+      targetType: 'inline'
+      script: |
+          git status
+          git checkout dev
+          git branch $(BRANCH)
+          git checkout $(BRANCH)
+          git status
 
   - task: Bash@3
     displayName : "Commit Downloaded Files"
