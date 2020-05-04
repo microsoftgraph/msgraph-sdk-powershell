@@ -92,5 +92,7 @@ steps:
      inputs:
         targetType: 'inline'
         script: |
+          echo $GITHUB_TOKEN
+          echo $(GITHUB_TOKEN)
           curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
           bin/hub pull-request -b "dev" -h "$(BRANCH)" -m "Weekly OpenApiDocs Download" -m "Weekly OpenAPiDocs Download" -r "finsharp" -a "finsharp" -l "generated"
