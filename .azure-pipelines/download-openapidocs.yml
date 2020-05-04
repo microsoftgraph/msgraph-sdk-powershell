@@ -23,10 +23,6 @@ steps:
   - checkout: self
     persistCredentials: true
     clean: true
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: 'Run CredScan'
-    inputs:
-      debugMode: false
 
   - task: PowerShell@2
     displayName: "Compute Branch"
