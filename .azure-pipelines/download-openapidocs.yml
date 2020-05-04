@@ -14,8 +14,7 @@ schedules:
     - cron: "0 12 * * 5" # Run Every Friday at Midnight UTC Time
       displayName: "Weekly OpenApiDocs Download and PR"
       branches: 
-        include: 
-        - gn/generateOpenApiDocs
+        include:
         - dev
       always: true
 
