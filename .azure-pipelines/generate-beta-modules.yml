@@ -41,8 +41,8 @@ jobs:
   - task: PowerShell@2
     displayName: 'Build Auth Modules'
     inputs:
-      filePath: '$(System.DefaultWorkingDirectory)/tools/BuildModule.ps1'
-      arguments: '-Module "Authentication" -ModulePrefix $(MODULE_PREFIX) -EnableSigning'
+      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
