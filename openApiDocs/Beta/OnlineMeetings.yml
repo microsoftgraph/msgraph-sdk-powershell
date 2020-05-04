@@ -28,7 +28,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -68,11 +69,16 @@ paths:
                 - chatInfo desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - externalId
+                - externalId desc
+                - joinInformation
+                - joinInformation desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -95,11 +101,14 @@ paths:
                 - audioConferencing
                 - chatInfo
                 - videoTeleconferenceId
+                - externalId
+                - joinInformation
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -120,8 +129,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -177,7 +191,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -200,11 +215,14 @@ paths:
                 - audioConferencing
                 - chatInfo
                 - videoTeleconferenceId
+                - externalId
+                - joinInformation
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -221,7 +239,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
@@ -323,6 +340,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -346,6 +368,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.entity:
       title: entity
       type: object
@@ -441,6 +466,20 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+      example:
+        contentType:
+          '@odata.type': microsoft.graph.bodyType
+        content: string
     odata.error:
       required:
         - error
@@ -462,6 +501,12 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     odata.error.main:
       required:
         - code

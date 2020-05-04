@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -41,6 +42,7 @@ paths:
                 - isSharedWithMe
                 - canEdit
                 - owner
+                - calendarGroupId
                 - allowedOnlineMeetingProviders
                 - defaultOnlineMeetingProvider
                 - isTallyingResponses
@@ -54,7 +56,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -74,9 +77,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: group.calendar.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: group.calendar.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendarPermissions:
+              operationId: group.calendar.GetCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                calendarPermission-id: $response.body#/id
+            events:
+              operationId: group.calendar.GetEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            calendarView:
+              operationId: group.calendar.GetCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -125,7 +153,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -147,7 +176,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -163,7 +193,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -184,8 +215,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -241,7 +277,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -257,7 +294,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -274,7 +312,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -330,7 +367,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -346,6 +384,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -412,11 +452,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -427,6 +470,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -460,6 +504,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -470,7 +515,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -497,8 +543,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -554,7 +605,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -565,6 +617,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -598,6 +651,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -608,7 +662,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -629,9 +684,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.calendarView.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.calendarView.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.calendarView.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.calendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.calendarView.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            extensions:
+              operationId: calendar.calendarView.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -694,7 +784,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -716,7 +807,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -732,7 +824,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -753,8 +846,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -824,7 +922,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -840,7 +939,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -857,7 +957,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -922,7 +1021,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -940,6 +1040,7 @@ paths:
                 - isSharedWithMe
                 - canEdit
                 - owner
+                - calendarGroupId
                 - allowedOnlineMeetingProviders
                 - defaultOnlineMeetingProvider
                 - isTallyingResponses
@@ -953,7 +1054,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -973,9 +1075,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: event.calendar.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.calendar.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendarPermissions:
+              operationId: event.calendar.GetCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendarPermission-id: $response.body#/id
+            events:
+              operationId: event.calendar.GetEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            calendarView:
+              operationId: event.calendar.GetCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -1038,7 +1168,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1050,7 +1181,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1061,7 +1193,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1082,8 +1215,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1153,7 +1291,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1164,7 +1303,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1181,7 +1321,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -1251,7 +1390,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1267,6 +1407,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -1333,11 +1475,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1348,6 +1493,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -1381,6 +1527,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -1391,7 +1538,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1418,8 +1566,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1489,7 +1642,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1500,6 +1654,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -1533,6 +1688,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -1543,7 +1699,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1564,9 +1721,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: event.instances.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: event.instances.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.instances.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: event.instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: event.instances.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: event.instances.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -1636,7 +1834,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1650,7 +1849,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1662,7 +1862,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1683,8 +1884,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1754,7 +1960,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1766,7 +1973,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1783,7 +1991,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -1853,7 +2060,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1867,7 +2075,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1879,7 +2088,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1900,8 +2110,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1971,7 +2186,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1983,7 +2199,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2000,7 +2217,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -2063,7 +2279,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2079,6 +2296,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -2145,11 +2364,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2160,6 +2382,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -2193,6 +2416,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -2203,7 +2427,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2230,8 +2455,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2287,7 +2517,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2298,6 +2529,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -2331,6 +2563,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -2341,7 +2574,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2362,9 +2596,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.events.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.events.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.events.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.events.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            extensions:
+              operationId: calendar.events.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -2427,7 +2696,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2449,7 +2719,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2465,7 +2736,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2486,8 +2758,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2557,7 +2834,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2573,7 +2851,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2590,7 +2869,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -2655,7 +2933,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2673,6 +2952,7 @@ paths:
                 - isSharedWithMe
                 - canEdit
                 - owner
+                - calendarGroupId
                 - allowedOnlineMeetingProviders
                 - defaultOnlineMeetingProvider
                 - isTallyingResponses
@@ -2686,7 +2966,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2706,9 +2987,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: event.calendar.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.calendar.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendarPermissions:
+              operationId: event.calendar.GetCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendarPermission-id: $response.body#/id
+            events:
+              operationId: event.calendar.GetEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            calendarView:
+              operationId: event.calendar.GetCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -2771,7 +3080,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2783,7 +3093,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2794,7 +3105,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2815,8 +3127,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2886,7 +3203,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2897,7 +3215,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2914,7 +3233,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -2984,7 +3302,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3000,6 +3319,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -3066,11 +3387,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3081,6 +3405,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -3114,6 +3439,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -3124,7 +3450,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3151,8 +3478,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3222,7 +3554,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3233,6 +3566,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -3266,6 +3600,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -3276,7 +3611,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3297,9 +3633,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: event.instances.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: event.instances.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.instances.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: event.instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: event.instances.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: event.instances.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -3369,7 +3746,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3383,7 +3761,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3395,7 +3774,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3416,8 +3796,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3487,7 +3872,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3499,7 +3885,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3516,7 +3903,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -3586,7 +3972,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3600,7 +3987,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3612,7 +4000,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3633,8 +4022,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3704,7 +4098,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3716,7 +4111,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3733,7 +4129,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -3796,7 +4191,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3810,7 +4206,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3822,7 +4219,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3843,8 +4241,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3900,7 +4303,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3912,7 +4316,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3929,7 +4334,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -3985,7 +4389,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3999,7 +4404,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4011,7 +4417,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4032,8 +4439,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4089,7 +4501,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4101,7 +4514,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4118,7 +4532,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.calendar
@@ -4174,7 +4587,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4190,6 +4604,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -4256,11 +4672,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4271,6 +4690,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -4304,6 +4724,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -4314,7 +4735,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4341,8 +4763,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4398,7 +4825,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4409,6 +4837,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -4442,6 +4871,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -4452,7 +4882,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4473,9 +4904,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: group.calendarView.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: group.calendarView.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: group.calendarView.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: group.calendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendar-id: $response.body#/id
+            instances:
+              operationId: group.calendarView.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            extensions:
+              operationId: group.calendarView.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -4538,7 +5004,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4560,7 +5027,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4576,7 +5044,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4597,8 +5066,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4668,7 +5142,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4684,7 +5159,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4701,7 +5177,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -4766,7 +5241,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4784,6 +5260,7 @@ paths:
                 - isSharedWithMe
                 - canEdit
                 - owner
+                - calendarGroupId
                 - allowedOnlineMeetingProviders
                 - defaultOnlineMeetingProvider
                 - isTallyingResponses
@@ -4797,7 +5274,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4817,9 +5295,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: event.calendar.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.calendar.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendarPermissions:
+              operationId: event.calendar.GetCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendarPermission-id: $response.body#/id
+            events:
+              operationId: event.calendar.GetEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            calendarView:
+              operationId: event.calendar.GetCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -4882,7 +5388,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4904,7 +5411,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4920,7 +5428,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4941,8 +5450,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5012,7 +5526,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5028,7 +5543,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5045,7 +5561,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -5115,7 +5630,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5131,6 +5647,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -5197,11 +5715,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5212,6 +5733,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -5245,6 +5767,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5255,7 +5778,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5282,8 +5806,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5353,7 +5882,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5364,6 +5894,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -5397,6 +5928,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5407,7 +5939,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5428,9 +5961,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.calendarView.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.calendarView.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.calendarView.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.calendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.calendarView.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: calendar.calendarView.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -5500,7 +6074,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5516,6 +6091,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -5582,11 +6159,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5597,6 +6177,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -5630,6 +6211,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5640,7 +6222,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5667,8 +6250,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5738,7 +6326,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5749,6 +6338,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -5782,6 +6372,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5792,7 +6383,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5813,9 +6405,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.events.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.events.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.events.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.events.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: calendar.events.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -5885,7 +6518,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5899,7 +6533,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5911,7 +6546,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5932,8 +6568,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6003,7 +6644,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6015,7 +6657,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6032,7 +6675,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -6102,7 +6744,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6116,7 +6759,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6128,7 +6772,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6149,8 +6794,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6220,7 +6870,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6232,7 +6883,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6249,7 +6901,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -6319,7 +6970,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6331,7 +6983,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6342,7 +6995,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6363,8 +7017,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6434,7 +7093,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6445,7 +7105,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6462,7 +7123,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -6532,7 +7192,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6548,6 +7209,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -6614,11 +7277,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6629,6 +7295,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -6662,6 +7329,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -6672,7 +7340,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6699,8 +7368,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6770,7 +7444,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6781,6 +7456,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -6814,6 +7490,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -6824,7 +7501,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6845,9 +7523,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: event.instances.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: event.instances.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.instances.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: event.instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: event.instances.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: event.instances.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -6917,7 +7636,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6931,7 +7651,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6943,7 +7664,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6964,8 +7686,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7035,7 +7762,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7047,7 +7775,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7064,7 +7793,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -7134,7 +7862,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7148,7 +7877,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7160,7 +7890,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7181,8 +7912,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7252,7 +7988,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7264,7 +8001,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7281,7 +8019,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -7344,7 +8081,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7360,6 +8098,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -7426,11 +8166,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7441,6 +8184,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -7474,6 +8218,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -7484,7 +8229,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7511,8 +8257,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7568,7 +8319,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7579,6 +8331,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -7612,6 +8365,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -7622,7 +8376,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7643,9 +8398,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: group.events.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: group.events.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: group.events.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: group.events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendar-id: $response.body#/id
+            instances:
+              operationId: group.events.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            extensions:
+              operationId: group.events.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -7708,7 +8498,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7730,7 +8521,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7746,7 +8538,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7767,8 +8560,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7838,7 +8636,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7854,7 +8653,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7871,7 +8671,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -7936,7 +8735,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7954,6 +8754,7 @@ paths:
                 - isSharedWithMe
                 - canEdit
                 - owner
+                - calendarGroupId
                 - allowedOnlineMeetingProviders
                 - defaultOnlineMeetingProvider
                 - isTallyingResponses
@@ -7967,7 +8768,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7987,9 +8789,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: event.calendar.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.calendar.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendarPermissions:
+              operationId: event.calendar.GetCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                calendarPermission-id: $response.body#/id
+            events:
+              operationId: event.calendar.GetEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+            calendarView:
+              operationId: event.calendar.GetCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -8052,7 +8882,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8074,7 +8905,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8090,7 +8922,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8111,8 +8944,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8182,7 +9020,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8198,7 +9037,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8215,7 +9055,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -8285,7 +9124,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8301,6 +9141,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -8367,11 +9209,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8382,6 +9227,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -8415,6 +9261,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -8425,7 +9272,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8452,8 +9300,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8523,7 +9376,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8534,6 +9388,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -8567,6 +9422,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -8577,7 +9433,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8598,9 +9455,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.calendarView.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.calendarView.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.calendarView.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.calendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.calendarView.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: calendar.calendarView.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -8670,7 +9568,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8686,6 +9585,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -8752,11 +9653,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8767,6 +9671,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -8800,6 +9705,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -8810,7 +9716,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8837,8 +9744,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8908,7 +9820,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8919,6 +9832,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -8952,6 +9866,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -8962,7 +9877,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8983,9 +9899,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: calendar.events.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: calendar.events.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: calendar.events.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: calendar.events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: calendar.events.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: calendar.events.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -9055,7 +10012,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9069,7 +10027,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9081,7 +10040,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9102,8 +10062,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9173,7 +10138,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9185,7 +10151,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9202,7 +10169,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -9272,7 +10238,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9286,7 +10253,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9298,7 +10266,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9319,8 +10288,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9390,7 +10364,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9402,7 +10377,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9419,7 +10395,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -9489,7 +10464,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9501,7 +10477,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9512,7 +10489,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9533,8 +10511,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9604,7 +10587,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9615,7 +10599,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9632,7 +10617,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -9702,7 +10686,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9718,6 +10703,8 @@ paths:
                 - changeKey desc
                 - categories
                 - categories desc
+                - transactionId
+                - transactionId desc
                 - originalStartTimeZone
                 - originalStartTimeZone desc
                 - originalEndTimeZone
@@ -9784,11 +10771,14 @@ paths:
                 - onlineMeeting desc
                 - allowNewTimeProposals
                 - allowNewTimeProposals desc
+                - isDraft
+                - isDraft desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9799,6 +10789,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -9832,6 +10823,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -9842,7 +10834,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9869,8 +10862,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9940,7 +10938,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9951,6 +10950,7 @@ paths:
                 - lastModifiedDateTime
                 - changeKey
                 - categories
+                - transactionId
                 - originalStartTimeZone
                 - originalEndTimeZone
                 - responseStatus
@@ -9984,6 +10984,7 @@ paths:
                 - onlineMeetingProvider
                 - onlineMeeting
                 - allowNewTimeProposals
+                - isDraft
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -9994,7 +10995,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10015,9 +11017,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: event.instances.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                attachment-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: event.instances.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: event.instances.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            calendar:
+              operationId: event.instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                calendar-id: $response.body#/id
+            instances:
+              operationId: event.instances.GetInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $response.body#/id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: event.instances.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -10087,7 +11130,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10101,7 +11145,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10113,7 +11158,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10134,8 +11180,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10205,7 +11256,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10217,7 +11269,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10234,7 +11287,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -10304,7 +11356,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10318,7 +11371,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10330,7 +11384,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10351,8 +11406,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10422,7 +11482,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10434,7 +11495,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10451,7 +11513,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.event
@@ -10511,6 +11572,7 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -10536,17 +11598,23 @@ components:
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
+            calendarGroupId:
+              type: string
+              nullable: true
             allowedOnlineMeetingProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             isTallyingResponses:
               type: boolean
+              description: Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
               nullable: true
             isRemovable:
               type: boolean
+              description: Indicates whether this user calendar can be deleted from the user mailbox.
               nullable: true
             singleValueExtendedProperties:
               type: array
@@ -10562,6 +11630,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+              description: The permissions of the users with whom the calendar is shared.
             events:
               type: array
               items:
@@ -10587,6 +11656,7 @@ components:
         canEdit: true
         owner:
           '@odata.type': microsoft.graph.emailAddress
+        calendarGroupId: string
         allowedOnlineMeetingProviders:
           - '@odata.type': microsoft.graph.onlineMeetingProviderType
         defaultOnlineMeetingProvider:
@@ -10613,9 +11683,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isRemovable:
               type: boolean
+              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
               nullable: true
             isInsideOrganization:
               type: boolean
+              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -10623,6 +11695,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
       example:
         id: string (identifier)
         emailAddress:
@@ -10639,6 +11712,9 @@ components:
         - title: event
           type: object
           properties:
+            transactionId:
+              type: string
+              nullable: true
             originalStartTimeZone:
               type: string
               description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -10741,12 +11817,16 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information, false otherwise. Default is false. Optional.'
               nullable: true
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
+              type: boolean
+              nullable: true
+            isDraft:
               type: boolean
               nullable: true
             attachments:
@@ -10783,6 +11863,7 @@ components:
         changeKey: string
         categories:
           - string
+        transactionId: string
         originalStartTimeZone: string
         originalEndTimeZone: string
         responseStatus:
@@ -10831,6 +11912,7 @@ components:
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
         allowNewTimeProposals: true
+        isDraft: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -11174,25 +12256,31 @@ components:
       properties:
         joinUrl:
           type: string
+          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
           nullable: true
         conferenceId:
           type: string
+          description: The ID of the conference.
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that can be used to join the conference.
           nullable: true
         tollFreeNumbers:
           type: array
           items:
             type: string
             nullable: true
+          description: The toll free numbers that can be used to join the conference.
         quickDial:
           type: string
+          description: The pre-formatted quickdial for this call.
           nullable: true
         phones:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phone'
+          description: All of the phone numbers associated with this conference.
       example:
         joinUrl: string
         conferenceId: string

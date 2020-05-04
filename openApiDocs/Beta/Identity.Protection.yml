@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -55,7 +56,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -78,7 +80,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -100,8 +103,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.anonymousIpRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -142,7 +150,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -165,7 +174,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -249,7 +259,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -279,7 +290,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -300,7 +312,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -322,8 +335,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.identityRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -364,7 +382,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -385,7 +404,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -403,9 +423,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityRiskEvent'
           links:
             impactedUser:
-              operationId: identityRiskEvents.identityRiskEvent.GetIdentityRiskEvent
+              operationId: identityRiskEvents.GetImpactedUser
               parameters:
-                id: $request.path.id
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -476,7 +497,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -587,6 +609,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -605,6 +629,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -612,7 +637,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -651,6 +677,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -669,6 +697,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -680,9 +709,289 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
+          links:
+            analytics:
+              operationId: identityRiskEvent.impactedUser.GetAnalytics
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                userAnalytics-id: $response.body#/id
+            informationProtection:
+              operationId: identityRiskEvent.impactedUser.GetInformationProtection
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                informationProtection-id: $response.body#/id
+            appRoleAssignments:
+              operationId: identityRiskEvent.impactedUser.GetAppRoleAssignments
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                appRoleAssignment-id: $response.body#/id
+            createdObjects:
+              operationId: identityRiskEvent.impactedUser.GetCreatedObjects
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            directReports:
+              operationId: identityRiskEvent.impactedUser.GetDirectReports
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            licenseDetails:
+              operationId: identityRiskEvent.impactedUser.GetLicenseDetails
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                licenseDetails-id: $response.body#/id
+            manager:
+              operationId: identityRiskEvent.impactedUser.GetManager
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: identityRiskEvent.impactedUser.GetMemberOf
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            ownedDevices:
+              operationId: identityRiskEvent.impactedUser.GetOwnedDevices
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            ownedObjects:
+              operationId: identityRiskEvent.impactedUser.GetOwnedObjects
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            registeredDevices:
+              operationId: identityRiskEvent.impactedUser.GetRegisteredDevices
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            scopedRoleMemberOf:
+              operationId: identityRiskEvent.impactedUser.GetScopedRoleMemberOf
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                scopedRoleMembership-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: identityRiskEvent.impactedUser.GetTransitiveMemberOf
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                directoryObject-id: $response.body#/id
+            outlook:
+              operationId: identityRiskEvent.impactedUser.GetOutlook
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                outlookUser-id: $response.body#/id
+            messages:
+              operationId: identityRiskEvent.impactedUser.GetMessages
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                message-id: $response.body#/id
+            joinedGroups:
+              operationId: identityRiskEvent.impactedUser.GetJoinedGroups
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                group-id: $response.body#/id
+            mailFolders:
+              operationId: identityRiskEvent.impactedUser.GetMailFolders
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                mailFolder-id: $response.body#/id
+            calendar:
+              operationId: identityRiskEvent.impactedUser.GetCalendar
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                calendar-id: $response.body#/id
+            calendars:
+              operationId: identityRiskEvent.impactedUser.GetCalendars
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                calendar-id: $response.body#/id
+            calendarGroups:
+              operationId: identityRiskEvent.impactedUser.GetCalendarGroups
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                calendarGroup-id: $response.body#/id
+            calendarView:
+              operationId: identityRiskEvent.impactedUser.GetCalendarView
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                event-id: $response.body#/id
+            events:
+              operationId: identityRiskEvent.impactedUser.GetEvents
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                event-id: $response.body#/id
+            people:
+              operationId: identityRiskEvent.impactedUser.GetPeople
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                person-id: $response.body#/id
+            contacts:
+              operationId: identityRiskEvent.impactedUser.GetContacts
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                contact-id: $response.body#/id
+            contactFolders:
+              operationId: identityRiskEvent.impactedUser.GetContactFolders
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                contactFolder-id: $response.body#/id
+            inferenceClassification:
+              operationId: identityRiskEvent.impactedUser.GetInferenceClassification
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                inferenceClassification-id: $response.body#/id
+            photo:
+              operationId: identityRiskEvent.impactedUser.GetPhoto
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                profilePhoto-id: $response.body#/id
+            photos:
+              operationId: identityRiskEvent.impactedUser.GetPhotos
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: identityRiskEvent.impactedUser.GetDrive
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                drive-id: $response.body#/id
+            drives:
+              operationId: identityRiskEvent.impactedUser.GetDrives
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                drive-id: $response.body#/id
+            followedSites:
+              operationId: identityRiskEvent.impactedUser.GetFollowedSites
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                site-id: $response.body#/id
+            extensions:
+              operationId: identityRiskEvent.impactedUser.GetExtensions
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                extension-id: $response.body#/id
+            approvals:
+              operationId: identityRiskEvent.impactedUser.GetApprovals
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                approval-id: $response.body#/id
+            appConsentRequestsForApproval:
+              operationId: identityRiskEvent.impactedUser.GetAppConsentRequestsForApproval
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                appConsentRequest-id: $response.body#/id
+            agreementAcceptances:
+              operationId: identityRiskEvent.impactedUser.GetAgreementAcceptances
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                agreementAcceptance-id: $response.body#/id
+            deviceEnrollmentConfigurations:
+              operationId: identityRiskEvent.impactedUser.GetDeviceEnrollmentConfigurations
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                deviceEnrollmentConfiguration-id: $response.body#/id
+            managedDevices:
+              operationId: identityRiskEvent.impactedUser.GetManagedDevices
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                managedDevice-id: $response.body#/id
+            managedAppRegistrations:
+              operationId: identityRiskEvent.impactedUser.GetManagedAppRegistrations
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                managedAppRegistration-id: $response.body#/id
+            windowsInformationProtectionDeviceRegistrations:
+              operationId: identityRiskEvent.impactedUser.GetWindowsInformationProtectionDeviceRegistrations
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                windowsInformationProtectionDeviceRegistration-id: $response.body#/id
+            deviceManagementTroubleshootingEvents:
+              operationId: identityRiskEvent.impactedUser.GetDeviceManagementTroubleshootingEvents
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                deviceManagementTroubleshootingEvent-id: $response.body#/id
+            mobileAppIntentAndStates:
+              operationId: identityRiskEvent.impactedUser.GetMobileAppIntentAndStates
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                mobileAppIntentAndState-id: $response.body#/id
+            mobileAppTroubleshootingEvents:
+              operationId: identityRiskEvent.impactedUser.GetMobileAppTroubleshootingEvents
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                mobileAppTroubleshootingEvent-id: $response.body#/id
+            notifications:
+              operationId: identityRiskEvent.impactedUser.GetNotifications
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                notification-id: $response.body#/id
+            planner:
+              operationId: identityRiskEvent.impactedUser.GetPlanner
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                plannerUser-id: $response.body#/id
+            insights:
+              operationId: identityRiskEvent.impactedUser.GetInsights
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                officeGraphInsights-id: $response.body#/id
+            settings:
+              operationId: identityRiskEvent.impactedUser.GetSettings
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                userSettings-id: $response.body#/id
+            onenote:
+              operationId: identityRiskEvent.impactedUser.GetOnenote
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                onenote-id: $response.body#/id
+            profile:
+              operationId: identityRiskEvent.impactedUser.GetProfile
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                profile-id: $response.body#/id
+            activities:
+              operationId: identityRiskEvent.impactedUser.GetActivities
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                userActivity-id: $response.body#/id
+            devices:
+              operationId: identityRiskEvent.impactedUser.GetDevices
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                device-id: $response.body#/id
+            onlineMeetings:
+              operationId: identityRiskEvent.impactedUser.GetOnlineMeetings
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                onlineMeeting-id: $response.body#/id
+            presence:
+              operationId: identityRiskEvent.impactedUser.GetPresence
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                presence-id: $response.body#/id
+            authentication:
+              operationId: identityRiskEvent.impactedUser.GetAuthentication
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                authentication-id: $response.body#/id
+            chats:
+              operationId: identityRiskEvent.impactedUser.GetChats
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                chat-id: $response.body#/id
+            joinedTeams:
+              operationId: identityRiskEvent.impactedUser.GetJoinedTeams
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                team-id: $response.body#/id
+            teamwork:
+              operationId: identityRiskEvent.impactedUser.GetTeamwork
+              parameters:
+                identityRiskEvent-id: $request.path.identityRiskEvent-id
+                userTeamwork-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /impossibleTravelRiskEvents:
     get:
       tags:
@@ -698,7 +1007,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -744,7 +1054,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -773,7 +1084,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -795,8 +1107,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.impossibleTravelRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -837,7 +1154,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -866,7 +1184,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -950,7 +1269,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -980,7 +1300,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1001,7 +1322,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1023,8 +1345,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.leakedCredentialsRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1065,7 +1392,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1086,7 +1414,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1170,7 +1499,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1208,7 +1538,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1233,7 +1564,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1255,8 +1587,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.malwareRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1297,7 +1634,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1322,7 +1660,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1406,7 +1745,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1418,6 +1758,8 @@ paths:
                 - requestId desc
                 - correlationId
                 - correlationId desc
+                - riskEventType
+                - riskEventType desc
                 - riskType
                 - riskType desc
                 - riskState
@@ -1456,7 +1798,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1465,6 +1808,7 @@ paths:
                 - id
                 - requestId
                 - correlationId
+                - riskEventType
                 - riskType
                 - riskState
                 - riskLevel
@@ -1486,7 +1830,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1507,8 +1852,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.riskDetection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1549,7 +1899,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1558,6 +1909,7 @@ paths:
                 - id
                 - requestId
                 - correlationId
+                - riskEventType
                 - riskType
                 - riskState
                 - riskLevel
@@ -1579,7 +1931,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1662,7 +2015,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1692,7 +2046,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1713,7 +2068,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1735,8 +2091,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.riskyUser'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1777,7 +2138,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1798,7 +2160,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1816,9 +2179,10 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.riskyUser'
           links:
             history:
-              operationId: riskyUsers.riskyUser.GetRiskyUser
+              operationId: riskyUsers.GetHistory
               parameters:
-                id: $request.path.id
+                riskyUser-id: $request.path.riskyUser-id
+                riskyUserHistoryItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1894,7 +2258,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1930,7 +2295,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1954,7 +2320,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1976,8 +2343,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2033,7 +2405,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2057,7 +2430,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2075,7 +2449,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - riskyUsers.riskyUserHistoryItem
@@ -2174,7 +2547,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2208,7 +2582,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2231,7 +2606,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2253,8 +2629,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.suspiciousIpRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2295,7 +2676,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2318,7 +2700,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2402,7 +2785,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2436,7 +2820,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2459,7 +2844,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2481,8 +2867,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.unfamiliarLocationRiskEvent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2523,7 +2914,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2546,7 +2938,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2902,6 +3295,7 @@ components:
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             showInAddressList:
@@ -3136,6 +3530,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Nullable.
+            approvals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+            appConsentRequestsForApproval:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
             agreementAcceptances:
               type: array
               items:
@@ -3203,6 +3605,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
               type: array
               items:
@@ -3373,6 +3777,10 @@ components:
           - '@odata.type': microsoft.graph.site
         extensions:
           - '@odata.type': microsoft.graph.extension
+        approvals:
+          - '@odata.type': microsoft.graph.approval
+        appConsentRequestsForApproval:
+          - '@odata.type': microsoft.graph.appConsentRequest
         agreementAcceptances:
           - '@odata.type': microsoft.graph.agreementAcceptance
         deviceEnrollmentConfigurations:
@@ -3409,6 +3817,8 @@ components:
           - '@odata.type': microsoft.graph.onlineMeeting
         presence:
           '@odata.type': microsoft.graph.presence
+        authentication:
+          '@odata.type': microsoft.graph.authentication
         chats:
           - '@odata.type': microsoft.graph.chat
         joinedTeams:
@@ -3529,6 +3939,9 @@ components:
             correlationId:
               type: string
               nullable: true
+            riskEventType:
+              type: string
+              nullable: true
             riskType:
               $ref: '#/components/schemas/microsoft.graph.riskEventType'
             riskState:
@@ -3582,6 +3995,7 @@ components:
         id: string (identifier)
         requestId: string
         correlationId: string
+        riskEventType: string
         riskType:
           '@odata.type': microsoft.graph.riskEventType
         riskState:
@@ -4744,7 +5158,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 10 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
@@ -5042,6 +5456,7 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -5067,17 +5482,23 @@ components:
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
+            calendarGroupId:
+              type: string
+              nullable: true
             allowedOnlineMeetingProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             isTallyingResponses:
               type: boolean
+              description: Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
               nullable: true
             isRemovable:
               type: boolean
+              description: Indicates whether this user calendar can be deleted from the user mailbox.
               nullable: true
             singleValueExtendedProperties:
               type: array
@@ -5093,6 +5514,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+              description: The permissions of the users with whom the calendar is shared.
             events:
               type: array
               items:
@@ -5118,6 +5540,7 @@ components:
         canEdit: true
         owner:
           '@odata.type': microsoft.graph.emailAddress
+        calendarGroupId: string
         allowedOnlineMeetingProviders:
           - '@odata.type': microsoft.graph.onlineMeetingProviderType
         defaultOnlineMeetingProvider:
@@ -5172,6 +5595,9 @@ components:
         - title: event
           type: object
           properties:
+            transactionId:
+              type: string
+              nullable: true
             originalStartTimeZone:
               type: string
               description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -5274,12 +5700,16 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information, false otherwise. Default is false. Optional.'
               nullable: true
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
+              type: boolean
+              nullable: true
+            isDraft:
               type: boolean
               nullable: true
             attachments:
@@ -5316,6 +5746,7 @@ components:
         changeKey: string
         categories:
           - string
+        transactionId: string
         originalStartTimeZone: string
         originalEndTimeZone: string
         responseStatus:
@@ -5364,6 +5795,7 @@ components:
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
         allowNewTimeProposals: true
+        isDraft: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -5823,6 +6255,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: The list of items the user is following. Only in OneDrive for Business.
             items:
               type: array
               items:
@@ -5986,6 +6419,57 @@ components:
           type: object
       example:
         id: string (identifier)
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            pendingSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+            completedSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+      example:
+        id: string (identifier)
+        pendingSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+        completedSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+    microsoft.graph.appConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appConsentRequest
+          type: object
+          properties:
+            appId:
+              type: string
+            appDisplayName:
+              type: string
+              nullable: true
+            consentType:
+              type: string
+              nullable: true
+            pendingScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+            userConsentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+      example:
+        id: string (identifier)
+        appId: string
+        appDisplayName: string
+        consentType: string
+        pendingScopes:
+          - '@odata.type': microsoft.graph.appConsentRequestScope
+        userConsentRequests:
+          - '@odata.type': microsoft.graph.userConsentRequest
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6344,6 +6828,10 @@ components:
               format: int64
             processorArchitecture:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
+            specificationVersion:
+              type: string
+              description: Specification version. This property is read-only.
+              nullable: true
             securityBaselineStates:
               type: array
               items:
@@ -6474,6 +6962,7 @@ components:
         physicalMemoryInBytes: integer
         processorArchitecture:
           '@odata.type': microsoft.graph.managedDeviceArchitecture
+        specificationVersion: string
         securityBaselineStates:
           - '@odata.type': microsoft.graph.securityBaselineState
         deviceConfigurationStates:
@@ -7346,6 +7835,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -7369,6 +7863,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.presence:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7385,6 +7882,38 @@ components:
         id: string (identifier)
         availability: string
         activity: string
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+      example:
+        id: string (identifier)
+        methods:
+          - '@odata.type': microsoft.graph.authenticationMethod
+        phoneMethods:
+          - '@odata.type': microsoft.graph.phoneAuthenticationMethod
+        passwordMethods:
+          - '@odata.type': microsoft.graph.passwordAuthenticationMethod
+        operations:
+          - '@odata.type': microsoft.graph.longRunningOperation
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7657,11 +8186,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskEventType'
+        riskEventTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
         detail:
           $ref: '#/components/schemas/microsoft.graph.riskDetail'
       example:
         eventTypes:
           - '@odata.type': microsoft.graph.riskEventType
+        riskEventTypes:
+          - string
         detail:
           '@odata.type': microsoft.graph.riskDetail
     odata.error:
@@ -7936,6 +8472,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             contentType:
@@ -7954,6 +8491,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -8780,9 +9318,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isRemovable:
               type: boolean
+              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
               nullable: true
             isInsideOrganization:
               type: boolean
+              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -8790,6 +9330,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
       example:
         id: string (identifier)
         emailAddress:
@@ -8935,25 +9476,31 @@ components:
       properties:
         joinUrl:
           type: string
+          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
           nullable: true
         conferenceId:
           type: string
+          description: The ID of the conference.
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that can be used to join the conference.
           nullable: true
         tollFreeNumbers:
           type: array
           items:
             type: string
             nullable: true
+          description: The toll free numbers that can be used to join the conference.
         quickDial:
           type: string
+          description: The pre-formatted quickdial for this call.
           nullable: true
         phones:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phone'
+          description: All of the phone numbers associated with this conference.
       example:
         joinUrl: string
         conferenceId: string
@@ -9231,6 +9778,7 @@ components:
           nullable: true
         tenantId:
           type: string
+          description: The unique identifier (guid) for the tenancy.
           nullable: true
         webId:
           type: string
@@ -9492,6 +10040,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+              description: The set of subscriptions on the list.
       example:
         id: string (identifier)
         createdBy:
@@ -9538,6 +10087,7 @@ components:
       properties:
         dataLocationCode:
           type: string
+          description: The geographic region code for where this site collection resides. Read-only.
           nullable: true
         hostname:
           type: string
@@ -9773,6 +10323,69 @@ components:
           - '@odata.type': microsoft.graph.webPart
         publishingState:
           '@odata.type': microsoft.graph.publicationFacet
+    microsoft.graph.approvalStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStep
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        displayName: string
+        reviewedBy:
+          '@odata.type': microsoft.graph.identity
+        reviewedDateTime: string (timestamp)
+        reviewResult: string
+        justification: string
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      example:
+        displayName: string
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+        reason: string
+        createdBy:
+          '@odata.type': microsoft.graph.userIdentity
+        createdDateTime: string (timestamp)
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -10056,6 +10669,7 @@ components:
         - windowsCoManagement
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - azureAdJoinUsingAzureVmExtension
       type: string
     microsoft.graph.lostModeState:
       title: lostModeState
@@ -10352,7 +10966,7 @@ components:
         lastSyncDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Datetime fo last sync with configuration manager management point.
+          description: Datetime for last sync with configuration manager management point.
           format: date-time
       example:
         state:
@@ -10367,8 +10981,12 @@ components:
           type: string
           description: Configuration Manager Client Id from SCCM
           nullable: true
+        isBlocked:
+          type: boolean
+          description: Configuration Manager Client blocked status from SCCM
       example:
         clientIdentifier: string
+        isBlocked: true
     microsoft.graph.managedDeviceArchitecture:
       title: managedDeviceArchitecture
       enum:
@@ -12288,6 +12906,83 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+      example:
+        id: string (identifier)
+        phoneNumber: string
+        phoneType:
+          '@odata.type': microsoft.graph.authenticationPhoneType
+        smsSignInState:
+          '@odata.type': microsoft.graph.authenticationMethodSignInState
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            password:
+              type: string
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        password: string
+        creationDateTime: string (timestamp)
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastActionDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.longRunningOperationStatus
+        statusDetail: string
+        resourceLocation: string
     microsoft.graph.conversationMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13004,12 +13699,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             resultType:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
             message:
               type: string
+              description: The result message for each threat assessment.
               nullable: true
       example:
         id: string (identifier)
@@ -14155,6 +14852,8 @@ components:
           type: string
           description: Unique identifier for the remote item in its drive. Read-only.
           nullable: true
+        image:
+          $ref: '#/components/schemas/microsoft.graph.image'
         lastModifiedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         lastModifiedDateTime:
@@ -14182,6 +14881,8 @@ components:
           nullable: true
         specialFolder:
           $ref: '#/components/schemas/microsoft.graph.specialFolder'
+        video:
+          $ref: '#/components/schemas/microsoft.graph.video'
         webDavUrl:
           type: string
           description: DAV compatible URL for the item.
@@ -14201,6 +14902,8 @@ components:
         folder:
           '@odata.type': microsoft.graph.folder
         id: string
+        image:
+          '@odata.type': microsoft.graph.image
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
         lastModifiedDateTime: string (timestamp)
@@ -14216,6 +14919,8 @@ components:
         size: integer
         specialFolder:
           '@odata.type': microsoft.graph.specialFolder
+        video:
+          '@odata.type': microsoft.graph.video
         webDavUrl: string
         webUrl: string
     microsoft.graph.searchResult:
@@ -14390,6 +15095,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -14398,8 +15104,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             hasPassword:
               type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -14445,7 +15153,7 @@ components:
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
@@ -14887,6 +15595,37 @@ components:
         type: string
         data:
           '@odata.type': microsoft.graph.sitePageData
+    microsoft.graph.request:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: request
+          type: object
+          properties:
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+      example:
+        id: string
+        displayName: string
+        ipAddress: string
+        userPrincipalName: string
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -15044,6 +15783,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -15059,6 +15802,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -15070,6 +15814,7 @@ components:
         - windows81AndLater
         - windows10AndLater
         - androidWorkProfile
+        - windows10XProfile
         - all
       type: string
     microsoft.graph.complianceStatus:
@@ -15135,6 +15880,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -15150,6 +15899,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.managedDeviceMobileAppConfigurationSettingState:
       title: managedDeviceMobileAppConfigurationSettingState
       type: object
@@ -15201,6 +15951,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -15216,6 +15970,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -16092,6 +16847,33 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notstarted
+        - running
+        - succeeded
+        - failed
+      type: string
     microsoft.graph.chatMessageType:
       title: chatMessageType
       enum:
@@ -17155,6 +17937,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         preventsDownload:
           type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
           nullable: true
         configuratorUrl:
           type: string

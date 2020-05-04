@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -57,7 +58,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -82,9 +84,58 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
+          links:
+            schedule:
+              operationId: group.team.GetSchedule
+              parameters:
+                group-id: $request.path.group-id
+                schedule-id: $response.body#/id
+            group:
+              operationId: group.team.GetGroup
+              parameters:
+                group-id: $response.body#/id
+            template:
+              operationId: group.team.GetTemplate
+              parameters:
+                group-id: $request.path.group-id
+                teamsTemplate-id: $response.body#/id
+            photo:
+              operationId: group.team.GetPhoto
+              parameters:
+                group-id: $request.path.group-id
+                profilePhoto-id: $response.body#/id
+            owners:
+              operationId: group.team.GetOwners
+              parameters:
+                group-id: $request.path.group-id
+                user-id: $response.body#/id
+            channels:
+              operationId: group.team.GetChannels
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $response.body#/id
+            primaryChannel:
+              operationId: group.team.GetPrimaryChannel
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $response.body#/id
+            apps:
+              operationId: group.team.GetApps
+              parameters:
+                group-id: $request.path.group-id
+                teamsCatalogApp-id: $response.body#/id
+            installedApps:
+              operationId: group.team.GetInstalledApps
+              parameters:
+                group-id: $request.path.group-id
+                teamsAppInstallation-id: $response.body#/id
+            operations:
+              operationId: group.team.GetOperations
+              parameters:
+                group-id: $request.path.group-id
+                teamsAsyncOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.team
@@ -126,7 +177,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -164,7 +216,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -198,7 +251,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -229,8 +283,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.team'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -271,7 +330,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -305,7 +365,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -332,45 +393,55 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
             schedule:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetSchedule
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                schedule-id: $response.body#/id
             group:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetGroup
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                group-id: $response.body#/id
             template:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetTemplate
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                teamsTemplate-id: $response.body#/id
             photo:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetPhoto
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                profilePhoto-id: $response.body#/id
             owners:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetOwners
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                user-id: $response.body#/id
             channels:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetChannels
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
             primaryChannel:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetPrimaryChannel
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
             apps:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetApps
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                teamsCatalogApp-id: $response.body#/id
             installedApps:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetInstalledApps
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $response.body#/id
             operations:
-              operationId: teams.team.GetTeam
+              operationId: teams.GetOperations
               parameters:
-                id: $request.path.id
+                team-id: $request.path.team-id
+                teamsAsyncOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -446,7 +517,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -464,7 +536,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -478,7 +551,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -499,8 +573,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsCatalogApp'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -556,7 +635,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -570,7 +650,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -587,7 +668,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsCatalogApp'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.teamsCatalogApp
@@ -643,7 +723,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -667,7 +748,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -688,7 +770,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -713,8 +796,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.channel'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -770,7 +858,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -791,7 +880,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -810,9 +900,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            messages:
+              operationId: team.channels.GetMessages
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $response.body#/id
+            tabs:
+              operationId: team.channels.GetTabs
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $response.body#/id
+            members:
+              operationId: team.channels.GetMembers
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                conversationMember-id: $response.body#/id
+            filesFolder:
+              operationId: team.channels.GetFilesFolder
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                driveItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -870,7 +984,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -924,7 +1039,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -950,9 +1066,63 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            workbook:
+              operationId: channel.filesFolder.GetWorkbook
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                workbook-id: $response.body#/id
+            activities:
+              operationId: channel.filesFolder.GetActivities
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                itemActivityOLD-id: $response.body#/id
+            analytics:
+              operationId: channel.filesFolder.GetAnalytics
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                itemAnalytics-id: $response.body#/id
+            children:
+              operationId: channel.filesFolder.GetChildren
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                driveItem-id: $response.body#/id
+            listItem:
+              operationId: channel.filesFolder.GetListItem
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                listItem-id: $response.body#/id
+            permissions:
+              operationId: channel.filesFolder.GetPermissions
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                permission-id: $response.body#/id
+            subscriptions:
+              operationId: channel.filesFolder.GetSubscriptions
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                subscription-id: $response.body#/id
+            thumbnails:
+              operationId: channel.filesFolder.GetThumbnails
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                thumbnailSet-id: $response.body#/id
+            versions:
+              operationId: channel.filesFolder.GetVersions
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                driveItemVersion-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -1015,7 +1185,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1031,7 +1202,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1044,7 +1216,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1065,8 +1238,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversationMember'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1136,7 +1314,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1149,7 +1328,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1166,7 +1346,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -1236,7 +1415,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1282,7 +1462,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1312,7 +1493,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1335,8 +1517,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1406,7 +1593,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1436,7 +1624,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1453,9 +1642,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: channel.messages.GetReplies
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $response.body#/id
+            hostedContents:
+              operationId: channel.messages.GetHostedContents
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -1532,7 +1734,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1544,7 +1747,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1555,7 +1759,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1576,8 +1781,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1661,7 +1871,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1672,7 +1883,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1689,7 +1901,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -1773,7 +1984,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1819,7 +2031,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1849,7 +2062,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1872,8 +2086,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1957,7 +2176,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1987,7 +2207,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2004,9 +2225,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chatMessage.replies.GetReplies
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $response.body#/id
+                chatMessage-id1: $request.path.chatMessage-id1
+            hostedContents:
+              operationId: chatMessage.replies.GetHostedContents
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -2156,7 +2392,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2182,7 +2419,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2201,7 +2439,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2223,8 +2462,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsTab'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2294,7 +2538,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2313,7 +2558,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2329,9 +2575,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: channel.tabs.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsApp-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -2403,7 +2656,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2419,7 +2673,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2435,9 +2690,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsTab.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/group':
     get:
       tags:
@@ -2455,7 +2717,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2539,7 +2802,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2582,9 +2846,148 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
+          links:
+            appRoleAssignments:
+              operationId: team.group.GetAppRoleAssignments
+              parameters:
+                team-id: $request.path.team-id
+                appRoleAssignment-id: $response.body#/id
+            members:
+              operationId: team.group.GetMembers
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            membersWithLicenseErrors:
+              operationId: team.group.GetMembersWithLicenseErrors
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: team.group.GetMemberOf
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            transitiveMembers:
+              operationId: team.group.GetTransitiveMembers
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: team.group.GetTransitiveMemberOf
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            createdOnBehalfOf:
+              operationId: team.group.GetCreatedOnBehalfOf
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            owners:
+              operationId: team.group.GetOwners
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            settings:
+              operationId: team.group.GetSettings
+              parameters:
+                team-id: $request.path.team-id
+                directorySetting-id: $response.body#/id
+            endpoints:
+              operationId: team.group.GetEndpoints
+              parameters:
+                team-id: $request.path.team-id
+                endpoint-id: $response.body#/id
+            permissionGrants:
+              operationId: team.group.GetPermissionGrants
+              parameters:
+                team-id: $request.path.team-id
+                resourceSpecificPermissionGrant-id: $response.body#/id
+            conversations:
+              operationId: team.group.GetConversations
+              parameters:
+                team-id: $request.path.team-id
+                conversation-id: $response.body#/id
+            photos:
+              operationId: team.group.GetPhotos
+              parameters:
+                team-id: $request.path.team-id
+                profilePhoto-id: $response.body#/id
+            acceptedSenders:
+              operationId: team.group.GetAcceptedSenders
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            rejectedSenders:
+              operationId: team.group.GetRejectedSenders
+              parameters:
+                team-id: $request.path.team-id
+                directoryObject-id: $response.body#/id
+            threads:
+              operationId: team.group.GetThreads
+              parameters:
+                team-id: $request.path.team-id
+                conversationThread-id: $response.body#/id
+            calendar:
+              operationId: team.group.GetCalendar
+              parameters:
+                team-id: $request.path.team-id
+                calendar-id: $response.body#/id
+            calendarView:
+              operationId: team.group.GetCalendarView
+              parameters:
+                team-id: $request.path.team-id
+                event-id: $response.body#/id
+            events:
+              operationId: team.group.GetEvents
+              parameters:
+                team-id: $request.path.team-id
+                event-id: $response.body#/id
+            photo:
+              operationId: team.group.GetPhoto
+              parameters:
+                team-id: $request.path.team-id
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: team.group.GetDrive
+              parameters:
+                team-id: $request.path.team-id
+                drive-id: $response.body#/id
+            drives:
+              operationId: team.group.GetDrives
+              parameters:
+                team-id: $request.path.team-id
+                drive-id: $response.body#/id
+            sites:
+              operationId: team.group.GetSites
+              parameters:
+                team-id: $request.path.team-id
+                site-id: $response.body#/id
+            extensions:
+              operationId: team.group.GetExtensions
+              parameters:
+                team-id: $request.path.team-id
+                extension-id: $response.body#/id
+            groupLifecyclePolicies:
+              operationId: team.group.GetGroupLifecyclePolicies
+              parameters:
+                team-id: $request.path.team-id
+                groupLifecyclePolicy-id: $response.body#/id
+            planner:
+              operationId: team.group.GetPlanner
+              parameters:
+                team-id: $request.path.team-id
+                plannerGroup-id: $response.body#/id
+            onenote:
+              operationId: team.group.GetOnenote
+              parameters:
+                team-id: $request.path.team-id
+                onenote-id: $response.body#/id
+            team:
+              operationId: team.group.GetTeam
+              parameters:
+                team-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/installedApps':
     get:
       tags:
@@ -2607,7 +3010,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2619,7 +3023,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2632,7 +3037,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2655,8 +3061,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2712,7 +3123,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2725,7 +3137,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2742,9 +3155,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: team.installedApps.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsApp-id: $response.body#/id
+            teamsAppDefinition:
+              operationId: team.installedApps.GetTeamsAppDefinition
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.teamsAppInstallation
@@ -2829,7 +3254,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2845,7 +3271,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2861,9 +3288,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsAppInstallation.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition':
     get:
       tags:
@@ -2888,7 +3321,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2902,7 +3336,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2919,7 +3354,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/microsoft.graph.archive':
     post:
       tags:
@@ -3038,7 +3472,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3066,7 +3501,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3085,7 +3521,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3106,8 +3543,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3163,7 +3605,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3182,7 +3625,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3199,7 +3643,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.teamsAsyncOperation
@@ -3255,7 +3698,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3411,7 +3855,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3522,6 +3967,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -3540,6 +3987,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -3547,7 +3995,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3586,6 +4035,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -3604,6 +4055,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -3621,8 +4073,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.user'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/teams/{team-id}/owners/{user-id}':
     get:
@@ -3648,7 +4105,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3759,6 +4217,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -3777,6 +4237,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -3784,7 +4245,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3823,6 +4285,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -3841,6 +4305,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -3852,9 +4317,344 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
+          links:
+            analytics:
+              operationId: team.owners.GetAnalytics
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                userAnalytics-id: $response.body#/id
+            informationProtection:
+              operationId: team.owners.GetInformationProtection
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                informationProtection-id: $response.body#/id
+            appRoleAssignments:
+              operationId: team.owners.GetAppRoleAssignments
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                appRoleAssignment-id: $response.body#/id
+            createdObjects:
+              operationId: team.owners.GetCreatedObjects
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            directReports:
+              operationId: team.owners.GetDirectReports
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            licenseDetails:
+              operationId: team.owners.GetLicenseDetails
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                licenseDetails-id: $response.body#/id
+            manager:
+              operationId: team.owners.GetManager
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: team.owners.GetMemberOf
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            ownedDevices:
+              operationId: team.owners.GetOwnedDevices
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            ownedObjects:
+              operationId: team.owners.GetOwnedObjects
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            registeredDevices:
+              operationId: team.owners.GetRegisteredDevices
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            scopedRoleMemberOf:
+              operationId: team.owners.GetScopedRoleMemberOf
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                scopedRoleMembership-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: team.owners.GetTransitiveMemberOf
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                directoryObject-id: $response.body#/id
+            outlook:
+              operationId: team.owners.GetOutlook
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                outlookUser-id: $response.body#/id
+            messages:
+              operationId: team.owners.GetMessages
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                message-id: $response.body#/id
+            joinedGroups:
+              operationId: team.owners.GetJoinedGroups
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                group-id: $response.body#/id
+            mailFolders:
+              operationId: team.owners.GetMailFolders
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                mailFolder-id: $response.body#/id
+            calendar:
+              operationId: team.owners.GetCalendar
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                calendar-id: $response.body#/id
+            calendars:
+              operationId: team.owners.GetCalendars
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                calendar-id: $response.body#/id
+            calendarGroups:
+              operationId: team.owners.GetCalendarGroups
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                calendarGroup-id: $response.body#/id
+            calendarView:
+              operationId: team.owners.GetCalendarView
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                event-id: $response.body#/id
+            events:
+              operationId: team.owners.GetEvents
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                event-id: $response.body#/id
+            people:
+              operationId: team.owners.GetPeople
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                person-id: $response.body#/id
+            contacts:
+              operationId: team.owners.GetContacts
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                contact-id: $response.body#/id
+            contactFolders:
+              operationId: team.owners.GetContactFolders
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                contactFolder-id: $response.body#/id
+            inferenceClassification:
+              operationId: team.owners.GetInferenceClassification
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                inferenceClassification-id: $response.body#/id
+            photo:
+              operationId: team.owners.GetPhoto
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                profilePhoto-id: $response.body#/id
+            photos:
+              operationId: team.owners.GetPhotos
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: team.owners.GetDrive
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                drive-id: $response.body#/id
+            drives:
+              operationId: team.owners.GetDrives
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                drive-id: $response.body#/id
+            followedSites:
+              operationId: team.owners.GetFollowedSites
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                site-id: $response.body#/id
+            extensions:
+              operationId: team.owners.GetExtensions
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                extension-id: $response.body#/id
+            approvals:
+              operationId: team.owners.GetApprovals
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                approval-id: $response.body#/id
+            appConsentRequestsForApproval:
+              operationId: team.owners.GetAppConsentRequestsForApproval
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                appConsentRequest-id: $response.body#/id
+            agreementAcceptances:
+              operationId: team.owners.GetAgreementAcceptances
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                agreementAcceptance-id: $response.body#/id
+            deviceEnrollmentConfigurations:
+              operationId: team.owners.GetDeviceEnrollmentConfigurations
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                deviceEnrollmentConfiguration-id: $response.body#/id
+            managedDevices:
+              operationId: team.owners.GetManagedDevices
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                managedDevice-id: $response.body#/id
+            managedAppRegistrations:
+              operationId: team.owners.GetManagedAppRegistrations
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $response.body#/id
+            windowsInformationProtectionDeviceRegistrations:
+              operationId: team.owners.GetWindowsInformationProtectionDeviceRegistrations
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                windowsInformationProtectionDeviceRegistration-id: $response.body#/id
+            deviceManagementTroubleshootingEvents:
+              operationId: team.owners.GetDeviceManagementTroubleshootingEvents
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                deviceManagementTroubleshootingEvent-id: $response.body#/id
+            mobileAppIntentAndStates:
+              operationId: team.owners.GetMobileAppIntentAndStates
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                mobileAppIntentAndState-id: $response.body#/id
+            mobileAppTroubleshootingEvents:
+              operationId: team.owners.GetMobileAppTroubleshootingEvents
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                mobileAppTroubleshootingEvent-id: $response.body#/id
+            notifications:
+              operationId: team.owners.GetNotifications
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                notification-id: $response.body#/id
+            planner:
+              operationId: team.owners.GetPlanner
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                plannerUser-id: $response.body#/id
+            insights:
+              operationId: team.owners.GetInsights
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                officeGraphInsights-id: $response.body#/id
+            settings:
+              operationId: team.owners.GetSettings
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                userSettings-id: $response.body#/id
+            onenote:
+              operationId: team.owners.GetOnenote
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                onenote-id: $response.body#/id
+            profile:
+              operationId: team.owners.GetProfile
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                profile-id: $response.body#/id
+            activities:
+              operationId: team.owners.GetActivities
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                userActivity-id: $response.body#/id
+            devices:
+              operationId: team.owners.GetDevices
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                device-id: $response.body#/id
+            onlineMeetings:
+              operationId: team.owners.GetOnlineMeetings
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                onlineMeeting-id: $response.body#/id
+            presence:
+              operationId: team.owners.GetPresence
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                presence-id: $response.body#/id
+            authentication:
+              operationId: team.owners.GetAuthentication
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                authentication-id: $response.body#/id
+            chats:
+              operationId: team.owners.GetChats
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                chat-id: $response.body#/id
+            joinedTeams:
+              operationId: team.owners.GetJoinedTeams
+              parameters:
+                team-id: $response.body#/id
+                user-id: $request.path.user-id
+            teamwork:
+              operationId: team.owners.GetTeamwork
+              parameters:
+                team-id: $request.path.team-id
+                user-id: $request.path.user-id
+                userTeamwork-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/photo':
     get:
       tags:
@@ -3872,7 +4672,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3885,7 +4686,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3902,7 +4704,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.profilePhoto
@@ -3946,7 +4747,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3967,7 +4769,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3986,9 +4789,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            messages:
+              operationId: team.primaryChannel.GetMessages
+              parameters:
+                team-id: $request.path.team-id
+                chatMessage-id: $response.body#/id
+            tabs:
+              operationId: team.primaryChannel.GetTabs
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $response.body#/id
+            members:
+              operationId: team.primaryChannel.GetMembers
+              parameters:
+                team-id: $request.path.team-id
+                conversationMember-id: $response.body#/id
+            filesFolder:
+              operationId: team.primaryChannel.GetFilesFolder
+              parameters:
+                team-id: $request.path.team-id
+                driveItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -4032,7 +4855,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4086,7 +4910,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4112,9 +4937,54 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            workbook:
+              operationId: channel.filesFolder.GetWorkbook
+              parameters:
+                team-id: $request.path.team-id
+                workbook-id: $response.body#/id
+            activities:
+              operationId: channel.filesFolder.GetActivities
+              parameters:
+                team-id: $request.path.team-id
+                itemActivityOLD-id: $response.body#/id
+            analytics:
+              operationId: channel.filesFolder.GetAnalytics
+              parameters:
+                team-id: $request.path.team-id
+                itemAnalytics-id: $response.body#/id
+            children:
+              operationId: channel.filesFolder.GetChildren
+              parameters:
+                team-id: $request.path.team-id
+                driveItem-id: $response.body#/id
+            listItem:
+              operationId: channel.filesFolder.GetListItem
+              parameters:
+                team-id: $request.path.team-id
+                listItem-id: $response.body#/id
+            permissions:
+              operationId: channel.filesFolder.GetPermissions
+              parameters:
+                team-id: $request.path.team-id
+                permission-id: $response.body#/id
+            subscriptions:
+              operationId: channel.filesFolder.GetSubscriptions
+              parameters:
+                team-id: $request.path.team-id
+                subscription-id: $response.body#/id
+            thumbnails:
+              operationId: channel.filesFolder.GetThumbnails
+              parameters:
+                team-id: $request.path.team-id
+                thumbnailSet-id: $response.body#/id
+            versions:
+              operationId: channel.filesFolder.GetVersions
+              parameters:
+                team-id: $request.path.team-id
+                driveItemVersion-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -4163,7 +5033,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4179,7 +5050,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4192,7 +5064,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4213,8 +5086,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversationMember'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4270,7 +5148,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4283,7 +5162,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4300,7 +5180,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -4356,7 +5235,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4402,7 +5282,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4432,7 +5313,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4455,8 +5337,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4512,7 +5399,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4542,7 +5430,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4559,9 +5448,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: channel.messages.GetReplies
+              parameters:
+                team-id: $request.path.team-id
+                chatMessage-id: $response.body#/id
+            hostedContents:
+              operationId: channel.messages.GetHostedContents
+              parameters:
+                team-id: $request.path.team-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -4624,7 +5524,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4636,7 +5537,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4647,7 +5549,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4668,8 +5571,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4739,7 +5647,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4750,7 +5659,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4767,7 +5677,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -4837,7 +5746,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4883,7 +5793,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4913,7 +5824,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4936,8 +5848,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5007,7 +5924,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5037,7 +5955,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5054,9 +5973,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chatMessage.replies.GetReplies
+              parameters:
+                team-id: $request.path.team-id
+                chatMessage-id: $response.body#/id
+                chatMessage-id1: $request.path.chatMessage-id1
+            hostedContents:
+              operationId: chatMessage.replies.GetHostedContents
+              parameters:
+                team-id: $request.path.team-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -5178,7 +6110,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5204,7 +6137,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5223,7 +6157,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5245,8 +6180,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsTab'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5302,7 +6242,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5321,7 +6262,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5337,9 +6279,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: channel.tabs.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsApp-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.channel
@@ -5397,7 +6345,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5413,7 +6362,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5429,9 +6379,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsTab.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/teams/{team-id}/schedule':
     get:
       tags:
@@ -5449,7 +6405,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5479,7 +6436,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5503,9 +6461,54 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.schedule'
+          links:
+            shifts:
+              operationId: team.schedule.GetShifts
+              parameters:
+                team-id: $request.path.team-id
+                shift-id: $response.body#/id
+            openShifts:
+              operationId: team.schedule.GetOpenShifts
+              parameters:
+                team-id: $request.path.team-id
+                openShift-id: $response.body#/id
+            timesOff:
+              operationId: team.schedule.GetTimesOff
+              parameters:
+                team-id: $request.path.team-id
+                timeOff-id: $response.body#/id
+            timeOffReasons:
+              operationId: team.schedule.GetTimeOffReasons
+              parameters:
+                team-id: $request.path.team-id
+                timeOffReason-id: $response.body#/id
+            schedulingGroups:
+              operationId: team.schedule.GetSchedulingGroups
+              parameters:
+                team-id: $request.path.team-id
+                schedulingGroup-id: $response.body#/id
+            swapShiftsChangeRequests:
+              operationId: team.schedule.GetSwapShiftsChangeRequests
+              parameters:
+                team-id: $request.path.team-id
+                swapShiftsChangeRequest-id: $response.body#/id
+            openShiftChangeRequests:
+              operationId: team.schedule.GetOpenShiftChangeRequests
+              parameters:
+                team-id: $request.path.team-id
+                openShiftChangeRequest-id: $response.body#/id
+            offerShiftRequests:
+              operationId: team.schedule.GetOfferShiftRequests
+              parameters:
+                team-id: $request.path.team-id
+                offerShiftRequest-id: $response.body#/id
+            timeOffRequests:
+              operationId: team.schedule.GetTimeOffRequests
+              parameters:
+                team-id: $request.path.team-id
+                timeOffRequest-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -5596,7 +6599,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5638,7 +6642,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5664,7 +6669,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5685,8 +6691,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5742,7 +6753,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5768,7 +6780,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5785,7 +6798,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -5841,7 +6853,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5877,7 +6890,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5900,7 +6914,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5921,8 +6936,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5978,7 +6998,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6001,7 +7022,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6018,7 +7040,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -6074,7 +7095,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6098,7 +7120,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6115,7 +7138,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6136,8 +7160,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.openShift'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6193,7 +7222,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6210,7 +7240,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6227,7 +7258,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -6283,7 +7313,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6307,7 +7338,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6324,7 +7356,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6345,8 +7378,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6402,7 +7440,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6419,7 +7458,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6436,7 +7476,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -6492,7 +7531,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6518,7 +7558,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6536,7 +7577,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6557,8 +7599,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.shift'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6614,7 +7661,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6632,7 +7680,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6649,7 +7698,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.shift'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -6705,7 +7753,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6749,7 +7798,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6776,7 +7826,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6797,8 +7848,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6854,7 +7910,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6881,7 +7938,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6898,7 +7956,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -6954,7 +8011,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6978,7 +8036,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6995,7 +8054,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7016,8 +8076,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7073,7 +8138,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7090,7 +8156,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7107,7 +8174,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.timeOffReason'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -7163,7 +8229,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7203,7 +8270,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7228,7 +8296,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7249,8 +8318,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7306,7 +8380,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7331,7 +8406,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7348,7 +8424,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -7404,7 +8479,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7428,7 +8504,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7445,7 +8522,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7466,8 +8544,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOff'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7523,7 +8606,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7540,7 +8624,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7557,7 +8642,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.timeOff'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teams.schedule
@@ -7608,7 +8692,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7619,7 +8704,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7636,7 +8722,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /teams/microsoft.graph.allMessages():
     get:
       tags:
@@ -7670,7 +8755,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7682,7 +8768,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7693,7 +8780,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7714,8 +8802,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7756,7 +8849,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7767,7 +8861,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7845,7 +8940,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7857,7 +8953,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7873,6 +8970,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamwork'
+          links:
+            workforceIntegrations:
+              operationId: teamwork.GetWorkforceIntegrations
+              parameters:
+                workforceIntegration-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7954,7 +9056,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7980,11 +9083,16 @@ paths:
                 - url desc
                 - supports
                 - supports desc
+                - supportedEntities
+                - supportedEntities desc
+                - eligibilityFilteringEnabledEntities
+                - eligibilityFilteringEnabledEntities desc
               type: string
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8000,11 +9108,14 @@ paths:
                 - isActive
                 - url
                 - supports
+                - supportedEntities
+                - eligibilityFilteringEnabledEntities
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8025,8 +9136,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8067,7 +9183,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8083,11 +9200,14 @@ paths:
                 - isActive
                 - url
                 - supports
+                - supportedEntities
+                - eligibilityFilteringEnabledEntities
               type: string
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8104,7 +9224,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - teamwork.workforceIntegration
@@ -8919,7 +10038,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 10 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
@@ -9421,6 +10540,7 @@ components:
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             showInAddressList:
@@ -9655,6 +10775,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Nullable.
+            approvals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+            appConsentRequestsForApproval:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
             agreementAcceptances:
               type: array
               items:
@@ -9722,6 +10850,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
               type: array
               items:
@@ -9892,6 +11022,10 @@ components:
           - '@odata.type': microsoft.graph.site
         extensions:
           - '@odata.type': microsoft.graph.extension
+        approvals:
+          - '@odata.type': microsoft.graph.approval
+        appConsentRequestsForApproval:
+          - '@odata.type': microsoft.graph.appConsentRequest
         agreementAcceptances:
           - '@odata.type': microsoft.graph.agreementAcceptance
         deviceEnrollmentConfigurations:
@@ -9928,6 +11062,8 @@ components:
           - '@odata.type': microsoft.graph.onlineMeeting
         presence:
           '@odata.type': microsoft.graph.presence
+        authentication:
+          '@odata.type': microsoft.graph.authentication
         chats:
           - '@odata.type': microsoft.graph.chat
         joinedTeams:
@@ -10387,6 +11523,10 @@ components:
               nullable: true
             supports:
               $ref: '#/components/schemas/microsoft.graph.workforceIntegrationSupportedEntities'
+            supportedEntities:
+              $ref: '#/components/schemas/microsoft.graph.workforceIntegrationSupportedEntities'
+            eligibilityFilteringEnabledEntities:
+              $ref: '#/components/schemas/microsoft.graph.eligibilityFilteringEnabledEntities'
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -10401,6 +11541,10 @@ components:
         url: string
         supports:
           '@odata.type': microsoft.graph.workforceIntegrationSupportedEntities
+        supportedEntities:
+          '@odata.type': microsoft.graph.workforceIntegrationSupportedEntities
+        eligibilityFilteringEnabledEntities:
+          '@odata.type': microsoft.graph.eligibilityFilteringEnabledEntities
     microsoft.graph.entity:
       title: entity
       type: object
@@ -10960,6 +12104,8 @@ components:
           type: string
           description: Unique identifier for the remote item in its drive. Read-only.
           nullable: true
+        image:
+          $ref: '#/components/schemas/microsoft.graph.image'
         lastModifiedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         lastModifiedDateTime:
@@ -10987,6 +12133,8 @@ components:
           nullable: true
         specialFolder:
           $ref: '#/components/schemas/microsoft.graph.specialFolder'
+        video:
+          $ref: '#/components/schemas/microsoft.graph.video'
         webDavUrl:
           type: string
           description: DAV compatible URL for the item.
@@ -11006,6 +12154,8 @@ components:
         folder:
           '@odata.type': microsoft.graph.folder
         id: string
+        image:
+          '@odata.type': microsoft.graph.image
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
         lastModifiedDateTime: string (timestamp)
@@ -11021,6 +12171,8 @@ components:
         size: integer
         specialFolder:
           '@odata.type': microsoft.graph.specialFolder
+        video:
+          '@odata.type': microsoft.graph.video
         webDavUrl: string
         webUrl: string
     microsoft.graph.root:
@@ -11087,6 +12239,7 @@ components:
           nullable: true
         tenantId:
           type: string
+          description: The unique identifier (guid) for the tenancy.
           nullable: true
         webId:
           type: string
@@ -11345,6 +12498,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -11353,8 +12507,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             hasPassword:
               type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -11400,7 +12556,7 @@ components:
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
@@ -11996,6 +13152,7 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -12021,17 +13178,23 @@ components:
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
+            calendarGroupId:
+              type: string
+              nullable: true
             allowedOnlineMeetingProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             isTallyingResponses:
               type: boolean
+              description: Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
               nullable: true
             isRemovable:
               type: boolean
+              description: Indicates whether this user calendar can be deleted from the user mailbox.
               nullable: true
             singleValueExtendedProperties:
               type: array
@@ -12047,6 +13210,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+              description: The permissions of the users with whom the calendar is shared.
             events:
               type: array
               items:
@@ -12072,6 +13236,7 @@ components:
         canEdit: true
         owner:
           '@odata.type': microsoft.graph.emailAddress
+        calendarGroupId: string
         allowedOnlineMeetingProviders:
           - '@odata.type': microsoft.graph.onlineMeetingProviderType
         defaultOnlineMeetingProvider:
@@ -12094,6 +13259,9 @@ components:
         - title: event
           type: object
           properties:
+            transactionId:
+              type: string
+              nullable: true
             originalStartTimeZone:
               type: string
               description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -12196,12 +13364,16 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information, false otherwise. Default is false. Optional.'
               nullable: true
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
+              type: boolean
+              nullable: true
+            isDraft:
               type: boolean
               nullable: true
             attachments:
@@ -12238,6 +13410,7 @@ components:
         changeKey: string
         categories:
           - string
+        transactionId: string
         originalStartTimeZone: string
         originalEndTimeZone: string
         responseStatus:
@@ -12286,6 +13459,7 @@ components:
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
         allowNewTimeProposals: true
+        isDraft: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -12328,6 +13502,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: The list of items the user is following. Only in OneDrive for Business.
             items:
               type: array
               items:
@@ -13751,6 +14926,57 @@ components:
         id: string (identifier)
         overrides:
           - '@odata.type': microsoft.graph.inferenceClassificationOverride
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            pendingSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+            completedSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+      example:
+        id: string (identifier)
+        pendingSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+        completedSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+    microsoft.graph.appConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appConsentRequest
+          type: object
+          properties:
+            appId:
+              type: string
+            appDisplayName:
+              type: string
+              nullable: true
+            consentType:
+              type: string
+              nullable: true
+            pendingScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+            userConsentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+      example:
+        id: string (identifier)
+        appId: string
+        appDisplayName: string
+        consentType: string
+        pendingScopes:
+          - '@odata.type': microsoft.graph.appConsentRequestScope
+        userConsentRequests:
+          - '@odata.type': microsoft.graph.userConsentRequest
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14109,6 +15335,10 @@ components:
               format: int64
             processorArchitecture:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
+            specificationVersion:
+              type: string
+              description: Specification version. This property is read-only.
+              nullable: true
             securityBaselineStates:
               type: array
               items:
@@ -14239,6 +15469,7 @@ components:
         physicalMemoryInBytes: integer
         processorArchitecture:
           '@odata.type': microsoft.graph.managedDeviceArchitecture
+        specificationVersion: string
         securityBaselineStates:
           - '@odata.type': microsoft.graph.securityBaselineState
         deviceConfigurationStates:
@@ -15061,6 +16292,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -15084,6 +16320,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.presence:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15100,6 +16339,38 @@ components:
         id: string (identifier)
         availability: string
         activity: string
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+      example:
+        id: string (identifier)
+        methods:
+          - '@odata.type': microsoft.graph.authenticationMethod
+        phoneMethods:
+          - '@odata.type': microsoft.graph.phoneAuthenticationMethod
+        passwordMethods:
+          - '@odata.type': microsoft.graph.passwordAuthenticationMethod
+        operations:
+          - '@odata.type': microsoft.graph.longRunningOperation
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15345,6 +16616,14 @@ components:
         - userShiftPreferences
         - openShift
         - openShiftRequest
+        - offerShiftRequest
+        - unknownFutureValue
+      type: string
+    microsoft.graph.eligibilityFilteringEnabledEntities:
+      title: eligibilityFilteringEnabledEntities
+      enum:
+        - none
+        - swapRequest
         - offerShiftRequest
         - unknownFutureValue
       type: string
@@ -15877,6 +17156,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         preventsDownload:
           type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
           nullable: true
         configuratorUrl:
           type: string
@@ -16225,9 +17505,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isRemovable:
               type: boolean
+              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
               nullable: true
             isInsideOrganization:
               type: boolean
+              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -16235,6 +17517,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
       example:
         id: string (identifier)
         emailAddress:
@@ -16422,25 +17705,31 @@ components:
       properties:
         joinUrl:
           type: string
+          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
           nullable: true
         conferenceId:
           type: string
+          description: The ID of the conference.
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that can be used to join the conference.
           nullable: true
         tollFreeNumbers:
           type: array
           items:
             type: string
             nullable: true
+          description: The toll free numbers that can be used to join the conference.
         quickDial:
           type: string
+          description: The pre-formatted quickdial for this call.
           nullable: true
         phones:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phone'
+          description: All of the phone numbers associated with this conference.
       example:
         joinUrl: string
         conferenceId: string
@@ -16568,6 +17857,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+              description: The set of subscriptions on the list.
       example:
         id: string (identifier)
         createdBy:
@@ -16611,6 +17901,7 @@ components:
       properties:
         dataLocationCode:
           type: string
+          description: The geographic region code for where this site collection resides. Read-only.
           nullable: true
         hostname:
           type: string
@@ -17414,6 +18705,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             contentType:
@@ -17432,6 +18724,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -17943,6 +19236,69 @@ components:
           '@odata.type': microsoft.graph.inferenceClassificationType
         senderEmailAddress:
           '@odata.type': microsoft.graph.emailAddress
+    microsoft.graph.approvalStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStep
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        displayName: string
+        reviewedBy:
+          '@odata.type': microsoft.graph.identity
+        reviewedDateTime: string (timestamp)
+        reviewResult: string
+        justification: string
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      example:
+        displayName: string
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+        reason: string
+        createdBy:
+          '@odata.type': microsoft.graph.userIdentity
+        createdDateTime: string (timestamp)
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -18226,6 +19582,7 @@ components:
         - windowsCoManagement
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - azureAdJoinUsingAzureVmExtension
       type: string
     microsoft.graph.lostModeState:
       title: lostModeState
@@ -18522,7 +19879,7 @@ components:
         lastSyncDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Datetime fo last sync with configuration manager management point.
+          description: Datetime for last sync with configuration manager management point.
           format: date-time
       example:
         state:
@@ -18537,8 +19894,12 @@ components:
           type: string
           description: Configuration Manager Client Id from SCCM
           nullable: true
+        isBlocked:
+          type: boolean
+          description: Configuration Manager Client blocked status from SCCM
       example:
         clientIdentifier: string
+        isBlocked: true
     microsoft.graph.managedDeviceArchitecture:
       title: managedDeviceArchitecture
       enum:
@@ -20119,6 +21480,83 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+      example:
+        id: string (identifier)
+        phoneNumber: string
+        phoneType:
+          '@odata.type': microsoft.graph.authenticationPhoneType
+        smsSignInState:
+          '@odata.type': microsoft.graph.authenticationMethodSignInState
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            password:
+              type: string
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        password: string
+        creationDateTime: string (timestamp)
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastActionDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.longRunningOperationStatus
+        statusDetail: string
+        resourceLocation: string
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -21406,12 +22844,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             resultType:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
             message:
               type: string
+              description: The result message for each threat assessment.
               nullable: true
       example:
         id: string (identifier)
@@ -21749,6 +23189,37 @@ components:
         - business
         - other
       type: string
+    microsoft.graph.request:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: request
+          type: object
+          properties:
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+      example:
+        id: string
+        displayName: string
+        ipAddress: string
+        userPrincipalName: string
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -21906,6 +23377,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -21921,6 +23396,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -21932,6 +23408,7 @@ components:
         - windows81AndLater
         - windows10AndLater
         - androidWorkProfile
+        - windows10XProfile
         - all
       type: string
     microsoft.graph.complianceStatus:
@@ -21997,6 +23474,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -22012,6 +23493,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.managedDeviceMobileAppConfigurationSettingState:
       title: managedDeviceMobileAppConfigurationSettingState
       type: object
@@ -22063,6 +23545,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -22078,6 +23564,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -22731,6 +24218,33 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notstarted
+        - running
+        - succeeded
+        - failed
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:
