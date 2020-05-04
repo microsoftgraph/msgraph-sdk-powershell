@@ -7,7 +7,7 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
-    [string[]] $RequiredModules,
+    [hashtable[]] $RequiredModules,
     [switch] $EnableSigning
 )
 $ErrorActionPreference = "Stop"
