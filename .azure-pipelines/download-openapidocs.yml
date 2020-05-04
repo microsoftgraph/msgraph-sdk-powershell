@@ -74,7 +74,7 @@ steps:
           git branch $(BRANCH)
           git checkout $(BRANCH)
           git status
-  - task: PowerShell@2
+  - task: Bash@3
     displayName : "Commit Downloaded Files"
     inputs:
       targetType: 'inline'
