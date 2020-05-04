@@ -38,7 +38,7 @@ $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -R
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\$GraphVersion\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
-$RequiredGraphModules = New-Object collections.generic.list[string]
+$RequiredGraphModules = @()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 [HashTable] $NuspecMetadata = Get-Content $ModuleMetadataJson | ConvertFrom-Json -AsHashTable
 $NuspecMetadata.Remove("assemblyOriginatorKeyFile")
@@ -76,14 +76,16 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     }
 
     # Add auth module as a dependency.
-    Install-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease -Force
-    $RequiredGraphModules.Add("Microsoft.Graph.Authentication")
+    $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication"
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-        Install-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease -Force
-        $RequiredGraphModules.Add("$ModulePrefix.$RequiredModule")
+        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule"
+        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+        $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
     }
 
     [HashTable]$ModuleManifestSettings = @{
