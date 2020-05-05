@@ -29,7 +29,7 @@ Install-Module powershell-yaml -Force
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
-    $GraphVersion = "Beta"
+    $GraphVersion = "beta"
 }
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
