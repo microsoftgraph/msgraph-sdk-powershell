@@ -29,6 +29,7 @@ paths:
                 - homeRealmDiscoveryPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - adminConsentRequestPolicy
                 - identitySecurityDefaultsEnforcementPolicy
                 - conditionalAccessPolicies
               type: string
@@ -48,6 +49,7 @@ paths:
                 - homeRealmDiscoveryPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - adminConsentRequestPolicy
                 - identitySecurityDefaultsEnforcementPolicy
                 - conditionalAccessPolicies
               type: string
@@ -79,6 +81,10 @@ paths:
               operationId: policies.GetTokenLifetimePolicies
               parameters:
                 tokenLifetimePolicy-id: $response.body#/id
+            adminConsentRequestPolicy:
+              operationId: policies.GetAdminConsentRequestPolicy
+              parameters:
+                adminConsentRequestPolicy-id: $response.body#/id
             identitySecurityDefaultsEnforcementPolicy:
               operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
               parameters:
@@ -132,6 +138,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -152,6 +160,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -239,6 +248,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -293,6 +303,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /policies/adminConsentRequestPolicy:
+    get:
+      tags:
+        - policies.adminConsentRequestPolicy
+      summary: Get adminConsentRequestPolicy from policies
+      operationId: policies_GetAdminConsentRequestPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isEnabled
+                - version
+                - notifyReviewers
+                - remindersEnabled
+                - requestDurationInDays
+                - reviewers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - policies.adminConsentRequestPolicy
+      summary: Update the navigation property adminConsentRequestPolicy in policies
+      operationId: policies_UpdateAdminConsentRequestPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /policies/claimsMappingPolicies:
     get:
       tags:
@@ -317,6 +391,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -337,6 +413,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -424,6 +501,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -699,6 +777,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -719,6 +799,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -806,6 +887,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -878,6 +960,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - isEnabled
@@ -945,6 +1028,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -965,6 +1050,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1052,6 +1138,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1130,6 +1217,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -1150,6 +1239,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1237,6 +1327,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1319,6 +1410,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+            adminConsentRequestPolicy:
+              $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
             identitySecurityDefaultsEnforcementPolicy:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
             conditionalAccessPolicies:
@@ -1337,6 +1430,8 @@ components:
           - '@odata.type': microsoft.graph.tokenIssuancePolicy
         tokenLifetimePolicies:
           - '@odata.type': microsoft.graph.tokenLifetimePolicy
+        adminConsentRequestPolicy:
+          '@odata.type': microsoft.graph.adminConsentRequestPolicy
         identitySecurityDefaultsEnforcementPolicy:
           '@odata.type': microsoft.graph.identitySecurityDefaultsEnforcementPolicy
         conditionalAccessPolicies:
@@ -1346,8 +1441,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: activityBasedTimeoutPolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1355,13 +1452,50 @@ components:
         isOrganizationDefault: true
         appliesTo:
           - '@odata.type': microsoft.graph.directoryObject
+    microsoft.graph.adminConsentRequestPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: adminConsentRequestPolicy
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            notifyReviewers:
+              type: boolean
+            remindersEnabled:
+              type: boolean
+            requestDurationInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+      example:
+        id: string (identifier)
+        isEnabled: true
+        version: integer
+        notifyReviewers: true
+        remindersEnabled: true
+        requestDurationInDays: integer
+        reviewers:
+          - '@odata.type': microsoft.graph.accessReviewScope
     microsoft.graph.claimsMappingPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1417,8 +1551,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1434,8 +1570,10 @@ components:
           properties:
             isEnabled:
               type: boolean
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         isEnabled: true
@@ -1444,8 +1582,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenIssuancePolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1458,8 +1598,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1495,8 +1637,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -1504,6 +1648,19 @@ components:
         isOrganizationDefault: true
         appliesTo:
           - '@odata.type': microsoft.graph.directoryObject
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      properties:
+        query:
+          type: string
+          nullable: true
+        queryType:
+          type: string
+          nullable: true
+      example:
+        query: string
+        queryType: string
     microsoft.graph.conditionalAccessPolicyState:
       title: conditionalAccessPolicyState
       enum:
@@ -1602,7 +1759,7 @@ components:
           '@odata.type': microsoft.graph.persistentBrowserSessionControl
     microsoft.graph.policyBase:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: policyBase
           type: object
           properties:
@@ -1612,8 +1769,10 @@ components:
             displayName:
               type: string
               description: Display name for this policy.
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
     odata.error:
