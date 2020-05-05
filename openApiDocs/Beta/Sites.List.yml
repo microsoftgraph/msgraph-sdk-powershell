@@ -5952,6 +5952,7 @@ components:
           nullable: true
         tenantId:
           type: string
+          description: The unique identifier (guid) for the tenancy.
           nullable: true
         webId:
           type: string
@@ -6660,6 +6661,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -6668,8 +6670,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             hasPassword:
               type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -7599,6 +7603,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Nullable.
+            approvals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+            appConsentRequestsForApproval:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
             agreementAcceptances:
               type: array
               items:
@@ -7838,6 +7850,10 @@ components:
           - '@odata.type': microsoft.graph.site
         extensions:
           - '@odata.type': microsoft.graph.extension
+        approvals:
+          - '@odata.type': microsoft.graph.approval
+        appConsentRequestsForApproval:
+          - '@odata.type': microsoft.graph.appConsentRequest
         agreementAcceptances:
           - '@odata.type': microsoft.graph.agreementAcceptance
         deviceEnrollmentConfigurations:
@@ -8312,6 +8328,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         preventsDownload:
           type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
           nullable: true
         configuratorUrl:
           type: string
@@ -10591,6 +10608,57 @@ components:
           type: object
       example:
         id: string (identifier)
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            pendingSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+            completedSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+      example:
+        id: string (identifier)
+        pendingSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+        completedSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+    microsoft.graph.appConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appConsentRequest
+          type: object
+          properties:
+            appId:
+              type: string
+            appDisplayName:
+              type: string
+              nullable: true
+            consentType:
+              type: string
+              nullable: true
+            pendingScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+            userConsentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+      example:
+        id: string (identifier)
+        appId: string
+        appDisplayName: string
+        consentType: string
+        pendingScopes:
+          - '@odata.type': microsoft.graph.appConsentRequestScope
+        userConsentRequests:
+          - '@odata.type': microsoft.graph.userConsentRequest
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13829,6 +13897,7 @@ components:
       properties:
         dataLocationCode:
           type: string
+          description: The geographic region code for where this site collection resides. Read-only.
           nullable: true
         hostname:
           type: string
@@ -13887,6 +13956,69 @@ components:
           - '@odata.type': microsoft.graph.webPart
         publishingState:
           '@odata.type': microsoft.graph.publicationFacet
+    microsoft.graph.approvalStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStep
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        displayName: string
+        reviewedBy:
+          '@odata.type': microsoft.graph.identity
+        reviewedDateTime: string (timestamp)
+        reviewResult: string
+        justification: string
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      example:
+        displayName: string
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+        reason: string
+        createdBy:
+          '@odata.type': microsoft.graph.userIdentity
+        createdDateTime: string (timestamp)
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -18072,6 +18204,37 @@ components:
         type: string
         data:
           '@odata.type': microsoft.graph.sitePageData
+    microsoft.graph.request:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: request
+          type: object
+          properties:
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+      example:
+        id: string
+        displayName: string
+        ipAddress: string
+        userPrincipalName: string
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
