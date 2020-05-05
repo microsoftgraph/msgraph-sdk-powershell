@@ -4,7 +4,7 @@ function Set-NuSpecValues(
     [parameter(Position=1,Mandatory=$true)][ValidateScript({Test-Path $_ -PathType Leaf})][string] $NuSpecFilePath,
     [parameter(Position=2,Mandatory=$true)][string] $VersionNumber,
     [parameter(Position=3,Mandatory=$true)][string] $IconUrl,
-    [parameter(Position=4)][string[]] $Dependencies,
+    [parameter(Position=4)][hashtable[]] $Dependencies,
     [parameter(Position=5)][string[]] $ReleaseNotes) {
     $XmlDocument = New-Object System.Xml.XmlDocument
     $XmlDocument.Load($NuSpecFilePath)
@@ -69,7 +69,7 @@ function Set-ElementValue(
 function Set-Dependencies(
     [System.Xml.XmlDocument] $XmlDocument,
     [System.Xml.XmlElement] $MetadataElement,
-    [string[]] $Dependencies) {
+    [hashtable[]] $Dependencies) {
     if(-not $MetadataElement["dependencies"]){
         $NewDependenciesElement = $XmlDocument.CreateElement("dependencies", $XmlDocument.DocumentElement.NamespaceURI)
         $MetadataElement.AppendChild($NewDependenciesElement)
@@ -79,7 +79,8 @@ function Set-Dependencies(
 
     foreach($Dependency in $Dependencies){
         $NewDependencyElement = $XmlDocument.CreateElement("dependency", $XmlDocument.DocumentElement.NamespaceURI)
-        $NewDependencyElement.SetAttribute("id", $Dependency)
+        $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
+        $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? $Dependency.RequiredVersion)
 
         $MetadataElement["dependencies"].AppendChild($NewDependencyElement)
     }
