@@ -29,7 +29,7 @@ Install-Module powershell-yaml -Force
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
-    $GraphVersion = "beta"
+    $GraphVersion = "Beta"
 }
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
@@ -59,7 +59,7 @@ Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerel
 $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
 if ($UpdateAutoRest) {
     # Update AutoRest.
-    & AutoRest-beta --reset
+    & autorest --reset
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
@@ -109,7 +109,7 @@ $ModuleMapping.Keys | ForEach-Object {
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
 
-            & AutoRest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
