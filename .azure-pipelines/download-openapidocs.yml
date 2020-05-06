@@ -9,9 +9,12 @@ pool:
 
 variables:
   BRANCH: 'weeklyOpenApiDocsDownload'
+  GitUserEmail: 'GraphTooling@service.microsoft.com'
+  GitUserName: 'Microsoft Graph DevX Tooling'
+  BaseBranch: 'dev'
 
 schedules:
-    - cron: "0 12 * * 5" # Run Every Friday at Midnight UTC Time
+    - cron: "0 0 * * WED" # Run Every Wednesday
       displayName: "Weekly OpenApiDocs Download and PR"
       branches: 
         include:
@@ -22,6 +25,8 @@ steps:
   - checkout: self
     persistCredentials: true
     clean: true
+    fetchDepth: 1
+
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'
     inputs:
@@ -34,20 +39,20 @@ steps:
       script: |
         $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
         Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
+
   - task: PowerShell@2
     displayName: "Configure User"
     inputs:
       targetType: 'inline'
       script: |
-        git config --global user.email "mgpssdk@microsoft.com"
-        git config --global user.name "Azure Devops"
+        git config --global user.email $(GitUserEmail)
+        git config --global user.name $(GitUserName)
 
   - task: PowerShell@2
     displayName: "Show Directory"
     inputs:
       targetType: 'inline'
       script: |
-        Write-Host $(System.DefaultWorkingDirectory)
         ls  $(System.DefaultWorkingDirectory)
         ls  $(System.DefaultWorkingDirectory)/tools
 
@@ -70,7 +75,7 @@ steps:
       targetType: 'inline'
       script: |
           git status
-          git checkout dev
+          git checkout $(BaseBranch)
           git branch $(BRANCH)
           git checkout $(BRANCH)
           git status
@@ -95,10 +100,10 @@ steps:
         GITHUB_TOKEN: $(GITHUB_TOKEN)
         MESSAGE_TITLE: Weekly OpenApiDocs Download
         MESSAGE_BODY: "This pull request was automatically created by Azure Devops, \n\n Contains Weekly OpenApiDocs Download files for v1.0 and beta"
-        REVIEWERS: peombwa,ddyett
+        REVIEWERS: peombwa,ddyett,MIchaelMainer
         ASSIGNEDTO: finsharp
         LABELS: generated
-        BASE: dev
+        BASE: $(BaseBranch)
         BRANCH: $(BRANCH)
      inputs:
         targetType: 'inline'
