@@ -6,65 +6,6 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /identity:
-    get:
-      tags:
-        - identity.identityContainer
-      summary: Get identity
-      operationId: identity.identityContainer_GetIdentityContainer
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: simple
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - userFlows
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: simple
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - userFlows
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.identityContainer'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - identity.identityContainer
-      summary: Update identity
-      operationId: identity.identityContainer_UpdateIdentityContainer
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.identityContainer'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /identity/userFlows:
     get:
       tags:
@@ -80,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -96,7 +38,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -109,7 +52,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -130,8 +74,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -172,7 +121,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -185,7 +135,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -202,7 +153,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - identity.identityUserFlow
@@ -231,20 +181,6 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
-    microsoft.graph.identityContainer:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: identityContainer
-          type: object
-          properties:
-            userFlows:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
-      example:
-        id: string (identifier)
-        userFlows:
-          - '@odata.type': microsoft.graph.identityUserFlow
     microsoft.graph.identityUserFlow:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

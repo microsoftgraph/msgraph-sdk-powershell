@@ -16,7 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading.Tasks;
 
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
-    public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer
+    public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
 
         [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1)]
@@ -171,6 +171,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public void OnImport()
         {
             GraphSessionInitializer.InitializeSession();
+        }
+
+        /// <summary>
+        /// Resets <see cref="GraphSession"/> instance when a user removes the module from the session via Remove-Module.
+        /// </summary>
+        /// <param name="psModuleInfo">A <see cref="PSModuleInfo"/> object.</param>
+        public void OnRemove(PSModuleInfo psModuleInfo)
+        {
+            GraphSession.Reset();
         }
     }
 }

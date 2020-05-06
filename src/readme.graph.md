@@ -378,4 +378,18 @@ directive:
         }
         return $;
       }
+# Temporarily disable paging.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List.cs/gm))
+      {
+        return $;
+      } else {
+        let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
+        if($.match(odataNextLinkRegex)) {
+          $ = $.replace(odataNextLinkRegex, '$1result.OdataNextLink = null;\n$1if (result.OdataNextLink != null)$1');
+        }
+        return $;
+      }
 ```

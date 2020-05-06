@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -39,7 +40,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -56,7 +58,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -80,8 +83,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chat'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -122,7 +130,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -139,7 +148,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -159,17 +169,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.chat'
           links:
             members:
-              operationId: chats.chat.GetChat
+              operationId: chats.GetMembers
               parameters:
-                id: $request.path.id
+                chat-id: $request.path.chat-id
+                conversationMember-id: $response.body#/id
             messages:
-              operationId: chats.chat.GetChat
+              operationId: chats.GetMessages
               parameters:
-                id: $request.path.id
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
             installedApps:
-              operationId: chats.chat.GetChat
+              operationId: chats.GetInstalledApps
               parameters:
-                id: $request.path.id
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -245,7 +258,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -257,7 +271,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -270,7 +285,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -293,8 +309,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -350,7 +371,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -363,7 +385,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -380,9 +403,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: chat.installedApps.GetTeamsApp
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsApp-id: $response.body#/id
+            teamsAppDefinition:
+              operationId: chat.installedApps.GetTeamsAppDefinition
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - chats.teamsAppInstallation
@@ -467,7 +502,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -483,7 +519,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -499,9 +536,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsAppInstallation.teamsApp.GetAppDefinitions
+              parameters:
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/chats/{chat-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition':
     get:
       tags:
@@ -526,7 +569,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -540,7 +584,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -557,7 +602,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/chats/{chat-id}/members':
     get:
       tags:
@@ -580,7 +624,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -596,7 +641,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -609,7 +655,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -630,8 +677,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversationMember'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -687,7 +739,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -700,7 +753,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -717,7 +771,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - chats.conversationMember
@@ -773,7 +826,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -819,7 +873,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -849,7 +904,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -872,8 +928,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -929,7 +990,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -959,7 +1021,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -976,9 +1039,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chat.messages.GetReplies
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+            hostedContents:
+              operationId: chat.messages.GetHostedContents
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - chats.chatMessage
@@ -1041,7 +1115,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1053,7 +1128,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1064,7 +1140,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1085,8 +1162,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1156,7 +1238,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1167,7 +1250,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1184,7 +1268,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - chats.chatMessage
@@ -1254,7 +1337,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1300,7 +1384,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1330,7 +1415,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1353,8 +1439,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1424,7 +1515,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1454,7 +1546,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1471,9 +1564,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          links:
+            replies:
+              operationId: chatMessage.replies.GetReplies
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+                chatMessage-id1: $request.path.chatMessage-id1
+            hostedContents:
+              operationId: chatMessage.replies.GetHostedContents
+              parameters:
+                chat-id: $request.path.chat-id
+                chatMessage-id: $request.path.chatMessage-id
+                chatMessage-id1: $request.path.chatMessage-id1
+                chatMessageHostedContent-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - chats.chatMessage
@@ -1613,7 +1719,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1631,7 +1738,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1648,7 +1756,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1672,8 +1781,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chat'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1729,7 +1843,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1746,7 +1861,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1764,9 +1880,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chat'
+          links:
+            members:
+              operationId: user.chats.GetMembers
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                conversationMember-id: $response.body#/id
+            messages:
+              operationId: user.chats.GetMessages
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                chatMessage-id: $response.body#/id
+            installedApps:
+              operationId: user.chats.GetInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                chat-id: $request.path.chat-id
+                teamsAppInstallation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.chat

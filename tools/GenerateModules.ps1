@@ -33,10 +33,9 @@ if ($BetaGraphVersion) {
 }
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
-$AuthenticationModule = "Microsoft.Graph.Authentication"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
-
+$RequiredGraphModules = @()
 # PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
@@ -53,13 +52,14 @@ if (-not (Test-Path $ArtifactsLocation)) {
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
-
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-Install-Module $AuthenticationModule -Repository $RepositoryName -AllowPrerelease -Force
+$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication"
+Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+$RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
 if ($UpdateAutoRest) {
     # Update AutoRest.
-    & AutoRest-beta --reset
+    & autorest --reset
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
@@ -109,7 +109,7 @@ $ModuleMapping.Keys | ForEach-Object {
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
 
-            & AutoRest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
@@ -123,10 +123,10 @@ $ModuleMapping.Keys | ForEach-Object {
                 # Build generated module.
                 if ($EnableSigning) {
                     # Sign generated module.
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes -EnableSigning
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
                 }
                 else {
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $AuthenticationModule -ReleaseNotes $ModuleReleaseNotes
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
                 }
 
                 if ($LASTEXITCODE) {

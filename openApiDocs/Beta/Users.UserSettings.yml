@@ -23,7 +23,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -37,7 +38,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -53,9 +55,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
+          links:
+            shiftPreferences:
+              operationId: user.settings.GetShiftPreferences
+              parameters:
+                user-id: $request.path.user-id
+                shiftPreferences-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
@@ -99,7 +106,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -114,7 +122,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -131,7 +140,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings

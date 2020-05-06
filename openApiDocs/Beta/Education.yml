@@ -16,7 +16,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -32,7 +33,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -52,6 +54,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationRoot'
+          links:
+            synchronizationProfiles:
+              operationId: education.GetSynchronizationProfiles
+              parameters:
+                educationSynchronizationProfile-id: $response.body#/id
+            classes:
+              operationId: education.GetClasses
+              parameters:
+                educationClass-id: $response.body#/id
+            schools:
+              operationId: education.GetSchools
+              parameters:
+                educationSchool-id: $response.body#/id
+            users:
+              operationId: education.GetUsers
+              parameters:
+                educationUser-id: $response.body#/id
+            me:
+              operationId: education.GetMe
+              parameters:
+                educationUser-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -88,7 +111,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -122,7 +146,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -150,7 +175,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -177,8 +203,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -219,7 +250,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -247,7 +279,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -268,9 +301,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationRoot.classes.GetAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationRoot.classes.GetAssignmentCategories
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationRoot.classes.GetMembers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            teachers:
+              operationId: educationRoot.classes.GetTeachers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            schools:
+              operationId: educationRoot.classes.GetSchools
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $response.body#/id
+            group:
+              operationId: educationRoot.classes.GetGroup
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -319,7 +382,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -333,7 +397,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -345,7 +410,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -366,8 +432,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -423,7 +494,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -435,7 +507,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -452,7 +525,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -508,7 +580,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -552,7 +625,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -583,7 +657,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -608,8 +683,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -665,7 +745,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -696,7 +777,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -715,9 +797,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+          links:
+            resources:
+              operationId: educationClass.assignments.GetResources
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationAssignmentResource-id: $response.body#/id
+            submissions:
+              operationId: educationClass.assignments.GetSubmissions
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $response.body#/id
+            categories:
+              operationId: educationClass.assignments.GetCategories
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationCategory-id: $response.body#/id
+            rubric:
+              operationId: educationClass.assignments.GetRubric
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationRubric-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -780,7 +886,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -794,7 +901,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -806,7 +914,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -827,8 +936,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -898,7 +1012,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -910,7 +1025,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -927,7 +1043,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -1060,7 +1175,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1076,7 +1192,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1089,7 +1206,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1110,8 +1228,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1181,7 +1304,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1194,7 +1318,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1211,7 +1336,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -1276,7 +1400,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1296,7 +1421,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1313,7 +1439,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -1376,7 +1501,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1410,7 +1536,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1435,7 +1562,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1459,8 +1587,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1530,7 +1663,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1555,7 +1689,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1573,9 +1708,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+          links:
+            resources:
+              operationId: educationAssignment.submissions.GetResources
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            submittedResources:
+              operationId: educationAssignment.submissions.GetSubmittedResources
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            outcomes:
+              operationId: educationAssignment.submissions.GetOutcomes
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationOutcome-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -1766,7 +1922,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1782,7 +1939,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1795,7 +1953,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1816,8 +1975,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationOutcome'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1901,7 +2065,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1914,7 +2079,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1931,7 +2097,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -2015,7 +2180,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2031,7 +2197,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2044,7 +2211,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2065,8 +2233,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2150,7 +2323,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2163,7 +2337,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2180,7 +2355,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -2264,7 +2438,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2280,7 +2455,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2293,7 +2469,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2314,8 +2491,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2399,7 +2581,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2412,7 +2595,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2429,7 +2613,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationClass
@@ -2494,7 +2677,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2505,9 +2689,11 @@ paths:
                 - assignedLabels
                 - assignedLicenses
                 - classification
+                - createdByAppId
                 - createdDateTime
                 - description
                 - displayName
+                - expirationDateTime
                 - groupTypes
                 - hasMembersWithLicenseErrors
                 - isAssignableToRole
@@ -2578,7 +2764,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2621,9 +2808,149 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
+          links:
+            appRoleAssignments:
+              operationId: educationClass.group.GetAppRoleAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                appRoleAssignment-id: $response.body#/id
+            members:
+              operationId: educationClass.group.GetMembers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            membersWithLicenseErrors:
+              operationId: educationClass.group.GetMembersWithLicenseErrors
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: educationClass.group.GetMemberOf
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            transitiveMembers:
+              operationId: educationClass.group.GetTransitiveMembers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: educationClass.group.GetTransitiveMemberOf
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            createdOnBehalfOf:
+              operationId: educationClass.group.GetCreatedOnBehalfOf
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            owners:
+              operationId: educationClass.group.GetOwners
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            settings:
+              operationId: educationClass.group.GetSettings
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directorySetting-id: $response.body#/id
+            endpoints:
+              operationId: educationClass.group.GetEndpoints
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                endpoint-id: $response.body#/id
+            permissionGrants:
+              operationId: educationClass.group.GetPermissionGrants
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                resourceSpecificPermissionGrant-id: $response.body#/id
+            conversations:
+              operationId: educationClass.group.GetConversations
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                conversation-id: $response.body#/id
+            photos:
+              operationId: educationClass.group.GetPhotos
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                profilePhoto-id: $response.body#/id
+            acceptedSenders:
+              operationId: educationClass.group.GetAcceptedSenders
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            rejectedSenders:
+              operationId: educationClass.group.GetRejectedSenders
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                directoryObject-id: $response.body#/id
+            threads:
+              operationId: educationClass.group.GetThreads
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                conversationThread-id: $response.body#/id
+            calendar:
+              operationId: educationClass.group.GetCalendar
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                calendar-id: $response.body#/id
+            calendarView:
+              operationId: educationClass.group.GetCalendarView
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                event-id: $response.body#/id
+            events:
+              operationId: educationClass.group.GetEvents
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                event-id: $response.body#/id
+            photo:
+              operationId: educationClass.group.GetPhoto
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: educationClass.group.GetDrive
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                drive-id: $response.body#/id
+            drives:
+              operationId: educationClass.group.GetDrives
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                drive-id: $response.body#/id
+            sites:
+              operationId: educationClass.group.GetSites
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                site-id: $response.body#/id
+            extensions:
+              operationId: educationClass.group.GetExtensions
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                extension-id: $response.body#/id
+            groupLifecyclePolicies:
+              operationId: educationClass.group.GetGroupLifecyclePolicies
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                groupLifecyclePolicy-id: $response.body#/id
+            planner:
+              operationId: educationClass.group.GetPlanner
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                plannerGroup-id: $response.body#/id
+            onenote:
+              operationId: educationClass.group.GetOnenote
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                onenote-id: $response.body#/id
+            team:
+              operationId: educationClass.group.GetTeam
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                team-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/members':
     get:
       tags:
@@ -2646,7 +2973,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2720,7 +3048,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2768,7 +3097,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2795,8 +3125,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationUser'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/members/{educationUser-id}':
     get:
@@ -2822,7 +3157,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2870,7 +3206,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2891,9 +3228,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
+          links:
+            assignments:
+              operationId: educationClass.members.GetAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $response.body#/id
+            rubrics:
+              operationId: educationClass.members.GetRubrics
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationRubric-id: $response.body#/id
+            classes:
+              operationId: educationClass.members.GetClasses
+              parameters:
+                educationClass-id: $response.body#/id
+                educationUser-id: $request.path.educationUser-id
+            taughtClasses:
+              operationId: educationClass.members.GetTaughtClasses
+              parameters:
+                educationClass-id: $response.body#/id
+                educationUser-id: $request.path.educationUser-id
+            schools:
+              operationId: educationClass.members.GetSchools
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationSchool-id: $response.body#/id
+            user:
+              operationId: educationClass.members.GetUser
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/members/microsoft.graph.delta()':
     get:
       tags:
@@ -2942,7 +3313,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -2982,7 +3354,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3010,7 +3383,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3034,8 +3408,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSchool'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/schools/{educationSchool-id}':
     get:
@@ -3061,7 +3440,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3089,7 +3469,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3107,9 +3488,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
+          links:
+            classes:
+              operationId: educationClass.schools.GetClasses
+              parameters:
+                educationClass-id: $response.body#/id
+                educationSchool-id: $request.path.educationSchool-id
+            users:
+              operationId: educationClass.schools.GetUsers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $response.body#/id
+            administrativeUnit:
+              operationId: educationClass.schools.GetAdministrativeUnit
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $request.path.educationSchool-id
+                administrativeUnit-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/schools/microsoft.graph.delta()':
     get:
       tags:
@@ -3158,7 +3556,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3232,7 +3631,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3280,7 +3680,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3307,8 +3708,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationUser'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/teachers/{educationUser-id}':
     get:
@@ -3334,7 +3740,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3382,7 +3789,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3403,9 +3811,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
+          links:
+            assignments:
+              operationId: educationClass.teachers.GetAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $response.body#/id
+            rubrics:
+              operationId: educationClass.teachers.GetRubrics
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationRubric-id: $response.body#/id
+            classes:
+              operationId: educationClass.teachers.GetClasses
+              parameters:
+                educationClass-id: $response.body#/id
+                educationUser-id: $request.path.educationUser-id
+            taughtClasses:
+              operationId: educationClass.teachers.GetTaughtClasses
+              parameters:
+                educationClass-id: $response.body#/id
+                educationUser-id: $request.path.educationUser-id
+            schools:
+              operationId: educationClass.teachers.GetSchools
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                educationSchool-id: $response.body#/id
+            user:
+              operationId: educationClass.teachers.GetUser
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $request.path.educationUser-id
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/classes/{educationClass-id}/teachers/microsoft.graph.delta()':
     get:
       tags:
@@ -3460,7 +3902,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3508,7 +3951,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3529,9 +3973,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
+          links:
+            assignments:
+              operationId: educationRoot.me.GetAssignments
+              parameters:
+                educationAssignment-id: $response.body#/id
+            rubrics:
+              operationId: educationRoot.me.GetRubrics
+              parameters:
+                educationRubric-id: $response.body#/id
+            classes:
+              operationId: educationRoot.me.GetClasses
+              parameters:
+                educationClass-id: $response.body#/id
+            taughtClasses:
+              operationId: educationRoot.me.GetTaughtClasses
+              parameters:
+                educationClass-id: $response.body#/id
+            schools:
+              operationId: educationRoot.me.GetSchools
+              parameters:
+                educationSchool-id: $response.body#/id
+            user:
+              operationId: educationRoot.me.GetUser
+              parameters:
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -3565,7 +4033,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3609,7 +4078,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3640,7 +4110,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3665,8 +4136,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3707,7 +4183,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3738,7 +4215,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3757,9 +4235,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+          links:
+            resources:
+              operationId: educationUser.assignments.GetResources
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationAssignmentResource-id: $response.body#/id
+            submissions:
+              operationId: educationUser.assignments.GetSubmissions
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $response.body#/id
+            categories:
+              operationId: educationUser.assignments.GetCategories
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationCategory-id: $response.body#/id
+            rubric:
+              operationId: educationUser.assignments.GetRubric
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationRubric-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -3808,7 +4306,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3822,7 +4321,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3834,7 +4334,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3855,8 +4356,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3912,7 +4418,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3924,7 +4431,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -3941,7 +4449,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -4046,7 +4553,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4062,7 +4570,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4075,7 +4584,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4096,8 +4606,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4153,7 +4668,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4166,7 +4682,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4183,7 +4700,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -4234,7 +4750,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4254,7 +4771,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4271,7 +4789,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -4320,7 +4837,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4354,7 +4872,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4379,7 +4898,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4403,8 +4923,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4460,7 +4985,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4485,7 +5011,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4503,9 +5030,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+          links:
+            resources:
+              operationId: educationAssignment.submissions.GetResources
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            submittedResources:
+              operationId: educationAssignment.submissions.GetSubmittedResources
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            outcomes:
+              operationId: educationAssignment.submissions.GetOutcomes
+              parameters:
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationOutcome-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -4661,7 +5206,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4677,7 +5223,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4690,7 +5237,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4711,8 +5259,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationOutcome'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4782,7 +5335,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4795,7 +5349,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4812,7 +5367,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -4882,7 +5436,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4898,7 +5453,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4911,7 +5467,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -4932,8 +5489,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5003,7 +5565,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5016,7 +5579,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5033,7 +5597,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -5103,7 +5666,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5119,7 +5683,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5132,7 +5697,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5153,8 +5719,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5224,7 +5795,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5237,7 +5809,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5254,7 +5827,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -5310,7 +5882,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5344,7 +5917,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5372,7 +5946,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5399,8 +5974,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/me/classes/{educationClass-id}':
     get:
@@ -5419,7 +5999,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5447,7 +6028,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5468,9 +6050,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationUser.classes.GetAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationUser.classes.GetAssignmentCategories
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationUser.classes.GetMembers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            teachers:
+              operationId: educationUser.classes.GetTeachers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            schools:
+              operationId: educationUser.classes.GetSchools
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $response.body#/id
+            group:
+              operationId: educationUser.classes.GetGroup
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /education/me/classes/microsoft.graph.delta():
     get:
       tags:
@@ -5504,7 +6116,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5534,7 +6147,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5554,7 +6168,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5575,8 +6190,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationRubric'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5617,7 +6237,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5637,7 +6258,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5654,7 +6276,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -5696,7 +6317,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5736,7 +6358,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5764,7 +6387,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5788,8 +6412,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSchool'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/me/schools/{educationSchool-id}':
     get:
@@ -5808,7 +6437,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5836,7 +6466,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5854,9 +6485,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
+          links:
+            classes:
+              operationId: educationUser.schools.GetClasses
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $response.body#/id
+            users:
+              operationId: educationUser.schools.GetUsers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $response.body#/id
+            administrativeUnit:
+              operationId: educationUser.schools.GetAdministrativeUnit
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                administrativeUnit-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /education/me/schools/microsoft.graph.delta():
     get:
       tags:
@@ -5890,7 +6536,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5924,7 +6571,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5952,7 +6600,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -5979,8 +6628,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/me/taughtClasses/{educationClass-id}':
     get:
@@ -5999,7 +6653,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6027,7 +6682,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6048,9 +6704,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationUser.taughtClasses.GetAssignments
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationUser.taughtClasses.GetAssignmentCategories
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationUser.taughtClasses.GetMembers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            teachers:
+              operationId: educationUser.taughtClasses.GetTeachers
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            schools:
+              operationId: educationUser.taughtClasses.GetSchools
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $response.body#/id
+            group:
+              operationId: educationUser.taughtClasses.GetGroup
+              parameters:
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /education/me/taughtClasses/microsoft.graph.delta():
     get:
       tags:
@@ -6079,7 +6765,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6190,6 +6877,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -6208,6 +6897,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -6215,7 +6905,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6254,6 +6945,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -6272,6 +6965,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -6283,9 +6977,233 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
+          links:
+            analytics:
+              operationId: educationUser.user.GetAnalytics
+              parameters:
+                userAnalytics-id: $response.body#/id
+            informationProtection:
+              operationId: educationUser.user.GetInformationProtection
+              parameters:
+                informationProtection-id: $response.body#/id
+            appRoleAssignments:
+              operationId: educationUser.user.GetAppRoleAssignments
+              parameters:
+                appRoleAssignment-id: $response.body#/id
+            createdObjects:
+              operationId: educationUser.user.GetCreatedObjects
+              parameters:
+                directoryObject-id: $response.body#/id
+            directReports:
+              operationId: educationUser.user.GetDirectReports
+              parameters:
+                directoryObject-id: $response.body#/id
+            licenseDetails:
+              operationId: educationUser.user.GetLicenseDetails
+              parameters:
+                licenseDetails-id: $response.body#/id
+            manager:
+              operationId: educationUser.user.GetManager
+              parameters:
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: educationUser.user.GetMemberOf
+              parameters:
+                directoryObject-id: $response.body#/id
+            ownedDevices:
+              operationId: educationUser.user.GetOwnedDevices
+              parameters:
+                directoryObject-id: $response.body#/id
+            ownedObjects:
+              operationId: educationUser.user.GetOwnedObjects
+              parameters:
+                directoryObject-id: $response.body#/id
+            registeredDevices:
+              operationId: educationUser.user.GetRegisteredDevices
+              parameters:
+                directoryObject-id: $response.body#/id
+            scopedRoleMemberOf:
+              operationId: educationUser.user.GetScopedRoleMemberOf
+              parameters:
+                scopedRoleMembership-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: educationUser.user.GetTransitiveMemberOf
+              parameters:
+                directoryObject-id: $response.body#/id
+            outlook:
+              operationId: educationUser.user.GetOutlook
+              parameters:
+                outlookUser-id: $response.body#/id
+            messages:
+              operationId: educationUser.user.GetMessages
+              parameters:
+                message-id: $response.body#/id
+            joinedGroups:
+              operationId: educationUser.user.GetJoinedGroups
+              parameters:
+                group-id: $response.body#/id
+            mailFolders:
+              operationId: educationUser.user.GetMailFolders
+              parameters:
+                mailFolder-id: $response.body#/id
+            calendar:
+              operationId: educationUser.user.GetCalendar
+              parameters:
+                calendar-id: $response.body#/id
+            calendars:
+              operationId: educationUser.user.GetCalendars
+              parameters:
+                calendar-id: $response.body#/id
+            calendarGroups:
+              operationId: educationUser.user.GetCalendarGroups
+              parameters:
+                calendarGroup-id: $response.body#/id
+            calendarView:
+              operationId: educationUser.user.GetCalendarView
+              parameters:
+                event-id: $response.body#/id
+            events:
+              operationId: educationUser.user.GetEvents
+              parameters:
+                event-id: $response.body#/id
+            people:
+              operationId: educationUser.user.GetPeople
+              parameters:
+                person-id: $response.body#/id
+            contacts:
+              operationId: educationUser.user.GetContacts
+              parameters:
+                contact-id: $response.body#/id
+            contactFolders:
+              operationId: educationUser.user.GetContactFolders
+              parameters:
+                contactFolder-id: $response.body#/id
+            inferenceClassification:
+              operationId: educationUser.user.GetInferenceClassification
+              parameters:
+                inferenceClassification-id: $response.body#/id
+            photo:
+              operationId: educationUser.user.GetPhoto
+              parameters:
+                profilePhoto-id: $response.body#/id
+            photos:
+              operationId: educationUser.user.GetPhotos
+              parameters:
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: educationUser.user.GetDrive
+              parameters:
+                drive-id: $response.body#/id
+            drives:
+              operationId: educationUser.user.GetDrives
+              parameters:
+                drive-id: $response.body#/id
+            followedSites:
+              operationId: educationUser.user.GetFollowedSites
+              parameters:
+                site-id: $response.body#/id
+            extensions:
+              operationId: educationUser.user.GetExtensions
+              parameters:
+                extension-id: $response.body#/id
+            approvals:
+              operationId: educationUser.user.GetApprovals
+              parameters:
+                approval-id: $response.body#/id
+            appConsentRequestsForApproval:
+              operationId: educationUser.user.GetAppConsentRequestsForApproval
+              parameters:
+                appConsentRequest-id: $response.body#/id
+            agreementAcceptances:
+              operationId: educationUser.user.GetAgreementAcceptances
+              parameters:
+                agreementAcceptance-id: $response.body#/id
+            deviceEnrollmentConfigurations:
+              operationId: educationUser.user.GetDeviceEnrollmentConfigurations
+              parameters:
+                deviceEnrollmentConfiguration-id: $response.body#/id
+            managedDevices:
+              operationId: educationUser.user.GetManagedDevices
+              parameters:
+                managedDevice-id: $response.body#/id
+            managedAppRegistrations:
+              operationId: educationUser.user.GetManagedAppRegistrations
+              parameters:
+                managedAppRegistration-id: $response.body#/id
+            windowsInformationProtectionDeviceRegistrations:
+              operationId: educationUser.user.GetWindowsInformationProtectionDeviceRegistrations
+              parameters:
+                windowsInformationProtectionDeviceRegistration-id: $response.body#/id
+            deviceManagementTroubleshootingEvents:
+              operationId: educationUser.user.GetDeviceManagementTroubleshootingEvents
+              parameters:
+                deviceManagementTroubleshootingEvent-id: $response.body#/id
+            mobileAppIntentAndStates:
+              operationId: educationUser.user.GetMobileAppIntentAndStates
+              parameters:
+                mobileAppIntentAndState-id: $response.body#/id
+            mobileAppTroubleshootingEvents:
+              operationId: educationUser.user.GetMobileAppTroubleshootingEvents
+              parameters:
+                mobileAppTroubleshootingEvent-id: $response.body#/id
+            notifications:
+              operationId: educationUser.user.GetNotifications
+              parameters:
+                notification-id: $response.body#/id
+            planner:
+              operationId: educationUser.user.GetPlanner
+              parameters:
+                plannerUser-id: $response.body#/id
+            insights:
+              operationId: educationUser.user.GetInsights
+              parameters:
+                officeGraphInsights-id: $response.body#/id
+            settings:
+              operationId: educationUser.user.GetSettings
+              parameters:
+                userSettings-id: $response.body#/id
+            onenote:
+              operationId: educationUser.user.GetOnenote
+              parameters:
+                onenote-id: $response.body#/id
+            profile:
+              operationId: educationUser.user.GetProfile
+              parameters:
+                profile-id: $response.body#/id
+            activities:
+              operationId: educationUser.user.GetActivities
+              parameters:
+                userActivity-id: $response.body#/id
+            devices:
+              operationId: educationUser.user.GetDevices
+              parameters:
+                device-id: $response.body#/id
+            onlineMeetings:
+              operationId: educationUser.user.GetOnlineMeetings
+              parameters:
+                onlineMeeting-id: $response.body#/id
+            presence:
+              operationId: educationUser.user.GetPresence
+              parameters:
+                presence-id: $response.body#/id
+            authentication:
+              operationId: educationUser.user.GetAuthentication
+              parameters:
+                authentication-id: $response.body#/id
+            chats:
+              operationId: educationUser.user.GetChats
+              parameters:
+                chat-id: $response.body#/id
+            joinedTeams:
+              operationId: educationUser.user.GetJoinedTeams
+              parameters:
+                team-id: $response.body#/id
+            teamwork:
+              operationId: educationUser.user.GetTeamwork
+              parameters:
+                userTeamwork-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /education/schools:
     get:
       tags:
@@ -6301,7 +7219,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6341,7 +7260,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6369,7 +7289,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6393,8 +7314,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSchool'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6435,7 +7361,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6463,7 +7390,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6481,9 +7409,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
+          links:
+            classes:
+              operationId: educationRoot.schools.GetClasses
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $response.body#/id
+            users:
+              operationId: educationRoot.schools.GetUsers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $response.body#/id
+            administrativeUnit:
+              operationId: educationRoot.schools.GetAdministrativeUnit
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                administrativeUnit-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationSchool
@@ -6527,7 +7470,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6545,7 +7489,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6563,9 +7508,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+          links:
+            members:
+              operationId: educationSchool.administrativeUnit.GetMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                directoryObject-id: $response.body#/id
+            scopedRoleMembers:
+              operationId: educationSchool.administrativeUnit.GetScopedRoleMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                scopedRoleMembership-id: $response.body#/id
+            extensions:
+              operationId: educationSchool.administrativeUnit.GetExtensions
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/classes':
     get:
       tags:
@@ -6588,7 +7548,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6622,7 +7583,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6650,7 +7612,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6677,8 +7640,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/classes/{educationClass-id}':
     get:
@@ -6704,7 +7672,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6732,7 +7701,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6753,9 +7723,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationSchool.classes.GetAssignments
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationSchool.classes.GetAssignmentCategories
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationSchool.classes.GetMembers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            teachers:
+              operationId: educationSchool.classes.GetTeachers
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $request.path.educationClass-id
+                educationUser-id: $response.body#/id
+            schools:
+              operationId: educationSchool.classes.GetSchools
+              parameters:
+                educationSchool-id: $response.body#/id
+                educationClass-id: $request.path.educationClass-id
+            group:
+              operationId: educationSchool.classes.GetGroup
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/classes/microsoft.graph.delta()':
     get:
       tags:
@@ -6804,7 +7809,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6878,7 +7884,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6926,7 +7933,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -6953,8 +7961,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationUser'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/users/{educationUser-id}':
     get:
@@ -6980,7 +7993,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7028,7 +8042,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7049,9 +8064,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
+          links:
+            assignments:
+              operationId: educationSchool.users.GetAssignments
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $response.body#/id
+            rubrics:
+              operationId: educationSchool.users.GetRubrics
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $request.path.educationUser-id
+                educationRubric-id: $response.body#/id
+            classes:
+              operationId: educationSchool.users.GetClasses
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $response.body#/id
+            taughtClasses:
+              operationId: educationSchool.users.GetTaughtClasses
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $response.body#/id
+            schools:
+              operationId: educationSchool.users.GetSchools
+              parameters:
+                educationSchool-id: $response.body#/id
+                educationUser-id: $request.path.educationUser-id
+            user:
+              operationId: educationSchool.users.GetUser
+              parameters:
+                educationSchool-id: $request.path.educationSchool-id
+                educationUser-id: $request.path.educationUser-id
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/schools/{educationSchool-id}/users/microsoft.graph.delta()':
     get:
       tags:
@@ -7111,7 +8161,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7135,7 +8186,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7154,7 +8206,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7177,8 +8230,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7219,7 +8277,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7238,7 +8297,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7255,9 +8315,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
+          links:
+            errors:
+              operationId: educationRoot.synchronizationProfiles.GetErrors
+              parameters:
+                educationSynchronizationProfile-id: $request.path.educationSynchronizationProfile-id
+                educationSynchronizationError-id: $response.body#/id
+            profileStatus:
+              operationId: educationRoot.synchronizationProfiles.GetProfileStatus
+              parameters:
+                educationSynchronizationProfile-id: $request.path.educationSynchronizationProfile-id
+                educationSynchronizationProfileStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationSynchronizationProfile
@@ -7306,7 +8376,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7330,7 +8401,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7347,7 +8419,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7368,8 +8441,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSynchronizationError'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7425,7 +8503,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7442,7 +8521,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7459,7 +8539,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSynchronizationError'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationSynchronizationProfile
@@ -7621,7 +8700,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7634,7 +8714,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7651,7 +8732,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfileStatus'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationSynchronizationProfile
@@ -7693,7 +8773,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7767,7 +8848,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7815,7 +8897,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7842,8 +8925,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationUser'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7884,7 +8972,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7932,7 +9021,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -7953,9 +9043,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
+          links:
+            assignments:
+              operationId: educationRoot.users.GetAssignments
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $response.body#/id
+            rubrics:
+              operationId: educationRoot.users.GetRubrics
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationRubric-id: $response.body#/id
+            classes:
+              operationId: educationRoot.users.GetClasses
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $response.body#/id
+            taughtClasses:
+              operationId: educationRoot.users.GetTaughtClasses
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $response.body#/id
+            schools:
+              operationId: educationRoot.users.GetSchools
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationSchool-id: $response.body#/id
+            user:
+              operationId: educationRoot.users.GetUser
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                user-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -8004,7 +9124,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8048,7 +9169,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8079,7 +9201,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8104,8 +9227,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8161,7 +9289,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8192,7 +9321,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8211,9 +9341,33 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+          links:
+            resources:
+              operationId: educationUser.assignments.GetResources
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationAssignmentResource-id: $response.body#/id
+            submissions:
+              operationId: educationUser.assignments.GetSubmissions
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $response.body#/id
+            categories:
+              operationId: educationUser.assignments.GetCategories
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationCategory-id: $response.body#/id
+            rubric:
+              operationId: educationUser.assignments.GetRubric
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationRubric-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -8276,7 +9430,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8290,7 +9445,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8302,7 +9458,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8323,8 +9480,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationCategory'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8394,7 +9556,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8406,7 +9569,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8423,7 +9587,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -8556,7 +9719,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8572,7 +9736,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8585,7 +9750,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8606,8 +9772,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8677,7 +9848,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8690,7 +9862,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8707,7 +9880,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -8772,7 +9944,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8792,7 +9965,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8809,7 +9983,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -8872,7 +10045,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8906,7 +10080,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8931,7 +10106,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -8955,8 +10131,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9026,7 +10207,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9051,7 +10233,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9069,9 +10252,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
+          links:
+            resources:
+              operationId: educationAssignment.submissions.GetResources
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            submittedResources:
+              operationId: educationAssignment.submissions.GetSubmittedResources
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationSubmissionResource-id: $response.body#/id
+            outcomes:
+              operationId: educationAssignment.submissions.GetOutcomes
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationAssignment-id: $request.path.educationAssignment-id
+                educationSubmission-id: $request.path.educationSubmission-id
+                educationOutcome-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -9262,7 +10466,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9278,7 +10483,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9291,7 +10497,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9312,8 +10519,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationOutcome'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9397,7 +10609,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9410,7 +10623,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9427,7 +10641,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -9511,7 +10724,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9527,7 +10741,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9540,7 +10755,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9561,8 +10777,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9646,7 +10867,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9659,7 +10881,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9676,7 +10899,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -9760,7 +10982,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9776,7 +10999,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9789,7 +11013,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9810,8 +11035,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9895,7 +11125,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9908,7 +11139,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -9925,7 +11157,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -9995,7 +11226,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10029,7 +11261,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10057,7 +11290,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10084,8 +11318,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/classes/{educationClass-id}':
     get:
@@ -10111,7 +11350,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10139,7 +11379,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10160,9 +11401,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationUser.classes.GetAssignments
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationUser.classes.GetAssignmentCategories
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationUser.classes.GetMembers
+              parameters:
+                educationUser-id: $response.body#/id
+                educationClass-id: $request.path.educationClass-id
+            teachers:
+              operationId: educationUser.classes.GetTeachers
+              parameters:
+                educationUser-id: $response.body#/id
+                educationClass-id: $request.path.educationClass-id
+            schools:
+              operationId: educationUser.classes.GetSchools
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $response.body#/id
+            group:
+              operationId: educationUser.classes.GetGroup
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/classes/microsoft.graph.delta()':
     get:
       tags:
@@ -10211,7 +11486,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10241,7 +11517,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10261,7 +11538,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10282,8 +11560,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationRubric'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10339,7 +11622,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10359,7 +11643,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10376,7 +11661,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - education.educationUser
@@ -10432,7 +11716,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10472,7 +11757,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10500,7 +11786,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10524,8 +11811,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationSchool'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/schools/{educationSchool-id}':
     get:
@@ -10551,7 +11843,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10579,7 +11872,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10597,9 +11891,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
+          links:
+            classes:
+              operationId: educationUser.schools.GetClasses
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationSchool-id: $request.path.educationSchool-id
+                educationClass-id: $response.body#/id
+            users:
+              operationId: educationUser.schools.GetUsers
+              parameters:
+                educationUser-id: $response.body#/id
+                educationSchool-id: $request.path.educationSchool-id
+            administrativeUnit:
+              operationId: educationUser.schools.GetAdministrativeUnit
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationSchool-id: $request.path.educationSchool-id
+                administrativeUnit-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/schools/microsoft.graph.delta()':
     get:
       tags:
@@ -10648,7 +11959,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10682,7 +11994,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10710,7 +12023,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10737,8 +12051,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.educationClass'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/taughtClasses/{educationClass-id}':
     get:
@@ -10764,7 +12083,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10792,7 +12112,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10813,9 +12134,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
+          links:
+            assignments:
+              operationId: educationUser.taughtClasses.GetAssignments
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationAssignment-id: $response.body#/id
+            assignmentCategories:
+              operationId: educationUser.taughtClasses.GetAssignmentCategories
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationCategory-id: $response.body#/id
+            members:
+              operationId: educationUser.taughtClasses.GetMembers
+              parameters:
+                educationUser-id: $response.body#/id
+                educationClass-id: $request.path.educationClass-id
+            teachers:
+              operationId: educationUser.taughtClasses.GetTeachers
+              parameters:
+                educationUser-id: $response.body#/id
+                educationClass-id: $request.path.educationClass-id
+            schools:
+              operationId: educationUser.taughtClasses.GetSchools
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                educationSchool-id: $response.body#/id
+            group:
+              operationId: educationUser.taughtClasses.GetGroup
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                educationClass-id: $request.path.educationClass-id
+                group-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/education/users/{educationUser-id}/taughtClasses/microsoft.graph.delta()':
     get:
       tags:
@@ -10859,7 +12214,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -10970,6 +12326,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -10988,6 +12346,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -10995,7 +12354,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -11034,6 +12394,8 @@ paths:
                 - drives
                 - followedSites
                 - extensions
+                - approvals
+                - appConsentRequestsForApproval
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -11052,6 +12414,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - authentication
                 - chats
                 - joinedTeams
                 - teamwork
@@ -11063,9 +12426,289 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
+          links:
+            analytics:
+              operationId: educationUser.user.GetAnalytics
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                userAnalytics-id: $response.body#/id
+            informationProtection:
+              operationId: educationUser.user.GetInformationProtection
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                informationProtection-id: $response.body#/id
+            appRoleAssignments:
+              operationId: educationUser.user.GetAppRoleAssignments
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                appRoleAssignment-id: $response.body#/id
+            createdObjects:
+              operationId: educationUser.user.GetCreatedObjects
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            directReports:
+              operationId: educationUser.user.GetDirectReports
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            licenseDetails:
+              operationId: educationUser.user.GetLicenseDetails
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                licenseDetails-id: $response.body#/id
+            manager:
+              operationId: educationUser.user.GetManager
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            memberOf:
+              operationId: educationUser.user.GetMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            ownedDevices:
+              operationId: educationUser.user.GetOwnedDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            ownedObjects:
+              operationId: educationUser.user.GetOwnedObjects
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            registeredDevices:
+              operationId: educationUser.user.GetRegisteredDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            scopedRoleMemberOf:
+              operationId: educationUser.user.GetScopedRoleMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                scopedRoleMembership-id: $response.body#/id
+            transitiveMemberOf:
+              operationId: educationUser.user.GetTransitiveMemberOf
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                directoryObject-id: $response.body#/id
+            outlook:
+              operationId: educationUser.user.GetOutlook
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                outlookUser-id: $response.body#/id
+            messages:
+              operationId: educationUser.user.GetMessages
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                message-id: $response.body#/id
+            joinedGroups:
+              operationId: educationUser.user.GetJoinedGroups
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                group-id: $response.body#/id
+            mailFolders:
+              operationId: educationUser.user.GetMailFolders
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                mailFolder-id: $response.body#/id
+            calendar:
+              operationId: educationUser.user.GetCalendar
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                calendar-id: $response.body#/id
+            calendars:
+              operationId: educationUser.user.GetCalendars
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                calendar-id: $response.body#/id
+            calendarGroups:
+              operationId: educationUser.user.GetCalendarGroups
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                calendarGroup-id: $response.body#/id
+            calendarView:
+              operationId: educationUser.user.GetCalendarView
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                event-id: $response.body#/id
+            events:
+              operationId: educationUser.user.GetEvents
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                event-id: $response.body#/id
+            people:
+              operationId: educationUser.user.GetPeople
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                person-id: $response.body#/id
+            contacts:
+              operationId: educationUser.user.GetContacts
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                contact-id: $response.body#/id
+            contactFolders:
+              operationId: educationUser.user.GetContactFolders
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                contactFolder-id: $response.body#/id
+            inferenceClassification:
+              operationId: educationUser.user.GetInferenceClassification
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                inferenceClassification-id: $response.body#/id
+            photo:
+              operationId: educationUser.user.GetPhoto
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                profilePhoto-id: $response.body#/id
+            photos:
+              operationId: educationUser.user.GetPhotos
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                profilePhoto-id: $response.body#/id
+            drive:
+              operationId: educationUser.user.GetDrive
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                drive-id: $response.body#/id
+            drives:
+              operationId: educationUser.user.GetDrives
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                drive-id: $response.body#/id
+            followedSites:
+              operationId: educationUser.user.GetFollowedSites
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                site-id: $response.body#/id
+            extensions:
+              operationId: educationUser.user.GetExtensions
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                extension-id: $response.body#/id
+            approvals:
+              operationId: educationUser.user.GetApprovals
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                approval-id: $response.body#/id
+            appConsentRequestsForApproval:
+              operationId: educationUser.user.GetAppConsentRequestsForApproval
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                appConsentRequest-id: $response.body#/id
+            agreementAcceptances:
+              operationId: educationUser.user.GetAgreementAcceptances
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                agreementAcceptance-id: $response.body#/id
+            deviceEnrollmentConfigurations:
+              operationId: educationUser.user.GetDeviceEnrollmentConfigurations
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                deviceEnrollmentConfiguration-id: $response.body#/id
+            managedDevices:
+              operationId: educationUser.user.GetManagedDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                managedDevice-id: $response.body#/id
+            managedAppRegistrations:
+              operationId: educationUser.user.GetManagedAppRegistrations
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                managedAppRegistration-id: $response.body#/id
+            windowsInformationProtectionDeviceRegistrations:
+              operationId: educationUser.user.GetWindowsInformationProtectionDeviceRegistrations
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                windowsInformationProtectionDeviceRegistration-id: $response.body#/id
+            deviceManagementTroubleshootingEvents:
+              operationId: educationUser.user.GetDeviceManagementTroubleshootingEvents
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                deviceManagementTroubleshootingEvent-id: $response.body#/id
+            mobileAppIntentAndStates:
+              operationId: educationUser.user.GetMobileAppIntentAndStates
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                mobileAppIntentAndState-id: $response.body#/id
+            mobileAppTroubleshootingEvents:
+              operationId: educationUser.user.GetMobileAppTroubleshootingEvents
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                mobileAppTroubleshootingEvent-id: $response.body#/id
+            notifications:
+              operationId: educationUser.user.GetNotifications
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                notification-id: $response.body#/id
+            planner:
+              operationId: educationUser.user.GetPlanner
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                plannerUser-id: $response.body#/id
+            insights:
+              operationId: educationUser.user.GetInsights
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                officeGraphInsights-id: $response.body#/id
+            settings:
+              operationId: educationUser.user.GetSettings
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                userSettings-id: $response.body#/id
+            onenote:
+              operationId: educationUser.user.GetOnenote
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                onenote-id: $response.body#/id
+            profile:
+              operationId: educationUser.user.GetProfile
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                profile-id: $response.body#/id
+            activities:
+              operationId: educationUser.user.GetActivities
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                userActivity-id: $response.body#/id
+            devices:
+              operationId: educationUser.user.GetDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                device-id: $response.body#/id
+            onlineMeetings:
+              operationId: educationUser.user.GetOnlineMeetings
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                onlineMeeting-id: $response.body#/id
+            presence:
+              operationId: educationUser.user.GetPresence
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                presence-id: $response.body#/id
+            authentication:
+              operationId: educationUser.user.GetAuthentication
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                authentication-id: $response.body#/id
+            chats:
+              operationId: educationUser.user.GetChats
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                chat-id: $response.body#/id
+            joinedTeams:
+              operationId: educationUser.user.GetJoinedTeams
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                team-id: $response.body#/id
+            teamwork:
+              operationId: educationUser.user.GetTeamwork
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+                userTeamwork-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /education/users/microsoft.graph.delta():
     get:
       tags:
@@ -11535,6 +13178,9 @@ components:
               type: string
               description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default.'
               nullable: true
+            createdByAppId:
+              type: string
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11548,6 +13194,11 @@ components:
             displayName:
               type: string
               description: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
               nullable: true
             groupTypes:
               type: array
@@ -11733,7 +13384,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 10 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
@@ -11823,9 +13474,11 @@ components:
         assignedLicenses:
           - '@odata.type': microsoft.graph.assignedLicense
         classification: string
+        createdByAppId: string
         createdDateTime: string (timestamp)
         description: string
         displayName: string
+        expirationDateTime: string (timestamp)
         groupTypes:
           - string
         hasMembersWithLicenseErrors: true
@@ -12417,6 +14070,7 @@ components:
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.'
               format: date-time
               nullable: true
             showInAddressList:
@@ -12651,6 +14305,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the user. Read-only. Nullable.
+            approvals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approval'
+            appConsentRequestsForApproval:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
             agreementAcceptances:
               type: array
               items:
@@ -12718,6 +14380,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            authentication:
+              $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
               type: array
               items:
@@ -12888,6 +14552,10 @@ components:
           - '@odata.type': microsoft.graph.site
         extensions:
           - '@odata.type': microsoft.graph.extension
+        approvals:
+          - '@odata.type': microsoft.graph.approval
+        appConsentRequestsForApproval:
+          - '@odata.type': microsoft.graph.appConsentRequest
         agreementAcceptances:
           - '@odata.type': microsoft.graph.agreementAcceptance
         deviceEnrollmentConfigurations:
@@ -12924,6 +14592,8 @@ components:
           - '@odata.type': microsoft.graph.onlineMeeting
         presence:
           '@odata.type': microsoft.graph.presence
+        authentication:
+          '@odata.type': microsoft.graph.authentication
         chats:
           - '@odata.type': microsoft.graph.chat
         joinedTeams:
@@ -13641,6 +15311,7 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
+              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
@@ -13666,17 +15337,23 @@ components:
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
+            calendarGroupId:
+              type: string
+              nullable: true
             allowedOnlineMeetingProviders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
+              description: 'Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.'
             defaultOnlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             isTallyingResponses:
               type: boolean
+              description: Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
               nullable: true
             isRemovable:
               type: boolean
+              description: Indicates whether this user calendar can be deleted from the user mailbox.
               nullable: true
             singleValueExtendedProperties:
               type: array
@@ -13692,6 +15369,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarPermission'
+              description: The permissions of the users with whom the calendar is shared.
             events:
               type: array
               items:
@@ -13717,6 +15395,7 @@ components:
         canEdit: true
         owner:
           '@odata.type': microsoft.graph.emailAddress
+        calendarGroupId: string
         allowedOnlineMeetingProviders:
           - '@odata.type': microsoft.graph.onlineMeetingProviderType
         defaultOnlineMeetingProvider:
@@ -13739,6 +15418,9 @@ components:
         - title: event
           type: object
           properties:
+            transactionId:
+              type: string
+              nullable: true
             originalStartTimeZone:
               type: string
               description: The start time zone that was set when the event was created. A value of tzone://Microsoft/Custom indicates that a legacy custom time zone was set in desktop Outlook.
@@ -13841,12 +15523,16 @@ components:
               nullable: true
             isOnlineMeeting:
               type: boolean
+              description: 'True if this event has online meeting information, false otherwise. Default is false. Optional.'
               nullable: true
             onlineMeetingProvider:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
+              type: boolean
+              nullable: true
+            isDraft:
               type: boolean
               nullable: true
             attachments:
@@ -13883,6 +15569,7 @@ components:
         changeKey: string
         categories:
           - string
+        transactionId: string
         originalStartTimeZone: string
         originalEndTimeZone: string
         responseStatus:
@@ -13931,6 +15618,7 @@ components:
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
         allowNewTimeProposals: true
+        isDraft: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -13973,6 +15661,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+              description: The list of items the user is following. Only in OneDrive for Business.
             items:
               type: array
               items:
@@ -15637,6 +17326,57 @@ components:
         id: string (identifier)
         overrides:
           - '@odata.type': microsoft.graph.inferenceClassificationOverride
+    microsoft.graph.approval:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approval
+          type: object
+          properties:
+            pendingSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+            completedSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.approvalStep'
+      example:
+        id: string (identifier)
+        pendingSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+        completedSteps:
+          - '@odata.type': microsoft.graph.approvalStep
+    microsoft.graph.appConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appConsentRequest
+          type: object
+          properties:
+            appId:
+              type: string
+            appDisplayName:
+              type: string
+              nullable: true
+            consentType:
+              type: string
+              nullable: true
+            pendingScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
+            userConsentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
+      example:
+        id: string (identifier)
+        appId: string
+        appDisplayName: string
+        consentType: string
+        pendingScopes:
+          - '@odata.type': microsoft.graph.appConsentRequestScope
+        userConsentRequests:
+          - '@odata.type': microsoft.graph.userConsentRequest
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15995,6 +17735,10 @@ components:
               format: int64
             processorArchitecture:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceArchitecture'
+            specificationVersion:
+              type: string
+              description: Specification version. This property is read-only.
+              nullable: true
             securityBaselineStates:
               type: array
               items:
@@ -16125,6 +17869,7 @@ components:
         physicalMemoryInBytes: integer
         processorArchitecture:
           '@odata.type': microsoft.graph.managedDeviceArchitecture
+        specificationVersion: string
         securityBaselineStates:
           - '@odata.type': microsoft.graph.securityBaselineState
         deviceConfigurationStates:
@@ -16947,6 +18692,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -16970,6 +18720,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.presence:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16986,6 +18739,38 @@ components:
         id: string (identifier)
         availability: string
         activity: string
+    microsoft.graph.authentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authentication
+          type: object
+          properties:
+            methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            phoneMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+            passwordMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+      example:
+        id: string (identifier)
+        methods:
+          - '@odata.type': microsoft.graph.authenticationMethod
+        phoneMethods:
+          - '@odata.type': microsoft.graph.phoneAuthenticationMethod
+        passwordMethods:
+          - '@odata.type': microsoft.graph.passwordAuthenticationMethod
+        operations:
+          - '@odata.type': microsoft.graph.longRunningOperation
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17317,9 +19102,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isRemovable:
               type: boolean
+              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
               nullable: true
             isInsideOrganization:
               type: boolean
+              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -17327,6 +19114,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+              description: 'List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.'
       example:
         id: string (identifier)
         emailAddress:
@@ -17528,25 +19316,31 @@ components:
       properties:
         joinUrl:
           type: string
+          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
           nullable: true
         conferenceId:
           type: string
+          description: The ID of the conference.
           nullable: true
         tollNumber:
           type: string
+          description: The toll number that can be used to join the conference.
           nullable: true
         tollFreeNumbers:
           type: array
           items:
             type: string
             nullable: true
+          description: The toll free numbers that can be used to join the conference.
         quickDial:
           type: string
+          description: The pre-formatted quickdial for this call.
           nullable: true
         phones:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.phone'
+          description: All of the phone numbers associated with this conference.
       example:
         joinUrl: string
         conferenceId: string
@@ -17716,6 +19510,7 @@ components:
           nullable: true
         tenantId:
           type: string
+          description: The unique identifier (guid) for the tenancy.
           nullable: true
         webId:
           type: string
@@ -17977,6 +19772,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.subscription'
+              description: The set of subscriptions on the list.
       example:
         id: string (identifier)
         createdBy:
@@ -18023,6 +19819,7 @@ components:
       properties:
         dataLocationCode:
           type: string
+          description: The geographic region code for where this site collection resides. Read-only.
           nullable: true
         hostname:
           type: string
@@ -19259,6 +21056,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             contentType:
@@ -19277,6 +21075,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+              description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -19750,6 +21549,69 @@ components:
           '@odata.type': microsoft.graph.inferenceClassificationType
         senderEmailAddress:
           '@odata.type': microsoft.graph.emailAddress
+    microsoft.graph.approvalStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: approvalStep
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        displayName: string
+        reviewedBy:
+          '@odata.type': microsoft.graph.identity
+        reviewedDateTime: string (timestamp)
+        reviewResult: string
+        justification: string
+    microsoft.graph.appConsentRequestScope:
+      title: appConsentRequestScope
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      example:
+        displayName: string
+    microsoft.graph.userConsentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.request'
+        - title: userConsentRequest
+          type: object
+          properties:
+            reason:
+              type: string
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+        reason: string
+        createdBy:
+          '@odata.type': microsoft.graph.userIdentity
+        createdDateTime: string (timestamp)
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
@@ -20033,6 +21895,7 @@ components:
         - windowsCoManagement
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
+        - azureAdJoinUsingAzureVmExtension
       type: string
     microsoft.graph.lostModeState:
       title: lostModeState
@@ -20329,7 +22192,7 @@ components:
         lastSyncDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Datetime fo last sync with configuration manager management point.
+          description: Datetime for last sync with configuration manager management point.
           format: date-time
       example:
         state:
@@ -20344,8 +22207,12 @@ components:
           type: string
           description: Configuration Manager Client Id from SCCM
           nullable: true
+        isBlocked:
+          type: boolean
+          description: Configuration Manager Client blocked status from SCCM
       example:
         clientIdentifier: string
+        isBlocked: true
     microsoft.graph.managedDeviceArchitecture:
       title: managedDeviceArchitecture
       enum:
@@ -21940,6 +23807,83 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.authenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.phoneAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: phoneAuthenticationMethod
+          type: object
+          properties:
+            phoneNumber:
+              type: string
+              nullable: true
+            phoneType:
+              $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
+            smsSignInState:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+      example:
+        id: string (identifier)
+        phoneNumber: string
+        phoneType:
+          '@odata.type': microsoft.graph.authenticationPhoneType
+        smsSignInState:
+          '@odata.type': microsoft.graph.authenticationMethodSignInState
+    microsoft.graph.passwordAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordAuthenticationMethod
+          type: object
+          properties:
+            password:
+              type: string
+              nullable: true
+            creationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+      example:
+        id: string (identifier)
+        password: string
+        creationDateTime: string (timestamp)
+    microsoft.graph.longRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: longRunningOperation
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.longRunningOperationStatus'
+            statusDetail:
+              type: string
+              nullable: true
+            resourceLocation:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastActionDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.longRunningOperationStatus
+        statusDetail: string
+        resourceLocation: string
     microsoft.graph.conversationMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22793,6 +24737,8 @@ components:
           type: string
           description: Unique identifier for the remote item in its drive. Read-only.
           nullable: true
+        image:
+          $ref: '#/components/schemas/microsoft.graph.image'
         lastModifiedBy:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         lastModifiedDateTime:
@@ -22820,6 +24766,8 @@ components:
           nullable: true
         specialFolder:
           $ref: '#/components/schemas/microsoft.graph.specialFolder'
+        video:
+          $ref: '#/components/schemas/microsoft.graph.video'
         webDavUrl:
           type: string
           description: DAV compatible URL for the item.
@@ -22839,6 +24787,8 @@ components:
         folder:
           '@odata.type': microsoft.graph.folder
         id: string
+        image:
+          '@odata.type': microsoft.graph.image
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
         lastModifiedDateTime: string (timestamp)
@@ -22854,6 +24804,8 @@ components:
         size: integer
         specialFolder:
           '@odata.type': microsoft.graph.specialFolder
+        video:
+          '@odata.type': microsoft.graph.video
         webDavUrl: string
         webUrl: string
     microsoft.graph.searchResult:
@@ -23028,6 +24980,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -23036,8 +24989,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             hasPassword:
               type: boolean
+              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -23083,7 +25038,7 @@ components:
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
@@ -24321,12 +26276,14 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
               nullable: true
             resultType:
               $ref: '#/components/schemas/microsoft.graph.threatAssessmentResultType'
             message:
               type: string
+              description: The result message for each threat assessment.
               nullable: true
       example:
         id: string (identifier)
@@ -24656,6 +26613,37 @@ components:
         - main
         - other
       type: string
+    microsoft.graph.request:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: request
+          type: object
+          properties:
+            approval:
+              $ref: '#/components/schemas/microsoft.graph.approval'
+      example:
+        id: string (identifier)
+        approval:
+          '@odata.type': microsoft.graph.approval
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+      example:
+        id: string
+        displayName: string
+        ipAddress: string
+        userPrincipalName: string
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -24813,6 +26801,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -24828,6 +26820,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -24839,6 +26832,7 @@ components:
         - windows81AndLater
         - windows10AndLater
         - androidWorkProfile
+        - windows10XProfile
         - all
       type: string
     microsoft.graph.complianceStatus:
@@ -24904,6 +26898,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -24919,6 +26917,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.managedDeviceMobileAppConfigurationSettingState:
       title: managedDeviceMobileAppConfigurationSettingState
       type: object
@@ -24970,6 +26969,10 @@ components:
           type: string
           description: Current value of setting on device
           nullable: true
+        settingInstanceId:
+          type: string
+          description: SettingInstanceId
+          nullable: true
       example:
         setting: string
         settingName: string
@@ -24985,6 +26988,7 @@ components:
         sources:
           - '@odata.type': microsoft.graph.settingSource
         currentValue: string
+        settingInstanceId: string
     microsoft.graph.windowsDeviceHealthState:
       title: windowsDeviceHealthState
       enum:
@@ -25662,6 +27666,33 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.authenticationPhoneType:
+      title: authenticationPhoneType
+      enum:
+        - mobile
+        - alternateMobile
+        - office
+        - unknownFutureValue
+      type: string
+    microsoft.graph.authenticationMethodSignInState:
+      title: authenticationMethodSignInState
+      enum:
+        - notSupported
+        - notAllowedByPolicy
+        - notEnabled
+        - phoneNumberNotUnique
+        - ready
+        - notConfigured
+        - unknownFutureValue
+      type: string
+    microsoft.graph.longRunningOperationStatus:
+      title: longRunningOperationStatus
+      enum:
+        - notstarted
+        - running
+        - succeeded
+        - failed
+      type: string
     microsoft.graph.chatMessageType:
       title: chatMessageType
       enum:
@@ -26258,6 +28289,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         preventsDownload:
           type: boolean
+          description: 'If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.'
           nullable: true
         configuratorUrl:
           type: string

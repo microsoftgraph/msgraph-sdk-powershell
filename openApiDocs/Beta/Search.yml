@@ -21,7 +21,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -39,7 +40,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -56,7 +58,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -80,8 +83,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.externalConnection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -122,7 +130,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -139,7 +148,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -159,17 +169,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.externalConnection'
           links:
             schema:
-              operationId: connections.externalConnection.GetExternalConnection
+              operationId: connections.GetSchema
               parameters:
-                id: $request.path.id
+                externalConnection-id: $request.path.externalConnection-id
+                schema-id: $response.body#/id
             items:
-              operationId: connections.externalConnection.GetExternalConnection
+              operationId: connections.GetItems
               parameters:
-                id: $request.path.id
+                externalConnection-id: $request.path.externalConnection-id
+                externalItem-id: $response.body#/id
             operations:
-              operationId: connections.externalConnection.GetExternalConnection
+              operationId: connections.GetOperations
               parameters:
-                id: $request.path.id
+                externalConnection-id: $request.path.externalConnection-id
+                connectionOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -245,7 +258,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -263,7 +277,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -277,7 +292,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -298,8 +314,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.externalItem'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -355,7 +376,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -369,7 +391,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -386,7 +409,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.externalItem'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - connections.externalItem
@@ -442,7 +464,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -458,7 +481,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -471,7 +495,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -492,8 +517,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.connectionOperation'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -549,7 +579,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -562,7 +593,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -579,7 +611,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.connectionOperation'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - connections.connectionOperation
@@ -630,7 +661,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -643,7 +675,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -660,7 +693,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.schema'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - connections.schema
@@ -697,7 +729,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -709,7 +742,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -725,6 +759,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.external'
+          links:
+            connections:
+              operationId: external.GetConnections
+              parameters:
+                externalConnection-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -761,7 +800,8 @@ paths:
         - name: $orderby
           in: query
           description: Order items by property values
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -779,7 +819,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -796,7 +837,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -820,8 +862,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.externalConnection'
+                  '@odata.nextLink':
+                    type: string
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -862,7 +909,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -879,7 +927,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -897,9 +946,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnection'
+          links:
+            schema:
+              operationId: external.connections.GetSchema
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+                schema-id: $response.body#/id
+            items:
+              operationId: external.connections.GetItems
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+                externalItem-id: $response.body#/id
+            operations:
+              operationId: external.connections.GetOperations
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+                connectionOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     patch:
       tags:
         - external.externalConnection
@@ -936,7 +1000,8 @@ paths:
         - name: $select
           in: query
           description: Select properties to be returned
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -947,7 +1012,8 @@ paths:
         - name: $expand
           in: query
           description: Expand related entities
-          style: simple
+          style: form
+          explode: false
           schema:
             uniqueItems: true
             type: array
@@ -1060,8 +1126,7 @@ components:
             properties:
               $ref: '#/components/schemas/microsoft.graph.properties'
             content:
-              type: string
-              nullable: true
+              $ref: '#/components/schemas/microsoft.graph.externalItemContent'
             acl:
               type: array
               items:
@@ -1070,7 +1135,8 @@ components:
         id: string (identifier)
         properties:
           '@odata.type': microsoft.graph.properties
-        content: string
+        content:
+          '@odata.type': microsoft.graph.externalItemContent
         acl:
           - '@odata.type': microsoft.graph.acl
     microsoft.graph.connectionOperation:
@@ -1214,6 +1280,19 @@ components:
     microsoft.graph.properties:
       title: properties
       type: object
+    microsoft.graph.externalItemContent:
+      title: externalItemContent
+      type: object
+      properties:
+        value:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.externalItemContentType'
+      example:
+        value: string
+        type:
+          '@odata.type': microsoft.graph.externalItemContentType
     microsoft.graph.acl:
       title: acl
       type: object
@@ -1331,6 +1410,13 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.externalItemContentType:
+      title: externalItemContentType
+      enum:
+        - text
+        - html
+        - unknownFutureValue
+      type: string
     microsoft.graph.aclType:
       title: aclType
       enum:
