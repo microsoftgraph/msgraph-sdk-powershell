@@ -935,6 +935,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -955,6 +957,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1027,6 +1030,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1439,6 +1443,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -1459,6 +1465,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -1531,6 +1538,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -4401,6 +4409,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -4421,6 +4431,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -4493,6 +4504,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -4552,6 +4564,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - deletedDateTime
+                - deletedDateTime desc
                 - description
                 - description desc
                 - displayName
@@ -4572,6 +4586,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -4644,6 +4659,7 @@ paths:
             items:
               enum:
                 - id
+                - deletedDateTime
                 - description
                 - displayName
                 - definition
@@ -5221,8 +5237,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -5278,8 +5296,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -5693,8 +5713,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenIssuancePolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -5707,8 +5729,10 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -5995,8 +6019,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
         definition:
@@ -6426,7 +6452,7 @@ components:
         value: string
     microsoft.graph.policyBase:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
         - title: policyBase
           type: object
           properties:
@@ -6436,8 +6462,10 @@ components:
             displayName:
               type: string
               description: Display name for this policy.
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
         id: string (identifier)
+        deletedDateTime: string (timestamp)
         description: string
         displayName: string
     microsoft.graph.synchronizationScheduleState:

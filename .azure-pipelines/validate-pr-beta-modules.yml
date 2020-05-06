@@ -35,13 +35,13 @@ jobs:
     displayName: 'Install AutoRest'
     inputs:
       command: 'custom'
-      customCommand: 'install -g @autorest/autorest@3.0.6114'
+      customCommand: 'install -g @autorest/autorest'
   
   - task: PowerShell@2
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-RepositoryName $(Repository_Name) -RepositoryApiKey $(Api_Key) -ModuleVersion $(Module_Version) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build'
       pwsh: true
   
   - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0

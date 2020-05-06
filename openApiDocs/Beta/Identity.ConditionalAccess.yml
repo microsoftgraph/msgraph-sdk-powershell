@@ -6,78 +6,6 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /conditionalAccess:
-    get:
-      tags:
-        - conditionalAccess.conditionalAccessRoot
-      summary: Get conditionalAccess
-      operationId: conditionalAccess.conditionalAccessRoot_GetConditionalAccessRoot
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - policies
-                - namedLocations
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - policies
-                - namedLocations
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-          links:
-            policies:
-              operationId: conditionalAccess.GetPolicies
-              parameters:
-                conditionalAccessPolicy-id: $response.body#/id
-            namedLocations:
-              operationId: conditionalAccess.GetNamedLocations
-              parameters:
-                namedLocation-id: $response.body#/id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - conditionalAccess.conditionalAccessRoot
-      summary: Update conditionalAccess
-      operationId: conditionalAccess.conditionalAccessRoot_UpdateConditionalAccessRoot
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /conditionalAccess/namedLocations:
     get:
       tags:
@@ -454,26 +382,6 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
-    microsoft.graph.conditionalAccessRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: conditionalAccessRoot
-          type: object
-          properties:
-            policies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-            namedLocations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.namedLocation'
-      example:
-        id: string (identifier)
-        policies:
-          - '@odata.type': microsoft.graph.conditionalAccessPolicy
-        namedLocations:
-          - '@odata.type': microsoft.graph.namedLocation
     microsoft.graph.namedLocation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
