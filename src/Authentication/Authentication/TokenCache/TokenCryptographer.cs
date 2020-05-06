@@ -19,9 +19,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <param name="accessToken">An access token.</param>
         public static void EncryptAndSetToken(string appId, string tokenCacheFilePath, byte[] accessToken)
         {
-            if (PlatformHelpers.IsWindows())
+            if (Helpers.OperatingSystem.IsWindows())
                 WindowsTokenCache.SetToken(tokenCacheFilePath, accessToken);
-            else if (PlatformHelpers.IsMacOS())
+            else if (Helpers.OperatingSystem.IsMacOS())
                 MacTokenCache.SetToken(appId, accessToken);
             else
                 LinuxTokenCache.SetToken(appId, accessToken);
@@ -35,9 +35,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <returns></returns>
         public static byte[] DencryptAndGetToken(string appId, string tokenCacheFilePath)
         {
-            if (PlatformHelpers.IsWindows())
+            if (Helpers.OperatingSystem.IsWindows())
                 return WindowsTokenCache.GetToken(tokenCacheFilePath);
-            else if (PlatformHelpers.IsMacOS())
+            else if (Helpers.OperatingSystem.IsMacOS())
                 return MacTokenCache.GetToken(appId);
             else
                 return LinuxTokenCache.GetToken(appId);
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
         public static void DeleteTokenFromCache(string appId, string tokenCacheFilePath)
         {
-            if (PlatformHelpers.IsWindows())
+            if (Helpers.OperatingSystem.IsWindows())
                 WindowsTokenCache.DeleteToken(tokenCacheFilePath);
-            else if (PlatformHelpers.IsMacOS())
+            else if (Helpers.OperatingSystem.IsMacOS())
                 MacTokenCache.DeleteToken(appId);
             else
                 LinuxTokenCache.DeleteToken(appId);
