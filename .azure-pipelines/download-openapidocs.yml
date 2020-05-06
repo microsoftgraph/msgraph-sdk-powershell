@@ -97,7 +97,7 @@ steps:
   -  task: Bash@3
      displayName: "Create Pull Request"
      env: 
-        GITHUB_TOKEN: $(GITHUB_TOKEN)
+        GITHUB_TOKEN: $(System.AccessToken)
         MESSAGE_TITLE: Weekly OpenApiDocs Download
         MESSAGE_BODY: "This pull request was automatically created by Azure Devops, \n\n Contains Weekly OpenApiDocs Download files for v1.0 and beta"
         REVIEWERS: peombwa,ddyett,MIchaelMainer
