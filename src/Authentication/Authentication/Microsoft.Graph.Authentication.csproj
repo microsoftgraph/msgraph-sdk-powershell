@@ -18,7 +18,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <ItemGroup>
-    <PreLoadAssemblies Include="$(RepoTools)lib\System.Security.Cryptography.ProtectedData.dll" />
+    <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.4" />
