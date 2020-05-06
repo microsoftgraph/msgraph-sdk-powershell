@@ -46,7 +46,7 @@ steps:
       targetType: 'inline'
       script: |
         git config --global user.email '$(GitUserEmail)'
-        git config --global user.name '$(GitUserName)''
+        git config --global user.name '$(GitUserName)'
 
   - task: PowerShell@2
     displayName: "Show Directory"
