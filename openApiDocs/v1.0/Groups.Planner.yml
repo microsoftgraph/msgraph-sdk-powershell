@@ -1,0 +1,2753 @@
+openapi: 3.0.1
+info:
+  title: Groups.Planner
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/groups/{group-id}/planner':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get planner from groups
+      operationId: groups_GetPlanner
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - plans
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - plans
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerGroup'
+          links:
+            plans:
+              operationId: group.planner.GetPlans
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property planner in groups
+      operationId: groups_UpdatePlanner
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get plans from groups
+      operationId: groups.planner_ListPlans
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - owner
+                - owner desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - owner
+                - title
+                - tasks
+                - buckets
+                - details
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+                - buckets
+                - details
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerPlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.plannerGroup
+      summary: Create new navigation property to plans for groups
+      operationId: groups.planner_CreatePlans
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get plans from groups
+      operationId: groups.planner_GetPlans
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - owner
+                - title
+                - tasks
+                - buckets
+                - details
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+                - buckets
+                - details
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            tasks:
+              operationId: plannerGroup.plans.GetTasks
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $response.body#/id
+            buckets:
+              operationId: plannerGroup.plans.GetBuckets
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $response.body#/id
+            details:
+              operationId: plannerGroup.plans.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerPlanDetails-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property plans in groups
+      operationId: groups.planner_UpdatePlans
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get buckets from groups
+      operationId: groups.planner.plans_ListBuckets
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - name
+                - name desc
+                - planId
+                - planId desc
+                - orderHint
+                - orderHint desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - planId
+                - orderHint
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerBucket
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.plannerGroup
+      summary: Create new navigation property to buckets for groups
+      operationId: groups.planner.plans_CreateBuckets
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get buckets from groups
+      operationId: groups.planner.plans_GetBuckets
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - name
+                - planId
+                - orderHint
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: plannerPlan.buckets.GetTasks
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property buckets in groups
+      operationId: groups.planner.plans_UpdateBuckets
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get tasks from groups
+      operationId: groups.planner.plans.buckets_ListTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - planId
+                - planId desc
+                - bucketId
+                - bucketId desc
+                - title
+                - title desc
+                - orderHint
+                - orderHint desc
+                - assigneePriority
+                - assigneePriority desc
+                - percentComplete
+                - percentComplete desc
+                - startDateTime
+                - startDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - previewType
+                - previewType desc
+                - completedDateTime
+                - completedDateTime desc
+                - completedBy
+                - completedBy desc
+                - referenceCount
+                - referenceCount desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assignments
+                - assignments desc
+                - conversationThreadId
+                - conversationThreadId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - planId
+                - bucketId
+                - title
+                - orderHint
+                - assigneePriority
+                - percentComplete
+                - startDateTime
+                - createdDateTime
+                - dueDateTime
+                - hasDescription
+                - previewType
+                - completedDateTime
+                - completedBy
+                - referenceCount
+                - checklistItemCount
+                - activeChecklistItemCount
+                - appliedCategories
+                - assignments
+                - conversationThreadId
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.plannerGroup
+      summary: Create new navigation property to tasks for groups
+      operationId: groups.planner.plans.buckets_CreateTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get tasks from groups
+      operationId: groups.planner.plans.buckets_GetTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - planId
+                - bucketId
+                - title
+                - orderHint
+                - assigneePriority
+                - percentComplete
+                - startDateTime
+                - createdDateTime
+                - dueDateTime
+                - hasDescription
+                - previewType
+                - completedDateTime
+                - completedBy
+                - referenceCount
+                - checklistItemCount
+                - activeChecklistItemCount
+                - appliedCategories
+                - assignments
+                - conversationThreadId
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            details:
+              operationId: plannerBucket.tasks.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerTaskDetails-id: $response.body#/id
+            assignedToTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
+            progressTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetProgressTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
+            bucketTaskBoardFormat:
+              operationId: plannerBucket.tasks.GetBucketTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property tasks in groups
+      operationId: groups.planner.plans.buckets_UpdateTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get assignedToTaskBoardFormat from groups
+      operationId: groups.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - unassignedOrderHint
+                - orderHintsByAssignee
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property assignedToTaskBoardFormat in groups
+      operationId: groups.planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get bucketTaskBoardFormat from groups
+      operationId: groups.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property bucketTaskBoardFormat in groups
+      operationId: groups.planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get details from groups
+      operationId: groups.planner.plans.buckets.tasks_GetDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - previewType
+                - references
+                - checklist
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property details in groups
+      operationId: groups.planner.plans.buckets.tasks_UpdateDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get progressTaskBoardFormat from groups
+      operationId: groups.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property progressTaskBoardFormat in groups
+      operationId: groups.planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: plannerBucket-id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/details':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get details from groups
+      operationId: groups.planner.plans_GetDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - sharedWith
+                - categoryDescriptions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property details in groups
+      operationId: groups.planner.plans_UpdateDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get tasks from groups
+      operationId: groups.planner.plans_ListTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - planId
+                - planId desc
+                - bucketId
+                - bucketId desc
+                - title
+                - title desc
+                - orderHint
+                - orderHint desc
+                - assigneePriority
+                - assigneePriority desc
+                - percentComplete
+                - percentComplete desc
+                - startDateTime
+                - startDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - previewType
+                - previewType desc
+                - completedDateTime
+                - completedDateTime desc
+                - completedBy
+                - completedBy desc
+                - referenceCount
+                - referenceCount desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assignments
+                - assignments desc
+                - conversationThreadId
+                - conversationThreadId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - planId
+                - bucketId
+                - title
+                - orderHint
+                - assigneePriority
+                - percentComplete
+                - startDateTime
+                - createdDateTime
+                - dueDateTime
+                - hasDescription
+                - previewType
+                - completedDateTime
+                - completedBy
+                - referenceCount
+                - checklistItemCount
+                - activeChecklistItemCount
+                - appliedCategories
+                - assignments
+                - conversationThreadId
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of plannerTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.plannerGroup
+      summary: Create new navigation property to tasks for groups
+      operationId: groups.planner.plans_CreateTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get tasks from groups
+      operationId: groups.planner.plans_GetTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - planId
+                - bucketId
+                - title
+                - orderHint
+                - assigneePriority
+                - percentComplete
+                - startDateTime
+                - createdDateTime
+                - dueDateTime
+                - hasDescription
+                - previewType
+                - completedDateTime
+                - completedBy
+                - referenceCount
+                - checklistItemCount
+                - activeChecklistItemCount
+                - appliedCategories
+                - assignments
+                - conversationThreadId
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - details
+                - assignedToTaskBoardFormat
+                - progressTaskBoardFormat
+                - bucketTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            details:
+              operationId: plannerPlan.tasks.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerTaskDetails-id: $response.body#/id
+            assignedToTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
+            progressTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetProgressTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
+            bucketTaskBoardFormat:
+              operationId: plannerPlan.tasks.GetBucketTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property tasks in groups
+      operationId: groups.planner.plans_UpdateTasks
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get assignedToTaskBoardFormat from groups
+      operationId: groups.planner.plans.tasks_GetAssignedToTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - unassignedOrderHint
+                - orderHintsByAssignee
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property assignedToTaskBoardFormat in groups
+      operationId: groups.planner.plans.tasks_UpdateAssignedToTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get bucketTaskBoardFormat from groups
+      operationId: groups.planner.plans.tasks_GetBucketTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property bucketTaskBoardFormat in groups
+      operationId: groups.planner.plans.tasks_UpdateBucketTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get details from groups
+      operationId: groups.planner.plans.tasks_GetDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - previewType
+                - references
+                - checklist
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property details in groups
+      operationId: groups.planner.plans.tasks_UpdateDetails
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get progressTaskBoardFormat from groups
+      operationId: groups.planner.plans.tasks_GetProgressTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.plannerGroup
+      summary: Update the navigation property progressTaskBoardFormat in groups
+      operationId: groups.planner.plans.tasks_UpdateProgressTaskBoardFormat
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: 'key: plannerPlan-id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: plannerTask-id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.plannerGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerGroup
+          type: object
+          properties:
+            plans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns the plannerPlans owned by the group.
+      example:
+        id: string (identifier)
+        plans:
+          - '@odata.type': microsoft.graph.plannerPlan
+    microsoft.graph.plannerPlan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlan
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            owner:
+              type: string
+              description: 'ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.'
+              nullable: true
+            title:
+              type: string
+              description: Required. Title of the plan.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Collection of tasks in the plan.
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+              description: Read-only. Nullable. Collection of buckets in the plan.
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+      example:
+        id: string (identifier)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        createdDateTime: string (timestamp)
+        owner: string
+        title: string
+        tasks:
+          - '@odata.type': microsoft.graph.plannerTask
+        buckets:
+          - '@odata.type': microsoft.graph.plannerBucket
+        details:
+          '@odata.type': microsoft.graph.plannerPlanDetails
+    microsoft.graph.plannerBucket:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerBucket
+          type: object
+          properties:
+            name:
+              type: string
+              description: Name of the bucket.
+            planId:
+              type: string
+              description: Plan ID to which the bucket belongs.
+              nullable: true
+            orderHint:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. The collection of tasks in the bucket.
+      example:
+        id: string (identifier)
+        name: string
+        planId: string
+        orderHint: string
+        tasks:
+          - '@odata.type': microsoft.graph.plannerTask
+    microsoft.graph.plannerTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerTask
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            planId:
+              type: string
+              description: Plan ID to which the task belongs.
+              nullable: true
+            bucketId:
+              type: string
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              nullable: true
+            title:
+              type: string
+              description: Title of the task.
+            orderHint:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            assigneePriority:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            hasDescription:
+              type: boolean
+              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              nullable: true
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            referenceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of external references that exist on the task.
+              format: int32
+              nullable: true
+            checklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of checklist items that are present on the task.
+              format: int32
+              nullable: true
+            activeChecklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              format: int32
+              nullable: true
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
+            conversationThreadId:
+              type: string
+              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              nullable: true
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            assignedToTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+            progressTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+            bucketTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+      example:
+        id: string (identifier)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        planId: string
+        bucketId: string
+        title: string
+        orderHint: string
+        assigneePriority: string
+        percentComplete: integer
+        startDateTime: string (timestamp)
+        createdDateTime: string (timestamp)
+        dueDateTime: string (timestamp)
+        hasDescription: true
+        previewType:
+          '@odata.type': microsoft.graph.plannerPreviewType
+        completedDateTime: string (timestamp)
+        completedBy:
+          '@odata.type': microsoft.graph.identitySet
+        referenceCount: integer
+        checklistItemCount: integer
+        activeChecklistItemCount: integer
+        appliedCategories:
+          '@odata.type': microsoft.graph.plannerAppliedCategories
+        assignments:
+          '@odata.type': microsoft.graph.plannerAssignments
+        conversationThreadId: string
+        details:
+          '@odata.type': microsoft.graph.plannerTaskDetails
+        assignedToTaskBoardFormat:
+          '@odata.type': microsoft.graph.plannerAssignedToTaskBoardTaskFormat
+        progressTaskBoardFormat:
+          '@odata.type': microsoft.graph.plannerProgressTaskBoardTaskFormat
+        bucketTaskBoardFormat:
+          '@odata.type': microsoft.graph.plannerBucketTaskBoardTaskFormat
+    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerAssignedToTaskBoardTaskFormat
+          type: object
+          properties:
+            unassignedOrderHint:
+              type: string
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              nullable: true
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
+      example:
+        id: string (identifier)
+        unassignedOrderHint: string
+        orderHintsByAssignee:
+          '@odata.type': microsoft.graph.plannerOrderHintsByAssignee
+    microsoft.graph.plannerBucketTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerBucketTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              nullable: true
+      example:
+        id: string (identifier)
+        orderHint: string
+    microsoft.graph.plannerTaskDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerTaskDetails
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the task
+              nullable: true
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+      example:
+        id: string (identifier)
+        description: string
+        previewType:
+          '@odata.type': microsoft.graph.plannerPreviewType
+        references:
+          '@odata.type': microsoft.graph.plannerExternalReferences
+        checklist:
+          '@odata.type': microsoft.graph.plannerChecklistItems
+    microsoft.graph.plannerProgressTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerProgressTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+              nullable: true
+      example:
+        id: string (identifier)
+        orderHint: string
+    microsoft.graph.plannerPlanDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlanDetails
+          type: object
+          properties:
+            sharedWith:
+              $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
+            categoryDescriptions:
+              $ref: '#/components/schemas/microsoft.graph.plannerCategoryDescriptions'
+      example:
+        id: string (identifier)
+        sharedWith:
+          '@odata.type': microsoft.graph.plannerUserIds
+        categoryDescriptions:
+          '@odata.type': microsoft.graph.plannerCategoryDescriptions
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      example:
+        application:
+          '@odata.type': microsoft.graph.identity
+        device:
+          '@odata.type': microsoft.graph.identity
+        user:
+          '@odata.type': microsoft.graph.identity
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
+    microsoft.graph.plannerAppliedCategories:
+      title: plannerAppliedCategories
+      type: object
+    microsoft.graph.plannerAssignments:
+      title: plannerAssignments
+      type: object
+    microsoft.graph.plannerOrderHintsByAssignee:
+      title: plannerOrderHintsByAssignee
+      type: object
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
+      type: object
+    microsoft.graph.plannerChecklistItems:
+      title: plannerChecklistItems
+      type: object
+    microsoft.graph.plannerUserIds:
+      title: plannerUserIds
+      type: object
+    microsoft.graph.plannerCategoryDescriptions:
+      title: plannerCategoryDescriptions
+      type: object
+      properties:
+        category1:
+          type: string
+          description: The label associated with Category 1
+          nullable: true
+        category2:
+          type: string
+          description: The label associated with Category 2
+          nullable: true
+        category3:
+          type: string
+          description: The label associated with Category 3
+          nullable: true
+        category4:
+          type: string
+          description: The label associated with Category 4
+          nullable: true
+        category5:
+          type: string
+          description: The label associated with Category 5
+          nullable: true
+        category6:
+          type: string
+          description: The label associated with Category 6
+          nullable: true
+      example:
+        category1: string
+        category2: string
+        category3: string
+        category4: string
+        category5: string
+        category6: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      example:
+        displayName: string
+        id: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

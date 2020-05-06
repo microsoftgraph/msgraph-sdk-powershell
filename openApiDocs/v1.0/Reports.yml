@@ -1,0 +1,2124 @@
+openapi: 3.0.1
+info:
+  title: Reports
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /reports:
+    get:
+      tags:
+        - reports.reportRoot
+      summary: Get reports
+      operationId: reports.reportRoot_GetReportRoot
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.reportRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.reportRoot
+      summary: Update reports
+      operationId: reports.reportRoot_UpdateReportRoot
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.reportRoot'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/microsoft.graph.deviceConfigurationDeviceActivity():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function deviceConfigurationDeviceActivity
+      operationId: reports_deviceConfigurationDeviceActivity
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.deviceConfigurationUserActivity():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function deviceConfigurationUserActivity
+      operationId: reports_deviceConfigurationUserActivity
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailActivityCounts
+      operationId: reports_getEmailActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailActivityUserCounts
+      operationId: reports_getEmailActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailActivityUserDetail
+      operationId: reports_getEmailActivityUserDetail-fe32
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailActivityUserDetail
+      operationId: reports_getEmailActivityUserDetail-ddb2
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailAppUsageAppsUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailAppUsageAppsUserCounts
+      operationId: reports_getEmailAppUsageAppsUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailAppUsageUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailAppUsageUserCounts
+      operationId: reports_getEmailAppUsageUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailAppUsageUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailAppUsageUserDetail
+      operationId: reports_getEmailAppUsageUserDetail-62ec
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailAppUsageUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailAppUsageUserDetail
+      operationId: reports_getEmailAppUsageUserDetail-546b
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getEmailAppUsageVersionsUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getEmailAppUsageVersionsUserCounts
+      operationId: reports_getEmailAppUsageVersionsUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMailboxUsageDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMailboxUsageDetail
+      operationId: reports_getMailboxUsageDetail
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMailboxUsageMailboxCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMailboxUsageMailboxCounts
+      operationId: reports_getMailboxUsageMailboxCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMailboxUsageQuotaStatusMailboxCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMailboxUsageQuotaStatusMailboxCounts
+      operationId: reports_getMailboxUsageQuotaStatusMailboxCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getMailboxUsageStorage(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getMailboxUsageStorage
+      operationId: reports_getMailboxUsageStorage
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getOffice365ActivationCounts():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActivationCounts
+      operationId: reports_getOffice365ActivationCounts
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getOffice365ActivationsUserCounts():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActivationsUserCounts
+      operationId: reports_getOffice365ActivationsUserCounts
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getOffice365ActivationsUserDetail():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActivationsUserDetail
+      operationId: reports_getOffice365ActivationsUserDetail
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365ActiveUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActiveUserCounts
+      operationId: reports_getOffice365ActiveUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365ActiveUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActiveUserDetail
+      operationId: reports_getOffice365ActiveUserDetail-d389
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365ActiveUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ActiveUserDetail
+      operationId: reports_getOffice365ActiveUserDetail-68ad
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityCounts
+      operationId: reports_getOffice365GroupsActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityDetail
+      operationId: reports_getOffice365GroupsActivityDetail-81cc
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityDetail
+      operationId: reports_getOffice365GroupsActivityDetail-38f6
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityFileCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityFileCounts
+      operationId: reports_getOffice365GroupsActivityFileCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityGroupCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityGroupCounts
+      operationId: reports_getOffice365GroupsActivityGroupCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365GroupsActivityStorage(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365GroupsActivityStorage
+      operationId: reports_getOffice365GroupsActivityStorage
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOffice365ServicesUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOffice365ServicesUserCounts
+      operationId: reports_getOffice365ServicesUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveActivityFileCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveActivityFileCounts
+      operationId: reports_getOneDriveActivityFileCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveActivityUserCounts
+      operationId: reports_getOneDriveActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveActivityUserDetail
+      operationId: reports_getOneDriveActivityUserDetail-05f1
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveActivityUserDetail
+      operationId: reports_getOneDriveActivityUserDetail-c424
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveUsageAccountCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveUsageAccountCounts
+      operationId: reports_getOneDriveUsageAccountCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveUsageAccountDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveUsageAccountDetail
+      operationId: reports_getOneDriveUsageAccountDetail-e827
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveUsageAccountDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveUsageAccountDetail
+      operationId: reports_getOneDriveUsageAccountDetail-dd7f
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveUsageFileCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveUsageFileCounts
+      operationId: reports_getOneDriveUsageFileCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getOneDriveUsageStorage(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getOneDriveUsageStorage
+      operationId: reports_getOneDriveUsageStorage
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointActivityFileCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointActivityFileCounts
+      operationId: reports_getSharePointActivityFileCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointActivityPages(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointActivityPages
+      operationId: reports_getSharePointActivityPages
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointActivityUserCounts
+      operationId: reports_getSharePointActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointActivityUserDetail
+      operationId: reports_getSharePointActivityUserDetail-f3be
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointActivityUserDetail
+      operationId: reports_getSharePointActivityUserDetail-b778
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsageDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsageDetail
+      operationId: reports_getSharePointSiteUsageDetail-d27a
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsageDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsageDetail
+      operationId: reports_getSharePointSiteUsageDetail-204b
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsageFileCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsageFileCounts
+      operationId: reports_getSharePointSiteUsageFileCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsagePages(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsagePages
+      operationId: reports_getSharePointSiteUsagePages
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsageSiteCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsageSiteCounts
+      operationId: reports_getSharePointSiteUsageSiteCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSharePointSiteUsageStorage(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSharePointSiteUsageStorage
+      operationId: reports_getSharePointSiteUsageStorage
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessActivityCounts
+      operationId: reports_getSkypeForBusinessActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessActivityUserCounts
+      operationId: reports_getSkypeForBusinessActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessActivityUserDetail
+      operationId: reports_getSkypeForBusinessActivityUserDetail-e4c9
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessActivityUserDetail
+      operationId: reports_getSkypeForBusinessActivityUserDetail-744e
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageDistributionUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
+      operationId: reports_getSkypeForBusinessDeviceUsageDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessDeviceUsageUserCounts
+      operationId: reports_getSkypeForBusinessDeviceUsageUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
+      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail-a692
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessDeviceUsageUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
+      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail-e753
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessOrganizerActivityCounts
+      operationId: reports_getSkypeForBusinessOrganizerActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityMinuteCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
+      operationId: reports_getSkypeForBusinessOrganizerActivityMinuteCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessOrganizerActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessOrganizerActivityUserCounts
+      operationId: reports_getSkypeForBusinessOrganizerActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessParticipantActivityCounts
+      operationId: reports_getSkypeForBusinessParticipantActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityMinuteCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessParticipantActivityMinuteCounts
+      operationId: reports_getSkypeForBusinessParticipantActivityMinuteCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessParticipantActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessParticipantActivityUserCounts
+      operationId: reports_getSkypeForBusinessParticipantActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessPeerToPeerActivityCounts
+      operationId: reports_getSkypeForBusinessPeerToPeerActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityMinuteCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
+      operationId: reports_getSkypeForBusinessPeerToPeerActivityMinuteCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getSkypeForBusinessPeerToPeerActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
+      operationId: reports_getSkypeForBusinessPeerToPeerActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageDistributionUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageDistributionUserCounts
+      operationId: reports_getTeamsDeviceUsageDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageUserCounts
+      operationId: reports_getTeamsDeviceUsageUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageUserDetail
+      operationId: reports_getTeamsDeviceUsageUserDetail-7148
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsDeviceUsageUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsDeviceUsageUserDetail
+      operationId: reports_getTeamsDeviceUsageUserDetail-7565
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityCounts
+      operationId: reports_getTeamsUserActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityUserCounts
+      operationId: reports_getTeamsUserActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityUserDetail
+      operationId: reports_getTeamsUserActivityUserDetail-a3f1
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityUserDetail
+      operationId: reports_getTeamsUserActivityUserDetail-eb13
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerActivityCounts
+      operationId: reports_getYammerActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerActivityUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerActivityUserCounts
+      operationId: reports_getYammerActivityUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerActivityUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerActivityUserDetail
+      operationId: reports_getYammerActivityUserDetail-ac30
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerActivityUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerActivityUserDetail
+      operationId: reports_getYammerActivityUserDetail-15a5
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerDeviceUsageDistributionUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerDeviceUsageDistributionUserCounts
+      operationId: reports_getYammerDeviceUsageDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerDeviceUsageUserCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerDeviceUsageUserCounts
+      operationId: reports_getYammerDeviceUsageUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerDeviceUsageUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerDeviceUsageUserDetail
+      operationId: reports_getYammerDeviceUsageUserDetail-d0ac
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerDeviceUsageUserDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerDeviceUsageUserDetail
+      operationId: reports_getYammerDeviceUsageUserDetail-cfad
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerGroupsActivityCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerGroupsActivityCounts
+      operationId: reports_getYammerGroupsActivityCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerGroupsActivityDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerGroupsActivityDetail
+      operationId: reports_getYammerGroupsActivityDetail-da9a
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerGroupsActivityDetail(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerGroupsActivityDetail
+      operationId: reports_getYammerGroupsActivityDetail-0d7d
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getYammerGroupsActivityGroupCounts(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getYammerGroupsActivityGroupCounts
+      operationId: reports_getYammerGroupsActivityGroupCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.managedDeviceEnrollmentFailureDetails():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function managedDeviceEnrollmentFailureDetails
+      operationId: reports_managedDeviceEnrollmentFailureDetails-027e
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.managedDeviceEnrollmentFailureDetails(skip={skip},top={top},filter={filter},skipToken={skipToken})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function managedDeviceEnrollmentFailureDetails
+      operationId: reports_managedDeviceEnrollmentFailureDetails-2b3d
+      parameters:
+        - name: skip
+          in: path
+          required: true
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+        - name: top
+          in: path
+          required: true
+          schema:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+        - name: filter
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+        - name: skipToken
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.managedDeviceEnrollmentTopFailures():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function managedDeviceEnrollmentTopFailures
+      operationId: reports_managedDeviceEnrollmentTopFailures-4669
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.managedDeviceEnrollmentTopFailures(period={period})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function managedDeviceEnrollmentTopFailures
+      operationId: reports_managedDeviceEnrollmentTopFailures-afd1
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+components:
+  schemas:
+    microsoft.graph.reportRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: reportRoot
+          type: object
+          description: The resource that represents an instance of History Reports.
+      example:
+        id: string (identifier)
+    microsoft.graph.report:
+      title: report
+      type: object
+      properties:
+        content:
+          type: string
+          description: Not yet documented
+          format: base64url
+          nullable: true
+      example:
+        content: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

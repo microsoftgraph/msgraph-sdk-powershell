@@ -1,0 +1,447 @@
+openapi: 3.0.1
+info:
+  title: Users.OutlookUser
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/users/{user-id}/outlook':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Get outlook from users
+      operationId: users_GetOutlook
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - masterCategories
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - masterCategories
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outlookUser'
+          links:
+            masterCategories:
+              operationId: user.outlook.GetMasterCategories
+              parameters:
+                user-id: $request.path.user-id
+                outlookCategory-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.outlookUser
+      summary: Update the navigation property outlook in users
+      operationId: users_UpdateOutlook
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.outlookUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/outlook/masterCategories':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Get masterCategories from users
+      operationId: users.outlook_ListMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - color
+                - color desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - color
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of outlookCategory
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - users.outlookUser
+      summary: Create new navigation property to masterCategories for users
+      operationId: users.outlook_CreateMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/outlook/masterCategories/{outlookCategory-id}':
+    get:
+      tags:
+        - users.outlookUser
+      summary: Get masterCategories from users
+      operationId: users.outlook_GetMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookCategory-id
+          in: path
+          description: 'key: outlookCategory-id of outlookCategory'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookCategory
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - color
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.outlookUser
+      summary: Update the navigation property masterCategories in users
+      operationId: users.outlook_UpdateMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookCategory-id
+          in: path
+          description: 'key: outlookCategory-id of outlookCategory'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookCategory
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.outlookUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: outlookUser
+          type: object
+          properties:
+            masterCategories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+              description: A list of categories defined for the user.
+      example:
+        id: string (identifier)
+        masterCategories:
+          - '@odata.type': microsoft.graph.outlookCategory
+    microsoft.graph.outlookCategory:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: outlookCategory
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: 'A unique name that identifies a category in the user''s mailbox. After a category is created, the name cannot be changed. Read-only.'
+              nullable: true
+            color:
+              $ref: '#/components/schemas/microsoft.graph.categoryColor'
+      example:
+        id: string (identifier)
+        displayName: string
+        color:
+          '@odata.type': microsoft.graph.categoryColor
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.categoryColor:
+      title: categoryColor
+      enum:
+        - preset0
+        - preset1
+        - preset2
+        - preset3
+        - preset4
+        - preset5
+        - preset6
+        - preset7
+        - preset8
+        - preset9
+        - preset10
+        - preset11
+        - preset12
+        - preset13
+        - preset14
+        - preset15
+        - preset16
+        - preset17
+        - preset18
+        - preset19
+        - preset20
+        - preset21
+        - preset22
+        - preset23
+        - preset24
+        - none
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

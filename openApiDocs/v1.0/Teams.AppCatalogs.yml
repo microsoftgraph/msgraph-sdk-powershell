@@ -1,0 +1,629 @@
+openapi: 3.0.1
+info:
+  title: Teams.AppCatalogs
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /appCatalogs:
+    get:
+      tags:
+        - appCatalogs.appCatalogs
+      summary: Get appCatalogs
+      operationId: appCatalogs.appCatalogs_GetAppCatalogs
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApps
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApps
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appCatalogs'
+          links:
+            teamsApps:
+              operationId: appCatalogs.GetTeamsApps
+              parameters:
+                teamsApp-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - appCatalogs.appCatalogs
+      summary: Update appCatalogs
+      operationId: appCatalogs.appCatalogs_UpdateAppCatalogs
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appCatalogs'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /appCatalogs/teamsApps:
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get teamsApps from appCatalogs
+      operationId: appCatalogs_ListTeamsApps
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - externalId
+                - externalId desc
+                - displayName
+                - displayName desc
+                - distributionMethod
+                - distributionMethod desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsApp
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Create new navigation property to teamsApps for appCatalogs
+      operationId: appCatalogs_CreateTeamsApps
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get teamsApps from appCatalogs
+      operationId: appCatalogs_GetTeamsApps
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: appCatalogs.teamsApps.GetAppDefinitions
+              parameters:
+                teamsApp-id: $request.path.teamsApp-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property teamsApps in appCatalogs
+      operationId: appCatalogs_UpdateTeamsApps
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get appDefinitions from appCatalogs
+      operationId: appCatalogs.teamsApps_ListAppDefinitions
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - teamsAppId
+                - teamsAppId desc
+                - displayName
+                - displayName desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsAppId
+                - displayName
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsAppDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Create new navigation property to appDefinitions for appCatalogs
+      operationId: appCatalogs.teamsApps_CreateAppDefinitions
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}':
+    get:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Get appDefinitions from appCatalogs
+      operationId: appCatalogs.teamsApps_GetAppDefinitions
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: teamsAppDefinition-id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsAppId
+                - displayName
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Update the navigation property appDefinitions in appCatalogs
+      operationId: appCatalogs.teamsApps_UpdateAppDefinitions
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: teamsApp-id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: teamsAppDefinition-id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.appCatalogs:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appCatalogs
+          type: object
+          properties:
+            teamsApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+      example:
+        id: string (identifier)
+        teamsApps:
+          - '@odata.type': microsoft.graph.teamsApp
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+      example:
+        id: string (identifier)
+        externalId: string
+        displayName: string
+        distributionMethod:
+          '@odata.type': microsoft.graph.teamsAppDistributionMethod
+        appDefinitions:
+          - '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            teamsAppId:
+              type: string
+              description: The id from the Teams App manifest.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+      example:
+        id: string (identifier)
+        teamsAppId: string
+        displayName: string
+        version: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

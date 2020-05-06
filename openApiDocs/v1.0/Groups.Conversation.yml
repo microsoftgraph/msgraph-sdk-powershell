@@ -1,0 +1,2565 @@
+openapi: 3.0.1
+info:
+  title: Groups.Conversation
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/groups/{group-id}/conversations':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get conversations from groups
+      operationId: groups_ListConversations
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - topic
+                - topic desc
+                - hasAttachments
+                - hasAttachments desc
+                - lastDeliveredDateTime
+                - lastDeliveredDateTime desc
+                - uniqueSenders
+                - uniqueSenders desc
+                - preview
+                - preview desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - hasAttachments
+                - lastDeliveredDateTime
+                - uniqueSenders
+                - preview
+                - threads
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - threads
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of conversation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.conversation'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to conversations for groups
+      operationId: groups_CreateConversations
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get conversations from groups
+      operationId: groups_GetConversations
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - topic
+                - hasAttachments
+                - lastDeliveredDateTime
+                - uniqueSenders
+                - preview
+                - threads
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - threads
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversation'
+          links:
+            threads:
+              operationId: group.conversations.GetThreads
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property conversations in groups
+      operationId: groups_UpdateConversations
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get threads from groups
+      operationId: groups.conversations_ListThreads
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - toRecipients
+                - toRecipients desc
+                - topic
+                - topic desc
+                - hasAttachments
+                - hasAttachments desc
+                - lastDeliveredDateTime
+                - lastDeliveredDateTime desc
+                - uniqueSenders
+                - uniqueSenders desc
+                - ccRecipients
+                - ccRecipients desc
+                - preview
+                - preview desc
+                - isLocked
+                - isLocked desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - toRecipients
+                - topic
+                - hasAttachments
+                - lastDeliveredDateTime
+                - uniqueSenders
+                - ccRecipients
+                - preview
+                - isLocked
+                - posts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - posts
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of conversationThread
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.conversationThread'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to threads for groups
+      operationId: groups.conversations_CreateThreads
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationThread'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationThread'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get threads from groups
+      operationId: groups.conversations_GetThreads
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - toRecipients
+                - topic
+                - hasAttachments
+                - lastDeliveredDateTime
+                - uniqueSenders
+                - ccRecipients
+                - preview
+                - isLocked
+                - posts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - posts
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conversationThread'
+          links:
+            posts:
+              operationId: conversation.threads.GetPosts
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property threads in groups
+      operationId: groups.conversations_UpdateThreads
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conversationThread'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get posts from groups
+      operationId: groups.conversations.threads_ListPosts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - changeKey
+                - changeKey desc
+                - categories
+                - categories desc
+                - body
+                - body desc
+                - receivedDateTime
+                - receivedDateTime desc
+                - hasAttachments
+                - hasAttachments desc
+                - from
+                - from desc
+                - sender
+                - sender desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - newParticipants
+                - newParticipants desc
+                - conversationId
+                - conversationId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - changeKey
+                - categories
+                - body
+                - receivedDateTime
+                - hasAttachments
+                - from
+                - sender
+                - conversationThreadId
+                - newParticipants
+                - conversationId
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of post
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.post'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to posts for groups
+      operationId: groups.conversations.threads_CreatePosts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.post'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.post'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get posts from groups
+      operationId: groups.conversations.threads_GetPosts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - changeKey
+                - categories
+                - body
+                - receivedDateTime
+                - hasAttachments
+                - from
+                - sender
+                - conversationThreadId
+                - newParticipants
+                - conversationId
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.post'
+          links:
+            inReplyTo:
+              operationId: conversationThread.posts.GetInReplyTo
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: conversationThread.posts.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: conversationThread.posts.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            extensions:
+              operationId: conversationThread.posts.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                extension-id: $response.body#/id
+            attachments:
+              operationId: conversationThread.posts.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                attachment-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property posts in groups
+      operationId: groups.conversations.threads_UpdatePosts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.post'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get attachments from groups
+      operationId: groups.conversations.threads.posts_ListAttachments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - name
+                - name desc
+                - contentType
+                - contentType desc
+                - size
+                - size desc
+                - isInline
+                - isInline desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - lastModifiedDateTime
+                - name
+                - contentType
+                - size
+                - isInline
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of attachment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attachment'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to attachments for groups
+      operationId: groups.conversations.threads.posts_CreateAttachments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attachment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/{attachment-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get attachments from groups
+      operationId: groups.conversations.threads.posts_GetAttachments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: attachment-id
+          in: path
+          description: 'key: attachment-id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - lastModifiedDateTime
+                - name
+                - contentType
+                - size
+                - isInline
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property attachments in groups
+      operationId: groups.conversations.threads.posts_UpdateAttachments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: attachment-id
+          in: path
+          description: 'key: attachment-id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attachment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/extensions':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get extensions from groups
+      operationId: groups.conversations.threads.posts_ListExtensions
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to extensions for groups
+      operationId: groups.conversations.threads.posts_CreateExtensions
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get extensions from groups
+      operationId: groups.conversations.threads.posts_GetExtensions
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: extension-id
+          in: path
+          description: 'key: extension-id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property extensions in groups
+      operationId: groups.conversations.threads.posts_UpdateExtensions
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: extension-id
+          in: path
+          description: 'key: extension-id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get inReplyTo from groups
+      operationId: groups.conversations.threads.posts_GetInReplyTo
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - changeKey
+                - categories
+                - body
+                - receivedDateTime
+                - hasAttachments
+                - from
+                - sender
+                - conversationThreadId
+                - newParticipants
+                - conversationId
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inReplyTo
+                - singleValueExtendedProperties
+                - multiValueExtendedProperties
+                - extensions
+                - attachments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.post'
+          links:
+            inReplyTo:
+              operationId: post.inReplyTo.GetInReplyTo
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $response.body#/id
+            singleValueExtendedProperties:
+              operationId: post.inReplyTo.GetSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                singleValueLegacyExtendedProperty-id: $response.body#/id
+            multiValueExtendedProperties:
+              operationId: post.inReplyTo.GetMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                multiValueLegacyExtendedProperty-id: $response.body#/id
+            extensions:
+              operationId: post.inReplyTo.GetExtensions
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                extension-id: $response.body#/id
+            attachments:
+              operationId: post.inReplyTo.GetAttachments
+              parameters:
+                group-id: $request.path.group-id
+                conversation-id: $request.path.conversation-id
+                conversationThread-id: $request.path.conversationThread-id
+                post-id: $request.path.post-id
+                attachment-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property inReplyTo in groups
+      operationId: groups.conversations.threads.posts_UpdateInReplyTo
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.post'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get multiValueExtendedProperties from groups
+      operationId: groups.conversations.threads.posts_ListMultiValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of multiValueLegacyExtendedProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to multiValueExtendedProperties for groups
+      operationId: groups.conversations.threads.posts_CreateMultiValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get multiValueExtendedProperties from groups
+      operationId: groups.conversations.threads.posts_GetMultiValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property multiValueExtendedProperties in groups
+      operationId: groups.conversations.threads.posts_UpdateMultiValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get singleValueExtendedProperties from groups
+      operationId: groups.conversations.threads.posts_ListSingleValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of singleValueLegacyExtendedProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - groups.conversation
+      summary: Create new navigation property to singleValueExtendedProperties for groups
+      operationId: groups.conversations.threads.posts_CreateSingleValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/conversations/{conversation-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - groups.conversation
+      summary: Get singleValueExtendedProperties from groups
+      operationId: groups.conversations.threads.posts_GetSingleValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.conversation
+      summary: Update the navigation property singleValueExtendedProperties in groups
+      operationId: groups.conversations.threads.posts_UpdateSingleValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversation-id
+          in: path
+          description: 'key: conversation-id of conversation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversation
+        - name: conversationThread-id
+          in: path
+          description: 'key: conversationThread-id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: post-id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.conversation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conversation
+          type: object
+          properties:
+            topic:
+              type: string
+              description: 'The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether any of the posts within this Conversation has at least one attachment.
+            lastDeliveredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            uniqueSenders:
+              type: array
+              items:
+                type: string
+              description: All the users that sent a message to this Conversation.
+            preview:
+              type: string
+              description: A short summary from the body of the latest post in this converstaion.
+            threads:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationThread'
+              description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+      example:
+        id: string (identifier)
+        topic: string
+        hasAttachments: true
+        lastDeliveredDateTime: string (timestamp)
+        uniqueSenders:
+          - string
+        preview: string
+        threads:
+          - '@odata.type': microsoft.graph.conversationThread
+    microsoft.graph.conversationThread:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conversationThread
+          type: object
+          properties:
+            toRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the thread.'
+            topic:
+              type: string
+              description: 'The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether any of the posts within this thread has at least one attachment.
+            lastDeliveredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            uniqueSenders:
+              type: array
+              items:
+                type: string
+              description: All the users that sent a message to this thread.
+            ccRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Cc: recipients for the thread.'
+            preview:
+              type: string
+              description: A short summary from the body of the latest post in this converstaion.
+            isLocked:
+              type: boolean
+              description: Indicates if the thread is locked.
+            posts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.post'
+              description: Read-only. Nullable.
+      example:
+        id: string (identifier)
+        toRecipients:
+          - '@odata.type': microsoft.graph.recipient
+        topic: string
+        hasAttachments: true
+        lastDeliveredDateTime: string (timestamp)
+        uniqueSenders:
+          - string
+        ccRecipients:
+          - '@odata.type': microsoft.graph.recipient
+        preview: string
+        isLocked: true
+        posts:
+          - '@odata.type': microsoft.graph.post
+    microsoft.graph.post:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: post
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            receivedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the post has at least one attachment. This is a default property.
+            from:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            sender:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            conversationThreadId:
+              type: string
+              description: Unique ID of the conversation thread. Read-only.
+              nullable: true
+            newParticipants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: Conversation participants that were added to the thread as part of this post.
+            conversationId:
+              type: string
+              description: Unique ID of the conversation. Read-only.
+              nullable: true
+            inReplyTo:
+              $ref: '#/components/schemas/microsoft.graph.post'
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the post. Read-only. Nullable.
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: Read-only. Nullable.
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        changeKey: string
+        categories:
+          - string
+        body:
+          '@odata.type': microsoft.graph.itemBody
+        receivedDateTime: string (timestamp)
+        hasAttachments: true
+        from:
+          '@odata.type': microsoft.graph.recipient
+        sender:
+          '@odata.type': microsoft.graph.recipient
+        conversationThreadId: string
+        newParticipants:
+          - '@odata.type': microsoft.graph.recipient
+        conversationId: string
+        inReplyTo:
+          '@odata.type': microsoft.graph.post
+        singleValueExtendedProperties:
+          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
+        multiValueExtendedProperties:
+          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+        extensions:
+          - '@odata.type': microsoft.graph.extension
+        attachments:
+          - '@odata.type': microsoft.graph.attachment
+    microsoft.graph.attachment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attachment
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: The attachment's file name.
+              nullable: true
+            contentType:
+              type: string
+              description: The MIME type.
+              nullable: true
+            size:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The length of the attachment in bytes.
+              format: int32
+            isInline:
+              type: boolean
+              description: 'true if the attachment is an inline attachment; otherwise, false.'
+      example:
+        id: string (identifier)
+        lastModifiedDateTime: string (timestamp)
+        name: string
+        contentType: string
+        size: integer
+        isInline: true
+    microsoft.graph.extension:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: extension
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.multiValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: multiValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A collection of property values.
+      example:
+        id: string (identifier)
+        value:
+          - string
+    microsoft.graph.singleValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              description: A property value.
+              nullable: true
+      example:
+        id: string (identifier)
+        value: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      example:
+        emailAddress:
+          '@odata.type': microsoft.graph.emailAddress
+    microsoft.graph.outlookItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: outlookItem
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+              nullable: true
+            changeKey:
+              type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
+              nullable: true
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The categories associated with the item
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        changeKey: string
+        categories:
+          - string
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+      example:
+        contentType:
+          '@odata.type': microsoft.graph.bodyType
+        content: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.emailAddress:
+      title: emailAddress
+      type: object
+      properties:
+        name:
+          type: string
+          description: The display name of the person or entity.
+          nullable: true
+        address:
+          type: string
+          description: The email address of the person or entity.
+          nullable: true
+      example:
+        name: string
+        address: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

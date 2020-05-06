@@ -1,0 +1,2304 @@
+openapi: 3.0.1
+info:
+  title: Identity.Application
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /applications:
+    get:
+      tags:
+        - applications.application
+      summary: Get entities from applications
+      operationId: applications.application_ListApplication
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - addIns
+                - addIns desc
+                - api
+                - api desc
+                - appId
+                - appId desc
+                - applicationTemplateId
+                - applicationTemplateId desc
+                - appRoles
+                - appRoles desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
+                - identifierUris
+                - identifierUris desc
+                - createdDateTime
+                - createdDateTime desc
+                - publicClient
+                - publicClient desc
+                - displayName
+                - displayName desc
+                - groupMembershipClaims
+                - groupMembershipClaims desc
+                - info
+                - info desc
+                - isDeviceOnlyAuthSupported
+                - isDeviceOnlyAuthSupported desc
+                - keyCredentials
+                - keyCredentials desc
+                - logo
+                - logo desc
+                - oauth2RequirePostResponse
+                - oauth2RequirePostResponse desc
+                - optionalClaims
+                - optionalClaims desc
+                - parentalControlSettings
+                - parentalControlSettings desc
+                - passwordCredentials
+                - passwordCredentials desc
+                - publisherDomain
+                - publisherDomain desc
+                - requiredResourceAccess
+                - requiredResourceAccess desc
+                - signInAudience
+                - signInAudience desc
+                - tags
+                - tags desc
+                - tokenEncryptionKeyId
+                - tokenEncryptionKeyId desc
+                - web
+                - web desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - addIns
+                - api
+                - appId
+                - applicationTemplateId
+                - appRoles
+                - isFallbackPublicClient
+                - identifierUris
+                - createdDateTime
+                - publicClient
+                - displayName
+                - groupMembershipClaims
+                - info
+                - isDeviceOnlyAuthSupported
+                - keyCredentials
+                - logo
+                - oauth2RequirePostResponse
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publisherDomain
+                - requiredResourceAccess
+                - signInAudience
+                - tags
+                - tokenEncryptionKeyId
+                - web
+                - extensionProperties
+                - createdOnBehalfOf
+                - owners
+                - tokenLifetimePolicies
+                - tokenIssuancePolicies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensionProperties
+                - createdOnBehalfOf
+                - owners
+                - tokenLifetimePolicies
+                - tokenIssuancePolicies
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of application
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - applications.application
+      summary: Add new entity to applications
+      operationId: applications.application_CreateApplication
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.application'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}':
+    get:
+      tags:
+        - applications.application
+      summary: Get entity from applications by key
+      operationId: applications.application_GetApplication
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - addIns
+                - api
+                - appId
+                - applicationTemplateId
+                - appRoles
+                - isFallbackPublicClient
+                - identifierUris
+                - createdDateTime
+                - publicClient
+                - displayName
+                - groupMembershipClaims
+                - info
+                - isDeviceOnlyAuthSupported
+                - keyCredentials
+                - logo
+                - oauth2RequirePostResponse
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publisherDomain
+                - requiredResourceAccess
+                - signInAudience
+                - tags
+                - tokenEncryptionKeyId
+                - web
+                - extensionProperties
+                - createdOnBehalfOf
+                - owners
+                - tokenLifetimePolicies
+                - tokenIssuancePolicies
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensionProperties
+                - createdOnBehalfOf
+                - owners
+                - tokenLifetimePolicies
+                - tokenIssuancePolicies
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+          links:
+            extensionProperties:
+              operationId: applications.GetExtensionProperties
+              parameters:
+                application-id: $request.path.application-id
+                extensionProperty-id: $response.body#/id
+            createdOnBehalfOf:
+              operationId: applications.GetCreatedOnBehalfOf
+              parameters:
+                application-id: $request.path.application-id
+                directoryObject-id: $response.body#/id
+            owners:
+              operationId: applications.GetOwners
+              parameters:
+                application-id: $request.path.application-id
+                directoryObject-id: $response.body#/id
+            tokenLifetimePolicies:
+              operationId: applications.GetTokenLifetimePolicies
+              parameters:
+                application-id: $request.path.application-id
+                tokenLifetimePolicy-id: $response.body#/id
+            tokenIssuancePolicies:
+              operationId: applications.GetTokenIssuancePolicies
+              parameters:
+                application-id: $request.path.application-id
+                tokenIssuancePolicy-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.application
+      summary: Update entity in applications
+      operationId: applications.application_UpdateApplication
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.application'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.application
+      summary: Delete entity from applications
+      operationId: applications.application_DeleteApplication
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/createdOnBehalfOf':
+    get:
+      tags:
+        - applications.directoryObject
+      summary: Get createdOnBehalfOf from applications
+      operationId: applications_GetCreatedOnBehalfOf
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/extensionProperties':
+    get:
+      tags:
+        - applications.extensionProperty
+      summary: Get extensionProperties from applications
+      operationId: applications_ListExtensionProperties
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - appDisplayName
+                - appDisplayName desc
+                - name
+                - name desc
+                - dataType
+                - dataType desc
+                - isSyncedFromOnPremises
+                - isSyncedFromOnPremises desc
+                - targetObjects
+                - targetObjects desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - appDisplayName
+                - name
+                - dataType
+                - isSyncedFromOnPremises
+                - targetObjects
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extensionProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - applications.extensionProperty
+      summary: Create new navigation property to extensionProperties for applications
+      operationId: applications_CreateExtensionProperties
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/extensionProperties/{extensionProperty-id}':
+    get:
+      tags:
+        - applications.extensionProperty
+      summary: Get extensionProperties from applications
+      operationId: applications_GetExtensionProperties
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: extensionProperty-id
+          in: path
+          description: 'key: extensionProperty-id of extensionProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extensionProperty
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - appDisplayName
+                - name
+                - dataType
+                - isSyncedFromOnPremises
+                - targetObjects
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - applications.extensionProperty
+      summary: Update the navigation property extensionProperties in applications
+      operationId: applications_UpdateExtensionProperties
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: extensionProperty-id
+          in: path
+          description: 'key: extensionProperty-id of extensionProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extensionProperty
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/microsoft.graph.addKey':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action addKey
+      operationId: applications_addKey
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyCredential:
+                  $ref: '#/components/schemas/microsoft.graph.keyCredential'
+                passwordCredential:
+                  $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+                proof:
+                  type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.keyCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.addPassword':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action addPassword
+      operationId: applications_addPassword
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                passwordCredential:
+                  $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: applications_checkMemberGroups
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: applications_checkMemberObjects
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action getMemberGroups
+      operationId: applications_getMemberGroups
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action getMemberObjects
+      operationId: applications_getMemberObjects
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.removeKey':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action removeKey
+      operationId: applications_removeKey
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                proof:
+                  type: string
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.removePassword':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action removePassword
+      operationId: applications_removePassword
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action restore
+      operationId: applications_restore
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/applications/{application-id}/owners':
+    get:
+      tags:
+        - applications.directoryObject
+      summary: Get owners from applications
+      operationId: applications_ListOwners
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/owners/{directoryObject-id}':
+    get:
+      tags:
+        - applications.directoryObject
+      summary: Get owners from applications
+      operationId: applications_GetOwners
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: directoryObject-id
+          in: path
+          description: 'key: directoryObject-id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/tokenIssuancePolicies':
+    get:
+      tags:
+        - applications.tokenIssuancePolicy
+      summary: Get tokenIssuancePolicies from applications
+      operationId: applications_ListTokenIssuancePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of tokenIssuancePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
+    get:
+      tags:
+        - applications.tokenIssuancePolicy
+      summary: Get tokenIssuancePolicies from applications
+      operationId: applications_GetTokenIssuancePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: tokenIssuancePolicy-id
+          in: path
+          description: 'key: tokenIssuancePolicy-id of tokenIssuancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tokenIssuancePolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/tokenLifetimePolicies':
+    get:
+      tags:
+        - applications.tokenLifetimePolicy
+      summary: Get tokenLifetimePolicies from applications
+      operationId: applications_ListTokenLifetimePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of tokenLifetimePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        default:
+          $ref: '#/components/responses/error'
+  '/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
+    get:
+      tags:
+        - applications.tokenLifetimePolicy
+      summary: Get tokenLifetimePolicies from applications
+      operationId: applications_GetTokenLifetimePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: tokenLifetimePolicy-id
+          in: path
+          description: 'key: tokenLifetimePolicy-id of tokenLifetimePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tokenLifetimePolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+        default:
+          $ref: '#/components/responses/error'
+  /applications/microsoft.graph.delta():
+    get:
+      tags:
+        - applications.Functions
+      summary: Invoke function delta
+      operationId: applications_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /applications/microsoft.graph.getByIds:
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action getByIds
+      operationId: applications_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /applications/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - applications.Actions
+      summary: Invoke action validateProperties
+      operationId: applications_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    microsoft.graph.application:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: application
+          type: object
+          properties:
+            addIns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.addIn'
+              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.'
+            api:
+              $ref: '#/components/schemas/microsoft.graph.apiApplication'
+            appId:
+              type: string
+              description: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
+              nullable: true
+            applicationTemplateId:
+              type: string
+              nullable: true
+            appRoles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appRole'
+              description: 'The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.'
+            isFallbackPublicClient:
+              type: boolean
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
+              nullable: true
+            identifierUris:
+              type: array
+              items:
+                type: string
+              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the application was registered. Read-only.
+              format: date-time
+              nullable: true
+            publicClient:
+              $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
+            displayName:
+              type: string
+              description: The display name for the application.
+              nullable: true
+            groupMembershipClaims:
+              type: string
+              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of'
+              nullable: true
+            info:
+              $ref: '#/components/schemas/microsoft.graph.informationalUrl'
+            isDeviceOnlyAuthSupported:
+              type: boolean
+              nullable: true
+            keyCredentials:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyCredential'
+              description: The collection of key credentials associated with the application Not nullable.
+            logo:
+              type: string
+              description: The main logo for the application. Not nullable.
+              format: base64url
+            oauth2RequirePostResponse:
+              type: boolean
+            optionalClaims:
+              $ref: '#/components/schemas/microsoft.graph.optionalClaims'
+            parentalControlSettings:
+              $ref: '#/components/schemas/microsoft.graph.parentalControlSettings'
+            passwordCredentials:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+              description: The collection of password credentials associated with the application. Not nullable.
+            publisherDomain:
+              type: string
+              description: The verified publisher domain for the application. Read-only.
+              nullable: true
+            requiredResourceAccess:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
+              description: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
+            signInAudience:
+              type: string
+              description: 'Specifies what Microsoft accounts are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (i.e. single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (i.e. multi-tenant) AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant'
+              nullable: true
+            tags:
+              type: array
+              items:
+                type: string
+              description: Custom strings that can be used to categorize and identify the application. Not nullable.
+            tokenEncryptionKeyId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
+              format: uuid
+              nullable: true
+            web:
+              $ref: '#/components/schemas/microsoft.graph.webApplication'
+            extensionProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+              description: Read-only. Nullable.
+            createdOnBehalfOf:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            owners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
+            tokenLifetimePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+            tokenIssuancePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        addIns:
+          - '@odata.type': microsoft.graph.addIn
+        api:
+          '@odata.type': microsoft.graph.apiApplication
+        appId: string
+        applicationTemplateId: string
+        appRoles:
+          - '@odata.type': microsoft.graph.appRole
+        isFallbackPublicClient: true
+        identifierUris:
+          - string
+        createdDateTime: string (timestamp)
+        publicClient:
+          '@odata.type': microsoft.graph.publicClientApplication
+        displayName: string
+        groupMembershipClaims: string
+        info:
+          '@odata.type': microsoft.graph.informationalUrl
+        isDeviceOnlyAuthSupported: true
+        keyCredentials:
+          - '@odata.type': microsoft.graph.keyCredential
+        logo: string
+        oauth2RequirePostResponse: true
+        optionalClaims:
+          '@odata.type': microsoft.graph.optionalClaims
+        parentalControlSettings:
+          '@odata.type': microsoft.graph.parentalControlSettings
+        passwordCredentials:
+          - '@odata.type': microsoft.graph.passwordCredential
+        publisherDomain: string
+        requiredResourceAccess:
+          - '@odata.type': microsoft.graph.requiredResourceAccess
+        signInAudience: string
+        tags:
+          - string
+        tokenEncryptionKeyId: string
+        web:
+          '@odata.type': microsoft.graph.webApplication
+        extensionProperties:
+          - '@odata.type': microsoft.graph.extensionProperty
+        createdOnBehalfOf:
+          '@odata.type': microsoft.graph.directoryObject
+        owners:
+          - '@odata.type': microsoft.graph.directoryObject
+        tokenLifetimePolicies:
+          - '@odata.type': microsoft.graph.tokenLifetimePolicy
+        tokenIssuancePolicies:
+          - '@odata.type': microsoft.graph.tokenIssuancePolicy
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
+            dataType:
+              type: string
+              description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              nullable: true
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        appDisplayName: string
+        name: string
+        dataType: string
+        isSyncedFromOnPremises: true
+        targetObjects:
+          - string
+    microsoft.graph.keyCredential:
+      title: keyCredential
+      type: object
+      properties:
+        customKeyIdentifier:
+          type: string
+          description: Custom key identifier
+          format: base64url
+          nullable: true
+        displayName:
+          type: string
+          description: Friendly name for the key. Optional.
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        keyId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: The unique identifier (GUID) for the key.
+          format: uuid
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        type:
+          type: string
+          description: 'The type of key credential; for example, ''Symmetric''.'
+          nullable: true
+        usage:
+          type: string
+          description: 'A string that describes the purpose for which the key can be used; for example, ''Verify''.'
+          nullable: true
+        key:
+          type: string
+          description: Value for the key credential. Should be a base 64 encoded value.
+          format: base64url
+          nullable: true
+      example:
+        customKeyIdentifier: string
+        displayName: string
+        endDateTime: string (timestamp)
+        keyId: string
+        startDateTime: string (timestamp)
+        type: string
+        usage: string
+        key: string
+    microsoft.graph.passwordCredential:
+      title: passwordCredential
+      type: object
+      properties:
+        customKeyIdentifier:
+          type: string
+          description: Do not use.
+          format: base64url
+          nullable: true
+        displayName:
+          type: string
+          description: Friendly name for the password. Optional.
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Optional.'
+          format: date-time
+          nullable: true
+        keyId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: The unique identifier for the password.
+          format: uuid
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Optional.'
+          format: date-time
+          nullable: true
+        secretText:
+          type: string
+          description: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+          nullable: true
+        hint:
+          type: string
+          description: Contains the first three characters of the password. Read-only.
+          nullable: true
+      example:
+        customKeyIdentifier: string
+        displayName: string
+        endDateTime: string (timestamp)
+        keyId: string
+        startDateTime: string (timestamp)
+        secretText: string
+        hint: string
+    microsoft.graph.tokenIssuancePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenIssuancePolicy
+          type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        description: string
+        displayName: string
+        definition:
+          - string
+        isOrganizationDefault: true
+        appliesTo:
+          - '@odata.type': microsoft.graph.directoryObject
+    microsoft.graph.tokenLifetimePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenLifetimePolicy
+          type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        description: string
+        displayName: string
+        definition:
+          - string
+        isOrganizationDefault: true
+        appliesTo:
+          - '@odata.type': microsoft.graph.directoryObject
+    microsoft.graph.addIn:
+      title: addIn
+      type: object
+      properties:
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          format: uuid
+          nullable: true
+        type:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+      example:
+        id: string
+        type: string
+        properties:
+          - '@odata.type': microsoft.graph.keyValue
+    microsoft.graph.apiApplication:
+      title: apiApplication
+      type: object
+      properties:
+        acceptMappedClaims:
+          type: boolean
+          description: 'When true, allows an application to use claims mapping without specifying a custom signing key.'
+          nullable: true
+        knownClientApplications:
+          type: array
+          items:
+            pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+            type: string
+            format: uuid
+            nullable: true
+          description: 'Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.'
+        preAuthorizedApplications:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.preAuthorizedApplication'
+          description: 'Lists the client applications that are pre-authorized with the specified delegated permissions to access this application''s APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.'
+        requestedAccessTokenVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          format: int32
+          nullable: true
+        oauth2PermissionScopes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionScope'
+          description: The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.
+      example:
+        acceptMappedClaims: true
+        knownClientApplications:
+          - string
+        preAuthorizedApplications:
+          - '@odata.type': microsoft.graph.preAuthorizedApplication
+        requestedAccessTokenVersion: integer
+        oauth2PermissionScopes:
+          - '@odata.type': microsoft.graph.permissionScope
+    microsoft.graph.appRole:
+      title: appRole
+      type: object
+      properties:
+        allowedMemberTypes:
+          type: array
+          items:
+            type: string
+          description: 'Specifies whether this app role definition can be assigned to users and groups by setting to ''User'', or to other applications (that are accessing this application in daemon service scenarios) by setting to ''Application'', or to both.'
+        description:
+          type: string
+          description: Permission help text that appears in the admin app assignment and consent experiences.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          nullable: true
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.'
+          format: uuid
+        isEnabled:
+          type: boolean
+          description: 'When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.'
+        origin:
+          type: string
+          description: Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
+          nullable: true
+        value:
+          type: string
+          description: 'Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
+          nullable: true
+      example:
+        allowedMemberTypes:
+          - string
+        description: string
+        displayName: string
+        id: string
+        isEnabled: true
+        origin: string
+        value: string
+    microsoft.graph.publicClientApplication:
+      title: publicClientApplication
+      type: object
+      properties:
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+      example:
+        redirectUris:
+          - string
+    microsoft.graph.informationalUrl:
+      title: informationalUrl
+      type: object
+      properties:
+        logoUrl:
+          type: string
+          description: 'CDN URL to the application''s logo, Read-only.'
+          nullable: true
+        marketingUrl:
+          type: string
+          description: 'Link to the application''s marketing page. For example, https://www.contoso.com/app/marketing'
+          nullable: true
+        privacyStatementUrl:
+          type: string
+          description: 'Link to the application''s privacy statement. For example, https://www.contoso.com/app/privacy'
+          nullable: true
+        supportUrl:
+          type: string
+          description: 'Link to the application''s support page. For example, https://www.contoso.com/app/support'
+          nullable: true
+        termsOfServiceUrl:
+          type: string
+          description: 'Link to the application''s terms of service statement. For example, https://www.contoso.com/app/termsofservice'
+          nullable: true
+      example:
+        logoUrl: string
+        marketingUrl: string
+        privacyStatementUrl: string
+        supportUrl: string
+        termsOfServiceUrl: string
+    microsoft.graph.optionalClaims:
+      title: optionalClaims
+      type: object
+      properties:
+        idToken:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.optionalClaim'
+          description: The optional claims returned in the JWT ID token.
+        accessToken:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.optionalClaim'
+          description: The optional claims returned in the JWT access token.
+        saml2Token:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.optionalClaim'
+          description: The optional claims returned in the SAML token.
+      example:
+        idToken:
+          - '@odata.type': microsoft.graph.optionalClaim
+        accessToken:
+          - '@odata.type': microsoft.graph.optionalClaim
+        saml2Token:
+          - '@odata.type': microsoft.graph.optionalClaim
+    microsoft.graph.parentalControlSettings:
+      title: parentalControlSettings
+      type: object
+      properties:
+        countriesBlockedForMinors:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
+        legalAgeGroupRule:
+          type: string
+          description: 'Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.'
+          nullable: true
+      example:
+        countriesBlockedForMinors:
+          - string
+        legalAgeGroupRule: string
+    microsoft.graph.requiredResourceAccess:
+      title: requiredResourceAccess
+      type: object
+      properties:
+        resourceAppId:
+          type: string
+          description: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
+        resourceAccess:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.resourceAccess'
+          description: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
+      example:
+        resourceAppId: string
+        resourceAccess:
+          - '@odata.type': microsoft.graph.resourceAccess
+    microsoft.graph.webApplication:
+      title: webApplication
+      type: object
+      properties:
+        homePageUrl:
+          type: string
+          description: Home page or landing page of the application.
+          nullable: true
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+        logoutUrl:
+          type: string
+          description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.'
+          nullable: true
+        implicitGrantSettings:
+          $ref: '#/components/schemas/microsoft.graph.implicitGrantSettings'
+      example:
+        homePageUrl: string
+        redirectUris:
+          - string
+        logoutUrl: string
+        implicitGrantSettings:
+          '@odata.type': microsoft.graph.implicitGrantSettings
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.stsPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: stsPolicy
+          type: object
+          properties:
+            definition:
+              type: array
+              items:
+                type: string
+              description: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
+            isOrganizationDefault:
+              type: boolean
+              description: 'If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.'
+              nullable: true
+            appliesTo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        description: string
+        displayName: string
+        definition:
+          - string
+        isOrganizationDefault: true
+        appliesTo:
+          - '@odata.type': microsoft.graph.directoryObject
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.keyValue:
+      title: keyValue
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key for the key-value pair.
+          nullable: true
+        value:
+          type: string
+          description: Value for the key-value pair.
+          nullable: true
+      example:
+        key: string
+        value: string
+    microsoft.graph.preAuthorizedApplication:
+      title: preAuthorizedApplication
+      type: object
+      properties:
+        appId:
+          type: string
+          description: The unique identifier for the application.
+          nullable: true
+        delegatedPermissionIds:
+          type: array
+          items:
+            type: string
+          description: The unique identifier for the oauth2PermissionScopes the application requires.
+      example:
+        appId: string
+        delegatedPermissionIds:
+          - string
+    microsoft.graph.permissionScope:
+      title: permissionScope
+      type: object
+      properties:
+        adminConsentDescription:
+          type: string
+          description: Permission help text that appears in the admin consent and app assignment experiences.
+          nullable: true
+        adminConsentDisplayName:
+          type: string
+          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          nullable: true
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: Unique scope permission identifier inside the oauth2Permissions collection.
+          format: uuid
+        isEnabled:
+          type: boolean
+          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.'
+        origin:
+          type: string
+          description: For internal use.
+          nullable: true
+        type:
+          type: string
+          description: 'Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.'
+          nullable: true
+        userConsentDescription:
+          type: string
+          description: Permission help text that appears in the end-user consent experience.
+          nullable: true
+        userConsentDisplayName:
+          type: string
+          description: Display name for the permission that appears in the end-user consent experience.
+          nullable: true
+        value:
+          type: string
+          description: The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+          nullable: true
+      example:
+        adminConsentDescription: string
+        adminConsentDisplayName: string
+        id: string
+        isEnabled: true
+        origin: string
+        type: string
+        userConsentDescription: string
+        userConsentDisplayName: string
+        value: string
+    microsoft.graph.optionalClaim:
+      title: optionalClaim
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the optional claim.
+        source:
+          type: string
+          description: 'The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.'
+          nullable: true
+        essential:
+          type: boolean
+          description: 'If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.'
+        additionalProperties:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.'
+      example:
+        name: string
+        source: string
+        essential: true
+        additionalProperties:
+          - string
+    microsoft.graph.resourceAccess:
+      title: resourceAccess
+      type: object
+      properties:
+        id:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+          format: uuid
+        type:
+          type: string
+          description: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
+          nullable: true
+      example:
+        id: string
+        type: string
+    microsoft.graph.implicitGrantSettings:
+      title: implicitGrantSettings
+      type: object
+      properties:
+        enableIdTokenIssuance:
+          type: boolean
+          description: Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
+          nullable: true
+        enableAccessTokenIssuance:
+          type: boolean
+          description: Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
+          nullable: true
+      example:
+        enableIdTokenIssuance: true
+        enableAccessTokenIssuance: true
+    microsoft.graph.policyBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: policyBase
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description for this policy.
+            displayName:
+              type: string
+              description: Display name for this policy.
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        description: string
+        displayName: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

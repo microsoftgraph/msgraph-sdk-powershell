@@ -1,0 +1,5699 @@
+openapi: 3.0.1
+info:
+  title: Teams.Team
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/groups/{group-id}/team':
+    get:
+      tags:
+        - groups.team
+      summary: Get team from groups
+      operationId: groups_GetTeam
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - memberSettings
+                - guestSettings
+                - messagingSettings
+                - funSettings
+                - isArchived
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+          links:
+            schedule:
+              operationId: group.team.GetSchedule
+              parameters:
+                group-id: $request.path.group-id
+                schedule-id: $response.body#/id
+            channels:
+              operationId: group.team.GetChannels
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $response.body#/id
+            primaryChannel:
+              operationId: group.team.GetPrimaryChannel
+              parameters:
+                group-id: $request.path.group-id
+                channel-id: $response.body#/id
+            installedApps:
+              operationId: group.team.GetInstalledApps
+              parameters:
+                group-id: $request.path.group-id
+                teamsAppInstallation-id: $response.body#/id
+            operations:
+              operationId: group.team.GetOperations
+              parameters:
+                group-id: $request.path.group-id
+                teamsAsyncOperation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - groups.team
+      summary: Update the navigation property team in groups
+      operationId: groups_UpdateTeam
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: group-id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.team'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /teams:
+    get:
+      tags:
+        - teams.team
+      summary: Get entities from teams
+      operationId: teams.team_ListTeam
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - webUrl
+                - webUrl desc
+                - memberSettings
+                - memberSettings desc
+                - guestSettings
+                - guestSettings desc
+                - messagingSettings
+                - messagingSettings desc
+                - funSettings
+                - funSettings desc
+                - isArchived
+                - isArchived desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - memberSettings
+                - guestSettings
+                - messagingSettings
+                - funSettings
+                - isArchived
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of team
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.team
+      summary: Add new entity to teams
+      operationId: teams.team_CreateTeam
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.team'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}':
+    get:
+      tags:
+        - teams.team
+      summary: Get entity from teams by key
+      operationId: teams.team_GetTeam
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - memberSettings
+                - guestSettings
+                - messagingSettings
+                - funSettings
+                - isArchived
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+          links:
+            schedule:
+              operationId: teams.GetSchedule
+              parameters:
+                team-id: $request.path.team-id
+                schedule-id: $response.body#/id
+            channels:
+              operationId: teams.GetChannels
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
+            primaryChannel:
+              operationId: teams.GetPrimaryChannel
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
+            installedApps:
+              operationId: teams.GetInstalledApps
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $response.body#/id
+            operations:
+              operationId: teams.GetOperations
+              parameters:
+                team-id: $request.path.team-id
+                teamsAsyncOperation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teams.team
+      summary: Update entity in teams
+      operationId: teams.team_UpdateTeam
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.team'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.team
+      summary: Delete entity from teams
+      operationId: teams.team_DeleteTeam
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels':
+    get:
+      tags:
+        - teams.channel
+      summary: Get channels from teams
+      operationId: teams_ListChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - description
+                - description desc
+                - email
+                - email desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - description
+                - email
+                - webUrl
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of channel
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.channel'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.channel
+      summary: Create new navigation property to channels for teams
+      operationId: teams_CreateChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get channels from teams
+      operationId: teams_GetChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - description
+                - email
+                - webUrl
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            tabs:
+              operationId: team.channels.GetTabs
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property channels in teams
+      operationId: teams_UpdateChannels
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/tabs':
+    get:
+      tags:
+        - teams.channel
+      summary: Get tabs from teams
+      operationId: teams.channels_ListTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - webUrl
+                - webUrl desc
+                - configuration
+                - configuration desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - webUrl
+                - configuration
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsTab
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.channel
+      summary: Create new navigation property to tabs for teams
+      operationId: teams.channels_CreateTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/tabs/{teamsTab-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get tabs from teams
+      operationId: teams.channels_GetTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - webUrl
+                - configuration
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: channel.tabs.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsApp-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property tabs in teams
+      operationId: teams.channels_UpdateTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/tabs/{teamsTab-id}/teamsApp':
+    get:
+      tags:
+        - teams.channel
+      summary: Get teamsApp from teams
+      operationId: teams.channels.tabs_GetTeamsApp
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: channel-id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsTab.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                channel-id: $request.path.channel-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+  '/teams/{team-id}/installedApps':
+    get:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Get installedApps from teams
+      operationId: teams_ListInstalledApps
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsAppInstallation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Create new navigation property to installedApps for teams
+      operationId: teams_CreateInstalledApps
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/installedApps/{teamsAppInstallation-id}':
+    get:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Get installedApps from teams
+      operationId: teams_GetInstalledApps
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+                - teamsAppDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+          links:
+            teamsApp:
+              operationId: team.installedApps.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsApp-id: $response.body#/id
+            teamsAppDefinition:
+              operationId: team.installedApps.GetTeamsAppDefinition
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Update the navigation property installedApps in teams
+      operationId: teams_UpdateInstalledApps
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/installedApps/{teamsAppInstallation-id}/microsoft.graph.upgrade':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action upgrade
+      operationId: teams.installedApps_upgrade
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsApp':
+    get:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Get teamsApp from teams
+      operationId: teams.installedApps_GetTeamsApp
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsAppInstallation.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+  '/teams/{team-id}/installedApps/{teamsAppInstallation-id}/teamsAppDefinition':
+    get:
+      tags:
+        - teams.teamsAppInstallation
+      summary: Get teamsAppDefinition from teams
+      operationId: teams.installedApps_GetTeamsAppDefinition
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAppInstallation-id
+          in: path
+          description: 'key: teamsAppInstallation-id of teamsAppInstallation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - teamsAppId
+                - displayName
+                - version
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+        default:
+          $ref: '#/components/responses/error'
+  '/teams/{team-id}/microsoft.graph.archive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action archive
+      operationId: teams_archive
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shouldSetSpoSiteReadOnlyForMembers:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/microsoft.graph.clone':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action clone
+      operationId: teams_clone
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                classification:
+                  type: string
+                  nullable: true
+                visibility:
+                  $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
+                partsToClone:
+                  $ref: '#/components/schemas/microsoft.graph.clonableTeamParts'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/microsoft.graph.unarchive':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action unarchive
+      operationId: teams_unarchive
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/operations':
+    get:
+      tags:
+        - teams.teamsAsyncOperation
+      summary: Get operations from teams
+      operationId: teams_ListOperations
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - operationType
+                - operationType desc
+                - createdDateTime
+                - createdDateTime desc
+                - status
+                - status desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - attemptsCount
+                - attemptsCount desc
+                - targetResourceId
+                - targetResourceId desc
+                - targetResourceLocation
+                - targetResourceLocation desc
+                - error
+                - error desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - operationType
+                - createdDateTime
+                - status
+                - lastActionDateTime
+                - attemptsCount
+                - targetResourceId
+                - targetResourceLocation
+                - error
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsAsyncOperation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.teamsAsyncOperation
+      summary: Create new navigation property to operations for teams
+      operationId: teams_CreateOperations
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/operations/{teamsAsyncOperation-id}':
+    get:
+      tags:
+        - teams.teamsAsyncOperation
+      summary: Get operations from teams
+      operationId: teams_GetOperations
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAsyncOperation-id
+          in: path
+          description: 'key: teamsAsyncOperation-id of teamsAsyncOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAsyncOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - operationType
+                - createdDateTime
+                - status
+                - lastActionDateTime
+                - attemptsCount
+                - targetResourceId
+                - targetResourceLocation
+                - error
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.teamsAsyncOperation
+      summary: Update the navigation property operations in teams
+      operationId: teams_UpdateOperations
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsAsyncOperation-id
+          in: path
+          description: 'key: teamsAsyncOperation-id of teamsAsyncOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAsyncOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel':
+    get:
+      tags:
+        - teams.channel
+      summary: Get primaryChannel from teams
+      operationId: teams_GetPrimaryChannel
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - description
+                - email
+                - webUrl
+                - tabs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tabs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+          links:
+            tabs:
+              operationId: team.primaryChannel.GetTabs
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property primaryChannel in teams
+      operationId: teams_UpdatePrimaryChannel
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/tabs':
+    get:
+      tags:
+        - teams.channel
+      summary: Get tabs from teams
+      operationId: teams.primaryChannel_ListTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - webUrl
+                - webUrl desc
+                - configuration
+                - configuration desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - webUrl
+                - configuration
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of teamsTab
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.channel
+      summary: Create new navigation property to tabs for teams
+      operationId: teams.primaryChannel_CreateTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/tabs/{teamsTab-id}':
+    get:
+      tags:
+        - teams.channel
+      summary: Get tabs from teams
+      operationId: teams.primaryChannel_GetTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - webUrl
+                - configuration
+                - teamsApp
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - teamsApp
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          links:
+            teamsApp:
+              operationId: channel.tabs.GetTeamsApp
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsApp-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.channel
+      summary: Update the navigation property tabs in teams
+      operationId: teams.primaryChannel_UpdateTabs
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamsTab'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/tabs/{teamsTab-id}/teamsApp':
+    get:
+      tags:
+        - teams.channel
+      summary: Get teamsApp from teams
+      operationId: teams.primaryChannel.tabs_GetTeamsApp
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: teamsTab-id
+          in: path
+          description: 'key: teamsTab-id of teamsTab'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsTab
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - externalId
+                - displayName
+                - distributionMethod
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          links:
+            appDefinitions:
+              operationId: teamsTab.teamsApp.GetAppDefinitions
+              parameters:
+                team-id: $request.path.team-id
+                teamsTab-id: $request.path.teamsTab-id
+                teamsAppDefinition-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+  '/teams/{team-id}/schedule':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get schedule from teams
+      operationId: teams_GetSchedule
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - enabled
+                - timeZone
+                - provisionStatus
+                - provisionStatusCode
+                - workforceIntegrationIds
+                - timeClockEnabled
+                - openShiftsEnabled
+                - swapShiftsRequestsEnabled
+                - offerShiftRequestsEnabled
+                - timeOffRequestsEnabled
+                - shifts
+                - openShifts
+                - timesOff
+                - timeOffReasons
+                - schedulingGroups
+                - swapShiftsChangeRequests
+                - openShiftChangeRequests
+                - offerShiftRequests
+                - timeOffRequests
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - shifts
+                - openShifts
+                - timesOff
+                - timeOffReasons
+                - schedulingGroups
+                - swapShiftsChangeRequests
+                - openShiftChangeRequests
+                - offerShiftRequests
+                - timeOffRequests
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedule'
+          links:
+            shifts:
+              operationId: team.schedule.GetShifts
+              parameters:
+                team-id: $request.path.team-id
+                shift-id: $response.body#/id
+            openShifts:
+              operationId: team.schedule.GetOpenShifts
+              parameters:
+                team-id: $request.path.team-id
+                openShift-id: $response.body#/id
+            timesOff:
+              operationId: team.schedule.GetTimesOff
+              parameters:
+                team-id: $request.path.team-id
+                timeOff-id: $response.body#/id
+            timeOffReasons:
+              operationId: team.schedule.GetTimeOffReasons
+              parameters:
+                team-id: $request.path.team-id
+                timeOffReason-id: $response.body#/id
+            schedulingGroups:
+              operationId: team.schedule.GetSchedulingGroups
+              parameters:
+                team-id: $request.path.team-id
+                schedulingGroup-id: $response.body#/id
+            swapShiftsChangeRequests:
+              operationId: team.schedule.GetSwapShiftsChangeRequests
+              parameters:
+                team-id: $request.path.team-id
+                swapShiftsChangeRequest-id: $response.body#/id
+            openShiftChangeRequests:
+              operationId: team.schedule.GetOpenShiftChangeRequests
+              parameters:
+                team-id: $request.path.team-id
+                openShiftChangeRequest-id: $response.body#/id
+            offerShiftRequests:
+              operationId: team.schedule.GetOfferShiftRequests
+              parameters:
+                team-id: $request.path.team-id
+                offerShiftRequest-id: $response.body#/id
+            timeOffRequests:
+              operationId: team.schedule.GetTimeOffRequests
+              parameters:
+                team-id: $request.path.team-id
+                timeOffRequest-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property schedule in teams
+      operationId: teams_UpdateSchedule
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/microsoft.graph.share':
+    post:
+      tags:
+        - teams.Actions
+      summary: Invoke action share
+      operationId: teams.schedule_share
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notifyTeam:
+                  type: boolean
+                  default: false
+                  nullable: true
+                startDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/teams/{team-id}/schedule/offerShiftRequests':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get offerShiftRequests from teams
+      operationId: teams.schedule_ListOfferShiftRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - assignedTo
+                - assignedTo desc
+                - state
+                - state desc
+                - senderMessage
+                - senderMessage desc
+                - senderDateTime
+                - senderDateTime desc
+                - managerActionMessage
+                - managerActionMessage desc
+                - managerActionDateTime
+                - managerActionDateTime desc
+                - senderUserId
+                - senderUserId desc
+                - managerUserId
+                - managerUserId desc
+                - recipientActionMessage
+                - recipientActionMessage desc
+                - recipientActionDateTime
+                - recipientActionDateTime desc
+                - senderShiftId
+                - senderShiftId desc
+                - recipientUserId
+                - recipientUserId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - recipientActionMessage
+                - recipientActionDateTime
+                - senderShiftId
+                - recipientUserId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of offerShiftRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to offerShiftRequests for teams
+      operationId: teams.schedule_CreateOfferShiftRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/offerShiftRequests/{offerShiftRequest-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get offerShiftRequests from teams
+      operationId: teams.schedule_GetOfferShiftRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: offerShiftRequest-id
+          in: path
+          description: 'key: offerShiftRequest-id of offerShiftRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: offerShiftRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - recipientActionMessage
+                - recipientActionDateTime
+                - senderShiftId
+                - recipientUserId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property offerShiftRequests in teams
+      operationId: teams.schedule_UpdateOfferShiftRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: offerShiftRequest-id
+          in: path
+          description: 'key: offerShiftRequest-id of offerShiftRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: offerShiftRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/openShiftChangeRequests':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get openShiftChangeRequests from teams
+      operationId: teams.schedule_ListOpenShiftChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - assignedTo
+                - assignedTo desc
+                - state
+                - state desc
+                - senderMessage
+                - senderMessage desc
+                - senderDateTime
+                - senderDateTime desc
+                - managerActionMessage
+                - managerActionMessage desc
+                - managerActionDateTime
+                - managerActionDateTime desc
+                - senderUserId
+                - senderUserId desc
+                - managerUserId
+                - managerUserId desc
+                - openShiftId
+                - openShiftId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - openShiftId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of openShiftChangeRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to openShiftChangeRequests for teams
+      operationId: teams.schedule_CreateOpenShiftChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/openShiftChangeRequests/{openShiftChangeRequest-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get openShiftChangeRequests from teams
+      operationId: teams.schedule_GetOpenShiftChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: openShiftChangeRequest-id
+          in: path
+          description: 'key: openShiftChangeRequest-id of openShiftChangeRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: openShiftChangeRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - openShiftId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property openShiftChangeRequests in teams
+      operationId: teams.schedule_UpdateOpenShiftChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: openShiftChangeRequest-id
+          in: path
+          description: 'key: openShiftChangeRequest-id of openShiftChangeRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: openShiftChangeRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/openShifts':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get openShifts from teams
+      operationId: teams.schedule_ListOpenShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - sharedOpenShift
+                - sharedOpenShift desc
+                - draftOpenShift
+                - draftOpenShift desc
+                - schedulingGroupId
+                - schedulingGroupId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedOpenShift
+                - draftOpenShift
+                - schedulingGroupId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of openShift
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.openShift'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to openShifts for teams
+      operationId: teams.schedule_CreateOpenShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.openShift'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/openShifts/{openShift-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get openShifts from teams
+      operationId: teams.schedule_GetOpenShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: openShift-id
+          in: path
+          description: 'key: openShift-id of openShift'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: openShift
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedOpenShift
+                - draftOpenShift
+                - schedulingGroupId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property openShifts in teams
+      operationId: teams.schedule_UpdateOpenShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: openShift-id
+          in: path
+          description: 'key: openShift-id of openShift'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: openShift
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.openShift'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/schedulingGroups':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get schedulingGroups from teams
+      operationId: teams.schedule_ListSchedulingGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - displayName
+                - displayName desc
+                - isActive
+                - isActive desc
+                - userIds
+                - userIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - isActive
+                - userIds
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of schedulingGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to schedulingGroups for teams
+      operationId: teams.schedule_CreateSchedulingGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/schedulingGroups/{schedulingGroup-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get schedulingGroups from teams
+      operationId: teams.schedule_GetSchedulingGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: schedulingGroup-id
+          in: path
+          description: 'key: schedulingGroup-id of schedulingGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: schedulingGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - isActive
+                - userIds
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property schedulingGroups in teams
+      operationId: teams.schedule_UpdateSchedulingGroups
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: schedulingGroup-id
+          in: path
+          description: 'key: schedulingGroup-id of schedulingGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: schedulingGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/shifts':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get shifts from teams
+      operationId: teams.schedule_ListShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - sharedShift
+                - sharedShift desc
+                - draftShift
+                - draftShift desc
+                - userId
+                - userId desc
+                - schedulingGroupId
+                - schedulingGroupId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedShift
+                - draftShift
+                - userId
+                - schedulingGroupId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of shift
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.shift'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to shifts for teams
+      operationId: teams.schedule_CreateShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shift'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/shifts/{shift-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get shifts from teams
+      operationId: teams.schedule_GetShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: shift-id
+          in: path
+          description: 'key: shift-id of shift'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: shift
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedShift
+                - draftShift
+                - userId
+                - schedulingGroupId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property shifts in teams
+      operationId: teams.schedule_UpdateShifts
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: shift-id
+          in: path
+          description: 'key: shift-id of shift'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: shift
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.shift'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/swapShiftsChangeRequests':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get swapShiftsChangeRequests from teams
+      operationId: teams.schedule_ListSwapShiftsChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - assignedTo
+                - assignedTo desc
+                - state
+                - state desc
+                - senderMessage
+                - senderMessage desc
+                - senderDateTime
+                - senderDateTime desc
+                - managerActionMessage
+                - managerActionMessage desc
+                - managerActionDateTime
+                - managerActionDateTime desc
+                - senderUserId
+                - senderUserId desc
+                - managerUserId
+                - managerUserId desc
+                - recipientActionMessage
+                - recipientActionMessage desc
+                - recipientActionDateTime
+                - recipientActionDateTime desc
+                - senderShiftId
+                - senderShiftId desc
+                - recipientUserId
+                - recipientUserId desc
+                - recipientShiftId
+                - recipientShiftId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - recipientActionMessage
+                - recipientActionDateTime
+                - senderShiftId
+                - recipientUserId
+                - recipientShiftId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of swapShiftsChangeRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to swapShiftsChangeRequests for teams
+      operationId: teams.schedule_CreateSwapShiftsChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/swapShiftsChangeRequests/{swapShiftsChangeRequest-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get swapShiftsChangeRequests from teams
+      operationId: teams.schedule_GetSwapShiftsChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: swapShiftsChangeRequest-id
+          in: path
+          description: 'key: swapShiftsChangeRequest-id of swapShiftsChangeRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: swapShiftsChangeRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - recipientActionMessage
+                - recipientActionDateTime
+                - senderShiftId
+                - recipientUserId
+                - recipientShiftId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property swapShiftsChangeRequests in teams
+      operationId: teams.schedule_UpdateSwapShiftsChangeRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: swapShiftsChangeRequest-id
+          in: path
+          description: 'key: swapShiftsChangeRequest-id of swapShiftsChangeRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: swapShiftsChangeRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timeOffReasons':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timeOffReasons from teams
+      operationId: teams.schedule_ListTimeOffReasons
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - displayName
+                - displayName desc
+                - iconType
+                - iconType desc
+                - isActive
+                - isActive desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - iconType
+                - isActive
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of timeOffReason
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to timeOffReasons for teams
+      operationId: teams.schedule_CreateTimeOffReasons
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timeOffReasons/{timeOffReason-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timeOffReasons from teams
+      operationId: teams.schedule_GetTimeOffReasons
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOffReason-id
+          in: path
+          description: 'key: timeOffReason-id of timeOffReason'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOffReason
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - iconType
+                - isActive
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property timeOffReasons in teams
+      operationId: teams.schedule_UpdateTimeOffReasons
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOffReason-id
+          in: path
+          description: 'key: timeOffReason-id of timeOffReason'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOffReason
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timeOffRequests':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timeOffRequests from teams
+      operationId: teams.schedule_ListTimeOffRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - assignedTo
+                - assignedTo desc
+                - state
+                - state desc
+                - senderMessage
+                - senderMessage desc
+                - senderDateTime
+                - senderDateTime desc
+                - managerActionMessage
+                - managerActionMessage desc
+                - managerActionDateTime
+                - managerActionDateTime desc
+                - senderUserId
+                - senderUserId desc
+                - managerUserId
+                - managerUserId desc
+                - startDateTime
+                - startDateTime desc
+                - endDateTime
+                - endDateTime desc
+                - timeOffReasonId
+                - timeOffReasonId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - startDateTime
+                - endDateTime
+                - timeOffReasonId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of timeOffRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to timeOffRequests for teams
+      operationId: teams.schedule_CreateTimeOffRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timeOffRequests/{timeOffRequest-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timeOffRequests from teams
+      operationId: teams.schedule_GetTimeOffRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOffRequest-id
+          in: path
+          description: 'key: timeOffRequest-id of timeOffRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOffRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - assignedTo
+                - state
+                - senderMessage
+                - senderDateTime
+                - managerActionMessage
+                - managerActionDateTime
+                - senderUserId
+                - managerUserId
+                - startDateTime
+                - endDateTime
+                - timeOffReasonId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property timeOffRequests in teams
+      operationId: teams.schedule_UpdateTimeOffRequests
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOffRequest-id
+          in: path
+          description: 'key: timeOffRequest-id of timeOffRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOffRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timesOff':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timesOff from teams
+      operationId: teams.schedule_ListTimesOff
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - sharedTimeOff
+                - sharedTimeOff desc
+                - draftTimeOff
+                - draftTimeOff desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedTimeOff
+                - draftTimeOff
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of timeOff
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.timeOff'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teams.schedule
+      summary: Create new navigation property to timesOff for teams
+      operationId: teams.schedule_CreateTimesOff
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOff'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/schedule/timesOff/{timeOff-id}':
+    get:
+      tags:
+        - teams.schedule
+      summary: Get timesOff from teams
+      operationId: teams.schedule_GetTimesOff
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOff-id
+          in: path
+          description: 'key: timeOff-id of timeOff'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOff
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - sharedTimeOff
+                - draftTimeOff
+                - userId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teams.schedule
+      summary: Update the navigation property timesOff in teams
+      operationId: teams.schedule_UpdateTimesOff
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: timeOff-id
+          in: path
+          description: 'key: timeOff-id of timeOff'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: timeOff
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.timeOff'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /teamwork:
+    get:
+      tags:
+        - teamwork.teamwork
+      summary: Get teamwork
+      operationId: teamwork.teamwork_GetTeamwork
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - workforceIntegrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - workforceIntegrations
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamwork'
+          links:
+            workforceIntegrations:
+              operationId: teamwork.GetWorkforceIntegrations
+              parameters:
+                workforceIntegration-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - teamwork.teamwork
+      summary: Update teamwork
+      operationId: teamwork.teamwork_UpdateTeamwork
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.teamwork'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /teamwork/workforceIntegrations:
+    get:
+      tags:
+        - teamwork.workforceIntegration
+      summary: Get workforceIntegrations from teamwork
+      operationId: teamwork_ListWorkforceIntegrations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - displayName
+                - displayName desc
+                - apiVersion
+                - apiVersion desc
+                - encryption
+                - encryption desc
+                - isActive
+                - isActive desc
+                - url
+                - url desc
+                - supportedEntities
+                - supportedEntities desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - apiVersion
+                - encryption
+                - isActive
+                - url
+                - supportedEntities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of workforceIntegration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - teamwork.workforceIntegration
+      summary: Create new navigation property to workforceIntegrations for teamwork
+      operationId: teamwork_CreateWorkforceIntegrations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teamwork/workforceIntegrations/{workforceIntegration-id}':
+    get:
+      tags:
+        - teamwork.workforceIntegration
+      summary: Get workforceIntegrations from teamwork
+      operationId: teamwork_GetWorkforceIntegrations
+      parameters:
+        - name: workforceIntegration-id
+          in: path
+          description: 'key: workforceIntegration-id of workforceIntegration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: workforceIntegration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastModifiedDateTime
+                - lastModifiedBy
+                - displayName
+                - apiVersion
+                - encryption
+                - isActive
+                - url
+                - supportedEntities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - teamwork.workforceIntegration
+      summary: Update the navigation property workforceIntegrations in teamwork
+      operationId: teamwork_UpdateWorkforceIntegrations
+      parameters:
+        - name: workforceIntegration-id
+          in: path
+          description: 'key: workforceIntegration-id of workforceIntegration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: workforceIntegration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.team:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: team
+          type: object
+          properties:
+            webUrl:
+              type: string
+              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              nullable: true
+            memberSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
+            guestSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
+            messagingSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
+            funSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamFunSettings'
+            isArchived:
+              type: boolean
+              description: Whether this team is in read-only mode.
+              nullable: true
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
+            channels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: The collection of channels & messages associated with the team.
+            primaryChannel:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: The apps installed in this team.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+      example:
+        id: string (identifier)
+        webUrl: string
+        memberSettings:
+          '@odata.type': microsoft.graph.teamMemberSettings
+        guestSettings:
+          '@odata.type': microsoft.graph.teamGuestSettings
+        messagingSettings:
+          '@odata.type': microsoft.graph.teamMessagingSettings
+        funSettings:
+          '@odata.type': microsoft.graph.teamFunSettings
+        isArchived: true
+        schedule:
+          '@odata.type': microsoft.graph.schedule
+        channels:
+          - '@odata.type': microsoft.graph.channel
+        primaryChannel:
+          '@odata.type': microsoft.graph.channel
+        installedApps:
+          - '@odata.type': microsoft.graph.teamsAppInstallation
+        operations:
+          - '@odata.type': microsoft.graph.teamsAsyncOperation
+    microsoft.graph.channel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: channel
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Channel name as it will appear to the user in Microsoft Teams.
+            description:
+              type: string
+              description: Optional textual description for the channel.
+              nullable: true
+            email:
+              type: string
+              description: The email address for sending messages to the channel. Read-only.
+              nullable: true
+            webUrl:
+              type: string
+              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              nullable: true
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the channel. A navigation property.
+      example:
+        id: string (identifier)
+        displayName: string
+        description: string
+        email: string
+        webUrl: string
+        tabs:
+          - '@odata.type': microsoft.graph.teamsTab
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link url of the tab instance. Read only.
+              nullable: true
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+      example:
+        id: string (identifier)
+        displayName: string
+        webUrl: string
+        configuration:
+          '@odata.type': microsoft.graph.teamsTabConfiguration
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+      example:
+        id: string (identifier)
+        externalId: string
+        displayName: string
+        distributionMethod:
+          '@odata.type': microsoft.graph.teamsAppDistributionMethod
+        appDefinitions:
+          - '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppInstallation
+          type: object
+          properties:
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+            teamsAppDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+      example:
+        id: string (identifier)
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+        teamsAppDefinition:
+          '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            teamsAppId:
+              type: string
+              description: The id from the Teams App manifest.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+      example:
+        id: string (identifier)
+        teamsAppId: string
+        displayName: string
+        version: string
+    microsoft.graph.teamVisibilityType:
+      title: teamVisibilityType
+      enum:
+        - private
+        - public
+        - hiddenMembership
+        - unknownFutureValue
+      type: string
+    microsoft.graph.clonableTeamParts:
+      title: clonableTeamParts
+      enum:
+        - apps
+        - tabs
+        - settings
+        - channels
+        - members
+      type: string
+    microsoft.graph.teamsAsyncOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAsyncOperation
+          type: object
+          properties:
+            operationType:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            attemptsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            targetResourceId:
+              type: string
+              nullable: true
+            targetResourceLocation:
+              type: string
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.operationError'
+      example:
+        id: string (identifier)
+        operationType:
+          '@odata.type': microsoft.graph.teamsAsyncOperationType
+        createdDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.teamsAsyncOperationStatus
+        lastActionDateTime: string (timestamp)
+        attemptsCount: integer
+        targetResourceId: string
+        targetResourceLocation: string
+        error:
+          '@odata.type': microsoft.graph.operationError
+    microsoft.graph.schedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schedule
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              nullable: true
+            timeZone:
+              type: string
+              nullable: true
+            provisionStatus:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            provisionStatusCode:
+              type: string
+              nullable: true
+            workforceIntegrationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            timeClockEnabled:
+              type: boolean
+              nullable: true
+            openShiftsEnabled:
+              type: boolean
+              nullable: true
+            swapShiftsRequestsEnabled:
+              type: boolean
+              nullable: true
+            offerShiftRequestsEnabled:
+              type: boolean
+              nullable: true
+            timeOffRequestsEnabled:
+              type: boolean
+              nullable: true
+            shifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+            openShifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+            timesOff:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+            timeOffReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+            schedulingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+            swapShiftsChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            openShiftChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+            offerShiftRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+            timeOffRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+      example:
+        id: string (identifier)
+        enabled: true
+        timeZone: string
+        provisionStatus:
+          '@odata.type': microsoft.graph.operationStatus
+        provisionStatusCode: string
+        workforceIntegrationIds:
+          - string
+        timeClockEnabled: true
+        openShiftsEnabled: true
+        swapShiftsRequestsEnabled: true
+        offerShiftRequestsEnabled: true
+        timeOffRequestsEnabled: true
+        shifts:
+          - '@odata.type': microsoft.graph.shift
+        openShifts:
+          - '@odata.type': microsoft.graph.openShift
+        timesOff:
+          - '@odata.type': microsoft.graph.timeOff
+        timeOffReasons:
+          - '@odata.type': microsoft.graph.timeOffReason
+        schedulingGroups:
+          - '@odata.type': microsoft.graph.schedulingGroup
+        swapShiftsChangeRequests:
+          - '@odata.type': microsoft.graph.swapShiftsChangeRequest
+        openShiftChangeRequests:
+          - '@odata.type': microsoft.graph.openShiftChangeRequest
+        offerShiftRequests:
+          - '@odata.type': microsoft.graph.offerShiftRequest
+        timeOffRequests:
+          - '@odata.type': microsoft.graph.timeOffRequest
+    microsoft.graph.offerShiftRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: offerShiftRequest
+          type: object
+          properties:
+            recipientActionMessage:
+              type: string
+              nullable: true
+            recipientActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            senderShiftId:
+              type: string
+              nullable: true
+            recipientUserId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        recipientActionMessage: string
+        recipientActionDateTime: string (timestamp)
+        senderShiftId: string
+        recipientUserId: string
+    microsoft.graph.openShiftChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: openShiftChangeRequest
+          type: object
+          properties:
+            openShiftId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        openShiftId: string
+    microsoft.graph.openShift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: openShift
+          type: object
+          properties:
+            sharedOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            draftOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            schedulingGroupId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedOpenShift:
+          '@odata.type': microsoft.graph.openShiftItem
+        draftOpenShift:
+          '@odata.type': microsoft.graph.openShiftItem
+        schedulingGroupId: string
+    microsoft.graph.schedulingGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: schedulingGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+              nullable: true
+            userIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        displayName: string
+        isActive: true
+        userIds:
+          - string
+    microsoft.graph.shift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: shift
+          type: object
+          properties:
+            sharedShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            draftShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            userId:
+              type: string
+              nullable: true
+            schedulingGroupId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedShift:
+          '@odata.type': microsoft.graph.shiftItem
+        draftShift:
+          '@odata.type': microsoft.graph.shiftItem
+        userId: string
+        schedulingGroupId: string
+    microsoft.graph.swapShiftsChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        - title: swapShiftsChangeRequest
+          type: object
+          properties:
+            recipientShiftId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        recipientActionMessage: string
+        recipientActionDateTime: string (timestamp)
+        senderShiftId: string
+        recipientUserId: string
+        recipientShiftId: string
+    microsoft.graph.timeOffReason:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOffReason
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            iconType:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
+            isActive:
+              type: boolean
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        displayName: string
+        iconType:
+          '@odata.type': microsoft.graph.timeOffReasonIconType
+        isActive: true
+    microsoft.graph.timeOffRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: timeOffRequest
+          type: object
+          properties:
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            timeOffReasonId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        timeOffReasonId: string
+    microsoft.graph.timeOff:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOff
+          type: object
+          properties:
+            sharedTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            draftTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            userId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedTimeOff:
+          '@odata.type': microsoft.graph.timeOffItem
+        draftTimeOff:
+          '@odata.type': microsoft.graph.timeOffItem
+        userId: string
+    microsoft.graph.teamwork:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamwork
+          type: object
+          properties:
+            workforceIntegrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+      example:
+        id: string (identifier)
+        workforceIntegrations:
+          - '@odata.type': microsoft.graph.workforceIntegration
+    microsoft.graph.workforceIntegration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: workforceIntegration
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            apiVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            encryption:
+              $ref: '#/components/schemas/microsoft.graph.workforceIntegrationEncryption'
+            isActive:
+              type: boolean
+              nullable: true
+            url:
+              type: string
+              nullable: true
+            supportedEntities:
+              $ref: '#/components/schemas/microsoft.graph.workforceIntegrationSupportedEntities'
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        displayName: string
+        apiVersion: integer
+        encryption:
+          '@odata.type': microsoft.graph.workforceIntegrationEncryption
+        isActive: true
+        url: string
+        supportedEntities:
+          '@odata.type': microsoft.graph.workforceIntegrationSupportedEntities
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.teamMemberSettings:
+      title: teamMemberSettings
+      type: object
+      properties:
+        allowCreateUpdateChannels:
+          type: boolean
+          description: 'If set to true, members can add and update channels.'
+          nullable: true
+        allowDeleteChannels:
+          type: boolean
+          description: 'If set to true, members can delete channels.'
+          nullable: true
+        allowAddRemoveApps:
+          type: boolean
+          description: 'If set to true, members can add and remove apps.'
+          nullable: true
+        allowCreateUpdateRemoveTabs:
+          type: boolean
+          description: 'If set to true, members can add, update, and remove tabs.'
+          nullable: true
+        allowCreateUpdateRemoveConnectors:
+          type: boolean
+          description: 'If set to true, members can add, update, and remove connectors.'
+          nullable: true
+      example:
+        allowCreateUpdateChannels: true
+        allowDeleteChannels: true
+        allowAddRemoveApps: true
+        allowCreateUpdateRemoveTabs: true
+        allowCreateUpdateRemoveConnectors: true
+    microsoft.graph.teamGuestSettings:
+      title: teamGuestSettings
+      type: object
+      properties:
+        allowCreateUpdateChannels:
+          type: boolean
+          description: 'If set to true, guests can add and update channels.'
+          nullable: true
+        allowDeleteChannels:
+          type: boolean
+          description: 'If set to true, guests can delete channels.'
+          nullable: true
+      example:
+        allowCreateUpdateChannels: true
+        allowDeleteChannels: true
+    microsoft.graph.teamMessagingSettings:
+      title: teamMessagingSettings
+      type: object
+      properties:
+        allowUserEditMessages:
+          type: boolean
+          description: 'If set to true, users can edit their messages.'
+          nullable: true
+        allowUserDeleteMessages:
+          type: boolean
+          description: 'If set to true, users can delete their messages.'
+          nullable: true
+        allowOwnerDeleteMessages:
+          type: boolean
+          description: 'If set to true, owners can delete any message.'
+          nullable: true
+        allowTeamMentions:
+          type: boolean
+          description: 'If set to true, @team mentions are allowed.'
+          nullable: true
+        allowChannelMentions:
+          type: boolean
+          description: 'If set to true, @channel mentions are allowed.'
+          nullable: true
+      example:
+        allowUserEditMessages: true
+        allowUserDeleteMessages: true
+        allowOwnerDeleteMessages: true
+        allowTeamMentions: true
+        allowChannelMentions: true
+    microsoft.graph.teamFunSettings:
+      title: teamFunSettings
+      type: object
+      properties:
+        allowGiphy:
+          type: boolean
+          description: 'If set to true, enables Giphy use.'
+          nullable: true
+        giphyContentRating:
+          $ref: '#/components/schemas/microsoft.graph.giphyRatingType'
+        allowStickersAndMemes:
+          type: boolean
+          description: 'If set to true, enables users to include stickers and memes.'
+          nullable: true
+        allowCustomMemes:
+          type: boolean
+          description: 'If set to true, enables users to include custom memes.'
+          nullable: true
+      example:
+        allowGiphy: true
+        giphyContentRating:
+          '@odata.type': microsoft.graph.giphyRatingType
+        allowStickersAndMemes: true
+        allowCustomMemes: true
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      example:
+        entityId: string
+        contentUrl: string
+        removeUrl: string
+        websiteUrl: string
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAsyncOperationType:
+      title: teamsAsyncOperationType
+      enum:
+        - invalid
+        - cloneTeam
+        - archiveTeam
+        - unarchiveTeam
+        - createTeam
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAsyncOperationStatus:
+      title: teamsAsyncOperationStatus
+      enum:
+        - invalid
+        - notStarted
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.operationError:
+      title: operationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Operation error code.
+          nullable: true
+        message:
+          type: string
+          description: Operation error message.
+          nullable: true
+      example:
+        code: string
+        message: string
+    microsoft.graph.operationStatus:
+      title: operationStatus
+      enum:
+        - NotStarted
+        - Running
+        - Completed
+        - Failed
+      type: string
+    microsoft.graph.scheduleChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: scheduleChangeRequest
+          type: object
+          properties:
+            assignedTo:
+              $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequestActor'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.scheduleChangeState'
+            senderMessage:
+              type: string
+              nullable: true
+            senderDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            managerActionMessage:
+              type: string
+              nullable: true
+            managerActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            senderUserId:
+              type: string
+              nullable: true
+            managerUserId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+    microsoft.graph.changeTrackedEntity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: changeTrackedEntity
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.openShiftItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.shiftItem'
+        - title: openShiftItem
+          type: object
+          properties:
+            openSlotCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        displayName: string
+        notes: string
+        activities:
+          - '@odata.type': microsoft.graph.shiftActivity
+        openSlotCount: integer
+    microsoft.graph.shiftItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
+        - title: shiftItem
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            notes:
+              type: string
+              nullable: true
+            activities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftActivity'
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        displayName: string
+        notes: string
+        activities:
+          - '@odata.type': microsoft.graph.shiftActivity
+    microsoft.graph.timeOffReasonIconType:
+      title: timeOffReasonIconType
+      enum:
+        - none
+        - car
+        - calendar
+        - running
+        - plane
+        - firstAid
+        - doctor
+        - notWorking
+        - clock
+        - juryDuty
+        - globe
+        - cup
+        - phone
+        - weather
+        - umbrella
+        - piggyBank
+        - dog
+        - cake
+        - trafficCone
+        - pin
+        - sunny
+        - unknownFutureValue
+      type: string
+    microsoft.graph.timeOffItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
+        - title: timeOffItem
+          type: object
+          properties:
+            timeOffReasonId:
+              type: string
+              nullable: true
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        timeOffReasonId: string
+    microsoft.graph.workforceIntegrationEncryption:
+      title: workforceIntegrationEncryption
+      type: object
+      properties:
+        protocol:
+          $ref: '#/components/schemas/microsoft.graph.workforceIntegrationEncryptionProtocol'
+        secret:
+          type: string
+          nullable: true
+      example:
+        protocol:
+          '@odata.type': microsoft.graph.workforceIntegrationEncryptionProtocol
+        secret: string
+    microsoft.graph.workforceIntegrationSupportedEntities:
+      title: workforceIntegrationSupportedEntities
+      enum:
+        - none
+        - shift
+        - swapRequest
+        - userShiftPreferences
+        - openShift
+        - openShiftRequest
+        - offerShiftRequest
+        - unknownFutureValue
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.giphyRatingType:
+      title: giphyRatingType
+      enum:
+        - strict
+        - moderate
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scheduleChangeRequestActor:
+      title: scheduleChangeRequestActor
+      enum:
+        - sender
+        - recipient
+        - manager
+        - system
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scheduleChangeState:
+      title: scheduleChangeState
+      enum:
+        - pending
+        - approved
+        - declined
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      example:
+        application:
+          '@odata.type': microsoft.graph.identity
+        device:
+          '@odata.type': microsoft.graph.identity
+        user:
+          '@odata.type': microsoft.graph.identity
+    microsoft.graph.scheduleEntity:
+      title: scheduleEntity
+      type: object
+      properties:
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        theme:
+          $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+    microsoft.graph.shiftActivity:
+      title: shiftActivity
+      type: object
+      properties:
+        isPaid:
+          type: boolean
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        theme:
+          $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
+      example:
+        isPaid: true
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        code: string
+        displayName: string
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+    microsoft.graph.workforceIntegrationEncryptionProtocol:
+      title: workforceIntegrationEncryptionProtocol
+      enum:
+        - sharedSecret
+        - unknownFutureValue
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      example:
+        displayName: string
+        id: string
+    microsoft.graph.scheduleEntityTheme:
+      title: scheduleEntityTheme
+      enum:
+        - white
+        - blue
+        - green
+        - purple
+        - pink
+        - yellow
+        - gray
+        - darkBlue
+        - darkGreen
+        - darkPurple
+        - darkPink
+        - darkYellow
+        - unknownFutureValue
+      type: string
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

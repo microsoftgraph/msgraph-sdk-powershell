@@ -1,0 +1,343 @@
+openapi: 3.0.1
+info:
+  title: Identity.CertificateBasedAuthConfiguration
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /certificateBasedAuthConfiguration:
+    get:
+      tags:
+        - certificateBasedAuthConfiguration.certificateBasedAuthConfiguration
+      summary: Get entities from certificateBasedAuthConfiguration
+      operationId: certificateBasedAuthConfiguration.certificateBasedAuthConfiguration_ListCertificateBasedAuthConfiguration
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - certificateAuthorities
+                - certificateAuthorities desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - certificateAuthorities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of certificateBasedAuthConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - certificateBasedAuthConfiguration.certificateBasedAuthConfiguration
+      summary: Add new entity to certificateBasedAuthConfiguration
+      operationId: certificateBasedAuthConfiguration.certificateBasedAuthConfiguration_CreateCertificateBasedAuthConfiguration
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}':
+    get:
+      tags:
+        - certificateBasedAuthConfiguration.certificateBasedAuthConfiguration
+      summary: Get entity from certificateBasedAuthConfiguration by key
+      operationId: certificateBasedAuthConfiguration.certificateBasedAuthConfiguration_GetCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthConfiguration-id
+          in: path
+          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - certificateAuthorities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - certificateBasedAuthConfiguration.certificateBasedAuthConfiguration
+      summary: Update entity in certificateBasedAuthConfiguration
+      operationId: certificateBasedAuthConfiguration.certificateBasedAuthConfiguration_UpdateCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthConfiguration-id
+          in: path
+          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthConfiguration
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - certificateBasedAuthConfiguration.certificateBasedAuthConfiguration
+      summary: Delete entity from certificateBasedAuthConfiguration
+      operationId: certificateBasedAuthConfiguration.certificateBasedAuthConfiguration_DeleteCertificateBasedAuthConfiguration
+      parameters:
+        - name: certificateBasedAuthConfiguration-id
+          in: path
+          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.certificateBasedAuthConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: certificateBasedAuthConfiguration
+          type: object
+          properties:
+            certificateAuthorities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
+              description: Collection of certificate authorities which creates a trusted certificate chain.
+      example:
+        id: string (identifier)
+        certificateAuthorities:
+          - '@odata.type': microsoft.graph.certificateAuthority
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.certificateAuthority:
+      title: certificateAuthority
+      type: object
+      properties:
+        isRootAuthority:
+          type: boolean
+          description: 'Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.'
+        certificateRevocationListUrl:
+          type: string
+          description: The URL of the certificate revocation list.
+          nullable: true
+        deltaCertificateRevocationListUrl:
+          type: string
+          description: The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
+          nullable: true
+        certificate:
+          type: string
+          description: Required. The base64 encoded string representing the public certificate.
+          format: base64url
+        issuer:
+          type: string
+          description: 'The issuer of the certificate, calculated from the certificate value. Read-only.'
+        issuerSki:
+          type: string
+          description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
+      example:
+        isRootAuthority: true
+        certificateRevocationListUrl: string
+        deltaCertificateRevocationListUrl: string
+        certificate: string
+        issuer: string
+        issuerSki: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

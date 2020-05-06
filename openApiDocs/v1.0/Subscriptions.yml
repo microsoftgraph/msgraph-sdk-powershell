@@ -1,0 +1,370 @@
+openapi: 3.0.1
+info:
+  title: Subscriptions
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /subscriptions:
+    get:
+      tags:
+        - subscriptions.subscription
+      summary: Get entities from subscriptions
+      operationId: subscriptions.subscription_ListSubscription
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - resource
+                - resource desc
+                - changeType
+                - changeType desc
+                - clientState
+                - clientState desc
+                - notificationUrl
+                - notificationUrl desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - applicationId
+                - applicationId desc
+                - creatorId
+                - creatorId desc
+                - latestSupportedTlsVersion
+                - latestSupportedTlsVersion desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - resource
+                - changeType
+                - clientState
+                - notificationUrl
+                - expirationDateTime
+                - applicationId
+                - creatorId
+                - latestSupportedTlsVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of subscription
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.subscription'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - subscriptions.subscription
+      summary: Add new entity to subscriptions
+      operationId: subscriptions.subscription_CreateSubscription
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.subscription'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.subscription'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/subscriptions/{subscription-id}':
+    get:
+      tags:
+        - subscriptions.subscription
+      summary: Get entity from subscriptions by key
+      operationId: subscriptions.subscription_GetSubscription
+      parameters:
+        - name: subscription-id
+          in: path
+          description: 'key: subscription-id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - resource
+                - changeType
+                - clientState
+                - notificationUrl
+                - expirationDateTime
+                - applicationId
+                - creatorId
+                - latestSupportedTlsVersion
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.subscription'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - subscriptions.subscription
+      summary: Update entity in subscriptions
+      operationId: subscriptions.subscription_UpdateSubscription
+      parameters:
+        - name: subscription-id
+          in: path
+          description: 'key: subscription-id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.subscription'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - subscriptions.subscription
+      summary: Delete entity from subscriptions
+      operationId: subscriptions.subscription_DeleteSubscription
+      parameters:
+        - name: subscription-id
+          in: path
+          description: 'key: subscription-id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.subscription:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: subscription
+          type: object
+          properties:
+            resource:
+              type: string
+              description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
+            changeType:
+              type: string
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+            clientState:
+              type: string
+              description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+              nullable: true
+            notificationUrl:
+              type: string
+              description: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
+              format: date-time
+            applicationId:
+              type: string
+              description: Identifier of the application used to create the subscription. Read-only.
+              nullable: true
+            creatorId:
+              type: string
+              description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
+              nullable: true
+            latestSupportedTlsVersion:
+              type: string
+              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              nullable: true
+      example:
+        id: string (identifier)
+        resource: string
+        changeType: string
+        clientState: string
+        notificationUrl: string
+        expirationDateTime: string (timestamp)
+        applicationId: string
+        creatorId: string
+        latestSupportedTlsVersion: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

@@ -1,0 +1,1432 @@
+openapi: 3.0.1
+info:
+  title: Users.Groups
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/users/{user-id}/joinedTeams':
+    get:
+      tags:
+        - users.team
+      summary: Get joinedTeams from users
+      operationId: users_ListJoinedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - webUrl
+                - webUrl desc
+                - memberSettings
+                - memberSettings desc
+                - guestSettings
+                - guestSettings desc
+                - messagingSettings
+                - messagingSettings desc
+                - funSettings
+                - funSettings desc
+                - isArchived
+                - isArchived desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - memberSettings
+                - guestSettings
+                - messagingSettings
+                - funSettings
+                - isArchived
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of team
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - users.team
+      summary: Create new navigation property to joinedTeams for users
+      operationId: users_CreateJoinedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.team'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/joinedTeams/{team-id}':
+    get:
+      tags:
+        - users.team
+      summary: Get joinedTeams from users
+      operationId: users_GetJoinedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - webUrl
+                - memberSettings
+                - guestSettings
+                - messagingSettings
+                - funSettings
+                - isArchived
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - schedule
+                - channels
+                - primaryChannel
+                - installedApps
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+          links:
+            schedule:
+              operationId: user.joinedTeams.GetSchedule
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                schedule-id: $response.body#/id
+            channels:
+              operationId: user.joinedTeams.GetChannels
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
+            primaryChannel:
+              operationId: user.joinedTeams.GetPrimaryChannel
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                channel-id: $response.body#/id
+            installedApps:
+              operationId: user.joinedTeams.GetInstalledApps
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                teamsAppInstallation-id: $response.body#/id
+            operations:
+              operationId: user.joinedTeams.GetOperations
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+                teamsAsyncOperation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.team
+      summary: Update the navigation property joinedTeams in users
+      operationId: users_UpdateJoinedTeams
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: 'key: team-id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.team'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.team:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: team
+          type: object
+          properties:
+            webUrl:
+              type: string
+              description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
+              nullable: true
+            memberSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamMemberSettings'
+            guestSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamGuestSettings'
+            messagingSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
+            funSettings:
+              $ref: '#/components/schemas/microsoft.graph.teamFunSettings'
+            isArchived:
+              type: boolean
+              description: Whether this team is in read-only mode.
+              nullable: true
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
+            channels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
+              description: The collection of channels & messages associated with the team.
+            primaryChannel:
+              $ref: '#/components/schemas/microsoft.graph.channel'
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: The apps installed in this team.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+      example:
+        id: string (identifier)
+        webUrl: string
+        memberSettings:
+          '@odata.type': microsoft.graph.teamMemberSettings
+        guestSettings:
+          '@odata.type': microsoft.graph.teamGuestSettings
+        messagingSettings:
+          '@odata.type': microsoft.graph.teamMessagingSettings
+        funSettings:
+          '@odata.type': microsoft.graph.teamFunSettings
+        isArchived: true
+        schedule:
+          '@odata.type': microsoft.graph.schedule
+        channels:
+          - '@odata.type': microsoft.graph.channel
+        primaryChannel:
+          '@odata.type': microsoft.graph.channel
+        installedApps:
+          - '@odata.type': microsoft.graph.teamsAppInstallation
+        operations:
+          - '@odata.type': microsoft.graph.teamsAsyncOperation
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.teamMemberSettings:
+      title: teamMemberSettings
+      type: object
+      properties:
+        allowCreateUpdateChannels:
+          type: boolean
+          description: 'If set to true, members can add and update channels.'
+          nullable: true
+        allowDeleteChannels:
+          type: boolean
+          description: 'If set to true, members can delete channels.'
+          nullable: true
+        allowAddRemoveApps:
+          type: boolean
+          description: 'If set to true, members can add and remove apps.'
+          nullable: true
+        allowCreateUpdateRemoveTabs:
+          type: boolean
+          description: 'If set to true, members can add, update, and remove tabs.'
+          nullable: true
+        allowCreateUpdateRemoveConnectors:
+          type: boolean
+          description: 'If set to true, members can add, update, and remove connectors.'
+          nullable: true
+      example:
+        allowCreateUpdateChannels: true
+        allowDeleteChannels: true
+        allowAddRemoveApps: true
+        allowCreateUpdateRemoveTabs: true
+        allowCreateUpdateRemoveConnectors: true
+    microsoft.graph.teamGuestSettings:
+      title: teamGuestSettings
+      type: object
+      properties:
+        allowCreateUpdateChannels:
+          type: boolean
+          description: 'If set to true, guests can add and update channels.'
+          nullable: true
+        allowDeleteChannels:
+          type: boolean
+          description: 'If set to true, guests can delete channels.'
+          nullable: true
+      example:
+        allowCreateUpdateChannels: true
+        allowDeleteChannels: true
+    microsoft.graph.teamMessagingSettings:
+      title: teamMessagingSettings
+      type: object
+      properties:
+        allowUserEditMessages:
+          type: boolean
+          description: 'If set to true, users can edit their messages.'
+          nullable: true
+        allowUserDeleteMessages:
+          type: boolean
+          description: 'If set to true, users can delete their messages.'
+          nullable: true
+        allowOwnerDeleteMessages:
+          type: boolean
+          description: 'If set to true, owners can delete any message.'
+          nullable: true
+        allowTeamMentions:
+          type: boolean
+          description: 'If set to true, @team mentions are allowed.'
+          nullable: true
+        allowChannelMentions:
+          type: boolean
+          description: 'If set to true, @channel mentions are allowed.'
+          nullable: true
+      example:
+        allowUserEditMessages: true
+        allowUserDeleteMessages: true
+        allowOwnerDeleteMessages: true
+        allowTeamMentions: true
+        allowChannelMentions: true
+    microsoft.graph.teamFunSettings:
+      title: teamFunSettings
+      type: object
+      properties:
+        allowGiphy:
+          type: boolean
+          description: 'If set to true, enables Giphy use.'
+          nullable: true
+        giphyContentRating:
+          $ref: '#/components/schemas/microsoft.graph.giphyRatingType'
+        allowStickersAndMemes:
+          type: boolean
+          description: 'If set to true, enables users to include stickers and memes.'
+          nullable: true
+        allowCustomMemes:
+          type: boolean
+          description: 'If set to true, enables users to include custom memes.'
+          nullable: true
+      example:
+        allowGiphy: true
+        giphyContentRating:
+          '@odata.type': microsoft.graph.giphyRatingType
+        allowStickersAndMemes: true
+        allowCustomMemes: true
+    microsoft.graph.schedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schedule
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              nullable: true
+            timeZone:
+              type: string
+              nullable: true
+            provisionStatus:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            provisionStatusCode:
+              type: string
+              nullable: true
+            workforceIntegrationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            timeClockEnabled:
+              type: boolean
+              nullable: true
+            openShiftsEnabled:
+              type: boolean
+              nullable: true
+            swapShiftsRequestsEnabled:
+              type: boolean
+              nullable: true
+            offerShiftRequestsEnabled:
+              type: boolean
+              nullable: true
+            timeOffRequestsEnabled:
+              type: boolean
+              nullable: true
+            shifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+            openShifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+            timesOff:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+            timeOffReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+            schedulingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+            swapShiftsChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            openShiftChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+            offerShiftRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+            timeOffRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+      example:
+        id: string (identifier)
+        enabled: true
+        timeZone: string
+        provisionStatus:
+          '@odata.type': microsoft.graph.operationStatus
+        provisionStatusCode: string
+        workforceIntegrationIds:
+          - string
+        timeClockEnabled: true
+        openShiftsEnabled: true
+        swapShiftsRequestsEnabled: true
+        offerShiftRequestsEnabled: true
+        timeOffRequestsEnabled: true
+        shifts:
+          - '@odata.type': microsoft.graph.shift
+        openShifts:
+          - '@odata.type': microsoft.graph.openShift
+        timesOff:
+          - '@odata.type': microsoft.graph.timeOff
+        timeOffReasons:
+          - '@odata.type': microsoft.graph.timeOffReason
+        schedulingGroups:
+          - '@odata.type': microsoft.graph.schedulingGroup
+        swapShiftsChangeRequests:
+          - '@odata.type': microsoft.graph.swapShiftsChangeRequest
+        openShiftChangeRequests:
+          - '@odata.type': microsoft.graph.openShiftChangeRequest
+        offerShiftRequests:
+          - '@odata.type': microsoft.graph.offerShiftRequest
+        timeOffRequests:
+          - '@odata.type': microsoft.graph.timeOffRequest
+    microsoft.graph.channel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: channel
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Channel name as it will appear to the user in Microsoft Teams.
+            description:
+              type: string
+              description: Optional textual description for the channel.
+              nullable: true
+            email:
+              type: string
+              description: The email address for sending messages to the channel. Read-only.
+              nullable: true
+            webUrl:
+              type: string
+              description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              nullable: true
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the channel. A navigation property.
+      example:
+        id: string (identifier)
+        displayName: string
+        description: string
+        email: string
+        webUrl: string
+        tabs:
+          - '@odata.type': microsoft.graph.teamsTab
+    microsoft.graph.teamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppInstallation
+          type: object
+          properties:
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+            teamsAppDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+      example:
+        id: string (identifier)
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+        teamsAppDefinition:
+          '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAsyncOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAsyncOperation
+          type: object
+          properties:
+            operationType:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            attemptsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            targetResourceId:
+              type: string
+              nullable: true
+            targetResourceLocation:
+              type: string
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.operationError'
+      example:
+        id: string (identifier)
+        operationType:
+          '@odata.type': microsoft.graph.teamsAsyncOperationType
+        createdDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.teamsAsyncOperationStatus
+        lastActionDateTime: string (timestamp)
+        attemptsCount: integer
+        targetResourceId: string
+        targetResourceLocation: string
+        error:
+          '@odata.type': microsoft.graph.operationError
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    microsoft.graph.giphyRatingType:
+      title: giphyRatingType
+      enum:
+        - strict
+        - moderate
+        - unknownFutureValue
+      type: string
+    microsoft.graph.operationStatus:
+      title: operationStatus
+      enum:
+        - NotStarted
+        - Running
+        - Completed
+        - Failed
+      type: string
+    microsoft.graph.shift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: shift
+          type: object
+          properties:
+            sharedShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            draftShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            userId:
+              type: string
+              nullable: true
+            schedulingGroupId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedShift:
+          '@odata.type': microsoft.graph.shiftItem
+        draftShift:
+          '@odata.type': microsoft.graph.shiftItem
+        userId: string
+        schedulingGroupId: string
+    microsoft.graph.openShift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: openShift
+          type: object
+          properties:
+            sharedOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            draftOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            schedulingGroupId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedOpenShift:
+          '@odata.type': microsoft.graph.openShiftItem
+        draftOpenShift:
+          '@odata.type': microsoft.graph.openShiftItem
+        schedulingGroupId: string
+    microsoft.graph.timeOff:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOff
+          type: object
+          properties:
+            sharedTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            draftTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            userId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        sharedTimeOff:
+          '@odata.type': microsoft.graph.timeOffItem
+        draftTimeOff:
+          '@odata.type': microsoft.graph.timeOffItem
+        userId: string
+    microsoft.graph.timeOffReason:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOffReason
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            iconType:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
+            isActive:
+              type: boolean
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        displayName: string
+        iconType:
+          '@odata.type': microsoft.graph.timeOffReasonIconType
+        isActive: true
+    microsoft.graph.schedulingGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: schedulingGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            isActive:
+              type: boolean
+              nullable: true
+            userIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        displayName: string
+        isActive: true
+        userIds:
+          - string
+    microsoft.graph.swapShiftsChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        - title: swapShiftsChangeRequest
+          type: object
+          properties:
+            recipientShiftId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        recipientActionMessage: string
+        recipientActionDateTime: string (timestamp)
+        senderShiftId: string
+        recipientUserId: string
+        recipientShiftId: string
+    microsoft.graph.openShiftChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: openShiftChangeRequest
+          type: object
+          properties:
+            openShiftId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        openShiftId: string
+    microsoft.graph.offerShiftRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: offerShiftRequest
+          type: object
+          properties:
+            recipientActionMessage:
+              type: string
+              nullable: true
+            recipientActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            senderShiftId:
+              type: string
+              nullable: true
+            recipientUserId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        recipientActionMessage: string
+        recipientActionDateTime: string (timestamp)
+        senderShiftId: string
+        recipientUserId: string
+    microsoft.graph.timeOffRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: timeOffRequest
+          type: object
+          properties:
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            timeOffReasonId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        timeOffReasonId: string
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link url of the tab instance. Read only.
+              nullable: true
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+      example:
+        id: string (identifier)
+        displayName: string
+        webUrl: string
+        configuration:
+          '@odata.type': microsoft.graph.teamsTabConfiguration
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+      example:
+        id: string (identifier)
+        externalId: string
+        displayName: string
+        distributionMethod:
+          '@odata.type': microsoft.graph.teamsAppDistributionMethod
+        appDefinitions:
+          - '@odata.type': microsoft.graph.teamsAppDefinition
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            teamsAppId:
+              type: string
+              description: The id from the Teams App manifest.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+      example:
+        id: string (identifier)
+        teamsAppId: string
+        displayName: string
+        version: string
+    microsoft.graph.teamsAsyncOperationType:
+      title: teamsAsyncOperationType
+      enum:
+        - invalid
+        - cloneTeam
+        - archiveTeam
+        - unarchiveTeam
+        - createTeam
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAsyncOperationStatus:
+      title: teamsAsyncOperationStatus
+      enum:
+        - invalid
+        - notStarted
+        - inProgress
+        - succeeded
+        - failed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.operationError:
+      title: operationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Operation error code.
+          nullable: true
+        message:
+          type: string
+          description: Operation error message.
+          nullable: true
+      example:
+        code: string
+        message: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    microsoft.graph.changeTrackedEntity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: changeTrackedEntity
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.shiftItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
+        - title: shiftItem
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            notes:
+              type: string
+              nullable: true
+            activities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shiftActivity'
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        displayName: string
+        notes: string
+        activities:
+          - '@odata.type': microsoft.graph.shiftActivity
+    microsoft.graph.openShiftItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.shiftItem'
+        - title: openShiftItem
+          type: object
+          properties:
+            openSlotCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        displayName: string
+        notes: string
+        activities:
+          - '@odata.type': microsoft.graph.shiftActivity
+        openSlotCount: integer
+    microsoft.graph.timeOffItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleEntity'
+        - title: timeOffItem
+          type: object
+          properties:
+            timeOffReasonId:
+              type: string
+              nullable: true
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+        timeOffReasonId: string
+    microsoft.graph.timeOffReasonIconType:
+      title: timeOffReasonIconType
+      enum:
+        - none
+        - car
+        - calendar
+        - running
+        - plane
+        - firstAid
+        - doctor
+        - notWorking
+        - clock
+        - juryDuty
+        - globe
+        - cup
+        - phone
+        - weather
+        - umbrella
+        - piggyBank
+        - dog
+        - cake
+        - trafficCone
+        - pin
+        - sunny
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scheduleChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: scheduleChangeRequest
+          type: object
+          properties:
+            assignedTo:
+              $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequestActor'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.scheduleChangeState'
+            senderMessage:
+              type: string
+              nullable: true
+            senderDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            managerActionMessage:
+              type: string
+              nullable: true
+            managerActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            senderUserId:
+              type: string
+              nullable: true
+            managerUserId:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        assignedTo:
+          '@odata.type': microsoft.graph.scheduleChangeRequestActor
+        state:
+          '@odata.type': microsoft.graph.scheduleChangeState
+        senderMessage: string
+        senderDateTime: string (timestamp)
+        managerActionMessage: string
+        managerActionDateTime: string (timestamp)
+        senderUserId: string
+        managerUserId: string
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      example:
+        entityId: string
+        contentUrl: string
+        removeUrl: string
+        websiteUrl: string
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      example:
+        application:
+          '@odata.type': microsoft.graph.identity
+        device:
+          '@odata.type': microsoft.graph.identity
+        user:
+          '@odata.type': microsoft.graph.identity
+    microsoft.graph.scheduleEntity:
+      title: scheduleEntity
+      type: object
+      properties:
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        theme:
+          $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
+      example:
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+    microsoft.graph.shiftActivity:
+      title: shiftActivity
+      type: object
+      properties:
+        isPaid:
+          type: boolean
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        theme:
+          $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
+      example:
+        isPaid: true
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        code: string
+        displayName: string
+        theme:
+          '@odata.type': microsoft.graph.scheduleEntityTheme
+    microsoft.graph.scheduleChangeRequestActor:
+      title: scheduleChangeRequestActor
+      enum:
+        - sender
+        - recipient
+        - manager
+        - system
+        - unknownFutureValue
+      type: string
+    microsoft.graph.scheduleChangeState:
+      title: scheduleChangeState
+      enum:
+        - pending
+        - approved
+        - declined
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      example:
+        displayName: string
+        id: string
+    microsoft.graph.scheduleEntityTheme:
+      title: scheduleEntityTheme
+      enum:
+        - white
+        - blue
+        - green
+        - purple
+        - pink
+        - yellow
+        - gray
+        - darkBlue
+        - darkGreen
+        - darkPurple
+        - darkPink
+        - darkYellow
+        - unknownFutureValue
+      type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

@@ -1,0 +1,364 @@
+openapi: 3.0.1
+info:
+  title: Identity.DataPolicyOperations
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /dataPolicyOperations:
+    get:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Get entities from dataPolicyOperations
+      operationId: dataPolicyOperations.dataPolicyOperation_ListDataPolicyOperation
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedDateTime
+                - completedDateTime desc
+                - status
+                - status desc
+                - storageLocation
+                - storageLocation desc
+                - userId
+                - userId desc
+                - submittedDateTime
+                - submittedDateTime desc
+                - progress
+                - progress desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedDateTime
+                - status
+                - storageLocation
+                - userId
+                - submittedDateTime
+                - progress
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of dataPolicyOperation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Add new entity to dataPolicyOperations
+      operationId: dataPolicyOperations.dataPolicyOperation_CreateDataPolicyOperation
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/dataPolicyOperations/{dataPolicyOperation-id}':
+    get:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Get entity from dataPolicyOperations by key
+      operationId: dataPolicyOperations.dataPolicyOperation_GetDataPolicyOperation
+      parameters:
+        - name: dataPolicyOperation-id
+          in: path
+          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: dataPolicyOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedDateTime
+                - status
+                - storageLocation
+                - userId
+                - submittedDateTime
+                - progress
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Update entity in dataPolicyOperations
+      operationId: dataPolicyOperations.dataPolicyOperation_UpdateDataPolicyOperation
+      parameters:
+        - name: dataPolicyOperation-id
+          in: path
+          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: dataPolicyOperation
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - dataPolicyOperations.dataPolicyOperation
+      summary: Delete entity from dataPolicyOperations
+      operationId: dataPolicyOperations.dataPolicyOperation_DeleteDataPolicyOperation
+      parameters:
+        - name: dataPolicyOperation-id
+          in: path
+          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: dataPolicyOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.dataPolicyOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataPolicyOperation
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Null until the operation completes.'
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.dataPolicyOperationStatus'
+            storageLocation:
+              type: string
+              description: The URL location to where data is being exported for export requests.
+              nullable: true
+            userId:
+              type: string
+              description: The id for the user on whom the operation is performed.
+            submittedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            progress:
+              type: number
+              description: Specifies the progress of an operation.
+              format: double
+      example:
+        id: string (identifier)
+        completedDateTime: string (timestamp)
+        status:
+          '@odata.type': microsoft.graph.dataPolicyOperationStatus
+        storageLocation: string
+        userId: string
+        submittedDateTime: string (timestamp)
+        progress: double
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.dataPolicyOperationStatus:
+      title: dataPolicyOperationStatus
+      enum:
+        - notStarted
+        - running
+        - complete
+        - failed
+        - unknownFutureValue
+      type: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

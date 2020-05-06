@@ -1,0 +1,479 @@
+openapi: 3.0.1
+info:
+  title: DevicesApps.MobileAppManagement
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/users/{user-id}/managedAppRegistrations':
+    get:
+      tags:
+        - users.managedAppRegistration
+      summary: Get managedAppRegistrations from users
+      operationId: users_ListManagedAppRegistrations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastSyncDateTime
+                - lastSyncDateTime desc
+                - applicationVersion
+                - applicationVersion desc
+                - managementSdkVersion
+                - managementSdkVersion desc
+                - platformVersion
+                - platformVersion desc
+                - deviceType
+                - deviceType desc
+                - deviceTag
+                - deviceTag desc
+                - deviceName
+                - deviceName desc
+                - flaggedReasons
+                - flaggedReasons desc
+                - userId
+                - userId desc
+                - appIdentifier
+                - appIdentifier desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastSyncDateTime
+                - applicationVersion
+                - managementSdkVersion
+                - platformVersion
+                - deviceType
+                - deviceTag
+                - deviceName
+                - flaggedReasons
+                - userId
+                - appIdentifier
+                - version
+                - appliedPolicies
+                - intendedPolicies
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliedPolicies
+                - intendedPolicies
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of managedAppRegistration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}':
+    get:
+      tags:
+        - users.managedAppRegistration
+      summary: Get managedAppRegistrations from users
+      operationId: users_GetManagedAppRegistrations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastSyncDateTime
+                - applicationVersion
+                - managementSdkVersion
+                - platformVersion
+                - deviceType
+                - deviceTag
+                - deviceName
+                - flaggedReasons
+                - userId
+                - appIdentifier
+                - version
+                - appliedPolicies
+                - intendedPolicies
+                - operations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliedPolicies
+                - intendedPolicies
+                - operations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+          links:
+            appliedPolicies:
+              operationId: user.managedAppRegistrations.GetAppliedPolicies
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            intendedPolicies:
+              operationId: user.managedAppRegistrations.GetIntendedPolicies
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppPolicy-id: $response.body#/id
+            operations:
+              operationId: user.managedAppRegistrations.GetOperations
+              parameters:
+                user-id: $request.path.user-id
+                managedAppRegistration-id: $request.path.managedAppRegistration-id
+                managedAppOperation-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+components:
+  schemas:
+    microsoft.graph.managedAppRegistration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppRegistration
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of creation
+              format: date-time
+            lastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of last the app synced with management service.
+              format: date-time
+            applicationVersion:
+              type: string
+              description: App version
+              nullable: true
+            managementSdkVersion:
+              type: string
+              description: App management SDK version
+              nullable: true
+            platformVersion:
+              type: string
+              description: Operating System version
+              nullable: true
+            deviceType:
+              type: string
+              description: Host device type
+              nullable: true
+            deviceTag:
+              type: string
+              description: 'App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.'
+              nullable: true
+            deviceName:
+              type: string
+              description: Host device name
+              nullable: true
+            flaggedReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppFlaggedReason'
+              description: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
+            userId:
+              type: string
+              description: The user Id to who this app registration belongs.
+              nullable: true
+            appIdentifier:
+              $ref: '#/components/schemas/microsoft.graph.mobileAppIdentifier'
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+            appliedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+            intendedPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+              description: Zero or more policies admin intended for the app as of now.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+              description: Zero or more long running operations triggered on the app registration.
+          description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+      example:
+        id: string (identifier)
+        createdDateTime: string (timestamp)
+        lastSyncDateTime: string (timestamp)
+        applicationVersion: string
+        managementSdkVersion: string
+        platformVersion: string
+        deviceType: string
+        deviceTag: string
+        deviceName: string
+        flaggedReasons:
+          - '@odata.type': microsoft.graph.managedAppFlaggedReason
+        userId: string
+        appIdentifier:
+          '@odata.type': microsoft.graph.mobileAppIdentifier
+        version: string
+        appliedPolicies:
+          - '@odata.type': microsoft.graph.managedAppPolicy
+        intendedPolicies:
+          - '@odata.type': microsoft.graph.managedAppPolicy
+        operations:
+          - '@odata.type': microsoft.graph.managedAppOperation
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.managedAppFlaggedReason:
+      title: managedAppFlaggedReason
+      enum:
+        - none
+        - rootedDevice
+      type: string
+    microsoft.graph.mobileAppIdentifier:
+      title: mobileAppIdentifier
+      type: object
+    microsoft.graph.managedAppPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppPolicy
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Policy display name.
+            description:
+              type: string
+              description: The policy's description.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the policy was created.
+              format: date-time
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last time the policy was modified.
+              format: date-time
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          description: The ManagedAppPolicy resource represents a base type for platform specific policies.
+      example:
+        id: string (identifier)
+        displayName: string
+        description: string
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        version: string
+    microsoft.graph.managedAppOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedAppOperation
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The operation name.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last time the app operation was modified.
+              format: date-time
+            state:
+              type: string
+              description: The current state of the operation
+              nullable: true
+            version:
+              type: string
+              description: Version of the entity.
+              nullable: true
+          description: Represents an operation applied against an app registration.
+      example:
+        id: string (identifier)
+        displayName: string
+        lastModifiedDateTime: string (timestamp)
+        state: string
+        version: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

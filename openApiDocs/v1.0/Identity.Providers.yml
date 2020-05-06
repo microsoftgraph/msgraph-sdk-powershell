@@ -1,0 +1,332 @@
+openapi: 3.0.1
+info:
+  title: Identity.Providers
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /identityProviders:
+    get:
+      tags:
+        - identityProviders.identityProvider
+      summary: Get entities from identityProviders
+      operationId: identityProviders.identityProvider_ListIdentityProvider
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - type
+                - type desc
+                - name
+                - name desc
+                - clientId
+                - clientId desc
+                - clientSecret
+                - clientSecret desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+                - name
+                - clientId
+                - clientSecret
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of identityProvider
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - identityProviders.identityProvider
+      summary: Add new entity to identityProviders
+      operationId: identityProviders.identityProvider_CreateIdentityProvider
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityProviders/{identityProvider-id}':
+    get:
+      tags:
+        - identityProviders.identityProvider
+      summary: Get entity from identityProviders by key
+      operationId: identityProviders.identityProvider_GetIdentityProvider
+      parameters:
+        - name: identityProvider-id
+          in: path
+          description: 'key: identityProvider-id of identityProvider'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProvider
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+                - name
+                - clientId
+                - clientSecret
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityProviders.identityProvider
+      summary: Update entity in identityProviders
+      operationId: identityProviders.identityProvider_UpdateIdentityProvider
+      parameters:
+        - name: identityProvider-id
+          in: path
+          description: 'key: identityProvider-id of identityProvider'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProvider
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProvider'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityProviders.identityProvider
+      summary: Delete entity from identityProviders
+      operationId: identityProviders.identityProvider_DeleteIdentityProvider
+      parameters:
+        - name: identityProvider-id
+          in: path
+          description: 'key: identityProvider-id of identityProvider'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProvider
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.identityProvider:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityProvider
+          type: object
+          properties:
+            type:
+              type: string
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            clientId:
+              type: string
+              nullable: true
+            clientSecret:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        type: string
+        name: string
+        clientId: string
+        clientSecret: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

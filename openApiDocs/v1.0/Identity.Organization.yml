@@ -1,0 +1,1304 @@
+openapi: 3.0.1
+info:
+  title: Identity.Organization
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /organization:
+    get:
+      tags:
+        - organization.organization
+      summary: Get entities from organization
+      operationId: organization.organization_ListOrganization
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - assignedPlans
+                - assignedPlans desc
+                - businessPhones
+                - businessPhones desc
+                - city
+                - city desc
+                - country
+                - country desc
+                - countryLetterCode
+                - countryLetterCode desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - marketingNotificationEmails
+                - marketingNotificationEmails desc
+                - onPremisesLastSyncDateTime
+                - onPremisesLastSyncDateTime desc
+                - onPremisesSyncEnabled
+                - onPremisesSyncEnabled desc
+                - postalCode
+                - postalCode desc
+                - preferredLanguage
+                - preferredLanguage desc
+                - privacyProfile
+                - privacyProfile desc
+                - provisionedPlans
+                - provisionedPlans desc
+                - securityComplianceNotificationMails
+                - securityComplianceNotificationMails desc
+                - securityComplianceNotificationPhones
+                - securityComplianceNotificationPhones desc
+                - state
+                - state desc
+                - street
+                - street desc
+                - technicalNotificationMails
+                - technicalNotificationMails desc
+                - verifiedDomains
+                - verifiedDomains desc
+                - mobileDeviceManagementAuthority
+                - mobileDeviceManagementAuthority desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - assignedPlans
+                - businessPhones
+                - city
+                - country
+                - countryLetterCode
+                - createdDateTime
+                - displayName
+                - marketingNotificationEmails
+                - onPremisesLastSyncDateTime
+                - onPremisesSyncEnabled
+                - postalCode
+                - preferredLanguage
+                - privacyProfile
+                - provisionedPlans
+                - securityComplianceNotificationMails
+                - securityComplianceNotificationPhones
+                - state
+                - street
+                - technicalNotificationMails
+                - verifiedDomains
+                - mobileDeviceManagementAuthority
+                - certificateBasedAuthConfiguration
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - certificateBasedAuthConfiguration
+                - extensions
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of organization
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.organization'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - organization.organization
+      summary: Add new entity to organization
+      operationId: organization.organization_CreateOrganization
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.organization'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}':
+    get:
+      tags:
+        - organization.organization
+      summary: Get entity from organization by key
+      operationId: organization.organization_GetOrganization
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - assignedPlans
+                - businessPhones
+                - city
+                - country
+                - countryLetterCode
+                - createdDateTime
+                - displayName
+                - marketingNotificationEmails
+                - onPremisesLastSyncDateTime
+                - onPremisesSyncEnabled
+                - postalCode
+                - preferredLanguage
+                - privacyProfile
+                - provisionedPlans
+                - securityComplianceNotificationMails
+                - securityComplianceNotificationPhones
+                - state
+                - street
+                - technicalNotificationMails
+                - verifiedDomains
+                - mobileDeviceManagementAuthority
+                - certificateBasedAuthConfiguration
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - certificateBasedAuthConfiguration
+                - extensions
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organization'
+          links:
+            certificateBasedAuthConfiguration:
+              operationId: organization.GetCertificateBasedAuthConfiguration
+              parameters:
+                organization-id: $request.path.organization-id
+                certificateBasedAuthConfiguration-id: $response.body#/id
+            extensions:
+              operationId: organization.GetExtensions
+              parameters:
+                organization-id: $request.path.organization-id
+                extension-id: $response.body#/id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organization
+      summary: Update entity in organization
+      operationId: organization.organization_UpdateOrganization
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.organization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organization
+      summary: Delete entity from organization
+      operationId: organization.organization_DeleteOrganization
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/certificateBasedAuthConfiguration':
+    get:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Get certificateBasedAuthConfiguration from organization
+      operationId: organization_ListCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - certificateAuthorities
+                - certificateAuthorities desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - certificateAuthorities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of certificateBasedAuthConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+  '/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}':
+    get:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Get certificateBasedAuthConfiguration from organization
+      operationId: organization_GetCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: certificateBasedAuthConfiguration-id
+          in: path
+          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: certificateBasedAuthConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - certificateAuthorities
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+  '/organization/{organization-id}/extensions':
+    get:
+      tags:
+        - organization.extension
+      summary: Get extensions from organization
+      operationId: organization_ListExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+    post:
+      tags:
+        - organization.extension
+      summary: Create new navigation property to extensions for organization
+      operationId: organization_CreateExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - organization.extension
+      summary: Get extensions from organization
+      operationId: organization_GetExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: extension-id
+          in: path
+          description: 'key: extension-id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - organization.extension
+      summary: Update the navigation property extensions in organization
+      operationId: organization_UpdateExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: extension-id
+          in: path
+          description: 'key: extension-id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: organization_checkMemberGroups
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/organization/{organization-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: organization_checkMemberObjects
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/organization/{organization-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action getMemberGroups
+      operationId: organization_getMemberGroups
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/organization/{organization-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action getMemberObjects
+      operationId: organization_getMemberObjects
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/organization/{organization-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action restore
+      operationId: organization_restore
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority':
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action setMobileDeviceManagementAuthority
+      operationId: organization_setMobileDeviceManagementAuthority
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: organization-id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                maximum: 2147483647
+                minimum: -2147483648
+                type: integer
+                format: int32
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /organization/microsoft.graph.getByIds:
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action getByIds
+      operationId: organization_getByIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /organization/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action validateProperties
+      operationId: organization_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    microsoft.graph.organization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: organization
+          type: object
+          properties:
+            assignedPlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.assignedPlan'
+              description: The collection of service plans associated with the tenant. Not nullable.
+            businessPhones:
+              type: array
+              items:
+                type: string
+              description: 'Telephone number for the organization. NOTE: Although this is a string collection, only one number can be set for this property.'
+            city:
+              type: string
+              description: City name of the address for the organization.
+              nullable: true
+            country:
+              type: string
+              description: Country/region name of the address for the organization.
+              nullable: true
+            countryLetterCode:
+              type: string
+              description: Country/region abbreviation for the organization.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the tenant.
+              nullable: true
+            marketingNotificationEmails:
+              type: array
+              items:
+                type: string
+              description: Not nullable.
+            onPremisesLastSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The time and date at which the tenant was last synced with the on-premise directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
+              format: date-time
+              nullable: true
+            onPremisesSyncEnabled:
+              type: boolean
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default).
+              nullable: true
+            postalCode:
+              type: string
+              description: Postal code of the address for the organization.
+              nullable: true
+            preferredLanguage:
+              type: string
+              description: The preferred language for the organization. Should follow ISO 639-1 Code; for example 'en'.
+              nullable: true
+            privacyProfile:
+              $ref: '#/components/schemas/microsoft.graph.privacyProfile'
+            provisionedPlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.provisionedPlan'
+              description: Not nullable.
+            securityComplianceNotificationMails:
+              type: array
+              items:
+                type: string
+            securityComplianceNotificationPhones:
+              type: array
+              items:
+                type: string
+            state:
+              type: string
+              description: State name of the address for the organization.
+              nullable: true
+            street:
+              type: string
+              description: Street name of the address for organization.
+              nullable: true
+            technicalNotificationMails:
+              type: array
+              items:
+                type: string
+              description: Not nullable.
+            verifiedDomains:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.verifiedDomain'
+              description: The collection of domains associated with this tenant. Not nullable.
+            mobileDeviceManagementAuthority:
+              $ref: '#/components/schemas/microsoft.graph.mdmAuthority'
+            certificateBasedAuthConfiguration:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+              description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the organization. Read-only. Nullable.
+          description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        assignedPlans:
+          - '@odata.type': microsoft.graph.assignedPlan
+        businessPhones:
+          - string
+        city: string
+        country: string
+        countryLetterCode: string
+        createdDateTime: string (timestamp)
+        displayName: string
+        marketingNotificationEmails:
+          - string
+        onPremisesLastSyncDateTime: string (timestamp)
+        onPremisesSyncEnabled: true
+        postalCode: string
+        preferredLanguage: string
+        privacyProfile:
+          '@odata.type': microsoft.graph.privacyProfile
+        provisionedPlans:
+          - '@odata.type': microsoft.graph.provisionedPlan
+        securityComplianceNotificationMails:
+          - string
+        securityComplianceNotificationPhones:
+          - string
+        state: string
+        street: string
+        technicalNotificationMails:
+          - string
+        verifiedDomains:
+          - '@odata.type': microsoft.graph.verifiedDomain
+        mobileDeviceManagementAuthority:
+          '@odata.type': microsoft.graph.mdmAuthority
+        certificateBasedAuthConfiguration:
+          - '@odata.type': microsoft.graph.certificateBasedAuthConfiguration
+        extensions:
+          - '@odata.type': microsoft.graph.extension
+    microsoft.graph.certificateBasedAuthConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: certificateBasedAuthConfiguration
+          type: object
+          properties:
+            certificateAuthorities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
+              description: Collection of certificate authorities which creates a trusted certificate chain.
+      example:
+        id: string (identifier)
+        certificateAuthorities:
+          - '@odata.type': microsoft.graph.certificateAuthority
+    microsoft.graph.extension:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: extension
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+    microsoft.graph.assignedPlan:
+      title: assignedPlan
+      type: object
+      properties:
+        assignedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+          format: date-time
+          nullable: true
+        capabilityStatus:
+          type: string
+          description: 'For example, ''Enabled''.'
+          nullable: true
+        service:
+          type: string
+          description: 'The name of the service; for example, ''Exchange''.'
+          nullable: true
+        servicePlanId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: A GUID that identifies the service plan.
+          format: uuid
+          nullable: true
+      example:
+        assignedDateTime: string (timestamp)
+        capabilityStatus: string
+        service: string
+        servicePlanId: string
+    microsoft.graph.privacyProfile:
+      title: privacyProfile
+      type: object
+      properties:
+        contactEmail:
+          type: string
+          description: A valid smtp email address for the privacy statement contact. Not required.
+          nullable: true
+        statementUrl:
+          type: string
+          description: A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
+          nullable: true
+      example:
+        contactEmail: string
+        statementUrl: string
+    microsoft.graph.provisionedPlan:
+      title: provisionedPlan
+      type: object
+      properties:
+        capabilityStatus:
+          type: string
+          description: 'For example, ''Enabled''.'
+          nullable: true
+        provisioningStatus:
+          type: string
+          description: 'For example, ''Success''.'
+          nullable: true
+        service:
+          type: string
+          description: 'The name of the service; for example, ''AccessControlS2S'''
+          nullable: true
+      example:
+        capabilityStatus: string
+        provisioningStatus: string
+        service: string
+    microsoft.graph.verifiedDomain:
+      title: verifiedDomain
+      type: object
+      properties:
+        capabilities:
+          type: string
+          description: 'For example, ''Email'', ''OfficeCommunicationsOnline''.'
+          nullable: true
+        isDefault:
+          type: boolean
+          description: 'true if this is the default domain associated with the tenant; otherwise, false.'
+          nullable: true
+        isInitial:
+          type: boolean
+          description: 'true if this is the initial domain associated with the tenant; otherwise, false'
+          nullable: true
+        name:
+          type: string
+          description: 'The domain name; for example, ''contoso.onmicrosoft.com'''
+          nullable: true
+        type:
+          type: string
+          description: 'For example, ''Managed''.'
+          nullable: true
+      example:
+        capabilities: string
+        isDefault: true
+        isInitial: true
+        name: string
+        type: string
+    microsoft.graph.mdmAuthority:
+      title: mdmAuthority
+      enum:
+        - unknown
+        - intune
+        - sccm
+        - office365
+      type: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      example:
+        id: string (identifier)
+    microsoft.graph.certificateAuthority:
+      title: certificateAuthority
+      type: object
+      properties:
+        isRootAuthority:
+          type: boolean
+          description: 'Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.'
+        certificateRevocationListUrl:
+          type: string
+          description: The URL of the certificate revocation list.
+          nullable: true
+        deltaCertificateRevocationListUrl:
+          type: string
+          description: The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
+          nullable: true
+        certificate:
+          type: string
+          description: Required. The base64 encoded string representing the public certificate.
+          format: base64url
+        issuer:
+          type: string
+          description: 'The issuer of the certificate, calculated from the certificate value. Read-only.'
+        issuerSki:
+          type: string
+          description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
+      example:
+        isRootAuthority: true
+        certificateRevocationListUrl: string
+        deltaCertificateRevocationListUrl: string
+        certificate: string
+        issuer: string
+        issuerSki: string
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          description: The structure of this object is service-specific
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
