@@ -83,6 +83,15 @@ directive:
       variant: CreateViaIdentityExpanded
     set:
       subject: SubSite
+  - where:
+      parameter-name: SiteId
+      verb: Get
+      subject: (SiteAnalytic|SiteColumn|SiteContentType|SiteContentTypeContentLink|SubSite)
+    set:
+      default:
+        name: SiteId Default Value
+        description: Get the SiteId as default to root
+        script: '"root"'
 ```
 ### Versioning
 
