@@ -14,7 +14,7 @@ pr:
 trigger: none
 
 jobs:
-- job: MSGraphPSSDKValidation
+- job: MSGraphPSSDKValidation_Windows
   displayName: MS Graph PS SDK Auth Validation
   timeoutInMinutes: 300
   pool:
@@ -50,3 +50,25 @@ jobs:
       text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
     condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
     enabled: true
+
+- job: MSGraphPSSDKValidation_linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Enabled Tests'
+    inputs:
+      command: 'test'
+      projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
+      testRunTitle: 'Run Enabled Tests'
+  
+- job: MSGraphPSSDKValidation_macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Enabled Tests'
+    inputs:
+      command: 'test'
+      projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
+      testRunTitle: 'Run Enabled Tests'
