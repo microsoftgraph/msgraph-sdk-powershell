@@ -83,10 +83,19 @@ directive:
       variant: CreateViaIdentityExpanded
     set:
       subject: SubSite
+  - where:
+      parameter-name: SiteId
+      verb: Get
+      subject: (SiteAnalytic|SiteColumn|SiteContentType|SiteContentTypeContentLink|SubSite)
+    set:
+      default:
+        name: SiteId Default Value
+        description: Get the SiteId as default to root
+        script: '"root"'
 ```
 ### Versioning
 
 ``` yaml
-module-version: 0.5.0
+module-version: 0.5.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

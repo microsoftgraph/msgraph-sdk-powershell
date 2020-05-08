@@ -16,7 +16,7 @@ $LASTEXITCODE = $null
 $NugetPackagesToRemove = "Microsoft.CSharp"
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
 $GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\$Module"
-$GeneratedModuleProj = Join-Path  $GeneratedModuleSlnDir "$Module\$ModulePrefix.$Module.csproj"
+$GeneratedModuleProj = Join-Path $GeneratedModuleSlnDir "$Module\$ModulePrefix.$Module.csproj"
 $CustomCodeDir = Join-Path $PSScriptRoot "\Custom\"
 
 if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
@@ -28,12 +28,13 @@ if(-not (Test-Path "$GeneratedModuleSlnDir\$Module.sln")) {
         return
     }
 }
+$GeneratedModuleSln = Join-Path $GeneratedModuleSlnDir "$Module.sln"
 
 # Add generated module project to solution.
-Write-Host -ForegroundColor Green "Executing: dotnet sln $GeneratedModuleSlnDir\$Module.sln add $GeneratedModuleProj"
-dotnet sln "$GeneratedModuleSlnDir\$Module.sln" add $GeneratedModuleProj
+Write-Host -ForegroundColor Green "Executing: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
+dotnet sln $GeneratedModuleSln add $GeneratedModuleProj
 if($LASTEXITCODE){
-    Write-Error "Failed to execute: dotnet sln $GeneratedModuleSlnDir\$Module.sln add $GeneratedModuleProj"
+    Write-Error "Failed to execute: dotnet sln $GeneratedModuleSln add $GeneratedModuleProj"
     return
 }
 
@@ -63,10 +64,10 @@ foreach($Package in $NugetPackagesToRemove)
 }
 
 # Restore packages.
-Write-Host -ForegroundColor Green "Executing: dotnet restore $GeneratedModuleSlnDir\$Module.sln"
-dotnet restore "$GeneratedModuleSlnDir\$Module.sln"
+Write-Host -ForegroundColor Green "Executing: dotnet restore $GeneratedModuleSln"
+dotnet restore $GeneratedModuleSln
 if($LASTEXITCODE){
-    Write-Error "Failed to execute: dotnet restore $GeneratedModuleSlnDir\$Module.sln"
+    Write-Error "Failed to execute: dotnet restore $GeneratedModuleSln"
     return
 }
 Write-Host -ForegroundColor Green "-------------Done-------------"
