@@ -15,7 +15,7 @@ trigger: none
 
 jobs:
 - job: MSGraphPSSDKValidation_Windows
-  displayName: MS Graph PS SDK Auth Validation
+  displayName: MS Graph PS SDK Auth Validation - Windows
   timeoutInMinutes: 300
   pool:
     name: Microsoft Graph
@@ -51,7 +51,8 @@ jobs:
     condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
     enabled: true
 
-- job: MSGraphPSSDKValidation_linux
+- job: MSGraphPSSDKValidation_Linux
+  displayName: MS Graph PS SDK Auth Validation - Linux
   pool:
     vmImage: 'ubuntu-latest'
   steps:
@@ -62,7 +63,8 @@ jobs:
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
   
-- job: MSGraphPSSDKValidation_macOS
+- job: MSGraphPSSDKValidation_MacOS
+  displayName: MS Graph PS SDK Auth Validation - MacOS
   pool:
     vmImage: 'macOS-latest'
   steps:
