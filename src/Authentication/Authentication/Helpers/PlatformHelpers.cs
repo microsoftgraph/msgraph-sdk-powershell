@@ -4,19 +4,23 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using System;
     using System.Runtime.InteropServices;
 
-    public static class OperatingSystem
+    internal static class OperatingSystem
     {
         /// <summary>
-        /// Detects if the platform we are running on is Windows or not.
+        /// Detects if the platform we are running on is Windows.
         /// </summary>
-        /// <returns>True if we are runnning on Windows or False if we are not.</returns>
         public static bool IsWindows() => RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
+        /// <summary>
+        /// Detects if the platform we are running on is MacOS.
+        /// </summary>
         public static bool IsMacOS() => RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
 
+        /// <summary>
+        /// Detects if the platform we are running on is Linux.
+        /// </summary>
         public static bool IsLinux() => RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
     }
 }

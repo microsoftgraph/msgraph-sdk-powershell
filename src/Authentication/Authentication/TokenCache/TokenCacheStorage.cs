@@ -3,40 +3,20 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using System;
-
     /// <summary>
     /// Helper class to handle token encryption and decryption.
     /// </summary>
-    internal static class TokenCryptographer
+    internal static class TokenCacheStorage
     {
-        /// <summary>
-        /// Encrypts and saves an access token buffer to the host platform OS.
-        /// </summary>
-        /// <param name="appId">An app/client id.</param>
-        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
-        /// <param name="accessToken">An access token.</param>
-        public static void EncryptAndSetToken(string appId, string tokenCacheFilePath, byte[] accessToken)
-        {
-            if (Helpers.OperatingSystem.IsWindows())
-                WindowsTokenCache.SetToken(tokenCacheFilePath, accessToken);
-            else if (Helpers.OperatingSystem.IsMacOS())
-                MacTokenCache.SetToken(appId, accessToken);
-            else
-                LinuxTokenCache.SetToken(appId, accessToken);
-        }
-
         /// <summary>
         /// Gets a decrypted access token from the host platform OS.
         /// </summary>
         /// <param name="appId">An app/client id.</param>
-        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
         /// <returns></returns>
-        public static byte[] DencryptAndGetToken(string appId, string tokenCacheFilePath)
+        public static byte[] GetToken(string appId)
         {
             if (Helpers.OperatingSystem.IsWindows())
-                return WindowsTokenCache.GetToken(tokenCacheFilePath);
+                return WindowsTokenCache.GetToken(appId);
             else if (Helpers.OperatingSystem.IsMacOS())
                 return MacTokenCache.GetToken(appId);
             else
@@ -44,14 +24,28 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         }
 
         /// <summary>
+        /// Encrypts and saves an access token buffer to the host platform OS.
+        /// </summary>
+        /// <param name="appId">An app/client id.</param>
+        /// <param name="accessToken">An access token.</param>
+        public static void SetToken(string appId, byte[] accessToken)
+        {
+            if (Helpers.OperatingSystem.IsWindows())
+                WindowsTokenCache.SetToken(appId, accessToken);
+            else if (Helpers.OperatingSystem.IsMacOS())
+                MacTokenCache.SetToken(appId, accessToken);
+            else
+                LinuxTokenCache.SetToken(appId, accessToken);
+        }
+
+        /// <summary>
         /// Deletes an access token from the host OS.
         /// </summary>
         /// <param name="appId">An app/client id.</param>
-        /// <param name="tokenCacheFilePath">Path to the token cache file.</param>
-        public static void DeleteTokenFromCache(string appId, string tokenCacheFilePath)
+        public static void DeleteToken(string appId)
         {
             if (Helpers.OperatingSystem.IsWindows())
-                WindowsTokenCache.DeleteToken(tokenCacheFilePath);
+                WindowsTokenCache.DeleteToken(appId);
             else if (Helpers.OperatingSystem.IsMacOS())
                 MacTokenCache.DeleteToken(appId);
             else

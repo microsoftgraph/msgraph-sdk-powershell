@@ -11,7 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
     /// <summary>
     /// A set of methods for getting, setting and deleting tokens on Linux via keyutils.
     /// </summary>
-    public static class LinuxTokenCache
+    internal static class LinuxTokenCache
     {
         /// <summary>
         /// Gets an app's token from Linux kerings faciility.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             {
                 int removedState = LinuxNativeKeyUtils.keyctl_revoke(key);
                 if (removedState == -1)
-                    throw new Exception("Failed to remove token from cache.");
+                    throw new Exception("Failed to revoke token from cache.");
             }
         }
     }

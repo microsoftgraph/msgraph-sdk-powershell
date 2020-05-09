@@ -161,8 +161,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                     passwordData: out passwordDataPtr,
                     itemRef: out itemPtr);
 
-                if (resultStatus == MacNativeKeyChain.SecResultCodes.errSecItemNotFound)
+                if (resultStatus == MacNativeKeyChain.SecResultCodes.errSecItemNotFound ||
+                    itemPtr == IntPtr.Zero)
+                {
                     return;
+                }
                 else if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
                 {
                     throw new Exception(string.Format(
@@ -171,9 +174,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                         "SecKeychainFindGenericPassword",
                         resultStatus));
                 }
-
-                if (itemPtr == IntPtr.Zero)
-                    return;
 
                 resultStatus = MacNativeKeyChain.SecKeychainItemDelete(itemPtr);
                 if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
