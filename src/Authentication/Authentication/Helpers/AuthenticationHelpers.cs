@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                    .WithTenantId(authConfig.TenantId)
                    .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig.ClientId, Constants.UserCacheFileName);
+                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig.ClientId);
                 return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 .WithCertificate(string.IsNullOrEmpty(authConfig.CertificateThumbprint) ? GetCertificateByName(authConfig.CertificateName) : GetCertificateByThumbprint(authConfig.CertificateThumbprint))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig.ClientId, Constants.AppCacheFileName);
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig.ClientId);
                 return new ClientCredentialProvider(confidentialClientApp);
             }
         }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
         }
 
-        private static void ConfigureTokenCache(ITokenCache tokenCache, string appId, string tokenCacheFile)
+        private static void ConfigureTokenCache(ITokenCache tokenCache, string appId)
         {
             tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
                 lock (FileLock)

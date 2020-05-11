@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                 type: LinuxNativeKeyUtils.KeyTypes.User,
                 description: $"{Constants.TokenCahceServiceName}:{appId}",
                 callout_info: IntPtr.Zero,
-                dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_USER_SESSION_KEYRING);
+                dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_SESSION_KEYRING);
 
             if (key == -1)
                 return new byte[0];
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             LinuxNativeKeyUtils.keyctl_read_alloc(
                 key: key,
                 buffer: out IntPtr contentPtr);
-            string content = Marshal.PtrToStringAuto(contentPtr);
+            string content = Marshal.PtrToStringAnsi(contentPtr);
             Marshal.FreeHGlobal(contentPtr);
 
             if (string.IsNullOrEmpty(content))
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                     type: LinuxNativeKeyUtils.KeyTypes.User,
                     description: $"{Constants.TokenCahceServiceName}:{appId}",
                     callout_info: IntPtr.Zero,
-                    dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_USER_SESSION_KEYRING);
+                    dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_SESSION_KEYRING);
 
                 if (key == -1)
                     LinuxNativeKeyUtils.add_key(
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                         description: $"{Constants.TokenCahceServiceName}:{appId}",
                         payload: encodedContent,
                         plen: encodedContent.Length,
-                        keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_USER_SESSION_KEYRING);
+                        keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_SESSION_KEYRING);
                 else
                     LinuxNativeKeyUtils.keyctl_update(
                         key: key,
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
                 type: LinuxNativeKeyUtils.KeyTypes.User,
                 description: $"{Constants.TokenCahceServiceName}:{appId}",
                 callout_info: IntPtr.Zero,
-                dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_USER_SESSION_KEYRING);
+                dest_keyring: (int)LinuxNativeKeyUtils.KeyringType.KEY_SPEC_SESSION_KEYRING);
             if (key != -1)
             {
                 int removedState = LinuxNativeKeyUtils.keyctl_revoke(key);
