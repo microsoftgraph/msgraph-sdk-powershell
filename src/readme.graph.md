@@ -81,7 +81,9 @@ directive:
       parameter-name: Top
     set:
       parameter-name: PageSize
-      alias: Top
+      alias:
+        - Top
+        - Limit
   - where:
       parameter-name: Select
     set:
@@ -378,7 +380,7 @@ directive:
         }
         return $;
       }
-# Temporarily disable paging.
+# Add custom -All parameter to *_List cmdlets that support Odata next link.
   - from: source-file-csharp
     where: $
     transform: >
@@ -388,7 +390,15 @@ directive:
       } else {
         let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
-          $ = $.replace(odataNextLinkRegex, '$1result.OdataNextLink = null;\n$1if (result.OdataNextLink != null)$1');
+          $ = $.replace(odataNextLinkRegex, '$1if (result.OdataNextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
+          let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
+          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
+
+          let processRecordRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
+          $ = $.replace(processRecordRegex, '$1$2\n$1$1if (this.InvocationInformation.BoundParameters.ContainsKey("PageSize")){ InitializePaging(ref this.__invocationInfo, ref this._pageSize); }\n$1');
+
+          let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
+          $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
         }
         return $;
       }
