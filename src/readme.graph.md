@@ -394,8 +394,8 @@ directive:
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
-          let processRecordRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(processRecordRegex, '$1$2\n$1$1if (this.InvocationInformation.BoundParameters.ContainsKey("PageSize")){ InitializePaging(ref this.__invocationInfo, ref this._pageSize); }\n$1');
+          let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
+          $ = $.replace(beginProcessingRegex, '$1$2\n$1$1if (this.InvocationInformation.BoundParameters.ContainsKey("PageSize")){ InitializePaging(ref this.__invocationInfo, ref this._pageSize); }\n$1');
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
