@@ -51,7 +51,7 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('Microsoft.Graph.Authentication')	
+RequiredModules = @('Microsoft.Graph.Authentication')
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = './bin/Microsoft.Graph.Users.User.private.dll'
