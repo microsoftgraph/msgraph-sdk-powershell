@@ -1,18 +1,9 @@
-### Example 1: {{ Add title here }}
+### Example 1: Update a conditional access policy in Azure AD by PolicyId.
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Update-MgConditionalAccessPolicy -ConditionalAccessPolicyId 99dac946-5c4a-42de-ac16-76159af6a584 -State "disabled"
 
-{{ Add output here }}
+This command does not return a response
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This command updates the state of a conditional access policy in Azure AD.
 
