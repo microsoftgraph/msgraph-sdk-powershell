@@ -3,6 +3,7 @@
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using System;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
     using Xunit;
 
@@ -132,7 +133,7 @@
                 }
 
                 CleanTokenCache(index.ToString());
-                count++;
+                Interlocked.Increment(ref count);
             });
 
             // Assert
