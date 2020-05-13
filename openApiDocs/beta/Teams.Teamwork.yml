@@ -438,6 +438,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: The apps installed in the personal scope of this user.
       example:
         id: string (identifier)
         installedApps:

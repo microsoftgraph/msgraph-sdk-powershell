@@ -14922,14 +14922,17 @@ components:
           properties:
             enabled:
               type: boolean
+              description: Indicates whether the schedule is enabled for the team. Required.
               nullable: true
             timeZone:
               type: string
+              description: Indicates the time zone of the schedule team using tz database format. Required.
               nullable: true
             provisionStatus:
               $ref: '#/components/schemas/microsoft.graph.operationStatus'
             provisionStatusCode:
               type: string
+              description: Additional information about why schedule provisioning failed.
               nullable: true
             workforceIntegrationIds:
               type: array
@@ -14938,23 +14941,29 @@ components:
                 nullable: true
             timeClockEnabled:
               type: boolean
+              description: Indicates whether time clock is enabled for the schedule.
               nullable: true
             openShiftsEnabled:
               type: boolean
+              description: Indicates whether open shifts are enabled for the schedule.
               nullable: true
             swapShiftsRequestsEnabled:
               type: boolean
+              description: Indicates whether swap shifts requests are enabled for the schedule.
               nullable: true
             offerShiftRequestsEnabled:
               type: boolean
+              description: Indicates whether offer shift requests are enabled for the schedule.
               nullable: true
             timeOffRequestsEnabled:
               type: boolean
+              description: Indicates whether time off requests are enabled for the schedule.
               nullable: true
             shifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shift'
+              description: The shifts in the schedule.
             openShifts:
               type: array
               items:
@@ -14963,14 +14972,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOff'
+              description: The instances of times off in the schedule.
             timeOffReasons:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+              description: The set of reasons for a time off in the schedule.
             schedulingGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+              description: The logical grouping of users in the schedule (usually by role).
             swapShiftsChangeRequests:
               type: array
               items:
@@ -17786,9 +17798,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
+              description: ID of the user assigned to the shift. Required.
               nullable: true
             schedulingGroupId:
               type: string
+              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
       example:
         id: string (identifier)
@@ -17814,6 +17828,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.openShiftItem'
             schedulingGroupId:
               type: string
+              description: ID for the scheduling group that the open shift belongs to.
               nullable: true
       example:
         id: string (identifier)
@@ -17838,6 +17853,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.timeOffItem'
             userId:
               type: string
+              description: ID of the user assigned to the timeOff. Required.
               nullable: true
       example:
         id: string (identifier)
@@ -17858,11 +17874,13 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the timeOffReason. Required.
               nullable: true
             iconType:
               $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
             isActive:
               type: boolean
+              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
               nullable: true
       example:
         id: string (identifier)
@@ -17882,15 +17900,18 @@ components:
           properties:
             displayName:
               type: string
+              description: The display name for the schedulingGroup. Required.
               nullable: true
             isActive:
               type: boolean
+              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
               nullable: true
             userIds:
               type: array
               items:
                 type: string
                 nullable: true
+              description: The list of user IDs that are a member of the schedulingGroup. Required.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -17909,6 +17930,7 @@ components:
           properties:
             recipientShiftId:
               type: string
+              description: ShiftId for the recipient user with whom the request is to swap.
               nullable: true
       example:
         id: string (identifier)
@@ -17939,6 +17961,7 @@ components:
           properties:
             openShiftId:
               type: string
+              description: ID for the open shift.
               nullable: true
       example:
         id: string (identifier)
@@ -17965,17 +17988,21 @@ components:
           properties:
             recipientActionMessage:
               type: string
+              description: Custom message sent by recipient of the offer shift request.
               nullable: true
             recipientActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             senderShiftId:
               type: string
+              description: User ID of the sender of the offer shift request.
               nullable: true
             recipientUserId:
               type: string
+              description: User ID of the recipient of the offer shift request.
               nullable: true
       example:
         id: string (identifier)
@@ -18006,15 +18033,18 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             timeOffReasonId:
               type: string
+              description: The reason for the time off.
               nullable: true
       example:
         id: string (identifier)
@@ -20666,6 +20696,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: The apps installed in the personal scope of this user.
       example:
         id: string (identifier)
         installedApps:
@@ -21733,11 +21764,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedBy:
@@ -21756,14 +21789,17 @@ components:
           properties:
             displayName:
               type: string
+              description: The shift label of the shiftItem.
               nullable: true
             notes:
               type: string
+              description: The shift notes for the shiftItem.
               nullable: true
             activities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftActivity'
+              description: 'An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.'
       example:
         startDateTime: string (timestamp)
         endDateTime: string (timestamp)
@@ -21783,6 +21819,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Count of the number of slots for the given open shift.
               format: int32
       example:
         startDateTime: string (timestamp)
@@ -21802,6 +21839,7 @@ components:
           properties:
             timeOffReasonId:
               type: string
+              description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
       example:
         startDateTime: string (timestamp)
@@ -23926,6 +23964,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
+              description: Availability of the user to be scheduled for work and its recurrence pattern.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -25096,22 +25135,27 @@ components:
       properties:
         isPaid:
           type: boolean
+          description: Indicates whether the microsoft.graph.user should be paid for the activity during their shift. Required.
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
           format: date-time
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Required.'
           format: date-time
           nullable: true
         code:
           type: string
+          description: Customer defined code for the shiftActivity. Required.
           nullable: true
         displayName:
           type: string
+          description: The name of the shiftActivity. Required.
           nullable: true
         theme:
           $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
@@ -26263,11 +26307,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         timeZone:
           type: string
+          description: Specifies the time zone for the indicated time.
           nullable: true
         timeSlots:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeRange'
+          description: The time slot(s) preferred by the user.
       example:
         recurrence:
           '@odata.type': microsoft.graph.patternedRecurrence
@@ -27105,11 +27151,13 @@ components:
         startTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: Start time for the time range.
           format: time
           nullable: true
         endTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: End time for the time range.
           format: time
           nullable: true
       example:
