@@ -4,6 +4,8 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
+    using System;
+    using System.Globalization;
     using System.IO;
     using System.Security.Cryptography;
     /// <summary>
@@ -18,9 +20,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <returns>A decrypted access token.</returns>
         public static byte[] GetToken(string appId)
         {
-            if (!Directory.Exists(Constants.TokenCacheDirectory))
-                Directory.CreateDirectory(Constants.TokenCacheDirectory);
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
 
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.TokenCacheDirectory);
             string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
 
             return File.Exists(tokenCacheFilePath) ?
@@ -38,9 +47,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <param name="plainContent">Plain access token to securely write to the token cache file.</param>
         public static void SetToken(string appId, byte[] plainContent)
         {
-            if (!Directory.Exists(Constants.TokenCacheDirectory))
-                Directory.CreateDirectory(Constants.TokenCacheDirectory);
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
+            if (plainContent == null || plainContent.Length == 0)
+            {
+                return;
+            }
 
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.TokenCacheDirectory);
             string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
 
             File.WriteAllBytes(tokenCacheFilePath,
@@ -51,15 +71,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         }
 
         /// <summary>
-        /// Deletes an access token cache file/
+        /// Deletes an access token cache file.
         /// </summary>
         /// <param name="appId">The app/client id to delete its token cache file.</param>
         public static void DeleteToken(string appId)
         {
-            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
 
+            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, $"{appId}cache.bin3");
             if (File.Exists(tokenCacheFilePath))
+            {
                 File.Delete(tokenCacheFilePath);
+            }
         }
     }
 }

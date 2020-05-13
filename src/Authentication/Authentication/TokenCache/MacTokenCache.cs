@@ -18,41 +18,54 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// Gets an app's token from MacOS KeyChain.
         /// </summary>
         /// <param name="appId">An app/client id.</param>
-        /// <returns>A decypted token.</returns>
+        /// <returns>A decrypted token.</returns>
         public static byte[] GetToken(string appId)
         {
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
+
             IntPtr passwordDataPtr = IntPtr.Zero;
             IntPtr itemPtr = IntPtr.Zero;
 
             try
             {
-                byte[] contentBuffer = new byte[0];
                 int resultStatus = MacNativeKeyChain.SecKeychainFindGenericPassword(
                     keychainOrArray: IntPtr.Zero,
-                    serviceNameLength: (uint)Constants.TokenCahceServiceName.Length,
-                    serviceName: Constants.TokenCahceServiceName,
+                    serviceNameLength: (uint)Constants.TokenCacheServiceName.Length,
+                    serviceName: Constants.TokenCacheServiceName,
                     accountNameLength: (uint)appId.Length,
                     accountName: appId,
                     passwordLength: out uint passwordLength,
                     passwordData: out passwordDataPtr,
                     itemRef: out itemPtr);
 
-                if (resultStatus == MacNativeKeyChain.SecResultCodes.errSecItemNotFound)
-                    return contentBuffer;
-
-                else if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
+                byte[] contentBuffer = new byte[0];
+                switch (resultStatus)
                 {
-                    throw new Exception(string.Format(
-                        CultureInfo.CurrentCulture,
-                        ErrorConstants.Message.MacKeyChainFailed,
-                        "SecKeychainFindGenericPassword",
-                        resultStatus));
-                }
-
-                if (itemPtr != IntPtr.Zero && passwordLength > 0)
-                {
-                    contentBuffer = new byte[passwordLength];
-                    Marshal.Copy(passwordDataPtr, contentBuffer, 0, contentBuffer.Length);
+                    case MacNativeKeyChain.SecResultCodes.errSecItemNotFound:
+                        break;
+                    case MacNativeKeyChain.SecResultCodes.errSecSuccess:
+                        if (passwordLength > 0)
+                        {
+                            contentBuffer = new byte[passwordLength];
+                            Marshal.Copy(
+                                source: passwordDataPtr,
+                                destination: contentBuffer, 
+                                startIndex: 0, 
+                                length: contentBuffer.Length);
+                        }
+                        break;
+                    default:
+                        throw new Exception(string.Format(
+                            CultureInfo.CurrentCulture,
+                            ErrorConstants.Message.MacKeyChainFailed,
+                            "SecKeychainFindGenericPassword",
+                            resultStatus));
                 }
                 return contentBuffer;
             }
@@ -69,69 +82,79 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <param name="plainContent">The content to store.</param>
         public static void SetToken(string appId, byte[] plainContent)
         {
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
+            if (plainContent == null || plainContent.Length == 0)
+            {
+                return;
+            }
+
             IntPtr passwordDataPtr = IntPtr.Zero;
             IntPtr itemPtr = IntPtr.Zero;
             try
             {
                 int resultStatus = MacNativeKeyChain.SecKeychainFindGenericPassword(
                     keychainOrArray: IntPtr.Zero,
-                    serviceNameLength: (uint)Constants.TokenCahceServiceName.Length,
-                    serviceName: Constants.TokenCahceServiceName,
+                    serviceNameLength: (uint)Constants.TokenCacheServiceName.Length,
+                    serviceName: Constants.TokenCacheServiceName,
                     accountNameLength: (uint)appId.Length,
                     accountName: appId,
                     passwordLength: out uint passwordLength,
                     passwordData: out passwordDataPtr,
                     itemRef: out itemPtr);
 
-                if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess &&
-                    resultStatus != MacNativeKeyChain.SecResultCodes.errSecItemNotFound)
+                switch (resultStatus)
                 {
-                    throw new Exception(string.Format(
-                        CultureInfo.CurrentCulture,
-                        ErrorConstants.Message.MacKeyChainFailed,
-                        "SecKeychainFindGenericPassword",
-                        resultStatus));
-                }
+                    case MacNativeKeyChain.SecResultCodes.errSecSuccess:
+                        // Key exists, let's update it.
+                        resultStatus = MacNativeKeyChain.SecKeychainItemModifyAttributesAndData(
+                            itemRef: itemPtr,
+                            attrList: IntPtr.Zero,
+                            passwordLength: (uint)plainContent.Length,
+                            passwordData: plainContent);
 
-                if (itemPtr != IntPtr.Zero)
-                {
-                    // Key exists, let's update it.
-                    resultStatus = MacNativeKeyChain.SecKeychainItemModifyAttributesAndData(
-                        itemRef: itemPtr,
-                        attrList: IntPtr.Zero,
-                        passwordLength: (uint)plainContent.Length,
-                        passwordData: plainContent);
+                        if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
+                        {
+                            throw new Exception(string.Format(
+                                CultureInfo.CurrentCulture,
+                                ErrorConstants.Message.MacKeyChainFailed,
+                                "SecKeychainItemModifyAttributesAndData",
+                                resultStatus));
+                        }
+                        break;
 
-                    if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
-                    {
+                    case MacNativeKeyChain.SecResultCodes.errSecItemNotFound:
+                        // Key not found, let's create a new one in the default keychain.
+                        resultStatus = MacNativeKeyChain.SecKeychainAddGenericPassword(
+                            keychain: IntPtr.Zero,
+                            serviceNameLength: (uint)Constants.TokenCacheServiceName.Length,
+                            serviceName: Constants.TokenCacheServiceName,
+                            accountNameLength: (uint)appId.Length,
+                            accountName: appId,
+                            passwordLength: (uint)plainContent.Length,
+                            passwordData: plainContent,
+                            itemRef: out itemPtr);
+
+                        if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
+                        {
+                            throw new Exception(string.Format(
+                                CultureInfo.CurrentCulture,
+                                ErrorConstants.Message.MacKeyChainFailed,
+                                "SecKeychainAddGenericPassword",
+                                resultStatus));
+                        }
+                        break;
+                    default:
                         throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.MacKeyChainFailed,
-                            "SecKeychainItemModifyAttributesAndData",
+                            "SecKeychainFindGenericPassword",
                             resultStatus));
-                    }
-                }
-                else
-                {
-                    // Key not found, let's create a new one in the default keychain.
-                    resultStatus = MacNativeKeyChain.SecKeychainAddGenericPassword(
-                        keychain: IntPtr.Zero,
-                        serviceNameLength: (uint)Constants.TokenCahceServiceName.Length,
-                        serviceName: Constants.TokenCahceServiceName,
-                        accountNameLength: (uint)appId.Length,
-                        accountName: appId,
-                        passwordLength: (uint)plainContent.Length,
-                        passwordData: plainContent,
-                        itemRef: out itemPtr);
-
-                    if (resultStatus != MacNativeKeyChain.SecResultCodes.errSecSuccess)
-                    {
-                        throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.MacKeyChainFailed,
-                            "SecKeychainAddGenericPassword",
-                            resultStatus));
-                    }
                 }
             }
             finally
@@ -146,6 +169,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// <param name="appId">An app/client id.</param>
         public static void DeleteToken(string appId)
         {
+            if (string.IsNullOrEmpty(appId))
+            {
+                throw new ArgumentNullException(string.Format(
+                    CultureInfo.CurrentCulture,
+                    ErrorConstants.Message.NullOrEmptyParameter,
+                    nameof(appId)));
+            }
+
             IntPtr passwordDataPtr = IntPtr.Zero;
             IntPtr itemPtr = IntPtr.Zero;
 
@@ -153,8 +184,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             {
                 int resultStatus = MacNativeKeyChain.SecKeychainFindGenericPassword(
                     keychainOrArray: IntPtr.Zero,
-                    serviceNameLength: (uint)Constants.TokenCahceServiceName.Length,
-                    serviceName: Constants.TokenCahceServiceName,
+                    serviceNameLength: (uint)Constants.TokenCacheServiceName.Length,
+                    serviceName: Constants.TokenCacheServiceName,
                     accountNameLength: (uint)appId.Length,
                     accountName: appId,
                     passwordLength: out uint passwordLength,

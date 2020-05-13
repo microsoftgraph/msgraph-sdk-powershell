@@ -137,7 +137,7 @@
 
             // Assert
             Assert.Equal(executions, count);
-            Assert.False(failed);
+            Assert.False(failed, "Unexpected content found.");
         }
 
         public void Dispose()

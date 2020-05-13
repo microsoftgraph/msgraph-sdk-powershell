@@ -8,6 +8,7 @@ pr:
     include:
     - dev
     - master
+    - milestone/*
   paths:
     include:
     - src/Authentication/*
@@ -18,9 +19,7 @@ jobs:
   displayName: MS Graph PS SDK Auth Validation - Windows
   timeoutInMinutes: 300
   pool:
-    name: Microsoft Graph
-    demands: 'Agent.Name -equals Local-Agent'
-  
+    vmImage: 'windows-latest'
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'
@@ -62,6 +61,16 @@ jobs:
       command: 'test'
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
+
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true
   
 - job: MSGraphPSSDKValidation_MacOS
   displayName: MS Graph PS SDK Auth Validation - MacOS
@@ -74,3 +83,13 @@ jobs:
       command: 'test'
       projects: '$(System.DefaultWorkingDirectory)/src/Authentication/Authentication.Test/*.csproj'
       testRunTitle: 'Run Enabled Tests'
+
+  - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0
+    displayName: 'Graph Client Tooling pipeline fail notification'
+    inputs:
+      addressType: serviceEndpoint
+      serviceEndpointName: 'microsoftgraph pipeline status'
+      title: '$(Build.DefinitionName) failure notification'
+      text: 'This pipeline has failed. View the build details for further information. This is a blocking failure. '
+    condition: and(failed(), ne(variables['Build.Reason'], 'Manual'))
+    enabled: true

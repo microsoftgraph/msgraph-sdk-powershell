@@ -14,6 +14,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string AppParameterSet = "AppParameterSet";
         internal const int MaxDeviceCodeTimeOut = 120; // 2 mins timeout.
         internal static readonly string TokenCacheDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".graph");
-        internal const string TokenCahceServiceName = "com.microsoft.graph.powershell.sdkcache";
+        internal const string TokenCacheServiceName = "com.microsoft.graph.powershell.sdkcache";
     }
 }
