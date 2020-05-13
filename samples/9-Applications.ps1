@@ -9,4 +9,9 @@ $app2 = new-mgApplication   -displayName "NativeAppInteractiveFlowApp" `
                             -IsFallbackPublicClient `
                             -PublicClientRedirectUris "http://localhost"
 
-                            
+# Create an web app with implicit auth
+$app3 = new-mgApplication -displayName "ImplicitWebApp" `
+         -ImplicitGrantSettingEnableAccessTokenIssuance `
+         -ImplicitGrantSettingEnableIdTokenIssuance `
+         -WebRedirectUris "https://localhost:3000/"                            
+         
