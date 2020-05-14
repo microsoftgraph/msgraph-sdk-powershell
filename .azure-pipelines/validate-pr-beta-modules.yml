@@ -8,6 +8,7 @@ pr:
     include:
     - master
     - dev
+    - milestone/*
   paths:
     include:
     - src/Beta/*
