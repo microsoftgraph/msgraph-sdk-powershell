@@ -94,23 +94,6 @@ steps:
         git push --set-upstream origin $(BRANCH)
         git status
 
-  -  task: Bash@3
-     displayName: "Create Pull Request"
-     env: 
-        GITHUB_TOKEN: $(GITHUB_TOKEN)
-        MESSAGE_TITLE: Weekly OpenApiDocs Download
-        MESSAGE_BODY: "This pull request was automatically created by Azure Devops, \n\n Contains Weekly OpenApiDocs Download files for v1.0 and beta"
-        REVIEWERS: peombwa,ddyett,MIchaelMainer
-        ASSIGNEDTO: finsharp
-        LABELS: generated
-        BASE: $(BaseBranch)
-        BRANCH: $(BRANCH)
-     inputs:
-        targetType: 'inline'
-        script: |
-          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
-          bin/hub pull-request -b "$BASE" -h "$BRANCH" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
-
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 # [1] https://hub.github.com/hub-pull-request.1.html
