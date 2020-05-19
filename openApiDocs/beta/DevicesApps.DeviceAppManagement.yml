@@ -11291,6 +11291,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceAppManagement/mobileApps/microsoft.graph.validateXml:
+    post:
+      tags:
+        - deviceAppManagement.Actions
+      summary: Invoke action validateXml
+      operationId: deviceAppManagement.mobileApps_validateXml
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                officeConfigurationXml:
+                  type: string
+                  format: base64url
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceAppManagement/policySets:
     get:
       tags:
@@ -15323,11 +15351,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             customBrowserPackageId:
               type: string
-              description: Unique identifier of a custom browser to open weblink on Android.
+              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             customBrowserDisplayName:
               type: string
-              description: Friendly name of the preferred custom browser to open weblink on Android.
+              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             minimumRequiredCompanyPortalVersion:
               type: string
@@ -16168,7 +16196,7 @@ components:
               description: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
             customBrowserProtocol:
               type: string
-              description: A custom browser protocol to open weblink on iOS.
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
               nullable: true
             apps:
               type: array
@@ -18489,7 +18517,7 @@ components:
               description: Indicates whether device compliance is required.
             managedBrowserToOpenLinksRequired:
               type: boolean
-              description: Indicates whether internet links should be opened in the managed browser app.
+              description: 'Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)'
             saveAsBlocked:
               type: boolean
               description: Indicates whether users may use the 'Save As' menu item to save a copy of protected files.

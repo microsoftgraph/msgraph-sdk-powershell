@@ -296,6 +296,8 @@ paths:
                 - id desc
                 - teamsAppId
                 - teamsAppId desc
+                - azureADAppId
+                - azureADAppId desc
                 - displayName
                 - displayName desc
                 - version
@@ -313,6 +315,7 @@ paths:
               enum:
                 - id
                 - teamsAppId
+                - azureADAppId
                 - displayName
                 - version
               type: string
@@ -412,6 +415,7 @@ paths:
               enum:
                 - id
                 - teamsAppId
+                - azureADAppId
                 - displayName
                 - version
               type: string
@@ -528,6 +532,9 @@ components:
               type: string
               description: The id from the Teams App manifest.
               nullable: true
+            azureADAppId:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The name of the app provided by the app developer.
@@ -539,6 +546,7 @@ components:
       example:
         id: string (identifier)
         teamsAppId: string
+        azureADAppId: string
         displayName: string
         version: string
     microsoft.graph.entity:
