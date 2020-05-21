@@ -29,16 +29,16 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Keys | ForEach-Object {
+$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
     $ModuleName = $_
-
-        try {
-            # Download OpenAPI document for module.
-            & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
-        }
-        catch {
-            Write-Error $_.Exception
-        }
+    try {
+        # Download OpenAPI document for module.
+        & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -RequestCount $RequestCount
+    }
+    catch {
+        Write-Error $_.Exception
+    }
+    $RequestCount = $RequestCount + 1
 }
 
 
