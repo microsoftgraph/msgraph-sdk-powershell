@@ -14,6 +14,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   downloadOpenApiDocs:
+    if: github.event_name == 'push' && !contains(toJson(github.event.commits), 'NO_CI') && !contains(toJson(github.event.commits), '[ci skip]') && !contains(toJson(github.event.commits), '[skip ci]')
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
