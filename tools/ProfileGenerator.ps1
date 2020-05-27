@@ -15,62 +15,91 @@ try {
     if(!(Test-Path -Path $ProfilesDirectory)){
         New-Item -Path $ProfilesDirectory -ItemType Directory
     }
+    $GetNationalCloudPS1 = Join-Path $PSScriptRoot ".\GetNationalCloud.ps1" -Resolve
 
-    $apiList = Get-ChildItem -Path $OpenApiDocsDirectory
-    $specs = @()
-    $foundMultipleAPIs = $false
-    if ($apiList.Count -gt 1) {
-        $foundMultipleAPIs = $true
-    }
-    foreach ($api in $apiList) {
+    foreach ($api in (Get-ChildItem -Path $OpenApiDocsDirectory)) {
         # $apiVersion = $api.Name
         $openApiDocs = Get-ChildItem -File -Filter "*.yml" -Path $api.FullName
-        Write-Host "Parsing openAPI docs..." -ForegroundColor Green
-        $openApiDocs = $openApiDocs[1]
+        Write-Host "Parsing $($api.Name) openAPI docs..." -ForegroundColor Yellow
         foreach ($openApiDoc in $openApiDocs){
-            # get paths
             $allPaths = @()
             $moduleName = $openApiDoc.BaseName
+            # Create required directories.
+            $ModuleProfilesDirectory = "$ProfilesDirectory/$moduleName"
+            if(!(Test-Path -Path $ModuleProfilesDirectory)){
+                New-Item -Path $ModuleProfilesDirectory -ItemType Directory
+            }
+
+            $ModuleProfilesDefinitionsDirectory = "$ModuleProfilesDirectory/definitions"
+            if(!(Test-Path -Path $ModuleProfilesDefinitionsDirectory)){
+                New-Item -Path $ModuleProfilesDefinitionsDirectory -ItemType Directory
+            }
+
             $openApiContent = Get-Content -Path $openApiDoc.FullName | ConvertFrom-Yaml
             if ($openApiContent.openapi && $openApiContent.info.version){
                 $apiVersion = $openApiContent.info.version
-                # Get sovreign cloud.
-                $profileName = $apiVersion
+                # Get national cloud profile.
+                $profileName = & $GetNationalCloudPS1 -apiVersion $apiVersion -serverUrl $openApiContent.servers.url
 
                 # Get paths.
                 foreach ($path in $openApiContent.paths.keys) {
                     $allPaths += @{endpoint= $path; apiVersion = $apiVersion; originalLocation = ($openApiDoc.FullName | Resolve-Path -Relative) -replace "^.\\|\\", "/"}
                 }
                 # Get crawl data.
-                Write-Host "Crawling paths for resources and operations for $moduleName ..." -ForegroundColor Green
+                Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
                 $crawlResult = @{resources= @(); operations = @{}}
                 foreach ($path in $allPaths) {
                     $crawlResult.operations[$path.endpoint] = (@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
                 }
-
-                $ModuleProfilesDirectory = "$ProfilesDirectory/$moduleName"
-                if(!(Test-Path -Path $ModuleProfilesDirectory)){
-                    New-Item -Path $ModuleProfilesDirectory -ItemType Directory
-                }
                 $telemetryDir = Join-Path $ModuleProfilesDirectory "crawl-log-$profileName.json"
                 Set-Content -Path $telemetryDir -Value ($crawlResult | ConvertTo-Json)
+                Write-Host "Telemetry written at $telemetryDir" -ForegroundColor Blue
 
                 # Get profile.
-                $profile = @{resources = @{}; operations = @{}}
+                $profile =  @{resources = @{}; operations = @{}}
                 foreach ($operation in $crawlResult.operations.keys) {
                     $profile.operations[$operation] = $crawlResult.operations[$operation].apiVersion
                 }
-                Write-Host ($profile | ConvertTo-Json)
-                $profileReadMeContent = @" 
+                $profilesNode = @{profiles = @{ $profileName = $profile}}
+                $profilesInYaml = $profilesNode | ConvertTo-Yaml
+                $profileReadMeContent = @"
 # Microsoft Graph $profileName Profile
+
+> see https://aka.ms/autorest
+
 ``````` yaml
-$($profile | ConvertTo-Yaml)
-``````` 
+$profilesInYaml
+```````
 "@
-                $telemetryDir = Join-Path $ModuleProfilesDirectory "readme.md"
-                Set-Content -Path $telemetryDir -Value $profileReadMeContent
+                $profileReadMeDir = Join-Path $ModuleProfilesDefinitionsDirectory "$profileName.md"
+                Set-Content -Path $profileReadMeDir -Value $profileReadMeContent
+                Write-Host "Profile '$profileName' written at $profileReadMeDir" -ForegroundColor Blue
             }
         }
+    }
+
+    # Get all profile defintions of a module and generate a single readme.
+    foreach ($moduleItem in (Get-ChildItem $ProfilesDirectory)) {
+        $definitionsRelativePaths = @{ require = @()}
+        foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions")) {
+            $definitionsRelativePaths.require += '$(this-folder)/definitions/'+ $moduleDefinition.Name
+        }
+        
+        $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | ConvertTo-Yaml)
+        $moduleReadMeContent = @"
+# Microsoft Graph $($moduleItem.Name) Profiles
+
+> see https://aka.ms/autorest
+
+> The files under this directory are the profile definitions used by autorest.
+
+``````` yaml
+$definitionsRelativePathsAsYaml
+```````
+"@
+        $moduleReadMeDir = Join-Path $moduleItem.FullName "readme.md"
+        Set-Content -Path $moduleReadMeDir -Value $moduleReadMeContent
+        Write-Host "Regenerated profiles readme.md at $moduleReadMeDir" -ForegroundColor Yellow
     }
 }
 catch {
