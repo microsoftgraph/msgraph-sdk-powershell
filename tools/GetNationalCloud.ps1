@@ -3,7 +3,6 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $serverUrl
 )
 
-Write-Host $serverUrl
 switch -regex ($serverUrl) {
     "https://graph.microsoft.us/*" {
         return "USGOV-$apiVersion"
