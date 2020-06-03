@@ -222,10 +222,12 @@ components:
           properties:
             displayName:
               type: string
+              description: The name associated with the place.
             geoCoordinates:
               $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
             phone:
               type: string
+              description: The phone number of the place.
               nullable: true
             address:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
