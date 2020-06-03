@@ -34,10 +34,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     PSModuleInfo[] modules = GetModules(InvokeCommand).Where(m => GetProfiles(m).Contains(Name)).ToArray();
                     string moduleList = string.Join(", ", modules.Select(m => m.Name));
-                    if (ShouldProcess($"Modules ${moduleList}", $"Load modules with profile ${Name}"))
+                    if (ShouldProcess($"Modules {moduleList}", $"Load modules with profile {Name}"))
                     {
-                        // TODO: Set selected profile to the GraphSession object.
-                        // TODO: Consider persisting the GraphSession or settings on disk.
+                        GraphSession.Instance.SelectedProfile = Name;
                         ReloadModules(InvokeCommand, modules);
                         if (PassThru.IsPresent && PassThru.ToBool())
                         {

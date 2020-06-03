@@ -32,9 +32,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 string[] moduleNames = isModuleNameBound ? ModuleName : new string[] { };
                 string[] profiles = isModuleNameBound || isListAvailableBound
                     ? GetProfiles(InvokeCommand, isListAvailableBound, moduleNames)
-                    : new string[] {
-                        // TODO: Get profile from session object.
-                    };
+                    : new string[] { GraphSession.Instance.SelectedProfile };
                 if (profiles.Any((p) => !string.IsNullOrWhiteSpace(p)))
                 {
                     WriteObject(profiles.Where((profile) => !string.IsNullOrWhiteSpace(profile))

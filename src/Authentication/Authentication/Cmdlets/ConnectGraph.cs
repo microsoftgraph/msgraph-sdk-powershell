@@ -84,7 +84,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 else
                     clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
 
-                // Incremental scope consent without re-instanciating the auth provider. We will use a static instance.
+                // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
                 GraphRequestContext graphRequestContext = new GraphRequestContext();
                 graphRequestContext.CancellationToken = cancellationToken;
                 graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
@@ -170,6 +170,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         public void OnImport()
         {
+            // TODO: Consider checking for a persisted copy of GraphSession or settings on disk.
             GraphSessionInitializer.InitializeSession();
         }
 
@@ -179,6 +180,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <param name="psModuleInfo">A <see cref="PSModuleInfo"/> object.</param>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
+            // TODO: Consider persisting the GraphSession or settings on disk.
             GraphSession.Reset();
         }
     }

@@ -23,17 +23,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
 
         public static PSModuleInfo[] GetModules(CommandInvocationIntrinsics invokeCommand, bool listAvailable = false, params string[] moduleNames)
         {
-            string nameParameter = moduleNames != null && moduleNames.Any() ? $" -Name {GetCommaSeparatedQuotedList(moduleNames)}" : String.Empty;
+            string nameParameter = $" -Name { (moduleNames != null && moduleNames.Any() ? GetCommaSeparatedQuotedList(moduleNames) : "Microsoft.Graph*" )}";
             string listAvailableParameter = listAvailable ? " -ListAvailable" : String.Empty;
             string command = $"Get-Module{nameParameter}{listAvailableParameter}";
             Collection<PSObject> modules = listAvailable ? PowerShell.Create().AddScript(command).Invoke<PSObject>() : invokeCommand.NewScriptBlock(command).Invoke();
             return modules != null ? modules.Select(m => m?.BaseObject as PSModuleInfo).Where(m => m != null).ToArray() : new PSModuleInfo[] { };
-
         }
 
         public static string[] GetProfiles(PSModuleInfo moduleInfo)
         {
-            var moduleProfileInfo = ((moduleInfo?.PrivateData as Hashtable)?["PSData"] as Hashtable)?["Profiles"];
+            var moduleProfileInfo = (moduleInfo?.PrivateData as Hashtable)?["Profiles"];
             var moduleProfiles = moduleProfileInfo as object[] ?? (moduleProfileInfo != null ? new[] { moduleProfileInfo } : null);
             return moduleProfiles != null && moduleProfiles.Any() ? moduleProfiles.Cast<string>().ToArray() : new string[] { };
         }
