@@ -578,6 +578,7 @@ paths:
               enum:
                 - id
                 - teamsAppId
+                - azureADAppId
                 - displayName
                 - version
               type: string
@@ -2037,6 +2038,9 @@ components:
               type: string
               description: The id from the Teams App manifest.
               nullable: true
+            azureADAppId:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The name of the app provided by the app developer.
@@ -2048,6 +2052,7 @@ components:
       example:
         id: string (identifier)
         teamsAppId: string
+        azureADAppId: string
         displayName: string
         version: string
     microsoft.graph.conversationMember:
@@ -2077,45 +2082,54 @@ components:
           properties:
             replyToId:
               type: string
+              description: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
               nullable: true
             from:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             etag:
               type: string
+              description: Read-only. Version number of the chat message.
               nullable: true
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Read only. Timestamp of when the chat message was created.
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it''s a root chat message in a channel) or a reaction is added or removed.'
               format: date-time
               nullable: true
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
               format: date-time
               nullable: true
             subject:
               type: string
+              description: 'The subject of the chat message, in plaintext.'
               nullable: true
             body:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             summary:
               type: string
+              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
               nullable: true
             attachments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
+              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
             mentions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
+              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
             policyViolation:
@@ -2126,6 +2140,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
             locale:
               type: string
+              description: Locale of the chat message set by the client.
             webUrl:
               type: string
               nullable: true
@@ -2236,21 +2251,27 @@ components:
       properties:
         id:
           type: string
+          description: Read-only. Unique id of the attachment.
           nullable: true
         contentType:
           type: string
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.'
           nullable: true
         contentUrl:
           type: string
+          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
           nullable: true
         content:
           type: string
+          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
           nullable: true
         name:
           type: string
+          description: Name of the attachment.
           nullable: true
         thumbnailUrl:
           type: string
+          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
           nullable: true
       example:
         id: string
@@ -2260,20 +2281,23 @@ components:
         name: string
         thumbnailUrl: string
     microsoft.graph.chatMessageMention:
-      title: chatMessageMention
-      type: object
-      properties:
-        id:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        mentionText:
-          type: string
-          nullable: true
-        mentioned:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageMention
+          type: object
+          properties:
+            id:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            mentionText:
+              type: string
+              description: 'String used to represent the mention. For example, a user''s display name, a team name.'
+              nullable: true
+            mentioned:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
       example:
         id: integer
         mentionText: string

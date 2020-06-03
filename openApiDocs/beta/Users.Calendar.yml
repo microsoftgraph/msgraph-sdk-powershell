@@ -22746,7 +22746,6 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
-              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string
