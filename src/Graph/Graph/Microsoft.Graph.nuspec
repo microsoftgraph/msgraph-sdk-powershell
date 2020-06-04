@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Microsoft.Graph</id>
+    <version>0.7.0</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
+    <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/g-raph/master/g-raph.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Microsoft Graph PowerShell module</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>MicrosoftGraph;Microsoft;Office365;Graph;PowerShell;GraphServiceClient;Outlook;OneDrive;AzureAD;GraphAPI;Productivity;SharePoint;Intune;SDK;</tags>
+    <dependencies>
+      <dependency id="Microsoft.Graph.Authentication" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DirectoryRoles" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Teams.AppCatalogs" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Conversation" version="0.5.1" />
+      <dependency id="Microsoft.Graph.SchemaExtensions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.OAuth2PermissionGrants" version="0.5.1" />
+      <dependency id="Microsoft.Graph.OnlineMeetings" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Domains" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.Site" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Calendar" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.TermsOfUse" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.FollowedSites" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Files.Shares" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Functions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.OutlookUser" version="0.5.1" />
+      <dependency id="Microsoft.Graph.CloudCommunications" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.OrganizationContacts" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.OneNote" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Search" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Endpoint" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.UserFlows" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.CertificateBasedAuthConfiguration" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DirectorySettings" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Mail" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.Functions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Places" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AuthenticationMethods" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Directory" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Devices" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Providers" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Extension" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.OneNote" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Groups" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.ServicePrincipal" version="0.5.1" />
+      <dependency id="Microsoft.Graph.DevicesApps.DeviceAppManagement" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.Pages" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.RoleManagement" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DataPolicyOperations" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.SubscribedSkus" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AppRoleAssignments" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AzureADPIM" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DirectorySettingTemplates" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Education" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.ActivityFeed" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Policies" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Files.Permissions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Notification" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Organization" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Calendar" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Files.Drives" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Teams.Channel" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Analytics" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Planner" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Drive" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DirectoryRoleTemplates" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AdministrativeUnits" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Group" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.TrustFramework" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Security" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.User" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Application" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Financials" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Site" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.ProfilePhoto" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Actions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Drive" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.DirectoryObject" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Contacts" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Protection" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.InformationProtection" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.UserSettings" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Teams.Chats" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Devices" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.ConversationThread" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.DirectoryObjects" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.People" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Actions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Reports" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.Functions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Bookings" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.Actions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Extensions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.ProfilePhoto" version="0.5.1" />
+      <dependency id="Microsoft.Graph.DevicesApps.OfficeConfiguration" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Teams.Team" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.Drive" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Contracts" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AuditLogs" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.LicenseDetails" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Sites.List" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.AccessReview" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Planner" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Teams.Teamwork" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.LifecyclePolicies" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.Invitations" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Subscriptions" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Users.Planner" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.ConditionalAccess" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.DirectoryObject" version="0.5.1" />
+      <dependency id="Microsoft.Graph.DevicesApps.SharedResources" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Identity.OnPremisesPublishingProfiles" version="0.5.1" />
+      <dependency id="Microsoft.Graph.Groups.OneNote" version="0.5.1" />
+      <dependency id="Microsoft.Graph.DevicesApps.MobileAppManagement" version="0.5.1" />
+    </dependencies>
+    <releaseNotes>See https://aka.ms/GraphPowerShell-Release.</releaseNotes>
+  </metadata>
+</package>

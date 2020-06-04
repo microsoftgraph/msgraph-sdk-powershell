@@ -25,16 +25,18 @@ if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 # Install Powershell-yaml
-Install-Module powershell-yaml -Force
+if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
+    Install-Module powershell-yaml -Force   
+}
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
     $GraphVersion = "beta"
 }
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
+$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
+$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
@@ -117,16 +119,16 @@ $ModuleMapping.Keys | ForEach-Object {
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix
 
             if ($Build) {
                 # Build generated module.
                 if ($EnableSigning) {
                     # Sign generated module.
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
                 }
                 else {
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
                 }
 
                 # Get profiles for generated modules.
@@ -154,7 +156,7 @@ $ModuleMapping.Keys | ForEach-Object {
 
             if ($Pack) {
                 # Pack generated module.
-                & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
+                & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
             }
         }
         catch {

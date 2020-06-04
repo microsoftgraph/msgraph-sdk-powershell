@@ -25,7 +25,7 @@ try {
             $allPaths = @()
             $moduleName = $openApiDoc.BaseName
             $openApiRelativePath = ($openApiDoc.FullName | Resolve-Path -Relative) -replace "^.\\|\\", "/"
-            $openApiFiles[$moduleName] += @('$(this-folder)../../'+ $openApiRelativePath)
+            $openApiFiles[$moduleName] += @('$(this-folder)../..'+ $openApiRelativePath)
             # Create required directories.
             $ModuleProfilesDirectory = "$ProfilesDirectory/$moduleName"
             if(!(Test-Path -Path $ModuleProfilesDirectory)){
