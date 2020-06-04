@@ -1,6 +1,8 @@
 Param(
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $OpenApiDocsDirectory,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ProfilesDirectory
+    [ValidateNotNullOrEmpty()]
+    [string] $OpenApiDocsDirectory = (Join-Path $PSScriptRoot "..\openApiDocs"),
+    [ValidateNotNullOrEmpty()]
+    [string] $ProfilesDirectory = (Join-Path $PSScriptRoot "..\profiles")
 )
 try {
     # Install dependencies.

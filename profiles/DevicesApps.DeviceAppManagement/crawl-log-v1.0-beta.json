@@ -1,0 +1,649 @@
+{
+  "resources": [],
+  "operations": {
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/assignments/{managedDeviceMobileAppConfigurationAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mdmWindowsInformationProtectionPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/microsoft.graph.getMobileAppCount(status={status})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsManagementApp": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/apps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/vppTokens/{vppToken-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}/items/{policySetItem-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates/{deviceInstallState-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/sideLoadingKeys": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppCategories": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/apps/{managedMobileApp-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/assignments/{managedEBookAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/deploymentSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatusSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/installSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/relationships/{mobileAppRelationship-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/groupAssignments/{mobileAppProvisioningConfigGroupAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mdmWindowsInformationProtectionPolicies/{mdmWindowsInformationProtectionPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/{userInstallStateSummary-id}/deviceStates/{deviceInstallState-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/installSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/vppTokens/microsoft.graph.getLicensesForApp(bundleId={bundleId})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/apps/{managedMobileApp-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/apps/{managedMobileApp-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/microsoft.graph.targetApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deploySummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/assignments/{mobileAppAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/microsoft.graph.getPolicySets": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories/{managedEBookCategory-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/deploymentSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatusSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/userStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/operations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBookCategories": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/symantecCodeSigningCertificate": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/{userInstallStateSummary-id}/deviceStates": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/deviceAppManagementTasks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status={status},count={count})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/enterpriseCodeSigningCertificates/{enterpriseCodeSigningCertificate-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/{userInstallStateSummary-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/userStatuses/{managedDeviceMobileAppConfigurationUserStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/deviceStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/sideLoadingKeys/{sideLoadingKey-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosManagedAppProtections": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/deploymentSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/categories": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/deviceAppManagementTasks/{deviceAppManagementTask-id}/microsoft.graph.updateStatus": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppStatuses/{managedAppStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName={userPrincipalName},deviceId={deviceId})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/microsoft.graph.syncMicrosoftStoreForBusinessApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/deploymentSummary": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBookCategories/{managedEBookCategory-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.getRelatedAppStates(userPrincipalName={userPrincipalName},deviceId={deviceId})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/apps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}/assignments/{policySetAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatuses/{managedDeviceMobileAppConfigurationDeviceStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.updateRelationships": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/vppTokens": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/apps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}/items": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/enterpriseCodeSigningCertificates": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/apps/{managedMobileApp-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/defaultManagedAppProtections": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName={userPrincipalName},deviceId={deviceId})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/microsoft.graph.assign": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/vppTokens/{vppToken-id}/microsoft.graph.revokeLicenses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/policySets/{policySet-id}/microsoft.graph.update": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mdmWindowsInformationProtectionPolicies/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppCategories/{mobileAppCategory-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/deviceAppManagementTasks/{deviceAppManagementTask-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/assignments/{iosLobAppProvisioningConfigurationAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/categories/{mobileAppCategory-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionWipeActions/{windowsInformationProtectionWipeAction-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/groupAssignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.getRelatedAppStates(userPrincipalName={userPrincipalName},deviceId={deviceId})": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionDeviceRegistrations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assignments/{targetedManagedAppPolicyAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/microsoft.graph.getUserIdsWithFlaggedAppRegistration()": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/assignments/{windowsDefenderApplicationControlSupplementalPolicyAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/wdacSupplementalPolicies/{windowsDefenderApplicationControlSupplementalPolicy-id}/deviceStatuses/{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}/policy": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/apps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatuses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatuses/{managedDeviceMobileAppConfigurationUserStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/operations/{managedAppOperation-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}/microsoft.graph.wipe": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration-id}/deviceStatuses/{managedDeviceMobileAppConfigurationDeviceStatus-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedEBooks/{managedEBook-id}/categories": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app/microsoft.graph.updateRelationships": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/vppTokens/{vppToken-id}/microsoft.graph.syncLicenses": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionPolicies/{windowsInformationProtectionPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/mobileAppConfigurations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/windowsInformationProtectionWipeActions": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/targetedManagedAppConfigurations/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/deviceAppManagement/androidManagedAppProtections/microsoft.graph.hasPayloadLinks": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.DeviceAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

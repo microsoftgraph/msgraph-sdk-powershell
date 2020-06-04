@@ -1,0 +1,21 @@
+{
+  "resources": [],
+  "operations": {
+    "/settings/{directorySetting-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/settings": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/settings/{directorySetting-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/settings": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettings.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "resources": [],
+  "operations": {
+    "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/signIns/{signIn-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/directoryAudits": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/directoryAudits/{directoryAudit-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/provisioning/{provisioningObjectSummary-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/signIns": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/provisioning": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/directoryProvisioning": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/restrictedSignIns": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

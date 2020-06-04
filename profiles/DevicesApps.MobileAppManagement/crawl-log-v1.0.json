@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/managedAppRegistrations": {
+      "originalLocation": "/openApiDocs/v1.0/DevicesApps.MobileAppManagement.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}": {
+      "originalLocation": "/openApiDocs/v1.0/DevicesApps.MobileAppManagement.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/agreementAcceptances": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/files": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/files/{agreementFile-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/agreementAcceptances/{agreementAcceptance-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreementAcceptances/{agreementAcceptance-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreementAcceptances": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

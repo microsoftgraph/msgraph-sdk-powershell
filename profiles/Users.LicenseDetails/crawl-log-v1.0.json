@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/licenseDetails": {
+      "originalLocation": "/openApiDocs/v1.0/Users.LicenseDetails.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/licenseDetails/{licenseDetails-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.LicenseDetails.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}
