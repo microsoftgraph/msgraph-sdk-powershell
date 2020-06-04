@@ -1,0 +1,97 @@
+{
+  "resources": [],
+  "operations": {
+    "/applications/{application-id}/owners": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.removeKey": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/createdOnBehalfOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.addKey": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.addPassword": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/tokenLifetimePolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/microsoft.graph.validateProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.removePassword": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/owners/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/extensionProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    },
+    "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Application.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

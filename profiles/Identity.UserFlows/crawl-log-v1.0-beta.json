@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/identity/userFlows": {
+      "originalLocation": "/openApiDocs/beta/Identity.UserFlows.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identity/userFlows/{identityUserFlow-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.UserFlows.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

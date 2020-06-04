@@ -1,0 +1,109 @@
+{
+  "resources": [],
+  "operations": {
+    "/privilegedApproval": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedApproval/{privilegedApproval-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}/roleInfo": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/microsoft.graph.selfActivate": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/assignments/{privilegedRoleAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignmentRequests": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedApproval/{privilegedApproval-id}/roleInfo": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedApproval/{privilegedApproval-id}/request": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedOperationEvents": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/summary": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignmentRequests/microsoft.graph.my()": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignmentRequests/{privilegedRoleAssignmentRequest-id}/microsoft.graph.cancel": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments/{privilegedRoleAssignment-id}/microsoft.graph.makeEligible": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/microsoft.graph.selfDeactivate": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedOperationEvents/{privilegedOperationEvent-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments/{privilegedRoleAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments/{privilegedRoleAssignment-id}/microsoft.graph.makePermanent": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedApproval/microsoft.graph.myRequests()": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments/{privilegedRoleAssignment-id}/roleInfo": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoleAssignments/microsoft.graph.my()": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/assignments": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/privilegedRoles/{privilegedRole-id}/settings": {
+      "originalLocation": "/openApiDocs/beta/Identity.AzureADPIM.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

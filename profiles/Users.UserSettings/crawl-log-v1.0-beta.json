@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/settings/shiftPreferences": {
+    "/users/{user-id}/settings": {
       "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/settings": {
+    "/users/{user-id}/settings/shiftPreferences": {
       "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml",
       "apiVersion": "v1.0-beta"
     }

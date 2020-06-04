@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/groups/{group-id}/sites": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Site.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/sites/{site-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Site.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

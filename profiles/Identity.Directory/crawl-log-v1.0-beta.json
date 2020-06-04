@@ -1,0 +1,33 @@
+{
+  "resources": [],
+  "operations": {
+    "/directory/deletedItems": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/featureRolloutPolicies": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/deletedItems/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}
