@@ -1,0 +1,100 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Generates a release build artifact (nuget) from HEAD of master for auth module.
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+pool:
+  vmImage: "windows-latest"
+
+variables:
+  BRANCH: 'weeklyOpenApiDocsDownload'
+  GitUserEmail: 'GraphTooling@service.microsoft.com'
+  GitUserName: 'Microsoft Graph DevX Tooling'
+  BaseBranch: 'dev'
+
+schedules:
+    - cron: "0 0 * * WED" # Run Every Wednesday
+      displayName: "Weekly OpenApiDocs Download and PR"
+      branches: 
+        include:
+        - dev
+      always: true
+
+steps:
+  - checkout: self
+    persistCredentials: true
+    clean: true
+    fetchDepth: 1
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+      debugMode: false
+
+  - task: PowerShell@2
+    displayName: "Compute Branch"
+    inputs:
+      targetType: inline
+      script: |
+        $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
+        Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
+
+  - task: PowerShell@2
+    displayName: "Configure User"
+    inputs:
+      targetType: 'inline'
+      script: |
+        git config --global user.email '$(GitUserEmail)'
+        git config --global user.name '$(GitUserName)'
+
+  - task: PowerShell@2
+    displayName: "Show Directory"
+    inputs:
+      targetType: 'inline'
+      script: |
+        ls  $(System.DefaultWorkingDirectory)
+        ls  $(System.DefaultWorkingDirectory)/tools
+
+  - task: PowerShell@2
+    displayName: Download v1.0 OpenApiDocs
+    inputs:
+      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
+      pwsh: true
+
+  - task: PowerShell@2
+    displayName: Download beta OpenApiDocs
+    inputs:
+      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
+      arguments: '-BetaGraphVersion'
+      pwsh: true
+
+  - task: Bash@3
+    displayName : "Create PR $(BRANCH)"
+    inputs:
+      targetType: 'inline'
+      script: |
+          git status
+          git checkout $(BaseBranch)
+          git branch $(BRANCH)
+          git checkout $(BRANCH)
+          git status
+
+  - task: Bash@3
+    displayName : "Commit Downloaded Files"
+    env: 
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      targetType: 'inline'
+      script: |
+        git status
+        git add .
+        git commit -m 'Weekly OpenApiDocs Download'
+        git status
+        git push --set-upstream origin $(BRANCH)
+        git status
+
+# References
+# [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+# [1] https://hub.github.com/hub-pull-request.1.html
+# https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token
