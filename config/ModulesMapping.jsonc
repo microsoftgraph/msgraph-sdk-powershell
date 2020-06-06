@@ -1,7 +1,7 @@
 {
     "Analytics": "^activitystatistics\\.|^users.userAnalytics$|^users.officeGraphInsights$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
-    "CloudCommunications": "^communications\\.",
+    // "CloudCommunications": "^communications\\.", - Fails to build - The parameter 'BodyParameter' has multiple parameter types| [IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema, | IPathsEgxygvGroupsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema]
     "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
     "DevicesApps.MobileAppManagement": "^users.managedAppRegistration$|^users.windowsInformationProtectionDeviceRegistration$",
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
@@ -11,7 +11,7 @@
     "Files.Permissions": "^groups.resourceSpecificPermissionGrant$", // Missing in docs
     "Files.Shares": "^shares\\.",
     "Financials": "^financials\\.",
-    "Groups.Actions": "^groups.Actions$",
+    // "Groups.Actions": "^groups.Actions$", - Fails to build
     "Groups.Calendar": "^groups.calendar$|^groups.event$",
     "Groups.Conversation": "^groups.conversation$",
     "Groups.ConversationThread": "^groups.conversationThread$",
@@ -69,14 +69,13 @@
     "Security": "^Security\\.",
     "Sites.Actions": "^sites.Actions$",
     "Sites.Drive": "^sites.drive$",
-    "Sites.Functions": "^sites.Functions$",
+    // "Sites.Functions": "^sites.Functions$",// - Failed Class Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteListItemActivityByInterval_Get1 already exists in namespace Microsoft.Graph.PowerShell.Cmdlets
     "Sites.List": "^sites.list$",
     "Sites.OneNote": "^sites.onenote$",
     "Sites.Pages": "^sites.sitePage$",
     "Sites.Site": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$",
     "Subscriptions": "^subscriptions\\.",
     "Teams.AppCatalogs": "^appCatalogs\\.",
-    "Teams.Channel": "^groups.channel$",
     "Teams.Chats": "^chats\\.|^users.chat$",
     "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
     "Teams.Teamwork": "^users.userTeamwork$",

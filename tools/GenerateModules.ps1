@@ -12,7 +12,8 @@ Param(
     [switch] $Build,
     [switch] $Pack,
     [switch] $Publish,
-    [switch] $EnableSigning
+    [switch] $EnableSigning,
+    [switch] $SkipVersionCheck
 )
 enum VersionState {
     Invalid
@@ -87,13 +88,13 @@ $ModuleMapping.Keys | ForEach-Object {
     # Validate module version with the one on PSGallery.
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
-    if ($VersionState.Equals([VersionState]::Invalid)) {
+    if ($VersionState.Equals([VersionState]::Invalid) -and !$SkipVersionCheck) {
         Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
     }
-    elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
+    elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
         Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
     }
-    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $SkipVersionCheck) {
         # Read release notes from readme.
         $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
         if ($ModuleReleaseNotes -eq $null) {
@@ -109,9 +110,7 @@ $ModuleMapping.Keys | ForEach-Object {
 
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
-            $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }

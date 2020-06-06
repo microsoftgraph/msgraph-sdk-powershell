@@ -30,7 +30,7 @@ require:
   - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
+
 directive:
 # Rename cmdlets
   - where:
@@ -47,7 +47,7 @@ directive:
       verb: Get
       subject: (^SiteListItemActivity$|^SiteListItemActivityListItemActivity$|^SiteListActivityListItemActivity$)
     set:
-      subject: SiteListItemActivityByInterval
+      subject: $1ByInterval
   - where:
       verb: Get
       subject: ^SiteOnenoteNotebook(RecentNotebook$)

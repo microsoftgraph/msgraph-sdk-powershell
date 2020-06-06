@@ -1,0 +1,25 @@
+---
+Module Name: Microsoft.Graph.Identity.CertificateBasedAuthConfiguration
+Module Guid: ee2eb19c-2c77-4680-b754-a87d76956c4c
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.certificatebasedauthconfiguration
+Help Version: 1.0.0.0
+Locale: en-US
+---
+
+# Microsoft.Graph.Identity.CertificateBasedAuthConfiguration Module
+## Description
+Microsoft Graph PowerShell Cmdlets
+
+## Microsoft.Graph.Identity.CertificateBasedAuthConfiguration Cmdlets
+### [Get-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration](Get-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration.md)
+Get entity from certificateBasedAuthConfiguration by key
+
+### [New-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration](New-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration.md)
+Add new entity to certificateBasedAuthConfiguration
+
+### [Remove-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration](Remove-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration.md)
+Delete entity from certificateBasedAuthConfiguration
+
+### [Update-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration](Update-MgCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationCertificateBasedAuthConfiguration.md)
+Update entity in certificateBasedAuthConfiguration
+

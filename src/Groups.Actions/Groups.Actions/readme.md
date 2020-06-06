@@ -30,7 +30,7 @@ require:
   - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
+
 directive:
 # Remove paths that have /parent* or /calendarView*.
   - remove-path-by-operation: groups.onenote..*.parent.*|groups.*.calendarView.*

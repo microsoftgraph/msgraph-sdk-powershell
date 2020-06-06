@@ -30,7 +30,7 @@ require:
   - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
+
 directive:
 # Remove paths that are too long.
   - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.policy_assign$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice$

@@ -30,7 +30,7 @@ require:
   - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
+
 directive:
   - where:
       verb: Remove
