@@ -38,7 +38,7 @@ directive:
   - where:
       verb: Test
       subject: ^GroupProperty$
-      variant: ^Validate1$|^ValidateExpanded1$
+      variant: ^Validate1$|^ValidateExpanded1$|^Validate3$|^ValidateExpanded3$
     remove: true
   - where:
       verb: Test
