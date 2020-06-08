@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams.Chats
-Module Guid: 58ce89f4-17fe-4ff7-819c-23542d105778
+Module Guid: 8fd591ed-4894-44b6-9154-c5617503a686
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams.chats
 Help Version: 1.0.0.0
 Locale: en-US

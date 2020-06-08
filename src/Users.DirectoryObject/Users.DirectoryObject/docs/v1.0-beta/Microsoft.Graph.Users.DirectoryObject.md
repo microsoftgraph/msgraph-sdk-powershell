@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.DirectoryObject
-Module Guid: 97c30b5e-7a0c-447e-bfd8-4a95a513df5f
+Module Guid: 3ad71182-94f4-4a3d-9290-2e84249d4e6a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.directoryobject
 Help Version: 1.0.0.0
 Locale: en-US

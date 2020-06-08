@@ -246,7 +246,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1
 
 ## NOTES
 

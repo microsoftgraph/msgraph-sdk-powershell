@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.UserSettings
-Module Guid: bbb5db1d-3b5e-49ae-afea-ed2d517b0c6a
+Module Guid: a2356a92-de2d-4f14-850d-d3e54d16db36
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.usersettings
 Help Version: 1.0.0.0
 Locale: en-US

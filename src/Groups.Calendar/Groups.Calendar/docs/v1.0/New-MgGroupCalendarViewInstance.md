@@ -17,7 +17,7 @@ Create new navigation property to instances for groups
 New-MgGroupCalendarViewInstance -EventId <String> -GroupId <String> [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
  [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent[]>]
@@ -31,11 +31,11 @@ New-MgGroupCalendarViewInstance -EventId <String> -GroupId <String> [-AddressCit
  [-EndDateTime <String>] [-EndTimeZone <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments]
  [-ICalUId <String>] [-Id <String>] [-Importance <String>] [-Instances <IMicrosoftGraphEvent[]>] [-IsAllDay]
  [-IsCancelled] [-IsOnlineMeeting] [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>]
+ [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>]
  [-LocationType <String>] [-LocationUniqueId <String>] [-LocationUniqueIdType <String>]
  [-LocationUri <String>] [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -67,7 +67,7 @@ New-MgGroupCalendarViewInstance -EventId <String> -GroupId <String> -BodyParamet
 New-MgGroupCalendarViewInstance -EventId <String> -GroupId <String> [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
  [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent[]>]
@@ -81,11 +81,11 @@ New-MgGroupCalendarViewInstance -EventId <String> -GroupId <String> [-AddressCit
  [-EndDateTime <String>] [-EndTimeZone <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments]
  [-ICalUId <String>] [-Id <String>] [-Importance <String>] [-Instances <IMicrosoftGraphEvent[]>] [-IsAllDay]
  [-IsCancelled] [-IsOnlineMeeting] [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>]
+ [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>]
  [-LocationType <String>] [-LocationUniqueId <String>] [-LocationUniqueIdType <String>]
  [-LocationUri <String>] [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -117,7 +117,7 @@ New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> -BodyPara
 New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
  [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent[]>]
@@ -131,11 +131,11 @@ New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> [-Address
  [-EndDateTime <String>] [-EndTimeZone <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments]
  [-ICalUId <String>] [-Id <String>] [-Importance <String>] [-Instances <IMicrosoftGraphEvent[]>] [-IsAllDay]
  [-IsCancelled] [-IsOnlineMeeting] [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>]
+ [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>]
  [-LocationType <String>] [-LocationUniqueId <String>] [-LocationUniqueIdType <String>]
  [-LocationUri <String>] [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -155,7 +155,7 @@ New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> [-Address
 New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
  [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent[]>]
@@ -169,11 +169,11 @@ New-MgGroupCalendarViewInstance -InputObject <IGroupsCalendarIdentity> [-Address
  [-EndDateTime <String>] [-EndTimeZone <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments]
  [-ICalUId <String>] [-Id <String>] [-Importance <String>] [-Instances <IMicrosoftGraphEvent[]>] [-IsAllDay]
  [-IsCancelled] [-IsOnlineMeeting] [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>]
- [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>]
+ [-LocationDisplayName <String>] [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>]
  [-LocationType <String>] [-LocationUniqueId <String>] [-LocationUniqueIdType <String>]
  [-LocationUri <String>] [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -313,7 +313,7 @@ The collection of attendees for the event.
 To construct, see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendee[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendee1[]
 Parameter Sets: CreateExpanded1, CreateExpanded3, CreateViaIdentityExpanded1, CreateViaIdentityExpanded3
 Aliases:
 
@@ -1078,7 +1078,7 @@ If you update the location property, any prior locations in the locations collec
 To construct, see NOTES section for LOCATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
 Parameter Sets: CreateExpanded1, CreateExpanded3, CreateViaIdentityExpanded1, CreateViaIdentityExpanded3
 Aliases:
 
@@ -1203,7 +1203,7 @@ All of the phone numbers associated with this conference.
 To construct, see NOTES section for ONLINEMEETINGPHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
 Parameter Sets: CreateExpanded1, CreateExpanded3, CreateViaIdentityExpanded1, CreateViaIdentityExpanded3
 Aliases:
 
@@ -1842,7 +1842,7 @@ ATTACHMENTS <IMicrosoftGraphAttachment[]>: The collection of fileAttachment and 
   - `[Name <String>]`: The attachment's file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
-ATTENDEES <IMicrosoftGraphAttendee[]>: The collection of attendees for the event.
+ATTENDEES <IMicrosoftGraphAttendee1[]>: The collection of attendees for the event.
   - `[Type <String>]`: attendeeType
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[Address <String>]`: The email address of the person or entity.
@@ -1868,7 +1868,7 @@ BODYPARAMETER <IMicrosoftGraphEvent>: event
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
@@ -1929,7 +1929,7 @@ BODYPARAMETER <IMicrosoftGraphEvent>: event
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostalCode <String>]`: The postal code.
@@ -1949,7 +1949,7 @@ BODYPARAMETER <IMicrosoftGraphEvent>: event
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
@@ -2010,7 +2010,7 @@ CALENDAREVENTS <IMicrosoftGraphEvent[]>: The events in the calendar. Navigation 
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
@@ -2071,7 +2071,7 @@ CALENDAREVENTS <IMicrosoftGraphEvent[]>: The events in the calendar. Navigation 
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostalCode <String>]`: The postal code.
@@ -2091,7 +2091,7 @@ CALENDAREVENTS <IMicrosoftGraphEvent[]>: The events in the calendar. Navigation 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
@@ -2169,7 +2169,7 @@ CALENDARVIEW <IMicrosoftGraphEvent[]>: The calendar view for the calendar. Navig
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
@@ -2230,7 +2230,7 @@ CALENDARVIEW <IMicrosoftGraphEvent[]>: The calendar view for the calendar. Navig
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostalCode <String>]`: The postal code.
@@ -2250,7 +2250,7 @@ CALENDARVIEW <IMicrosoftGraphEvent[]>: The calendar view for the calendar. Navig
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
@@ -2324,7 +2324,7 @@ INSTANCES <IMicrosoftGraphEvent[]>: The instances of the event. Navigation prope
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
@@ -2385,7 +2385,7 @@ INSTANCES <IMicrosoftGraphEvent[]>: The instances of the event. Navigation prope
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostalCode <String>]`: The postal code.
@@ -2405,7 +2405,7 @@ INSTANCES <IMicrosoftGraphEvent[]>: The instances of the event. Navigation prope
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
@@ -2448,7 +2448,7 @@ INSTANCES <IMicrosoftGraphEvent[]>: The instances of the event. Navigation prope
   - `[Type <String>]`: eventType
   - `[WebLink <String>]`: The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.
 
-LOCATIONS <IMicrosoftGraphLocation[]>: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+LOCATIONS <IMicrosoftGraphLocation1[]>: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
   - `[AddressCity <String>]`: The city.
   - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[AddressPostalCode <String>]`: The postal code.
@@ -2470,7 +2470,7 @@ MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>
   - `[Id <String>]`: Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
-ONLINEMEETINGPHONES <IMicrosoftGraphPhone[]>: All of the phone numbers associated with this conference.
+ONLINEMEETINGPHONES <IMicrosoftGraphPhone1[]>: All of the phone numbers associated with this conference.
   - `[Language <String>]`: 
   - `[Number <String>]`: The phone number.
   - `[Region <String>]`: 

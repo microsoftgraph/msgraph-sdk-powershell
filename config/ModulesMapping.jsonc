@@ -1,7 +1,7 @@
 {
     "Analytics": "^activitystatistics\\.|^users.userAnalytics$|^users.officeGraphInsights$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
-    // "CloudCommunications": "^communications\\.", - Fails to build - The parameter 'BodyParameter' has multiple parameter types| [IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema, | IPathsEgxygvGroupsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema]
+    // "CloudCommunications": "^communications\\.", - Fails to build
     "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
     "DevicesApps.MobileAppManagement": "^users.managedAppRegistration$|^users.windowsInformationProtectionDeviceRegistration$",
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
@@ -11,7 +11,7 @@
     "Files.Permissions": "^groups.resourceSpecificPermissionGrant$", // Missing in docs
     "Files.Shares": "^shares\\.",
     "Financials": "^financials\\.",
-    // "Groups.Actions": "^groups.Actions$", - Fails to build
+    // "Groups.Actions": "^groups.Actions$", - Fails to build - The parameter 'BodyParameter' has multiple parameter types| [IPaths2357VbGroupsGroupIdMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema, | IPathsEgxygvGroupsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema]
     "Groups.Calendar": "^groups.calendar$|^groups.event$",
     "Groups.Conversation": "^groups.conversation$",
     "Groups.ConversationThread": "^groups.conversationThread$",
@@ -79,7 +79,7 @@
     "Teams.Chats": "^chats\\.|^users.chat$",
     "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
     "Teams.Teamwork": "^users.userTeamwork$",
-    "Users.Actions": "^users.Actions$",
+    // "Users.Actions": "^users.Actions$", -  The parameter 'BodyParameter' has multiple parameter types [IPaths9Ep4RaUsersUserIdCalendarsCalendarIdEventsEventIdInstancesEventId1MicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema, | IPaths10C1MhjUsersUserIdCalendarEventsEventIdInstancesEventId1MicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema]
     "Users.ActivityFeed": "^users.userActivity$",
     "Users.Calendar": "^users.calendar$|^users.calendarGroup$|^users.event$",
     "Users.Contacts": "^users.contact$|^users.contactFolder$",

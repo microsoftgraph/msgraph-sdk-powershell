@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectorySettings
-Module Guid: 4d5dd7b7-cc96-4521-989b-95711f65dce5
+Module Guid: 88048347-8343-4fad-8953-dd04c6cf653e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettings
 Help Version: 1.0.0.0
 Locale: en-US

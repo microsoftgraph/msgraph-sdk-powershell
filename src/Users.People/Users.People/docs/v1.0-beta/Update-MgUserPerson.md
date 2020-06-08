@@ -17,8 +17,8 @@ Update the navigation property people in users
 Update-MgUserPerson -PersonId <String> -UserId <String> [-Birthday <String>] [-CompanyName <String>]
  [-Department <String>] [-DisplayName <String>] [-EmailAddresses <IMicrosoftGraphRankedEmailAddress[]>]
  [-GivenName <String>] [-Id <String>] [-IsFavorite] [-MailboxType <String>] [-OfficeLocation <String>]
- [-PersonNotes <String>] [-PersonType <String>] [-Phones <IMicrosoftGraphPhone[]>]
- [-PostalAddresses <IMicrosoftGraphLocation[]>] [-Profession <String>]
+ [-PersonNotes <String>] [-PersonType <String>] [-Phones <IMicrosoftGraphPhone1[]>]
+ [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
  [-Sources <IMicrosoftGraphPersonDataSource[]>] [-Surname <String>] [-Title <String>]
  [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -26,13 +26,13 @@ Update-MgUserPerson -PersonId <String> -UserId <String> [-Birthday <String>] [-C
 
 ### Update
 ```
-Update-MgUserPerson -PersonId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPerson> [-PassThru]
+Update-MgUserPerson -PersonId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPerson1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson> [-PassThru]
+Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,8 +41,8 @@ Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicroso
 Update-MgUserPerson -InputObject <IUsersPeopleIdentity> [-Birthday <String>] [-CompanyName <String>]
  [-Department <String>] [-DisplayName <String>] [-EmailAddresses <IMicrosoftGraphRankedEmailAddress[]>]
  [-GivenName <String>] [-Id <String>] [-IsFavorite] [-MailboxType <String>] [-OfficeLocation <String>]
- [-PersonNotes <String>] [-PersonType <String>] [-Phones <IMicrosoftGraphPhone[]>]
- [-PostalAddresses <IMicrosoftGraphLocation[]>] [-Profession <String>]
+ [-PersonNotes <String>] [-PersonType <String>] [-Phones <IMicrosoftGraphPhone1[]>]
+ [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
  [-Sources <IMicrosoftGraphPersonDataSource[]>] [-Surname <String>] [-Title <String>]
  [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -93,7 +93,7 @@ person
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -321,7 +321,7 @@ The person's phone numbers.
 To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -337,7 +337,7 @@ The person's addresses.
 To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -509,7 +509,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
 
 ### Microsoft.Graph.PowerShell.Models.IUsersPeopleIdentity
 
@@ -526,7 +526,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPerson>: person
+BODYPARAMETER <IMicrosoftGraphPerson1>: person
   - `[Id <String>]`: Read-only.
   - `[Birthday <String>]`: The person's birthday.
   - `[CompanyName <String>]`: The name of the person's company.
@@ -541,10 +541,10 @@ BODYPARAMETER <IMicrosoftGraphPerson>: person
   - `[OfficeLocation <String>]`: The location of the person's office.
   - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
   - `[PersonType <String>]`: The type of person.
-  - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
+  - `[Phones <IMicrosoftGraphPhone1[]>]`: The person's phone numbers.
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
-  - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
+  - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostOfficeBox <String>]`: 
@@ -583,11 +583,11 @@ INPUTOBJECT <IUsersPeopleIdentity>: Identity Parameter
   - `[PersonId <String>]`: key: person-id of person
   - `[UserId <String>]`: key: user-id of user
 
-PHONES <IMicrosoftGraphPhone[]>: The person's phone numbers.
+PHONES <IMicrosoftGraphPhone1[]>: The person's phone numbers.
   - `[Number <String>]`: The phone number.
   - `[Type <String>]`: phoneType
 
-POSTALADDRESSES <IMicrosoftGraphLocation[]>: The person's addresses.
+POSTALADDRESSES <IMicrosoftGraphLocation1[]>: The person's addresses.
   - `[AddressCity <String>]`: The city.
   - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[AddressPostOfficeBox <String>]`: 

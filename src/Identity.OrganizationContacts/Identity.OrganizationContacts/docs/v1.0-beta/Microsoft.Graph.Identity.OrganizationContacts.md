@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.OrganizationContacts
-Module Guid: ff2dc8c5-8d27-4f44-b55c-7defa66b00c7
+Module Guid: 9fa5df92-7486-4458-9b91-e67f057048c3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organizationcontacts
 Help Version: 1.0.0.0
 Locale: en-US

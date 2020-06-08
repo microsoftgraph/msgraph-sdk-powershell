@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.InformationProtection
-Module Guid: a30ead09-ac41-40c0-84b9-5827e8ee081d
+Module Guid: 20b1a0a9-9405-401d-b51e-5dbe72ecc31a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.informationprotection
 Help Version: 1.0.0.0
 Locale: en-US
