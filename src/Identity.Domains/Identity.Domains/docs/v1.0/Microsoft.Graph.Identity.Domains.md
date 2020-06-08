@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Domains
-Module Guid: 90bea5e2-1522-46bd-a108-3da5d5799659
+Module Guid: 75a4c5db-feaa-49a0-bf6f-60bd49b4c401
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.domains
 Help Version: 1.0.0.0
 Locale: en-US

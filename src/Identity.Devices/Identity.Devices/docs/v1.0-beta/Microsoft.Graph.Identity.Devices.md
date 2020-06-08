@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Devices
-Module Guid: 6c01227c-fb36-4e7d-94ac-7e978c1b6395
+Module Guid: fc3e06f1-e24f-489a-9bc6-9b48026869e7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.devices
 Help Version: 1.0.0.0
 Locale: en-US

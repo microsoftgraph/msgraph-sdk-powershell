@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryObjects
-Module Guid: 607f2a5b-d8dc-418c-b5f4-344fdc24f9d8
+Module Guid: 59a1b759-5587-4873-848c-9da16fea64d7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US

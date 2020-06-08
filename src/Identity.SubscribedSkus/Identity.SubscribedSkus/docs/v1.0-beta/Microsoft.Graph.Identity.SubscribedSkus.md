@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SubscribedSkus
-Module Guid: 4297d16d-2cd3-4140-b912-da444b9937d4
+Module Guid: ec707422-9987-4957-a0b0-3a594870d383
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.subscribedskus
 Help Version: 1.0.0.0
 Locale: en-US

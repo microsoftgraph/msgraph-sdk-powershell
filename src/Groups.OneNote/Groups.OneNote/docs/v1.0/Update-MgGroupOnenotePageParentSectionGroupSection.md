@@ -18,7 +18,7 @@ Update-MgGroupOnenotePageParentSectionGroupSection -GroupId <String> -OnenotePag
  -OnenoteSectionId <String> [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-Id <String>] [-IsDefault] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-LinksOneNoteClientUrlHref <String>] [-LinksOneNoteWebUrlHref <String>]
- [-Pages <IMicrosoftGraphOnenotePage[]>] [-PagesUrl <String>]
+ [-Pages <IMicrosoftGraphOnenotePage1[]>] [-PagesUrl <String>]
  [-ParentNotebookCreatedBy <IMicrosoftGraphIdentitySet>] [-ParentNotebookCreatedDateTime <DateTime>]
  [-ParentNotebookDisplayName <String>] [-ParentNotebookId <String>] [-ParentNotebookIsDefault]
  [-ParentNotebookIsShared] [-ParentNotebookLastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -50,7 +50,7 @@ Update-MgGroupOnenotePageParentSectionGroupSection -InputObject <IGroupsOneNoteI
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
  [-Id <String>] [-IsDefault] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-LinksOneNoteClientUrlHref <String>] [-LinksOneNoteWebUrlHref <String>]
- [-Pages <IMicrosoftGraphOnenotePage[]>] [-PagesUrl <String>]
+ [-Pages <IMicrosoftGraphOnenotePage1[]>] [-PagesUrl <String>]
  [-ParentNotebookCreatedBy <IMicrosoftGraphIdentitySet>] [-ParentNotebookCreatedDateTime <DateTime>]
  [-ParentNotebookDisplayName <String>] [-ParentNotebookId <String>] [-ParentNotebookIsDefault]
  [-ParentNotebookIsShared] [-ParentNotebookLastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -316,7 +316,7 @@ Nullable.
 To construct, see NOTES section for PAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -719,7 +719,7 @@ BODYPARAMETER <IMicrosoftGraphOnenoteSection1>: onenoteSection
   - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
   - `[LinksOneNoteClientUrlHref <String>]`: The url of the link.
   - `[LinksOneNoteWebUrlHref <String>]`: The url of the link.
-  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
     - `[Id <String>]`: Read-only.
@@ -824,7 +824,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Read-only. Nullable.
+PAGES <IMicrosoftGraphOnenotePage1[]>: The collection of pages in the section. Read-only. Nullable.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
   - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
   - `[Id <String>]`: Read-only.
@@ -884,7 +884,7 @@ PAGES <IMicrosoftGraphOnenotePage[]>: The collection of pages in the section. Re
         - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
         - `[LinksOneNoteClientUrlHref <String>]`: The url of the link.
         - `[LinksOneNoteWebUrlHref <String>]`: The url of the link.
-        - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+        - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
         - `[PagesUrl <String>]`: The pages endpoint where you can get details for all the pages in the section. Read-only.
         - `[ParentNotebookCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[ParentNotebookCreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
@@ -971,7 +971,7 @@ PARENTNOTEBOOKSECTIONGROUPS <IMicrosoftGraphSectionGroup1[]>: The section groups
       - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
       - `[LinksOneNoteClientUrlHref <String>]`: The url of the link.
       - `[LinksOneNoteWebUrlHref <String>]`: The url of the link.
-      - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+      - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
         - `[Id <String>]`: Read-only.
@@ -1044,7 +1044,7 @@ PARENTNOTEBOOKSECTIONS <IMicrosoftGraphOnenoteSection1[]>: The sections in the n
   - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
   - `[LinksOneNoteClientUrlHref <String>]`: The url of the link.
   - `[LinksOneNoteWebUrlHref <String>]`: The url of the link.
-  - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+  - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
     - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
     - `[Id <String>]`: Read-only.
@@ -1161,7 +1161,7 @@ PARENTSECTIONGROUP <IMicrosoftGraphSectionGroup1>: sectionGroup
       - `[IsDefault <Boolean?>]`: Indicates whether this is the user's default section. Read-only.
       - `[LinksOneNoteClientUrlHref <String>]`: The url of the link.
       - `[LinksOneNoteWebUrlHref <String>]`: The url of the link.
-      - `[Pages <IMicrosoftGraphOnenotePage[]>]`: The collection of pages in the section.  Read-only. Nullable.
+      - `[Pages <IMicrosoftGraphOnenotePage1[]>]`: The collection of pages in the section.  Read-only. Nullable.
         - `[CreatedDateTime <DateTime?>]`: The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         - `[Self <String>]`: The endpoint where you can get details about the page. Read-only.
         - `[Id <String>]`: Read-only.

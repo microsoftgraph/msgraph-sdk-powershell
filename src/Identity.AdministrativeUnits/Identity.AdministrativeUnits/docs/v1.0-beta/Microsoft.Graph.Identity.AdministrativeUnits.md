@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AdministrativeUnits
-Module Guid: 68eb9112-cfd8-4e39-b213-12267d24f4f1
+Module Guid: d8e108d0-5400-4010-ab35-ffee4e261423
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.administrativeunits
 Help Version: 1.0.0.0
 Locale: en-US

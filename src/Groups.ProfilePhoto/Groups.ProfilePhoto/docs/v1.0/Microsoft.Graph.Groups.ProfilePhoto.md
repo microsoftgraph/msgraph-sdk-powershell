@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.ProfilePhoto
-Module Guid: debe62cf-4c2f-4882-9467-cdaa25384479
+Module Guid: eea5f4fa-0d33-44f6-b4c4-ebfa06187e30
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.profilephoto
 Help Version: 1.0.0.0
 Locale: en-US

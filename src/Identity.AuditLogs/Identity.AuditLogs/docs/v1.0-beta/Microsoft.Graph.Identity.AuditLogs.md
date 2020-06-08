@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AuditLogs
-Module Guid: a7be9734-f1e3-4f26-a1f9-ac4e9e7b9d39
+Module Guid: f17a54bc-6af5-4623-b7bb-1844d55af90c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.auditlogs
 Help Version: 1.0.0.0
 Locale: en-US

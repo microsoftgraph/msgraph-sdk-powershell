@@ -18,7 +18,7 @@ New-MgGroupConversationThreadPost -ConversationId <String> -ConversationThreadId
  [-Attachments <IMicrosoftGraphAttachment[]>] [-Body <IMicrosoftGraphItemBody>] [-Categories <String[]>]
  [-ChangeKey <String>] [-ConversationId1 <String>] [-ConversationThreadId1 <String>]
  [-CreatedDateTime <DateTime>] [-Extensions <IMicrosoftGraphExtension[]>] [-From <IMicrosoftGraphRecipient>]
- [-HasAttachments] [-Id <String>] [-Importance <String>] [-InReplyTo <IMicrosoftGraphPost1>]
+ [-HasAttachments] [-Id <String>] [-Importance <String>] [-InReplyTo <IMicrosoftGraphPost>]
  [-LastModifiedDateTime <DateTime>] [-Mentions <IMicrosoftGraphMention[]>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-NewParticipants <IMicrosoftGraphRecipient[]>] [-ReceivedDateTime <DateTime>]
@@ -30,13 +30,13 @@ New-MgGroupConversationThreadPost -ConversationId <String> -ConversationThreadId
 ### Create1
 ```
 New-MgGroupConversationThreadPost -ConversationId <String> -ConversationThreadId <String> -GroupId <String>
- -BodyParameter <IMicrosoftGraphPost1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPost> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgGroupConversationThreadPost -InputObject <IGroupsConversationIdentity>
- -BodyParameter <IMicrosoftGraphPost1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPost> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
@@ -45,7 +45,7 @@ New-MgGroupConversationThreadPost -InputObject <IGroupsConversationIdentity> [-C
  [-ConversationThreadId <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
  [-Body <IMicrosoftGraphItemBody>] [-Categories <String[]>] [-ChangeKey <String>]
  [-CreatedDateTime <DateTime>] [-Extensions <IMicrosoftGraphExtension[]>] [-From <IMicrosoftGraphRecipient>]
- [-HasAttachments] [-Id <String>] [-Importance <String>] [-InReplyTo <IMicrosoftGraphPost1>]
+ [-HasAttachments] [-Id <String>] [-Importance <String>] [-InReplyTo <IMicrosoftGraphPost>]
  [-LastModifiedDateTime <DateTime>] [-Mentions <IMicrosoftGraphMention[]>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-NewParticipants <IMicrosoftGraphRecipient[]>] [-ReceivedDateTime <DateTime>]
@@ -117,7 +117,7 @@ post
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -355,7 +355,7 @@ post
 To construct, see NOTES section for INREPLYTO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -521,11 +521,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsConversationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
 
 ## NOTES
 
@@ -548,7 +548,7 @@ BODY <IMicrosoftGraphItemBody>: itemBody
   - `[Content <String>]`: The content of the item.
   - `[ContentType <String>]`: bodyType
 
-BODYPARAMETER <IMicrosoftGraphPost1>: post
+BODYPARAMETER <IMicrosoftGraphPost>: post
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -574,7 +574,7 @@ BODYPARAMETER <IMicrosoftGraphPost1>: post
       - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
   - `[Importance <String>]`: importance
-  - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+  - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[Mentions <IMicrosoftGraphMention[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Application <String>]`: 
@@ -616,7 +616,7 @@ INPUTOBJECT <IGroupsConversationIdentity>: Identity Parameter
   - `[PostId <String>]`: key: post-id of post
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty
 
-INREPLYTO <IMicrosoftGraphPost1>: post
+INREPLYTO <IMicrosoftGraphPost>: post
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -642,7 +642,7 @@ INREPLYTO <IMicrosoftGraphPost1>: post
       - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
   - `[Importance <String>]`: importance
-  - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+  - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[Mentions <IMicrosoftGraphMention[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Application <String>]`: 

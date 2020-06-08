@@ -15,26 +15,26 @@ Create new navigation property to conversations for groups
 ### CreateExpanded1 (Default)
 ```
 New-MgGroupConversation -GroupId <String> [-HasAttachments] [-Id <String>] [-LastDeliveredDateTime <DateTime>]
- [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread[]>] [-Topic <String>]
+ [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread1[]>] [-Topic <String>]
  [-UniqueSenders <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation> [-Confirm] [-WhatIf]
+New-MgGroupConversation -GroupId <String> -BodyParameter <IMicrosoftGraphConversation1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgGroupConversation -InputObject <IGroupsConversationIdentity>
- -BodyParameter <IMicrosoftGraphConversation> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphConversation1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgGroupConversation -InputObject <IGroupsConversationIdentity> [-HasAttachments] [-Id <String>]
- [-LastDeliveredDateTime <DateTime>] [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread[]>]
+ [-LastDeliveredDateTime <DateTime>] [-Preview <String>] [-Threads <IMicrosoftGraphConversationThread1[]>]
  [-Topic <String>] [-UniqueSenders <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ conversation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -179,7 +179,7 @@ Nullable.
 To construct, see NOTES section for THREADS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationThread1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -259,11 +259,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsConversationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversation1
 
 ## NOTES
 
@@ -274,12 +274,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphConversation>: conversation
+BODYPARAMETER <IMicrosoftGraphConversation1>: conversation
   - `[Id <String>]`: Read-only.
   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this Conversation has at least one attachment.
   - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[Preview <String>]`: A short summary from the body of the latest post in this converstaion.
-  - `[Threads <IMicrosoftGraphConversationThread[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+  - `[Threads <IMicrosoftGraphConversationThread1[]>]`: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
@@ -288,7 +288,7 @@ BODYPARAMETER <IMicrosoftGraphConversation>: conversation
     - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment.
     - `[IsLocked <Boolean?>]`: Indicates if the thread is locked.
     - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[Posts <IMicrosoftGraphPost[]>]`: Read-only. Nullable.
+    - `[Posts <IMicrosoftGraphPost1[]>]`: Read-only. Nullable.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -310,7 +310,7 @@ BODYPARAMETER <IMicrosoftGraphConversation>: conversation
         - `[Id <String>]`: Read-only.
       - `[From <IMicrosoftGraphRecipient>]`: recipient
       - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-      - `[InReplyTo <IMicrosoftGraphPost>]`: post
+      - `[InReplyTo <IMicrosoftGraphPost1>]`: post
       - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[Value <String[]>]`: A collection of property values.
@@ -338,7 +338,7 @@ INPUTOBJECT <IGroupsConversationIdentity>: Identity Parameter
   - `[PostId <String>]`: key: post-id of post
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty
 
-THREADS <IMicrosoftGraphConversationThread[]>: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+THREADS <IMicrosoftGraphConversationThread1[]>: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the thread.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
@@ -347,7 +347,7 @@ THREADS <IMicrosoftGraphConversationThread[]>: A collection of all the conversat
   - `[HasAttachments <Boolean?>]`: Indicates whether any of the posts within this thread has at least one attachment.
   - `[IsLocked <Boolean?>]`: Indicates if the thread is locked.
   - `[LastDeliveredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[Posts <IMicrosoftGraphPost[]>]`: Read-only. Nullable.
+  - `[Posts <IMicrosoftGraphPost1[]>]`: Read-only. Nullable.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -369,7 +369,7 @@ THREADS <IMicrosoftGraphConversationThread[]>: A collection of all the conversat
       - `[Id <String>]`: Read-only.
     - `[From <IMicrosoftGraphRecipient>]`: recipient
     - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-    - `[InReplyTo <IMicrosoftGraphPost>]`: post
+    - `[InReplyTo <IMicrosoftGraphPost1>]`: post
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String[]>]`: A collection of property values.

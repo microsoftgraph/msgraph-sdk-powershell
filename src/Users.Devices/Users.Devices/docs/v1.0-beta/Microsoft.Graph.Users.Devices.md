@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Devices
-Module Guid: dd3f8991-c3dd-42ca-a54b-4cdd58f1b43c
+Module Guid: d3715c34-48b0-4dcf-8f16-f4306a4c80c3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.devices
 Help Version: 1.0.0.0
 Locale: en-US
