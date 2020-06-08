@@ -23,6 +23,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [OutputType(typeof(Hashtable))]
     public class InvokeGraphRequest : PSCmdlet
     {
+
         /// <summary>
         /// Contains the values of HttpVerbs
         /// </summary>
@@ -45,24 +46,42 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         /// Http Method
         /// </summary>
-        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1, Mandatory = true)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Position = 1,
+            Mandatory = true,
+            HelpMessage = "Http Method")]
         public HttpVerb Method { get; set; }
 
         /// <summary>
         /// Uri to call using the Graph HttpClient can be segments such as /beta/me
         /// or fully qualified url such as https://graph.microsoft.com/beta/me
         /// </summary>
-        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 2, Mandatory = true)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Position = 2,
+            Mandatory = true,
+            HelpMessage = "Uri to call can be segments such as /beta/me or fully qualified https://graph.microsoft.com/beta/me")]
         public Uri Uri { get; set; }
 
         /// <summary>
         /// Optional Http Body
         /// </summary>
-        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 3)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 3, HelpMessage = "Request Body. Required when Method is Post or Patch")]
         public object Body { get; set; }
+
+        /// <summary>
+        /// Wait for .NET debugger to attach
+        /// </summary>
+        [Parameter(Mandatory = false,
+            DontShow = true,
+            HelpMessage = "Wait for .NET debugger to attach")]
+        public SwitchParameter Break { get; set; }
 
         protected override void BeginProcessing()
         {
+            if (Break)
+            {
+                AttachDebugger.Break();
+            }
             ValidateParameters();
             base.BeginProcessing();
         }
@@ -70,8 +89,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            var authConfig = GraphSession.Instance.AuthContext;
-            var client = HttpHelpers.GetGraphHttpClient(authConfig);
             try
             {
                 var httpMethod = GetHttpMethod();
@@ -80,7 +97,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     Content = new StringContent(null != Body ? JsonConvert.SerializeObject(Body) : @"{}", Encoding.UTF8,
                         CoreConstants.MimeTypeNames.Application.Json)
                 };
-                var responseMessage = client.SendAsync(requestMessage).GetAwaiter().GetResult();
+                var responseMessage = _client.SendAsync(requestMessage).GetAwaiter().GetResult();
                 var responseString = responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 var result = JsonConvert.DeserializeObject<Hashtable>(responseString);
                 if (responseMessage.IsSuccessStatusCode)
@@ -151,7 +168,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (Uri.IsAbsoluteUri && _client.BaseAddress.Host != Uri.Host)
             {
-                ThrowTerminatingError(new ErrorRecord(new ArgumentNullException(nameof(Uri), $"Invalid Host {Uri.Host}"), Guid.NewGuid().ToString(),
+                ThrowTerminatingError(new ErrorRecord(new ArgumentException(nameof(Uri), $"Invalid Host {Uri.Host}"), Guid.NewGuid().ToString(),
+                    ErrorCategory.InvalidArgument, null));
+            }
+            // When PATCH or POST is specified, ensure a body is present
+            if (this.Method == HttpVerb.PATCH || this.Method == HttpVerb.POST && this.Body == null)
+            {
+                ThrowTerminatingError(new ErrorRecord(new ArgumentNullException(nameof(Body), $"{nameof(this.Body)} is required when Method is {this.Method}"), Guid.NewGuid().ToString(),
                     ErrorCategory.InvalidArgument, null));
             }
         }
