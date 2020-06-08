@@ -40,7 +40,6 @@ directive:
       subject: ^UserManagedAppRegistration$
       variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
     remove: true
-# Duplicate - Can be called by Get-MgUserEventCalendarSchedule
   - where:
       verb: Get
       subject: ^UserCalendarEventCalendarSchedule$
@@ -50,6 +49,10 @@ directive:
       subject: ^(UserOnlineMeeting)$
     remove: true
 # Rename
+  - where:
+      verb: Clear
+      subject: ^(UserManagedAppRegistration)$
+    subject: $1ByDeviceTag
   - where:
       verb: Get
       subject: ^(User)$
@@ -80,31 +83,37 @@ directive:
   - where:
       verb: Get
       subject: ^(User)(CalendarSchedule)$
-      variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$
+      variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$|^Get1$|^GetExpanded1$|^GetViaIdentity1$|^GetViaIdentityExpanded1$
     set:
       subject: $1Default$2
   - where:
       verb: New
       subject: ^(User)(CalendarEventAttachmentUploadSession)$
-      variant: ^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+      variant: ^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$
     set:
       subject: $1Default$2
   - where:
       verb: Invoke
-      subject: ^(AcceptUser)(CalendarEvent|CalendarEventInstance|CalendarEventTentatively|CalendarEventInstanceTentatively)$
-      variant: ^Accept$|^AcceptExpanded$|^AcceptViaIdentity$|^AcceptViaIdentityExpanded$
+      subject: ^(AcceptUser)(CalendarEventInstance)$
+      variant: ^Accept$|^AcceptExpanded$|^AcceptViaIdentity$|^AcceptViaIdentityExpanded$|^Accept3$|^AcceptExpanded3$|^AcceptViaIdentity3$|^AcceptViaIdentityExpanded3$
+    set:
+      subject: $1Default$2
+  - where:
+      verb: Invoke
+      subject: ^(AcceptUser)(CalendarEvent|CalendarEventTentatively|CalendarEventInstanceTentatively)$
+      variant: ^Accept$|^AcceptExpanded$|^AcceptViaIdentity$|^AcceptViaIdentityExpanded$|^Accept1$|^AcceptExpanded1$|^AcceptViaIdentity1$|^AcceptViaIdentityExpanded1$
     set:
       subject: $1Default$2
   - where:
       verb: Invoke
       subject: ^(DeclineUser)(CalendarEventInstance)$
-      variant: ^Decline1$|^DeclineExpanded1$|^DeclineViaIdentity1$|^DeclineViaIdentityExpanded1$
+      variant: ^Decline$|^DeclineExpanded$|^DeclineViaIdentity$|^DeclineViaIdentityExpanded$|^Decline3$|^DeclineExpanded3$|^DeclineViaIdentity3$|^DeclineViaIdentityExpanded3$
     set:
       subject: $1Default$2
   - where:
       verb: Invoke
       subject: ^(DeclineUser)(CalendarEvent)$
-      variant: ^Decline$|^DeclineExpanded$|^DeclineViaIdentity$|^DeclineViaIdentityExpanded$
+      variant: ^Decline$|^DeclineExpanded$|^DeclineViaIdentity$|^DeclineViaIdentityExpanded$|^Decline1$|^DeclineExpanded1$|^DeclineViaIdentity1$|^DeclineViaIdentityExpanded1$
     set:
       subject: $1Default$2
   - where:
@@ -121,14 +130,8 @@ directive:
       subject: $1Default$2
   - where:
       verb: Invoke
-      subject: ^(SnoozeUser)(CalendarEventInstanceReminder)$
-      variant: ^Snooze1$|^SnoozeExpanded1$|^SnoozeViaIdentity1$|^SnoozeViaIdentityExpanded1$
-    set:
-      subject: $1Default$2
-  - where:
-      verb: Invoke
-      subject: ^(SnoozeUser)(CalendarEventReminder)$
-      variant: ^Snooze$|^SnoozeExpanded$|^SnoozeViaIdentity$|^SnoozeViaIdentityExpanded$
+      subject: ^(SnoozeUser)(CalendarEventInstanceReminder|CalendarEventReminder)$
+      variant: ^Snooze$|^SnoozeExpanded$|^SnoozeViaIdentity$|^SnoozeViaIdentityExpanded$|^Snooze1$|^SnoozeExpanded1$|^SnoozeViaIdentity1$|^SnoozeViaIdentityExpanded1$
     set:
       subject: $1Default$2
   - where:
@@ -139,16 +142,28 @@ directive:
       subject: $1Default$2
   - where:
       verb: Invoke
+      subject: ^(DismissUser)(CalendarEventReminder)$
+      variant: ^Dismiss$|^DismissViaIdentity$|Dismiss1$|^DismissViaIdentity1$
+    set:
+      subject: $1Default$2
+  - where:
+      verb: Invoke
+      subject: ^(DismissUser)(CalendarEventInstanceReminder)$
+      variant: ^Dismiss$|^DismissViaIdentity$|Dismiss3$|^DismissViaIdentity3$
+    set:
+      subject: $1Default$2
+  - where:
+      verb: Invoke
       subject: ^(Reply)(UserMessage|UserMailFolderMessage)$
-      variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$
+      variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$|^Reply3$|^ReplyExpanded3$|^ReplyViaIdentity3$|^ReplyViaIdentityExpanded3$
     set:
       subject: $1All$2
   - where:
       verb: New
-      subject: ^(UserMessageReply|UserMailFolderMessageReply)$
-      variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$
+      subject: ^(User)(MessageReply|MailFolderMessageReply)$
+      variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
     set:
-      subject: $1All
+      subject: $1$2All
 ```
 ### Versioning
 
