@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.UserFlows
-Module Guid: 942b7768-ba5c-47ab-b0f0-2d24dec72050
+Module Guid: 14f7ac18-912f-44fe-a627-5bde3f178653
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.userflows
 Help Version: 1.0.0.0
 Locale: en-US

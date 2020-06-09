@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AuthenticationMethods
-Module Guid: acf8bdf6-90a4-438f-b513-7924cfe09658
+Module Guid: 1787e1d8-e149-41e3-9bc8-5d2605e8c0b2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.authenticationmethods
 Help Version: 1.0.0.0
 Locale: en-US

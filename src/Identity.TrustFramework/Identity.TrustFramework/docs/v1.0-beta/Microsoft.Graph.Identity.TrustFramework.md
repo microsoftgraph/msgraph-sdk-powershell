@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.TrustFramework
-Module Guid: a6228817-9669-4060-ab77-56f49007ab7e
+Module Guid: 23630678-a593-477b-8938-d0654e2488a5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.trustframework
 Help Version: 1.0.0.0
 Locale: en-US

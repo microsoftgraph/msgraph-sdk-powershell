@@ -14,7 +14,7 @@ Update appCatalogs
 
 ### UpdateExpanded (Default)
 ```
-Update-MgAppCatalog [-Id <String>] [-TeamsApps <IMicrosoftGraphTeamsApp[]>] [-PassThru] [-Confirm] [-WhatIf]
+Update-MgAppCatalog [-Id <String>] [-TeamsApps <IMicrosoftGraphTeamsApp1[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for TEAMSAPPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -164,7 +164,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAppCatalogs1>: appCatalogs
   - `[Id <String>]`: Read-only.
-  - `[TeamsApps <IMicrosoftGraphTeamsApp[]>]`: 
+  - `[TeamsApps <IMicrosoftGraphTeamsApp1[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
       - `[Id <String>]`: Read-only.
@@ -176,7 +176,7 @@ BODYPARAMETER <IMicrosoftGraphAppCatalogs1>: appCatalogs
     - `[ExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
     - `[Name <String>]`: 
 
-TEAMSAPPS <IMicrosoftGraphTeamsApp[]>: .
+TEAMSAPPS <IMicrosoftGraphTeamsApp1[]>: .
   - `[Id <String>]`: Read-only.
   - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.

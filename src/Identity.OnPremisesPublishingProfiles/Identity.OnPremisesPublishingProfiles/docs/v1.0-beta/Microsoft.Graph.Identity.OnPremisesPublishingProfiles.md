@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.OnPremisesPublishingProfiles
-Module Guid: 2c4cc6b6-98f5-4f5c-8351-94b764a7de48
+Module Guid: 0cf5f494-e84b-46e4-ba1b-8e788ea4494a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.onpremisespublishingprofiles
 Help Version: 1.0.0.0
 Locale: en-US

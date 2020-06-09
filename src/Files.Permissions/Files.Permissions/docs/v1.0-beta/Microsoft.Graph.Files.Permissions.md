@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files.Permissions
-Module Guid: 6f2c1544-7f97-4294-8972-bd59b85bfaae
+Module Guid: 9c794a0f-d432-489a-886e-f5d9b5bb2364
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files.permissions
 Help Version: 1.0.0.0
 Locale: en-US

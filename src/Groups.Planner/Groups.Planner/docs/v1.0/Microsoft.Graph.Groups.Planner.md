@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.Planner
-Module Guid: 6a68a997-b290-4399-a76a-280699f6998d
+Module Guid: 6c2b1b82-c263-427f-b08d-1e964e2ff6a7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.planner
 Help Version: 1.0.0.0
 Locale: en-US

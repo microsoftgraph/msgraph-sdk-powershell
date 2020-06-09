@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DevicesApps.MobileAppManagement
-Module Guid: 2dd26b12-759c-45af-ab8f-5d2ecbc88efe
+Module Guid: 50f3d5f6-41b7-458a-8caf-d35c57287dec
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicesapps.mobileappmanagement
 Help Version: 1.0.0.0
 Locale: en-US

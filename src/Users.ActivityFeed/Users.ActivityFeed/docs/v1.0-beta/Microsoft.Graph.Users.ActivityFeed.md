@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.ActivityFeed
-Module Guid: 1063fb63-38e0-46d2-8b99-126ce2418ea4
+Module Guid: 519e2742-97b3-4b83-a106-ea4bd913964f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.activityfeed
 Help Version: 1.0.0.0
 Locale: en-US

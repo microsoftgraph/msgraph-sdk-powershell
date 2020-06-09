@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.OutlookUser
-Module Guid: a7b8d702-8179-413b-b250-ac00b0cb0401
+Module Guid: 8982cada-2f68-4840-8173-62dd5e1b9084
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.outlookuser
 Help Version: 1.0.0.0
 Locale: en-US

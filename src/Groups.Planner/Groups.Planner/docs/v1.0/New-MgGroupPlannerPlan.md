@@ -14,7 +14,7 @@ Create new navigation property to plans for groups
 
 ### CreateExpanded1 (Default)
 ```
-New-MgGroupPlannerPlan -GroupId <String> [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
+New-MgGroupPlannerPlan -GroupId <String> [-Buckets <IMicrosoftGraphPlannerBucket[]>]
  [-CategoryDescriptionCategory1 <String>] [-CategoryDescriptionCategory2 <String>]
  [-CategoryDescriptionCategory3 <String>] [-CategoryDescriptionCategory4 <String>]
  [-CategoryDescriptionCategory5 <String>] [-CategoryDescriptionCategory6 <String>]
@@ -25,19 +25,19 @@ New-MgGroupPlannerPlan -GroupId <String> [-Buckets <IMicrosoftGraphPlannerBucket
 
 ### Create1
 ```
-New-MgGroupPlannerPlan -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerPlan1> [-Confirm] [-WhatIf]
+New-MgGroupPlannerPlan -GroupId <String> -BodyParameter <IMicrosoftGraphPlannerPlan> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgGroupPlannerPlan -InputObject <IGroupsPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan1>
+New-MgGroupPlannerPlan -InputObject <IGroupsPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgGroupPlannerPlan -InputObject <IGroupsPlannerIdentity> [-Buckets <IMicrosoftGraphPlannerBucket1[]>]
+New-MgGroupPlannerPlan -InputObject <IGroupsPlannerIdentity> [-Buckets <IMicrosoftGraphPlannerBucket[]>]
  [-CategoryDescriptionCategory1 <String>] [-CategoryDescriptionCategory2 <String>]
  [-CategoryDescriptionCategory3 <String>] [-CategoryDescriptionCategory4 <String>]
  [-CategoryDescriptionCategory5 <String>] [-CategoryDescriptionCategory6 <String>]
@@ -76,7 +76,7 @@ plannerPlan
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -94,7 +94,7 @@ Collection of buckets in the plan.
 To construct, see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -394,11 +394,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsPlannerIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
 
 ## NOTES
 
@@ -409,9 +409,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerPlan1>: plannerPlan
+BODYPARAMETER <IMicrosoftGraphPlannerPlan>: plannerPlan
   - `[Id <String>]`: Read-only.
-  - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
+  - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Id <String>]`: Read-only.
     - `[Name <String>]`: Name of the bucket.
     - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -469,7 +469,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan1>: plannerPlan
   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Read-only. Nullable. Collection of tasks in the plan.
   - `[Title <String>]`: Required. Title of the plan.
 
-BUCKETS <IMicrosoftGraphPlannerBucket1[]>: Read-only. Nullable. Collection of buckets in the plan.
+BUCKETS <IMicrosoftGraphPlannerBucket[]>: Read-only. Nullable. Collection of buckets in the plan.
   - `[Id <String>]`: Read-only.
   - `[Name <String>]`: Name of the bucket.
   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.

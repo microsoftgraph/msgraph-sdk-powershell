@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams.AppCatalogs
-Module Guid: f96dc9b4-822a-4aca-a8ce-7af71a1991c8
+Module Guid: 278449e2-e3a6-4e02-a70c-8bb93a9441b6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams.appcatalogs
 Help Version: 1.0.0.0
 Locale: en-US

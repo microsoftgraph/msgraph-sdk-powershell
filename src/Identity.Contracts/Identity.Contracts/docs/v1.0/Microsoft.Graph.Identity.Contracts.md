@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Contracts
-Module Guid: 65c3044d-2e55-4329-8de6-c862ebd590dc
+Module Guid: 732a7254-c6fb-412f-923a-bfd62e4f8dec
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.contracts
 Help Version: 1.0.0.0
 Locale: en-US

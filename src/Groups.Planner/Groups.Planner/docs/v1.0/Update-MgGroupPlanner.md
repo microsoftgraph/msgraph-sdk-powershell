@@ -14,7 +14,7 @@ Update the navigation property planner in groups
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgGroupPlanner -GroupId <String> [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-PassThru]
+Update-MgGroupPlanner -GroupId <String> [-Id <String>] [-Plans <IMicrosoftGraphPlannerPlan[]>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -33,7 +33,7 @@ Update-MgGroupPlanner -InputObject <IGroupsPlannerIdentity> -BodyParameter <IMic
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgGroupPlanner -InputObject <IGroupsPlannerIdentity> [-Id <String>]
- [-Plans <IMicrosoftGraphPlannerPlan1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Plans <IMicrosoftGraphPlannerPlan[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,7 +145,7 @@ Returns the plannerPlans owned by the group.
 To construct, see NOTES section for PLANS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -211,9 +211,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPlannerGroup1>: plannerGroup
   - `[Id <String>]`: Read-only.
-  - `[Plans <IMicrosoftGraphPlannerPlan1[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
+  - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
     - `[Id <String>]`: Read-only.
-    - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
+    - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
       - `[Id <String>]`: Read-only.
       - `[Name <String>]`: Name of the bucket.
       - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -277,9 +277,9 @@ INPUTOBJECT <IGroupsPlannerIdentity>: Identity Parameter
   - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
   - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
 
-PLANS <IMicrosoftGraphPlannerPlan1[]>: Read-only. Nullable. Returns the plannerPlans owned by the group.
+PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns the plannerPlans owned by the group.
   - `[Id <String>]`: Read-only.
-  - `[Buckets <IMicrosoftGraphPlannerBucket1[]>]`: Read-only. Nullable. Collection of buckets in the plan.
+  - `[Buckets <IMicrosoftGraphPlannerBucket[]>]`: Read-only. Nullable. Collection of buckets in the plan.
     - `[Id <String>]`: Read-only.
     - `[Name <String>]`: Name of the bucket.
     - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.

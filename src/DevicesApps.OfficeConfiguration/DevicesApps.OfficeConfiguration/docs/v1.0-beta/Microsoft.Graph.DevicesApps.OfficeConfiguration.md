@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DevicesApps.OfficeConfiguration
-Module Guid: be4c076a-d646-48a7-b143-afd704e9d3ea
+Module Guid: 1fef9597-1fc1-406c-a774-2446e0ae3875
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicesapps.officeconfiguration
 Help Version: 1.0.0.0
 Locale: en-US

@@ -29,7 +29,7 @@ New-MgDevice [-AccountEnabled] [-AlternativeSecurityIds <IMicrosoftGraphAlternat
 
 ### Create
 ```
-New-MgDevice -BodyParameter <IMicrosoftGraphDevice> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDevice -BodyParameter <IMicrosoftGraphDevice1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,7 +113,7 @@ The directoryObject type is the base type for many other directory entity types.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
 Parameter Sets: Create
 Aliases:
 
@@ -630,11 +630,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
 
 ## NOTES
 
@@ -650,7 +650,7 @@ ALTERNATIVESECURITYIDS <IMicrosoftGraphAlternativeSecurityId[]>: For internal us
   - `[Key <Byte[]>]`: For internal use only
   - `[Type <Int32?>]`: For internal use only
 
-BODYPARAMETER <IMicrosoftGraphDevice>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphDevice1>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
   - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required.

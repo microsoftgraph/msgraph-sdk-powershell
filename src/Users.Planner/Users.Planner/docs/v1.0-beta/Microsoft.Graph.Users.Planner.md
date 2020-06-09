@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Planner
-Module Guid: b8dc8437-4130-4068-a17e-d08ecadf4668
+Module Guid: 6bda8522-81b2-474e-baeb-794279373729
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.planner
 Help Version: 1.0.0.0
 Locale: en-US

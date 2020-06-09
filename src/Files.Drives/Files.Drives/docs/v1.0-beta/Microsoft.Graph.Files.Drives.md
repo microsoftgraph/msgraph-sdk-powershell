@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files.Drives
-Module Guid: ad6b13e2-dd50-4160-ac48-6e4144422daf
+Module Guid: 623eff02-ec6c-4b24-8aa8-574b5bd8f0a0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files.drives
 Help Version: 1.0.0.0
 Locale: en-US

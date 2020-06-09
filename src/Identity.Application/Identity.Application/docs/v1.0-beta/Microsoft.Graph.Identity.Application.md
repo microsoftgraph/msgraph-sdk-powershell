@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Application
-Module Guid: 88a18657-b7f4-4b1a-b71b-4478d00546ee
+Module Guid: b75fee06-5d6b-4de8-9899-e50d2c893a21
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.application
 Help Version: 1.0.0.0
 Locale: en-US

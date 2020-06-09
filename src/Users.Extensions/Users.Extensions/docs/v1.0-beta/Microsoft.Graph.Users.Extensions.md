@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Extensions
-Module Guid: 54aa1102-7a58-4097-93c3-58f9c8dae314
+Module Guid: 22a7b054-5add-4733-8347-e9bf1b9a8647
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.extensions
 Help Version: 1.0.0.0
 Locale: en-US

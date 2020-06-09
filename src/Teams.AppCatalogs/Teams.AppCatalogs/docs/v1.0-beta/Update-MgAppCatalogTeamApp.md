@@ -21,13 +21,13 @@ Update-MgAppCatalogTeamApp -TeamsAppId <String> [-AppDefinitions <IMicrosoftGrap
 
 ### Update1
 ```
-Update-MgAppCatalogTeamApp -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsApp> [-PassThru]
+Update-MgAppCatalogTeamApp -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsApp1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgAppCatalogTeamApp -InputObject <ITeamsAppCatalogsIdentity> -BodyParameter <IMicrosoftGraphTeamsApp>
+Update-MgAppCatalogTeamApp -InputObject <ITeamsAppCatalogsIdentity> -BodyParameter <IMicrosoftGraphTeamsApp1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -85,7 +85,7 @@ teamsApp
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -253,7 +253,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsApp1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsAppCatalogsIdentity
 
@@ -276,7 +276,7 @@ APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition[]>: The details for each versi
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 
-BODYPARAMETER <IMicrosoftGraphTeamsApp>: teamsApp
+BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[Id <String>]`: Read-only.
   - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.

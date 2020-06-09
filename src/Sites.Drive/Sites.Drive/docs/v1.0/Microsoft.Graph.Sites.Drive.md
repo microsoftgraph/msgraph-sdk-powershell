@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites.Drive
-Module Guid: 3b31cf08-e5f2-4fd1-b147-c68ea0b1dee9
+Module Guid: f523f667-36db-4c8d-8ae2-fde36ee24a66
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites.drive
 Help Version: 1.0.0.0
 Locale: en-US

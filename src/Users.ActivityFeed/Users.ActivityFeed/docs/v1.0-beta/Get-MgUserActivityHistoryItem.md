@@ -246,7 +246,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1
 
 ## NOTES
 

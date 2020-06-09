@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Organization
-Module Guid: 5b0b3073-c40c-4256-9598-6daa53148e2f
+Module Guid: d77c5695-65c4-4697-9cb2-7db93dab29c1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.organization
 Help Version: 1.0.0.0
 Locale: en-US

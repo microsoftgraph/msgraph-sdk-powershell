@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Calendar
-Module Guid: f4fce8f4-b659-40bf-9613-60ad4933c9a7
+Module Guid: f612015d-a9ef-456e-843c-386f70d1031c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.calendar
 Help Version: 1.0.0.0
 Locale: en-US

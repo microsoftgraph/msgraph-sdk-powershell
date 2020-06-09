@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Analytics
-Module Guid: 33229262-0ea1-4221-a9b1-44b19ecbc0ce
+Module Guid: 3152eec0-45b1-4ddf-966a-d547cb64b65b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.analytics
 Help Version: 1.0.0.0
 Locale: en-US

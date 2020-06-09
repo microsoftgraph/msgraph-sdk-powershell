@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Providers
-Module Guid: 2c113ef8-5fc5-4b95-98e4-8c2621b3d7fb
+Module Guid: bdf65f9d-eabb-4d1a-90c4-cded1f6d759f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.providers
 Help Version: 1.0.0.0
 Locale: en-US

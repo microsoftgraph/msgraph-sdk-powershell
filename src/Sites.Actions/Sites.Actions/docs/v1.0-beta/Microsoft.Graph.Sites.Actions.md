@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites.Actions
-Module Guid: 5b4c53ea-2432-494d-8250-6bf9b7715daf
+Module Guid: b0d9d894-fcd4-45c4-bffb-3b7b8ecf2dae
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites.actions
 Help Version: 1.0.0.0
 Locale: en-US

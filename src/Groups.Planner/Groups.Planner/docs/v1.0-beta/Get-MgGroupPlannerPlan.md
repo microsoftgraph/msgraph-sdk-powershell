@@ -231,7 +231,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan1
 
 ## NOTES
 

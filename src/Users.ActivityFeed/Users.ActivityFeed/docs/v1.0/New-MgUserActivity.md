@@ -19,7 +19,7 @@ New-MgUserActivity -UserId <String> [-ActivationUrl <String>] [-ActivitySourceHo
  [-AttributionAlternateText <String>] [-AttributionAlternativeText <String>] [-AttributionIconUrl <String>]
  [-ContentInfo <IMicrosoftGraphJson>] [-ContentUrl <String>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
- [-HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Status <String>] [-UserTimezone <String>] [-VisualElementBackgroundColor <String>]
  [-VisualElementContent <IMicrosoftGraphJson>] [-VisualElementDescription <String>]
  [-VisualElementDisplayText <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -44,7 +44,7 @@ New-MgUserActivity -InputObject <IUsersActivityFeedIdentity> [-ActivationUrl <St
  [-AttributionAddImageQuery] [-AttributionAlternateText <String>] [-AttributionAlternativeText <String>]
  [-AttributionIconUrl <String>] [-ContentInfo <IMicrosoftGraphJson>] [-ContentUrl <String>]
  [-CreatedDateTime <DateTime>] [-ExpirationDateTime <DateTime>] [-FallbackUrl <String>]
- [-HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
+ [-HistoryItems <IMicrosoftGraphActivityHistoryItem[]>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Status <String>] [-UserTimezone <String>] [-VisualElementBackgroundColor <String>]
  [-VisualElementContent <IMicrosoftGraphJson>] [-VisualElementDescription <String>]
  [-VisualElementDisplayText <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -308,7 +308,7 @@ NavigationProperty/Containment; navigation property to the activity's historyIte
 To construct, see NOTES section for HISTORYITEMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -544,7 +544,7 @@ BODYPARAMETER <IMicrosoftGraphUserActivity>: userActivity
   - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
   - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
   - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
     - `[Id <String>]`: Read-only.
     - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
     - `[Activity <IMicrosoftGraphUserActivity>]`: userActivity
@@ -563,7 +563,7 @@ BODYPARAMETER <IMicrosoftGraphUserActivity>: userActivity
   - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
   - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
 
-HISTORYITEMS <IMicrosoftGraphActivityHistoryItem1[]>: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+HISTORYITEMS <IMicrosoftGraphActivityHistoryItem[]>: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
   - `[Id <String>]`: Read-only.
   - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
   - `[Activity <IMicrosoftGraphUserActivity>]`: userActivity
@@ -581,7 +581,7 @@ HISTORYITEMS <IMicrosoftGraphActivityHistoryItem1[]>: Optional. NavigationProper
     - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
     - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
     - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem1[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
     - `[LastModifiedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was modified on the server.
     - `[Status <String>]`: status
     - `[UserTimezone <String>]`: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.ServicePrincipal
-Module Guid: 547fa3aa-de67-4de5-b84e-82e7e17ee18c
+Module Guid: b349821c-2e95-4421-9c77-94a40bdabbe8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.serviceprincipal
 Help Version: 1.0.0.0
 Locale: en-US

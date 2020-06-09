@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Places
-Module Guid: 0ee05064-878a-4a73-9eec-f5f9eb68d6ac
+Module Guid: fd939eb3-23e8-4df1-a421-684997090319
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.places
 Help Version: 1.0.0.0
 Locale: en-US

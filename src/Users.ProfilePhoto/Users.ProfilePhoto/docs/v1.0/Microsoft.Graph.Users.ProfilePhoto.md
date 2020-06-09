@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.ProfilePhoto
-Module Guid: f0e6b0a6-524c-4a18-83f1-50c7a4fff2ba
+Module Guid: 33c0b390-61ec-40d2-aca6-dac090cd386a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.profilephoto
 Help Version: 1.0.0.0
 Locale: en-US

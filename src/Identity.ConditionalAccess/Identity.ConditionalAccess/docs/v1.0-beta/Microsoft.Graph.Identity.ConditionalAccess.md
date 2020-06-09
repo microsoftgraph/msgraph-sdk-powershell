@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.ConditionalAccess
-Module Guid: 49fd712f-6af4-4e5c-bb67-2f30321f5fdd
+Module Guid: 0a2bf2ed-ec49-45b2-9d22-eb909c4145e9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.conditionalaccess
 Help Version: 1.0.0.0
 Locale: en-US

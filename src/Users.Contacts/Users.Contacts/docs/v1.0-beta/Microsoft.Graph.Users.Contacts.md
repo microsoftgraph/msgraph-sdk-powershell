@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Contacts
-Module Guid: 2aa8a5ac-3cc9-4602-a385-b5dd83e1b0dd
+Module Guid: c09fb503-b562-4d82-b251-6b3a30c4b641
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.contacts
 Help Version: 1.0.0.0
 Locale: en-US

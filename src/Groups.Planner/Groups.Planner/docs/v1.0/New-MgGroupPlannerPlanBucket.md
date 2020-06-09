@@ -22,13 +22,13 @@ New-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-Id <Str
 ### Create
 ```
 New-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String>
- -BodyParameter <IMicrosoftGraphPlannerBucket1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgGroupPlannerPlanBucket -InputObject <IGroupsPlannerIdentity>
- -BodyParameter <IMicrosoftGraphPlannerBucket1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerBucket> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -68,7 +68,7 @@ plannerBucket
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -242,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsPlannerIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket
 
 ## NOTES
 
@@ -257,7 +257,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerBucket1>: plannerBucket
+BODYPARAMETER <IMicrosoftGraphPlannerBucket>: plannerBucket
   - `[Id <String>]`: Read-only.
   - `[Name <String>]`: Name of the bucket.
   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.

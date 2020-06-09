@@ -23,13 +23,13 @@ Update-MgGroupPlannerPlanTaskDetail -GroupId <String> -PlannerPlanId <String> -P
 ### Update1
 ```
 Update-MgGroupPlannerPlanTaskDetail -GroupId <String> -PlannerPlanId <String> -PlannerTaskId <String>
- -BodyParameter <IMicrosoftGraphPlannerTaskDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerTaskDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgGroupPlannerPlanTaskDetail -InputObject <IGroupsPlannerIdentity>
- -BodyParameter <IMicrosoftGraphPlannerTaskDetails> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphPlannerTaskDetails1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -70,7 +70,7 @@ plannerTaskDetails
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -270,7 +270,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsPlannerIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
 
 ## OUTPUTS
 
@@ -285,7 +285,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails>: plannerTaskDetails
+BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
   - `[Id <String>]`: Read-only.
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
   - `[Description <String>]`: Description of the task

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DataPolicyOperations
-Module Guid: a30c5934-7da3-4ad4-b102-ae87759fa22a
+Module Guid: ad3b1b3d-0ab2-46e2-8f76-f593e3689a1a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.datapolicyoperations
 Help Version: 1.0.0.0
 Locale: en-US

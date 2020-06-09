@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.OneNote
-Module Guid: d6d37be7-c12c-4803-b1db-01016d688133
+Module Guid: 8aaa5375-e216-4e47-893e-c996fb7e7b79
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.onenote
 Help Version: 1.0.0.0
 Locale: en-US

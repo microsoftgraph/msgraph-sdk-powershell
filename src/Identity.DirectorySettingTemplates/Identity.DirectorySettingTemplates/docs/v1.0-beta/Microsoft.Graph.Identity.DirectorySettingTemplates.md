@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectorySettingTemplates
-Module Guid: 38643404-2e34-4f14-ba9e-ca92757c78df
+Module Guid: 5bca3d06-3581-474c-820b-c9d300ff4e4e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorysettingtemplates
 Help Version: 1.0.0.0
 Locale: en-US

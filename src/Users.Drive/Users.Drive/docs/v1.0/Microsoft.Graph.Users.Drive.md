@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Drive
-Module Guid: 3d5d3ebe-2b21-4ea5-9919-f353b62f8890
+Module Guid: 1e49f842-ce55-4abe-8fcf-6c576e7c501e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.drive
 Help Version: 1.0.0.0
 Locale: en-US

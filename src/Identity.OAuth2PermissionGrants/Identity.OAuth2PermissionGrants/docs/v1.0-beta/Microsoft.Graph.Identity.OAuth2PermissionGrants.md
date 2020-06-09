@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.OAuth2PermissionGrants
-Module Guid: 860cbdbb-53a1-4d61-85cf-9d355b328c16
+Module Guid: 6ada8108-9d55-4f94-bd1c-3b695188c04d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.oauth2permissiongrants
 Help Version: 1.0.0.0
 Locale: en-US

@@ -29,13 +29,13 @@ Update-MgDevice -DeviceId <String> [-AccountEnabled]
 
 ### Update1
 ```
-Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice1> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgDevice -DeviceId <String> -BodyParameter <IMicrosoftGraphDevice> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgDevice -InputObject <IIdentityDevicesIdentity> -BodyParameter <IMicrosoftGraphDevice1> [-PassThru]
+Update-MgDevice -InputObject <IIdentityDevicesIdentity> -BodyParameter <IMicrosoftGraphDevice> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -135,7 +135,7 @@ The directoryObject type is the base type for many other directory entity types.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -611,7 +611,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDevicesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDevice
 
 ## OUTPUTS
 
@@ -631,7 +631,7 @@ ALTERNATIVESECURITYIDS <IMicrosoftGraphAlternativeSecurityId[]>: For internal us
   - `[Key <Byte[]>]`: For internal use only
   - `[Type <Int32?>]`: For internal use only
 
-BODYPARAMETER <IMicrosoftGraphDevice1>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphDevice>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
   - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required.

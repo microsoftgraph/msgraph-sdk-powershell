@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.OneNote
-Module Guid: 3732b22a-5830-4193-8b41-124b5980bd57
+Module Guid: 1c0412d8-66ec-47bf-885a-50c7baf2ae5b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.onenote
 Help Version: 1.0.0.0
 Locale: en-US

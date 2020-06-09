@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Subscriptions
-Module Guid: a7968dca-2868-47d2-9ef5-93b72eff442e
+Module Guid: a56c2202-b812-4b2a-abda-8f83b2f7e192
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.subscriptions
 Help Version: 1.0.0.0
 Locale: en-US
