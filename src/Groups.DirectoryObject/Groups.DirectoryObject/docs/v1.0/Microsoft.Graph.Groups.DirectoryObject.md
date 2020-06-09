@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.DirectoryObject
-Module Guid: c87a8dd7-597e-46e0-aae8-4b2114ac360c
+Module Guid: e70005af-af1a-4c55-b17b-1371f76aa7c4
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.directoryobject
 Help Version: 1.0.0.0
 Locale: en-US
@@ -37,6 +37,9 @@ Get transitiveMemberOf from groups
 
 ### [New-MgGroupAcceptedSender](New-MgGroupAcceptedSender.md)
 Create new navigation property to acceptedSenders for groups
+
+### [New-MgGroupMember](New-MgGroupMember.md)
+Add a member to an Office 365 group or security group through the members navigation property.
 
 ### [New-MgGroupRejectedSender](New-MgGroupRejectedSender.md)
 Create new navigation property to rejectedSenders for groups
