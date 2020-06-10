@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                    .WithTenantId(authConfig.TenantId)
                    .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, Constants.UserCacheFileName);
+                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig.ClientId);
                 return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 .WithCertificate(string.IsNullOrEmpty(authConfig.CertificateThumbprint) ? GetCertificateByName(authConfig.CertificateName) : GetCertificateByThumbprint(authConfig.CertificateThumbprint))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, Constants.AppCacheFileName);
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig.ClientId);
                 return new ClientCredentialProvider(confidentialClientApp);
             }
         }
@@ -46,27 +46,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             lock (FileLock)
             {
-                if (authConfig.AuthType == AuthenticationType.Delegated)
-                    File.Delete(Path.Combine(Constants.TokenCacheDirectory, Constants.UserCacheFileName));
-                else
-                    File.Delete(Path.Combine(Constants.TokenCacheDirectory, Constants.AppCacheFileName));
+                TokenCacheStorage.DeleteToken(authConfig.ClientId);
             }
         }
 
-        private static void ConfigureTokenCache(ITokenCache tokenCache, string tokenCacheFile)
+        private static void ConfigureTokenCache(ITokenCache tokenCache, string appId)
         {
-            if (!Directory.Exists(Constants.TokenCacheDirectory))
-                Directory.CreateDirectory(Constants.TokenCacheDirectory);
-
-            string tokenCacheFilePath = Path.Combine(Constants.TokenCacheDirectory, tokenCacheFile);
-
             tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
                 lock (FileLock)
                 {
-                    args.TokenCache.DeserializeMsalV3(File.Exists(tokenCacheFilePath)
-                        ? TokenCryptographer.DecryptToken(File.ReadAllBytes(tokenCacheFilePath))
-                        : null,
-                        shouldClearExistingCache: true);
+                    args.TokenCache.DeserializeMsalV3(TokenCacheStorage.GetToken(appId), shouldClearExistingCache: true);
                 }
             });
 
@@ -74,9 +63,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 lock (FileLock)
                 {
                     if (args.HasStateChanged)
-                    {
-                        File.WriteAllBytes(tokenCacheFilePath, TokenCryptographer.EncryptToken(args.TokenCache.SerializeMsalV3()));
-                    }
+                        TokenCacheStorage.SetToken(appId, args.TokenCache.SerializeMsalV3());
                 }
             });
         }
