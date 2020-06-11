@@ -170,7 +170,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         public void OnImport()
         {
-            // TODO: Consider checking for a persisted copy of GraphSession or settings on disk.
             GraphSessionInitializer.InitializeSession();
         }
 
@@ -180,7 +179,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <param name="psModuleInfo">A <see cref="PSModuleInfo"/> object.</param>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
-            // TODO: Consider persisting the GraphSession or settings on disk.
             GraphSession.Reset();
         }
     }
