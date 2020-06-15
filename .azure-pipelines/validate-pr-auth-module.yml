@@ -20,6 +20,7 @@ jobs:
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-latest'
+
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'

@@ -16,14 +16,16 @@ jobs:
   displayName: MS Graph PS SDK Roll-Up Generation
   timeoutInMinutes: 300
   pool:
-    name: Microsoft Graph
-    demands: 'Agent.Name -equals Local-Agent'
+    vmImage: 'windows-latest'
   
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'
     inputs:
       debugMode: false
+  
+  - task: NuGetToolInstaller@1
+    displayName: 'Install Nuget'
   
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
