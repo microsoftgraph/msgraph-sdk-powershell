@@ -234,16 +234,21 @@ components:
           properties:
             capability:
               type: string
+              description: 'Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.'
             providerId:
               type: string
+              description: Application id of the publishing underlying service. Not nullable. Read-only.
               nullable: true
             providerName:
               type: string
+              description: Name of the publishing underlying service. Read-only.
               nullable: true
             uri:
               type: string
+              description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
+              description: 'For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:

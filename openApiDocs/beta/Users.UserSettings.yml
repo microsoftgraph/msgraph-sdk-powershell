@@ -196,6 +196,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
+              description: Availability of the user to be scheduled for work and its recurrence pattern.
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -222,11 +223,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
             lastModifiedBy:
@@ -245,11 +248,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
         timeZone:
           type: string
+          description: Specifies the time zone for the indicated time.
           nullable: true
         timeSlots:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.timeRange'
+          description: The time slot(s) preferred by the user.
       example:
         recurrence:
           '@odata.type': microsoft.graph.patternedRecurrence
@@ -300,11 +305,13 @@ components:
         startTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: Start time for the time range.
           format: time
           nullable: true
         endTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: End time for the time range.
           format: time
           nullable: true
       example:

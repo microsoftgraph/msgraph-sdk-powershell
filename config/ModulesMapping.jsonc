@@ -76,7 +76,6 @@
     "Sites.Site": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$",
     "Subscriptions": "^subscriptions\\.",
     "Teams.AppCatalogs": "^appCatalogs\\.",
-    "Teams.Channel": "^groups.channel$",
     "Teams.Chats": "^chats\\.|^users.chat$",
     "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
     "Teams.Teamwork": "^users.userTeamwork$",
