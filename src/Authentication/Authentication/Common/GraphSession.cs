@@ -28,7 +28,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// The name of the selected Microsoft Graph profile.
         /// This defaults to v1.0-beta.
         /// </summary>
-        public string SelectedProfile { get; set; } = "v1.0-beta";
+        public string SelectedProfile { get; set; } = Constants.DefaultProfile;
 
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.

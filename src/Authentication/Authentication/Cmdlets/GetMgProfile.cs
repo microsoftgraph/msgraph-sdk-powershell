@@ -27,8 +27,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
             try
             {
-                bool isModuleNameBound = this.IsBound(nameof(ModuleName));
-                bool isListAvailableBound = this.IsBound(nameof(ListAvailable));
+                bool isModuleNameBound = this.IsParameterBound(nameof(ModuleName));
+                bool isListAvailableBound = this.IsParameterBound(nameof(ListAvailable));
                 string[] moduleNames = isModuleNameBound ? ModuleName : new string[] { };
                 string[] profiles = isModuleNameBound || isListAvailableBound
                     ? GetProfiles(InvokeCommand, isListAvailableBound, moduleNames)

@@ -13,8 +13,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
         /// <param name="target">The target string to look in.</param>
         /// <param name="searchValue">The substring to seek.</param>
         /// <param name="comparison">The <see cref="StringComparison"/> to use. This defaults to <see cref="StringComparison.OrdinalIgnoreCase"/>.</param>
-        /// <returns>true if the searchValue parameter occurs within this string; otherwise false.</returns>
-        public static bool ContainsNotNull(this string target, string searchValue, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
+        /// <returns>true if the searchValue parameter occurs within this string; otherwise, false.</returns>
+        public static bool ContainsValue(this string target, string searchValue, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
         {
             if (string.IsNullOrWhiteSpace(target) || string.IsNullOrWhiteSpace(searchValue))
             {

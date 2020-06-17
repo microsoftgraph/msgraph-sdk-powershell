@@ -44,19 +44,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// <returns>A full description of a profile.</returns>
         internal static string GetProfileDescription(string profileName)
         {
-            if (profileName.ContainsNotNull("USGOV-DOD"))
+            if (profileName.ContainsValue("USGOV-DOD"))
             {
                 return string.Format(CultureInfo.CurrentCulture, Constants.ProfileDescription, GetProfileVersion(profileName), "the US Government L5 (DOD)");
             }
-            else if (profileName.ContainsNotNull("USGOV"))
+            else if (profileName.ContainsValue("USGOV"))
             {
                 return string.Format(CultureInfo.CurrentCulture, Constants.ProfileDescription, GetProfileVersion(profileName), "the US Government L4");
             }
-            else if (profileName.ContainsNotNull("Germany"))
+            else if (profileName.ContainsValue("Germany"))
             {
                 return string.Format(CultureInfo.CurrentCulture, Constants.ProfileDescription, GetProfileVersion(profileName), "Germany");
             }
-            else if (profileName.ContainsNotNull("China"))
+            else if (profileName.ContainsValue("China"))
             {
                 return string.Format(CultureInfo.CurrentCulture, Constants.ProfileDescription, GetProfileVersion(profileName), "China");
             }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// <returns>The version of a profile.</returns>
         internal static string GetProfileVersion(string profileName)
         {
-            return profileName.ContainsNotNull("beta") ? "beta" : "v1.0";
+            return profileName.ContainsValue("beta") ? "beta" : "v1.0";
         }
     }
 }
