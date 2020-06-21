@@ -7,7 +7,8 @@ Param(
   [switch] $Build,
   [switch] $Pack,
   [switch] $Publish,
-  [switch] $EnableSigning
+  [switch] $EnableSigning,
+  [switch] $BuildWhenEqual
 )
 enum VersionState {
   Invalid
@@ -43,10 +44,10 @@ if ($null -eq $ManifestContent.ModuleVersion) {
 if ($VersionState.Equals([VersionState]::Invalid)) {
   Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
 }
-elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
+elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual) {
   Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
 }
-elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $ManifestContent.ModuleVersion
   # Build and pack generated module.
   if ($Build) {

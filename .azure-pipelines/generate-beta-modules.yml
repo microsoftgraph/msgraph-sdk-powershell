@@ -24,8 +24,8 @@ jobs:
   displayName: MS Graph PS SDK Beta Generation
   timeoutInMinutes: 300
   pool:
-    name: Microsoft Graph
-    demands: 'Agent.Name -equals Local-Agent'
+    vmImage: 'windows-latest'
+
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'
@@ -36,13 +36,16 @@ jobs:
     displayName: 'Install AutoRest'
     inputs:
       command: 'custom'
-      customCommand: 'install -g @autorest/autorest'
+      customCommand: 'install -g autorest'
+  
+  - task: NuGetToolInstaller@1
+    displayName: 'Install Nuget'
   
   - task: PowerShell@2
     displayName: 'Build Auth Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -BuildWhenEqual -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
