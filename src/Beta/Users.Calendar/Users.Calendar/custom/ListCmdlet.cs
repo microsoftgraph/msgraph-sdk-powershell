@@ -1,11 +1,10 @@
-
 // ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
 {
-    using static Microsoft.Graph.PowerShell.Runtime.Extensions;
-    public partial class GraphPSCmdlet : global::System.Management.Automation.PSCmdlet
+
+    public partial class ListCmdlet : global::System.Management.Automation.PSCmdlet
     {
         /// <summary>Backing field for <see cref="All" /> property.</summary>
         private global::System.Management.Automation.SwitchParameter _all;
@@ -114,18 +113,6 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 }
             }
             return nextLinkUri.Uri;
-        }
-        
-        public void OverrideCmdletOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow)
-        {
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                if (MyInvocation?.BoundParameters?.ContainsKey("PassThru") == true)
-                {
-                   WriteObject(true); 
-                }
-                returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);
-            }
         }
     }
 }
