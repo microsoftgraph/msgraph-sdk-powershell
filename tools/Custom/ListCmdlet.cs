@@ -84,11 +84,15 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
         {
             iteratedPages++;
             totalFetchedItems += itemsCount;
-            if ((boundParameters.ContainsKey("All") && !boundParameters.ContainsKey("PageSize")) ||
-                (boundParameters.ContainsKey("PageSize") && totalFetchedItems < originalPageSize))
+            if (boundParameters.ContainsKey("All") ||
+               (boundParameters.ContainsKey("PageSize") && totalFetchedItems < originalPageSize))
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
 
         /// <summary>
