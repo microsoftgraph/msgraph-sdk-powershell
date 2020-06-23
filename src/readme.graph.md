@@ -380,8 +380,7 @@ directive:
         }
         return $;
       }
-# Add GraphPSCmdlet base class.
-# - Override OnDefault to handle all success, 2xx response, as success and not error.
+# Override OnDefault to handle all success, 2xx responses, as success and not error.
   - from: source-file-csharp
     where: $
     transform: >
