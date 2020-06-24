@@ -23,12 +23,33 @@ namespace Microsoft.Graph.PowerShell
     {
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
+            // Call Init to trigger any custom initialization needed after
+            // module load and before pipeline is setup and used. 
+            Init();
             pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient()));
         }
+
+        /// <summary>
+        /// Any needed Custom Initialization. 
+        /// </summary>
         partial void CustomInit()
         {
             this.EventListener = EventHandler;
         }
+        
+        /// <summary>
+        /// Common Module Event Listener, allows to handle emitted by CmdLets
+        /// </summary>
+        /// <param name="id">The ID of the event </param>
+        /// <param name="cancellationToken">The cancellation token for the event </param>
+        /// <param name="getEventData">A delegate to get the detailed event data</param>
+        /// <param name="signal">The callback for the event dispatcher</param>
+        /// <param name="invocationInfo">The <see cref="System.Management.Automation.InvocationInfo" /> from the cmdlet</param>
+        /// <param name="parameterSetName">The cmdlet's parameterset name</param>
+        /// <param name="exception">the exception that is being thrown (if available)</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// </returns>
         public async Task EventHandler(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal, InvocationInfo invocationInfo, string parameterSetName, System.Exception exception)
         {
             switch (id)
@@ -42,6 +63,16 @@ namespace Microsoft.Graph.PowerShell
             }
         }
 
+        /// <summary>
+        /// Handles the Finally event, which is called just before Request and Response are disposed.
+        /// </summary>
+        /// <param name="id">The ID of the event</param>
+        /// <param name="cancellationToken">The cancellation token for the event</param>
+        /// <param name="getEventData">A delegate to get the detailed event data</param>
+        /// <param name="signal">The callback for the event dispatcher</param>
+        /// <returns>
+        /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the event is completed.
+        /// </returns>
         private async Task Finally(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
             using (Extensions.NoSynchronizationContext)
