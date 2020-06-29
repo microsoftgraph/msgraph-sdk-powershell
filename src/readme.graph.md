@@ -80,9 +80,7 @@ directive:
   - where:
       parameter-name: Top
     set:
-      parameter-name: PageSize
       alias:
-        - Top
         - Limit
   - where:
       parameter-name: Select
@@ -395,7 +393,7 @@ directive:
         return $;
       }
 
-# Add custom -All parameter to *_List cmdlets that support Odata next link.
+# Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
   - from: source-file-csharp
     where: $
     transform: >
@@ -411,7 +409,7 @@ directive:
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(beginProcessingRegex, '$1$2\n$1$1if (this.InvocationInformation.BoundParameters.ContainsKey("PageSize")){ InitializePaging(ref this.__invocationInfo, ref this._pageSize); }\n$1');
+          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializePaging(ref this.__invocationInfo, ref this._top); }\n$1');
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
