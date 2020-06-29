@@ -23,9 +23,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
 
         public static PSModuleInfo[] GetModules(CommandInvocationIntrinsics invokeCommand, bool listAvailable = false, params string[] moduleNames)
         {
-            string nameParameter = $" -Name { (moduleNames != null && moduleNames.Any() ? GetCommaSeparatedQuotedList(moduleNames) : "Microsoft.Graph*" )}";
+            string nameParameter = $"-Name { (moduleNames != null && moduleNames.Any() ? GetCommaSeparatedQuotedList(moduleNames) : "Microsoft.Graph*" )}";
             string listAvailableParameter = listAvailable ? " -ListAvailable" : String.Empty;
-            string command = $"Get-Module{nameParameter}{listAvailableParameter}";
+            string command = $"Get-Module {nameParameter}{listAvailableParameter}";
             Collection<PSObject> modules = listAvailable ? PowerShell.Create().AddScript(command).Invoke<PSObject>() : invokeCommand.NewScriptBlock(command).Invoke();
             return modules != null ? modules.Select(m => m?.BaseObject as PSModuleInfo).Where(m => m != null).ToArray() : new PSModuleInfo[] { };
         }

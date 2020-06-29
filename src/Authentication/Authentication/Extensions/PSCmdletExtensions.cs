@@ -17,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
         /// </summary>
         /// <typeparam name="T">The output type to return.</typeparam>
         /// <param name="cmdlet">The executing cmdlet.</param>
-        /// <param name="contents">The PowerShell scrip to execute.</param>
+        /// <param name="contents">The PowerShell script to execute.</param>
         /// <returns>The result for the executed script.</returns>
         public static List<T> ExecuteScript<T>(this PSCmdlet cmdlet, string contents)
         {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
         /// <param name="cmdlet">The executing cmdlet.</param>
         /// <param name="parameterName">The name of the parameter to check.</param>
         /// <returns>True is the parameter was set by the user, otherwise false.</returns>
-        public static bool IsBound(this PSCmdlet cmdlet, string parameterName)
+        public static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)
         {
             return cmdlet.MyInvocation?.BoundParameters.ContainsKey(parameterName) ?? false;
         }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
         public static bool IsParameterBound<TPSCmdlet, TProp>(this TPSCmdlet cmdlet, Expression<Func<TPSCmdlet, TProp>> propertySelector) where TPSCmdlet : PSCmdlet
         {
             var propName = ((MemberExpression)propertySelector.Body).Member.Name;
-            return cmdlet.IsBound(propName);
+            return cmdlet.IsParameterBound(propName);
         }
     }
 }
