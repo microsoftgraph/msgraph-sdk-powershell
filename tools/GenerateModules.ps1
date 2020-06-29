@@ -56,7 +56,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication"
 Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
-$RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; RequiredVersion = $ExistingAuthModule.Version }
+$RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 if ($UpdateAutoRest) {
     # Update AutoRest.
     & autorest --reset
@@ -128,6 +128,24 @@ $ModuleMapping.Keys | ForEach-Object {
                 else {
                     & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
                 }
+
+                # Get profiles for generated modules.
+                $ModuleExportsPath = Join-Path $ModuleProjectDir "\exports"
+                $Profiles = Get-ChildItem -Path $ModuleExportsPath -Directory | %{ $_.Name}
+
+                # Update module manifest wiht profiles.
+                $ModuleManifestPath = Join-Path $ModuleProjectDir "$ModulePrefix.$ModuleName.psd1"
+                [HashTable]$PrivateData = @{ Profiles = $Profiles }
+                Update-ModuleManifest -Path $ModuleManifestPath -PrivateData $PrivateData
+
+                # Update module psm1 with Graph session profile name.
+                $ModulePsm1 = Join-Path $ModuleProjectDir "/$ModulePrefix.$ModuleName.psm1"
+                (Get-Content -Path $ModulePsm1) | ForEach-Object{
+                    $_
+                    if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
+                        '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
+                    }
+                } | Set-Content $ModulePsm1
 
                 if ($LASTEXITCODE) {
                     Write-Error "Failed to build '$ModuleName' module."

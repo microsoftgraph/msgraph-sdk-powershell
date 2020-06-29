@@ -74,29 +74,31 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                     null));
             }
 
-            // Move `-Top` parameter to `limit` parameter.
+            // Move `-Top` parameter to `limit`.
             if (invocationInfo.BoundParameters.ContainsKey("Top"))
             {
                 limit = top;
             }
 
-            // Explicitly set `-PageSize` as our $top parameter.
-            invocationInfo.BoundParameters["Top"] = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
-            top = (int)invocationInfo.BoundParameters["Top"];
+            int currentPageSize = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
+            // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
+            invocationInfo.BoundParameters["Top"] = currentPageSize;
+            top = currentPageSize;
 
             if (limit != default)
             {
-                requiredPages = limit / top;
-                overflowItemsCount = limit % top;
+                requiredPages = limit / currentPageSize;
+                overflowItemsCount = limit % currentPageSize;
             }
         }
 
         /// <summary>
-        /// Determines whether the cmdlet should follow the OData next link URI.
+        /// Determines whether the cmdlet should follow the OData next link URL.
+        /// Iteration will only occur when limit/top is not set, or if there a more items to fetch.
         /// </summary>
         /// <param name="boundParameters">The bound parameters of the cmdlet.</param>
         /// <param name="itemsCount">Current page items count.</param>
-        /// <returns>True if it can iterate pages; False if it can't.</returns>
+        /// <returns>True if it can iterate pages; otherwise False.</returns>
         public bool ShouldIteratePages(global::System.Collections.Generic.Dictionary<string, object> boundParameters, int itemsCount)
         {
             iteratedPages++;

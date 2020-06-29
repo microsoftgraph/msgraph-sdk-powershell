@@ -8,7 +8,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
     [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet)]
     [OutputType(typeof(IAuthContext))]
-    public class GetMGContext: PSCmdlet
+    public class GetMgContext: PSCmdlet
     {
         protected override void BeginProcessing()
         {
