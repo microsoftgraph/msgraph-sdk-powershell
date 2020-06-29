@@ -13,6 +13,10 @@ namespace Microsoft.Graph.PowerShell
 
     public partial class Module
     {
+        /// <summary>
+        /// The selected Microsoft Graph profile.
+        /// </summary>
+        public string ProfileName { get; set; } = "v1.0-beta";
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
             pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient()));

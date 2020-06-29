@@ -6,14 +6,14 @@
 ``` yaml
 require:
   - $(this-folder)/../../../readme.graph.md
+  - $(this-folder)/../../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
 ```
 
 ### Versioning
 
 ``` yaml
-module-version: 0.7.0
+module-version: 0.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

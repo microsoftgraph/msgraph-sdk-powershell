@@ -27,10 +27,11 @@ For information on how to develop for `Microsoft.Graph.Users.User`, see [how-to.
 ``` yaml
 require:
   - $(this-folder)/../../../readme.graph.md
+  - $(this-folder)/../../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
-input-file: $(spec-doc-repo)/$(title).yml
 ```
+
 ### Versioning
 
 ``` yaml
