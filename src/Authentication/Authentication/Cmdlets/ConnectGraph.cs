@@ -31,12 +31,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3)]
         public string CertificateThumbprint { get; set; }
 
-
         [Parameter(Position = 4)]
         public string TenantId { get; set; }
 
         [Parameter(Position = 5)]
         public SwitchParameter ForceRefresh { get; set; }
+
+        private CancellationTokenSource cancellationTokenSource;
 
         protected override void BeginProcessing()
         {
@@ -54,25 +55,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             base.ProcessRecord();
 
             IAuthContext authConfig = new AuthContext { TenantId = TenantId };
-            CancellationToken cancellationToken = CancellationToken.None;
 
             if (ParameterSetName == Constants.UserParameterSet)
             {
                 // 2 mins timeout. 1 min < HTTP timeout.
                 TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
-                CancellationTokenSource cts = new CancellationTokenSource(authTimeout);
-                cancellationToken = cts.Token;
-
+                cancellationTokenSource = new CancellationTokenSource(authTimeout);
                 authConfig.AuthType = AuthenticationType.Delegated;
                 authConfig.Scopes = Scopes ?? new string[] { "User.Read" };
             }
             else
             {
+                cancellationTokenSource = new CancellationTokenSource();
                 authConfig.AuthType = AuthenticationType.AppOnly;
                 authConfig.ClientId = ClientId;
                 authConfig.CertificateThumbprint = CertificateThumbprint;
                 authConfig.CertificateName = CertificateName;
             }
+
+            CancellationToken cancellationToken = cancellationTokenSource.Token;
 
             try
             {
@@ -136,6 +137,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void StopProcessing()
         {
+            cancellationTokenSource.Cancel();
             base.StopProcessing();
         }
 
