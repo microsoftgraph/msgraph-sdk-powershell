@@ -1908,8 +1908,11 @@ components:
     microsoft.graph.conditionalAccessClientApp:
       title: conditionalAccessClientApp
       enum:
+        - all
         - browser
         - modern
+        - mobileAppsAndDesktopClients
+        - exchangeActiveSync
         - easSupported
         - easUnsupported
         - other

@@ -8,6 +8,7 @@ pr:
     include:
     - master
     - dev
+    - milestone/*
   paths:
     include:
     - src/Beta/*
@@ -22,8 +23,7 @@ jobs:
   displayName: MS Graph PS SDK Beta Validation
   timeoutInMinutes: 300
   pool:
-    name: Microsoft Graph
-    demands: 'Agent.Name -equals Local-Agent'
+    vmImage: 'windows-latest'
   
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
@@ -35,7 +35,7 @@ jobs:
     displayName: 'Install AutoRest'
     inputs:
       command: 'custom'
-      customCommand: 'install -g @autorest/autorest'
+      customCommand: 'install -g autorest'
   
   - task: PowerShell@2
     displayName: 'Generate and Build Graph Resource Modules'
