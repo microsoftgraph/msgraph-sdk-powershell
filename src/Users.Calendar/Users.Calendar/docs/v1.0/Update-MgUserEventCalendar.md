@@ -516,6 +516,7 @@ BODYPARAMETER <IMicrosoftGraphCalendar1>: calendar
     - `[AddressPostalCode <String>]`: The postal code.
     - `[AddressState <String>]`: The state.
     - `[AddressStreet <String>]`: The street.
+    - `[AllowNewTimeProposals <Boolean?>]`: 
     - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[ContentType <String>]`: The MIME type.
@@ -523,11 +524,15 @@ BODYPARAMETER <IMicrosoftGraphCalendar1>: calendar
       - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
       - `[Name <String>]`: The attachment's file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
-    - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+    - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
       - `[Type <String>]`: attendeeType
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
         - `[Address <String>]`: The email address of the person or entity.
         - `[Name <String>]`: The display name of the person or entity.
+      - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+      - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
       - `[StatusResponse <String>]`: responseType
       - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[BodyContent <String>]`: The content of the item.
@@ -674,6 +679,7 @@ CALENDARVIEW <IMicrosoftGraphEvent1[]>: The calendar view for the calendar. Navi
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -681,11 +687,15 @@ CALENDARVIEW <IMicrosoftGraphEvent1[]>: The calendar view for the calendar. Navi
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.
@@ -816,6 +826,7 @@ EVENTS <IMicrosoftGraphEvent1[]>: The events in the calendar. Navigation propert
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -823,11 +834,15 @@ EVENTS <IMicrosoftGraphEvent1[]>: The events in the calendar. Navigation propert
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryRoleTemplates
-Module Guid: cd2600bf-8647-4705-8b5c-63364b01ef1c
+Module Guid: dbb259a3-99b8-4871-beb4-ceb1cd7a677e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directoryroletemplates
 Help Version: 1.0.0.0
 Locale: en-US

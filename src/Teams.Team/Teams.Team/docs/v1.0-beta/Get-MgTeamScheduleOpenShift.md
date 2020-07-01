@@ -19,13 +19,13 @@ Get-MgTeamScheduleOpenShift -TeamId <String> [-Count] [-ExpandProperty <String[]
  [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgTeamScheduleOpenShift -OpenShiftId <String> -TeamId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgTeamScheduleOpenShift -InputObject <ITeamsTeamIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -107,7 +107,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsTeamIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -122,7 +122,7 @@ key: openShift-id of openShift
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -138,7 +138,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List1
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -212,7 +212,7 @@ key: team-id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -258,7 +258,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff

@@ -209,7 +209,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List3, List4, List5
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named

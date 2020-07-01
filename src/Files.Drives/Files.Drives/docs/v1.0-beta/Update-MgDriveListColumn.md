@@ -32,12 +32,12 @@ Update-MgDriveListColumn -ColumnDefinitionId <String> [-Boolean <IMicrosoftGraph
 ### Update
 ```
 Update-MgDriveListColumn -ColumnDefinitionId <String> -DriveId <String>
- -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnDefinition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update3
 ```
-Update-MgDriveListColumn -ColumnDefinitionId <String> -BodyParameter <IMicrosoftGraphColumnDefinition1>
+Update-MgDriveListColumn -ColumnDefinitionId <String> -BodyParameter <IMicrosoftGraphColumnDefinition>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -61,13 +61,13 @@ Update-MgDriveListColumn -ColumnDefinitionId <String> -DriveId <String>
 
 ### UpdateViaIdentity
 ```
-Update-MgDriveListColumn -InputObject <IFilesDrivesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition1>
+Update-MgDriveListColumn -InputObject <IFilesDrivesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity3
 ```
-Update-MgDriveListColumn -InputObject <IFilesDrivesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition1>
+Update-MgDriveListColumn -InputObject <IFilesDrivesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -135,7 +135,7 @@ columnDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
 Parameter Sets: Update, Update3, UpdateViaIdentity, UpdateViaIdentity3
 Aliases:
 
@@ -861,7 +861,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesDrivesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ## OUTPUTS
 
@@ -876,7 +876,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
+BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
   - `[Id <String>]`: Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
   - `[CalculatedFormat <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.

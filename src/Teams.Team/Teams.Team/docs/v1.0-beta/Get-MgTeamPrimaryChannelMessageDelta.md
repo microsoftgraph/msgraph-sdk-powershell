@@ -87,7 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage1
 
 ## NOTES
 
@@ -114,7 +114,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff

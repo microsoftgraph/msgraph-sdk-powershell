@@ -14,10 +14,9 @@ Add new entity to riskyUsers
 
 ### CreateExpanded (Default)
 ```
-New-MgRiskyUser [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-IsDeleted] [-IsGuest]
- [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
- [-RiskState <String>] [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgRiskyUser [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-IsDeleted] [-IsProcessing]
+ [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
+ [-UserDisplayName <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -98,21 +97,6 @@ Accept wildcard characters: False
 ```
 
 ### -IsDeleted
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsGuest
 .
 
 ```yaml
@@ -288,7 +272,6 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
     - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
     - `[IsDeleted <Boolean?>]`: 
-    - `[IsGuest <Boolean?>]`: 
     - `[IsProcessing <Boolean?>]`: 
     - `[RiskDetail <String>]`: riskDetail
     - `[RiskLastUpdatedDateTime <DateTime?>]`: 
@@ -303,7 +286,6 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
     - `[InitiatedBy <String>]`: 
     - `[UserId <String>]`: 
   - `[IsDeleted <Boolean?>]`: 
-  - `[IsGuest <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: 
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: 
@@ -315,7 +297,6 @@ BODYPARAMETER <IMicrosoftGraphRiskyUser>: riskyUser
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: .
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
   - `[IsDeleted <Boolean?>]`: 
-  - `[IsGuest <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: 
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AppRoleAssignments
-Module Guid: 9ec8c4f2-3577-4e7a-9144-1a8ba2a7f434
+Module Guid: cdd29c59-698b-4717-a967-fb7bd9c9bf83
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.approleassignments
 Help Version: 1.0.0.0
 Locale: en-US

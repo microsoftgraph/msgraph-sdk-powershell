@@ -16,8 +16,8 @@ Update the navigation property events in users
 ```
 Update-MgUserCalendarEvent -EventId <String> -UserId <String> [-CalendarId <String>] [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
- [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-AddressStreet <String>] [-AllowNewTimeProposals] [-Attachments <IMicrosoftGraphAttachment[]>]
+ [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent1[]>]
@@ -66,8 +66,8 @@ Update-MgUserCalendarEvent -CalendarId <String> -EventId <String> -UserId <Strin
 ```
 Update-MgUserCalendarEvent -CalendarId <String> -EventId <String> -UserId <String> [-AddressCity <String>]
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressState <String>]
- [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
+ [-AddressStreet <String>] [-AllowNewTimeProposals] [-Attachments <IMicrosoftGraphAttachment[]>]
+ [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>] [-BodyContentType <String>]
  [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
  [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
  [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent1[]>]
@@ -117,12 +117,12 @@ Update-MgUserCalendarEvent -InputObject <IUsersCalendarIdentity> -BodyParameter 
 ```
 Update-MgUserCalendarEvent -InputObject <IUsersCalendarIdentity> [-CalendarId <String>]
  [-AddressCity <String>] [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>]
- [-AddressState <String>] [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
- [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
- [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
- [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent1[]>]
- [-CalendarIsRemovable] [-CalendarIsTallyingResponses]
+ [-AddressState <String>] [-AddressStreet <String>] [-AllowNewTimeProposals]
+ [-Attachments <IMicrosoftGraphAttachment[]>] [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>]
+ [-BodyContentType <String>] [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>]
+ [-CalendarCanEdit] [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>]
+ [-CalendarColor <String>] [-CalendarDefaultOnlineMeetingProvider <String>]
+ [-CalendarEvents <IMicrosoftGraphEvent1[]>] [-CalendarIsRemovable] [-CalendarIsTallyingResponses]
  [-CalendarMultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-CalendarName <String>] [-CalendarPermissions <IMicrosoftGraphCalendarPermission[]>]
  [-CalendarSingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
@@ -155,12 +155,12 @@ Update-MgUserCalendarEvent -InputObject <IUsersCalendarIdentity> [-CalendarId <S
 ```
 Update-MgUserCalendarEvent -InputObject <IUsersCalendarIdentity> [-CalendarId <String>]
  [-AddressCity <String>] [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>]
- [-AddressState <String>] [-AddressStreet <String>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Attendees <IMicrosoftGraphAttendee1[]>] [-BodyContent <String>] [-BodyContentType <String>]
- [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>] [-CalendarCanEdit]
- [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>] [-CalendarColor <String>]
- [-CalendarDefaultOnlineMeetingProvider <String>] [-CalendarEvents <IMicrosoftGraphEvent1[]>]
- [-CalendarIsRemovable] [-CalendarIsTallyingResponses]
+ [-AddressState <String>] [-AddressStreet <String>] [-AllowNewTimeProposals]
+ [-Attachments <IMicrosoftGraphAttachment[]>] [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>]
+ [-BodyContentType <String>] [-BodyPreview <String>] [-CalendarAllowedOnlineMeetingProviders <String[]>]
+ [-CalendarCanEdit] [-CalendarCanShare] [-CalendarCanViewPrivateItems] [-CalendarChangeKey <String>]
+ [-CalendarColor <String>] [-CalendarDefaultOnlineMeetingProvider <String>]
+ [-CalendarEvents <IMicrosoftGraphEvent1[]>] [-CalendarIsRemovable] [-CalendarIsTallyingResponses]
  [-CalendarMultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-CalendarName <String>] [-CalendarPermissions <IMicrosoftGraphCalendarPermission[]>]
  [-CalendarSingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
@@ -290,6 +290,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AllowNewTimeProposals
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded1, UpdateExpanded3, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded3
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Attachments
 The collection of fileAttachment and itemAttachment attachments for the event.
 Navigation property.
@@ -314,7 +329,7 @@ The collection of attendees for the event.
 To construct, see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendee1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendee[]
 Parameter Sets: UpdateExpanded1, UpdateExpanded3, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded3
 Aliases:
 
@@ -1873,11 +1888,15 @@ ATTACHMENTS <IMicrosoftGraphAttachment[]>: The collection of fileAttachment and 
   - `[Name <String>]`: The attachment's file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
-ATTENDEES <IMicrosoftGraphAttendee1[]>: The collection of attendees for the event.
+ATTENDEES <IMicrosoftGraphAttendee[]>: The collection of attendees for the event.
   - `[Type <String>]`: attendeeType
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
+  - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[StatusResponse <String>]`: responseType
   - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
 
@@ -1892,6 +1911,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -1899,11 +1919,15 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.
@@ -2034,6 +2058,7 @@ CALENDAREVENTS <IMicrosoftGraphEvent1[]>: The events in the calendar. Navigation
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -2041,11 +2066,15 @@ CALENDAREVENTS <IMicrosoftGraphEvent1[]>: The events in the calendar. Navigation
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.
@@ -2193,6 +2222,7 @@ CALENDARVIEW <IMicrosoftGraphEvent1[]>: The calendar view for the calendar. Navi
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -2200,11 +2230,15 @@ CALENDARVIEW <IMicrosoftGraphEvent1[]>: The calendar view for the calendar. Navi
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.
@@ -2350,6 +2384,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
+  - `[AllowNewTimeProposals <Boolean?>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
@@ -2357,11 +2392,15 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
-  - `[Attendees <IMicrosoftGraphAttendee1[]>]`: The collection of attendees for the event.
+  - `[Attendees <IMicrosoftGraphAttendee[]>]`: The collection of attendees for the event.
     - `[Type <String>]`: attendeeType
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[StatusResponse <String>]`: responseType
     - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[BodyContent <String>]`: The content of the item.

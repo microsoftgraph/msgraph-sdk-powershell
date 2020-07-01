@@ -17,7 +17,7 @@ Update the navigation property history in riskyUsers
 Update-MgRiskyUserHistory -RiskyUserHistoryItemId <String> -RiskyUserId <String> [-ActivityDetail <String>]
  [-ActivityEventTypes <String[]>] [-ActivityRiskEventTypes <String[]>]
  [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
- [-IsGuest] [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
+ [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
  [-RiskState <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -39,7 +39,7 @@ Update-MgRiskyUserHistory -InputObject <IIdentityProtectionIdentity>
 Update-MgRiskyUserHistory -InputObject <IIdentityProtectionIdentity> [-ActivityDetail <String>]
  [-ActivityEventTypes <String[]>] [-ActivityRiskEventTypes <String[]>]
  [-History <IMicrosoftGraphRiskyUserHistoryItem[]>] [-Id <String>] [-InitiatedBy <String>] [-IsDeleted]
- [-IsGuest] [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
+ [-IsProcessing] [-RiskDetail <String>] [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>]
  [-RiskState <String>] [-UserDisplayName <String>] [-UserId <String>] [-UserPrincipalName <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -193,21 +193,6 @@ Accept wildcard characters: False
 ```
 
 ### -IsDeleted
-.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsGuest
 .
 
 ```yaml
@@ -443,7 +428,6 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphRiskyUserHistoryItem>: riskyUserHistoryItem
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
   - `[IsDeleted <Boolean?>]`: 
-  - `[IsGuest <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: 
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: 
@@ -461,7 +445,6 @@ BODYPARAMETER <IMicrosoftGraphRiskyUserHistoryItem>: riskyUserHistoryItem
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: .
   - `[History <IMicrosoftGraphRiskyUserHistoryItem[]>]`: 
   - `[IsDeleted <Boolean?>]`: 
-  - `[IsGuest <Boolean?>]`: 
   - `[IsProcessing <Boolean?>]`: 
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: 
@@ -477,16 +460,9 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem[]>: .
   - `[UserId <String>]`: 
 
 INPUTOBJECT <IIdentityProtectionIdentity>: Identity Parameter
-  - `[AnonymousIPRiskEventId <String>]`: key: anonymousIpRiskEvent-id of anonymousIpRiskEvent
-  - `[IdentityRiskEventId <String>]`: key: identityRiskEvent-id of identityRiskEvent
-  - `[ImpossibleTravelRiskEventId <String>]`: key: impossibleTravelRiskEvent-id of impossibleTravelRiskEvent
-  - `[LeakedCredentialsRiskEventId <String>]`: key: leakedCredentialsRiskEvent-id of leakedCredentialsRiskEvent
-  - `[MalwareRiskEventId <String>]`: key: malwareRiskEvent-id of malwareRiskEvent
   - `[RiskDetectionId <String>]`: key: riskDetection-id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: riskyUserHistoryItem-id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: riskyUser-id of riskyUser
-  - `[SuspiciousIPRiskEventId <String>]`: key: suspiciousIpRiskEvent-id of suspiciousIpRiskEvent
-  - `[UnfamiliarLocationRiskEventId <String>]`: key: unfamiliarLocationRiskEvent-id of unfamiliarLocationRiskEvent
 
 ## RELATED LINKS
 

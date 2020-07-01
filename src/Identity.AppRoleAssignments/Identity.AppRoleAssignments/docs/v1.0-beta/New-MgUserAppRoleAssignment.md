@@ -65,7 +65,11 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -AppRoleId
-.
+The identifier (id) for the app role which is assigned to the principal.
+This app role must be exposed in the appRoles property on the resource application's service principal (resourceId).
+If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles.
+Required on create.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -96,7 +100,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreationTimestamp
-.
+The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+Read-only.
+Does not support $filter.
 
 ```yaml
 Type: System.DateTime
@@ -142,7 +149,9 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalDisplayName
-.
+The display name of the user, group, or service principal that was granted the app role assignment.
+Read-only.
+Supports $filter (eq and startswith).
 
 ```yaml
 Type: System.String
@@ -157,7 +166,9 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalId
-.
+The unique identifier (id) for the user, group or service principal being granted the app role.
+Required on create.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -172,7 +183,10 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalType
-.
+The type of the assigned principal.
+This can either be 'User', 'Group' or 'ServicePrincipal'.
+Read-only.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -187,7 +201,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceDisplayName
-.
+The display name of the resource app's service principal to which the assignment is made.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -202,7 +217,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-.
+The unique identifier (id) for the resource service principal for which the assignment is made.
+Required on create.
+Supports $filter (eq only).
 
 ```yaml
 Type: System.String
@@ -286,13 +303,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAppRoleAssignment>: appRoleAssignment
   - `[Id <String>]`: Read-only.
-  - `[AppRoleId <String>]`: 
-  - `[CreationTimestamp <DateTime?>]`: 
-  - `[PrincipalDisplayName <String>]`: 
-  - `[PrincipalId <String>]`: 
-  - `[PrincipalType <String>]`: 
-  - `[ResourceDisplayName <String>]`: 
-  - `[ResourceId <String>]`: 
+  - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+  - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only. Does not support $filter.
+  - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+  - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+  - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 
 INPUTOBJECT <IIdentityAppRoleAssignmentsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: appRoleAssignment-id of appRoleAssignment

@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```yaml
 Type: System.Int32
 Parameter Sets: Managed1
-Aliases: Top
+Aliases: Top, Limit
 
 Required: True
 Position: Named

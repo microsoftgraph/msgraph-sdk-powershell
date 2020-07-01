@@ -1,15 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/appRoleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/appRoleAssignments/{appRoleAssignment-id}": {
+    "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -21,7 +13,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
+    "/users/{user-id}/appRoleAssignments": {
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/appRoleAssignments/{appRoleAssignment-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml",
       "apiVersion": "v1.0-beta"
     }

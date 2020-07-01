@@ -17,7 +17,8 @@ Create new navigation property to onlineMeetings for users
 New-MgUserOnlineMeeting -UserId <String> [-AudioConferencingConferenceId <String>]
  [-AudioConferencingDialinUrl <String>] [-AudioConferencingTollFreeNumber <String>]
  [-AudioConferencingTollNumber <String>] [-ChatInfoMessageId <String>] [-ChatInfoReplyChainMessageId <String>]
- [-ChatInfoThreadId <String>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-Id <String>]
+ [-ChatInfoThreadId <String>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-ExternalId <String>]
+ [-Id <String>] [-JoinInformationContent <String>] [-JoinInformationContentType <String>]
  [-JoinWebUrl <String>] [-OrganizerIdentity <IMicrosoftGraphIdentitySet>] [-OrganizerUpn <String>]
  [-ParticipantAttendees <IMicrosoftGraphMeetingParticipantInfo[]>] [-StartDateTime <DateTime>]
  [-Subject <String>] [-VideoTeleconferenceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -25,13 +26,13 @@ New-MgUserOnlineMeeting -UserId <String> [-AudioConferencingConferenceId <String
 
 ### Create1
 ```
-New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf]
+New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> -BodyParameter <IMicrosoftGraphOnlineMeeting>
+New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> -BodyParameter <IMicrosoftGraphOnlineMeeting1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -40,7 +41,8 @@ New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> -BodyParameter <I
 New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> [-AudioConferencingConferenceId <String>]
  [-AudioConferencingDialinUrl <String>] [-AudioConferencingTollFreeNumber <String>]
  [-AudioConferencingTollNumber <String>] [-ChatInfoMessageId <String>] [-ChatInfoReplyChainMessageId <String>]
- [-ChatInfoThreadId <String>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-Id <String>]
+ [-ChatInfoThreadId <String>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-ExternalId <String>]
+ [-Id <String>] [-JoinInformationContent <String>] [-JoinInformationContentType <String>]
  [-JoinWebUrl <String>] [-OrganizerIdentity <IMicrosoftGraphIdentitySet>] [-OrganizerUpn <String>]
  [-ParticipantAttendees <IMicrosoftGraphMeetingParticipantInfo[]>] [-StartDateTime <DateTime>]
  [-Subject <String>] [-VideoTeleconferenceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -136,7 +138,7 @@ onlineMeeting
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -223,6 +225,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ExternalId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Read-only.
 
@@ -251,6 +268,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -JoinInformationContent
+The content of the item.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JoinInformationContentType
+bodyType
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -414,13 +461,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ### Microsoft.Graph.PowerShell.Models.IOnlineMeetingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 
 ## NOTES
 
@@ -431,7 +478,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
+BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[Id <String>]`: Read-only.
   - `[AudioConferencingConferenceId <String>]`: 
   - `[AudioConferencingDialinUrl <String>]`: A URL to the externally-accessible web page that contains dial-in information.
@@ -442,6 +489,9 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
   - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
   - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+  - `[ExternalId <String>]`: 
+  - `[JoinInformationContent <String>]`: The content of the item.
+  - `[JoinInformationContentType <String>]`: bodyType
   - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
   - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Application <IMicrosoftGraphIdentity>]`: identity

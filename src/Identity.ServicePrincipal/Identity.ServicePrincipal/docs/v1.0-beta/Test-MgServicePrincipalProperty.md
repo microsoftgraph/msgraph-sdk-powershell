@@ -12,13 +12,13 @@ Invoke action validateProperties
 
 ## SYNTAX
 
-### ValidateExpanded (Default)
+### ValidateExpanded1 (Default)
 ```
 Test-MgServicePrincipalProperty [-DisplayName <String>] [-EntityType <String>] [-MailNickname <String>]
  [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Validate
+### Validate1
 ```
 Test-MgServicePrincipalProperty
  -BodyParameter <IPathsYq15M4ServiceprincipalsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
@@ -56,7 +56,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsYq15M4ServiceprincipalsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Validate
+Parameter Sets: Validate1
 Aliases:
 
 Required: True
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded
+Parameter Sets: ValidateExpanded1
 Aliases:
 
 Required: False
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded
+Parameter Sets: ValidateExpanded1
 Aliases:
 
 Required: False
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded
+Parameter Sets: ValidateExpanded1
 Aliases:
 
 Required: False
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded
+Parameter Sets: ValidateExpanded1
 Aliases:
 
 Required: False

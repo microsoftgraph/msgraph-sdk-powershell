@@ -52,7 +52,8 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -ApiVersion
-.
+API version for the call back URL.
+Start with 1.
 
 ```yaml
 Type: System.Int32
@@ -174,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsActive
-.
+Indicates whether this workforce integration is currently active and available.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -326,12 +327,12 @@ BODYPARAMETER <IMicrosoftGraphWorkforceIntegration1>: workforceIntegration
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[Id <String>]`: Read-only.
-  - `[ApiVersion <Int32?>]`: 
+  - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
   - `[DisplayName <String>]`: Name of the workforce integration.
   - `[EligibilityFilteringEnabledEntities <String>]`: eligibilityFilteringEnabledEntities
   - `[EncryptionProtocol <String>]`: workforceIntegrationEncryptionProtocol
   - `[EncryptionSecret <String>]`: Encryption shared secret.
-  - `[IsActive <Boolean?>]`: 
+  - `[IsActive <Boolean?>]`: Indicates whether this workforce integration is currently active and available.
   - `[SupportedEntities <String>]`: workforceIntegrationSupportedEntities
   - `[Supports <String>]`: workforceIntegrationSupportedEntities
   - `[Url <String>]`: Workforce Integration URL for callbacks from the Shifts service.

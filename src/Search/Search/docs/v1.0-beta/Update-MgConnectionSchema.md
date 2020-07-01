@@ -226,9 +226,13 @@ BODYPARAMETER <IMicrosoftGraphSchema>: schema
   - `[Id <String>]`: Read-only.
   - `[BaseType <String>]`: 
   - `[Properties <IMicrosoftGraphProperty[]>]`: 
+    - `[Aliases <String[]>]`: 
+    - `[IsContent <Boolean?>]`: 
     - `[IsQueryable <Boolean?>]`: 
+    - `[IsRefinable <Boolean?>]`: 
     - `[IsRetrievable <Boolean?>]`: 
     - `[IsSearchable <Boolean?>]`: 
+    - `[Labels <String[]>]`: 
     - `[Name <String>]`: 
     - `[Type <String>]`: propertyType
 
@@ -238,9 +242,13 @@ INPUTOBJECT <ISearchIdentity>: Identity Parameter
   - `[ExternalItemId <String>]`: key: externalItem-id of externalItem
 
 PROPERTIES <IMicrosoftGraphProperty[]>: .
+  - `[Aliases <String[]>]`: 
+  - `[IsContent <Boolean?>]`: 
   - `[IsQueryable <Boolean?>]`: 
+  - `[IsRefinable <Boolean?>]`: 
   - `[IsRetrievable <Boolean?>]`: 
   - `[IsSearchable <Boolean?>]`: 
+  - `[Labels <String[]>]`: 
   - `[Name <String>]`: 
   - `[Type <String>]`: propertyType
 

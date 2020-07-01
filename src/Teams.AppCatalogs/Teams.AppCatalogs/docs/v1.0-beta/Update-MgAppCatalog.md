@@ -166,27 +166,29 @@ BODYPARAMETER <IMicrosoftGraphAppCatalogs1>: appCatalogs
   - `[Id <String>]`: Read-only.
   - `[TeamsApps <IMicrosoftGraphTeamsApp1[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+    - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
       - `[Id <String>]`: Read-only.
+      - `[AzureAdAppId <String>]`: 
       - `[DisplayName <String>]`: The name of the app provided by the app developer.
+      - `[PublishingState <String>]`: teamsAppPublishingState
       - `[TeamsAppId <String>]`: The id from the Teams App manifest.
       - `[Version <String>]`: The version number of the application.
     - `[DisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
     - `[DistributionMethod <String>]`: teamsAppDistributionMethod
     - `[ExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-    - `[Name <String>]`: 
 
 TEAMSAPPS <IMicrosoftGraphTeamsApp1[]>: .
   - `[Id <String>]`: Read-only.
-  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.
+    - `[AzureAdAppId <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
+    - `[PublishingState <String>]`: teamsAppPublishingState
     - `[TeamsAppId <String>]`: The id from the Teams App manifest.
     - `[Version <String>]`: The version number of the application.
   - `[DisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
   - `[DistributionMethod <String>]`: teamsAppDistributionMethod
   - `[ExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-  - `[Name <String>]`: 
 
 ## RELATED LINKS
 

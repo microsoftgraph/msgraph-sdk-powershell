@@ -14,21 +14,21 @@ Get calendarView from bookingBusinesses
 
 ### List (Default)
 ```
-Get-MgBookingBusinessCalendarView -BookingBusinessId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgBookingBusinessCalendarView -BookingBusinessId <String> -End <String> -Start <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgBookingBusinessCalendarView -BookingAppointmentId <String> -BookingBusinessId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBookingBusinessCalendarView -BookingAppointmentId <String> -BookingBusinessId <String> -End <String>
+ -Start <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> -End <String> -Start <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,6 +55,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BookingAppointmentId
 key: bookingAppointment-id of bookingAppointment
@@ -95,6 +110,22 @@ Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -End
+The end date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T20:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -153,7 +184,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -216,6 +247,22 @@ Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Start
+The start date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T19:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

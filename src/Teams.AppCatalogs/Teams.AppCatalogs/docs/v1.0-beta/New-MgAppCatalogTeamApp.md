@@ -14,8 +14,8 @@ Create new navigation property to teamsApps for appCatalogs
 
 ### CreateExpanded1 (Default)
 ```
-New-MgAppCatalogTeamApp [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-DisplayName <String>]
- [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Name <String>] [-Confirm] [-WhatIf]
+New-MgAppCatalogTeamApp [-AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-DisplayName <String>]
+ [-DistributionMethod <String>] [-ExternalId <String>] [-Id <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -54,7 +54,7 @@ The details for each version of the app.
 To construct, see NOTES section for APPDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -141,21 +141,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -207,23 +192,26 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition[]>: The details for each version of the app.
+APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each version of the app.
   - `[Id <String>]`: Read-only.
+  - `[AzureAdAppId <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
+  - `[PublishingState <String>]`: teamsAppPublishingState
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 
 BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[Id <String>]`: Read-only.
-  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+  - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.
+    - `[AzureAdAppId <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
+    - `[PublishingState <String>]`: teamsAppPublishingState
     - `[TeamsAppId <String>]`: The id from the Teams App manifest.
     - `[Version <String>]`: The version number of the application.
   - `[DisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
   - `[DistributionMethod <String>]`: teamsAppDistributionMethod
   - `[ExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-  - `[Name <String>]`: 
 
 ## RELATED LINKS
 

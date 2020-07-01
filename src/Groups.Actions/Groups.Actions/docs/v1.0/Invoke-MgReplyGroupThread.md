@@ -14,7 +14,7 @@ Invoke action reply
 
 ### ReplyExpanded (Default)
 ```
-Invoke-MgReplyGroupThread -ConversationThreadId <String> -GroupId <String> [-Post <IMicrosoftGraphPost>]
+Invoke-MgReplyGroupThread -ConversationThreadId <String> -GroupId <String> [-Post <IMicrosoftGraphPost1>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,7 +34,7 @@ Invoke-MgReplyGroupThread -InputObject <IGroupsActionsIdentity>
 
 ### ReplyViaIdentityExpanded
 ```
-Invoke-MgReplyGroupThread -InputObject <IGroupsActionsIdentity> [-Post <IMicrosoftGraphPost>] [-PassThru]
+Invoke-MgReplyGroupThread -InputObject <IGroupsActionsIdentity> [-Post <IMicrosoftGraphPost1>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -145,7 +145,7 @@ post
 To construct, see NOTES section for POST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
 Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPathsPlnw85GroupsGroupIdThreadsConversationthreadIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema>: .
-  - `[Post <IMicrosoftGraphPost>]`: post
+  - `[Post <IMicrosoftGraphPost1>]`: post
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -235,7 +235,7 @@ BODYPARAMETER <IPathsPlnw85GroupsGroupIdThreadsConversationthreadIdMicrosoftGrap
         - `[Address <String>]`: The email address of the person or entity.
         - `[Name <String>]`: The display name of the person or entity.
     - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-    - `[InReplyTo <IMicrosoftGraphPost>]`: post
+    - `[InReplyTo <IMicrosoftGraphPost1>]`: post
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String[]>]`: A collection of property values.
@@ -258,7 +258,7 @@ INPUTOBJECT <IGroupsActionsIdentity>: Identity Parameter
   - `[PostId <String>]`: key: post-id of post
   - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
 
-POST <IMicrosoftGraphPost>: post
+POST <IMicrosoftGraphPost1>: post
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -283,7 +283,7 @@ POST <IMicrosoftGraphPost>: post
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
-  - `[InReplyTo <IMicrosoftGraphPost>]`: post
+  - `[InReplyTo <IMicrosoftGraphPost1>]`: post
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String[]>]`: A collection of property values.

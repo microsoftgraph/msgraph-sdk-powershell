@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Invitations
-Module Guid: fe64c5fc-c32a-4368-bdc2-e8e5d018f938
+Module Guid: 4bbb0314-21a7-4ef9-a817-3fbf3426e663
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.invitations
 Help Version: 1.0.0.0
 Locale: en-US

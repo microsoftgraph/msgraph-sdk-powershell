@@ -1,11 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/policies/activityBasedTimeoutPolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
-      "apiVersion": "v1.0"
-    },
-    "/policies/homeRealmDiscoveryPolicies": {
+    "/policies/claimsMappingPolicies": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
@@ -13,11 +9,11 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
-    "/policies": {
+    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
-    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
+    "/policies/homeRealmDiscoveryPolicies": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
@@ -25,23 +21,27 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
-    "/policies/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
-      "apiVersion": "v1.0"
-    },
-    "/policies/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
-      "apiVersion": "v1.0"
-    },
-    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
-      "apiVersion": "v1.0"
-    },
     "/policies/tokenLifetimePolicies": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     },
+    "/policies/activityBasedTimeoutPolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/tokenIssuancePolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
+      "apiVersion": "v1.0"
+    },
     "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
+      "apiVersion": "v1.0"
+    },
+    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Policies.yml",
       "apiVersion": "v1.0"
     }

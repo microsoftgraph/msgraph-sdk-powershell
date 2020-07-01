@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.ConversationThread
-Module Guid: 6988a366-d232-49d4-a17c-11d360beacec
+Module Guid: e9d6a4e7-739b-4f9a-afad-21ee0995a0f8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.conversationthread
 Help Version: 1.0.0.0
 Locale: en-US

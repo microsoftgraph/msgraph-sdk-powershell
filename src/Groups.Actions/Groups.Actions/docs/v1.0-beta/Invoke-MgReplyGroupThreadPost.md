@@ -15,7 +15,7 @@ Invoke action reply
 ### ReplyExpanded1 (Default)
 ```
 Invoke-MgReplyGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
- [-Post <IMicrosoftGraphPost1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Post <IMicrosoftGraphPost>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Reply1
@@ -34,7 +34,7 @@ Invoke-MgReplyGroupThreadPost -InputObject <IGroupsActionsIdentity>
 
 ### ReplyViaIdentityExpanded1
 ```
-Invoke-MgReplyGroupThreadPost -InputObject <IGroupsActionsIdentity> [-Post <IMicrosoftGraphPost1>] [-PassThru]
+Invoke-MgReplyGroupThreadPost -InputObject <IGroupsActionsIdentity> [-Post <IMicrosoftGraphPost>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -145,7 +145,7 @@ post
 To construct, see NOTES section for POST properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
 Parameter Sets: ReplyExpanded1, ReplyViaIdentityExpanded1
 Aliases:
 
@@ -225,7 +225,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1B2Nw99GroupsGroupIdThreadsConversationthreadIdPostsPostIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema1>: .
-  - `[Post <IMicrosoftGraphPost1>]`: post
+  - `[Post <IMicrosoftGraphPost>]`: post
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -251,7 +251,7 @@ BODYPARAMETER <IPaths1B2Nw99GroupsGroupIdThreadsConversationthreadIdPostsPostIdM
         - `[Name <String>]`: The display name of the person or entity.
     - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
     - `[Importance <String>]`: importance
-    - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+    - `[InReplyTo <IMicrosoftGraphPost>]`: post
     - `[Mentions <IMicrosoftGraphMention[]>]`: 
       - `[Id <String>]`: Read-only.
       - `[Application <String>]`: 
@@ -286,7 +286,7 @@ INPUTOBJECT <IGroupsActionsIdentity>: Identity Parameter
   - `[PostId <String>]`: key: post-id of post
   - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
 
-POST <IMicrosoftGraphPost1>: post
+POST <IMicrosoftGraphPost>: post
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -312,7 +312,7 @@ POST <IMicrosoftGraphPost1>: post
       - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
   - `[Importance <String>]`: importance
-  - `[InReplyTo <IMicrosoftGraphPost1>]`: post
+  - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[Mentions <IMicrosoftGraphMention[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Application <String>]`: 

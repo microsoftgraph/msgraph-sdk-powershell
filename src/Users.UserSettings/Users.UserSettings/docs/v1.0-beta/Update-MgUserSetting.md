@@ -15,7 +15,16 @@ Update the navigation property settings in users
 ### UpdateExpanded (Default)
 ```
 Update-MgUserSetting -UserId <String> [-ContributionToContentDiscoveryAsOrganizationDisabled]
- [-ContributionToContentDiscoveryDisabled] [-Id <String>]
+ [-ContributionToContentDiscoveryDisabled] [-DefaultDisplayLanguageDisplayName <String>]
+ [-DefaultDisplayLanguageLocale <String>] [-DefaultRegionalFormatDisplayName <String>]
+ [-DefaultRegionalFormatLocale <String>] [-DefaultSpeechInputLanguageDisplayName <String>]
+ [-DefaultSpeechInputLanguageLocale <String>] [-DefaultTranslationLanguageDisplayName <String>]
+ [-DefaultTranslationLanguageLocale <String>] [-Id <String>]
+ [-RegionalAndLanguageSettingAuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]
+ [-RegionalAndLanguageSettingId <String>] [-RegionalFormatOverrideCalendar <String>]
+ [-RegionalFormatOverrideFirstDayOfWeek <String>] [-RegionalFormatOverrideLongDateFormat <String>]
+ [-RegionalFormatOverrideLongTimeFormat <String>] [-RegionalFormatOverrideShortDateFormat <String>]
+ [-RegionalFormatOverrideShortTimeFormat <String>] [-RegionalFormatOverrideTimeZone <String>]
  [-ShiftPreferenceAvailability <IMicrosoftGraphShiftAvailability[]>]
  [-ShiftPreferenceCreatedDateTime <DateTime>] [-ShiftPreferenceId <String>]
  [-ShiftPreferenceLastModifiedBy <IMicrosoftGraphIdentitySet>]
@@ -38,7 +47,16 @@ Update-MgUserSetting -InputObject <IUsersUserSettingsIdentity> -BodyParameter <I
 ```
 Update-MgUserSetting -InputObject <IUsersUserSettingsIdentity>
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferenceAvailability <IMicrosoftGraphShiftAvailability[]>]
+ [-DefaultDisplayLanguageDisplayName <String>] [-DefaultDisplayLanguageLocale <String>]
+ [-DefaultRegionalFormatDisplayName <String>] [-DefaultRegionalFormatLocale <String>]
+ [-DefaultSpeechInputLanguageDisplayName <String>] [-DefaultSpeechInputLanguageLocale <String>]
+ [-DefaultTranslationLanguageDisplayName <String>] [-DefaultTranslationLanguageLocale <String>] [-Id <String>]
+ [-RegionalAndLanguageSettingAuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]
+ [-RegionalAndLanguageSettingId <String>] [-RegionalFormatOverrideCalendar <String>]
+ [-RegionalFormatOverrideFirstDayOfWeek <String>] [-RegionalFormatOverrideLongDateFormat <String>]
+ [-RegionalFormatOverrideLongTimeFormat <String>] [-RegionalFormatOverrideShortDateFormat <String>]
+ [-RegionalFormatOverrideShortTimeFormat <String>] [-RegionalFormatOverrideTimeZone <String>]
+ [-ShiftPreferenceAvailability <IMicrosoftGraphShiftAvailability[]>]
  [-ShiftPreferenceCreatedDateTime <DateTime>] [-ShiftPreferenceId <String>]
  [-ShiftPreferenceLastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-ShiftPreferenceLastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -115,6 +133,134 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DefaultDisplayLanguageDisplayName
+A name representing the user's locale in natural language, for example, 'English (United States)'.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultDisplayLanguageLocale
+A locale representation for the user, which includes the user's preferred language and country/region.
+For example, 'en-us'.
+The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultRegionalFormatDisplayName
+A name representing the user's locale in natural language, for example, 'English (United States)'.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultRegionalFormatLocale
+A locale representation for the user, which includes the user's preferred language and country/region.
+For example, 'en-us'.
+The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultSpeechInputLanguageDisplayName
+A name representing the user's locale in natural language, for example, 'English (United States)'.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultSpeechInputLanguageLocale
+A locale representation for the user, which includes the user's preferred language and country/region.
+For example, 'en-us'.
+The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultTranslationLanguageDisplayName
+A name representing the user's locale in natural language, for example, 'English (United States)'.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultTranslationLanguageLocale
+A locale representation for the user, which includes the user's preferred language and country/region.
+For example, 'en-us'.
+The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Read-only.
 
@@ -152,6 +298,142 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalAndLanguageSettingAuthoringLanguages
+.
+To construct, see NOTES section for REGIONALANDLANGUAGESETTINGAUTHORINGLANGUAGES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocaleInfo[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalAndLanguageSettingId
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideCalendar
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideFirstDayOfWeek
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideLongDateFormat
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideLongTimeFormat
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideShortDateFormat
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideShortTimeFormat
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionalFormatOverrideTimeZone
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -312,6 +594,25 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
   - `[Id <String>]`: Read-only.
   - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
   - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+  - `[DefaultDisplayLanguageDisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+  - `[DefaultDisplayLanguageLocale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+  - `[DefaultRegionalFormatDisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+  - `[DefaultRegionalFormatLocale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+  - `[DefaultSpeechInputLanguageDisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+  - `[DefaultSpeechInputLanguageLocale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+  - `[DefaultTranslationLanguageDisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+  - `[DefaultTranslationLanguageLocale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+  - `[RegionalAndLanguageSettingAuthoringLanguages <IMicrosoftGraphLocaleInfo[]>]`: 
+    - `[DisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+    - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
+  - `[RegionalAndLanguageSettingId <String>]`: Read-only.
+  - `[RegionalFormatOverrideCalendar <String>]`: 
+  - `[RegionalFormatOverrideFirstDayOfWeek <String>]`: 
+  - `[RegionalFormatOverrideLongDateFormat <String>]`: 
+  - `[RegionalFormatOverrideLongTimeFormat <String>]`: 
+  - `[RegionalFormatOverrideShortDateFormat <String>]`: 
+  - `[RegionalFormatOverrideShortTimeFormat <String>]`: 
+  - `[RegionalFormatOverrideTimeZone <String>]`: 
   - `[ShiftPreferenceAvailability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
     - `[PatternDayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
     - `[PatternDaysOfWeek <String[]>]`: A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
@@ -341,6 +642,10 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
 
 INPUTOBJECT <IUsersUserSettingsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: user-id of user
+
+REGIONALANDLANGUAGESETTINGAUTHORINGLANGUAGES <IMicrosoftGraphLocaleInfo[]>: .
+  - `[DisplayName <String>]`: A name representing the user's locale in natural language, for example, 'English (United States)'.
+  - `[Locale <String>]`: A locale representation for the user, which includes the user's preferred language and country/region. For example, 'en-us'. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.
 
 SHIFTPREFERENCEAVAILABILITY <IMicrosoftGraphShiftAvailability[]>: Availability of the user to be scheduled for work and its recurrence pattern.
   - `[PatternDayOfMonth <Int32?>]`: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.

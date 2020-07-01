@@ -408,6 +408,8 @@ BODYPARAMETER <IMicrosoftGraphOnPremisesAgentGroup>: onPremisesAgentGroup
   - `[PublishingType <String>]`: onPremisesPublishingType
 
 INPUTOBJECT <IIdentityOnPremisesPublishingProfilesIdentity>: Identity Parameter
+  - `[ConnectorGroupId <String>]`: key: connectorGroup-id of connectorGroup
+  - `[ConnectorId <String>]`: key: connector-id of connector
   - `[OnPremisesAgentGroupId <String>]`: key: onPremisesAgentGroup-id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: onPremisesAgentGroup-id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: onPremisesAgent-id of onPremisesAgent

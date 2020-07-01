@@ -12,13 +12,13 @@ Delete entity from oauth2PermissionGrants
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgOauth2PermissionGrantOAuth2PermissionGrantOAuth2PermissionGrant -OAuth2PermissionGrantId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgOauth2PermissionGrantOAuth2PermissionGrantOAuth2PermissionGrant
  -InputObject <IIdentityOAuth2PermissionGrantsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -71,7 +71,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityOAuth2PermissionGrantsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -86,7 +86,7 @@ key: oAuth2PermissionGrant-id of oAuth2PermissionGrant
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

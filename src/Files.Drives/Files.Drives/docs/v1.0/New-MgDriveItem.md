@@ -25,18 +25,19 @@ New-MgDriveItem [-Analytics <IMicrosoftGraphItemAnalytics>] [-ApplicationCalcula
  [-ETag <String>] [-FileMimeType <String>] [-FileProcessingMetadata]
  [-FileSystemInfoCreatedDateTime <DateTime>] [-FileSystemInfoLastAccessedDateTime <DateTime>]
  [-FileSystemInfoLastModifiedDateTime <DateTime>] [-FolderChildCount <Int32>] [-FunctionId <String>]
- [-HashCrc32Hash <String>] [-HashQuickXorHash <String>] [-HashSha1Hash <String>] [-Id <String>]
- [-ImageHeight <Int32>] [-ImageWidth <Int32>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-HashCrc32Hash <String>] [-HashQuickXorHash <String>] [-HashSha1Hash <String>] [-HashSha256Hash <String>]
+ [-Id <String>] [-ImageHeight <Int32>] [-ImageWidth <Int32>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedByUser <IMicrosoftGraphUser1>] [-LastModifiedDateTime <DateTime>]
  [-ListItem <IMicrosoftGraphListItem>] [-LocationAltitude <Double>] [-LocationLatitude <Double>]
  [-LocationLongitude <Double>] [-Name <String>] [-PackageType <String>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-Permissions <IMicrosoftGraphPermission[]>]
- [-PhotoCameraMake <String>] [-PhotoCameraModel <String>] [-PhotoExposureDenominator <Double>]
- [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>] [-PhotoFocalLength <Double>] [-PhotoIso <Int32>]
- [-PhotoTakenDateTime <DateTime>] [-PublicationLevel <String>] [-PublicationVersionId <String>]
- [-RemoteItem <IMicrosoftGraphRemoteItem>] [-Root <IMicrosoftGraphRoot>]
- [-SearchResultOnClickTelemetryUrl <String>] [-SharedBy <IMicrosoftGraphIdentitySet>]
- [-SharedDateTime <DateTime>] [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-PendingContentUpdateQueuedDateTime <DateTime>]
+ [-Permissions <IMicrosoftGraphPermission[]>] [-PhotoCameraMake <String>] [-PhotoCameraModel <String>]
+ [-PhotoExposureDenominator <Double>] [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>]
+ [-PhotoFocalLength <Double>] [-PhotoIso <Int32>] [-PhotoOrientation <Int32>] [-PhotoTakenDateTime <DateTime>]
+ [-PublicationLevel <String>] [-PublicationVersionId <String>] [-RemoteItem <IMicrosoftGraphRemoteItem>]
+ [-Root <IMicrosoftGraphRoot>] [-SearchResultOnClickTelemetryUrl <String>]
+ [-SharedBy <IMicrosoftGraphIdentitySet>] [-SharedDateTime <DateTime>]
+ [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
  [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Size <Int64>] [-SpecialFolderName <String>]
  [-Subscriptions <IMicrosoftGraphSubscription[]>] [-Thumbnails <IMicrosoftGraphThumbnailSet[]>]
  [-Versions <IMicrosoftGraphDriveItemVersion[]>] [-VideoAudioBitsPerSample <Int32>]
@@ -74,17 +75,19 @@ New-MgDriveItem -DriveId <String> [-Analytics <IMicrosoftGraphItemAnalytics>]
  [-FileProcessingMetadata] [-FileSystemInfoCreatedDateTime <DateTime>]
  [-FileSystemInfoLastAccessedDateTime <DateTime>] [-FileSystemInfoLastModifiedDateTime <DateTime>]
  [-FolderChildCount <Int32>] [-FunctionId <String>] [-HashCrc32Hash <String>] [-HashQuickXorHash <String>]
- [-HashSha1Hash <String>] [-Id <String>] [-ImageHeight <Int32>] [-ImageWidth <Int32>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
- [-LastModifiedDateTime <DateTime>] [-ListItem <IMicrosoftGraphListItem>] [-LocationAltitude <Double>]
- [-LocationLatitude <Double>] [-LocationLongitude <Double>] [-Name <String>] [-PackageType <String>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-Permissions <IMicrosoftGraphPermission[]>]
- [-PhotoCameraMake <String>] [-PhotoCameraModel <String>] [-PhotoExposureDenominator <Double>]
- [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>] [-PhotoFocalLength <Double>] [-PhotoIso <Int32>]
- [-PhotoTakenDateTime <DateTime>] [-PublicationLevel <String>] [-PublicationVersionId <String>]
- [-RemoteItem <IMicrosoftGraphRemoteItem>] [-Root <IMicrosoftGraphRoot>]
- [-SearchResultOnClickTelemetryUrl <String>] [-SharedBy <IMicrosoftGraphIdentitySet>]
- [-SharedDateTime <DateTime>] [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
+ [-HashSha1Hash <String>] [-HashSha256Hash <String>] [-Id <String>] [-ImageHeight <Int32>]
+ [-ImageWidth <Int32>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedByUser <IMicrosoftGraphUser1>] [-LastModifiedDateTime <DateTime>]
+ [-ListItem <IMicrosoftGraphListItem>] [-LocationAltitude <Double>] [-LocationLatitude <Double>]
+ [-LocationLongitude <Double>] [-Name <String>] [-PackageType <String>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-PendingContentUpdateQueuedDateTime <DateTime>]
+ [-Permissions <IMicrosoftGraphPermission[]>] [-PhotoCameraMake <String>] [-PhotoCameraModel <String>]
+ [-PhotoExposureDenominator <Double>] [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>]
+ [-PhotoFocalLength <Double>] [-PhotoIso <Int32>] [-PhotoOrientation <Int32>] [-PhotoTakenDateTime <DateTime>]
+ [-PublicationLevel <String>] [-PublicationVersionId <String>] [-RemoteItem <IMicrosoftGraphRemoteItem>]
+ [-Root <IMicrosoftGraphRoot>] [-SearchResultOnClickTelemetryUrl <String>]
+ [-SharedBy <IMicrosoftGraphIdentitySet>] [-SharedDateTime <DateTime>]
+ [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
  [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Size <Int64>] [-SpecialFolderName <String>]
  [-Subscriptions <IMicrosoftGraphSubscription[]>] [-Thumbnails <IMicrosoftGraphThumbnailSet[]>]
  [-Versions <IMicrosoftGraphDriveItemVersion[]>] [-VideoAudioBitsPerSample <Int32>]
@@ -117,17 +120,19 @@ New-MgDriveItem -InputObject <IFilesDrivesIdentity> [-Analytics <IMicrosoftGraph
  [-FileProcessingMetadata] [-FileSystemInfoCreatedDateTime <DateTime>]
  [-FileSystemInfoLastAccessedDateTime <DateTime>] [-FileSystemInfoLastModifiedDateTime <DateTime>]
  [-FolderChildCount <Int32>] [-FunctionId <String>] [-HashCrc32Hash <String>] [-HashQuickXorHash <String>]
- [-HashSha1Hash <String>] [-Id <String>] [-ImageHeight <Int32>] [-ImageWidth <Int32>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedByUser <IMicrosoftGraphUser1>]
- [-LastModifiedDateTime <DateTime>] [-ListItem <IMicrosoftGraphListItem>] [-LocationAltitude <Double>]
- [-LocationLatitude <Double>] [-LocationLongitude <Double>] [-Name <String>] [-PackageType <String>]
- [-ParentReference <IMicrosoftGraphItemReference>] [-Permissions <IMicrosoftGraphPermission[]>]
- [-PhotoCameraMake <String>] [-PhotoCameraModel <String>] [-PhotoExposureDenominator <Double>]
- [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>] [-PhotoFocalLength <Double>] [-PhotoIso <Int32>]
- [-PhotoTakenDateTime <DateTime>] [-PublicationLevel <String>] [-PublicationVersionId <String>]
- [-RemoteItem <IMicrosoftGraphRemoteItem>] [-Root <IMicrosoftGraphRoot>]
- [-SearchResultOnClickTelemetryUrl <String>] [-SharedBy <IMicrosoftGraphIdentitySet>]
- [-SharedDateTime <DateTime>] [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
+ [-HashSha1Hash <String>] [-HashSha256Hash <String>] [-Id <String>] [-ImageHeight <Int32>]
+ [-ImageWidth <Int32>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedByUser <IMicrosoftGraphUser1>] [-LastModifiedDateTime <DateTime>]
+ [-ListItem <IMicrosoftGraphListItem>] [-LocationAltitude <Double>] [-LocationLatitude <Double>]
+ [-LocationLongitude <Double>] [-Name <String>] [-PackageType <String>]
+ [-ParentReference <IMicrosoftGraphItemReference>] [-PendingContentUpdateQueuedDateTime <DateTime>]
+ [-Permissions <IMicrosoftGraphPermission[]>] [-PhotoCameraMake <String>] [-PhotoCameraModel <String>]
+ [-PhotoExposureDenominator <Double>] [-PhotoExposureNumerator <Double>] [-PhotoFNumber <Double>]
+ [-PhotoFocalLength <Double>] [-PhotoIso <Int32>] [-PhotoOrientation <Int32>] [-PhotoTakenDateTime <DateTime>]
+ [-PublicationLevel <String>] [-PublicationVersionId <String>] [-RemoteItem <IMicrosoftGraphRemoteItem>]
+ [-Root <IMicrosoftGraphRoot>] [-SearchResultOnClickTelemetryUrl <String>]
+ [-SharedBy <IMicrosoftGraphIdentitySet>] [-SharedDateTime <DateTime>]
+ [-SharedOwner <IMicrosoftGraphIdentitySet>] [-SharedScope <String>]
  [-SharepointIds <IMicrosoftGraphSharepointIds>] [-Size <Int64>] [-SpecialFolderName <String>]
  [-Subscriptions <IMicrosoftGraphSubscription[]>] [-Thumbnails <IMicrosoftGraphThumbnailSet[]>]
  [-Versions <IMicrosoftGraphDriveItemVersion[]>] [-VideoAudioBitsPerSample <Int32>]
@@ -786,6 +791,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HashSha256Hash
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Read-only.
 
@@ -1014,6 +1034,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PendingContentUpdateQueuedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Permissions
 The set of permissions for the item.
 Read-only.
@@ -1131,6 +1166,21 @@ Accept wildcard characters: False
 ### -PhotoIso
 The ISO value from the camera.
 Read-only.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded1, CreateExpanded2, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PhotoOrientation
+.
 
 ```yaml
 Type: System.Int32
@@ -1823,6 +1873,16 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
           - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
           - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
         - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+          - `[DeletedDateTime <DateTime?>]`: 
+          - `[Id <String>]`: Read-only.
+          - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+          - `[CreatedDateTime <DateTime?>]`: 
+          - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+          - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+          - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+          - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+          - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
           - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
           - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -1855,6 +1915,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[AddressPostalCode <String>]`: The postal code.
             - `[AddressState <String>]`: The state.
             - `[AddressStreet <String>]`: The street.
+            - `[AllowNewTimeProposals <Boolean?>]`: 
             - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
               - `[Id <String>]`: Read-only.
               - `[ContentType <String>]`: The MIME type.
@@ -1867,6 +1928,10 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
                 - `[Address <String>]`: The email address of the person or entity.
                 - `[Name <String>]`: The display name of the person or entity.
+              - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+              - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+              - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+              - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
               - `[StatusResponse <String>]`: responseType
               - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
             - `[BodyContent <String>]`: The content of the item.
@@ -2143,6 +2208,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[Description <String>]`: The user-facing description of the column.
               - `[DisplayName <String>]`: The user-facing name of the column.
               - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+              - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
               - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
               - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
               - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -2198,6 +2264,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
               - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
                 - `[Id <String>]`: The id of the content type.
+                - `[Name <String>]`: 
               - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
               - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
                 - `[Id <String>]`: Read-only.
@@ -2216,12 +2283,12 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
               - `[Id <String>]`: Read-only.
               - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-              - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-              - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+              - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+              - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
               - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
               - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-              - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+              - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
               - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
           - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2229,6 +2296,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
             - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
             - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+            - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
             - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
             - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
           - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -2239,6 +2307,8 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
         - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
         - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+        - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+        - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
         - `[FaxNumber <String>]`: The fax number of the user.
         - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2414,7 +2484,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
         - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
           - `[Id <String>]`: Read-only.
-          - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+          - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
             - `[Id <String>]`: Read-only.
             - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
             - `[LastSharedMethodId <String>]`: Read-only.
@@ -2448,7 +2518,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[SharingReferenceId <String>]`: The item's unique identifier.
             - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
             - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-          - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+          - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
             - `[Id <String>]`: Read-only.
             - `[LastModifiedDateTime <DateTime?>]`: 
             - `[ResourceId <String>]`: Read-only.
@@ -2464,7 +2534,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[ResourceVisualizationTitle <String>]`: The item's title text.
             - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
             - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-          - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+          - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
             - `[Id <String>]`: Read-only.
             - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
             - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -2490,6 +2560,48 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[Description <String>]`: Optional textual description for the channel.
             - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
             - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+            - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+            - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+              - `[Id <String>]`: Read-only.
+              - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+                - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+                - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+                - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+                - `[Id <String>]`: Read-only. Unique id of the attachment.
+                - `[Name <String>]`: Name of the attachment.
+                - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+              - `[BodyContent <String>]`: The content of the item.
+              - `[BodyContentType <String>]`: bodyType
+              - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+              - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+              - `[Etag <String>]`: Read-only. Version number of the chat message.
+              - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+              - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+                - `[Id <String>]`: Read-only.
+              - `[Importance <String>]`: 
+              - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+              - `[Locale <String>]`: Locale of the chat message set by the client.
+              - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+                - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+                - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+                - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+              - `[MessageType <String>]`: 
+              - `[PolicyTipComplianceUrl <String>]`: 
+              - `[PolicyTipGeneralText <String>]`: 
+              - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+              - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+              - `[PolicyViolationJustificationText <String>]`: 
+              - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+              - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+              - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+                - `[CreatedDateTime <DateTime?>]`: 
+                - `[ReactionType <String>]`: 
+                - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+              - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+              - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+              - `[Subject <String>]`: The subject of the chat message, in plaintext.
+              - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+              - `[WebUrl <String>]`: 
             - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
               - `[Id <String>]`: Read-only.
               - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -3018,6 +3130,13 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
         - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
         - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
         - `[MySite <String>]`: The URL for the user's personal site.
+        - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+          - `[Id <String>]`: Read-only.
+          - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+          - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+          - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+          - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+          - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
         - `[OfficeLocation <String>]`: The office location in the user's place of business.
         - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -3067,6 +3186,9 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
           - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
           - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
           - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+          - `[ExternalId <String>]`: 
+          - `[JoinInformationContent <String>]`: The content of the item.
+          - `[JoinInformationContentType <String>]`: bodyType
           - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
           - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -3271,6 +3393,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
       - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
       - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
       - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+      - `[HashSha256Hash <String>]`: 
       - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
       - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
       - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -3278,6 +3401,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
       - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
       - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
       - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+      - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
       - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -3305,6 +3429,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
       - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
       - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
       - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+      - `[PhotoOrientation <Int32?>]`: 
       - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
       - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
       - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -3320,6 +3445,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
         - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
         - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
         - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+        - `[HashSha256Hash <String>]`: 
         - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
         - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
         - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -3778,6 +3904,16 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
       - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
       - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
     - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+    - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+      - `[DeletedDateTime <DateTime?>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+      - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+      - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+      - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+      - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
       - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
       - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -3810,6 +3946,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[AddressPostalCode <String>]`: The postal code.
         - `[AddressState <String>]`: The state.
         - `[AddressStreet <String>]`: The street.
+        - `[AllowNewTimeProposals <Boolean?>]`: 
         - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[ContentType <String>]`: The MIME type.
@@ -3822,6 +3959,10 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
           - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
             - `[Address <String>]`: The email address of the person or entity.
             - `[Name <String>]`: The display name of the person or entity.
+          - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+          - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
           - `[StatusResponse <String>]`: responseType
           - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         - `[BodyContent <String>]`: The content of the item.
@@ -4098,6 +4239,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
           - `[Description <String>]`: The user-facing description of the column.
           - `[DisplayName <String>]`: The user-facing name of the column.
           - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+          - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
           - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
           - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
           - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -4211,6 +4353,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
             - `[LastSevenDaysMoveActorCount <Int32?>]`: The number of distinct actors that performed the action. Read-only.
           - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Id <String>]`: The id of the content type.
+            - `[Name <String>]`: 
           - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
             - `[Id <String>]`: Read-only.
@@ -4229,12 +4372,12 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: Read-only.
           - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
           - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
           - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4242,6 +4385,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
         - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
         - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+        - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
         - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
         - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
       - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -4252,6 +4396,8 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
     - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+    - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+    - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
     - `[FaxNumber <String>]`: The fax number of the user.
     - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4427,7 +4573,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
     - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
       - `[Id <String>]`: Read-only.
-      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
         - `[Id <String>]`: Read-only.
         - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastSharedMethodId <String>]`: Read-only.
@@ -4461,7 +4607,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[SharingReferenceId <String>]`: The item's unique identifier.
         - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
         - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         - `[Id <String>]`: Read-only.
         - `[LastModifiedDateTime <DateTime?>]`: 
         - `[ResourceId <String>]`: Read-only.
@@ -4477,7 +4623,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[ResourceVisualizationTitle <String>]`: The item's title text.
         - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
         - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
         - `[Id <String>]`: Read-only.
         - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -4503,6 +4649,48 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Description <String>]`: Optional textual description for the channel.
         - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
         - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+        - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+        - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Id <String>]`: Read-only.
+          - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+            - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+            - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+            - `[Id <String>]`: Read-only. Unique id of the attachment.
+            - `[Name <String>]`: Name of the attachment.
+            - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+          - `[BodyContent <String>]`: The content of the item.
+          - `[BodyContentType <String>]`: bodyType
+          - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+          - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+          - `[Etag <String>]`: Read-only. Version number of the chat message.
+          - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+            - `[Id <String>]`: Read-only.
+          - `[Importance <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+          - `[Locale <String>]`: Locale of the chat message set by the client.
+          - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+            - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+            - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+            - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[MessageType <String>]`: 
+          - `[PolicyTipComplianceUrl <String>]`: 
+          - `[PolicyTipGeneralText <String>]`: 
+          - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+          - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+          - `[PolicyViolationJustificationText <String>]`: 
+          - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+          - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+          - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
+            - `[ReactionType <String>]`: 
+            - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+          - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+          - `[Subject <String>]`: The subject of the chat message, in plaintext.
+          - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+          - `[WebUrl <String>]`: 
         - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
           - `[Id <String>]`: Read-only.
           - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -5031,6 +5219,13 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
     - `[MySite <String>]`: The URL for the user's personal site.
+    - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+      - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+      - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+      - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
     - `[OfficeLocation <String>]`: The office location in the user's place of business.
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
     - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -5080,6 +5275,9 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
       - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
       - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
       - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+      - `[ExternalId <String>]`: 
+      - `[JoinInformationContent <String>]`: The content of the item.
+      - `[JoinInformationContentType <String>]`: bodyType
       - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
       - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -5284,6 +5482,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
   - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
   - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
   - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+  - `[HashSha256Hash <String>]`: 
   - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
   - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
   - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -5291,6 +5490,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
   - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
   - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
   - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+  - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
   - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -5318,6 +5518,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
   - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
   - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
   - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+  - `[PhotoOrientation <Int32?>]`: 
   - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
   - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
   - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -5333,6 +5534,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem1>: driveItem
     - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
     - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
     - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+    - `[HashSha256Hash <String>]`: 
     - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
     - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
     - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -5742,6 +5944,16 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
       - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
       - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
     - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+    - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+      - `[DeletedDateTime <DateTime?>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+      - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+      - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+      - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+      - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
       - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
       - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -5774,6 +5986,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[AddressPostalCode <String>]`: The postal code.
         - `[AddressState <String>]`: The state.
         - `[AddressStreet <String>]`: The street.
+        - `[AllowNewTimeProposals <Boolean?>]`: 
         - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[ContentType <String>]`: The MIME type.
@@ -5786,6 +5999,10 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
           - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
             - `[Address <String>]`: The email address of the person or entity.
             - `[Name <String>]`: The display name of the person or entity.
+          - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+          - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
           - `[StatusResponse <String>]`: responseType
           - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         - `[BodyContent <String>]`: The content of the item.
@@ -6062,6 +6279,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
           - `[Description <String>]`: The user-facing description of the column.
           - `[DisplayName <String>]`: The user-facing name of the column.
           - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+          - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
           - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
           - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
           - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -6175,6 +6393,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
             - `[LastSevenDaysMoveActorCount <Int32?>]`: The number of distinct actors that performed the action. Read-only.
           - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Id <String>]`: The id of the content type.
+            - `[Name <String>]`: 
           - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
             - `[Id <String>]`: Read-only.
@@ -6193,12 +6412,12 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: Read-only.
           - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
           - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
           - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6206,6 +6425,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
         - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
         - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+        - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
         - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
         - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
       - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -6216,6 +6436,8 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
     - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+    - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+    - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
     - `[FaxNumber <String>]`: The fax number of the user.
     - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6391,7 +6613,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
     - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
       - `[Id <String>]`: Read-only.
-      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
         - `[Id <String>]`: Read-only.
         - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastSharedMethodId <String>]`: Read-only.
@@ -6425,7 +6647,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[SharingReferenceId <String>]`: The item's unique identifier.
         - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
         - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         - `[Id <String>]`: Read-only.
         - `[LastModifiedDateTime <DateTime?>]`: 
         - `[ResourceId <String>]`: Read-only.
@@ -6441,7 +6663,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[ResourceVisualizationTitle <String>]`: The item's title text.
         - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
         - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
         - `[Id <String>]`: Read-only.
         - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -6467,6 +6689,48 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
         - `[Description <String>]`: Optional textual description for the channel.
         - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
         - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+        - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+        - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Id <String>]`: Read-only.
+          - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+            - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+            - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+            - `[Id <String>]`: Read-only. Unique id of the attachment.
+            - `[Name <String>]`: Name of the attachment.
+            - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+          - `[BodyContent <String>]`: The content of the item.
+          - `[BodyContentType <String>]`: bodyType
+          - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+          - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+          - `[Etag <String>]`: Read-only. Version number of the chat message.
+          - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+            - `[Id <String>]`: Read-only.
+          - `[Importance <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+          - `[Locale <String>]`: Locale of the chat message set by the client.
+          - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+            - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+            - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+            - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[MessageType <String>]`: 
+          - `[PolicyTipComplianceUrl <String>]`: 
+          - `[PolicyTipGeneralText <String>]`: 
+          - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+          - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+          - `[PolicyViolationJustificationText <String>]`: 
+          - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+          - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+          - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
+            - `[ReactionType <String>]`: 
+            - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+          - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+          - `[Subject <String>]`: The subject of the chat message, in plaintext.
+          - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+          - `[WebUrl <String>]`: 
         - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
           - `[Id <String>]`: Read-only.
           - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -6995,6 +7259,13 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
     - `[MySite <String>]`: The URL for the user's personal site.
+    - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+      - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+      - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+      - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
     - `[OfficeLocation <String>]`: The office location in the user's place of business.
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
     - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -7044,6 +7315,9 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
       - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
       - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
       - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+      - `[ExternalId <String>]`: 
+      - `[JoinInformationContent <String>]`: The content of the item.
+      - `[JoinInformationContentType <String>]`: bodyType
       - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
       - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -7248,6 +7522,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
   - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
   - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
   - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+  - `[HashSha256Hash <String>]`: 
   - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
   - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
   - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -7255,6 +7530,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
   - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
   - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
   - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+  - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
   - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -7282,6 +7558,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
   - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
   - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
   - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+  - `[PhotoOrientation <Int32?>]`: 
   - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
   - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
   - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -7297,6 +7574,7 @@ CHILDREN <IMicrosoftGraphDriveItem1[]>: Collection containing Item objects for t
     - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
     - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
     - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+    - `[HashSha256Hash <String>]`: 
     - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
     - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
     - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -7706,6 +7984,16 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
     - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
     - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
   - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+    - `[DeletedDateTime <DateTime?>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+    - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+    - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+    - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+    - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
   - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
     - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
     - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -7738,6 +8026,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[AddressPostalCode <String>]`: The postal code.
       - `[AddressState <String>]`: The state.
       - `[AddressStreet <String>]`: The street.
+      - `[AllowNewTimeProposals <Boolean?>]`: 
       - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ContentType <String>]`: The MIME type.
@@ -7750,6 +8039,10 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
         - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
           - `[Address <String>]`: The email address of the person or entity.
           - `[Name <String>]`: The display name of the person or entity.
+        - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
         - `[StatusResponse <String>]`: responseType
         - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
       - `[BodyContent <String>]`: The content of the item.
@@ -8102,6 +8395,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
       - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
       - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+      - `[HashSha256Hash <String>]`: 
       - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
       - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
       - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -8120,6 +8414,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
         - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
         - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
           - `[Id <String>]`: The id of the content type.
+          - `[Name <String>]`: 
         - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
         - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
           - `[Id <String>]`: Read-only.
@@ -8135,6 +8430,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
       - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
       - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+      - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
       - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -8162,6 +8458,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
       - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
       - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+      - `[PhotoOrientation <Int32?>]`: 
       - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
       - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
       - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -8177,6 +8474,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
         - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
         - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
         - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+        - `[HashSha256Hash <String>]`: 
         - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
         - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
         - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -8219,12 +8517,12 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: Read-only.
         - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
         - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-        - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+        - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
         - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
       - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
@@ -8580,6 +8878,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
         - `[Description <String>]`: The user-facing description of the column.
         - `[DisplayName <String>]`: The user-facing name of the column.
         - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+        - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
         - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
         - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
         - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -8631,6 +8930,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
       - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
       - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+      - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
       - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
       - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
     - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -8641,6 +8941,8 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
   - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+  - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+  - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
   - `[FaxNumber <String>]`: The fax number of the user.
   - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -8816,7 +9118,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
   - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
     - `[Id <String>]`: Read-only.
-    - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+    - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
       - `[Id <String>]`: Read-only.
       - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
       - `[LastSharedMethodId <String>]`: Read-only.
@@ -8850,7 +9152,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[SharingReferenceId <String>]`: The item's unique identifier.
       - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
       - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-    - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+    - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
       - `[Id <String>]`: Read-only.
       - `[LastModifiedDateTime <DateTime?>]`: 
       - `[ResourceId <String>]`: Read-only.
@@ -8866,7 +9168,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[ResourceVisualizationTitle <String>]`: The item's title text.
       - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
       - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-    - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+    - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
       - `[Id <String>]`: Read-only.
       - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
       - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -8892,6 +9194,48 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
       - `[Description <String>]`: Optional textual description for the channel.
       - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
       - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+      - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+      - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+        - `[Id <String>]`: Read-only.
+        - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+          - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+          - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+          - `[Id <String>]`: Read-only. Unique id of the attachment.
+          - `[Name <String>]`: Name of the attachment.
+          - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+        - `[BodyContent <String>]`: The content of the item.
+        - `[BodyContentType <String>]`: bodyType
+        - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+        - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+        - `[Etag <String>]`: Read-only. Version number of the chat message.
+        - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+          - `[Id <String>]`: Read-only.
+        - `[Importance <String>]`: 
+        - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+        - `[Locale <String>]`: Locale of the chat message set by the client.
+        - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+          - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+          - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+          - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[MessageType <String>]`: 
+        - `[PolicyTipComplianceUrl <String>]`: 
+        - `[PolicyTipGeneralText <String>]`: 
+        - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+        - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+        - `[PolicyViolationJustificationText <String>]`: 
+        - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+        - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+        - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+          - `[CreatedDateTime <DateTime?>]`: 
+          - `[ReactionType <String>]`: 
+          - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+        - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+        - `[Subject <String>]`: The subject of the chat message, in plaintext.
+        - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+        - `[WebUrl <String>]`: 
       - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
         - `[Id <String>]`: Read-only.
         - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -9420,6 +9764,13 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
   - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
   - `[MySite <String>]`: The URL for the user's personal site.
+  - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+    - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+    - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+    - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
   - `[OfficeLocation <String>]`: The office location in the user's place of business.
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
   - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -9469,6 +9820,9 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory user 
     - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+    - `[ExternalId <String>]`: 
+    - `[JoinInformationContent <String>]`: The content of the item.
+    - `[JoinInformationContentType <String>]`: bodyType
     - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
     - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -9693,6 +10047,16 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
     - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
     - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
   - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+  - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+    - `[DeletedDateTime <DateTime?>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+    - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+    - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+    - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+    - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
   - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
     - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
     - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -9725,6 +10089,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[AddressPostalCode <String>]`: The postal code.
       - `[AddressState <String>]`: The state.
       - `[AddressStreet <String>]`: The street.
+      - `[AllowNewTimeProposals <Boolean?>]`: 
       - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ContentType <String>]`: The MIME type.
@@ -9737,6 +10102,10 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
         - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
           - `[Address <String>]`: The email address of the person or entity.
           - `[Name <String>]`: The display name of the person or entity.
+        - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
         - `[StatusResponse <String>]`: responseType
         - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
       - `[BodyContent <String>]`: The content of the item.
@@ -10089,6 +10458,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
       - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
       - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+      - `[HashSha256Hash <String>]`: 
       - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
       - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
       - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -10107,6 +10477,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
         - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
         - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
           - `[Id <String>]`: The id of the content type.
+          - `[Name <String>]`: 
         - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
         - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
           - `[Id <String>]`: Read-only.
@@ -10122,6 +10493,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
       - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
       - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+      - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
       - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -10149,6 +10521,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
       - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
       - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+      - `[PhotoOrientation <Int32?>]`: 
       - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
       - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
       - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -10164,6 +10537,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
         - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
         - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
         - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+        - `[HashSha256Hash <String>]`: 
         - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
         - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
         - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -10206,12 +10580,12 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: Read-only.
         - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+        - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
         - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-        - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+        - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
         - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
       - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
@@ -10567,6 +10941,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
         - `[Description <String>]`: The user-facing description of the column.
         - `[DisplayName <String>]`: The user-facing name of the column.
         - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+        - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
         - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
         - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
         - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -10618,6 +10993,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
       - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
       - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+      - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
       - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
       - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
     - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -10628,6 +11004,8 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
   - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
   - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+  - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+  - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
   - `[FaxNumber <String>]`: The fax number of the user.
   - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -10803,7 +11181,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
   - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
     - `[Id <String>]`: Read-only.
-    - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+    - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
       - `[Id <String>]`: Read-only.
       - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
       - `[LastSharedMethodId <String>]`: Read-only.
@@ -10837,7 +11215,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[SharingReferenceId <String>]`: The item's unique identifier.
       - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
       - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-    - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+    - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
       - `[Id <String>]`: Read-only.
       - `[LastModifiedDateTime <DateTime?>]`: 
       - `[ResourceId <String>]`: Read-only.
@@ -10853,7 +11231,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[ResourceVisualizationTitle <String>]`: The item's title text.
       - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
       - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-    - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+    - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
       - `[Id <String>]`: Read-only.
       - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
       - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -10879,6 +11257,48 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
       - `[Description <String>]`: Optional textual description for the channel.
       - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
       - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+      - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+      - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+        - `[Id <String>]`: Read-only.
+        - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+          - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+          - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+          - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+          - `[Id <String>]`: Read-only. Unique id of the attachment.
+          - `[Name <String>]`: Name of the attachment.
+          - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+        - `[BodyContent <String>]`: The content of the item.
+        - `[BodyContentType <String>]`: bodyType
+        - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+        - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+        - `[Etag <String>]`: Read-only. Version number of the chat message.
+        - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+          - `[Id <String>]`: Read-only.
+        - `[Importance <String>]`: 
+        - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+        - `[Locale <String>]`: Locale of the chat message set by the client.
+        - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+          - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+          - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+          - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[MessageType <String>]`: 
+        - `[PolicyTipComplianceUrl <String>]`: 
+        - `[PolicyTipGeneralText <String>]`: 
+        - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+        - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+        - `[PolicyViolationJustificationText <String>]`: 
+        - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+        - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+        - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+          - `[CreatedDateTime <DateTime?>]`: 
+          - `[ReactionType <String>]`: 
+          - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+        - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+        - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+        - `[Subject <String>]`: The subject of the chat message, in plaintext.
+        - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+        - `[WebUrl <String>]`: 
       - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
         - `[Id <String>]`: Read-only.
         - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -11407,6 +11827,13 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
   - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
   - `[MySite <String>]`: The URL for the user's personal site.
+  - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+    - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+    - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+    - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
   - `[OfficeLocation <String>]`: The office location in the user's place of business.
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
   - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -11456,6 +11883,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: Represents an Azure Active Directory 
     - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+    - `[ExternalId <String>]`: 
+    - `[JoinInformationContent <String>]`: The content of the item.
+    - `[JoinInformationContentType <String>]`: bodyType
     - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
     - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -11664,6 +12094,16 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[VisualElementDescription <String>]`: Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
       - `[VisualElementDisplayText <String>]`: Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
     - `[AgeGroup <String>]`: Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
+    - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: 
+      - `[DeletedDateTime <DateTime?>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+      - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+      - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+      - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+      - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user. Not nullable.
       - `[DisabledPlans <String[]>]`: A collection of the unique identifiers for plans that have been disabled.
       - `[SkuId <String>]`: The unique identifier for the SKU.
@@ -11696,6 +12136,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[AddressPostalCode <String>]`: The postal code.
         - `[AddressState <String>]`: The state.
         - `[AddressStreet <String>]`: The street.
+        - `[AllowNewTimeProposals <Boolean?>]`: 
         - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[ContentType <String>]`: The MIME type.
@@ -11708,6 +12149,10 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
             - `[Address <String>]`: The email address of the person or entity.
             - `[Name <String>]`: The display name of the person or entity.
+          - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+          - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+          - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
           - `[StatusResponse <String>]`: responseType
           - `[StatusTime <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         - `[BodyContent <String>]`: The content of the item.
@@ -12055,6 +12500,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
         - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
         - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+        - `[HashSha256Hash <String>]`: 
         - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
         - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
         - `[ListItem <IMicrosoftGraphListItem>]`: listItem
@@ -12062,6 +12508,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[LocationLatitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
         - `[LocationLongitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
         - `[PackageType <String>]`: A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.
+        - `[PendingContentUpdateQueuedDateTime <DateTime?>]`: 
         - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[ApplicationDisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -12089,6 +12536,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[PhotoFNumber <Double?>]`: The F-stop value from the camera. Read-only.
         - `[PhotoFocalLength <Double?>]`: The focal length from the camera. Read-only.
         - `[PhotoIso <Int32?>]`: The ISO value from the camera. Read-only.
+        - `[PhotoOrientation <Int32?>]`: 
         - `[PhotoTakenDateTime <DateTime?>]`: Represents the date and time the photo was taken. Read-only.
         - `[PublicationLevel <String>]`: The state of publication for this document. Either published or checkout. Read-only.
         - `[PublicationVersionId <String>]`: The unique identifier for the version that is visible to the current caller. Read-only.
@@ -12104,6 +12552,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
           - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
           - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+          - `[HashSha256Hash <String>]`: 
           - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
           - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
           - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -12146,12 +12595,12 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: Read-only.
           - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
           - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+          - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
           - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
         - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
@@ -12507,6 +12956,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[Description <String>]`: The user-facing description of the column.
           - `[DisplayName <String>]`: The user-facing name of the column.
           - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+          - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
           - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
           - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
           - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.
@@ -12558,6 +13008,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[Deleted <Int64?>]`: Total space consumed by files in the recycle bin, in bytes. Read-only.
         - `[Remaining <Int64?>]`: Total space remaining before reaching the quota limit, in bytes. Read-only.
         - `[State <String>]`: Enumeration value that indicates the state of the storage space. Read-only.
+        - `[StoragePlanInformationUpgradeAvailable <Boolean?>]`: 
         - `[Total <Int64?>]`: Total allowed storage space, in bytes. Read-only.
         - `[Used <Int64?>]`: Total space used, in bytes. Read-only.
       - `[Root <IMicrosoftGraphDriveItem1>]`: driveItem
@@ -12568,6 +13019,8 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. Supports $filter.
     - `[Events <IMicrosoftGraphEvent1[]>]`: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the user. Read-only. Nullable.
+    - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq 'PendingAcceptance'.
+    - `[ExternalUserStateChangeDateTime <DateTime?>]`: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
     - `[FaxNumber <String>]`: The fax number of the user.
     - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -12743,7 +13196,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[SenderEmailAddressName <String>]`: The display name of the person or entity.
     - `[Insights <IMicrosoftGraphOfficeGraphInsights>]`: officeGraphInsights
       - `[Id <String>]`: Read-only.
-      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+      - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
         - `[Id <String>]`: Read-only.
         - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastSharedMethodId <String>]`: Read-only.
@@ -12777,7 +13230,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[SharingReferenceId <String>]`: The item's unique identifier.
         - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
         - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+      - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
         - `[Id <String>]`: Read-only.
         - `[LastModifiedDateTime <DateTime?>]`: 
         - `[ResourceId <String>]`: Read-only.
@@ -12793,7 +13246,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[ResourceVisualizationTitle <String>]`: The item's title text.
         - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
         - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+      - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
         - `[Id <String>]`: Read-only.
         - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
         - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -12819,6 +13272,48 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[Description <String>]`: Optional textual description for the channel.
         - `[DisplayName <String>]`: Channel name as it will appear to the user in Microsoft Teams.
         - `[Email <String>]`: The email address for sending messages to the channel. Read-only.
+        - `[FilesFolder <IMicrosoftGraphDriveItem1>]`: driveItem
+        - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Id <String>]`: Read-only.
+          - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+            - `[ContentType <String>]`: The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.
+            - `[ContentUrl <String>]`: URL for the content of the attachment. Supported protocols: http, https, file and data.
+            - `[Id <String>]`: Read-only. Unique id of the attachment.
+            - `[Name <String>]`: Name of the attachment.
+            - `[ThumbnailUrl <String>]`: URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+          - `[BodyContent <String>]`: The content of the item.
+          - `[BodyContentType <String>]`: bodyType
+          - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message was created.
+          - `[DeletedDateTime <DateTime?>]`: Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+          - `[Etag <String>]`: Read-only. Version number of the chat message.
+          - `[From <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[HostedContents <IMicrosoftGraphChatMessageHostedContent[]>]`: 
+            - `[Id <String>]`: Read-only.
+          - `[Importance <String>]`: 
+          - `[LastModifiedDateTime <DateTime?>]`: Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it's a root chat message in a channel) or a reaction is added or removed.
+          - `[Locale <String>]`: Locale of the chat message set by the client.
+          - `[Mentions <IMicrosoftGraphChatMessageMention[]>]`: List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+            - `[Id <Int32?>]`: Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
+            - `[MentionText <String>]`: String used to represent the mention. For example, a user's display name, a team name.
+            - `[Mentioned <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[MessageType <String>]`: 
+          - `[PolicyTipComplianceUrl <String>]`: 
+          - `[PolicyTipGeneralText <String>]`: 
+          - `[PolicyTipMatchedConditionDescriptions <String[]>]`: 
+          - `[PolicyViolationDlpAction <String>]`: chatMessagePolicyViolationDlpActionTypes
+          - `[PolicyViolationJustificationText <String>]`: 
+          - `[PolicyViolationUserAction <String>]`: chatMessagePolicyViolationUserActionTypes
+          - `[PolicyViolationVerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
+          - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
+            - `[ReactionType <String>]`: 
+            - `[User <IMicrosoftGraphIdentitySet>]`: identitySet
+          - `[Replies <IMicrosoftGraphChatMessage1[]>]`: 
+          - `[ReplyToId <String>]`: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+          - `[Subject <String>]`: The subject of the chat message, in plaintext.
+          - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+          - `[WebUrl <String>]`: 
         - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
           - `[Id <String>]`: Read-only.
           - `[ConfigurationContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -13347,6 +13842,13 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
     - `[MySite <String>]`: The URL for the user's personal site.
+    - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+      - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
+      - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+      - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
     - `[OfficeLocation <String>]`: The office location in the user's place of business.
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
     - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
@@ -13396,6 +13898,9 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[ChatInfoThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
       - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
       - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
+      - `[ExternalId <String>]`: 
+      - `[JoinInformationContent <String>]`: The content of the item.
+      - `[JoinInformationContentType <String>]`: bodyType
       - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
       - `[OrganizerIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[OrganizerUpn <String>]`: User principal name of the participant.
@@ -13570,6 +14075,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
   - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
   - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: 
   - `[DriveItem <IMicrosoftGraphDriveItem1>]`: driveItem
   - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
     - `[Id <String>]`: Read-only.
@@ -13657,6 +14163,7 @@ REMOTEITEM <IMicrosoftGraphRemoteItem>: remoteItem
   - `[HashCrc32Hash <String>]`: The CRC32 value of the file in little endian (if available). Read-only.
   - `[HashQuickXorHash <String>]`: A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
   - `[HashSha1Hash <String>]`: SHA1 hash for the contents of the file (if available). Read-only.
+  - `[HashSha256Hash <String>]`: 
   - `[Id <String>]`: Unique identifier for the remote item in its drive. Read-only.
   - `[ImageHeight <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
   - `[ImageWidth <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
@@ -13729,12 +14236,12 @@ SHAREPOINTIDS <IMicrosoftGraphSharepointIds>: sharepointIds
 SUBSCRIPTIONS <IMicrosoftGraphSubscription[]>: The set of subscriptions on the item. Only supported on the root of a drive.
   - `[Id <String>]`: Read-only.
   - `[ApplicationId <String>]`: Identifier of the application used to create the subscription. Read-only.
-  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.
-  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+  - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
   - `[CreatorId <String>]`: Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
   - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.
   - `[LatestSupportedTlsVersion <String>]`: Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-  - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+  - `[NotificationUrl <String>]`: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
   - `[Resource <String>]`: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
 
 THUMBNAILS <IMicrosoftGraphThumbnailSet[]>: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.

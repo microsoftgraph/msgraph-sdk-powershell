@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 08c47b2a-6241-49d2-837a-cd7a54ffd31f
+Module Guid: 2919955f-57a7-4f71-97e0-d4f96aad0aae
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -487,6 +487,9 @@ Invoke action sendCustomNotificationToCompanyPortal
 
 ### [Send-MgUserMessage](Send-MgUserMessage.md)
 Invoke action send
+
+### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
+Invoke action sendActivityNotification
 
 ### [Set-MgUserDeviceEnrollmentConfiguration](Set-MgUserDeviceEnrollmentConfiguration.md)
 Invoke action assign

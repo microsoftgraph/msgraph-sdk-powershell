@@ -25,7 +25,7 @@ Update-MgUserContact -ContactId <String> -UserId <String> [-AssistantName <Strin
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-PhotoHeight <Int32>] [-PhotoId <String>] [-PhotoWidth <Int32>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>] [-Profession <String>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-StartDateTime <String>] [-StartDateTimeZone <String>] [-Surname <String>] [-Title <String>]
  [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>] [-YomiCompanyName <String>]
@@ -34,14 +34,14 @@ Update-MgUserContact -ContactId <String> -UserId <String> [-AssistantName <Strin
 
 ### Update
 ```
-Update-MgUserContact -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphContact1> [-PassThru]
+Update-MgUserContact -ContactId <String> -UserId <String> -BodyParameter <IMicrosoftGraphContact> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgUserContact -InputObject <IUsersContactsIdentity> -BodyParameter <IMicrosoftGraphContact1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserContact -InputObject <IUsersContactsIdentity> -BodyParameter <IMicrosoftGraphContact> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -57,7 +57,7 @@ Update-MgUserContact -InputObject <IUsersContactsIdentity> [-AssistantName <Stri
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-NickName <String>]
  [-OfficeLocation <String>] [-ParentFolderId <String>] [-PersonalNotes <String>]
  [-Phones <IMicrosoftGraphPhone[]>] [-PhotoHeight <Int32>] [-PhotoId <String>] [-PhotoWidth <Int32>]
- [-PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>] [-Profession <String>]
+ [-PostalAddresses <IMicrosoftGraphPhysicalAddress[]>] [-Profession <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-SpouseName <String>]
  [-StartDateTime <String>] [-StartDateTimeZone <String>] [-Surname <String>] [-Title <String>]
  [-Websites <IMicrosoftGraphWebsite[]>] [-WeddingAnniversary <DateTime>] [-YomiCompanyName <String>]
@@ -126,7 +126,7 @@ contact
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -733,7 +733,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -980,7 +980,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContact
 
 ### Microsoft.Graph.PowerShell.Models.IUsersContactsIdentity
 
@@ -997,7 +997,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphContact1>: contact
+BODYPARAMETER <IMicrosoftGraphContact>: contact
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -1044,7 +1044,7 @@ BODYPARAMETER <IMicrosoftGraphContact1>: contact
   - `[PhotoHeight <Int32?>]`: The height of the photo. Read-only.
   - `[PhotoId <String>]`: Read-only.
   - `[PhotoWidth <Int32?>]`: The width of the photo. Read-only.
-  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress1[]>]`: 
+  - `[PostalAddresses <IMicrosoftGraphPhysicalAddress[]>]`: 
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: 
@@ -1096,7 +1096,7 @@ PHONES <IMicrosoftGraphPhone[]>: .
   - `[Number <String>]`: The phone number.
   - `[Type <String>]`: phoneType
 
-POSTALADDRESSES <IMicrosoftGraphPhysicalAddress1[]>: .
+POSTALADDRESSES <IMicrosoftGraphPhysicalAddress[]>: .
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[PostOfficeBox <String>]`: 

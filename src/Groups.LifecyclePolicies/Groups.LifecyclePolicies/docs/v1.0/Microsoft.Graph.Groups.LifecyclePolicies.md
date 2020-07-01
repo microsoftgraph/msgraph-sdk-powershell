@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.LifecyclePolicies
-Module Guid: f2e72785-1a3f-4930-9ae0-885ebdf845d8
+Module Guid: 728b1f28-443f-4853-93c8-338981fcd12c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.lifecyclepolicies
 Help Version: 1.0.0.0
 Locale: en-US

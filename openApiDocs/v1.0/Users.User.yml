@@ -58,6 +58,10 @@ paths:
                 - displayName desc
                 - employeeId
                 - employeeId desc
+                - externalUserState
+                - externalUserState desc
+                - externalUserStateChangeDateTime
+                - externalUserStateChangeDateTime desc
                 - faxNumber
                 - faxNumber desc
                 - givenName
@@ -184,6 +188,8 @@ paths:
                 - department
                 - displayName
                 - employeeId
+                - externalUserState
+                - externalUserStateChangeDateTime
                 - faxNumber
                 - givenName
                 - identities
@@ -234,12 +240,14 @@ paths:
                 - responsibilities
                 - schools
                 - skills
+                - appRoleAssignments
                 - ownedDevices
                 - registeredDevices
                 - manager
                 - directReports
                 - memberOf
                 - createdObjects
+                - oauth2PermissionGrants
                 - ownedObjects
                 - licenseDetails
                 - transitiveMemberOf
@@ -283,12 +291,14 @@ paths:
             items:
               enum:
                 - '*'
+                - appRoleAssignments
                 - ownedDevices
                 - registeredDevices
                 - manager
                 - directReports
                 - memberOf
                 - createdObjects
+                - oauth2PermissionGrants
                 - ownedObjects
                 - licenseDetails
                 - transitiveMemberOf
@@ -403,6 +413,8 @@ paths:
                 - department
                 - displayName
                 - employeeId
+                - externalUserState
+                - externalUserStateChangeDateTime
                 - faxNumber
                 - givenName
                 - identities
@@ -453,12 +465,14 @@ paths:
                 - responsibilities
                 - schools
                 - skills
+                - appRoleAssignments
                 - ownedDevices
                 - registeredDevices
                 - manager
                 - directReports
                 - memberOf
                 - createdObjects
+                - oauth2PermissionGrants
                 - ownedObjects
                 - licenseDetails
                 - transitiveMemberOf
@@ -502,12 +516,14 @@ paths:
             items:
               enum:
                 - '*'
+                - appRoleAssignments
                 - ownedDevices
                 - registeredDevices
                 - manager
                 - directReports
                 - memberOf
                 - createdObjects
+                - oauth2PermissionGrants
                 - ownedObjects
                 - licenseDetails
                 - transitiveMemberOf
@@ -548,6 +564,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
           links:
+            appRoleAssignments:
+              operationId: users.GetAppRoleAssignments
+              parameters:
+                user-id: $request.path.user-id
+                appRoleAssignment-id: $response.body#/id
             ownedDevices:
               operationId: users.GetOwnedDevices
               parameters:
@@ -578,6 +599,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 directoryObject-id: $response.body#/id
+            oauth2PermissionGrants:
+              operationId: users.GetOauth2PermissionGrants
+              parameters:
+                user-id: $request.path.user-id
+                oAuth2PermissionGrant-id: $response.body#/id
             ownedObjects:
               operationId: users.GetOwnedObjects
               parameters:
@@ -849,6 +875,16 @@ components:
               type: string
               description: The employee identifier assigned to the user by the organization. Supports $filter.
               nullable: true
+            externalUserState:
+              type: string
+              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq ''PendingAcceptance''.'
+              nullable: true
+            externalUserStateChangeDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
+              format: date-time
+              nullable: true
             faxNumber:
               type: string
               description: The fax number of the user.
@@ -1071,6 +1107,10 @@ components:
                 type: string
                 nullable: true
               description: A list for the user to enumerate their skills.
+            appRoleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
             ownedDevices:
               type: array
               items:
@@ -1098,6 +1138,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that were created by the user. Read-only. Nullable.
+            oauth2PermissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
             ownedObjects:
               type: array
               items:
@@ -1241,6 +1285,8 @@ components:
         department: string
         displayName: string
         employeeId: string
+        externalUserState: string
+        externalUserStateChangeDateTime: string (timestamp)
         faxNumber: string
         givenName: string
         identities:
@@ -1306,6 +1352,8 @@ components:
           - string
         skills:
           - string
+        appRoleAssignments:
+          - '@odata.type': microsoft.graph.appRoleAssignment
         ownedDevices:
           - '@odata.type': microsoft.graph.directoryObject
         registeredDevices:
@@ -1318,6 +1366,8 @@ components:
           - '@odata.type': microsoft.graph.directoryObject
         createdObjects:
           - '@odata.type': microsoft.graph.directoryObject
+        oauth2PermissionGrants:
+          - '@odata.type': microsoft.graph.oAuth2PermissionGrant
         ownedObjects:
           - '@odata.type': microsoft.graph.directoryObject
         licenseDetails:
@@ -1685,6 +1735,88 @@ components:
           '@odata.type': microsoft.graph.workingHours
         dateFormat: string
         timeFormat: string
+    microsoft.graph.appRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: appRoleAssignment
+          type: object
+          properties:
+            appRoleId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.'
+              format: uuid
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            principalDisplayName:
+              type: string
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).'
+              nullable: true
+            principalId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.'
+              format: uuid
+              nullable: true
+            principalType:
+              type: string
+              description: 'The type of the assigned principal. This can either be ''User'', ''Group'' or ''ServicePrincipal''. Read-only. Does not support $filter.'
+              nullable: true
+            resourceDisplayName:
+              type: string
+              description: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+              nullable: true
+            resourceId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
+              format: uuid
+              nullable: true
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        appRoleId: string
+        createdDateTime: string (timestamp)
+        principalDisplayName: string
+        principalId: string
+        principalType: string
+        resourceDisplayName: string
+        resourceId: string
+    microsoft.graph.oAuth2PermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: oAuth2PermissionGrant
+          type: object
+          properties:
+            clientId:
+              type: string
+              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+            consentType:
+              type: string
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              nullable: true
+            principalId:
+              type: string
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              nullable: true
+            resourceId:
+              type: string
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+            scope:
+              type: string
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              nullable: true
+      example:
+        id: string (identifier)
+        clientId: string
+        consentType: string
+        principalId: string
+        resourceId: string
+        scope: string
     microsoft.graph.licenseDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2227,6 +2359,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
+            allowNewTimeProposals:
+              type: boolean
+              nullable: true
             attachments:
               type: array
               items:
@@ -2308,6 +2443,7 @@ components:
           '@odata.type': microsoft.graph.onlineMeetingProviderType
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
+        allowNewTimeProposals: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -3307,17 +3443,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             shared:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.'
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       example:
         id: string (identifier)
         trending:
@@ -3516,6 +3652,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -3530,6 +3671,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4144,6 +4288,8 @@ components:
           properties:
             status:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
+            proposedNewTime:
+              $ref: '#/components/schemas/microsoft.graph.timeSlot'
       example:
         emailAddress:
           '@odata.type': microsoft.graph.emailAddress
@@ -4151,6 +4297,8 @@ components:
           '@odata.type': microsoft.graph.attendeeType
         status:
           '@odata.type': microsoft.graph.responseStatus
+        proposedNewTime:
+          '@odata.type': microsoft.graph.timeSlot
     microsoft.graph.onlineMeetingInfo:
       title: onlineMeetingInfo
       type: object
@@ -4422,12 +4570,16 @@ components:
           description: 'Total space used, in bytes. Read-only.'
           format: int64
           nullable: true
+        storagePlanInformation:
+          $ref: '#/components/schemas/microsoft.graph.storagePlanInformation'
       example:
         deleted: integer
         remaining: integer
         state: string
         total: integer
         used: integer
+        storagePlanInformation:
+          '@odata.type': microsoft.graph.storagePlanInformation
     microsoft.graph.sharepointIds:
       title: sharepointIds
       type: object
@@ -4502,6 +4654,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
             package:
               $ref: '#/components/schemas/microsoft.graph.package'
+            pendingOperations:
+              $ref: '#/components/schemas/microsoft.graph.pendingOperations'
             photo:
               $ref: '#/components/schemas/microsoft.graph.photo'
             publication:
@@ -4596,6 +4750,8 @@ components:
           '@odata.type': microsoft.graph.geoCoordinates
         package:
           '@odata.type': microsoft.graph.package
+        pendingOperations:
+          '@odata.type': microsoft.graph.pendingOperations
         photo:
           '@odata.type': microsoft.graph.photo
         publication:
@@ -4810,6 +4966,8 @@ components:
               type: boolean
               description: 'If true, no two list items may have the same value for this column.'
               nullable: true
+            geolocation:
+              $ref: '#/components/schemas/microsoft.graph.geolocationColumn'
             hidden:
               type: boolean
               description: Specifies whether the column is displayed in the user interface.
@@ -4856,6 +5014,8 @@ components:
         description: string
         displayName: string
         enforceUniqueValues: true
+        geolocation:
+          '@odata.type': microsoft.graph.geolocationColumn
         hidden: true
         indexed: true
         lookup:
@@ -6392,19 +6552,30 @@ components:
               type: string
               description: 'A hyperlink that will navigate to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              description: A collection of all the messages in the channel. A navigation property. Nullable.
             tabs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
               description: A collection of all the tabs in the channel. A navigation property.
+            filesFolder:
+              $ref: '#/components/schemas/microsoft.graph.driveItem'
       example:
         id: string (identifier)
         displayName: string
         description: string
         email: string
         webUrl: string
+        messages:
+          - '@odata.type': microsoft.graph.chatMessage
         tabs:
           - '@odata.type': microsoft.graph.teamsTab
+        filesFolder:
+          '@odata.type': microsoft.graph.driveItem
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6979,6 +7150,19 @@ components:
           '@odata.type': microsoft.graph.emailAddress
         type:
           '@odata.type': microsoft.graph.attendeeType
+    microsoft.graph.timeSlot:
+      title: timeSlot
+      type: object
+      properties:
+        start:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        end:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      example:
+        start:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        end:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
     microsoft.graph.selectionLikelihoodInfo:
       title: selectionLikelihoodInfo
       enum:
@@ -7066,6 +7250,15 @@ components:
       example:
         displayName: string
         id: string
+    microsoft.graph.storagePlanInformation:
+      title: storagePlanInformation
+      type: object
+      properties:
+        upgradeAvailable:
+          type: boolean
+          nullable: true
+      example:
+        upgradeAvailable: true
     microsoft.graph.audio:
       title: audio
       type: object
@@ -7293,6 +7486,15 @@ components:
           nullable: true
       example:
         type: string
+    microsoft.graph.pendingOperations:
+      title: pendingOperations
+      type: object
+      properties:
+        pendingContentUpdate:
+          $ref: '#/components/schemas/microsoft.graph.pendingContentUpdate'
+      example:
+        pendingContentUpdate:
+          '@odata.type': microsoft.graph.pendingContentUpdate
     microsoft.graph.photo:
       title: photo
       type: object
@@ -7332,6 +7534,12 @@ components:
           description: The ISO value from the camera. Read-only.
           format: int32
           nullable: true
+        orientation:
+          maximum: 32767
+          minimum: -32768
+          type: integer
+          format: int16
+          nullable: true
         takenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
@@ -7346,6 +7554,7 @@ components:
         fNumber: double
         focalLength: double
         iso: integer
+        orientation: integer
         takenDateTime: string (timestamp)
     microsoft.graph.publicationFacet:
       title: publicationFacet
@@ -7736,14 +7945,14 @@ components:
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list notifications support only the updated changeType. User and group notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
-              description: Optional. Specifies the value of the clientState property sent by the service in each notification. The maximum length is 128 characters. The client can check that the notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -8024,6 +8233,9 @@ components:
       example:
         formula: string
         value: string
+    microsoft.graph.geolocationColumn:
+      title: geolocationColumn
+      type: object
     microsoft.graph.lookupColumn:
       title: lookupColumn
       type: object
@@ -9103,6 +9315,115 @@ components:
         startDateTime: string (timestamp)
         endDateTime: string (timestamp)
         timeOffReasonId: string
+    microsoft.graph.chatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessage
+          type: object
+          properties:
+            replyToId:
+              type: string
+              description: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            etag:
+              type: string
+              description: Read-only. Version number of the chat message.
+              nullable: true
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Read only. Timestamp of when the chat message was created.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it''s a root chat message in a channel) or a reaction is added or removed.'
+              format: date-time
+              nullable: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              description: 'The subject of the chat message, in plaintext.'
+              nullable: true
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            summary:
+              type: string
+              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
+              nullable: true
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
+              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
+              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
+            policyViolation:
+              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+            locale:
+              type: string
+              description: Locale of the chat message set by the client.
+            webUrl:
+              type: string
+              nullable: true
+            replies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+            hostedContents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+      example:
+        id: string (identifier)
+        replyToId: string
+        from:
+          '@odata.type': microsoft.graph.identitySet
+        etag: string
+        messageType:
+          '@odata.type': microsoft.graph.chatMessageType
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        deletedDateTime: string (timestamp)
+        subject: string
+        body:
+          '@odata.type': microsoft.graph.itemBody
+        summary: string
+        attachments:
+          - '@odata.type': microsoft.graph.chatMessageAttachment
+        mentions:
+          - '@odata.type': microsoft.graph.chatMessageMention
+        importance:
+          '@odata.type': microsoft.graph.chatMessageImportance
+        policyViolation:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolation
+        reactions:
+          - '@odata.type': microsoft.graph.chatMessageReaction
+        locale: string
+        webUrl: string
+        replies:
+          - '@odata.type': microsoft.graph.chatMessage
+        hostedContents:
+          - '@odata.type': microsoft.graph.chatMessageHostedContent
     microsoft.graph.teamsTab:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9313,10 +9634,14 @@ components:
           type: string
           description: SHA1 hash for the contents of the file (if available). Read-only.
           nullable: true
+        sha256Hash:
+          type: string
+          nullable: true
       example:
         crc32Hash: string
         quickXorHash: string
         sha1Hash: string
+        sha256Hash: string
     microsoft.graph.folderView:
       title: folderView
       type: object
@@ -9337,6 +9662,17 @@ components:
         sortBy: string
         sortOrder: string
         viewType: string
+    microsoft.graph.pendingContentUpdate:
+      title: pendingContentUpdate
+      type: object
+      properties:
+        queuedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      example:
+        queuedDateTime: string (timestamp)
     microsoft.graph.workbookApplication:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9556,8 +9892,12 @@ components:
           type: string
           description: The id of the content type.
           nullable: true
+        name:
+          type: string
+          nullable: true
       example:
         id: string
+        name: string
     microsoft.graph.fieldValueSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10015,6 +10355,128 @@ components:
         managerActionDateTime: string (timestamp)
         senderUserId: string
         managerUserId: string
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageAttachment:
+      title: chatMessageAttachment
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only. Unique id of the attachment.
+          nullable: true
+        contentType:
+          type: string
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.'
+          nullable: true
+        contentUrl:
+          type: string
+          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
+          nullable: true
+        content:
+          type: string
+          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
+          nullable: true
+        name:
+          type: string
+          description: Name of the attachment.
+          nullable: true
+        thumbnailUrl:
+          type: string
+          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
+          nullable: true
+      example:
+        id: string
+        contentType: string
+        contentUrl: string
+        content: string
+        name: string
+        thumbnailUrl: string
+    microsoft.graph.chatMessageMention:
+      title: chatMessageMention
+      type: object
+      properties:
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
+          format: int32
+          nullable: true
+        mentionText:
+          type: string
+          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
+          nullable: true
+        mentioned:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        id: integer
+        mentionText: string
+        mentioned:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.chatMessageImportance:
+      title: chatMessageImportance
+      enum:
+        - normal
+        - high
+        - urgent
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessagePolicyViolation:
+      title: chatMessagePolicyViolation
+      type: object
+      properties:
+        dlpAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
+        justificationText:
+          type: string
+          nullable: true
+        policyTip:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
+        userAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
+        verdictDetails:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
+      example:
+        dlpAction:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationDlpActionTypes
+        justificationText: string
+        policyTip:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationPolicyTip
+        userAction:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationUserActionTypes
+        verdictDetails:
+          '@odata.type': microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes
+    microsoft.graph.chatMessageReaction:
+      title: chatMessageReaction
+      type: object
+      properties:
+        reactionType:
+          type: string
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+      example:
+        reactionType: string
+        createdDateTime: string (timestamp)
+        user:
+          '@odata.type': microsoft.graph.identitySet
+    microsoft.graph.chatMessageHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessageHostedContent
+          type: object
+      example:
+        id: string (identifier)
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -10310,6 +10772,49 @@ components:
         - approved
         - declined
         - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
+      title: chatMessagePolicyViolationDlpActionTypes
+      enum:
+        - none
+        - notifySender
+        - blockAccess
+        - blockAccessExternal
+      type: string
+    microsoft.graph.chatMessagePolicyViolationPolicyTip:
+      title: chatMessagePolicyViolationPolicyTip
+      type: object
+      properties:
+        generalText:
+          type: string
+          nullable: true
+        complianceUrl:
+          type: string
+          nullable: true
+        matchedConditionDescriptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+      example:
+        generalText: string
+        complianceUrl: string
+        matchedConditionDescriptions:
+          - string
+    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
+      title: chatMessagePolicyViolationUserActionTypes
+      enum:
+        - none
+        - override
+        - reportFalsePositive
+      type: string
+    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
+      title: chatMessagePolicyViolationVerdictDetailsTypes
+      enum:
+        - none
+        - allowFalsePositiveOverride
+        - allowOverrideWithoutJustification
+        - allowOverrideWithJustification
       type: string
     microsoft.graph.workbookFilter:
       allOf:

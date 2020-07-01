@@ -19,7 +19,8 @@ Update-MgShareListColumn -ColumnDefinitionId <String> -SharedDriveItemId <String
  [-CalculatedOutputType <String>] [-ChoiceAllowTextEntry] [-ChoiceChoices <String[]>]
  [-ChoiceDisplayAs <String>] [-ColumnGroup <String>] [-CurrencyLocale <String>] [-DateTimeDisplayAs <String>]
  [-DateTimeFormat <String>] [-DefaultValueFormula <String>] [-DefaultValueValue <String>]
- [-Description <String>] [-DisplayName <String>] [-EnforceUniqueValues] [-Hidden] [-Id <String>] [-Indexed]
+ [-Description <String>] [-DisplayName <String>] [-EnforceUniqueValues]
+ [-Geolocation <IMicrosoftGraphGeolocationColumn>] [-Hidden] [-Id <String>] [-Indexed]
  [-LookupAllowMultipleValues] [-LookupAllowUnlimitedLength] [-LookupColumnName <String>]
  [-LookupListId <String>] [-LookupPrimaryLookupColumnId <String>] [-Name <String>]
  [-NumberDecimalPlaces <String>] [-NumberDisplayAs <String>] [-NumberMaximum <Double>]
@@ -48,11 +49,11 @@ Update-MgShareListColumn -InputObject <IFilesSharesIdentity> [-Boolean <IMicroso
  [-ChoiceAllowTextEntry] [-ChoiceChoices <String[]>] [-ChoiceDisplayAs <String>] [-ColumnGroup <String>]
  [-CurrencyLocale <String>] [-DateTimeDisplayAs <String>] [-DateTimeFormat <String>]
  [-DefaultValueFormula <String>] [-DefaultValueValue <String>] [-Description <String>] [-DisplayName <String>]
- [-EnforceUniqueValues] [-Hidden] [-Id <String>] [-Indexed] [-LookupAllowMultipleValues]
- [-LookupAllowUnlimitedLength] [-LookupColumnName <String>] [-LookupListId <String>]
- [-LookupPrimaryLookupColumnId <String>] [-Name <String>] [-NumberDecimalPlaces <String>]
- [-NumberDisplayAs <String>] [-NumberMaximum <Double>] [-NumberMinimum <Double>]
- [-PersonOrGroupAllowMultipleSelection] [-PersonOrGroupChooseFromType <String>]
+ [-EnforceUniqueValues] [-Geolocation <IMicrosoftGraphGeolocationColumn>] [-Hidden] [-Id <String>] [-Indexed]
+ [-LookupAllowMultipleValues] [-LookupAllowUnlimitedLength] [-LookupColumnName <String>]
+ [-LookupListId <String>] [-LookupPrimaryLookupColumnId <String>] [-Name <String>]
+ [-NumberDecimalPlaces <String>] [-NumberDisplayAs <String>] [-NumberMaximum <Double>]
+ [-NumberMinimum <Double>] [-PersonOrGroupAllowMultipleSelection] [-PersonOrGroupChooseFromType <String>]
  [-PersonOrGroupDisplayAs <String>] [-ReadOnly] [-Required] [-TextAllowMultipleLines]
  [-TextAppendChangesToExistingText] [-TextLinesForEditing <Int32>] [-TextMaxLength <Int32>]
  [-TextType <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -352,6 +353,21 @@ If true, no two list items may have the same value for this column.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Geolocation
+geolocationColumn
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGeolocationColumn
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -832,6 +848,7 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
   - `[Description <String>]`: The user-facing description of the column.
   - `[DisplayName <String>]`: The user-facing name of the column.
   - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
+  - `[Geolocation <IMicrosoftGraphGeolocationColumn>]`: geolocationColumn
   - `[Hidden <Boolean?>]`: Specifies whether the column is displayed in the user interface.
   - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
   - `[LookupAllowMultipleValues <Boolean?>]`: Indicates whether multiple values can be selected from the source.

@@ -18,18 +18,18 @@ Update-MgGroupCalendarEvent -EventId <String> -GroupId <String> [-AddressCity <S
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressPostOfficeBox <String>]
  [-AddressState <String>] [-AddressStreet <String>] [-AddressType <String>] [-AllowNewTimeProposals]
  [-Attachments <IMicrosoftGraphAttachment[]>] [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>]
- [-BodyContentType <String>] [-BodyPreview <String>] [-Calendar <IMicrosoftGraphCalendar>]
+ [-BodyContentType <String>] [-BodyPreview <String>] [-Calendar <IMicrosoftGraphCalendar1>]
  [-Categories <String[]>] [-ChangeKey <String>] [-CoordinateAccuracy <Double>] [-CoordinateAltitude <Double>]
  [-CoordinateAltitudeAccuracy <Double>] [-CoordinateLatitude <Double>] [-CoordinateLongitude <Double>]
  [-CreatedDateTime <DateTime>] [-EndDateTime <String>] [-EndTimeZone <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments] [-Id <String>] [-Importance <String>]
  [-Instances <IMicrosoftGraphEvent1[]>] [-IsAllDay] [-IsCancelled] [-IsDraft] [-IsOnlineMeeting]
  [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>] [-LocationDisplayName <String>]
- [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>] [-LocationType <String>]
+ [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>] [-LocationType <String>]
  [-LocationUniqueId <String>] [-LocationUniqueIdType <String>] [-LocationUri <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -62,18 +62,18 @@ Update-MgGroupCalendarEvent -InputObject <IGroupsCalendarIdentity> [-AddressCity
  [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressPostOfficeBox <String>]
  [-AddressState <String>] [-AddressStreet <String>] [-AddressType <String>] [-AllowNewTimeProposals]
  [-Attachments <IMicrosoftGraphAttachment[]>] [-Attendees <IMicrosoftGraphAttendee[]>] [-BodyContent <String>]
- [-BodyContentType <String>] [-BodyPreview <String>] [-Calendar <IMicrosoftGraphCalendar>]
+ [-BodyContentType <String>] [-BodyPreview <String>] [-Calendar <IMicrosoftGraphCalendar1>]
  [-Categories <String[]>] [-ChangeKey <String>] [-CoordinateAccuracy <Double>] [-CoordinateAltitude <Double>]
  [-CoordinateAltitudeAccuracy <Double>] [-CoordinateLatitude <Double>] [-CoordinateLongitude <Double>]
  [-CreatedDateTime <DateTime>] [-EndDateTime <String>] [-EndTimeZone <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-HasAttachments] [-Id <String>] [-Importance <String>]
  [-Instances <IMicrosoftGraphEvent1[]>] [-IsAllDay] [-IsCancelled] [-IsDraft] [-IsOnlineMeeting]
  [-IsOrganizer] [-IsReminderOn] [-LastModifiedDateTime <DateTime>] [-LocationDisplayName <String>]
- [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation[]>] [-LocationType <String>]
+ [-LocationEmailAddress <String>] [-Locations <IMicrosoftGraphLocation1[]>] [-LocationType <String>]
  [-LocationUniqueId <String>] [-LocationUniqueIdType <String>] [-LocationUri <String>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-OnlineMeetingConferenceId <String>] [-OnlineMeetingJoinUrl <String>]
- [-OnlineMeetingPhones <IMicrosoftGraphPhone[]>] [-OnlineMeetingProvider <String>]
+ [-OnlineMeetingPhones <IMicrosoftGraphPhone1[]>] [-OnlineMeetingProvider <String>]
  [-OnlineMeetingQuickDial <String>] [-OnlineMeetingTollFreeNumbers <String[]>]
  [-OnlineMeetingTollNumber <String>] [-OnlineMeetingUrl <String>] [-Organizer <IMicrosoftGraphRecipient>]
  [-OriginalEndTimeZone <String>] [-OriginalStart <DateTime>] [-OriginalStartTimeZone <String>]
@@ -336,7 +336,7 @@ calendar
 To construct, see NOTES section for CALENDAR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -777,7 +777,7 @@ If you update the location property, any prior locations in the locations collec
 To construct, see NOTES section for LOCATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -902,7 +902,7 @@ All of the phone numbers associated with this conference.
 To construct, see NOTES section for ONLINEMEETINGPHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -1603,7 +1603,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
   - `[BodyContent <String>]`: The content of the item.
   - `[BodyContentType <String>]`: bodyType
   - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-  - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+  - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
     - `[Id <String>]`: Read-only.
     - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
     - `[CalendarGroupId <String>]`: 
@@ -1624,7 +1624,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 
@@ -1662,7 +1662,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostOfficeBox <String>]`: 
@@ -1684,7 +1684,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
   - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType
@@ -1725,7 +1725,7 @@ BODYPARAMETER <IMicrosoftGraphEvent1>: event
   - `[Uid <String>]`: 
   - `[WebLink <String>]`: The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.
 
-CALENDAR <IMicrosoftGraphCalendar>: calendar
+CALENDAR <IMicrosoftGraphCalendar1>: calendar
   - `[Id <String>]`: Read-only.
   - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
   - `[CalendarGroupId <String>]`: 
@@ -1772,7 +1772,7 @@ CALENDAR <IMicrosoftGraphCalendar>: calendar
     - `[BodyContent <String>]`: The content of the item.
     - `[BodyContentType <String>]`: bodyType
     - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-    - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+    - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
     - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
     - `[CoordinateAltitude <Double?>]`: The altitude of the location.
     - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
@@ -1797,7 +1797,7 @@ CALENDAR <IMicrosoftGraphCalendar>: calendar
     - `[LocationUniqueId <String>]`: For internal use only.
     - `[LocationUniqueIdType <String>]`: locationUniqueIdType
     - `[LocationUri <String>]`: Optional URI representing the location.
-    - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+    - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
       - `[AddressCity <String>]`: The city.
       - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
       - `[AddressPostOfficeBox <String>]`: 
@@ -1821,7 +1821,7 @@ CALENDAR <IMicrosoftGraphCalendar>: calendar
       - `[Value <String[]>]`: A collection of property values.
     - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
     - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-    - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+    - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
       - `[Number <String>]`: The phone number.
       - `[Type <String>]`: phoneType
     - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType
@@ -1871,7 +1871,7 @@ CALENDAR <IMicrosoftGraphCalendar>: calendar
   - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
   - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
   - `[HexColor <String>]`: 
-  - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+  - `[IsDefaultCalendar <Boolean?>]`: 
   - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
   - `[IsShared <Boolean?>]`: 
   - `[IsSharedWithMe <Boolean?>]`: 
@@ -1930,7 +1930,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
   - `[BodyContent <String>]`: The content of the item.
   - `[BodyContentType <String>]`: bodyType
   - `[BodyPreview <String>]`: The preview of the message associated with the event. It is in text format.
-  - `[Calendar <IMicrosoftGraphCalendar>]`: calendar
+  - `[Calendar <IMicrosoftGraphCalendar1>]`: calendar
     - `[Id <String>]`: Read-only.
     - `[AllowedOnlineMeetingProviders <String[]>]`: Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
     - `[CalendarGroupId <String>]`: 
@@ -1951,7 +1951,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent1[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 
@@ -1989,7 +1989,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
   - `[LocationUniqueId <String>]`: For internal use only.
   - `[LocationUniqueIdType <String>]`: locationUniqueIdType
   - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[Locations <IMicrosoftGraphLocation[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+  - `[Locations <IMicrosoftGraphLocation1[]>]`: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostOfficeBox <String>]`: 
@@ -2011,7 +2011,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
   - `[OnlineMeetingConferenceId <String>]`: The ID of the conference.
   - `[OnlineMeetingJoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-  - `[OnlineMeetingPhones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
+  - `[OnlineMeetingPhones <IMicrosoftGraphPhone1[]>]`: All of the phone numbers associated with this conference.
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
   - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType
@@ -2052,7 +2052,7 @@ INSTANCES <IMicrosoftGraphEvent1[]>: The instances of the event. Navigation prop
   - `[Uid <String>]`: 
   - `[WebLink <String>]`: The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can be accessed from within an iFrame.
 
-LOCATIONS <IMicrosoftGraphLocation[]>: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
+LOCATIONS <IMicrosoftGraphLocation1[]>: The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.
   - `[AddressCity <String>]`: The city.
   - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[AddressPostOfficeBox <String>]`: 
@@ -2076,7 +2076,7 @@ MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>
   - `[Id <String>]`: Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
-ONLINEMEETINGPHONES <IMicrosoftGraphPhone[]>: All of the phone numbers associated with this conference.
+ONLINEMEETINGPHONES <IMicrosoftGraphPhone1[]>: All of the phone numbers associated with this conference.
   - `[Number <String>]`: The phone number.
   - `[Type <String>]`: phoneType
 

@@ -24,13 +24,13 @@ Update-MgUserSetting -UserId <String> [-ContributionToContentDiscoveryAsOrganiza
 
 ### Update1
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru] [-Confirm]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserSetting -InputObject <IUsersUserSettingsIdentity> -BodyParameter <IMicrosoftGraphUserSettings>
+Update-MgUserSetting -InputObject <IUsersUserSettingsIdentity> -BodyParameter <IMicrosoftGraphUserSettings1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -74,7 +74,7 @@ userSettings
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -291,7 +291,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
 
 ### Microsoft.Graph.PowerShell.Models.IUsersUserSettingsIdentity
 
@@ -308,7 +308,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
+BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
   - `[Id <String>]`: Read-only.
   - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
   - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 

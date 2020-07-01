@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}": {
+    "/groups": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Group.yml",
       "apiVersion": "v1.0"
     },
-    "/groups": {
+    "/groups/{group-id}": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Group.yml",
       "apiVersion": "v1.0"
     }

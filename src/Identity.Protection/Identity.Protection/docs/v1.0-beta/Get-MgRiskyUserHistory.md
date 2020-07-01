@@ -15,7 +15,7 @@ Get history from riskyUsers
 ### List (Default)
 ```
 Get-MgRiskyUserHistory -RiskyUserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All]
  [<CommonParameters>]
 ```
 
@@ -55,6 +55,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Count
 Include count of items
@@ -123,7 +138,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -243,16 +258,9 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IIdentityProtectionIdentity>: Identity Parameter
-  - `[AnonymousIPRiskEventId <String>]`: key: anonymousIpRiskEvent-id of anonymousIpRiskEvent
-  - `[IdentityRiskEventId <String>]`: key: identityRiskEvent-id of identityRiskEvent
-  - `[ImpossibleTravelRiskEventId <String>]`: key: impossibleTravelRiskEvent-id of impossibleTravelRiskEvent
-  - `[LeakedCredentialsRiskEventId <String>]`: key: leakedCredentialsRiskEvent-id of leakedCredentialsRiskEvent
-  - `[MalwareRiskEventId <String>]`: key: malwareRiskEvent-id of malwareRiskEvent
   - `[RiskDetectionId <String>]`: key: riskDetection-id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: riskyUserHistoryItem-id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: riskyUser-id of riskyUser
-  - `[SuspiciousIPRiskEventId <String>]`: key: suspiciousIpRiskEvent-id of suspiciousIpRiskEvent
-  - `[UnfamiliarLocationRiskEventId <String>]`: key: unfamiliarLocationRiskEvent-id of unfamiliarLocationRiskEvent
 
 ## RELATED LINKS
 

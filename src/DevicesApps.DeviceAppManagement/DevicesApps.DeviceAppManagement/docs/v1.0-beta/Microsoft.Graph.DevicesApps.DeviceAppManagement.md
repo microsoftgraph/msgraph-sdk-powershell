@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DevicesApps.DeviceAppManagement
-Module Guid: 3a17e059-94cd-4f11-a531-f4be3ba1dd02
+Module Guid: acb07cb4-df50-49e2-97be-e956516723bc
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicesapps.deviceappmanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -457,6 +457,9 @@ Invoke action syncMicrosoftStoreForBusinessApps
 
 ### [Sync-MgDeviceAppManagementVppTokenLicense](Sync-MgDeviceAppManagementVppTokenLicense.md)
 Invoke action syncLicenses
+
+### [Test-MgDeviceAppManagementMobileAppXml](Test-MgDeviceAppManagementMobileAppXml.md)
+Invoke action validateXml
 
 ### [Update-MgDeviceAppManagementAndroidManagedAppProtection](Update-MgDeviceAppManagementAndroidManagedAppProtection.md)
 Update the navigation property androidManagedAppProtections in deviceAppManagement

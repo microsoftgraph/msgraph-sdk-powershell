@@ -126,8 +126,10 @@ Accept wildcard characters: False
 ```
 
 ### -Shared
-Calculated relationship identifying documents shared with a user.
-Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+Calculated relationship identifying documents shared with or by the user.
+This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings.
+This also includes URLs and reference attachments to Teams conversations.
+Ordered by recency of share.
 To construct, see NOTES section for SHARED properties and create a hash table.
 
 ```yaml
@@ -143,8 +145,9 @@ Accept wildcard characters: False
 ```
 
 ### -Trending
-Calculated relationship identifying trending documents.
-Trending documents can be stored in OneDrive or in SharePoint sites.
+Calculated relationship identifying documents trending around a user.
+Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint.
+Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
 To construct, see NOTES section for TRENDING properties and create a hash table.
 
 ```yaml
@@ -160,8 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -Used
-Calculated relationship identifying documents viewed and modified by a user.
-Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
 To construct, see NOTES section for USED properties and create a hash table.
 
 ```yaml
@@ -246,7 +248,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOfficeGraphInsights>: officeGraphInsights
   - `[Id <String>]`: Read-only.
-  - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+  - `[Shared <IMicrosoftGraphSharedInsight[]>]`: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
     - `[Id <String>]`: Read-only.
     - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
     - `[LastSharedMethodId <String>]`: Read-only.
@@ -280,7 +282,7 @@ BODYPARAMETER <IMicrosoftGraphOfficeGraphInsights>: officeGraphInsights
     - `[SharingReferenceId <String>]`: The item's unique identifier.
     - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
     - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
-  - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+  - `[Trending <IMicrosoftGraphTrending[]>]`: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
     - `[Id <String>]`: Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[ResourceId <String>]`: Read-only.
@@ -296,7 +298,7 @@ BODYPARAMETER <IMicrosoftGraphOfficeGraphInsights>: officeGraphInsights
     - `[ResourceVisualizationTitle <String>]`: The item's title text.
     - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
     - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
-  - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+  - `[Used <IMicrosoftGraphUsedInsight[]>]`: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
     - `[Id <String>]`: Read-only.
     - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
     - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
@@ -320,7 +322,7 @@ INPUTOBJECT <IAnalyticsIdentity>: Identity Parameter
   - `[UsedInsightId <String>]`: key: usedInsight-id of usedInsight
   - `[UserId <String>]`: key: user-id of user
 
-SHARED <IMicrosoftGraphSharedInsight[]>: Calculated relationship identifying documents shared with a user. Documents can be shared as email attachments or as OneDrive for Business links sent in emails.
+SHARED <IMicrosoftGraphSharedInsight[]>: Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
   - `[Id <String>]`: Read-only.
   - `[LastSharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
   - `[LastSharedMethodId <String>]`: Read-only.
@@ -355,7 +357,7 @@ SHARED <IMicrosoftGraphSharedInsight[]>: Calculated relationship identifying doc
   - `[SharingReferenceType <String>]`: A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
   - `[SharingReferenceWebUrl <String>]`: A URL leading to the referenced item.
 
-TRENDING <IMicrosoftGraphTrending[]>: Calculated relationship identifying trending documents. Trending documents can be stored in OneDrive or in SharePoint sites.
+TRENDING <IMicrosoftGraphTrending[]>: Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
   - `[Id <String>]`: Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[ResourceId <String>]`: Read-only.
@@ -372,7 +374,7 @@ TRENDING <IMicrosoftGraphTrending[]>: Calculated relationship identifying trendi
   - `[ResourceVisualizationType <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
   - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 
-USED <IMicrosoftGraphUsedInsight[]>: Calculated relationship identifying documents viewed and modified by a user. Includes documents the user used in OneDrive for Business, SharePoint, opened as email attachments, and as link attachments from sources like Box, DropBox and Google Drive.
+USED <IMicrosoftGraphUsedInsight[]>: Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
   - `[Id <String>]`: Read-only.
   - `[LastUsedLastAccessedDateTime <DateTime?>]`: The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.
   - `[LastUsedLastModifiedDateTime <DateTime?>]`: The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.

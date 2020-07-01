@@ -1609,7 +1609,7 @@ BODYPARAMETER <IMicrosoftGraphEvent>: event
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 
@@ -1856,7 +1856,7 @@ CALENDAR <IMicrosoftGraphCalendar>: calendar
   - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
   - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
   - `[HexColor <String>]`: 
-  - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+  - `[IsDefaultCalendar <Boolean?>]`: 
   - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
   - `[IsShared <Boolean?>]`: 
   - `[IsSharedWithMe <Boolean?>]`: 
@@ -1938,7 +1938,7 @@ INSTANCES <IMicrosoftGraphEvent[]>: The instances of the event. Navigation prope
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 

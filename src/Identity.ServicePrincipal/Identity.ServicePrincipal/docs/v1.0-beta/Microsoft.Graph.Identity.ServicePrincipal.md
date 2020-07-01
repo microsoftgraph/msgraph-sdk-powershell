@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.ServicePrincipal
-Module Guid: b349821c-2e95-4421-9c77-94a40bdabbe8
+Module Guid: f57398cb-63f7-4520-8dd1-21a3d4510d63
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.serviceprincipal
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,17 +11,20 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.ServicePrincipal Cmdlets
-### [Add-MgServicePrincipalSynchronizationJob](Add-MgServicePrincipalSynchronizationJob.md)
-Invoke action apply
-
 ### [Confirm-MgServicePrincipalMemberGroup](Confirm-MgServicePrincipalMemberGroup.md)
 Invoke action checkMemberGroups
 
 ### [Confirm-MgServicePrincipalMemberObject](Confirm-MgServicePrincipalMemberObject.md)
 Invoke action checkMemberObjects
 
+### [Find-MgServicePrincipalSynchronizationJobSchemaDirectory](Find-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
+Invoke action discover
+
+### [Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory](Find-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
+Invoke action discover
+
 ### [Get-MgServicePrincipal](Get-MgServicePrincipal.md)
-Get entity from servicePrincipals by key
+Invoke action getByIds
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
 Get appRoleAssignedTo from servicePrincipals
@@ -30,7 +33,7 @@ Get appRoleAssignedTo from servicePrincipals
 Get appRoleAssignments from servicePrincipals
 
 ### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
-Invoke action getByIds
+Get entity from servicePrincipals by key
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)
 Get claimsMappingPolicies from servicePrincipals

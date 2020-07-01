@@ -5,7 +5,27 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
       "apiVersion": "v1.0"
     },
+    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
+      "apiVersion": "v1.0"
+    },
     "/contracts": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contracts/{contract-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contracts/{contract-id}/microsoft.graph.checkMemberGroups": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
       "apiVersion": "v1.0"
     },
@@ -14,26 +34,6 @@
       "apiVersion": "v1.0"
     },
     "/contracts/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contracts/{contract-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contracts/{contract-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Contracts.yml",
       "apiVersion": "v1.0"
     }

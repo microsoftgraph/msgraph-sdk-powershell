@@ -16,8 +16,8 @@ Update the navigation property schema in servicePrincipals
 ```
 Update-MgServicePrincipalSynchronizationTemplateSchema -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
- [-ProvisioningTaskIdentifier <String>] [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]
- [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -36,7 +36,7 @@ Update-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IIdentitySe
 ### UpdateViaIdentityExpanded
 ```
 Update-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IIdentityServicePrincipalIdentity>
- [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>] [-ProvisioningTaskIdentifier <String>]
+ [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
  [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -135,21 +135,6 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProvisioningTaskIdentifier
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -304,7 +289,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
       - `[SupportedApis <String[]>]`: 
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
-  - `[ProvisioningTaskIdentifier <String>]`: 
   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

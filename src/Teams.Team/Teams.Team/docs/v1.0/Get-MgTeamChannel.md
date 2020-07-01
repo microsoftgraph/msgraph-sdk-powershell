@@ -12,20 +12,20 @@ Get channels from teams
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgTeamChannel -TeamId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All]
  [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgTeamChannel -ChannelId <String> -TeamId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgTeamChannel -InputObject <ITeamsTeamIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -56,12 +56,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ChannelId
 key: channel-id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -76,7 +91,7 @@ Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -106,7 +121,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -122,7 +137,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsTeamIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -137,8 +152,8 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
-Aliases: Top
+Parameter Sets: List
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -167,7 +182,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -182,7 +197,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -197,7 +212,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -212,7 +227,7 @@ key: team-id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -258,7 +273,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff

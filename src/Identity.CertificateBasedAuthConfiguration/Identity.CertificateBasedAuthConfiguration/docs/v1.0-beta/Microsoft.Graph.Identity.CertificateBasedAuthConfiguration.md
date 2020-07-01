@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.CertificateBasedAuthConfiguration
-Module Guid: b0214f8f-9f3e-4dc7-ad63-1f210fda29be
+Module Guid: 38b57067-aa00-4cca-9c75-a07423516af4
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.certificatebasedauthconfiguration
 Help Version: 1.0.0.0
 Locale: en-US

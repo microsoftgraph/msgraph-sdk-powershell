@@ -12,23 +12,23 @@ Get calendarView from users
 
 ## SYNTAX
 
-### List1 (Default)
+### List2 (Default)
 ```
-Get-MgUserCalendarView -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgUserCalendarView -CalendarId <String> -EventId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -CalendarId <String> -EventId <String> -UserId <String> -EndDateTime <String>
+ -StartDateTime <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get2
@@ -39,20 +39,20 @@ Get-MgUserCalendarView -EventId <String> -EventId1 <String> -UserId <String> [-E
 
 ### Get7
 ```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
@@ -63,29 +63,29 @@ Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <S
 
 ### GetViaIdentity7
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### List
 ```
-Get-MgUserCalendarView -CalendarId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
-### List2
+### List1
 ```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### List7
 ```
-Get-MgUserCalendarView -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,6 +113,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CalendarId
 key: calendar-id of calendar
 
@@ -137,6 +152,22 @@ Parameter Sets: List, List1, List2, List7
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndDateTime
+The end date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T20:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get, Get1, Get7, GetViaIdentity, GetViaIdentity1, GetViaIdentity7, List, List1, List7
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -225,7 +256,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List, List1, List2, List7
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -288,6 +319,22 @@ Parameter Sets: List, List1, List2, List7
 Aliases: OrderBy
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartDateTime
+The start date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T19:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get, Get1, Get7, GetViaIdentity, GetViaIdentity1, GetViaIdentity7, List, List1, List7
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

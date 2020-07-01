@@ -240,6 +240,8 @@ paths:
                 - minimumRequiredAppVersion desc
                 - minimumWarningAppVersion
                 - minimumWarningAppVersion desc
+                - managedBrowser
+                - managedBrowser desc
                 - isAssigned
                 - isAssigned desc
                 - screenCaptureBlocked
@@ -254,6 +256,10 @@ paths:
                 - minimumRequiredPatchVersion desc
                 - minimumWarningPatchVersion
                 - minimumWarningPatchVersion desc
+                - customBrowserPackageId
+                - customBrowserPackageId desc
+                - customBrowserDisplayName
+                - customBrowserDisplayName desc
               type: string
         - name: $select
           in: query
@@ -297,6 +303,7 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - isAssigned
                 - screenCaptureBlocked
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
@@ -304,6 +311,8 @@ paths:
                 - deployedAppCount
                 - minimumRequiredPatchVersion
                 - minimumWarningPatchVersion
+                - customBrowserPackageId
+                - customBrowserDisplayName
                 - assignments
                 - apps
                 - deploymentSummary
@@ -422,6 +431,7 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - isAssigned
                 - screenCaptureBlocked
                 - disableAppEncryptionIfDeviceEncryptionIsEnabled
@@ -429,6 +439,8 @@ paths:
                 - deployedAppCount
                 - minimumRequiredPatchVersion
                 - minimumWarningPatchVersion
+                - customBrowserPackageId
+                - customBrowserDisplayName
                 - assignments
                 - apps
                 - deploymentSummary
@@ -860,6 +872,8 @@ paths:
                 - minimumRequiredAppVersion desc
                 - minimumWarningAppVersion
                 - minimumWarningAppVersion desc
+                - managedBrowser
+                - managedBrowser desc
                 - appDataEncryptionType
                 - appDataEncryptionType desc
                 - screenCaptureBlocked
@@ -923,6 +937,7 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - appDataEncryptionType
                 - screenCaptureBlocked
                 - encryptAppData
@@ -1049,6 +1064,7 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - appDataEncryptionType
                 - screenCaptureBlocked
                 - encryptAppData
@@ -1488,6 +1504,8 @@ paths:
                 - minimumRequiredAppVersion desc
                 - minimumWarningAppVersion
                 - minimumWarningAppVersion desc
+                - managedBrowser
+                - managedBrowser desc
                 - isAssigned
                 - isAssigned desc
                 - appDataEncryptionType
@@ -1498,6 +1516,8 @@ paths:
                 - deployedAppCount desc
                 - faceIdBlocked
                 - faceIdBlocked desc
+                - customBrowserProtocol
+                - customBrowserProtocol desc
               type: string
         - name: $select
           in: query
@@ -1541,11 +1561,13 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - isAssigned
                 - appDataEncryptionType
                 - minimumRequiredSdkVersion
                 - deployedAppCount
                 - faceIdBlocked
+                - customBrowserProtocol
                 - assignments
                 - apps
                 - deploymentSummary
@@ -1664,11 +1686,13 @@ paths:
                 - minimumWarningOsVersion
                 - minimumRequiredAppVersion
                 - minimumWarningAppVersion
+                - managedBrowser
                 - isAssigned
                 - appDataEncryptionType
                 - minimumRequiredSdkVersion
                 - deployedAppCount
                 - faceIdBlocked
+                - customBrowserProtocol
                 - assignments
                 - apps
                 - deploymentSummary
@@ -8268,6 +8292,14 @@ components:
               type: string
               description: Define the oldest recommended Android security patch level a user can have for secure access to the app.
               nullable: true
+            customBrowserPackageId:
+              type: string
+              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              nullable: true
+            customBrowserDisplayName:
+              type: string
+              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              nullable: true
             apps:
               type: array
               items:
@@ -8314,6 +8346,8 @@ components:
         minimumWarningOsVersion: string
         minimumRequiredAppVersion: string
         minimumWarningAppVersion: string
+        managedBrowser:
+          '@odata.type': microsoft.graph.managedBrowserType
         isAssigned: true
         assignments:
           - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
@@ -8323,6 +8357,8 @@ components:
         deployedAppCount: integer
         minimumRequiredPatchVersion: string
         minimumWarningPatchVersion: string
+        customBrowserPackageId: string
+        customBrowserDisplayName: string
         apps:
           - '@odata.type': microsoft.graph.managedMobileApp
         deploymentSummary:
@@ -8473,6 +8509,8 @@ components:
         minimumWarningOsVersion: string
         minimumRequiredAppVersion: string
         minimumWarningAppVersion: string
+        managedBrowser:
+          '@odata.type': microsoft.graph.managedBrowserType
         appDataEncryptionType:
           '@odata.type': microsoft.graph.managedAppDataEncryptionType
         screenCaptureBlocked: true
@@ -8510,6 +8548,10 @@ components:
             faceIdBlocked:
               type: boolean
               description: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
+            customBrowserProtocol:
+              type: string
+              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              nullable: true
             apps:
               type: array
               items:
@@ -8556,6 +8598,8 @@ components:
         minimumWarningOsVersion: string
         minimumRequiredAppVersion: string
         minimumWarningAppVersion: string
+        managedBrowser:
+          '@odata.type': microsoft.graph.managedBrowserType
         isAssigned: true
         assignments:
           - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
@@ -8564,6 +8608,7 @@ components:
         minimumRequiredSdkVersion: string
         deployedAppCount: integer
         faceIdBlocked: true
+        customBrowserProtocol: string
         apps:
           - '@odata.type': microsoft.graph.managedMobileApp
         deploymentSummary:
@@ -9751,6 +9796,8 @@ components:
         minimumWarningOsVersion: string
         minimumRequiredAppVersion: string
         minimumWarningAppVersion: string
+        managedBrowser:
+          '@odata.type': microsoft.graph.managedBrowserType
         isAssigned: true
         assignments:
           - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
@@ -9873,6 +9920,8 @@ components:
               type: string
               description: Versions less than the specified version will result in warning message on the managed app.
               nullable: true
+            managedBrowser:
+              $ref: '#/components/schemas/microsoft.graph.managedBrowserType'
           description: Policy used to configure detailed management settings for a specified set of apps
       example:
         id: string (identifier)
@@ -9912,6 +9961,8 @@ components:
         minimumWarningOsVersion: string
         minimumRequiredAppVersion: string
         minimumWarningAppVersion: string
+        managedBrowser:
+          '@odata.type': microsoft.graph.managedBrowserType
     microsoft.graph.managedAppDataEncryptionType:
       title: managedAppDataEncryptionType
       enum:
@@ -10241,6 +10292,12 @@ components:
         - oneDriveForBusiness
         - sharePoint
         - localStorage
+      type: string
+    microsoft.graph.managedBrowserType:
+      title: managedBrowserType
+      enum:
+        - notConfigured
+        - microsoftEdge
       type: string
     microsoft.graph.windowsInformationProtectionEnforcementLevel:
       title: windowsInformationProtectionEnforcementLevel

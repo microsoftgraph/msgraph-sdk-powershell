@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.AzureADPIM
-Module Guid: 5b8009bc-9e0a-4caf-9a14-90eb8ecb17ab
+Module Guid: abe3f8e7-b029-4853-b746-383c6d661a53
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.azureadpim
 Help Version: 1.0.0.0
 Locale: en-US

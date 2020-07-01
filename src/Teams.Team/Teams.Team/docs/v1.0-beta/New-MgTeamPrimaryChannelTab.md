@@ -16,10 +16,10 @@ Create new navigation property to tabs for teams
 ```
 New-MgTeamPrimaryChannelTab -TeamId <String> [-ConfigurationContentUrl <String>]
  [-ConfigurationEntityId <String>] [-ConfigurationRemoveUrl <String>] [-ConfigurationWebsiteUrl <String>]
- [-DisplayName <String>] [-Id <String>] [-MessageId <String>] [-Name <String>] [-SortOrderIndex <String>]
- [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-TeamAppDisplayName <String>]
+ [-DisplayName <String>] [-Id <String>] [-MessageId <String>] [-SortOrderIndex <String>]
+ [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-TeamAppDisplayName <String>]
  [-TeamAppDistributionMethod <String>] [-TeamAppExternalId <String>] [-TeamAppId <String>]
- [-TeamAppName <String>] [-TeamsAppId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TeamsAppId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -38,10 +38,10 @@ New-MgTeamPrimaryChannelTab -InputObject <ITeamsTeamIdentity> -BodyParameter <IM
 ```
 New-MgTeamPrimaryChannelTab -InputObject <ITeamsTeamIdentity> [-ConfigurationContentUrl <String>]
  [-ConfigurationEntityId <String>] [-ConfigurationRemoveUrl <String>] [-ConfigurationWebsiteUrl <String>]
- [-DisplayName <String>] [-Id <String>] [-MessageId <String>] [-Name <String>] [-SortOrderIndex <String>]
- [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-TeamAppDisplayName <String>]
+ [-DisplayName <String>] [-Id <String>] [-MessageId <String>] [-SortOrderIndex <String>]
+ [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-TeamAppDisplayName <String>]
  [-TeamAppDistributionMethod <String>] [-TeamAppExternalId <String>] [-TeamAppId <String>]
- [-TeamAppName <String>] [-TeamsAppId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TeamsAppId <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -207,21 +207,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SortOrderIndex
 .
 
@@ -242,7 +227,7 @@ The details for each version of the app.
 To construct, see NOTES section for TEAMAPPDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -300,21 +285,6 @@ Accept wildcard characters: False
 
 ### -TeamAppId
 Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TeamAppName
-.
 
 ```yaml
 Type: System.String
@@ -435,18 +405,18 @@ BODYPARAMETER <IMicrosoftGraphTeamsTab1>: teamsTab
   - `[ConfigurationWebsiteUrl <String>]`: Url for showing tab contents outside of Teams.
   - `[DisplayName <String>]`: Name of the tab.
   - `[MessageId <String>]`: 
-  - `[Name <String>]`: 
   - `[SortOrderIndex <String>]`: 
-  - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+  - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.
+    - `[AzureAdAppId <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
+    - `[PublishingState <String>]`: teamsAppPublishingState
     - `[TeamsAppId <String>]`: The id from the Teams App manifest.
     - `[Version <String>]`: The version number of the application.
   - `[TeamAppDisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppDistributionMethod <String>]`: teamsAppDistributionMethod
   - `[TeamAppExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppId <String>]`: Read-only.
-  - `[TeamAppName <String>]`: 
   - `[TeamsAppId <String>]`: 
   - `[WebUrl <String>]`: Deep link url of the tab instance. Read only.
 
@@ -466,7 +436,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff
@@ -475,9 +444,11 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[UserId <String>]`: key: user-id of user
   - `[WorkforceIntegrationId <String>]`: key: workforceIntegration-id of workforceIntegration
 
-TEAMAPPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition[]>: The details for each version of the app.
+TEAMAPPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each version of the app.
   - `[Id <String>]`: Read-only.
+  - `[AzureAdAppId <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
+  - `[PublishingState <String>]`: teamsAppPublishingState
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 

@@ -25,16 +25,16 @@ Update-MgDeviceAppManagementDefaultManagedAppProtection -DefaultManagedAppProtec
  [-DeploymentSummaryLastRefreshTime <DateTime>] [-DeploymentSummaryVersion <String>] [-Description <String>]
  [-DeviceComplianceRequired] [-DisableAppEncryptionIfDeviceEncryptionIsEnabled]
  [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>] [-EncryptAppData] [-FaceIdBlocked]
- [-FingerprintBlocked] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ManagedBrowserToOpenLinksRequired]
- [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
- [-MinimumRequiredOSVersion <String>] [-MinimumRequiredPatchVersion <String>]
- [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>]
- [-OrganizationalCredentialsRequired] [-PeriodBeforePinReset <TimeSpan>]
- [-PeriodOfflineBeforeAccessCheck <TimeSpan>] [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>]
- [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked]
- [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked] [-Version <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-FingerprintBlocked] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>]
+ [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>]
+ [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
+ [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
+ [-MinimumWarningAppVersion <String>] [-MinimumWarningOSVersion <String>]
+ [-MinimumWarningPatchVersion <String>] [-OrganizationalCredentialsRequired]
+ [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
+ [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
+ [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked] [-SaveAsBlocked] [-ScreenCaptureBlocked]
+ [-SimplePinBlocked] [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -64,16 +64,16 @@ Update-MgDeviceAppManagementDefaultManagedAppProtection -InputObject <IDevicesAp
  [-DeploymentSummaryLastRefreshTime <DateTime>] [-DeploymentSummaryVersion <String>] [-Description <String>]
  [-DeviceComplianceRequired] [-DisableAppEncryptionIfDeviceEncryptionIsEnabled]
  [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>] [-EncryptAppData] [-FaceIdBlocked]
- [-FingerprintBlocked] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ManagedBrowserToOpenLinksRequired]
- [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
- [-MinimumRequiredOSVersion <String>] [-MinimumRequiredPatchVersion <String>]
- [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>]
- [-OrganizationalCredentialsRequired] [-PeriodBeforePinReset <TimeSpan>]
- [-PeriodOfflineBeforeAccessCheck <TimeSpan>] [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>]
- [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked]
- [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked] [-Version <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-FingerprintBlocked] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>]
+ [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>]
+ [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
+ [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
+ [-MinimumWarningAppVersion <String>] [-MinimumWarningOSVersion <String>]
+ [-MinimumWarningPatchVersion <String>] [-OrganizationalCredentialsRequired]
+ [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
+ [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
+ [-PinCharacterSet <String>] [-PinRequired] [-PrintBlocked] [-SaveAsBlocked] [-ScreenCaptureBlocked]
+ [-SimplePinBlocked] [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -559,6 +559,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ManagedBrowser
+managedBrowserType
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ManagedBrowserToOpenLinksRequired
 Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
 
@@ -976,6 +991,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to confi
   - `[DeviceComplianceRequired <Boolean?>]`: Indicates whether device compliance is required.
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+  - `[ManagedBrowser <String>]`: managedBrowserType
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True

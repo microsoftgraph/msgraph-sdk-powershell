@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Application
-Module Guid: b75fee06-5d6b-4de8-9899-e50d2c893a21
+Module Guid: dbd13d5b-c419-4f32-9c94-a24176e0b61e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.application
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,14 +17,17 @@ Invoke action addKey
 ### [Add-MgApplicationPassword](Add-MgApplicationPassword.md)
 Invoke action addPassword
 
-### [Add-MgApplicationSynchronizationJob](Add-MgApplicationSynchronizationJob.md)
-Invoke action apply
-
 ### [Confirm-MgApplicationMemberGroup](Confirm-MgApplicationMemberGroup.md)
 Invoke action checkMemberGroups
 
 ### [Confirm-MgApplicationMemberObject](Confirm-MgApplicationMemberObject.md)
 Invoke action checkMemberObjects
+
+### [Find-MgApplicationSynchronizationJobSchemaDirectory](Find-MgApplicationSynchronizationJobSchemaDirectory.md)
+Invoke action discover
+
+### [Find-MgApplicationSynchronizationTemplateSchemaDirectory](Find-MgApplicationSynchronizationTemplateSchemaDirectory.md)
+Invoke action discover
 
 ### [Get-MgApplication](Get-MgApplication.md)
 Invoke action getByIds
@@ -34,6 +37,9 @@ Get entity from applications by key
 
 ### [Get-MgApplicationClaimMappingPolicy](Get-MgApplicationClaimMappingPolicy.md)
 Get claimsMappingPolicies from applications
+
+### [Get-MgApplicationConnectorGroup](Get-MgApplicationConnectorGroup.md)
+Get connectorGroup from applications
 
 ### [Get-MgApplicationCreatedOnBehalf](Get-MgApplicationCreatedOnBehalf.md)
 Get createdOnBehalfOf from applications

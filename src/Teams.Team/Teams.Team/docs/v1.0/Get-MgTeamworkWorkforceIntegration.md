@@ -123,7 +123,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List1
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -243,7 +243,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff

@@ -1,667 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/financials/companies/{company-id}/salesQuoteLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/employees": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/itemCategories/{itemCategory-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/companyInformation": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors/{vendor-id}/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/dimensionValues/{dimensionValue-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors/{vendor-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}/journalLines/{journalLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journalLines/{journalLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/agedAccountsPayable": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.post": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors/{vendor-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journalLines/{journalLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/countriesRegions": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/agedAccountsReceivable": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/paymentTerms": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/financials/companies/{company-id}/customers/{customer-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/taxGroups/{taxGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/employees/{employee-id}/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/paymentTerms/{paymentTerm-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/taxAreas/{taxArea-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}/microsoft.graph.post": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/employees/{employee-id}/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/employees/{employee-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}/journalLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/paymentMethods/{paymentMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/companyInformation/{companyInformation-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/items/{item-id}/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/itemCategories": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/unitsOfMeasure/{unitOfMeasure-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/dimensions": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/accounts/{account-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.makeInvoice": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/agedAccountsPayable/{agedAccountsPayable-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors/{vendor-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/currency": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancelAndSend": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/items/{item-id}/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/microsoft.graph.post": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/generalLedgerEntries": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -669,31 +9,11 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/currency": {
+    "/financials/companies/{company-id}/salesOrderLines": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/itemCategory": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.postAndSend": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/unitsOfMeasure": {
+    "/financials/companies/{company-id}/salesOrders": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -701,95 +21,35 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues/{dimensionValue-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/items/{item-id}/picture": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journalLines": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/journals/{journal-id}/journalLines/{journalLine-id}/account": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.send": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture": {
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/currencies/{currency-id}": {
+    "/financials/companies/{company-id}/employees/{employee-id}/picture": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}": {
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/dimensions/{dimension-id}": {
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/microsoft.graph.post": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/paymentMethods": {
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/account": {
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/dimensionValues": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/currencies": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/items/{item-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/taxGroups": {
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -797,31 +57,31 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.send": {
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/itemCategory": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/countriesRegions/{countryRegion-id}": {
+    "/financials/companies/{company-id}/vendors/{vendor-id}/currency": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/accounts": {
+    "/financials/companies/{company-id}/purchaseInvoices": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesInvoiceLines": {
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/paymentTerm": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}": {
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture/{picture-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer": {
+    "/financials/companies/{company-id}/journalLines/{journalLine-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/items": {
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/account": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -829,51 +89,31 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/journals": {
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/{picture-id}": {
+    "/financials/companies/{company-id}/employees/{employee-id}/picture/{picture-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/vendors/{vendor-id}/paymentMethod": {
+    "/financials/companies/{company-id}/journals/{journal-id}/journalLines": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer": {
+    "/financials/companies/{company-id}/salesCreditMemoLines": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture": {
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/customers": {
+    "/financials/companies/{company-id}/items/{item-id}/picture": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customers/{customer-id}/paymentMethod": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/vendors/{vendor-id}/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/paymentTerm": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}": {
-      "originalLocation": "/openApiDocs/beta/Financials.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/paymentMethod": {
+    "/financials": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -881,19 +121,35 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancel": {
+    "/financials/companies/{company-id}/journalLines": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/paymentTerm": {
+    "/financials/companies/{company-id}/customers": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/shipmentMethods/{shipmentMethod-id}": {
+    "/financials/companies/{company-id}/agedAccountsPayable/{agedAccountsPayable-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/currency": {
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/account": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -901,7 +157,427 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture": {
+    "/financials/companies/{company-id}/vendors/{vendor-id}/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/agedAccountsPayable": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/taxGroups": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals/{journal-id}/journalLines/{journalLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/items/{item-id}/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals/{journal-id}/journalLines/{journalLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/items/{item-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journalLines/{journalLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensions/{dimension-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/vendors/{vendor-id}/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/companyInformation/{companyInformation-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/employees": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/vendors/{vendor-id}/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensions": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/agedAccountsReceivable": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/items/{item-id}/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/accounts/{account-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/customer/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/itemCategories": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancelAndSend": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/accounts": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/currencies": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/generalLedgerEntries": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/paymentTerms/{paymentTerm-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/countriesRegions": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensionValues": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/shipmentMethods/{shipmentMethod-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/countriesRegions/{countryRegion-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.postAndSend": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}/paymentMethod": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -909,7 +585,331 @@
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture": {
+    "/financials/companies/{company-id}/generalLedgerEntries/{generalLedgerEntry-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.send": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/unitsOfMeasure/{unitOfMeasure-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/currencies/{currency-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensions/{dimension-id}/dimensionValues/{dimensionValue-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/customer/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrderLines/{salesOrderLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customers/{customer-id}/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/paymentMethods/{paymentMethod-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/companyInformation": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/employees/{employee-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/vendors/{vendor-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/customer/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/unitsOfMeasure": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/vendors": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/taxGroups/{taxGroup-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/taxAreas/{taxArea-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/dimensionValues/{dimensionValue-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/microsoft.graph.makeInvoice": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines/{salesQuoteLine-id}/item/itemCategory": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals/{journal-id}/microsoft.graph.post": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals/{journal-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/paymentMethods": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/vendors/{vendor-id}/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPayments/{customerPayment-id}/customer/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/salesQuoteLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.post": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoices/{purchaseInvoice-id}/vendor/paymentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/microsoft.graph.cancel": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/customerPaymentJournals/{customerPaymentJournal-id}/customerPayments/{customerPayment-id}/customer/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/picture/{picture-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/currency": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/items": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}/item": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoiceLines/{salesInvoiceLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/shipmentMethod": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuotes/{salesQuote-id}/customer/paymentTerm": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesQuoteLines/{salesQuoteLine-id}/account": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/purchaseInvoiceLines/{purchaseInvoiceLine-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/itemCategories/{itemCategory-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/journals/{journal-id}": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/paymentTerms": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesOrders/{salesOrder-id}/salesOrderLines/{salesOrderLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesCreditMemos/{salesCreditMemo-id}/salesCreditMemoLines/{salesCreditMemoLine-id}/item/picture": {
+      "originalLocation": "/openApiDocs/beta/Financials.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/financials/companies/{company-id}/salesInvoices/{salesInvoice-id}/salesInvoiceLines/{salesInvoiceLine-id}": {
       "originalLocation": "/openApiDocs/beta/Financials.yml",
       "apiVersion": "v1.0-beta"
     }

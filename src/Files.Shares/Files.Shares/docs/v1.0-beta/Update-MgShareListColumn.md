@@ -33,12 +33,12 @@ Update-MgShareListColumn -ColumnDefinitionId <String> -SharedDriveItemId <String
 ### Update1
 ```
 Update-MgShareListColumn -ColumnDefinitionId <String> -SharedDriveItemId <String>
- -BodyParameter <IMicrosoftGraphColumnDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphColumnDefinition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgShareListColumn -InputObject <IFilesSharesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition1>
+Update-MgShareListColumn -InputObject <IFilesSharesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -89,7 +89,7 @@ columnDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -815,7 +815,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesSharesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
 
 ## OUTPUTS
 
@@ -830,7 +830,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
+BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
   - `[Id <String>]`: Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
   - `[CalculatedFormat <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.

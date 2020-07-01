@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites.OneNote
-Module Guid: 37c04f47-bfb7-4bb5-95c2-88f7312fb1cb
+Module Guid: b7f60bf7-aafb-44e1-8e7a-df4aa0c8cebd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites.onenote
 Help Version: 1.0.0.0
 Locale: en-US

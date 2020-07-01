@@ -12,26 +12,26 @@ Update the navigation property endpoints in servicePrincipals
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String> [-Capability <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>] [-ProviderName <String>]
  [-ProviderResourceId <String>] [-Uri <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String>
  -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgServicePrincipalEndpoint -InputObject <IIdentityServicePrincipalIdentity>
  -BodyParameter <IMicrosoftGraphEndpoint> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgServicePrincipalEndpoint -InputObject <IIdentityServicePrincipalIdentity> [-Capability <String>]
  [-DeletedDateTime <DateTime>] [-Id <String>] [-ProviderId <String>] [-ProviderName <String>]
@@ -70,7 +70,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -81,11 +81,14 @@ Accept wildcard characters: False
 ```
 
 ### -Capability
-.
+Describes the capability that is associated with this resource.
+(e.g.
+Messages, Conversations, etc.) Not nullable.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -100,7 +103,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +118,7 @@ key: endpoint-id of endpoint
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -130,7 +133,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -146,7 +149,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityServicePrincipalIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -172,11 +175,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderId
-.
+Application id of the publishing underlying service.
+Not nullable.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -187,11 +192,12 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderName
-.
+Name of the publishing underlying service.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -202,11 +208,14 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderResourceId
-.
+For Office 365 groups, this is set to a well-known name for the resource (e.g.
+Yammer.FeedURL etc.).
+Not nullable.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -221,7 +230,7 @@ key: servicePrincipal-id of servicePrincipal
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -232,11 +241,13 @@ Accept wildcard characters: False
 ```
 
 ### -Uri
-.
+URL of the published resource.
+Not nullable.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -302,11 +313,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEndpoint>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Capability <String>]`: 
-  - `[ProviderId <String>]`: 
-  - `[ProviderName <String>]`: 
-  - `[ProviderResourceId <String>]`: 
-  - `[Uri <String>]`: 
+  - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
+  - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
+  - `[ProviderName <String>]`: Name of the publishing underlying service. Read-only.
+  - `[ProviderResourceId <String>]`: For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+  - `[Uri <String>]`: URL of the published resource. Not nullable. Read-only.
 
 INPUTOBJECT <IIdentityServicePrincipalIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: appRoleAssignment-id of appRoleAssignment

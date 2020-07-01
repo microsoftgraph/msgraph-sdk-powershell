@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/extensions/{extension-id}": {
+    "/users/{user-id}/extensions": {
       "originalLocation": "/openApiDocs/v1.0/Users.Extensions.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/extensions": {
+    "/users/{user-id}/extensions/{extension-id}": {
       "originalLocation": "/openApiDocs/v1.0/Users.Extensions.yml",
       "apiVersion": "v1.0"
     }

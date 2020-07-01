@@ -19,14 +19,16 @@ Update-MgPolicyRoot [-ActivityBasedTimeoutPolicies <IMicrosoftGraphActivityBased
  [-AdminConsentRequestPolicyNotifyReviewers] [-AdminConsentRequestPolicyRemindersEnabled]
  [-AdminConsentRequestPolicyRequestDurationInDays <Int32>]
  [-AdminConsentRequestPolicyReviewers <IMicrosoftGraphAccessReviewScope[]>]
- [-AdminConsentRequestPolicyVersion <Int32>] [-ClaimsMappingPolicies <IMicrosoftGraphClaimsMappingPolicy1[]>]
+ [-AdminConsentRequestPolicyVersion <Int32>] [-AuthenticationFlowPolicyDescription <String>]
+ [-AuthenticationFlowPolicyDisplayName <String>] [-AuthenticationFlowPolicyId <String>]
+ [-ClaimsMappingPolicies <IMicrosoftGraphClaimsMappingPolicy1[]>]
  [-ConditionalAccessPolicies <IMicrosoftGraphConditionalAccessPolicy[]>]
  [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy1[]>] [-Id <String>]
  [-IdentitySecurityDefaultEnforcementPolicyDeletedDateTime <DateTime>]
  [-IdentitySecurityDefaultEnforcementPolicyDescription <String>]
  [-IdentitySecurityDefaultEnforcementPolicyDisplayName <String>]
  [-IdentitySecurityDefaultEnforcementPolicyId <String>] [-IdentitySecurityDefaultEnforcementPolicyIsEnabled]
- [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]
+ [-SelfServiceSignUpIsEnabled] [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]
  [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy1[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -174,6 +176,51 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationFlowPolicyDescription
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationFlowPolicyDisplayName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationFlowPolicyId
+Read-only.
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -353,6 +400,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SelfServiceSignUpIsEnabled
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TokenIssuancePolicies
 .
 To construct, see NOTES section for TOKENISSUANCEPOLICIES properties and create a hash table.
@@ -472,6 +534,9 @@ BODYPARAMETER <IMicrosoftGraphPolicyRoot>: policyRoot
     - `[Query <String>]`: 
     - `[QueryType <String>]`: 
   - `[AdminConsentRequestPolicyVersion <Int32?>]`: 
+  - `[AuthenticationFlowPolicyDescription <String>]`: 
+  - `[AuthenticationFlowPolicyDisplayName <String>]`: 
+  - `[AuthenticationFlowPolicyId <String>]`: Read-only.
   - `[ClaimsMappingPolicies <IMicrosoftGraphClaimsMappingPolicy1[]>]`: 
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -505,6 +570,7 @@ BODYPARAMETER <IMicrosoftGraphPolicyRoot>: policyRoot
       - `[UserIncludeGroups <String[]>]`: 
       - `[UserIncludeRoles <String[]>]`: 
       - `[UserIncludeUsers <String[]>]`: 
+      - `[UserRiskLevels <String[]>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: 
@@ -532,6 +598,7 @@ BODYPARAMETER <IMicrosoftGraphPolicyRoot>: policyRoot
   - `[IdentitySecurityDefaultEnforcementPolicyDisplayName <String>]`: Display name for this policy.
   - `[IdentitySecurityDefaultEnforcementPolicyId <String>]`: Read-only.
   - `[IdentitySecurityDefaultEnforcementPolicyIsEnabled <Boolean?>]`: 
+  - `[SelfServiceSignUpIsEnabled <Boolean?>]`: 
   - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy1[]>]`: 
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -585,6 +652,7 @@ CONDITIONALACCESSPOLICIES <IMicrosoftGraphConditionalAccessPolicy[]>: .
     - `[UserIncludeGroups <String[]>]`: 
     - `[UserIncludeRoles <String[]>]`: 
     - `[UserIncludeUsers <String[]>]`: 
+    - `[UserRiskLevels <String[]>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 

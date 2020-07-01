@@ -15,27 +15,27 @@ Update the navigation property appDefinitions in appCatalogs
 ### UpdateExpanded1 (Default)
 ```
 Update-MgAppCatalogTeamAppDefinition -TeamsAppDefinitionId <String> -TeamsAppId <String>
- [-DisplayName <String>] [-Id <String>] [-TeamsAppId1 <String>] [-Version <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AzureAdAppId <String>] [-DisplayName <String>] [-Id <String>] [-PublishingState <String>]
+ [-TeamsAppId1 <String>] [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgAppCatalogTeamAppDefinition -TeamsAppDefinitionId <String> -TeamsAppId <String>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgAppCatalogTeamAppDefinition -InputObject <ITeamsAppCatalogsIdentity>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgAppCatalogTeamAppDefinition -InputObject <ITeamsAppCatalogsIdentity> [-TeamsAppId <String>]
- [-DisplayName <String>] [-Id <String>] [-Version <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AzureAdAppId <String>] [-DisplayName <String>] [-Id <String>] [-PublishingState <String>]
+ [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,12 +63,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AzureAdAppId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 teamsAppDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -131,6 +146,21 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublishingState
+teamsAppPublishingState
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -236,7 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsAppCatalogsIdentity
 
@@ -253,9 +283,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition>: teamsAppDefinition
+BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition1>: teamsAppDefinition
   - `[Id <String>]`: Read-only.
+  - `[AzureAdAppId <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
+  - `[PublishingState <String>]`: teamsAppPublishingState
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 

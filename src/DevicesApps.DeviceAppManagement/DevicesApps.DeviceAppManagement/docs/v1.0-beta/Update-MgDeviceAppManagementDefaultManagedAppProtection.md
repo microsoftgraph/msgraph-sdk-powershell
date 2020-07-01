@@ -948,7 +948,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedBrowserToOpenLinksRequired
-Indicates whether internet links should be opened in the managed browser app.
+Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1630,7 +1630,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
   - `[ManagedBrowser <String>]`: managedBrowserType
-  - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app.
+  - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumAllowedDeviceThreatLevel <String>]`: managedAppDeviceThreatLevel
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True

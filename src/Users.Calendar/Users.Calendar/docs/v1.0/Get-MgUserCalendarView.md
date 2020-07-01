@@ -12,29 +12,29 @@ Get calendarView from users
 
 ## SYNTAX
 
-### List3 (Default)
+### List6 (Default)
 ```
-Get-MgUserCalendarView -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### Get3
 ```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get4
 ```
-Get-MgUserCalendarView -CalendarId <String> -EventId <String> -UserId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -CalendarId <String> -EventId <String> -UserId <String> -EndDateTime <String>
+ -StartDateTime <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get5
 ```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserCalendarView -EventId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get6
@@ -45,20 +45,20 @@ Get-MgUserCalendarView -EventId <String> -EventId1 <String> -UserId <String> [-E
 
 ### GetViaIdentity3
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity4
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity5
 ```
-Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity6
@@ -67,25 +67,25 @@ Get-MgUserCalendarView -InputObject <IUsersCalendarIdentity> [-ExpandProperty <S
  [-Property <String[]>] [<CommonParameters>]
 ```
 
+### List3
+```
+Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
+```
+
 ### List4
 ```
-Get-MgUserCalendarView -CalendarId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -CalendarId <String> -UserId <String> -EndDateTime <String> -StartDateTime <String>
+ [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### List5
 ```
-Get-MgUserCalendarView -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
-```
-
-### List6
-```
-Get-MgUserCalendarView -EventId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgUserCalendarView -UserId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -137,6 +137,22 @@ Parameter Sets: List3, List4, List5, List6
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndDateTime
+The end date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T20:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get3, Get4, Get5, GetViaIdentity3, GetViaIdentity4, GetViaIdentity5, List3, List4, List5
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -225,7 +241,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List3, List4, List5, List6
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -288,6 +304,22 @@ Parameter Sets: List3, List4, List5, List6
 Aliases: OrderBy
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartDateTime
+The start date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T19:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get3, Get4, Get5, GetViaIdentity3, GetViaIdentity4, GetViaIdentity5, List3, List4, List5
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

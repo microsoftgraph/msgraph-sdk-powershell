@@ -280,7 +280,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronization>: synchronization
       - `[ReadOnly <Boolean?>]`: 
       - `[Version <String>]`: 
     - `[SchemaId <String>]`: Read-only.
-    - `[SchemaProvisioningTaskIdentifier <String>]`: 
     - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
       - `[Editable <Boolean?>]`: 
       - `[Id <String>]`: 
@@ -409,7 +408,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronization>: synchronization
     - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
     - `[SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>]`: 
     - `[SchemaId <String>]`: Read-only.
-    - `[SchemaProvisioningTaskIdentifier <String>]`: 
     - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[SchemaVersion <String>]`: 
 
@@ -461,7 +459,6 @@ JOBS <IMicrosoftGraphSynchronizationJob[]>: .
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
   - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProvisioningTaskIdentifier <String>]`: 
   - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 
@@ -620,7 +617,6 @@ TEMPLATES <IMicrosoftGraphSynchronizationTemplate[]>: .
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
   - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProvisioningTaskIdentifier <String>]`: 
   - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

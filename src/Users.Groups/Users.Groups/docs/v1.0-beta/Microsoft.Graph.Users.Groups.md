@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Groups
-Module Guid: 1a3cb083-56a9-4cc2-8a36-9a90d74de86e
+Module Guid: 79104cfe-76b8-450e-b027-8210fc036f5e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.groups
 Help Version: 1.0.0.0
 Locale: en-US

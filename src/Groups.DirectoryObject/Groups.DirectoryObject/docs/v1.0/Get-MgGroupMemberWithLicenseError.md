@@ -109,7 +109,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: (All)
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named

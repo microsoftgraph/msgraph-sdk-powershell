@@ -1,47 +1,43 @@
 {
   "resources": [],
   "operations": {
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/fields": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/analytics": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}": {
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/fields": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/columns/{columnDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/drive": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/columns": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/activities/{itemActivityOLD-id1}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}": {
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/fields": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
     "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -57,11 +53,7 @@
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/subscriptions/{subscription-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions": {
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -69,55 +61,15 @@
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/fields": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/driveItem": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities": {
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/driveItem": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/fields": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}": {
+    "/sites/{site-id}/lists/{list-id}/subscriptions/{subscription-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -125,19 +77,67 @@
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/fields": {
-      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/fields": {
+    "/sites/{site-id}/lists": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/driveItem": {
+    "/sites/{site-id}/lists/{list-id}/activities": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/activities/{itemActivityOLD-id1}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/driveItem": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/fields": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/columns": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/columns/{columnDefinition-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/drive": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.List.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem": {
       "originalLocation": "/openApiDocs/beta/Sites.List.yml",
       "apiVersion": "v1.0-beta"
     }

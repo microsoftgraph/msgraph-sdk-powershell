@@ -55,6 +55,10 @@ paths:
                 - chatInfo desc
                 - videoTeleconferenceId
                 - videoTeleconferenceId desc
+                - externalId
+                - externalId desc
+                - joinInformation
+                - joinInformation desc
               type: string
         - name: $select
           in: query
@@ -76,6 +80,8 @@ paths:
                 - audioConferencing
                 - chatInfo
                 - videoTeleconferenceId
+                - externalId
+                - joinInformation
               type: string
         - name: $expand
           in: query
@@ -181,6 +187,8 @@ paths:
                 - audioConferencing
                 - chatInfo
                 - videoTeleconferenceId
+                - externalId
+                - joinInformation
               type: string
         - name: $expand
           in: query
@@ -280,6 +288,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            externalId:
+              type: string
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
       example:
         id: string (identifier)
         creationDateTime: string (timestamp)
@@ -294,6 +307,9 @@ components:
         chatInfo:
           '@odata.type': microsoft.graph.chatInfo
         videoTeleconferenceId: string
+        externalId: string
+        joinInformation:
+          '@odata.type': microsoft.graph.itemBody
     microsoft.graph.entity:
       title: entity
       type: object
@@ -362,6 +378,20 @@ components:
         threadId: string
         messageId: string
         replyChainMessageId: string
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+      example:
+        contentType:
+          '@odata.type': microsoft.graph.bodyType
+        content: string
     odata.error:
       required:
         - error
@@ -383,6 +413,12 @@ components:
         identity:
           '@odata.type': microsoft.graph.identitySet
         upn: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     odata.error.main:
       required:
         - code

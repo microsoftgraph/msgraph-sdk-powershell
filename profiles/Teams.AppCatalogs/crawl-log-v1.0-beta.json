@@ -1,7 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/appCatalogs": {
+    "/appCatalogs/teamsApps/{teamsApp-id}": {
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions": {
       "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -9,15 +13,11 @@
       "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/appCatalogs/teamsApps/{teamsApp-id}": {
+    "/appCatalogs": {
       "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
       "apiVersion": "v1.0-beta"
     },
     "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions": {
       "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
       "apiVersion": "v1.0-beta"
     }

@@ -14,11 +14,12 @@ Create new navigation property to installedApps for teams
 
 ### CreateExpanded1 (Default)
 ```
-New-MgTeamInstalledApp -TeamId <String> [-Id <String>] [-TeamAppDefinitionDisplayName <String>]
- [-TeamAppDefinitionId <String>] [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]
+New-MgTeamInstalledApp -TeamId <String> [-Id <String>] [-TeamAppDefinitionAzureAdAppId <String>]
+ [-TeamAppDefinitionDisplayName <String>] [-TeamAppDefinitionId <String>]
+ [-TeamAppDefinitionPublishingState <String>] [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]
  [-TeamAppDefinitionTeamsAppId <String>] [-TeamAppDefinitionVersion <String>] [-TeamAppDisplayName <String>]
- [-TeamAppDistributionMethod <String>] [-TeamAppExternalId <String>] [-TeamAppId <String>]
- [-TeamAppName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TeamAppDistributionMethod <String>] [-TeamAppExternalId <String>] [-TeamAppId <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -36,11 +37,11 @@ New-MgTeamInstalledApp -InputObject <ITeamsTeamIdentity> -BodyParameter <IMicros
 ### CreateViaIdentityExpanded1
 ```
 New-MgTeamInstalledApp -InputObject <ITeamsTeamIdentity> [-Id <String>]
- [-TeamAppDefinitionDisplayName <String>] [-TeamAppDefinitionId <String>]
- [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>] [-TeamAppDefinitionTeamsAppId <String>]
+ [-TeamAppDefinitionAzureAdAppId <String>] [-TeamAppDefinitionDisplayName <String>]
+ [-TeamAppDefinitionId <String>] [-TeamAppDefinitionPublishingState <String>]
+ [-TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>] [-TeamAppDefinitionTeamsAppId <String>]
  [-TeamAppDefinitionVersion <String>] [-TeamAppDisplayName <String>] [-TeamAppDistributionMethod <String>]
- [-TeamAppExternalId <String>] [-TeamAppId <String>] [-TeamAppName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TeamAppExternalId <String>] [-TeamAppId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -115,6 +116,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -TeamAppDefinitionAzureAdAppId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TeamAppDefinitionDisplayName
 The name of the app provided by the app developer.
 
@@ -145,12 +161,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TeamAppDefinitionPublishingState
+teamsAppPublishingState
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TeamAppDefinitions
 The details for each version of the app.
 To construct, see NOTES section for TEAMAPPDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -251,21 +282,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TeamAppName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TeamId
 key: team-id of team
 
@@ -336,20 +352,23 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamsAppInstallation1>: teamsAppInstallation
   - `[Id <String>]`: Read-only.
+  - `[TeamAppDefinitionAzureAdAppId <String>]`: 
   - `[TeamAppDefinitionDisplayName <String>]`: The name of the app provided by the app developer.
   - `[TeamAppDefinitionId <String>]`: Read-only.
+  - `[TeamAppDefinitionPublishingState <String>]`: teamsAppPublishingState
   - `[TeamAppDefinitionTeamsAppId <String>]`: The id from the Teams App manifest.
   - `[TeamAppDefinitionVersion <String>]`: The version number of the application.
-  - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
+  - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition1[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.
+    - `[AzureAdAppId <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
+    - `[PublishingState <String>]`: teamsAppPublishingState
     - `[TeamsAppId <String>]`: The id from the Teams App manifest.
     - `[Version <String>]`: The version number of the application.
   - `[TeamAppDisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppDistributionMethod <String>]`: teamsAppDistributionMethod
   - `[TeamAppExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppId <String>]`: Read-only.
-  - `[TeamAppName <String>]`: 
 
 INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[ChannelId <String>]`: key: channel-id of channel
@@ -367,7 +386,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff
@@ -376,9 +394,11 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[UserId <String>]`: key: user-id of user
   - `[WorkforceIntegrationId <String>]`: key: workforceIntegration-id of workforceIntegration
 
-TEAMAPPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition[]>: The details for each version of the app.
+TEAMAPPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each version of the app.
   - `[Id <String>]`: Read-only.
+  - `[AzureAdAppId <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
+  - `[PublishingState <String>]`: teamsAppPublishingState
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 

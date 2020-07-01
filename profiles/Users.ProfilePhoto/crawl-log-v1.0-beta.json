@@ -1,7 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/photos/{profilePhoto-id}": {
+    "/users/{user-id}/photos": {
       "originalLocation": "/openApiDocs/beta/Users.ProfilePhoto.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -9,7 +9,7 @@
       "originalLocation": "/openApiDocs/beta/Users.ProfilePhoto.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/photos": {
+    "/users/{user-id}/photos/{profilePhoto-id}": {
       "originalLocation": "/openApiDocs/beta/Users.ProfilePhoto.yml",
       "apiVersion": "v1.0-beta"
     }

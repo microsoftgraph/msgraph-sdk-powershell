@@ -16,7 +16,7 @@ Get pages from users
 ```
 Get-MgUserOnenotePageParentNotebookSectionGroupSectionPage -OnenotePageId <String> -OnenoteSectionId <String>
  -SectionGroupId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All]
  [<CommonParameters>]
 ```
 
@@ -57,6 +57,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Count
 Include count of items
@@ -170,7 +185,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -278,7 +293,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePage
 
 ## NOTES
 

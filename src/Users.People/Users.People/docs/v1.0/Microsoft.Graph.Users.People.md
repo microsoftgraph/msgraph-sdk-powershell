@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.People
-Module Guid: b18c022d-4831-4fa5-ac84-b9dbd236e430
+Module Guid: 76e30899-887c-4fd5-981b-3afeeb42a3ae
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.people
 Help Version: 1.0.0.0
 Locale: en-US

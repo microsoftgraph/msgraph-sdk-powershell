@@ -36,7 +36,7 @@ New-MgOrganization [-AssignedPlans <IMicrosoftGraphAssignedPlan[]>]
 
 ### Create
 ```
-New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgOrganization -BodyParameter <IMicrosoftGraphOrganization1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -86,7 +86,7 @@ The organization resource represents an instance of global settings and resource
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
 Parameter Sets: Create
 Aliases:
 
@@ -682,11 +682,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
 
 ## NOTES
 
@@ -703,7 +703,7 @@ ASSIGNEDPLANS <IMicrosoftGraphAssignedPlan[]>: The collection of service plans a
   - `[Service <String>]`: The name of the service; for example, 'Exchange'.
   - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
 
-BODYPARAMETER <IMicrosoftGraphOrganization>: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
+BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The collection of service plans associated with the tenant. Not nullable.

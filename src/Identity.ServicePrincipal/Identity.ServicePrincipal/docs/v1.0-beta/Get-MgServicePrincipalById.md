@@ -8,24 +8,23 @@ schema: 2.0.0
 # Get-MgServicePrincipalById
 
 ## SYNOPSIS
-Invoke action getByIds
+Get entity from servicePrincipals by key
 
 ## SYNTAX
 
-### GetExpanded (Default)
+### GetExpanded1 (Default)
 ```
 Get-MgServicePrincipalById [-Ids <String[]>] [-Types <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgServicePrincipalById
- -BodyParameter <IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgServicePrincipalById -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action getByIds
+Get entity from servicePrincipals by key
 
 ## EXAMPLES
 
@@ -49,19 +48,18 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -ExpandProperty
+Expand related entities
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
+Type: System.String[]
 Parameter Sets: Get1
-Aliases:
+Aliases: Expand
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -70,10 +68,40 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GetExpanded
+Parameter Sets: GetExpanded1
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get1
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServicePrincipalId
+key: servicePrincipal-id of servicePrincipal
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -85,7 +113,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: GetExpanded
+Parameter Sets: GetExpanded1
 Aliases:
 
 Required: False
@@ -131,24 +159,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServicePrincipal1
+
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODYPARAMETER <IPaths15YkyvsServiceprincipalsMicrosoftGraphGetbyidsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[Ids <String[]>]`: 
-  - `[Types <String[]>]`: 
 
 ## RELATED LINKS
 

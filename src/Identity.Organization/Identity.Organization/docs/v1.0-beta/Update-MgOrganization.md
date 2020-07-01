@@ -36,14 +36,14 @@ Update-MgOrganization -OrganizationId <String> [-AssignedPlans <IMicrosoftGraphA
 
 ### Update1
 ```
-Update-MgOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization> [-PassThru]
+Update-MgOrganization -OrganizationId <String> -BodyParameter <IMicrosoftGraphOrganization1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgOrganization -InputObject <IIdentityOrganizationIdentity>
- -BodyParameter <IMicrosoftGraphOrganization> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOrganization1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -116,7 +116,7 @@ The organization resource represents an instance of global settings and resource
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -760,7 +760,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityOrganizationIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrganization1
 
 ## OUTPUTS
 
@@ -781,7 +781,7 @@ ASSIGNEDPLANS <IMicrosoftGraphAssignedPlan[]>: The collection of service plans a
   - `[Service <String>]`: The name of the service; for example, 'Exchange'.
   - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
 
-BODYPARAMETER <IMicrosoftGraphOrganization>: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
+BODYPARAMETER <IMicrosoftGraphOrganization1>: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The collection of service plans associated with the tenant. Not nullable.

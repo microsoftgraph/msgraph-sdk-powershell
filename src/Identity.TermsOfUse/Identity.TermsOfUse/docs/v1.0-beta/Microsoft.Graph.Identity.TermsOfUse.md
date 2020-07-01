@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.TermsOfUse
-Module Guid: 83acd1c7-b258-4f7b-abfc-8ffccc7adfc0
+Module Guid: e2dba82b-3bad-46a7-ac83-ecfe5e873824
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.termsofuse
 Help Version: 1.0.0.0
 Locale: en-US

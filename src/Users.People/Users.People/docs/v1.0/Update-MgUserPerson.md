@@ -17,8 +17,8 @@ Update the navigation property people in users
 Update-MgUserPerson -PersonId <String> -UserId <String> [-Birthday <String>] [-CompanyName <String>]
  [-Department <String>] [-DisplayName <String>] [-GivenName <String>] [-Id <String>] [-ImAddress <String>]
  [-IsFavorite] [-JobTitle <String>] [-OfficeLocation <String>] [-PersonNotes <String>]
- [-PersonTypeClass <String>] [-PersonTypeSubclass <String>] [-Phones <IMicrosoftGraphPhone1[]>]
- [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
+ [-PersonTypeClass <String>] [-PersonTypeSubclass <String>] [-Phones <IMicrosoftGraphPhone[]>]
+ [-PostalAddresses <IMicrosoftGraphLocation[]>] [-Profession <String>]
  [-ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>] [-Surname <String>]
  [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -26,13 +26,13 @@ Update-MgUserPerson -PersonId <String> -UserId <String> [-Birthday <String>] [-C
 
 ### Update1
 ```
-Update-MgUserPerson -PersonId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPerson1> [-PassThru]
+Update-MgUserPerson -PersonId <String> -UserId <String> -BodyParameter <IMicrosoftGraphPerson> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson1> [-PassThru]
+Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicrosoftGraphPerson> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,8 +41,8 @@ Update-MgUserPerson -InputObject <IUsersPeopleIdentity> -BodyParameter <IMicroso
 Update-MgUserPerson -InputObject <IUsersPeopleIdentity> [-Birthday <String>] [-CompanyName <String>]
  [-Department <String>] [-DisplayName <String>] [-GivenName <String>] [-Id <String>] [-ImAddress <String>]
  [-IsFavorite] [-JobTitle <String>] [-OfficeLocation <String>] [-PersonNotes <String>]
- [-PersonTypeClass <String>] [-PersonTypeSubclass <String>] [-Phones <IMicrosoftGraphPhone1[]>]
- [-PostalAddresses <IMicrosoftGraphLocation1[]>] [-Profession <String>]
+ [-PersonTypeClass <String>] [-PersonTypeSubclass <String>] [-Phones <IMicrosoftGraphPhone[]>]
+ [-PostalAddresses <IMicrosoftGraphLocation[]>] [-Profession <String>]
  [-ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>] [-Surname <String>]
  [-UserPrincipalName <String>] [-Websites <IMicrosoftGraphWebsite[]>] [-YomiCompany <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -93,7 +93,7 @@ person
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -336,7 +336,7 @@ The person's phone numbers.
 To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -352,7 +352,7 @@ The person's addresses.
 To construct, see NOTES section for POSTALADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -509,7 +509,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPerson
 
 ### Microsoft.Graph.PowerShell.Models.IUsersPeopleIdentity
 
@@ -526,7 +526,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPerson1>: person
+BODYPARAMETER <IMicrosoftGraphPerson>: person
   - `[Id <String>]`: Read-only.
   - `[Birthday <String>]`: The person's birthday.
   - `[CompanyName <String>]`: The name of the person's company.
@@ -540,12 +540,12 @@ BODYPARAMETER <IMicrosoftGraphPerson1>: person
   - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
   - `[PersonTypeClass <String>]`: The type of data source, such as Person.
   - `[PersonTypeSubclass <String>]`: The secondary type of data source, such as OrganizationUser.
-  - `[Phones <IMicrosoftGraphPhone1[]>]`: The person's phone numbers.
+  - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
     - `[Language <String>]`: 
     - `[Number <String>]`: The phone number.
     - `[Region <String>]`: 
     - `[Type <String>]`: phoneType
-  - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+  - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
     - `[AddressCity <String>]`: The city.
     - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[AddressPostalCode <String>]`: The postal code.
@@ -580,13 +580,13 @@ INPUTOBJECT <IUsersPeopleIdentity>: Identity Parameter
   - `[PersonId <String>]`: key: person-id of person
   - `[UserId <String>]`: key: user-id of user
 
-PHONES <IMicrosoftGraphPhone1[]>: The person's phone numbers.
+PHONES <IMicrosoftGraphPhone[]>: The person's phone numbers.
   - `[Language <String>]`: 
   - `[Number <String>]`: The phone number.
   - `[Region <String>]`: 
   - `[Type <String>]`: phoneType
 
-POSTALADDRESSES <IMicrosoftGraphLocation1[]>: The person's addresses.
+POSTALADDRESSES <IMicrosoftGraphLocation[]>: The person's addresses.
   - `[AddressCity <String>]`: The city.
   - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[AddressPostalCode <String>]`: The postal code.

@@ -33,6 +33,7 @@ paths:
                 - id
                 - contributionToContentDiscoveryDisabled
                 - contributionToContentDiscoveryAsOrganizationDisabled
+                - regionalAndLanguageSettings
                 - shiftPreferences
               type: string
         - name: $expand
@@ -46,6 +47,7 @@ paths:
             items:
               enum:
                 - '*'
+                - regionalAndLanguageSettings
                 - shiftPreferences
               type: string
       responses:
@@ -56,6 +58,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
           links:
+            regionalAndLanguageSettings:
+              operationId: user.settings.GetRegionalAndLanguageSettings
+              parameters:
+                user-id: $request.path.user-id
+                regionalAndLanguageSettings-id: $response.body#/id
             shiftPreferences:
               operationId: user.settings.GetShiftPreferences
               parameters:
@@ -82,6 +89,85 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/regionalAndLanguageSettings':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get regionalAndLanguageSettings from users
+      operationId: users.settings_GetRegionalAndLanguageSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - defaultDisplayLanguage
+                - authoringLanguages
+                - defaultTranslationLanguage
+                - defaultSpeechInputLanguage
+                - defaultRegionalFormat
+                - regionalFormatOverrides
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property regionalAndLanguageSettings in users
+      operationId: users.settings_UpdateRegionalAndLanguageSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: user-id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
         required: true
       responses:
         '204':
@@ -178,14 +264,52 @@ components:
               type: boolean
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+            regionalAndLanguageSettings:
+              $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
       example:
         id: string (identifier)
         contributionToContentDiscoveryDisabled: true
         contributionToContentDiscoveryAsOrganizationDisabled: true
+        regionalAndLanguageSettings:
+          '@odata.type': microsoft.graph.regionalAndLanguageSettings
         shiftPreferences:
           '@odata.type': microsoft.graph.shiftPreferences
+    microsoft.graph.regionalAndLanguageSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: regionalAndLanguageSettings
+          type: object
+          properties:
+            defaultDisplayLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            authoringLanguages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultTranslationLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultSpeechInputLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultRegionalFormat:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            regionalFormatOverrides:
+              $ref: '#/components/schemas/microsoft.graph.regionalFormatOverrides'
+      example:
+        id: string (identifier)
+        defaultDisplayLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        authoringLanguages:
+          - '@odata.type': microsoft.graph.localeInfo
+        defaultTranslationLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        defaultSpeechInputLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        defaultRegionalFormat:
+          '@odata.type': microsoft.graph.localeInfo
+        regionalFormatOverrides:
+          '@odata.type': microsoft.graph.regionalFormatOverrides
     microsoft.graph.shiftPreferences:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -214,6 +338,54 @@ components:
           description: Read-only.
       example:
         id: string (identifier)
+    microsoft.graph.localeInfo:
+      title: localeInfo
+      type: object
+      properties:
+        locale:
+          type: string
+          description: 'A locale representation for the user, which includes the user''s preferred language and country/region. For example, ''en-us''. The language component follows 2-letter codes as defined in ISO 639-1, and the country component follows 2-letter codes as defined in ISO 3166-1 alpha-2.'
+          nullable: true
+        displayName:
+          type: string
+          description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
+          nullable: true
+      example:
+        locale: string
+        displayName: string
+    microsoft.graph.regionalFormatOverrides:
+      title: regionalFormatOverrides
+      type: object
+      properties:
+        calendar:
+          type: string
+          nullable: true
+        firstDayOfWeek:
+          type: string
+          nullable: true
+        shortDateFormat:
+          type: string
+          nullable: true
+        longDateFormat:
+          type: string
+          nullable: true
+        shortTimeFormat:
+          type: string
+          nullable: true
+        longTimeFormat:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
+      example:
+        calendar: string
+        firstDayOfWeek: string
+        shortDateFormat: string
+        longDateFormat: string
+        shortTimeFormat: string
+        longTimeFormat: string
+        timeZone: string
     microsoft.graph.changeTrackedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

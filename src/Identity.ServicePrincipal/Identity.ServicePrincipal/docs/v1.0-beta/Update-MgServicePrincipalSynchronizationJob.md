@@ -17,7 +17,6 @@ Update the navigation property jobs in servicePrincipals
 Update-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> -SynchronizationJobId <String>
  [-Id <String>] [-ScheduleExpiration <DateTime>] [-ScheduleInterval <TimeSpan>] [-ScheduleState <String>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>]
  [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-PassThru] [-Confirm]
@@ -41,7 +40,6 @@ Update-MgServicePrincipalSynchronizationJob -InputObject <IIdentityServicePrinci
 Update-MgServicePrincipalSynchronizationJob -InputObject <IIdentityServicePrincipalIdentity> [-Id <String>]
  [-ScheduleExpiration <DateTime>] [-ScheduleInterval <TimeSpan>] [-ScheduleState <String>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>]
  [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-PassThru] [-Confirm]
@@ -198,21 +196,6 @@ Accept wildcard characters: False
 
 ### -SchemaId
 Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SchemaProvisioningTaskIdentifier
-.
 
 ```yaml
 Type: System.String
@@ -422,7 +405,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
   - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProvisioningTaskIdentifier <String>]`: 
   - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

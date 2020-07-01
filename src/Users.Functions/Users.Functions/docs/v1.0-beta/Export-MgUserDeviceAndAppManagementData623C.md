@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```yaml
 Type: System.Int32
 Parameter Sets: Export
-Aliases: Top
+Aliases: Top, Limit
 
 Required: True
 Position: Named

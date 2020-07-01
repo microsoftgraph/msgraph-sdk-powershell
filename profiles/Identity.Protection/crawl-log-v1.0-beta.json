@@ -1,31 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/riskDetections": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/anonymousIpRiskEvents/{anonymousIpRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/unfamiliarLocationRiskEvents/{unfamiliarLocationRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskyUsers": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/impossibleTravelRiskEvents": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityRiskEvents": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/anonymousIpRiskEvents": {
+    "/riskyUsers/{riskyUser-id}/history": {
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -33,39 +9,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/riskyUsers": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/riskyUsers/microsoft.graph.dismiss": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityRiskEvents/{identityRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskyUsers/{riskyUser-id}/history": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/impossibleTravelRiskEvents/{impossibleTravelRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/leakedCredentialsRiskEvents/{leakedCredentialsRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/suspiciousIpRiskEvents": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/malwareRiskEvents": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/unfamiliarLocationRiskEvents": {
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -73,23 +21,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/leakedCredentialsRiskEvents": {
+    "/riskDetections": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     },
     "/riskyUsers/{riskyUser-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/malwareRiskEvents/{malwareRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/suspiciousIpRiskEvents/{suspiciousIpRiskEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityRiskEvents/{identityRiskEvent-id}/impactedUser": {
       "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
       "apiVersion": "v1.0-beta"
     }

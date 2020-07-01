@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Mail
-Module Guid: 49bb8b38-c8d0-4124-818c-a27185a46230
+Module Guid: 86ca35ac-f73d-4820-9c30-8f13ca8cd17a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.mail
 Help Version: 1.0.0.0
 Locale: en-US

@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name associated with the place.
 
 ```yaml
 Type: System.String
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -Phone
-.
+The phone number of the place.
 
 ```yaml
 Type: System.String
@@ -386,13 +386,13 @@ BODYPARAMETER <IMicrosoftGraphPlace>: place
   - `[AddressPostalCode <String>]`: The postal code.
   - `[AddressState <String>]`: The state.
   - `[AddressStreet <String>]`: The street.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name associated with the place.
   - `[GeoCoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
   - `[GeoCoordinateAltitude <Double?>]`: The altitude of the location.
   - `[GeoCoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
   - `[GeoCoordinateLatitude <Double?>]`: The latitude of the location.
   - `[GeoCoordinateLongitude <Double?>]`: The longitude of the location.
-  - `[Phone <String>]`: 
+  - `[Phone <String>]`: The phone number of the place.
 
 INPUTOBJECT <IPlacesIdentity>: Identity Parameter
   - `[PlaceId <String>]`: key: place-id of place

@@ -32,13 +32,13 @@ New-MgPlannerPlanTask -PlannerPlanId <String> [-ActiveChecklistItemCount <Int32>
 
 ### Create
 ```
-New-MgPlannerPlanTask -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgPlannerPlanTask -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPlannerPlanTask -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm]
+New-MgPlannerPlanTask -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -197,7 +197,7 @@ plannerTask
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -686,13 +686,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
 
 ## NOTES
 
@@ -703,7 +703,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerTask1>: plannerTask
+BODYPARAMETER <IMicrosoftGraphPlannerTask>: plannerTask
   - `[Id <String>]`: Read-only.
   - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
   - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories

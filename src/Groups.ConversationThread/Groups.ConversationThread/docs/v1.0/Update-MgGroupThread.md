@@ -239,7 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Preview
-A short summary from the body of the latest post in this converstaion.
+A short summary from the body of the latest post in this conversation.
 
 ```yaml
 Type: System.String
@@ -394,7 +394,7 @@ BODYPARAMETER <IMicrosoftGraphConversationThread>: conversationThread
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the post. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String>]`: A property value.
-  - `[Preview <String>]`: A short summary from the body of the latest post in this converstaion.
+  - `[Preview <String>]`: A short summary from the body of the latest post in this conversation.
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: The To: recipients for the thread.
   - `[Topic <String>]`: The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
   - `[UniqueSenders <String[]>]`: All the users that sent a message to this thread.

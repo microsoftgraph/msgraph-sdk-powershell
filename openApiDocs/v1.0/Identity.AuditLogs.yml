@@ -1255,7 +1255,7 @@ components:
       properties:
         id:
           type: string
-          description: Unique GUID of the conditional access polic.y
+          description: Unique GUID of the conditional access policy.
           nullable: true
         displayName:
           type: string

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams.Team
-Module Guid: 2a1a6e8d-ebd2-4d07-8670-6c8aabc414b0
+Module Guid: 574deb01-4913-44eb-9bfc-25c0b8d63b7b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams.team
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,6 +23,18 @@ Get entity from teams by key
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
 Get channels from teams
 
+### [Get-MgTeamChannelFileFolder](Get-MgTeamChannelFileFolder.md)
+Get filesFolder from teams
+
+### [Get-MgTeamChannelMessage](Get-MgTeamChannelMessage.md)
+Get messages from teams
+
+### [Get-MgTeamChannelMessageHostedContent](Get-MgTeamChannelMessageHostedContent.md)
+Get hostedContents from teams
+
+### [Get-MgTeamChannelMessageReply](Get-MgTeamChannelMessageReply.md)
+Get replies from teams
+
 ### [Get-MgTeamChannelTab](Get-MgTeamChannelTab.md)
 Get tabs from teams
 
@@ -43,6 +55,18 @@ Get operations from teams
 
 ### [Get-MgTeamPrimaryChannel](Get-MgTeamPrimaryChannel.md)
 Get primaryChannel from teams
+
+### [Get-MgTeamPrimaryChannelFileFolder](Get-MgTeamPrimaryChannelFileFolder.md)
+Get filesFolder from teams
+
+### [Get-MgTeamPrimaryChannelMessage](Get-MgTeamPrimaryChannelMessage.md)
+Get messages from teams
+
+### [Get-MgTeamPrimaryChannelMessageHostedContent](Get-MgTeamPrimaryChannelMessageHostedContent.md)
+Get hostedContents from teams
+
+### [Get-MgTeamPrimaryChannelMessageReply](Get-MgTeamPrimaryChannelMessageReply.md)
+Get replies from teams
 
 ### [Get-MgTeamPrimaryChannelTab](Get-MgTeamPrimaryChannelTab.md)
 Get tabs from teams
@@ -101,6 +125,15 @@ Add new entity to teams
 ### [New-MgTeamChannel](New-MgTeamChannel.md)
 Create new navigation property to channels for teams
 
+### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
+Create new navigation property to messages for teams
+
+### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for teams
+
+### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
+Create new navigation property to replies for teams
+
 ### [New-MgTeamChannelTab](New-MgTeamChannelTab.md)
 Create new navigation property to tabs for teams
 
@@ -109,6 +142,15 @@ Create new navigation property to installedApps for teams
 
 ### [New-MgTeamOperation](New-MgTeamOperation.md)
 Create new navigation property to operations for teams
+
+### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
+Create new navigation property to messages for teams
+
+### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
+Create new navigation property to hostedContents for teams
+
+### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
+Create new navigation property to replies for teams
 
 ### [New-MgTeamPrimaryChannelTab](New-MgTeamPrimaryChannelTab.md)
 Create new navigation property to tabs for teams
@@ -155,6 +197,18 @@ Update entity in teams
 ### [Update-MgTeamChannel](Update-MgTeamChannel.md)
 Update the navigation property channels in teams
 
+### [Update-MgTeamChannelFileFolder](Update-MgTeamChannelFileFolder.md)
+Update the navigation property filesFolder in teams
+
+### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
+Update the navigation property messages in teams
+
+### [Update-MgTeamChannelMessageHostedContent](Update-MgTeamChannelMessageHostedContent.md)
+Update the navigation property hostedContents in teams
+
+### [Update-MgTeamChannelMessageReply](Update-MgTeamChannelMessageReply.md)
+Update the navigation property replies in teams
+
 ### [Update-MgTeamChannelTab](Update-MgTeamChannelTab.md)
 Update the navigation property tabs in teams
 
@@ -166,6 +220,18 @@ Update the navigation property operations in teams
 
 ### [Update-MgTeamPrimaryChannel](Update-MgTeamPrimaryChannel.md)
 Update the navigation property primaryChannel in teams
+
+### [Update-MgTeamPrimaryChannelFileFolder](Update-MgTeamPrimaryChannelFileFolder.md)
+Update the navigation property filesFolder in teams
+
+### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
+Update the navigation property messages in teams
+
+### [Update-MgTeamPrimaryChannelMessageHostedContent](Update-MgTeamPrimaryChannelMessageHostedContent.md)
+Update the navigation property hostedContents in teams
+
+### [Update-MgTeamPrimaryChannelMessageReply](Update-MgTeamPrimaryChannelMessageReply.md)
+Update the navigation property replies in teams
 
 ### [Update-MgTeamPrimaryChannelTab](Update-MgTeamPrimaryChannelTab.md)
 Update the navigation property tabs in teams

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Policies
-Module Guid: 7e390706-74aa-4a42-bb1d-256911f9f54e
+Module Guid: bf4549b4-70f6-493d-aa15-1d9cc7531102
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.policies
 Help Version: 1.0.0.0
 Locale: en-US

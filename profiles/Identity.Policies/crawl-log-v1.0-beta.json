@@ -5,35 +5,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/policies/adminConsentRequestPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/activityBasedTimeoutPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/policies/claimsMappingPolicies/{claimsMappingPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -45,11 +17,31 @@
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/policies/claimsMappingPolicies": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/adminConsentRequestPolicy": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/policies/tokenLifetimePolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/policies/identitySecurityDefaultsEnforcementPolicy": {
+    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/authenticationFlowsPolicy": {
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -57,7 +49,19 @@
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+    "/policies/identitySecurityDefaultsEnforcementPolicy": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/policies/activityBasedTimeoutPolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
       "apiVersion": "v1.0-beta"
     }

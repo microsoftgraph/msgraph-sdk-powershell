@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.OnPremisesPublishingProfiles
-Module Guid: 0cf5f494-e84b-46e4-ba1b-8e788ea4494a
+Module Guid: 25903527-5b3c-49a1-aed9-8dc24e27ba45
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.onpremisespublishingprofiles
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,6 +25,12 @@ Get publishedResources from onPremisesPublishingProfiles
 
 ### [Get-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup](Get-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup.md)
 Get agentGroups from onPremisesPublishingProfiles
+
+### [Get-MgOnPremisPublishingProfileConnector](Get-MgOnPremisPublishingProfileConnector.md)
+Get connectors from onPremisesPublishingProfiles
+
+### [Get-MgOnPremisPublishingProfileConnectorGroup](Get-MgOnPremisPublishingProfileConnectorGroup.md)
+Get connectorGroups from onPremisesPublishingProfiles
 
 ### [Get-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile](Get-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile.md)
 Get entity from onPremisesPublishingProfiles by key
@@ -55,6 +61,12 @@ Create new navigation property to publishedResources for onPremisesPublishingPro
 
 ### [New-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup](New-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup.md)
 Create new navigation property to agentGroups for onPremisesPublishingProfiles
+
+### [New-MgOnPremisPublishingProfileConnector](New-MgOnPremisPublishingProfileConnector.md)
+Create new navigation property to connectors for onPremisesPublishingProfiles
+
+### [New-MgOnPremisPublishingProfileConnectorGroup](New-MgOnPremisPublishingProfileConnectorGroup.md)
+Create new navigation property to connectorGroups for onPremisesPublishingProfiles
 
 ### [New-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile](New-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile.md)
 Add new entity to onPremisesPublishingProfiles
@@ -88,6 +100,12 @@ Update the navigation property publishedResources in onPremisesPublishingProfile
 
 ### [Update-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup](Update-MgOnPremisPublishingProfileAgentGroupPublishedResourceAgentGroup.md)
 Update the navigation property agentGroups in onPremisesPublishingProfiles
+
+### [Update-MgOnPremisPublishingProfileConnector](Update-MgOnPremisPublishingProfileConnector.md)
+Update the navigation property connectors in onPremisesPublishingProfiles
+
+### [Update-MgOnPremisPublishingProfileConnectorGroup](Update-MgOnPremisPublishingProfileConnectorGroup.md)
+Update the navigation property connectorGroups in onPremisesPublishingProfiles
 
 ### [Update-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile](Update-MgOnPremisPublishingProfileOnPremisPublishingProfileOnPremisPublishingProfile.md)
 Update entity in onPremisesPublishingProfiles

@@ -5,11 +5,11 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/photos/{profilePhoto-id}": {
+    "/groups/{group-id}/photo": {
       "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/photo": {
+    "/groups/{group-id}/photos/{profilePhoto-id}": {
       "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml",
       "apiVersion": "v1.0"
     }

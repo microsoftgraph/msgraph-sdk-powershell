@@ -19,7 +19,7 @@ Update-MgTeamSchedule -TeamId <String> [-Enabled] [-Id <String>]
  [-OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]
  [-OpenShifts <IMicrosoftGraphOpenShift[]>] [-OpenShiftsEnabled] [-ProvisionStatus <String>]
  [-ProvisionStatusCode <String>] [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]
- [-Shifts <IMicrosoftGraphShift[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
+ [-Shifts <IMicrosoftGraphShift1[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
  [-SwapShiftsRequestsEnabled] [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
  [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-PassThru]
@@ -28,13 +28,13 @@ Update-MgTeamSchedule -TeamId <String> [-Enabled] [-Id <String>]
 
 ### Update1
 ```
-Update-MgTeamSchedule -TeamId <String> -BodyParameter <IMicrosoftGraphSchedule> [-PassThru] [-Confirm]
+Update-MgTeamSchedule -TeamId <String> -BodyParameter <IMicrosoftGraphSchedule1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgTeamSchedule -InputObject <ITeamsTeamIdentity> -BodyParameter <IMicrosoftGraphSchedule> [-PassThru]
+Update-MgTeamSchedule -InputObject <ITeamsTeamIdentity> -BodyParameter <IMicrosoftGraphSchedule1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -45,7 +45,7 @@ Update-MgTeamSchedule -InputObject <ITeamsTeamIdentity> [-Enabled] [-Id <String>
  [-OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]
  [-OpenShifts <IMicrosoftGraphOpenShift[]>] [-OpenShiftsEnabled] [-ProvisionStatus <String>]
  [-ProvisionStatusCode <String>] [-SchedulingGroups <IMicrosoftGraphSchedulingGroup[]>]
- [-Shifts <IMicrosoftGraphShift[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
+ [-Shifts <IMicrosoftGraphShift1[]>] [-SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]
  [-SwapShiftsRequestsEnabled] [-TimeClockEnabled] [-TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]
  [-TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>] [-TimeOffRequestsEnabled]
  [-TimesOff <IMicrosoftGraphTimeOff[]>] [-TimeZone <String>] [-WorkforceIntegrationIds <String[]>] [-PassThru]
@@ -82,7 +82,7 @@ schedule
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -284,7 +284,7 @@ The shifts in the schedule.
 To construct, see NOTES section for SHIFTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -486,7 +486,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchedule1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsTeamIdentity
 
@@ -503,7 +503,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
+BODYPARAMETER <IMicrosoftGraphSchedule1>: schedule
   - `[Id <String>]`: Read-only.
   - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
   - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: 
@@ -580,7 +580,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[DisplayName <String>]`: The display name for the schedulingGroup. Required.
     - `[IsActive <Boolean?>]`: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
     - `[UserIds <String[]>]`: The list of user IDs that are a member of the schedulingGroup. Required.
-  - `[Shifts <IMicrosoftGraphShift[]>]`: The shifts in the schedule.
+  - `[Shifts <IMicrosoftGraphShift1[]>]`: The shifts in the schedule.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
@@ -591,6 +591,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[DraftShiftNotes <String>]`: The shift notes for the shiftItem.
     - `[DraftShiftStartDateTime <DateTime?>]`: 
     - `[DraftShiftTheme <String>]`: scheduleEntityTheme
+    - `[IsStagedForDeletion <Boolean?>]`: 
     - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
     - `[SharedShiftActivities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
     - `[SharedShiftDisplayName <String>]`: The shift label of the shiftItem.
@@ -677,7 +678,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff
@@ -775,7 +775,7 @@ SCHEDULINGGROUPS <IMicrosoftGraphSchedulingGroup[]>: The logical grouping of use
   - `[IsActive <Boolean?>]`: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
   - `[UserIds <String[]>]`: The list of user IDs that are a member of the schedulingGroup. Required.
 
-SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
+SHIFTS <IMicrosoftGraphShift1[]>: The shifts in the schedule.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -797,6 +797,7 @@ SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
   - `[DraftShiftNotes <String>]`: The shift notes for the shiftItem.
   - `[DraftShiftStartDateTime <DateTime?>]`: 
   - `[DraftShiftTheme <String>]`: scheduleEntityTheme
+  - `[IsStagedForDeletion <Boolean?>]`: 
   - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
   - `[SharedShiftActivities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
   - `[SharedShiftDisplayName <String>]`: The shift label of the shiftItem.

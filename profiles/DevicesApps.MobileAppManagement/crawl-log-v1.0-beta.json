@@ -5,15 +5,15 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/managedAppRegistrations": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/windowsInformationProtectionDeviceRegistrations": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/managedAppRegistrations": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     }

@@ -5,18 +5,6 @@
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/contentTypes": {
-      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/contentTypes/{contentType-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/sites/{site-id}/columns/{columnDefinition-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
@@ -25,7 +13,7 @@
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/sites/{site-id1}": {
+    "/sites/{site-id}/columns": {
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -33,15 +21,27 @@
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites": {
+    "/sites/{site-id}": {
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/columns": {
+    "/sites/{site-id}/contentTypes/{contentType-id}": {
+      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/sites/{site-id1}": {
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     },
     "/sites/{site-id}/sites": {
+      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites": {
+      "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/contentTypes": {
       "originalLocation": "/openApiDocs/beta/Sites.Site.yml",
       "apiVersion": "v1.0-beta"
     }

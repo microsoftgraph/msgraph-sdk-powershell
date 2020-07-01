@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Application
-Module Guid: b75fee06-5d6b-4de8-9899-e50d2c893a21
+Module Guid: dbd13d5b-c419-4f32-9c94-a24176e0b61e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.application
 Help Version: 1.0.0.0
 Locale: en-US
@@ -37,6 +37,9 @@ Invoke function delta
 
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
 Get extensionProperties from applications
+
+### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
+Get homeRealmDiscoveryPolicies from applications
 
 ### [Get-MgApplicationMemberGroup](Get-MgApplicationMemberGroup.md)
 Invoke action getMemberGroups

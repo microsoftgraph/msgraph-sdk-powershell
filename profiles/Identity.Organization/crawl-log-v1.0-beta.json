@@ -1,23 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
-      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/extensions/{extension-id}": {
+    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -25,11 +9,19 @@
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
+    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/organization/{organization-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/organization/{organization-id}/brandings": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -37,7 +29,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}": {
+    "/organization/{organization-id}/microsoft.graph.checkMemberGroups": {
+      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
+      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -49,11 +49,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/microsoft.graph.validateProperties": {
+    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/{organization-id}/extensions": {
+    "/organization/{organization-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/organization/microsoft.graph.validateProperties": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -61,11 +65,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/organization/{organization-id}/brandings": {
-      "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/organization/{organization-id}/microsoft.graph.checkMemberGroups": {
+    "/organization/microsoft.graph.getUserOwnedObjects": {
       "originalLocation": "/openApiDocs/beta/Identity.Organization.yml",
       "apiVersion": "v1.0-beta"
     }

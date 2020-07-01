@@ -1,15 +1,15 @@
 {
   "resources": [],
   "operations": {
+    "/invitations": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
+      "apiVersion": "v1.0"
+    },
     "/invitations/{invitation-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
       "apiVersion": "v1.0"
     },
     "/invitations/{invitation-id}/invitedUser": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
-      "apiVersion": "v1.0"
-    },
-    "/invitations": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
       "apiVersion": "v1.0"
     }

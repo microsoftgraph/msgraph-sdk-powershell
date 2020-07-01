@@ -19,15 +19,15 @@ New-MgDeviceAppManagementIoManagedAppProtection [-AllowedDataStorageLocations <S
  [-AllowedOutboundDataTransferDestinations <String>] [-AppDataEncryptionType <String>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-ContactSyncBlocked]
- [-CreatedDateTime <DateTime>] [-DataBackupBlocked] [-DeployedAppCount <Int32>]
- [-DeploymentSummaryConfigurationDeployedUserCount <Int32>]
+ [-CreatedDateTime <DateTime>] [-CustomBrowserProtocol <String>] [-DataBackupBlocked]
+ [-DeployedAppCount <Int32>] [-DeploymentSummaryConfigurationDeployedUserCount <Int32>]
  [-DeploymentSummaryConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
  [-DeploymentSummaryDisplayName <String>] [-DeploymentSummaryId <String>]
  [-DeploymentSummaryLastRefreshTime <DateTime>] [-DeploymentSummaryVersion <String>] [-Description <String>]
  [-DeviceComplianceRequired] [-DisableAppPinIfDevicePinIsSet] [-DisplayName <String>] [-FaceIdBlocked]
  [-FingerprintBlocked] [-Id <String>] [-IsAssigned] [-LastModifiedDateTime <DateTime>]
- [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>] [-MinimumPinLength <Int32>]
- [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
+ [-ManagedBrowser <String>] [-ManagedBrowserToOpenLinksRequired] [-MaximumPinRetries <Int32>]
+ [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningOSVersion <String>] [-OrganizationalCredentialsRequired] [-PeriodBeforePinReset <TimeSpan>]
  [-PeriodOfflineBeforeAccessCheck <TimeSpan>] [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>]
@@ -209,6 +209,22 @@ The date and time the policy was created.
 
 ```yaml
 Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomBrowserProtocol
+A custom browser protocol to open weblink on iOS.
+When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -465,6 +481,21 @@ Last time the policy was modified.
 
 ```yaml
 Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ManagedBrowser
+managedBrowserType
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -834,6 +865,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
   - `[DeviceComplianceRequired <Boolean?>]`: Indicates whether device compliance is required.
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+  - `[ManagedBrowser <String>]`: managedBrowserType
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True
@@ -862,6 +894,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
     - `[Id <String>]`: Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: mobileAppIdentifier
     - `[Version <String>]`: Version of the entity.
+  - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummaryConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[DeploymentSummaryConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented

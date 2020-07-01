@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups.Endpoint
-Module Guid: 08891794-8ca4-4b47-a291-90f0afe546ea
+Module Guid: 67aa89d1-284b-411f-9455-dd14bdd09d5f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups.endpoint
 Help Version: 1.0.0.0
 Locale: en-US

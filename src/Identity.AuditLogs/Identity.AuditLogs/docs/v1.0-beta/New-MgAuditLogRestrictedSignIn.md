@@ -985,7 +985,7 @@ APPLIEDCONDITIONALACCESSPOLICIES <IMicrosoftGraphAppliedConditionalAccessPolicy1
   - `[DisplayName <String>]`: Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
   - `[EnforcedGrantControls <String[]>]`: Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
   - `[EnforcedSessionControls <String[]>]`: Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-  - `[Id <String>]`: Unique GUID of the conditional access polic.y
+  - `[Id <String>]`: Unique GUID of the conditional access policy.
   - `[Result <String>]`: 
 
 AUTHENTICATIONDETAILS <IMicrosoftGraphAuthenticationDetail[]>: .
@@ -1014,7 +1014,7 @@ BODYPARAMETER <IMicrosoftGraphRestrictedSignIn1>: restrictedSignIn
     - `[DisplayName <String>]`: Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     - `[EnforcedGrantControls <String[]>]`: Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
     - `[EnforcedSessionControls <String[]>]`: Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-    - `[Id <String>]`: Unique GUID of the conditional access polic.y
+    - `[Id <String>]`: Unique GUID of the conditional access policy.
     - `[Result <String>]`: 
   - `[AuthenticationDetails <IMicrosoftGraphAuthenticationDetail[]>]`: 
     - `[AuthenticationMethod <String>]`: 

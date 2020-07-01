@@ -434,6 +434,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
     - `[UserIncludeGroups <String[]>]`: 
     - `[UserIncludeRoles <String[]>]`: 
     - `[UserIncludeUsers <String[]>]`: 
+    - `[UserRiskLevels <String[]>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
@@ -469,6 +470,7 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
   - `[UserIncludeGroups <String[]>]`: 
   - `[UserIncludeRoles <String[]>]`: 
   - `[UserIncludeUsers <String[]>]`: 
+  - `[UserRiskLevels <String[]>]`: 
 
 ## RELATED LINKS
 

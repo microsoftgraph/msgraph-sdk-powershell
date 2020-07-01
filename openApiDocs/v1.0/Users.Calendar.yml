@@ -354,6 +354,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -443,6 +455,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -491,6 +505,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -588,6 +603,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -635,6 +662,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -1449,6 +1477,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -1497,6 +1527,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -1655,6 +1686,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -2326,6 +2358,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -2374,6 +2408,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -2518,6 +2553,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -3332,6 +3368,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -3380,6 +3418,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -3538,6 +3577,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5428,6 +5468,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -5476,6 +5518,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -5648,6 +5691,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -6651,6 +6695,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -6699,6 +6745,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -6885,6 +6932,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -7707,6 +7755,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -7755,6 +7805,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -7927,6 +7978,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -8930,6 +8982,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -8978,6 +9032,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -9164,6 +9219,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -10929,6 +10985,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11018,6 +11086,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -11066,6 +11136,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -11177,6 +11248,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -11224,6 +11307,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -12132,6 +12216,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -12180,6 +12266,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -12352,6 +12439,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -13098,6 +13186,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -13146,6 +13236,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -13304,6 +13395,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -14212,6 +14304,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -14260,6 +14354,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -14432,6 +14527,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -15534,6 +15630,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -15623,6 +15731,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -15671,6 +15781,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -15768,6 +15879,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -15815,6 +15938,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -16649,6 +16773,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -16697,6 +16823,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -16855,6 +16982,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -17081,6 +17209,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -17129,6 +17259,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -17287,6 +17418,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -18187,6 +18319,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -18235,6 +18369,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -18393,6 +18528,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -19064,6 +19200,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -19112,6 +19250,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -19256,6 +19395,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -20090,6 +20230,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -20138,6 +20280,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -20296,6 +20439,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -20522,6 +20666,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -20570,6 +20716,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -20728,6 +20875,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -21628,6 +21776,8 @@ paths:
                 - onlineMeetingProvider desc
                 - onlineMeeting
                 - onlineMeeting desc
+                - allowNewTimeProposals
+                - allowNewTimeProposals desc
               type: string
         - name: $select
           in: query
@@ -21676,6 +21826,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -21834,6 +21985,7 @@ paths:
                 - isOnlineMeeting
                 - onlineMeetingProvider
                 - onlineMeeting
+                - allowNewTimeProposals
                 - attachments
                 - singleValueExtendedProperties
                 - multiValueExtendedProperties
@@ -22649,6 +22801,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             onlineMeeting:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
+            allowNewTimeProposals:
+              type: boolean
+              nullable: true
             attachments:
               type: array
               items:
@@ -22730,6 +22885,7 @@ components:
           '@odata.type': microsoft.graph.onlineMeetingProviderType
         onlineMeeting:
           '@odata.type': microsoft.graph.onlineMeetingInfo
+        allowNewTimeProposals: true
         attachments:
           - '@odata.type': microsoft.graph.attachment
         singleValueExtendedProperties:
@@ -23079,6 +23235,8 @@ components:
           properties:
             status:
               $ref: '#/components/schemas/microsoft.graph.responseStatus'
+            proposedNewTime:
+              $ref: '#/components/schemas/microsoft.graph.timeSlot'
       example:
         emailAddress:
           '@odata.type': microsoft.graph.emailAddress
@@ -23086,6 +23244,8 @@ components:
           '@odata.type': microsoft.graph.attendeeType
         status:
           '@odata.type': microsoft.graph.responseStatus
+        proposedNewTime:
+          '@odata.type': microsoft.graph.timeSlot
     microsoft.graph.recipient:
       title: recipient
       type: object
@@ -23339,6 +23499,19 @@ components:
           '@odata.type': microsoft.graph.emailAddress
         type:
           '@odata.type': microsoft.graph.attendeeType
+    microsoft.graph.timeSlot:
+      title: timeSlot
+      type: object
+      properties:
+        start:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        end:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      example:
+        start:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
+        end:
+          '@odata.type': microsoft.graph.dateTimeTimeZone
     microsoft.graph.phone:
       title: phone
       type: object

@@ -12,7 +12,7 @@ Update the navigation property appRoleAssignments in groups
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> [-AppRoleId <String>]
  [-CreationTimestamp <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>] [-PrincipalId <String>]
@@ -20,19 +20,19 @@ Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String> 
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgGroupAppRoleAssignment -AppRoleAssignmentId <String> -GroupId <String>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgGroupAppRoleAssignment -InputObject <IIdentityAppRoleAssignmentsIdentity>
  -BodyParameter <IMicrosoftGraphAppRoleAssignment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgGroupAppRoleAssignment -InputObject <IIdentityAppRoleAssignmentsIdentity> [-AppRoleId <String>]
  [-CreationTimestamp <DateTime>] [-Id <String>] [-PrincipalDisplayName <String>] [-PrincipalId <String>]
@@ -70,7 +70,7 @@ key: appRoleAssignment-id of appRoleAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -81,11 +81,15 @@ Accept wildcard characters: False
 ```
 
 ### -AppRoleId
-.
+The identifier (id) for the app role which is assigned to the principal.
+This app role must be exposed in the appRoles property on the resource application's service principal (resourceId).
+If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles.
+Required on create.
+Does not support $filter.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -101,7 +105,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppRoleAssignment
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -112,11 +116,14 @@ Accept wildcard characters: False
 ```
 
 ### -CreationTimestamp
-.
+The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+Read-only.
+Does not support $filter.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -131,7 +138,7 @@ key: group-id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -146,7 +153,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -162,7 +169,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityAppRoleAssignmentsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -188,11 +195,13 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalDisplayName
-.
+The display name of the user, group, or service principal that was granted the app role assignment.
+Read-only.
+Supports $filter (eq and startswith).
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -203,11 +212,13 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalId
-.
+The unique identifier (id) for the user, group or service principal being granted the app role.
+Required on create.
+Does not support $filter.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -218,11 +229,14 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalType
-.
+The type of the assigned principal.
+This can either be 'User', 'Group' or 'ServicePrincipal'.
+Read-only.
+Does not support $filter.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -233,11 +247,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceDisplayName
-.
+The display name of the resource app's service principal to which the assignment is made.
+Does not support $filter.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -248,11 +263,13 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-.
+The unique identifier (id) for the resource service principal for which the assignment is made.
+Required on create.
+Supports $filter (eq only).
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -317,13 +334,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAppRoleAssignment>: appRoleAssignment
   - `[Id <String>]`: Read-only.
-  - `[AppRoleId <String>]`: 
-  - `[CreationTimestamp <DateTime?>]`: 
-  - `[PrincipalDisplayName <String>]`: 
-  - `[PrincipalId <String>]`: 
-  - `[PrincipalType <String>]`: 
-  - `[ResourceDisplayName <String>]`: 
-  - `[ResourceId <String>]`: 
+  - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
+  - `[CreationTimestamp <DateTime?>]`: The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only. Does not support $filter.
+  - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
+  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
+  - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+  - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 
 INPUTOBJECT <IIdentityAppRoleAssignmentsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: appRoleAssignment-id of appRoleAssignment

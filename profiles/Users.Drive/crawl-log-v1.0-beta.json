@@ -1,15 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/drives": {
-      "originalLocation": "/openApiDocs/beta/Users.Drive.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/drives/{drive-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Drive.yml",
       "apiVersion": "v1.0-beta"
     },
     "/users/{user-id}/drive": {
+      "originalLocation": "/openApiDocs/beta/Users.Drive.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/drives": {
       "originalLocation": "/openApiDocs/beta/Users.Drive.yml",
       "apiVersion": "v1.0-beta"
     }

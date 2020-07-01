@@ -32,14 +32,14 @@ New-MgPlannerBucketTask -PlannerBucketId <String> [-ActiveChecklistItemCount <In
 
 ### Create
 ```
-New-MgPlannerBucketTask -PlannerBucketId <String> -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm]
+New-MgPlannerBucketTask -PlannerBucketId <String> -BodyParameter <IMicrosoftGraphPlannerTask1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgPlannerBucketTask -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+New-MgPlannerBucketTask -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTask1>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -197,7 +197,7 @@ plannerTask
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -701,13 +701,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask1
 
 ## NOTES
 
@@ -718,7 +718,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerTask>: plannerTask
+BODYPARAMETER <IMicrosoftGraphPlannerTask1>: plannerTask
   - `[Id <String>]`: Read-only.
   - `[ActiveChecklistItemCount <Int32?>]`: Number of checklist items with value set to false, representing incomplete items.
   - `[AppliedCategories <IMicrosoftGraphPlannerAppliedCategories>]`: plannerAppliedCategories

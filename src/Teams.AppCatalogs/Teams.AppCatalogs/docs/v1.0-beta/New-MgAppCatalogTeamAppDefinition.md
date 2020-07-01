@@ -14,26 +14,28 @@ Create new navigation property to appDefinitions for appCatalogs
 
 ### CreateExpanded1 (Default)
 ```
-New-MgAppCatalogTeamAppDefinition -TeamsAppId <String> [-DisplayName <String>] [-Id <String>]
- [-TeamsAppId1 <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgAppCatalogTeamAppDefinition -TeamsAppId <String> [-AzureAdAppId <String>] [-DisplayName <String>]
+ [-Id <String>] [-PublishingState <String>] [-TeamsAppId1 <String>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgAppCatalogTeamAppDefinition -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsAppDefinition>
+New-MgAppCatalogTeamAppDefinition -TeamsAppId <String> -BodyParameter <IMicrosoftGraphTeamsAppDefinition1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
 New-MgAppCatalogTeamAppDefinition -InputObject <ITeamsAppCatalogsIdentity>
- -BodyParameter <IMicrosoftGraphTeamsAppDefinition> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAppDefinition1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
 New-MgAppCatalogTeamAppDefinition -InputObject <ITeamsAppCatalogsIdentity> [-TeamsAppId <String>]
- [-DisplayName <String>] [-Id <String>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AzureAdAppId <String>] [-DisplayName <String>] [-Id <String>] [-PublishingState <String>]
+ [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,12 +63,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AzureAdAppId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 teamsAppDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -120,6 +137,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PublishingState
+teamsAppPublishingState
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -204,13 +236,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsAppCatalogsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAppDefinition1
 
 ## NOTES
 
@@ -221,9 +253,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition>: teamsAppDefinition
+BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition1>: teamsAppDefinition
   - `[Id <String>]`: Read-only.
+  - `[AzureAdAppId <String>]`: 
   - `[DisplayName <String>]`: The name of the app provided by the app developer.
+  - `[PublishingState <String>]`: teamsAppPublishingState
   - `[TeamsAppId <String>]`: The id from the Teams App manifest.
   - `[Version <String>]`: The version number of the application.
 

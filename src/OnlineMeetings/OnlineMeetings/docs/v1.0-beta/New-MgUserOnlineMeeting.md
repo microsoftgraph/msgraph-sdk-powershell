@@ -30,13 +30,13 @@ New-MgUserOnlineMeeting -UserId <String> [-AccessLevel <String>] [-AudioConferen
 
 ### Create
 ```
-New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-Confirm] [-WhatIf]
+New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> -BodyParameter <IMicrosoftGraphOnlineMeeting1>
+New-MgUserOnlineMeeting -InputObject <IOnlineMeetingsIdentity> -BodyParameter <IMicrosoftGraphOnlineMeeting>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -161,7 +161,7 @@ onlineMeeting
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -605,13 +605,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
 
 ### Microsoft.Graph.PowerShell.Models.IOnlineMeetingsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
 
 ## NOTES
 
@@ -622,7 +622,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
+BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
   - `[Id <String>]`: Read-only.
   - `[AccessLevel <String>]`: accessLevel
   - `[AudioConferencingConferenceId <String>]`: 

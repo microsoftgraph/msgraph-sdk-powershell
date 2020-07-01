@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.LicenseDetails
-Module Guid: 8c409e08-dd60-4536-9581-2c7ac337056a
+Module Guid: c6e39519-29e4-4611-b49b-18df78d23f92
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.licensedetails
 Help Version: 1.0.0.0
 Locale: en-US

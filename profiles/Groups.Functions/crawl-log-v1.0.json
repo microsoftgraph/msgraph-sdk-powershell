@@ -1,11 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/events/{event-id}/instances/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/calendar/calendarView/{event-id}/instances/microsoft.graph.delta()": {
+    "/groups/{group-id}/events/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
@@ -13,35 +9,7 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.preview()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/calendarView/{event-id}/instances/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.preview()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+    "/groups/{group-id}/events/microsoft.graph.delta()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
@@ -49,43 +17,11 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/calendarView/{event-id}/calendar/events/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/events/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
     "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.preview()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/calendarView/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+    "/groups/{group-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
@@ -93,7 +29,35 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
+    "/groups/{group-id}/calendarView/{event-id}/calendar/events/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.preview()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/notebooks/microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/calendarView/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/events/{event-id}/calendar/events/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/pages/{onenotePage-id}/microsoft.graph.preview()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
@@ -105,11 +69,47 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/events/{event-id}/calendar/events/microsoft.graph.delta()": {
+    "/groups/{group-id}/calendar/calendarView/{event-id}/instances/microsoft.graph.delta()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/events/microsoft.graph.delta()": {
+    "/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/events/{event-id}/instances/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/calendar/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/events/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/calendarView/{event-id}/instances/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/calendar/events/{event-id}/instances/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Functions.yml",
       "apiVersion": "v1.0"
     }

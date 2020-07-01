@@ -18,7 +18,6 @@ Update-MgServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-ApplicationId <String>] [-Default] [-Description <String>]
  [-Discoverable] [-FactoryTag <String>] [-Id <String>] [-Metadata <IMicrosoftGraphMetadataEntry[]>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -42,7 +41,6 @@ Update-MgServicePrincipalSynchronizationTemplate -InputObject <IIdentityServiceP
  [-ApplicationId <String>] [-Default] [-Description <String>] [-Discoverable] [-FactoryTag <String>]
  [-Id <String>] [-Metadata <IMicrosoftGraphMetadataEntry[]>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -256,21 +254,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SchemaProvisioningTaskIdentifier
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SchemaSynchronizationRules
 .
 To construct, see NOTES section for SCHEMASYNCHRONIZATIONRULES properties and create a hash table.
@@ -423,7 +406,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationTemplate>: synchronizationTemplate
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
   - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProvisioningTaskIdentifier <String>]`: 
   - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

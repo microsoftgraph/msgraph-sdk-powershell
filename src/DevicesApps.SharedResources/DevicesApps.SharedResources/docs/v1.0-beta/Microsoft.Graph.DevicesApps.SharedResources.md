@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DevicesApps.SharedResources
-Module Guid: 7115bff8-8b38-4ec3-83de-414e474870aa
+Module Guid: 932dfac3-6521-4a61-ba05-7e1be57fdb87
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicesapps.sharedresources
 Help Version: 1.0.0.0
 Locale: en-US

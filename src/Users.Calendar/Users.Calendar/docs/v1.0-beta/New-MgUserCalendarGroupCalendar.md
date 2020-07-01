@@ -333,7 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsDefaultCalendar
-True if this is the default calendar where new events are created by default, false otherwise.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -703,7 +703,7 @@ BODYPARAMETER <IMicrosoftGraphCalendar>: calendar
   - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
   - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
   - `[HexColor <String>]`: 
-  - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+  - `[IsDefaultCalendar <Boolean?>]`: 
   - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
   - `[IsShared <Boolean?>]`: 
   - `[IsSharedWithMe <Boolean?>]`: 
@@ -779,7 +779,7 @@ CALENDARVIEW <IMicrosoftGraphEvent[]>: The calendar view for the calendar. Navig
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 
@@ -936,7 +936,7 @@ EVENTS <IMicrosoftGraphEvent[]>: The events in the calendar. Navigation property
     - `[DefaultOnlineMeetingProvider <String>]`: onlineMeetingProviderType
     - `[Events <IMicrosoftGraphEvent[]>]`: The events in the calendar. Navigation property. Read-only.
     - `[HexColor <String>]`: 
-    - `[IsDefaultCalendar <Boolean?>]`: True if this is the default calendar where new events are created by default, false otherwise.
+    - `[IsDefaultCalendar <Boolean?>]`: 
     - `[IsRemovable <Boolean?>]`: Indicates whether this user calendar can be deleted from the user mailbox.
     - `[IsShared <Boolean?>]`: 
     - `[IsSharedWithMe <Boolean?>]`: 

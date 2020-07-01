@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams.Chats
-Module Guid: 54a9a408-f24e-4c93-a32b-ed1c54db45d8
+Module Guid: a5a755c6-ebd8-4246-aa88-8a991804cc4a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams.chats
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,6 +70,9 @@ Create new navigation property to chats for users
 
 ### [Remove-MgChat](Remove-MgChat.md)
 Delete entity from chats
+
+### [Send-MgChatActivityNotification](Send-MgChatActivityNotification.md)
+Invoke action sendActivityNotification
 
 ### [Update-MgChat](Update-MgChat.md)
 Update entity in chats

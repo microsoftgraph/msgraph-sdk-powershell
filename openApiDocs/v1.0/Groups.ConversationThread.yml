@@ -1790,7 +1790,7 @@ components:
               description: 'The Cc: recipients for the thread.'
             preview:
               type: string
-              description: A short summary from the body of the latest post in this converstaion.
+              description: A short summary from the body of the latest post in this conversation.
             isLocked:
               type: boolean
               description: Indicates if the thread is locked.

@@ -19,8 +19,16 @@ Update-MgUserDevice -DeviceId <String> -UserId <String> [-AccountEnabled]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
  [-ComplianceExpirationDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-DeviceId1 <String>]
  [-DeviceMetadata <String>] [-DeviceVersion <Int32>] [-DisplayName <String>]
- [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant] [-IsManaged] [-Kind <String>]
- [-Manufacturer <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>] [-Name <String>]
+ [-ExtensionAttributeExtensionAttribute1 <String>] [-ExtensionAttributeExtensionAttribute10 <String>]
+ [-ExtensionAttributeExtensionAttribute11 <String>] [-ExtensionAttributeExtensionAttribute12 <String>]
+ [-ExtensionAttributeExtensionAttribute13 <String>] [-ExtensionAttributeExtensionAttribute14 <String>]
+ [-ExtensionAttributeExtensionAttribute15 <String>] [-ExtensionAttributeExtensionAttribute2 <String>]
+ [-ExtensionAttributeExtensionAttribute3 <String>] [-ExtensionAttributeExtensionAttribute4 <String>]
+ [-ExtensionAttributeExtensionAttribute5 <String>] [-ExtensionAttributeExtensionAttribute6 <String>]
+ [-ExtensionAttributeExtensionAttribute7 <String>] [-ExtensionAttributeExtensionAttribute8 <String>]
+ [-ExtensionAttributeExtensionAttribute9 <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
+ [-IsCompliant] [-IsManaged] [-Kind <String>] [-Manufacturer <String>]
+ [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>] [-Name <String>]
  [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
  [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-Platform <String>] [-ProfileType <String>]
  [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
@@ -46,9 +54,16 @@ Update-MgUserDevice -InputObject <IUsersDevicesIdentity> [-DeviceId <String>] [-
  [-AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]
  [-ApproximateLastSignInDateTime <DateTime>] [-Commands <IMicrosoftGraphCommand[]>]
  [-ComplianceExpirationDateTime <DateTime>] [-DeletedDateTime <DateTime>] [-DeviceMetadata <String>]
- [-DeviceVersion <Int32>] [-DisplayName <String>] [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>]
- [-IsCompliant] [-IsManaged] [-Kind <String>] [-Manufacturer <String>]
- [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>] [-Name <String>]
+ [-DeviceVersion <Int32>] [-DisplayName <String>] [-ExtensionAttributeExtensionAttribute1 <String>]
+ [-ExtensionAttributeExtensionAttribute10 <String>] [-ExtensionAttributeExtensionAttribute11 <String>]
+ [-ExtensionAttributeExtensionAttribute12 <String>] [-ExtensionAttributeExtensionAttribute13 <String>]
+ [-ExtensionAttributeExtensionAttribute14 <String>] [-ExtensionAttributeExtensionAttribute15 <String>]
+ [-ExtensionAttributeExtensionAttribute2 <String>] [-ExtensionAttributeExtensionAttribute3 <String>]
+ [-ExtensionAttributeExtensionAttribute4 <String>] [-ExtensionAttributeExtensionAttribute5 <String>]
+ [-ExtensionAttributeExtensionAttribute6 <String>] [-ExtensionAttributeExtensionAttribute7 <String>]
+ [-ExtensionAttributeExtensionAttribute8 <String>] [-ExtensionAttributeExtensionAttribute9 <String>]
+ [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsCompliant] [-IsManaged] [-Kind <String>]
+ [-Manufacturer <String>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>] [-Model <String>] [-Name <String>]
  [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-OperatingSystem <String>]
  [-OperatingSystemVersion <String>] [-PhysicalIds <String[]>] [-Platform <String>] [-ProfileType <String>]
  [-RegisteredOwners <IMicrosoftGraphDirectoryObject[]>] [-RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]
@@ -261,6 +276,231 @@ Accept wildcard characters: False
 ### -DisplayName
 The display name for the device.
 Required.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute1
+First customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute10
+Tenth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute11
+Eleventh customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute12
+Twelfth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute13
+Thirteenth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute14
+Fourteenth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute15
+Fifteenth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute2
+Second customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute3
+Third customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute4
+Fourth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute5
+Fifth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute6
+Sixth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute7
+Seventh customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute8
+Eighth customizable extension attribute.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExtensionAttributeExtensionAttribute9
+Ninth customizable extension attribute.
 
 ```yaml
 Type: System.String
@@ -762,6 +1002,21 @@ BODYPARAMETER <IMicrosoftGraphDevice>: Represents an Azure Active Directory obje
   - `[DeviceMetadata <String>]`: For interal use only. Set to null.
   - `[DeviceVersion <Int32?>]`: For interal use only.
   - `[DisplayName <String>]`: The display name for the device. Required.
+  - `[ExtensionAttributeExtensionAttribute1 <String>]`: First customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute10 <String>]`: Tenth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute11 <String>]`: Eleventh customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute12 <String>]`: Twelfth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute13 <String>]`: Thirteenth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute14 <String>]`: Fourteenth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute15 <String>]`: Fifteenth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute2 <String>]`: Second customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute3 <String>]`: Third customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute4 <String>]`: Fourth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute5 <String>]`: Fifth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute6 <String>]`: Sixth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute7 <String>]`: Seventh customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
+  - `[ExtensionAttributeExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
   - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.

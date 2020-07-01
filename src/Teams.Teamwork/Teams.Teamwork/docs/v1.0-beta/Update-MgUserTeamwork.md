@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstalledApps
-.
+The apps installed in the personal scope of this user.
 To construct, see NOTES section for INSTALLEDAPPS properties and create a hash table.
 
 ```yaml
@@ -210,43 +210,49 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserTeamwork>: userTeamwork
   - `[Id <String>]`: Read-only.
-  - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: 
+  - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
     - `[Id <String>]`: Read-only.
+    - `[TeamAppDefinitionAzureAdAppId <String>]`: 
     - `[TeamAppDefinitionDisplayName <String>]`: The name of the app provided by the app developer.
     - `[TeamAppDefinitionId <String>]`: Read-only.
+    - `[TeamAppDefinitionPublishingState <String>]`: teamsAppPublishingState
     - `[TeamAppDefinitionTeamsAppId <String>]`: The id from the Teams App manifest.
     - `[TeamAppDefinitionVersion <String>]`: The version number of the application.
     - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
       - `[Id <String>]`: Read-only.
+      - `[AzureAdAppId <String>]`: 
       - `[DisplayName <String>]`: The name of the app provided by the app developer.
+      - `[PublishingState <String>]`: teamsAppPublishingState
       - `[TeamsAppId <String>]`: The id from the Teams App manifest.
       - `[Version <String>]`: The version number of the application.
     - `[TeamAppDisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
     - `[TeamAppDistributionMethod <String>]`: teamsAppDistributionMethod
     - `[TeamAppExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
     - `[TeamAppId <String>]`: Read-only.
-    - `[TeamAppName <String>]`: 
 
 INPUTOBJECT <ITeamsTeamworkIdentity>: Identity Parameter
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[UserId <String>]`: key: user-id of user
 
-INSTALLEDAPPS <IMicrosoftGraphTeamsAppInstallation[]>: .
+INSTALLEDAPPS <IMicrosoftGraphTeamsAppInstallation[]>: The apps installed in the personal scope of this user.
   - `[Id <String>]`: Read-only.
+  - `[TeamAppDefinitionAzureAdAppId <String>]`: 
   - `[TeamAppDefinitionDisplayName <String>]`: The name of the app provided by the app developer.
   - `[TeamAppDefinitionId <String>]`: Read-only.
+  - `[TeamAppDefinitionPublishingState <String>]`: teamsAppPublishingState
   - `[TeamAppDefinitionTeamsAppId <String>]`: The id from the Teams App manifest.
   - `[TeamAppDefinitionVersion <String>]`: The version number of the application.
   - `[TeamAppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
     - `[Id <String>]`: Read-only.
+    - `[AzureAdAppId <String>]`: 
     - `[DisplayName <String>]`: The name of the app provided by the app developer.
+    - `[PublishingState <String>]`: teamsAppPublishingState
     - `[TeamsAppId <String>]`: The id from the Teams App manifest.
     - `[Version <String>]`: The version number of the application.
   - `[TeamAppDisplayName <String>]`: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppDistributionMethod <String>]`: teamsAppDistributionMethod
   - `[TeamAppExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
   - `[TeamAppId <String>]`: Read-only.
-  - `[TeamAppName <String>]`: 
 
 ## RELATED LINKS
 

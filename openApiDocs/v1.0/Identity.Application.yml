@@ -122,6 +122,7 @@ paths:
                 - web
                 - extensionProperties
                 - createdOnBehalfOf
+                - homeRealmDiscoveryPolicies
                 - owners
                 - tokenLifetimePolicies
                 - tokenIssuancePolicies
@@ -139,6 +140,7 @@ paths:
                 - '*'
                 - extensionProperties
                 - createdOnBehalfOf
+                - homeRealmDiscoveryPolicies
                 - owners
                 - tokenLifetimePolicies
                 - tokenIssuancePolicies
@@ -239,6 +241,7 @@ paths:
                 - web
                 - extensionProperties
                 - createdOnBehalfOf
+                - homeRealmDiscoveryPolicies
                 - owners
                 - tokenLifetimePolicies
                 - tokenIssuancePolicies
@@ -256,6 +259,7 @@ paths:
                 - '*'
                 - extensionProperties
                 - createdOnBehalfOf
+                - homeRealmDiscoveryPolicies
                 - owners
                 - tokenLifetimePolicies
                 - tokenIssuancePolicies
@@ -278,6 +282,11 @@ paths:
               parameters:
                 application-id: $request.path.application-id
                 directoryObject-id: $response.body#/id
+            homeRealmDiscoveryPolicies:
+              operationId: applications.GetHomeRealmDiscoveryPolicies
+              parameters:
+                application-id: $request.path.application-id
+                homeRealmDiscoveryPolicy-id: $response.body#/id
             owners:
               operationId: applications.GetOwners
               parameters:
@@ -612,6 +621,161 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/applications/{application-id}/homeRealmDiscoveryPolicies':
+    get:
+      tags:
+        - applications.homeRealmDiscoveryPolicy
+      summary: Get homeRealmDiscoveryPolicies from applications
+      operationId: applications_ListHomeRealmDiscoveryPolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of homeRealmDiscoveryPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+                  '@odata.nextLink':
+                    type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
+    get:
+      tags:
+        - applications.homeRealmDiscoveryPolicy
+      summary: Get homeRealmDiscoveryPolicies from applications
+      operationId: applications_GetHomeRealmDiscoveryPolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: application-id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: homeRealmDiscoveryPolicy-id
+          in: path
+          description: 'key: homeRealmDiscoveryPolicy-id of homeRealmDiscoveryPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: homeRealmDiscoveryPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - definition
+                - isOrganizationDefault
+                - appliesTo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appliesTo
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+        default:
+          $ref: '#/components/responses/error'
   '/applications/{application-id}/microsoft.graph.addKey':
     post:
       tags:
@@ -1484,7 +1648,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: 'The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.'
+              description: 'The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications'' service principals. Not nullable.'
             isFallbackPublicClient:
               type: boolean
               description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
@@ -1568,6 +1732,10 @@ components:
               description: Read-only. Nullable.
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            homeRealmDiscoveryPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
             owners:
               type: array
               items:
@@ -1627,6 +1795,8 @@ components:
           - '@odata.type': microsoft.graph.extensionProperty
         createdOnBehalfOf:
           '@odata.type': microsoft.graph.directoryObject
+        homeRealmDiscoveryPolicies:
+          - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
         owners:
           - '@odata.type': microsoft.graph.directoryObject
         tokenLifetimePolicies:
@@ -1683,6 +1853,22 @@ components:
         isSyncedFromOnPremises: true
         targetObjects:
           - string
+    microsoft.graph.homeRealmDiscoveryPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: homeRealmDiscoveryPolicy
+          type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+      example:
+        id: string (identifier)
+        deletedDateTime: string (timestamp)
+        description: string
+        displayName: string
+        definition:
+          - string
+        isOrganizationDefault: true
+        appliesTo:
+          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.keyCredential:
       title: keyCredential
       type: object
@@ -1867,7 +2053,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
       example:
         acceptMappedClaims: true
         knownClientApplications:
@@ -1885,14 +2071,14 @@ components:
           type: array
           items:
             type: string
-          description: 'Specifies whether this app role definition can be assigned to users and groups by setting to ''User'', or to other applications (that are accessing this application in daemon service scenarios) by setting to ''Application'', or to both.'
+          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment of other applications'' service principals are also known as application permissions.'
         description:
           type: string
-          description: Permission help text that appears in the admin app assignment and consent experiences.
+          description: 'The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.'
           nullable: true
         displayName:
           type: string
-          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          description: Display name for the permission that appears in the app role assignment and consent experiences.
           nullable: true
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -1904,11 +2090,11 @@ components:
           description: 'When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.'
         origin:
           type: string
-          description: Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
+          description: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
           nullable: true
         value:
           type: string
-          description: 'Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
       example:
         allowedMemberTypes:
@@ -2131,39 +2317,38 @@ components:
       properties:
         adminConsentDescription:
           type: string
-          description: Permission help text that appears in the admin consent and app assignment experiences.
+          description: 'A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.'
           nullable: true
         adminConsentDisplayName:
           type: string
-          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          description: 'The permission''s title, intended to be read by an administrator granting the permission on behalf of all users.'
           nullable: true
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: Unique scope permission identifier inside the oauth2Permissions collection.
+          description: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
           format: uuid
         isEnabled:
           type: boolean
-          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.'
+          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
         origin:
           type: string
-          description: For internal use.
           nullable: true
         type:
           type: string
-          description: 'Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.'
+          description: 'Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)'
           nullable: true
         userConsentDescription:
           type: string
-          description: Permission help text that appears in the end-user consent experience.
+          description: 'A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.'
           nullable: true
         userConsentDisplayName:
           type: string
-          description: Display name for the permission that appears in the end-user consent experience.
+          description: 'A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.'
           nullable: true
         value:
           type: string
-          description: The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
       example:
         adminConsentDescription: string
@@ -2212,7 +2397,7 @@ components:
           format: uuid
         type:
           type: string
-          description: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
+          description: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
           nullable: true
       example:
         id: string

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams.Team
-Module Guid: 2a1a6e8d-ebd2-4d07-8670-6c8aabc414b0
+Module Guid: 574deb01-4913-44eb-9bfc-25c0b8d63b7b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams.team
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,9 +19,6 @@ Get team from groups
 
 ### [Get-MgTeam](Get-MgTeam.md)
 Get entity from teams by key
-
-### [Get-MgTeamApp](Get-MgTeamApp.md)
-Get apps from teams
 
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
 Get channels from teams
@@ -64,6 +61,9 @@ Get teamsApp from teams
 
 ### [Get-MgTeamInstalledAppTeamAppDefinition](Get-MgTeamInstalledAppTeamAppDefinition.md)
 Get teamsAppDefinition from teams
+
+### [Get-MgTeamMember](Get-MgTeamMember.md)
+Get members from teams
 
 ### [Get-MgTeamOperation](Get-MgTeamOperation.md)
 Get operations from teams
@@ -158,9 +158,6 @@ Invoke action unarchive
 ### [New-MgTeam](New-MgTeam.md)
 Add new entity to teams
 
-### [New-MgTeamApp](New-MgTeamApp.md)
-Create new navigation property to apps for teams
-
 ### [New-MgTeamChannel](New-MgTeamChannel.md)
 Create new navigation property to channels for teams
 
@@ -181,6 +178,9 @@ Create new navigation property to tabs for teams
 
 ### [New-MgTeamInstalledApp](New-MgTeamInstalledApp.md)
 Create new navigation property to installedApps for teams
+
+### [New-MgTeamMember](New-MgTeamMember.md)
+Create new navigation property to members for teams
 
 ### [New-MgTeamOperation](New-MgTeamOperation.md)
 Create new navigation property to operations for teams
@@ -230,9 +230,6 @@ Create new navigation property to timeOffRequests for teams
 ### [New-MgTeamTemplate](New-MgTeamTemplate.md)
 Add new entity to teamsTemplates
 
-### [New-MgTeamworkActivityNotification](New-MgTeamworkActivityNotification.md)
-Invoke action generateActivityNotification
-
 ### [New-MgTeamworkWorkforceIntegration](New-MgTeamworkWorkforceIntegration.md)
 Create new navigation property to workforceIntegrations for teamwork
 
@@ -242,14 +239,14 @@ Delete entity from teams
 ### [Remove-MgTeamTemplate](Remove-MgTeamTemplate.md)
 Delete entity from teamsTemplates
 
+### [Send-MgTeamActivityNotification](Send-MgTeamActivityNotification.md)
+Invoke action sendActivityNotification
+
 ### [Update-MgGroupTeam](Update-MgGroupTeam.md)
 Update the navigation property team in groups
 
 ### [Update-MgTeam](Update-MgTeam.md)
 Update entity in teams
-
-### [Update-MgTeamApp](Update-MgTeamApp.md)
-Update the navigation property apps in teams
 
 ### [Update-MgTeamChannel](Update-MgTeamChannel.md)
 Update the navigation property channels in teams
@@ -274,6 +271,9 @@ Update the navigation property tabs in teams
 
 ### [Update-MgTeamInstalledApp](Update-MgTeamInstalledApp.md)
 Update the navigation property installedApps in teams
+
+### [Update-MgTeamMember](Update-MgTeamMember.md)
+Update the navigation property members in teams
 
 ### [Update-MgTeamOperation](Update-MgTeamOperation.md)
 Update the navigation property operations in teams

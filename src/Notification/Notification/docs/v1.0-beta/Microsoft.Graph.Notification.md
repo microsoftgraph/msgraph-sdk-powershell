@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Notification
-Module Guid: 3c63fb6a-a7f0-44a1-9b35-44ddc7c7cf50
+Module Guid: ed66ab0d-68bd-4ada-8bc0-4bffe70dc012
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.notification
 Help Version: 1.0.0.0
 Locale: en-US

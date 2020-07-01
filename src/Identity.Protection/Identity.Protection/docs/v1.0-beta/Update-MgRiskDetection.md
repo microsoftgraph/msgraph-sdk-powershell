@@ -617,16 +617,9 @@ BODYPARAMETER <IMicrosoftGraphRiskDetection>: riskDetection
   - `[UserPrincipalName <String>]`: 
 
 INPUTOBJECT <IIdentityProtectionIdentity>: Identity Parameter
-  - `[AnonymousIPRiskEventId <String>]`: key: anonymousIpRiskEvent-id of anonymousIpRiskEvent
-  - `[IdentityRiskEventId <String>]`: key: identityRiskEvent-id of identityRiskEvent
-  - `[ImpossibleTravelRiskEventId <String>]`: key: impossibleTravelRiskEvent-id of impossibleTravelRiskEvent
-  - `[LeakedCredentialsRiskEventId <String>]`: key: leakedCredentialsRiskEvent-id of leakedCredentialsRiskEvent
-  - `[MalwareRiskEventId <String>]`: key: malwareRiskEvent-id of malwareRiskEvent
   - `[RiskDetectionId <String>]`: key: riskDetection-id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: riskyUserHistoryItem-id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: riskyUser-id of riskyUser
-  - `[SuspiciousIPRiskEventId <String>]`: key: suspiciousIpRiskEvent-id of suspiciousIpRiskEvent
-  - `[UnfamiliarLocationRiskEventId <String>]`: key: unfamiliarLocationRiskEvent-id of unfamiliarLocationRiskEvent
 
 ## RELATED LINKS
 

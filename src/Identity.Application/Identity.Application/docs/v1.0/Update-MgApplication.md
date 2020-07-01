@@ -20,7 +20,8 @@ Update-MgApplication -ApplicationId <String> [-AddIns <IMicrosoftGraphAddIn[]>] 
  [-ApiRequestedAccessTokenVersion <Int32>] [-AppId <String>] [-ApplicationTemplateId <String>]
  [-AppRoles <IMicrosoftGraphAppRole[]>] [-CreatedDateTime <DateTime>]
  [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>] [-DeletedDateTime <DateTime>] [-DisplayName <String>]
- [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>] [-GroupMembershipClaims <String>] [-Id <String>]
+ [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>] [-GroupMembershipClaims <String>]
+ [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>] [-Id <String>]
  [-IdentifierUris <String[]>] [-ImplicitGrantSettingEnableAccessTokenIssuance]
  [-ImplicitGrantSettingEnableIdTokenIssuance] [-InfoLogoUrl <String>] [-InfoMarketingUrl <String>]
  [-InfoPrivacyStatementUrl <String>] [-InfoSupportUrl <String>] [-InfoTermsOfServiceUrl <String>]
@@ -60,7 +61,8 @@ Update-MgApplication -InputObject <IIdentityApplicationIdentity> [-AddIns <IMicr
  [-ApiRequestedAccessTokenVersion <Int32>] [-AppId <String>] [-ApplicationTemplateId <String>]
  [-AppRoles <IMicrosoftGraphAppRole[]>] [-CreatedDateTime <DateTime>]
  [-CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>] [-DeletedDateTime <DateTime>] [-DisplayName <String>]
- [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>] [-GroupMembershipClaims <String>] [-Id <String>]
+ [-ExtensionProperties <IMicrosoftGraphExtensionProperty[]>] [-GroupMembershipClaims <String>]
+ [-HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>] [-Id <String>]
  [-IdentifierUris <String[]>] [-ImplicitGrantSettingEnableAccessTokenIssuance]
  [-ImplicitGrantSettingEnableIdTokenIssuance] [-InfoLogoUrl <String>] [-InfoMarketingUrl <String>]
  [-InfoPrivacyStatementUrl <String>] [-InfoSupportUrl <String>] [-InfoTermsOfServiceUrl <String>]
@@ -156,8 +158,9 @@ Accept wildcard characters: False
 ```
 
 ### -ApiOauth2PermissionScopes
-The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications.
-These permission scopes may be granted to client applications during consent.
+The definition of the delegated permissions exposed by the web API represented by this application registration.
+These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent.
+Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
 To construct, see NOTES section for APIOAUTH2PERMISSIONSCOPES properties and create a hash table.
 
 ```yaml
@@ -259,8 +262,8 @@ Accept wildcard characters: False
 ```
 
 ### -AppRoles
-The collection of application roles that an application may declare.
-These roles can be assigned to users, groups, or service principals.
+The collection of roles the application declares.
+With app role assignments, these roles can be assigned to users, groups, or other applications' service principals.
 Not nullable.
 To construct, see NOTES section for APPROLES properties and create a hash table.
 
@@ -379,6 +382,22 @@ To set this attribute, use one of the following valid string values:NoneSecurity
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HomeRealmDiscoveryPolicies
+.
+To construct, see NOTES section for HOMEREALMDISCOVERYPOLICIES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHomeRealmDiscoveryPolicy[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -1000,29 +1019,29 @@ ADDINS <IMicrosoftGraphAddIn[]>: Defines custom behavior that a consuming servic
     - `[Value <String>]`: Value for the key-value pair.
   - `[Type <String>]`: 
 
-APIOAUTH2PERMISSIONSCOPES <IMicrosoftGraphPermissionScope[]>: The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.
-  - `[AdminConsentDescription <String>]`: Permission help text that appears in the admin consent and app assignment experiences.
-  - `[AdminConsentDisplayName <String>]`: Display name for the permission that appears in the admin consent and app assignment experiences.
-  - `[Id <String>]`: Unique scope permission identifier inside the oauth2Permissions collection.
-  - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.
-  - `[Origin <String>]`: For internal use.
-  - `[Type <String>]`: Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.
-  - `[UserConsentDescription <String>]`: Permission help text that appears in the end-user consent experience.
-  - `[UserConsentDisplayName <String>]`: Display name for the permission that appears in the end-user consent experience.
-  - `[Value <String>]`: The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+APIOAUTH2PERMISSIONSCOPES <IMicrosoftGraphPermissionScope[]>: The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
+  - `[AdminConsentDescription <String>]`: A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
+  - `[AdminConsentDisplayName <String>]`: The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
+  - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
+  - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
+  - `[Origin <String>]`: 
+  - `[Type <String>]`: Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
+  - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+  - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+  - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
 
 APIPREAUTHORIZEDAPPLICATIONS <IMicrosoftGraphPreAuthorizedApplication[]>: Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
   - `[AppId <String>]`: The unique identifier for the application.
   - `[DelegatedPermissionIds <String[]>]`: The unique identifier for the oauth2PermissionScopes the application requires.
 
-APPROLES <IMicrosoftGraphAppRole[]>: The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.
-  - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role definition can be assigned to users and groups by setting to 'User', or to other applications (that are accessing this application in daemon service scenarios) by setting to 'Application', or to both.
-  - `[Description <String>]`: Permission help text that appears in the admin app assignment and consent experiences.
-  - `[DisplayName <String>]`: Display name for the permission that appears in the admin consent and app assignment experiences.
+APPROLES <IMicrosoftGraphAppRole[]>: The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications' service principals. Not nullable.
+  - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment of other applications' service principals are also known as application permissions.
+  - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
+  - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
   - `[Id <String>]`: Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
   - `[IsEnabled <Boolean?>]`: When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
-  - `[Origin <String>]`: Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
-  - `[Value <String>]`: Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
+  - `[Origin <String>]`: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
+  - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
 
 BODYPARAMETER <IMicrosoftGraphApplication>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
   - `[DeletedDateTime <DateTime?>]`: 
@@ -1035,29 +1054,29 @@ BODYPARAMETER <IMicrosoftGraphApplication>: Represents an Azure Active Directory
     - `[Type <String>]`: 
   - `[ApiAcceptMappedClaims <Boolean?>]`: When true, allows an application to use claims mapping without specifying a custom signing key.
   - `[ApiKnownClientApplications <String[]>]`: Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.
-  - `[ApiOauth2PermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.
-    - `[AdminConsentDescription <String>]`: Permission help text that appears in the admin consent and app assignment experiences.
-    - `[AdminConsentDisplayName <String>]`: Display name for the permission that appears in the admin consent and app assignment experiences.
-    - `[Id <String>]`: Unique scope permission identifier inside the oauth2Permissions collection.
-    - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.
-    - `[Origin <String>]`: For internal use.
-    - `[Type <String>]`: Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.
-    - `[UserConsentDescription <String>]`: Permission help text that appears in the end-user consent experience.
-    - `[UserConsentDisplayName <String>]`: Display name for the permission that appears in the end-user consent experience.
-    - `[Value <String>]`: The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+  - `[ApiOauth2PermissionScopes <IMicrosoftGraphPermissionScope[]>]`: The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.
+    - `[AdminConsentDescription <String>]`: A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
+    - `[AdminConsentDisplayName <String>]`: The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
+    - `[Id <String>]`: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
+    - `[IsEnabled <Boolean?>]`: When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
+    - `[Origin <String>]`: 
+    - `[Type <String>]`: Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)
+    - `[UserConsentDescription <String>]`: A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+    - `[UserConsentDisplayName <String>]`: A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
+    - `[Value <String>]`: Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
   - `[ApiPreAuthorizedApplications <IMicrosoftGraphPreAuthorizedApplication[]>]`: Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
     - `[AppId <String>]`: The unique identifier for the application.
     - `[DelegatedPermissionIds <String[]>]`: The unique identifier for the oauth2PermissionScopes the application requires.
   - `[ApiRequestedAccessTokenVersion <Int32?>]`: Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2
   - `[AppId <String>]`: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
-  - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The collection of application roles that an application may declare. These roles can be assigned to users, groups, or service principals. Not nullable.
-    - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role definition can be assigned to users and groups by setting to 'User', or to other applications (that are accessing this application in daemon service scenarios) by setting to 'Application', or to both.
-    - `[Description <String>]`: Permission help text that appears in the admin app assignment and consent experiences.
-    - `[DisplayName <String>]`: Display name for the permission that appears in the admin consent and app assignment experiences.
+  - `[AppRoles <IMicrosoftGraphAppRole[]>]`: The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications' service principals. Not nullable.
+    - `[AllowedMemberTypes <String[]>]`: Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment of other applications' service principals are also known as application permissions.
+    - `[Description <String>]`: The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
+    - `[DisplayName <String>]`: Display name for the permission that appears in the app role assignment and consent experiences.
     - `[Id <String>]`: Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
     - `[IsEnabled <Boolean?>]`: When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
-    - `[Origin <String>]`: Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
-    - `[Value <String>]`: Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
+    - `[Origin <String>]`: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
+    - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.
   - `[ApplicationTemplateId <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time the application was registered. Read-only.
   - `[CreatedOnBehalfOf <IMicrosoftGraphDirectoryObject>]`: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -1073,6 +1092,14 @@ BODYPARAMETER <IMicrosoftGraphApplication>: Represents an Azure Active Directory
     - `[Name <String>]`: Name of the extension property. Not nullable.
     - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
   - `[GroupMembershipClaims <String>]`: Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of
+  - `[HomeRealmDiscoveryPolicies <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>]`: 
+    - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+    - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
+    - `[IsOrganizationDefault <Boolean?>]`: If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
+    - `[Description <String>]`: Description for this policy.
+    - `[DisplayName <String>]`: Display name for this policy.
+    - `[DeletedDateTime <DateTime?>]`: 
+    - `[Id <String>]`: Read-only.
   - `[IdentifierUris <String[]>]`: The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.
   - `[ImplicitGrantSettingEnableAccessTokenIssuance <Boolean?>]`: Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
   - `[ImplicitGrantSettingEnableIdTokenIssuance <Boolean?>]`: Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
@@ -1117,7 +1144,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: Represents an Azure Active Directory
   - `[RequiredResourceAccess <IMicrosoftGraphRequiredResourceAccess[]>]`: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
     - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
       - `[Id <String>]`: The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
-      - `[Type <String>]`: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
+      - `[Type <String>]`: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
     - `[ResourceAppId <String>]`: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
   - `[SignInAudience <String>]`: Specifies what Microsoft accounts are supported for the current application. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (i.e. single tenant)AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (i.e. multi-tenant) AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant
   - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable.
@@ -1154,6 +1181,17 @@ EXTENSIONPROPERTIES <IMicrosoftGraphExtensionProperty[]>: Read-only. Nullable.
   - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
   - `[Name <String>]`: Name of the extension property. Not nullable.
   - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+
+HOMEREALMDISCOVERYPOLICIES <IMicrosoftGraphHomeRealmDiscoveryPolicy[]>: .
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[DeletedDateTime <DateTime?>]`: 
+  - `[Definition <String[]>]`: A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
+  - `[IsOrganizationDefault <Boolean?>]`: If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
+  - `[Description <String>]`: Description for this policy.
+  - `[DisplayName <String>]`: Display name for this policy.
+  - `[DeletedDateTime <DateTime?>]`: 
+  - `[Id <String>]`: Read-only.
 
 INPUTOBJECT <IIdentityApplicationIdentity>: Identity Parameter
   - `[ApplicationId <String>]`: key: application-id of application
@@ -1212,7 +1250,7 @@ PASSWORDCREDENTIALS <IMicrosoftGraphPasswordCredential[]>: The collection of pas
 REQUIREDRESOURCEACCESS <IMicrosoftGraphRequiredResourceAccess[]>: Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
   - `[ResourceAccess <IMicrosoftGraphResourceAccess[]>]`: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
     - `[Id <String>]`: The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
-    - `[Type <String>]`: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are 'scope' or 'role'.
+    - `[Type <String>]`: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
   - `[ResourceAppId <String>]`: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
 
 TOKENISSUANCEPOLICIES <IMicrosoftGraphTokenIssuancePolicy[]>: .

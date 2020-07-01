@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files.Shares
-Module Guid: 279fe437-b309-4519-a508-dafba5e16652
+Module Guid: 5c6ff23e-f48f-4f96-8b1e-855e44d32270
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files.shares
 Help Version: 1.0.0.0
 Locale: en-US

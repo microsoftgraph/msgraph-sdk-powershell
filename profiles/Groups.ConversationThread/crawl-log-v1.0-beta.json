@@ -1,27 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/mentions": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}": {
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -29,23 +13,15 @@
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo": {
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments": {
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/mentions": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -53,11 +29,35 @@
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/{attachment-id}": {
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}": {
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments": {
       "originalLocation": "/openApiDocs/beta/Groups.ConversationThread.yml",
       "apiVersion": "v1.0-beta"
     }

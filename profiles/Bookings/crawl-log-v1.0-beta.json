@@ -1,11 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/bookingBusinesses/{bookingBusiness-id}/services": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}": {
+    "/bookingBusinesses/{bookingBusiness-id}/staffMembers": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,31 +9,15 @@
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/bookingBusinesses/{bookingBusiness-id}/services": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/bookingBusinesses": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/bookingBusinesses/{bookingBusiness-id}/customers": {
-      "originalLocation": "/openApiDocs/beta/Bookings.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -49,11 +29,23 @@
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomer-id}": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/bookingBusinesses/{bookingBusiness-id}/staffMembers": {
+    "/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMember-id}": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/bookingBusinesses/{bookingBusiness-id}/customers": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -61,7 +53,7 @@
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish": {
+    "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -69,7 +61,15 @@
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/bookingBusinesses/{bookingBusiness-id}/appointments": {
+      "originalLocation": "/openApiDocs/beta/Bookings.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish": {
       "originalLocation": "/openApiDocs/beta/Bookings.yml",
       "apiVersion": "v1.0-beta"
     }

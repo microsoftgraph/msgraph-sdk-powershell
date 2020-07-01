@@ -237,7 +237,7 @@ BODYPARAMETER <IMicrosoftGraphAuditLogRoot>: auditLogRoot
       - `[DisplayName <String>]`: Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
       - `[EnforcedGrantControls <String[]>]`: Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
       - `[EnforcedSessionControls <String[]>]`: Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-      - `[Id <String>]`: Unique GUID of the conditional access polic.y
+      - `[Id <String>]`: Unique GUID of the conditional access policy.
       - `[Result <String>]`: 
     - `[ClientAppUsed <String>]`: Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.
     - `[ConditionalAccessStatus <String>]`: conditionalAccessStatus
@@ -352,7 +352,7 @@ RESTRICTEDSIGNINS <IMicrosoftGraphRestrictedSignIn[]>: .
     - `[DisplayName <String>]`: Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     - `[EnforcedGrantControls <String[]>]`: Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
     - `[EnforcedSessionControls <String[]>]`: Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-    - `[Id <String>]`: Unique GUID of the conditional access polic.y
+    - `[Id <String>]`: Unique GUID of the conditional access policy.
     - `[Result <String>]`: 
   - `[ClientAppUsed <String>]`: Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.
   - `[ConditionalAccessStatus <String>]`: conditionalAccessStatus
@@ -398,7 +398,7 @@ SIGNINS <IMicrosoftGraphSignIn[]>: Read-only. Nullable.
     - `[DisplayName <String>]`: Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
     - `[EnforcedGrantControls <String[]>]`: Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
     - `[EnforcedSessionControls <String[]>]`: Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-    - `[Id <String>]`: Unique GUID of the conditional access polic.y
+    - `[Id <String>]`: Unique GUID of the conditional access policy.
     - `[Result <String>]`: 
   - `[ClientAppUsed <String>]`: Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.
   - `[ConditionalAccessStatus <String>]`: conditionalAccessStatus

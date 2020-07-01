@@ -5,7 +5,7 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/mobileAppTroubleshootingEvents": {
+    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,7 +13,7 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}": {
+    "/users/{user-id}/mobileAppTroubleshootingEvents": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
       "apiVersion": "v1.0-beta"
     }

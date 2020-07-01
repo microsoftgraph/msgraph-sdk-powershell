@@ -12,11 +12,11 @@ Get extensionProperties from applications
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgApplicationExtensionProperty -ApplicationId <String> [-Count] [-ExpandProperty <String[]>]
  [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+ [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get1
@@ -56,12 +56,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ApplicationId
 key: application-id of application
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -76,7 +91,7 @@ Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -121,7 +136,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -152,8 +167,8 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
-Aliases: Top
+Parameter Sets: List
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -182,7 +197,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -197,7 +212,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -212,7 +227,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False

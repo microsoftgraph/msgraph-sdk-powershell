@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/teamwork/installedApps": {
+    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}": {
       "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}/teamsApp": {
+    "/users/{user-id}/teamwork/installedApps": {
       "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,11 +13,11 @@
       "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}": {
+    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}/teamsAppDefinition": {
       "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}/teamsAppDefinition": {
+    "/users/{user-id}/teamwork/installedApps/{teamsAppInstallation-id}/teamsApp": {
       "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
       "apiVersion": "v1.0-beta"
     }

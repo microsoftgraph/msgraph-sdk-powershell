@@ -15,7 +15,7 @@ Update the navigation property schema in applications
 ### UpdateExpanded (Default)
 ```
 Update-MgApplicationSynchronizationTemplateSchema -ApplicationId <String> -SynchronizationTemplateId <String>
- [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>] [-ProvisioningTaskIdentifier <String>]
+ [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
  [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -35,7 +35,7 @@ Update-MgApplicationSynchronizationTemplateSchema -InputObject <IIdentityApplica
 ### UpdateViaIdentityExpanded
 ```
 Update-MgApplicationSynchronizationTemplateSchema -InputObject <IIdentityApplicationIdentity>
- [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>] [-ProvisioningTaskIdentifier <String>]
+ [-Directories <IMicrosoftGraphDirectoryDefinition[]>] [-Id <String>]
  [-SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-Version <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -149,21 +149,6 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProvisioningTaskIdentifier
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -303,7 +288,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
       - `[SupportedApis <String[]>]`: 
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
-  - `[ProvisioningTaskIdentifier <String>]`: 
   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

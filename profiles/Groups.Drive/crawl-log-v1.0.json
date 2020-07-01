@@ -5,11 +5,11 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/drive": {
+    "/groups/{group-id}/drives": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/drives": {
+    "/groups/{group-id}/drive": {
       "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
       "apiVersion": "v1.0"
     }

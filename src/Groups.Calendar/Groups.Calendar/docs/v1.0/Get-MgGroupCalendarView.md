@@ -12,23 +12,23 @@ Get calendarView from groups
 
 ## SYNTAX
 
-### List (Default)
+### List2 (Default)
 ```
-Get-MgGroupCalendarView -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+Get-MgGroupCalendarView -EventId <String> -GroupId <String> [-Count] [-ExpandProperty <String[]>]
+ [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ### Get
 ```
-Get-MgGroupCalendarView -EventId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupCalendarView -EventId <String> -GroupId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgGroupCalendarView -EventId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupCalendarView -EventId <String> -GroupId <String> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get2
@@ -39,14 +39,14 @@ Get-MgGroupCalendarView -EventId <String> -EventId1 <String> -GroupId <String> [
 
 ### GetViaIdentity
 ```
-Get-MgGroupCalendarView -InputObject <IGroupsCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupCalendarView -InputObject <IGroupsCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgGroupCalendarView -InputObject <IGroupsCalendarIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgGroupCalendarView -InputObject <IGroupsCalendarIdentity> -EndDateTime <String> -StartDateTime <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
@@ -55,18 +55,18 @@ Get-MgGroupCalendarView -InputObject <IGroupsCalendarIdentity> [-ExpandProperty 
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List1
+### List
 ```
-Get-MgGroupCalendarView -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+Get-MgGroupCalendarView -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
-### List2
+### List1
 ```
-Get-MgGroupCalendarView -EventId <String> -GroupId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [<CommonParameters>]
+Get-MgGroupCalendarView -GroupId <String> -EndDateTime <String> -StartDateTime <String> [-Count]
+ [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,6 +94,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Count
 Include count of items
 
@@ -103,6 +118,22 @@ Parameter Sets: List, List1, List2
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndDateTime
+The end date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T20:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get, Get1, GetViaIdentity, GetViaIdentity1, List, List1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -206,7 +237,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List, List1, List2
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -269,6 +300,22 @@ Parameter Sets: List, List1, List2
 Aliases: OrderBy
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartDateTime
+The start date and time of the time range, represented in ISO 8601 format.
+For example, 2019-11-08T19:00:00-08:00
+
+```yaml
+Type: System.String
+Parameter Sets: Get, Get1, GetViaIdentity, GetViaIdentity1, List, List1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

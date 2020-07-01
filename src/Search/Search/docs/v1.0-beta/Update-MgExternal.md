@@ -190,9 +190,13 @@ BODYPARAMETER <IMicrosoftGraphExternal>: external
     - `[SchemaBaseType <String>]`: 
     - `[SchemaId <String>]`: Read-only.
     - `[SchemaProperties <IMicrosoftGraphProperty[]>]`: 
+      - `[Aliases <String[]>]`: 
+      - `[IsContent <Boolean?>]`: 
       - `[IsQueryable <Boolean?>]`: 
+      - `[IsRefinable <Boolean?>]`: 
       - `[IsRetrievable <Boolean?>]`: 
       - `[IsSearchable <Boolean?>]`: 
+      - `[Labels <String[]>]`: 
       - `[Name <String>]`: 
       - `[Type <String>]`: propertyType
 
@@ -222,9 +226,13 @@ CONNECTIONS <IMicrosoftGraphExternalConnection[]>: .
   - `[SchemaBaseType <String>]`: 
   - `[SchemaId <String>]`: Read-only.
   - `[SchemaProperties <IMicrosoftGraphProperty[]>]`: 
+    - `[Aliases <String[]>]`: 
+    - `[IsContent <Boolean?>]`: 
     - `[IsQueryable <Boolean?>]`: 
+    - `[IsRefinable <Boolean?>]`: 
     - `[IsRetrievable <Boolean?>]`: 
     - `[IsSearchable <Boolean?>]`: 
+    - `[Labels <String[]>]`: 
     - `[Name <String>]`: 
     - `[Type <String>]`: propertyType
 

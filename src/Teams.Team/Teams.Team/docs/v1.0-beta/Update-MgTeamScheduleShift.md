@@ -17,23 +17,24 @@ Update the navigation property shifts in teams
 Update-MgTeamScheduleShift -ShiftId <String> -TeamId <String> [-CreatedDateTime <DateTime>]
  [-DraftShiftActivities <IMicrosoftGraphShiftActivity[]>] [-DraftShiftDisplayName <String>]
  [-DraftShiftEndDateTime <DateTime>] [-DraftShiftNotes <String>] [-DraftShiftStartDateTime <DateTime>]
- [-DraftShiftTheme <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-SchedulingGroupId <String>]
- [-SharedShiftActivities <IMicrosoftGraphShiftActivity[]>] [-SharedShiftDisplayName <String>]
- [-SharedShiftEndDateTime <DateTime>] [-SharedShiftNotes <String>] [-SharedShiftStartDateTime <DateTime>]
- [-SharedShiftTheme <String>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DraftShiftTheme <String>] [-Id <String>] [-IsStagedForDeletion]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-SchedulingGroupId <String>] [-SharedShiftActivities <IMicrosoftGraphShiftActivity[]>]
+ [-SharedShiftDisplayName <String>] [-SharedShiftEndDateTime <DateTime>] [-SharedShiftNotes <String>]
+ [-SharedShiftStartDateTime <DateTime>] [-SharedShiftTheme <String>] [-UserId <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgTeamScheduleShift -ShiftId <String> -TeamId <String> -BodyParameter <IMicrosoftGraphShift>
+Update-MgTeamScheduleShift -ShiftId <String> -TeamId <String> -BodyParameter <IMicrosoftGraphShift1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgTeamScheduleShift -InputObject <ITeamsTeamIdentity> -BodyParameter <IMicrosoftGraphShift> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgTeamScheduleShift -InputObject <ITeamsTeamIdentity> -BodyParameter <IMicrosoftGraphShift1>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -41,11 +42,12 @@ Update-MgTeamScheduleShift -InputObject <ITeamsTeamIdentity> -BodyParameter <IMi
 Update-MgTeamScheduleShift -InputObject <ITeamsTeamIdentity> [-CreatedDateTime <DateTime>]
  [-DraftShiftActivities <IMicrosoftGraphShiftActivity[]>] [-DraftShiftDisplayName <String>]
  [-DraftShiftEndDateTime <DateTime>] [-DraftShiftNotes <String>] [-DraftShiftStartDateTime <DateTime>]
- [-DraftShiftTheme <String>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-SchedulingGroupId <String>]
- [-SharedShiftActivities <IMicrosoftGraphShiftActivity[]>] [-SharedShiftDisplayName <String>]
- [-SharedShiftEndDateTime <DateTime>] [-SharedShiftNotes <String>] [-SharedShiftStartDateTime <DateTime>]
- [-SharedShiftTheme <String>] [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DraftShiftTheme <String>] [-Id <String>] [-IsStagedForDeletion]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-SchedulingGroupId <String>] [-SharedShiftActivities <IMicrosoftGraphShiftActivity[]>]
+ [-SharedShiftDisplayName <String>] [-SharedShiftEndDateTime <DateTime>] [-SharedShiftNotes <String>]
+ [-SharedShiftStartDateTime <DateTime>] [-SharedShiftTheme <String>] [-UserId <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,7 +80,7 @@ shift
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -226,6 +228,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsStagedForDeletion
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -467,7 +484,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShift1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsTeamIdentity
 
@@ -484,7 +501,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphShift>: shift
+BODYPARAMETER <IMicrosoftGraphShift1>: shift
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -506,6 +523,7 @@ BODYPARAMETER <IMicrosoftGraphShift>: shift
   - `[DraftShiftNotes <String>]`: The shift notes for the shiftItem.
   - `[DraftShiftStartDateTime <DateTime?>]`: 
   - `[DraftShiftTheme <String>]`: scheduleEntityTheme
+  - `[IsStagedForDeletion <Boolean?>]`: 
   - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
   - `[SharedShiftActivities <IMicrosoftGraphShiftActivity[]>]`: An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
   - `[SharedShiftDisplayName <String>]`: The shift label of the shiftItem.
@@ -539,7 +557,6 @@ INPUTOBJECT <ITeamsTeamIdentity>: Identity Parameter
   - `[TeamId <String>]`: key: team-id of team
   - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: teamsAsyncOperation-id of teamsAsyncOperation
-  - `[TeamsCatalogAppId <String>]`: key: teamsCatalogApp-id of teamsCatalogApp
   - `[TeamsTabId <String>]`: key: teamsTab-id of teamsTab
   - `[TeamsTemplateId <String>]`: key: teamsTemplate-id of teamsTemplate
   - `[TimeOffId <String>]`: key: timeOff-id of timeOff

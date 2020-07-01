@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.OnlineMeetings
-Module Guid: 8cd926c4-488a-46fe-b6d6-b49a37f97700
+Module Guid: 3a330469-c890-4e5e-98dc-5c3ffd6f658b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.onlinemeetings
 Help Version: 1.0.0.0
 Locale: en-US

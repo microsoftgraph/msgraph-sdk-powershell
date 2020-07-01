@@ -17,7 +17,6 @@ Create new navigation property to jobs for servicePrincipals
 New-MgServicePrincipalSynchronizationJob -ServicePrincipalId <String> [-Id <String>]
  [-ScheduleExpiration <DateTime>] [-ScheduleInterval <TimeSpan>] [-ScheduleState <String>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>]
  [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -41,7 +40,6 @@ New-MgServicePrincipalSynchronizationJob -InputObject <IIdentityServicePrincipal
 New-MgServicePrincipalSynchronizationJob -InputObject <IIdentityServicePrincipalIdentity> [-Id <String>]
  [-ScheduleExpiration <DateTime>] [-ScheduleInterval <TimeSpan>] [-ScheduleState <String>]
  [-SchemaDirectories <IMicrosoftGraphDirectoryDefinition[]>] [-SchemaId <String>]
- [-SchemaProvisioningTaskIdentifier <String>]
  [-SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>] [-SchemaVersion <String>]
  [-Status <IMicrosoftGraphSynchronizationStatus>]
  [-SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>] [-TemplateId <String>] [-Confirm] [-WhatIf]
@@ -183,21 +181,6 @@ Accept wildcard characters: False
 
 ### -SchemaId
 Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SchemaProvisioningTaskIdentifier
-.
 
 ```yaml
 Type: System.String
@@ -392,7 +375,6 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationJob>: synchronizationJob
     - `[ReadOnly <Boolean?>]`: 
     - `[Version <String>]`: 
   - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProvisioningTaskIdentifier <String>]`: 
   - `[SchemaSynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
     - `[Editable <Boolean?>]`: 
     - `[Id <String>]`: 

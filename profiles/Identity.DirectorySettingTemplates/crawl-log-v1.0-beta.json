@@ -1,14 +1,6 @@
 {
   "resources": [],
   "operations": {
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberObjects": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
@@ -17,11 +9,19 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects": {
+    "/directorySettingTemplates/{directorySettingTemplate-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directorySettingTemplates/{directorySettingTemplate-id}": {
+    "/directorySettingTemplates/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -33,11 +33,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directorySettingTemplates/microsoft.graph.getByIds": {
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore": {
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects": {
       "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
       "apiVersion": "v1.0-beta"
     }

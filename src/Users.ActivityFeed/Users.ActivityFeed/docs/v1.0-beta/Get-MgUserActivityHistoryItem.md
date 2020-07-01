@@ -138,7 +138,7 @@ Show only the first n items
 ```yaml
 Type: System.Int32
 Parameter Sets: List1
-Aliases: Top
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -246,7 +246,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
 
 ## NOTES
 
