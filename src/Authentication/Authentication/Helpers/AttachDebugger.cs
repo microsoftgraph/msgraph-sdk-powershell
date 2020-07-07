@@ -17,7 +17,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             while (!System.Diagnostics.Debugger.IsAttached)
             {
                 Console.Error.WriteLine($"Waiting for debugger to attach to process {System.Diagnostics.Process.GetCurrentProcess().Id}");
-                //invokedCmdLet.WriteDebug($"Waiting for debugger to attach to process {System.Diagnostics.Process.GetCurrentProcess().Id}");
                 for (var i = 0; i < 50; i++)
                 {
                     if (System.Diagnostics.Debugger.IsAttached)
@@ -25,10 +24,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         break;
                     }
                     System.Threading.Thread.Sleep(100);
-                    //invokedCmdLet.WriteDebug(".");
                     Console.Error.Write(".");
                 }
-                //invokedCmdLet.WriteDebug(Environment.NewLine);
                 Console.Error.WriteLine();
             }
             System.Diagnostics.Debugger.Break();

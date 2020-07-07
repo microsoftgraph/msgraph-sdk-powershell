@@ -79,54 +79,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private static string StreamToString(Stream stream, Encoding encoding)
         {
-            var result = new StringBuilder(ChunkSize);
-            var decoder = encoding.GetDecoder();
-
-            var useBufferSize = 64;
-            if (useBufferSize < encoding.GetMaxCharCount(10))
-            {
-                useBufferSize = encoding.GetMaxCharCount(10);
-            }
-
-            var chars = new char[useBufferSize];
-            var bytes = new byte[useBufferSize * 4];
-            int bytesRead;
-            do
-            {
-                // Read at most the number of bytes that will fit in the input buffer. The
-                // return value is the actual number of bytes read, or zero if no bytes remain.
-                bytesRead = stream.Read(bytes, 0, useBufferSize * 4);
-
-                var completed = false;
-                var byteIndex = 0;
-
-                while (!completed)
-                {
-                    // If this is the last input data, flush the decoder's internal buffer and state.
-                    var flush = bytesRead == 0;
-                    decoder.Convert(bytes, byteIndex, bytesRead - byteIndex,
-                        chars, 0, useBufferSize, flush,
-                        out var bytesUsed, out var charsUsed, out completed);
-
-                    // The conversion produced the number of characters indicated by charsUsed. Write that number
-                    // of characters to our result buffer
-                    result.Append(chars, 0, charsUsed);
-
-                    // Increment byteIndex to the next block of bytes in the input buffer, if any, to convert.
-                    byteIndex += bytesUsed;
-
-                    // The behavior of decoder.Convert changed start .NET 3.1-preview2.
-                    // The change was made in https://github.com/dotnet/coreclr/pull/27229
-                    // The recommendation from .NET team is to not check for 'completed' if 'flush' is false.
-                    // Break out of the loop if all bytes have been read.
-                    if (!flush && bytesRead == byteIndex)
-                    {
-                        break;
-                    }
-                }
-            } while (bytesRead != 0);
-
-            return result.ToString();
+            using var reader = new StreamReader(stream, encoding);
+            return reader.ReadToEnd();
         }
 
         public static void SaveStreamToFile(Stream baseResponseStream, string filePath,
@@ -158,7 +112,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 do
                 {
-                    record.StatusDescription = StringUtil.Format("WriteRequestProgressStatus", output.Position);
+                    record.StatusDescription = StringUtil.FormatCurrentCulture("WriteRequestProgressStatus", output.Position);
                     cmdlet.WriteProgress(record);
 
                     Task.Delay(1000).Wait(cancellationToken);
@@ -166,7 +120,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 if (copyTask.IsCompleted)
                 {
-                    record.StatusDescription = StringUtil.Format("WriteRequestComplete", output.Position);
+                    record.StatusDescription = StringUtil.FormatCurrentCulture("WriteRequestComplete", output.Position);
                     cmdlet.WriteProgress(record);
                 }
             }
