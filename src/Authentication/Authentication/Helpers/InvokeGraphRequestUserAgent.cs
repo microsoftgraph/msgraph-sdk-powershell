@@ -1,4 +1,8 @@
-﻿using System;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Management.Automation;
@@ -16,7 +20,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             _cmdLet = cmdLet;
         }
-
+        /// <summary>
+        /// Full UserAgent which Includes the Operating System, Current Culture
+        /// and full app name including powershell version and invoked command. 
+        /// </summary>
         internal string UserAgent
         {
             get
@@ -30,13 +37,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         internal static string Compatibility => ("Mozilla/5.0");
-
+        /// <summary>
+        /// Indicates the App which includes the PowerShell version
+        /// and the command name.
+        /// </summary>
         internal string App
         {
             get
             {
                 var app = string.Format(CultureInfo.InvariantCulture,
-                    "PowerShell/{0}", this._cmdLet.Host.Version);
+                    "PowerShell/{0} {1}", this._cmdLet.Host.Version, this._cmdLet.MyInvocation.MyCommand.Name);
                 return app;
             }
         }

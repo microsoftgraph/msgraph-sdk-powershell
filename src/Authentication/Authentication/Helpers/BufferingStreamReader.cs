@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
 using System.IO;
 
@@ -41,16 +45,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            long previousPosition = Position;
-            bool consumedStream = false;
-            int totalCount = count;
+            var previousPosition = Position;
+            var consumedStream = false;
+            var totalCount = count;
             while ((!consumedStream) &&
                    ((Position + totalCount) > _streamBuffer.Length))
             {
                 // If we don't have enough data to fill this from memory, cache more.
                 // We try to read 4096 bytes from base stream every time, so at most we
                 // may cache 4095 bytes more than what is required by the Read operation.
-                int bytesRead = _baseStream.Read(_copyBuffer, 0, _copyBuffer.Length);
+                var bytesRead = _baseStream.Read(_copyBuffer, 0, _copyBuffer.Length);
 
                 if (_streamBuffer.Position < _streamBuffer.Length)
                 {
@@ -73,7 +77,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             _streamBuffer.Seek(previousPosition, SeekOrigin.Begin);
 
             // Read from the backing store into the requested buffer.
-            int read = _streamBuffer.Read(buffer, offset, count);
+            var read = _streamBuffer.Read(buffer, offset, count);
 
             if (read < count)
             {

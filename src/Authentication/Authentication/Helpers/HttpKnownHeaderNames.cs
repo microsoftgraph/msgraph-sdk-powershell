@@ -1,4 +1,8 @@
-﻿using System;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -73,34 +77,30 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         public const string Warning = "Warning";
         public const string XAspNetVersion = "X-AspNet-Version";
         public const string XPoweredBy = "X-Powered-By";
-
+        public const string StrictTransportSecurity = "Strict-Transport-Security";
+        public const string Duration = "Duration";
+        public const string FeatureFlag = "FeatureFlag";
+        public const string SdkVersion = "SdkVersion";
         #endregion Known_HTTP_Header_Names
 
-        private static HashSet<string> s_contentHeaderSet = null;
+        private static HashSet<string> _contentHeaderSet = null;
 
-        internal static HashSet<string> ContentHeaders
-        {
-            get
+        internal static HashSet<string> ContentHeaders =>
+            _contentHeaderSet ?? (_contentHeaderSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
-                if (s_contentHeaderSet == null)
-                {
-                    s_contentHeaderSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                HttpKnownHeaderNames.Allow,
+                HttpKnownHeaderNames.ContentDisposition,
+                HttpKnownHeaderNames.ContentEncoding,
+                HttpKnownHeaderNames.ContentLanguage,
+                HttpKnownHeaderNames.ContentLength,
+                HttpKnownHeaderNames.ContentLocation,
+                HttpKnownHeaderNames.ContentMD5,
+                HttpKnownHeaderNames.ContentRange,
+                HttpKnownHeaderNames.ContentType,
+                HttpKnownHeaderNames.Expires,
+                HttpKnownHeaderNames.LastModified
+            });
 
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.Allow);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentDisposition);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentEncoding);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentLanguage);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentLength);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentLocation);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentMD5);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentRange);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.ContentType);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.Expires);
-                    s_contentHeaderSet.Add(HttpKnownHeaderNames.LastModified);
-                }
 
-                return s_contentHeaderSet;
-            }
-        }
     }
 }

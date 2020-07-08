@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
 using System.IO;
 using System.Management.Automation;
@@ -5,18 +9,24 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
+using Microsoft.Graph.PowerShell.Authentication.Properties;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    internal class StreamHelper
+    internal static class StreamHelper
     {
         internal const int DefaultReadBuffer = 100000;
 
         internal const int ChunkSize = 10000;
 
-        public static byte[] EncodeToBytes(string str, Encoding encoding)
+        /// <summary>
+        ///     Encode specified string to bytes using the provided encoding
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        internal static byte[] EncodeToBytes(this string str, Encoding encoding)
         {
             if (encoding == null)
             {
@@ -27,13 +37,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return encoding.GetBytes(str);
         }
 
-        internal static Stream GetResponseStream(HttpResponseMessage response)
+        internal static Stream GetResponseStream(this HttpResponseMessage response)
         {
             var responseStream = response.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
             return responseStream;
         }
 
-        internal static bool TryGetEncoding(string characterSet, out Encoding encoding)
+        internal static bool TryGetEncoding(this string characterSet, out Encoding encoding)
         {
             var result = false;
             try
@@ -49,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return result;
         }
 
-        internal static string DecodeStream(BufferingStreamReader responseStream, ref Encoding encoding)
+        internal static string DecodeStream(this BufferingStreamReader responseStream, ref Encoding encoding)
         {
             var isDefaultEncoding = false;
             if (encoding == null)
@@ -59,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 isDefaultEncoding = true;
             }
 
-            var content = StreamToString(responseStream, encoding);
+            var content = responseStream.StreamToString(encoding);
             if (isDefaultEncoding)
             {
                 do
@@ -68,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                     var localEncoding = Encoding.UTF8;
                     responseStream.Seek(0, SeekOrigin.Begin);
-                    content = StreamToString(responseStream, localEncoding);
+                    content = responseStream.StreamToString(localEncoding);
                     // report the encoding used.
                     encoding = localEncoding;
                 } while (false);
@@ -77,24 +87,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return content;
         }
 
-        private static string StreamToString(Stream stream, Encoding encoding)
+        internal static string StreamToString(this Stream stream, Encoding encoding)
         {
-            using var reader = new StreamReader(stream, encoding);
-            return reader.ReadToEnd();
+            using (var reader = new StreamReader(stream, encoding))
+            {
+                return reader.ReadToEnd();
+            }
         }
 
-        public static void SaveStreamToFile(Stream baseResponseStream, string filePath,
+        internal static void SaveStreamToFile(this Stream baseResponseStream, string filePath,
             InvokeGraphRequest invokeGraphRequest, CancellationToken token)
         {
             // If the web cmdlet should resume, append the file instead of overwriting.
             const FileMode fileMode = FileMode.Create;
             using (var output = new FileStream(filePath, fileMode, FileAccess.Write, FileShare.Read))
             {
-                WriteToStream(baseResponseStream, output, invokeGraphRequest, token);
+                baseResponseStream.WriteToStream(output, invokeGraphRequest, token);
             }
         }
 
-        private static void WriteToStream(Stream input, Stream output, PSCmdlet cmdlet,
+        private static void WriteToStream(this Stream input, Stream output, PSCmdlet cmdlet,
             CancellationToken cancellationToken)
         {
             if (cmdlet == null)
@@ -112,15 +124,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 do
                 {
-                    record.StatusDescription = StringUtil.FormatCurrentCulture("WriteRequestProgressStatus", output.Position);
+                    record.StatusDescription =
+                        Resources.WriteRequestProgressStatus.FormatCurrentCulture(output.Position);
                     cmdlet.WriteProgress(record);
 
-                    Task.Delay(1000).Wait(cancellationToken);
+                    Task.Delay(1000, cancellationToken).Wait(cancellationToken);
                 } while (!copyTask.IsCompleted && !cancellationToken.IsCancellationRequested);
 
                 if (copyTask.IsCompleted)
                 {
-                    record.StatusDescription = StringUtil.FormatCurrentCulture("WriteRequestComplete", output.Position);
+                    record.StatusDescription = Resources.WriteRequestComplete.FormatCurrentCulture(output.Position);
                     cmdlet.WriteProgress(record);
                 }
             }

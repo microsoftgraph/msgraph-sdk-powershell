@@ -1,4 +1,8 @@
-﻿using System.Net.Http;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using System.Net.Http;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {

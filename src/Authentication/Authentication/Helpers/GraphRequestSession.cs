@@ -1,5 +1,6 @@
-﻿// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT License.
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// Gets or sets the content Headers when using HttpClient.
         /// </summary>
         public Dictionary<string, string> ContentHeaders { get; set; }
+
         /// <summary>
         /// Gets or Sets the User Agent when using HttpClient
         /// </summary>
         public string UserAgent { get; set; }
+
         /// <summary>
         /// Gets or Sets a User Specified JWT Token
         /// </summary>

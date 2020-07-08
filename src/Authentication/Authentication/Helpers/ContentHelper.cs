@@ -1,8 +1,14 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
+using System.Globalization;
 using System.Management.Automation;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Win32;
 
@@ -28,7 +34,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 rt = RestReturnType.Detect;
             else if (ContentHelper.IsJson(contentType))
                 rt = RestReturnType.Json;
-            else if (ContentHelper.IsXml(contentType)) rt = RestReturnType.Xml;
+            else if (ContentHelper.IsXml(contentType)) 
+                rt = RestReturnType.Xml;
 
             return rt;
         }
@@ -58,8 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             // get the name of the codepage to use for response content
             var codepage = string.IsNullOrEmpty(characterSet) ? DefaultCodePage : characterSet;
-            Encoding encoding = null;
-
+            Encoding encoding;
             try
             {
                 encoding = Encoding.GetEncoding(codepage);
@@ -105,12 +111,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             // add in these other "javascript" related types that
             // sometimes get sent down as the mime type for JSON content
-            isJson |= contentType.Equals("text/json", StringComparison.OrdinalIgnoreCase)
-                      || contentType.Equals("application/x-javascript", StringComparison.OrdinalIgnoreCase)
-                      || contentType.Equals("text/x-javascript", StringComparison.OrdinalIgnoreCase)
-                      || contentType.Equals("application/javascript", StringComparison.OrdinalIgnoreCase)
-                      || contentType.Equals("text/javascript", StringComparison.OrdinalIgnoreCase);
-
+            switch (contentType.ToLower(CultureInfo.InvariantCulture))
+            {
+                case "text/json":
+                case "application/x-javascript":
+                case "text/x-javascript":
+                case "application/javascript":
+                case "text/javascript":
+                    isJson = true;
+                    break;
+            }
             return isJson;
         }
 
@@ -128,13 +138,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (Platform.IsWindows && !isText)
             {
                 // Media types registered with Windows as having a perceived type of text, are text
-                using (var contentTypeKey =
-                    Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))
+                using (var contentTypeKey = Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))
                 {
                     if (contentTypeKey != null)
                     {
-                        var extension = contentTypeKey.GetValue("Extension") as string;
-                        if (extension != null)
+                        if (contentTypeKey.GetValue("Extension") is string extension)
                         {
                             using (var extensionKey = Registry.ClassesRoot.OpenSubKey(extension))
                             {
@@ -148,7 +156,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     }
                 }
             }
-
             return isText;
         }
 
@@ -158,13 +165,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 return false;
 
             // RFC 3023: Media types with the suffix "+xml" are XML
-            var isXml = contentType.Equals("application/xml", StringComparison.OrdinalIgnoreCase)
-                        || contentType.Equals("application/xml-external-parsed-entity",
-                            StringComparison.OrdinalIgnoreCase)
-                        || contentType.Equals("application/xml-dtd", StringComparison.OrdinalIgnoreCase);
-
-            isXml |= contentType.EndsWith("+xml", StringComparison.OrdinalIgnoreCase);
-            return isXml;
+            switch (contentType.ToLower(CultureInfo.InvariantCulture))
+            {
+                case "application/xml":
+                case "application/xml-external-parsed-entity":
+                case "application/xml-dtd":
+                case var x when x.EndsWith("+xml"):
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         private static string GetContentTypeSignature(string contentType)

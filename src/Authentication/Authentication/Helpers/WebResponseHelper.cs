@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -8,12 +12,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     internal static class WebResponseHelper
     {
-        internal static string GetCharacterSet(this HttpResponseMessage response)
-        {
-            var characterSet = response.Content.Headers.ContentType.CharSet;
-            return characterSet;
-        }
-
         internal static Dictionary<string, IEnumerable<string>> GetHeadersDictionary(this HttpResponseMessage response)
         {
             var headers = new Dictionary<string, IEnumerable<string>>(StringComparer.OrdinalIgnoreCase);
@@ -35,32 +33,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             return headers;
-        }
-
-        internal static string GetProtocol(this HttpResponseMessage response)
-        {
-            var protocol = string.Format(CultureInfo.InvariantCulture,
-                "HTTP/{0}", response.Version);
-            return protocol;
-        }
-
-        internal static int GetStatusCode(this HttpResponseMessage response)
-        {
-            var statusCode = (int) response.StatusCode;
-            return statusCode;
-        }
-
-        internal static string GetStatusDescription(this HttpResponseMessage response)
-        {
-            var statusDescription = response.StatusCode.ToString();
-            return statusDescription;
-        }
-
-        internal static bool IsText(this HttpResponseMessage response)
-        {
-            // ContentType may not exist in response header.
-            var contentType = response.Content.Headers.ContentType?.MediaType;
-            return ContentHelper.IsText(contentType);
         }
     }
 }
