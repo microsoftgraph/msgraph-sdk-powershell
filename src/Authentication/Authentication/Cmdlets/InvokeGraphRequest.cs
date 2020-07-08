@@ -1,30 +1,19 @@
-// ------------------------------------------------------------------------------
-//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
-// ------------------------------------------------------------------------------
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Resources;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
@@ -89,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string OutputFilePath { get; set; }
 
         /// <summary>
-        ///     Infer Download FileName from ContentDisposition Header, 
+        ///     Infer Download FileName from ContentDisposition Header,
         /// </summary>
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.UserParameterSet,
@@ -113,7 +102,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.UserParameterSet,
             Position = 8,
-            HelpMessage = "Indicates that the cmdlet returns the results, in addition to writing them to a file. Only valid when the OutFile parameter is also used. ")]
+            HelpMessage =
+                "Indicates that the cmdlet returns the results, in addition to writing them to a file. Only valid when the OutFile parameter is also used. ")]
         public SwitchParameter PassThru { get; set; }
 
         /// <summary>
@@ -165,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string SessionVariable { get; set; }
 
         /// <summary>
-        ///  Response Headers Variable
+        ///     Response Headers Variable
         /// </summary>
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.UserParameterSet,
@@ -175,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string ResponseHeadersVariable { get; set; }
 
         /// <summary>
-        /// Response Status Code Variable
+        ///     Response Status Code Variable
         /// </summary>
         [Parameter(Position = 15, ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
@@ -185,11 +175,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Gets or sets whether to skip checking HTTP status for error codes.
         /// </summary>
-        [Parameter(Position = 16, ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = "Skip Checking Http Errors")]
+        [Parameter(Position = 16, ParameterSetName = Constants.UserParameterSet, Mandatory = false,
+            HelpMessage = "Skip Checking Http Errors")]
         public virtual SwitchParameter SkipHttpErrorCheck { get; set; }
 
         /// <summary>
-        /// Gets or sets the Session property.
+        ///     Gets or sets the Session property.
         /// </summary>
         [Parameter(Mandatory = false,
             Position = 17,
@@ -218,101 +209,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         internal bool ShouldSaveToOutFile => !string.IsNullOrEmpty(OutputFilePath);
 
-        internal bool ShouldWriteToPipeline => (!ShouldSaveToOutFile && !InferOutputFileName) || PassThru;
+        internal bool ShouldWriteToPipeline => !ShouldSaveToOutFile && !InferOutputFileName || PassThru;
 
         internal bool ShouldCheckHttpStatus => !SkipHttpErrorCheck;
 
-        #region CmdLet LifeCycle
-        protected override void BeginProcessing()
-        {
-            if (Break)
-            {
-                this.Break();
-            }
-
-            ValidateParameters();
-            base.BeginProcessing();
-        }
-
-        protected override void ProcessRecord()
-        {
-            base.ProcessRecord();
-            try
-            {
-                PrepareSession();
-                using (var client = GetHttpClient())
-                {
-                    ValidateRequestUri(client);
-                    using (var httpRequestMessage = GetRequest(Uri))
-                    {
-                        using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
-                        {
-                            FillRequestStream(httpRequestMessage);
-                            try
-                            {
-                                ReportRequestStatus(httpRequestMessageFormatter.HttpRequestMessage);
-                                var httpResponseMessage = GetResponse(client, httpRequestMessage);
-                                using (var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage))
-                                {
-                                    ReportResponseStatus(httpResponseMessageFormatter.HttpResponseMessage);
-                                    var isSuccess = httpResponseMessage.IsSuccessStatusCode;
-                                    if (ShouldCheckHttpStatus && !isSuccess)
-                                    {
-                                        var httpErrorRecord =
-                                            GenerateHttpErrorRecord(httpResponseMessageFormatter, httpRequestMessage);
-                                        ThrowTerminatingError(httpErrorRecord);
-                                    }
-                                    ProcessResponse(httpResponseMessage);
-                                }
-                            }
-                            catch (HttpRequestException ex)
-                            {
-                                var er = new ErrorRecord(ex, Errors.InvokeGraphHttpResponseException,
-                                    ErrorCategory.InvalidOperation,
-                                    httpRequestMessage);
-                                if (ex.InnerException != null)
-                                {
-                                    er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
-                                }
-
-                                ThrowTerminatingError(er);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (HttpRequestException httpRequestException)
-            {
-                WriteError(new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
-                    ErrorCategory.InvalidResult, null));
-                throw;
-            }
-            catch (Exception exception)
-            {
-                WriteError(new ErrorRecord(exception, ErrorCategory.ConnectionError.ToString(),
-                    ErrorCategory.InvalidOperation, null));
-                throw;
-            }
-        }
-
-        protected override void EndProcessing()
-        {
-            base.EndProcessing();
-        }
-
-        protected override void StopProcessing()
-        {
-            _cancellationTokenSource.Cancel();
-            base.StopProcessing();
-        }
-
-        #endregion
-        private static ErrorRecord GenerateHttpErrorRecord(HttpMessageFormatter httpResponseMessageFormatter, HttpRequestMessage httpRequestMessage)
+        private static ErrorRecord GenerateHttpErrorRecord(HttpMessageFormatter httpResponseMessageFormatter,
+            HttpRequestMessage httpRequestMessage)
         {
             var currentResponse = httpResponseMessageFormatter.HttpResponseMessage;
-            var errorMessage = Resources.ResponseStatusCodeFailure.FormatCurrentCulture(currentResponse.StatusCode, currentResponse.ReasonPhrase);
+            var errorMessage =
+                Resources.ResponseStatusCodeFailure.FormatCurrentCulture(currentResponse.StatusCode,
+                    currentResponse.ReasonPhrase);
             var httpException = new HttpResponseException(errorMessage, currentResponse);
-            var errorRecord = new ErrorRecord(httpException, Errors.InvokeGraphHttpResponseException, ErrorCategory.InvalidOperation, httpRequestMessage);
+            var errorRecord = new ErrorRecord(httpException, Errors.InvokeGraphHttpResponseException,
+                ErrorCategory.InvalidOperation, httpRequestMessage);
             var detailMsg = httpResponseMessageFormatter.ReadAsStringAsync()
                 .GetAwaiter()
                 .GetResult();
@@ -323,8 +233,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             return errorRecord;
         }
+
         /// <summary>
-        /// When -Verbose is specified, print out response status
+        ///     When -Verbose is specified, print out response status
         /// </summary>
         /// <param name="requestMessage"></param>
         private void ReportRequestStatus(HttpRequestMessage requestMessage)
@@ -336,19 +247,22 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 requestContentLength);
             WriteVerbose(reqVerboseMsg);
         }
+
         /// <summary>
-        /// When -Verbose is specified, print out response status
+        ///     When -Verbose is specified, print out response status
         /// </summary>
         /// <param name="responseMessage"></param>
         private void ReportResponseStatus(HttpResponseMessage responseMessage)
         {
             var contentType = responseMessage.GetContentType();
-            var respVerboseMsg = Resources.InvokeGraphResponseVerboseMessage.FormatCurrentCulture(responseMessage.Content.Headers.ContentLength,
+            var respVerboseMsg = Resources.InvokeGraphResponseVerboseMessage.FormatCurrentCulture(
+                responseMessage.Content.Headers.ContentLength,
                 contentType);
             WriteVerbose(respVerboseMsg);
         }
+
         /// <summary>
-        /// Compose a request, setting Uri and Headers. 
+        ///     Compose a request, setting Uri and Headers.
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
@@ -406,10 +320,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     request.Headers.Add(HttpKnownHeaderNames.UserAgent, GraphRequestSession.UserAgent);
                 }
             }
+
             return request;
         }
+
         /// <summary>
-        /// Compose Request Uri
+        ///     Compose Request Uri
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
@@ -437,8 +353,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             return uri;
         }
+
         /// <summary>
-        /// Process Http Response
+        ///     Process Http Response
         /// </summary>
         /// <param name="response"></param>
         internal void ProcessResponse(HttpResponseMessage response)
@@ -510,7 +427,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     {
                         var fileName = response.Content.Headers.ContentDisposition.FileNameStar;
                         var fullFileName = QualifyFilePath(fileName);
-                        WriteVerbose(Resources.InferredFileNameVerboseMessage.FormatCurrentCulture(fileName, fullFileName));
+                        WriteVerbose(
+                            Resources.InferredFileNameVerboseMessage.FormatCurrentCulture(fileName, fullFileName));
                         baseResponseStream.SaveStreamToFile(fullFileName, this, _cancellationTokenSource.Token);
                     }
                 }
@@ -523,7 +441,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (!string.IsNullOrEmpty(StatusCodeVariable))
             {
                 var vi = SessionState.PSVariable;
-                vi.Set(StatusCodeVariable, (int)response.StatusCode);
+                vi.Set(StatusCodeVariable, (int) response.StatusCode);
             }
 
             if (!string.IsNullOrEmpty(ResponseHeadersVariable))
@@ -535,7 +453,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
 
         /// <summary>
-        /// Gets a Custom AuthProvider or configured default provided depending on Auth Scheme specified.
+        ///     Gets a Custom AuthProvider or configured default provided depending on Auth Scheme specified.
         /// </summary>
         /// <returns></returns>
         private IAuthenticationProvider GetAuthProvider()
@@ -544,10 +462,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 return new InvokeGraphRequestAuthProvider(GraphRequestSession);
             }
+
             return AuthenticationHelpers.GetAuthProvider(GraphSession.Instance.AuthContext);
         }
+
         /// <summary>
-        /// Gets a Graph HttpClient with a custom or default auth provider. 
+        ///     Gets a Graph HttpClient with a custom or default auth provider.
         /// </summary>
         /// <returns></returns>
         private HttpClient GetHttpClient()
@@ -556,8 +476,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             var client = HttpHelpers.GetGraphHttpClient(provider);
             return client;
         }
+
         /// <summary>
-        /// Executes the HTTP Request and returns a response
+        ///     Executes the HTTP Request and returns a response
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -580,8 +501,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 .GetResult();
             return response;
         }
+
         /// <summary>
-        /// Set the request content
+        ///     Set the request content
         /// </summary>
         /// <param name="request"></param>
         /// <param name="content"></param>
@@ -597,11 +519,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 throw new ArgumentNullException(nameof(content));
             }
+
             var body = content.FormatDictionary();
             return SetRequestContent(request, body);
         }
+
         /// <summary>
-        /// Set the request content
+        ///     Set the request content
         /// </summary>
         /// <param name="request"></param>
         /// <param name="content"></param>
@@ -661,10 +585,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             return byteArrayContent.Headers.ContentLength.Value;
         }
+
         /// <summary>
-        /// Hydrate the request with the requisite data.
-        /// for Body handle Dictionaries, Streams and Byte Arrays, coerce
-        /// into a string if none of the above types.
+        ///     Hydrate the request with the requisite data.
+        ///     for Body handle Dictionaries, Streams and Byte Arrays, coerce
+        ///     into a string if none of the above types.
         /// </summary>
         /// <param name="request"></param>
         private void FillRequestStream(HttpRequestMessage request)
@@ -709,7 +634,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 else
                 {
                     // Assume its a string
-                    SetRequestContent(request, (string)LanguagePrimitives.ConvertTo(content, typeof(string), CultureInfo.InvariantCulture));
+                    SetRequestContent(request,
+                        (string) LanguagePrimitives.ConvertTo(content, typeof(string), CultureInfo.InvariantCulture));
                 }
             }
             else if (InputFilePath != null) // copy InputFilePath data
@@ -717,7 +643,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     // open the input file
-                    SetRequestContent(request, new FileStream(InputFilePath, FileMode.Open, FileAccess.Read, FileShare.Read));
+                    SetRequestContent(request,
+                        new FileStream(InputFilePath, FileMode.Open, FileAccess.Read, FileShare.Read));
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -733,7 +660,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 request.Content.Headers.Clear();
             }
 
-            foreach (var entry in GraphRequestSession.ContentHeaders.Where(header => !string.IsNullOrWhiteSpace(header.Value)))
+            foreach (var entry in GraphRequestSession.ContentHeaders.Where(header =>
+                !string.IsNullOrWhiteSpace(header.Value)))
             {
                 if (SkipHeaderValidation)
                 {
@@ -755,8 +683,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
             }
         }
+
         /// <summary>
-        /// Sets the body of the to be a byte array
+        ///     Sets the body of the to be a byte array
         /// </summary>
         /// <param name="request"></param>
         /// <param name="content"></param>
@@ -773,8 +702,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             return byteArrayContent.Headers.ContentLength.Value;
         }
+
         /// <summary>
-        /// Sets the body of the request to be a Stream
+        ///     Sets the body of the request to be a Stream
         /// </summary>
         /// <param name="request"></param>
         /// <param name="contentStream"></param>
@@ -800,8 +730,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             return new HttpMethod(graphRequestMethod.ToString().ToUpperInvariant());
         }
+
         /// <summary>
-        /// Prepare GraphRequestSession to be used downstream.
+        ///     Prepare GraphRequestSession to be used downstream.
         /// </summary>
         internal virtual void PrepareSession()
         {
@@ -842,28 +773,35 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
             }
         }
+
         /// <summary>
-        /// Validate the Request Uri must have the same Host as GraphHttpClient BaseAddress.
+        ///     Validate the Request Uri must have the same Host as GraphHttpClient BaseAddress.
         /// </summary>
         /// <param name="httpClient"></param>
         private void ValidateRequestUri(HttpClient httpClient)
         {
             if (Uri == null)
             {
-                var error = GetValidationError(Resources.InvokeGraphRequestMissingUriErrorMessage.FormatCurrentCulture(nameof(Uri)), Errors.InvokeGraphRequestInvalidHost,
+                var error = GetValidationError(
+                    Resources.InvokeGraphRequestMissingUriErrorMessage.FormatCurrentCulture(nameof(Uri)),
+                    Errors.InvokeGraphRequestInvalidHost,
                     nameof(Uri));
                 ThrowTerminatingError(error);
             }
+
             // Ensure that the Passed in Uri has the same Host as the HttpClient. 
             if (Uri.IsAbsoluteUri && httpClient.BaseAddress.Host != Uri.Host)
             {
-                var error = GetValidationError(Resources.InvokeGraphRequestInvalidHostErrorMessage.FormatCurrentCulture(Uri.Host), Errors.InvokeGraphRequestInvalidHost,
+                var error = GetValidationError(
+                    Resources.InvokeGraphRequestInvalidHostErrorMessage.FormatCurrentCulture(Uri.Host),
+                    Errors.InvokeGraphRequestInvalidHost,
                     nameof(Uri));
                 ThrowTerminatingError(error);
             }
         }
+
         /// <summary>
-        /// Validate Passed In Parameters
+        ///     Validate Passed In Parameters
         /// </summary>
         private void ValidateParameters()
         {
@@ -878,7 +816,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             // When PATCH or POST is specified, ensure a body is present
             if (Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST && Body == null)
             {
-                var error = GetValidationError(Resources.BodyMissingWhenMethodIsSpecified.FormatCurrentCulture(nameof(Body), Method),
+                var error = GetValidationError(
+                    Resources.BodyMissingWhenMethodIsSpecified.FormatCurrentCulture(nameof(Body), Method),
                     Errors.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
                     nameof(Body));
                 ThrowTerminatingError(error);
@@ -886,7 +825,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (PassThru && OutputFilePath == null)
             {
-                var error = GetValidationError(Resources.PassThruWithOutputFilePathMissing.FormatCurrentCulture(nameof(PassThru), nameof(OutputFilePath)),
+                var error = GetValidationError(
+                    Resources.PassThruWithOutputFilePathMissing.FormatCurrentCulture(nameof(PassThru),
+                        nameof(OutputFilePath)),
                     Errors.InvokeGraphRequestOutFileMissingException,
                     nameof(PassThru));
                 ThrowTerminatingError(error);
@@ -894,14 +835,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
             if (Authentication == GraphRequestAuthenticationType.Default && !string.IsNullOrWhiteSpace(Token))
             {
-                var error = GetValidationError(Resources.AuthenticationTokenConflict.FormatCurrentCulture(GraphRequestSession, nameof(Token)),
+                var error = GetValidationError(
+                    Resources.AuthenticationTokenConflict.FormatCurrentCulture(GraphRequestSession, nameof(Token)),
                     Errors.InvokeGraphRequestAuthenticationTokenConflictException);
                 ThrowTerminatingError(error);
             }
+
             // Token shouldn't be null when UserProvidedToken is specified
             if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && string.IsNullOrWhiteSpace(Token))
             {
-                var error = GetValidationError(Resources.AuthenticationCredentialNotSupplied.FormatCurrentCulture(Authentication, nameof(Token)),
+                var error = GetValidationError(
+                    Resources.AuthenticationCredentialNotSupplied.FormatCurrentCulture(Authentication, nameof(Token)),
                     Errors.InvokeGraphRequestAuthenticationTokenConflictException);
                 ThrowTerminatingError(error);
             }
@@ -909,7 +853,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             // Only Body or InputFilePath can be specified at a time
             if (Body != null && InputFilePath != null)
             {
-                var error = GetValidationError(Resources.BodyConflict.FormatCurrentCulture(nameof(Body), nameof(InputFilePath)),
+                var error = GetValidationError(
+                    Resources.BodyConflict.FormatCurrentCulture(nameof(Body), nameof(InputFilePath)),
                     Errors.InvokeGraphRequestBodyConflictException);
                 ThrowTerminatingError(error);
             }
@@ -925,26 +870,30 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                     if (!provider.Name.Equals(FileSystemProvider.ProviderName, StringComparison.OrdinalIgnoreCase))
                     {
-                        errorRecord = GetValidationError(Resources.NotFileSystemPath.FormatCurrentCulture(InputFilePath),
+                        errorRecord = GetValidationError(
+                            Resources.NotFileSystemPath.FormatCurrentCulture(InputFilePath),
                             Errors.InvokeGraphRequestFileNotFilesystemPathException, InputFilePath);
                     }
                     else
                     {
                         if (providerPaths.Count > 1)
                         {
-                            errorRecord = GetValidationError(Resources.MultiplePathsResolved.FormatCurrentCulture(InputFilePath),
+                            errorRecord = GetValidationError(
+                                Resources.MultiplePathsResolved.FormatCurrentCulture(InputFilePath),
                                 Errors.InvokeGraphRequestInputFileMultiplePathsResolvedException, InputFilePath);
                         }
                         else if (providerPaths.Count == 0)
                         {
-                            errorRecord = GetValidationError(Resources.NoPathResolved.FormatCurrentCulture(InputFilePath),
+                            errorRecord = GetValidationError(
+                                Resources.NoPathResolved.FormatCurrentCulture(InputFilePath),
                                 Errors.InvokeGraphRequestInputFileNoPathResolvedException, InputFilePath);
                         }
                         else
                         {
                             if (Directory.Exists(providerPaths[0]))
                             {
-                                errorRecord = GetValidationError(Resources.DirectoryPathSpecified.FormatCurrentCulture(providerPaths[0]),
+                                errorRecord = GetValidationError(
+                                    Resources.DirectoryPathSpecified.FormatCurrentCulture(providerPaths[0]),
                                     Errors.InvokeGraphRequestInputFileNotFilePathException, InputFilePath);
                             }
 
@@ -961,7 +910,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     errorRecord = new ErrorRecord(providerNotFound.ErrorRecord, providerNotFound);
                 }
-                catch (System.Management.Automation.DriveNotFoundException driveNotFound)
+                catch (DriveNotFoundException driveNotFound)
                 {
                     errorRecord = new ErrorRecord(driveNotFound.ErrorRecord, driveNotFound);
                 }
@@ -970,8 +919,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     ThrowTerminatingError(errorRecord);
             }
         }
+
         /// <summary>
-        /// Composes a validation error
+        ///     Composes a validation error
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="errorId"></param>
@@ -982,8 +932,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             var error = new ErrorRecord(ex, errorId, ErrorCategory.InvalidArgument, this);
             return error;
         }
+
         /// <summary>
-        /// Composes a validation error
+        ///     Composes a validation error
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="errorId"></param>
@@ -996,8 +947,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             var error = new ErrorRecord(ex, errorId, ErrorCategory.InvalidArgument, this);
             return error;
         }
+
         /// <summary>
-        /// Generate a fully qualified file path
+        ///     Generate a fully qualified file path
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
@@ -1006,5 +958,93 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             var resolvedFilePath = PathUtils.ResolveFilePath(path, this, true);
             return resolvedFilePath;
         }
+
+        #region CmdLet LifeCycle
+
+        protected override void BeginProcessing()
+        {
+            if (Break)
+            {
+                this.Break();
+            }
+
+            ValidateParameters();
+            base.BeginProcessing();
+        }
+
+        protected override void ProcessRecord()
+        {
+            base.ProcessRecord();
+            try
+            {
+                PrepareSession();
+                using (var client = GetHttpClient())
+                {
+                    ValidateRequestUri(client);
+                    using (var httpRequestMessage = GetRequest(Uri))
+                    {
+                        using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
+                        {
+                            FillRequestStream(httpRequestMessage);
+                            try
+                            {
+                                ReportRequestStatus(httpRequestMessageFormatter.HttpRequestMessage);
+                                var httpResponseMessage = GetResponse(client, httpRequestMessage);
+                                using (var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage))
+                                {
+                                    ReportResponseStatus(httpResponseMessageFormatter.HttpResponseMessage);
+                                    var isSuccess = httpResponseMessage.IsSuccessStatusCode;
+                                    if (ShouldCheckHttpStatus && !isSuccess)
+                                    {
+                                        var httpErrorRecord =
+                                            GenerateHttpErrorRecord(httpResponseMessageFormatter, httpRequestMessage);
+                                        ThrowTerminatingError(httpErrorRecord);
+                                    }
+
+                                    ProcessResponse(httpResponseMessage);
+                                }
+                            }
+                            catch (HttpRequestException ex)
+                            {
+                                var er = new ErrorRecord(ex, Errors.InvokeGraphHttpResponseException,
+                                    ErrorCategory.InvalidOperation,
+                                    httpRequestMessage);
+                                if (ex.InnerException != null)
+                                {
+                                    er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
+                                }
+
+                                ThrowTerminatingError(er);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                WriteError(new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
+                    ErrorCategory.InvalidResult, null));
+                throw;
+            }
+            catch (Exception exception)
+            {
+                WriteError(new ErrorRecord(exception, ErrorCategory.ConnectionError.ToString(),
+                    ErrorCategory.InvalidOperation, null));
+                throw;
+            }
+        }
+
+        protected override void EndProcessing()
+        {
+            base.EndProcessing();
+        }
+
+        protected override void StopProcessing()
+        {
+            _cancellationTokenSource.Cancel();
+            base.StopProcessing();
+        }
+
+        #endregion
     }
 }
