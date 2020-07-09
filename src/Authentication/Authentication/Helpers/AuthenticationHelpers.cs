@@ -10,10 +10,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.IO;
     using System.Linq;
     using System.Security.Cryptography.X509Certificates;
+    using System.Threading;
 
     internal static class AuthenticationHelpers
     {
-        private static readonly object FileLock = new object();
+        static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
         internal static IAuthenticationProvider GetAuthProvider(IAuthContext authConfig)
         {
@@ -24,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                    .WithTenantId(authConfig.TenantId)
                    .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig.ClientId);
+                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig);
                 return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
@@ -37,33 +38,50 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 .WithCertificate(string.IsNullOrEmpty(authConfig.CertificateThumbprint) ? GetCertificateByName(authConfig.CertificateName) : GetCertificateByThumbprint(authConfig.CertificateThumbprint))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig.ClientId);
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig);
                 return new ClientCredentialProvider(confidentialClientApp);
             }
         }
 
         internal static void Logout(IAuthContext authConfig)
         {
-            lock (FileLock)
+            try
             {
-                TokenCacheStorage.DeleteToken(authConfig.ClientId);
+                _cacheLock.EnterWriteLock();
+                TokenCacheStorage.DeleteToken(authConfig);
+            }
+            finally
+            {
+                _cacheLock.ExitWriteLock();
             }
         }
 
-        private static void ConfigureTokenCache(ITokenCache tokenCache, string appId)
+        private static void ConfigureTokenCache(ITokenCache tokenCache, IAuthContext authContext)
         {
             tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) => {
-                lock (FileLock)
+                try
                 {
-                    args.TokenCache.DeserializeMsalV3(TokenCacheStorage.GetToken(appId), shouldClearExistingCache: true);
+                    _cacheLock.EnterReadLock();
+                    args.TokenCache.DeserializeMsalV3(TokenCacheStorage.GetToken(authContext), shouldClearExistingCache: true);
+                }
+                finally
+                {
+                    _cacheLock.ExitReadLock();
                 }
             });
 
             tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) => {
-                lock (FileLock)
+                if (args.HasStateChanged)
                 {
-                    if (args.HasStateChanged)
-                        TokenCacheStorage.SetToken(appId, args.TokenCache.SerializeMsalV3());
+                    try
+                    {
+                        _cacheLock.EnterWriteLock();
+                        TokenCacheStorage.SetToken(authContext, args.TokenCache.SerializeMsalV3());
+                    }
+                    finally
+                    {
+                        _cacheLock.ExitWriteLock();
+                    }
                 }
             });
         }
@@ -71,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <summary>
         /// Gets unexpired certificate of the specified certificate subject name for the current user in My store..
         /// </summary>
-        /// <param name="certificateName">Subjec name of the certificate to get.</param>
+        /// <param name="certificateName">Subject name of the certificate to get.</param>
         /// <returns></returns>
         private static X509Certificate2 GetCertificateByThumbprint(string CertificateThumbprint)
         {

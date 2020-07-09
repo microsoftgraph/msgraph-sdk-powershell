@@ -6,6 +6,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Identity.Client;
     using System;
     using System.Collections.Generic;
@@ -18,25 +19,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
     public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
-
-        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1, HelpMessage = "A list of delegated permissions to consent to.")]
         public string[] Scopes { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true, HelpMessage = "The client id of your application.")]
         public string ClientId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2, HelpMessage = "The name of a certificate. The Certificate will be retrieved from the current user certificate store.")]
         public string CertificateName { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3, HelpMessage = "The thumbprint of a certificate. The Certificate will be retrieved from the current user certificate store.")]
         public string CertificateThumbprint { get; set; }
 
-
-        [Parameter(Position = 4)]
+        [Parameter(Position = 4, HelpMessage = "The id of the tenant to connect to.")]
         public string TenantId { get; set; }
 
-        [Parameter(Position = 5)]
+        [Parameter(Position = 5, HelpMessage = "Forces the command to get a new access token silently.")]
         public SwitchParameter ForceRefresh { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "Determines the scope of authentication context. This accepts Process - current process - or CurrentUser - all sessions started by user.")]
+        public ContextScope ContextScope { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -53,7 +55,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
 
-            IAuthContext authConfig = new AuthContext { TenantId = TenantId };
+            IAuthContext authContext = new AuthContext { TenantId = TenantId };
             CancellationToken cancellationToken = CancellationToken.None;
 
             if (ParameterSetName == Constants.UserParameterSet)
@@ -63,28 +65,33 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 CancellationTokenSource cts = new CancellationTokenSource(authTimeout);
                 cancellationToken = cts.Token;
 
-                authConfig.AuthType = AuthenticationType.Delegated;
-                authConfig.Scopes = Scopes ?? new string[] { "User.Read" };
+                authContext.AuthType = AuthenticationType.Delegated;
+                authContext.Scopes = Scopes ?? new string[] { "User.Read" };
+                authContext.ContextScope = ContextScope.CurrentUser;
+                // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
+                authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
             }
             else
             {
-                authConfig.AuthType = AuthenticationType.AppOnly;
-                authConfig.ClientId = ClientId;
-                authConfig.CertificateThumbprint = CertificateThumbprint;
-                authConfig.CertificateName = CertificateName;
+                authContext.AuthType = AuthenticationType.AppOnly;
+                authContext.ClientId = ClientId;
+                authContext.CertificateThumbprint = CertificateThumbprint;
+                authContext.CertificateName = CertificateName;
+                // Default to Process but allow the customer to change this via `ContextScope` param.
+                authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
             }
 
             try
             {
                 // Gets a static instance of IAuthenticationProvider when the client app hasn't changed. 
-                IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
+                IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
                 IClientApplicationBase clientApplication = null;
                 if (ParameterSetName == Constants.UserParameterSet)
                     clientApplication = (authProvider as DeviceCodeProvider).ClientApplication;
                 else
                     clientApplication = (authProvider as ClientCredentialProvider).ClientApplication;
 
-                // Incremental scope consent without re-instanciating the auth provider. We will use a static instance.
+                // Incremental scope consent without re-instantiating the auth provider. We will use a static instance.
                 GraphRequestContext graphRequestContext = new GraphRequestContext();
                 graphRequestContext.CancellationToken = cancellationToken;
                 graphRequestContext.MiddlewareOptions = new Dictionary<string, IMiddlewareOption>
@@ -95,7 +102,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         {
                             AuthenticationProviderOption = new AuthenticationProviderOption
                             {
-                                Scopes = authConfig.Scopes,
+                                Scopes = authContext.Scopes,
                                 ForceRefresh = ForceRefresh
                             }
                         }
@@ -111,13 +118,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 var account = accounts.FirstOrDefault();
 
                 JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(httpRequestMessage.Headers.Authorization?.Parameter);
-                authConfig.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
-                authConfig.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
-                authConfig.AppName = jwtPayload?.AppDisplayname;
-                authConfig.Account = jwtPayload?.Upn ?? account?.Username;
+                authContext.Scopes = jwtPayload?.Scp?.Split(' ') ?? jwtPayload?.Roles;
+                authContext.TenantId = jwtPayload?.Tid ?? account?.HomeAccountId?.TenantId;
+                authContext.AppName = jwtPayload?.AppDisplayname;
+                authContext.Account = jwtPayload?.Upn ?? account?.Username;
 
-                // Save auth config to session state.
-                GraphSession.Instance.AuthContext = authConfig;
+                // Save auth context to session state.
+                GraphSession.Instance.AuthContext = authContext;
             }
             catch (AuthenticationException authEx)
             {
