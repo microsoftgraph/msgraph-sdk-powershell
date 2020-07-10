@@ -8,9 +8,10 @@
     using System.Threading.Tasks;
     using Xunit;
 
-    public class TokenCacheStorageTests: IDisposable
+    public class CurrentUserTokenCacheStorageTests: IDisposable
     {
-        private IAuthContext _testAppContext1 = new AuthContext { ClientId = "test_app_id_1"  };
+        private const ContextScope _userContextScope = ContextScope.CurrentUser;
+        private readonly IAuthContext _testAppContext1 = new AuthContext { ClientId = "test_app_id_1", ContextScope = _userContextScope };
 
         [Fact]
         public void ShouldStoreNewTokenToPlatformCache()
@@ -38,7 +39,7 @@
             string app1StrContent = "random data for app 1.";
             byte[] app1BufferToStore = Encoding.UTF8.GetBytes(app1StrContent);
 
-            IAuthContext testAppContext2 = new AuthContext { ClientId = "test_app_id_2" };
+            IAuthContext testAppContext2 = new AuthContext { ClientId = "test_app_id_2", ContextScope = _userContextScope };
             string app2StrContent = "random data for app 2 plus more data.";
             byte[] app2BufferToStore = Encoding.UTF8.GetBytes(app2StrContent);
 
@@ -125,7 +126,7 @@
             // Act
             Parallel.For(0, executions, (index) => {
                 byte[] contentBuffer = Encoding.UTF8.GetBytes(index.ToString());
-                var testAuthContext = new AuthContext { ClientId = index.ToString() };
+                var testAuthContext = new AuthContext { ClientId = index.ToString(), ContextScope = _userContextScope };
                 TokenCacheStorage.SetToken(testAuthContext, contentBuffer);
 
                 byte[] storedBuffer = TokenCacheStorage.GetToken(testAuthContext);
