@@ -447,7 +447,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (!string.IsNullOrEmpty(ResponseHeadersVariable))
             {
                 var vi = SessionState.PSVariable;
-                vi.Set(ResponseHeadersVariable, response.GetHeadersDictionary());
+                vi.Set(ResponseHeadersVariable, response.GetHttpResponseHeaders());
             }
         }
 
@@ -789,6 +789,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
+            if (string.IsNullOrWhiteSpace(Uri.ToString()))
+            {
+                var error = GetValidationError(
+                    Resources.InvokeGraphRequestInvalidUriErrorMessage.FormatCurrentCulture(nameof(Uri)),
+                    Errors.InvokeGraphRequestInvalidHost,
+                    nameof(Uri));
+                ThrowTerminatingError(error);
+            }
             // Ensure that the Passed in Uri has the same Host as the HttpClient. 
             if (Uri.IsAbsoluteUri && httpClient.BaseAddress.Host != Uri.Host)
             {

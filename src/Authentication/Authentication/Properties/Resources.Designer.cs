@@ -178,6 +178,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Empty string not allowed for {0}.
+        /// </summary>
+        internal static string InvokeGraphRequestInvalidUriErrorMessage {
+            get {
+                return ResourceManager.GetString("InvokeGraphRequestInvalidUriErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Must specify {0}.
         /// </summary>
         internal static string InvokeGraphRequestMissingUriErrorMessage {

@@ -184,7 +184,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 return token;
             }
 
-            if (token.StartsWith("\"", StringComparison.Ordinal) && token.EndsWith("\"", StringComparison.Ordinal) && token.Length > 1)
+            if (token.Length > 1 && token.StartsWith("\"", StringComparison.Ordinal) && token.EndsWith("\"", StringComparison.Ordinal))
             {
                 return token.Substring(1, token.Length - 2);
             }

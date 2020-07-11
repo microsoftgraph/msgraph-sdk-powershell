@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     internal static class WebResponseHelper
     {
-        internal static Dictionary<string, IEnumerable<string>> GetHeadersDictionary(this HttpResponseMessage response)
+        internal static Dictionary<string, IEnumerable<string>> GetHttpResponseHeaders(this HttpResponseMessage response)
         {
             var headers = new Dictionary<string, IEnumerable<string>>(StringComparer.OrdinalIgnoreCase);
             foreach (var entry in response.Headers)

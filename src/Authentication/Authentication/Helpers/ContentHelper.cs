@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 rt = RestReturnType.Detect;
             else if (ContentHelper.IsJson(contentType))
                 rt = RestReturnType.Json;
-            else if (ContentHelper.IsXml(contentType)) 
+            else if (ContentHelper.IsXml(contentType))
                 rt = RestReturnType.Xml;
 
             return rt;
@@ -140,17 +140,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // Media types registered with Windows as having a perceived type of text, are text
                 using (var contentTypeKey = Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))
                 {
-                    if (contentTypeKey != null)
+                    if (contentTypeKey?.GetValue("Extension") is string extension)
                     {
-                        if (contentTypeKey.GetValue("Extension") is string extension)
+                        using (var extensionKey = Registry.ClassesRoot.OpenSubKey(extension))
                         {
-                            using (var extensionKey = Registry.ClassesRoot.OpenSubKey(extension))
+                            if (extensionKey != null)
                             {
-                                if (extensionKey != null)
-                                {
-                                    var perceivedType = extensionKey.GetValue("PerceivedType") as string;
-                                    isText = perceivedType == "text";
-                                }
+                                var perceivedType = extensionKey.GetValue("PerceivedType") as string;
+                                isText = perceivedType == "text";
                             }
                         }
                     }

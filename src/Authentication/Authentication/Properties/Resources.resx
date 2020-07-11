@@ -190,4 +190,7 @@
   <data name="WriteRequestProgressStatus" xml:space="preserve">
     <value>Number of bytes processed: {0}</value>
   </data>
+  <data name="InvokeGraphRequestInvalidUriErrorMessage" xml:space="preserve">
+    <value>Empty string not allowed for {0}</value>
+  </data>
 </root>
