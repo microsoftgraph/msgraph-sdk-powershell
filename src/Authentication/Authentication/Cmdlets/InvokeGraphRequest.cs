@@ -377,8 +377,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     var charSet = response.Content.Headers.ContentType?.CharSet;
                     if (!string.IsNullOrEmpty(charSet))
                     {
-                        // NOTE: Don't use ContentHelper.GetEncoding; it returns a
-                        // default which bypasses checking for a meta charset value.
                         charSet.TryGetEncoding(out encoding);
                     }
 

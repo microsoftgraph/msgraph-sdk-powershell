@@ -61,29 +61,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         internal static string DecodeStream(this BufferingStreamReader responseStream, ref Encoding encoding)
         {
-            var isDefaultEncoding = false;
             if (encoding == null)
             {
                 // Use the default encoding if one wasn't provided
                 encoding = ContentHelper.GetDefaultEncoding();
-                isDefaultEncoding = true;
             }
-
             var content = responseStream.StreamToString(encoding);
-            if (isDefaultEncoding)
-            {
-                do
-                {
-                    // check for a charset attribute on the meta element to override the default.
-
-                    var localEncoding = Encoding.UTF8;
-                    responseStream.Seek(0, SeekOrigin.Begin);
-                    content = responseStream.StreamToString(localEncoding);
-                    // report the encoding used.
-                    encoding = localEncoding;
-                } while (false);
-            }
-
             return content;
         }
 

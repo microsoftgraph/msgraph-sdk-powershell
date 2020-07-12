@@ -155,7 +155,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             if (throwOnError)
             {
-                throw new ArgumentException(Resources.HttpMessageInvalidMediaType, "content");
+                throw new ArgumentException(Resources.HttpMessageInvalidMediaType, nameof(content));
             }
 
             return false;
