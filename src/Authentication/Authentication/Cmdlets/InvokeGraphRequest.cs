@@ -336,8 +336,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             // before creating the web request,
             // preprocess Body if content is a dictionary and method is GET (set as query)
-            LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary);
-            if (bodyAsDictionary != null && Method == GraphRequestMethod.GET)
+            if (Method == GraphRequestMethod.GET && LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary))
             {
                 var uriBuilder = new UriBuilder(uri);
                 if (uriBuilder.Query != null && uriBuilder.Query.Length > 1)
