@@ -134,7 +134,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (parameter.Name.Equals(MsgTypeParameter, StringComparison.OrdinalIgnoreCase))
                     {
-                        var msgType = UnquoteToken(parameter.Value);
+                        var msgType = parameter.Value.Trim('"');
                         if (!msgType.Equals(isRequest ? DefaultRequestMsgType : DefaultResponseMsgType,
                             StringComparison.OrdinalIgnoreCase))
                         {
@@ -160,25 +160,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             return false;
         }
-
-
-        public static string UnquoteToken(string token)
-        {
-            if (string.IsNullOrWhiteSpace(token))
-            {
-                return token;
-            }
-
-            if (token.Length > 1 && token.StartsWith("\"", StringComparison.Ordinal) &&
-                token.EndsWith("\"", StringComparison.Ordinal))
-            {
-                return token.Substring(1, token.Length - 2);
-            }
-
-            return token;
-        }
-
-
+        
         /// <summary>
         ///     Asynchronously serializes the object's content to the given <paramref name="stream" />.
         /// </summary>
