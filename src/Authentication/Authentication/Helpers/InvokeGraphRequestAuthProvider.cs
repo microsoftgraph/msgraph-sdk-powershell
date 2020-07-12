@@ -4,6 +4,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Management.Automation.Language;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -22,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         public Task AuthenticateRequestAsync(HttpRequestMessage request)
         {
-            var authenticationHeader = new AuthenticationHeaderValue("Bearer", _session.Token);
+            var authenticationHeader = new AuthenticationHeaderValue("Bearer", new NetworkCredential(string.Empty, _session.Token).Password);
             request.Headers.Authorization = authenticationHeader;
             return Task.CompletedTask;
         }

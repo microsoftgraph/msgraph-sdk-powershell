@@ -7,12 +7,15 @@ using System.Linq;
 using System.Management.Automation;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security;
 using System.Text;
 using System.Threading;
+
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
+
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
@@ -113,7 +116,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             ParameterSetName = Constants.UserParameterSet,
             Position = 9,
             HelpMessage = "OAuth or Bearer Token to use instead of already acquired token")]
-        public string Token { get; set; }
+        public SecureString Token { get; set; }
 
         /// <summary>
         ///     Add headers to Request Header collection without validation
@@ -745,7 +748,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 vi.Set(SessionVariable, GraphRequestSession);
             }
 
-            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && !string.IsNullOrWhiteSpace(Token))
+            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && Token != null)
             {
                 GraphRequestSession.Token = Token;
                 GraphRequestSession.AuthenticationType = Authentication;
@@ -841,16 +844,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
-            if (Authentication == GraphRequestAuthenticationType.Default && !string.IsNullOrWhiteSpace(Token))
+            if (Authentication == GraphRequestAuthenticationType.Default && Token != null)
             {
                 var error = GetValidationError(
-                    Resources.AuthenticationTokenConflict.FormatCurrentCulture(GraphRequestSession, nameof(Token)),
+                    Resources.AuthenticationTokenConflict.FormatCurrentCulture(Authentication, nameof(Token)),
                     Errors.InvokeGraphRequestAuthenticationTokenConflictException);
                 ThrowTerminatingError(error);
             }
 
             // Token shouldn't be null when UserProvidedToken is specified
-            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && string.IsNullOrWhiteSpace(Token))
+            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && Token == null)
             {
                 var error = GetValidationError(
                     Resources.AuthenticationCredentialNotSupplied.FormatCurrentCulture(Authentication, nameof(Token)),

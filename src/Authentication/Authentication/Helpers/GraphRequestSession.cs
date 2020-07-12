@@ -4,7 +4,7 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Security;
 using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <summary>
         /// Gets or Sets a User Specified JWT Token
         /// </summary>
-        public string Token { get; set; }
+        public SecureString Token { get; set; }
 
         /// <summary>
         /// Gets or Sets the AuthenticationType to be used for the current Session
