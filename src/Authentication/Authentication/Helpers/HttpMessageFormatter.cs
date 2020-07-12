@@ -1,26 +1,22 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-// ------------------------------------------------------------------------------
-//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
-// ------------------------------------------------------------------------------
-
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Graph.PowerShell.Authentication.Properties;
+using Microsoft.Graph.PowerShell.Authentication.Properties
+    ; // ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
     /// <summary>
-    /// Derived <see cref="HttpContent"/> class which can encapsulate an <see cref="HttpResponseMessage"/>
-    /// or an <see cref="HttpRequestMessage"/> as an entity with media type "application/http".
+    ///     Derived <see cref="HttpContent" /> class which can encapsulate an <see cref="HttpResponseMessage" />
+    ///     or an <see cref="HttpRequestMessage" /> as an entity with media type "application/http".
     /// </summary>
     internal class HttpMessageFormatter : HttpContent
     {
@@ -50,31 +46,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         private static readonly HashSet<string> SpaceSeparatedValueHeaderFields =
             new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
-                HttpKnownHeaderNames.UserAgent,
+                HttpKnownHeaderNames.UserAgent
             };
 
         // Set of header fields that should not get serialized
         private static readonly HashSet<string> NeverSerializedHeaderFields =
-            new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-            {
-                HttpKnownHeaderNames.SdkVersion,
-                HttpKnownHeaderNames.FeatureFlag,
-                HttpKnownHeaderNames.Authorization,
-                HttpKnownHeaderNames.CacheControl,
-                HttpKnownHeaderNames.TransferEncoding,
-                HttpKnownHeaderNames.Duration,
-                HttpKnownHeaderNames.StrictTransportSecurity,
-                HttpKnownHeaderNames.Date
-            };
+            new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         private bool _contentConsumed;
         private Lazy<Task<Stream>> _streamTask;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HttpMessageContent"/> class encapsulating an
-        /// <see cref="HttpRequestMessage"/>.
+        ///     Initializes a new instance of the <see cref="HttpMessageContent" /> class encapsulating an
+        ///     <see cref="HttpRequestMessage" />.
         /// </summary>
-        /// <param name="httpRequest">The <see cref="HttpResponseMessage"/> instance to encapsulate.</param>
+        /// <param name="httpRequest">The <see cref="HttpResponseMessage" /> instance to encapsulate.</param>
         public HttpMessageFormatter(HttpRequestMessage httpRequest)
         {
             HttpRequestMessage = httpRequest ?? throw new ArgumentNullException(nameof(httpRequest));
@@ -85,10 +71,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HttpMessageContent"/> class encapsulating an
-        /// <see cref="HttpResponseMessage"/>.
+        ///     Initializes a new instance of the <see cref="HttpMessageContent" /> class encapsulating an
+        ///     <see cref="HttpResponseMessage" />.
         /// </summary>
-        /// <param name="httpResponse">The <see cref="HttpResponseMessage"/> instance to encapsulate.</param>
+        /// <param name="httpResponse">The <see cref="HttpResponseMessage" /> instance to encapsulate.</param>
         public HttpMessageFormatter(HttpResponseMessage httpResponse)
         {
             HttpResponseMessage = httpResponse ?? throw new ArgumentNullException(nameof(httpResponse));
@@ -98,17 +84,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             InitializeStreamTask();
         }
 
-        private HttpContent Content => HttpRequestMessage != null ? HttpRequestMessage.Content : HttpResponseMessage.Content;
+        private HttpContent Content =>
+            HttpRequestMessage != null ? HttpRequestMessage.Content : HttpResponseMessage.Content;
 
         /// <summary>
-        /// Gets the HTTP request message.
+        ///     Gets the HTTP request message.
         /// </summary>
-        public HttpRequestMessage HttpRequestMessage { get; private set; }
+        public HttpRequestMessage HttpRequestMessage { get; }
 
         /// <summary>
-        /// Gets the HTTP response message.
+        ///     Gets the HTTP response message.
         /// </summary>
-        public HttpResponseMessage HttpResponseMessage { get; private set; }
+        public HttpResponseMessage HttpResponseMessage { get; }
 
         private void InitializeStreamTask()
         {
@@ -116,11 +103,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Validates whether the content contains an HTTP Request or an HTTP Response.
+        ///     Validates whether the content contains an HTTP Request or an HTTP Response.
         /// </summary>
         /// <param name="content">The content to validate.</param>
         /// <param name="isRequest">if set to <c>true</c> if the content is either an HTTP Request or an HTTP Response.</param>
-        /// <param name="throwOnError">Indicates whether validation failure should result in an <see cref="Exception"/> or not.</param>
+        /// <param name="throwOnError">Indicates whether validation failure should result in an <see cref="Exception" /> or not.</param>
         /// <returns><c>true</c> if content is either an HTTP Request or an HTTP Response</returns>
         internal static bool ValidateHttpMessageContent(HttpContent content, bool isRequest, bool throwOnError)
         {
@@ -136,29 +123,29 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 {
                     if (throwOnError)
                     {
-                        throw new ArgumentException(Resources.HttpMessageInvalidMediaType.FormatCurrentCulture(contentType), nameof(content));
+                        throw new ArgumentException(
+                            Resources.HttpMessageInvalidMediaType.FormatCurrentCulture(contentType), nameof(content));
                     }
-                    else
-                    {
-                        return false;
-                    }
+
+                    return false;
                 }
 
                 foreach (var parameter in contentType.Parameters)
                 {
                     if (parameter.Name.Equals(MsgTypeParameter, StringComparison.OrdinalIgnoreCase))
                     {
-                        string msgType = UnquoteToken(parameter.Value);
-                        if (!msgType.Equals(isRequest ? DefaultRequestMsgType : DefaultResponseMsgType, StringComparison.OrdinalIgnoreCase))
+                        var msgType = UnquoteToken(parameter.Value);
+                        if (!msgType.Equals(isRequest ? DefaultRequestMsgType : DefaultResponseMsgType,
+                            StringComparison.OrdinalIgnoreCase))
                         {
                             if (throwOnError)
                             {
-                                throw new ArgumentException(Resources.HttpMessageInvalidMediaType.FormatCurrentCulture(msgType), nameof(content));
+                                throw new ArgumentException(
+                                    Resources.HttpMessageInvalidMediaType.FormatCurrentCulture(msgType),
+                                    nameof(content));
                             }
-                            else
-                            {
-                                return false;
-                            }
+
+                            return false;
                         }
 
                         return true;
@@ -170,10 +157,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 throw new ArgumentException(Resources.HttpMessageInvalidMediaType, "content");
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
 
@@ -184,7 +169,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 return token;
             }
 
-            if (token.Length > 1 && token.StartsWith("\"", StringComparison.Ordinal) && token.EndsWith("\"", StringComparison.Ordinal))
+            if (token.Length > 1 && token.StartsWith("\"", StringComparison.Ordinal) &&
+                token.EndsWith("\"", StringComparison.Ordinal))
             {
                 return token.Substring(1, token.Length - 2);
             }
@@ -194,11 +180,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
 
         /// <summary>
-        /// Asynchronously serializes the object's content to the given <paramref name="stream"/>.
+        ///     Asynchronously serializes the object's content to the given <paramref name="stream" />.
         /// </summary>
-        /// <param name="stream">The <see cref="Stream"/> to which to write.</param>
-        /// <param name="context">The associated <see cref="TransportContext"/>.</param>
-        /// <returns>A <see cref="Task"/> instance that is asynchronously serializing the object's content.</returns>
+        /// <param name="stream">The <see cref="Stream" /> to which to write.</param>
+        /// <param name="context">The associated <see cref="TransportContext" />.</param>
+        /// <returns>A <see cref="Task" /> instance that is asynchronously serializing the object's content.</returns>
         protected override async Task SerializeToStreamAsync(Stream stream, TransportContext context)
         {
             if (stream == null)
@@ -206,19 +192,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new ArgumentNullException(nameof(stream));
             }
 
-            byte[] header = SerializeHeader();
+            var header = SerializeHeader();
             await stream.WriteAsync(header, 0, header.Length);
 
             if (Content != null)
             {
-                Stream readStream = await _streamTask.Value;
+                var readStream = await _streamTask.Value;
                 ValidateStreamForReading(readStream);
                 await Content.CopyToAsync(stream);
             }
         }
 
         /// <summary>
-        /// Computes the length of the stream if possible.
+        ///     Computes the length of the stream if possible.
         /// </summary>
         /// <param name="length">The computed length of the stream.</param>
         /// <returns><c>true</c> if the length has been computed; otherwise <c>false</c>.</returns>
@@ -234,20 +220,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             // For #3, we return true & the size of our headers + the content length
             // For #4, we return true & the size of our headers
 
-            bool hasContent = _streamTask.Value != null;
+            var hasContent = _streamTask.Value != null;
             length = 0;
 
             // Cases #1, #2, #3
             // We serialize header to a StringBuilder so that we can determine the length
             // following the pattern for HttpContent to try and determine the message length.
             // The perf overhead is no larger than for the other HttpContent implementations.
-            byte[] header = SerializeHeader();
+            var header = SerializeHeader();
             length += header.Length;
             return true;
         }
 
         /// <summary>
-        /// Serializes the HTTP request line.
+        ///     Serializes the HTTP request line.
         /// </summary>
         /// <param name="message">Where to write the request line.</param>
         /// <param name="httpRequest">The HTTP request.</param>
@@ -266,7 +252,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Serializes the HTTP status line.
+        ///     Serializes the HTTP status line.
         /// </summary>
         /// <param name="message">Where to write the status line.</param>
         /// <param name="httpResponse">The HTTP response.</param>
@@ -274,12 +260,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             Contract.Assert(message != null, "message cannot be null");
             message.Append($"HTTP/{(httpResponse.Version != null ? httpResponse.Version.ToString(2) : "1.1")}{SP}");
-            message.Append((int)httpResponse.StatusCode + SP);
+            message.Append((int) httpResponse.StatusCode + SP);
             message.Append(httpResponse.ReasonPhrase + CRLF);
         }
 
         /// <summary>
-        /// Serializes the header fields.
+        ///     Serializes the header fields.
         /// </summary>
         /// <param name="message">Where to write the status line.</param>
         /// <param name="headers">The headers to write.</param>
@@ -288,26 +274,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             Contract.Assert(message != null, "message cannot be null");
             if (headers != null)
             {
-                foreach (KeyValuePair<string, IEnumerable<string>> header in headers)
+                foreach (var header in headers)
                 {
                     if (NeverSerializedHeaderFields.Contains(header.Key))
                     {
                         continue;
                     }
+
                     if (SingleValueHeaderFields.Contains(header.Key))
                     {
-                        foreach (string value in header.Value)
+                        foreach (var value in header.Value)
                         {
                             message.Append(header.Key + ColonSP + value + CRLF);
                         }
                     }
                     else if (SpaceSeparatedValueHeaderFields.Contains(header.Key))
                     {
-                        message.Append(header.Key + ColonSP + String.Join(SP, header.Value) + CRLF);
+                        message.Append(header.Key + ColonSP + string.Join(SP, header.Value) + CRLF);
                     }
                     else
                     {
-                        message.Append(header.Key + ColonSP + String.Join(CommaSeparator, header.Value) + CRLF);
+                        message.Append(header.Key + ColonSP + string.Join(CommaSeparator, header.Value) + CRLF);
                     }
                 }
             }
@@ -315,7 +302,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
         private byte[] SerializeHeader()
         {
-            StringBuilder message = new StringBuilder(DefaultHeaderAllocation);
+            var message = new StringBuilder(DefaultHeaderAllocation);
             HttpHeaders headers;
             HttpContent content;
             if (HttpRequestMessage != null)
