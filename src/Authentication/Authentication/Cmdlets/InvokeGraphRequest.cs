@@ -825,7 +825,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             // When PATCH or POST is specified, ensure a body is present
-            if (Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST && Body == null)
+            if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && Body == null)
             {
                 var error = GetValidationError(
                     Resources.BodyMissingWhenMethodIsSpecified.FormatCurrentCulture(nameof(Body), Method),
