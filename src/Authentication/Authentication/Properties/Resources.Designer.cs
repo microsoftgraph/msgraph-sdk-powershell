@@ -151,6 +151,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The cmdlet cannot run because the following conflicting parameters are specified: {0} and {1}. Specify either {0} or {1} then retry..
+        /// </summary>
+        internal static string InferFileNameOutFilePathConflict {
+            get {
+                return ResourceManager.GetString("InferFileNameOutFilePathConflict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not Infer File Name.
         /// </summary>
         internal static string InferredFileNameErrorMessage {

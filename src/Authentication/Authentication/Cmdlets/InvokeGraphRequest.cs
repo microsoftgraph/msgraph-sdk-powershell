@@ -73,6 +73,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         /// <summary>
         ///     Relative or absolute path where the response body will be saved.
+        ///     Not allowed when InferOutputFileName is specified.
         /// </summary>
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.UserParameterSet,
@@ -81,7 +82,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string OutputFilePath { get; set; }
 
         /// <summary>
-        ///     Infer Download FileName from ContentDisposition Header,
+        ///     Infer Download FileName from ContentDisposition Header.
+        ///     Not allowed when OutputFilePath is specified.
         /// </summary>
         [Parameter(Mandatory = false,
             ParameterSetName = Constants.UserParameterSet,
@@ -211,14 +213,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         internal string QualifiedOutFile => QualifyFilePath(OutputFilePath);
 
         internal bool ShouldSaveToOutFile => !string.IsNullOrEmpty(OutputFilePath);
-
-        internal bool ShouldWriteToPipeline => !ShouldSaveToOutFile && !InferOutputFileName || PassThru;
+        /// <summary>
+        /// Only write to pipeline if outfile is not specified, inference is not specified but PassThru is set. 
+        /// </summary>
+        internal bool ShouldWriteToPipeline => (!ShouldSaveToOutFile && !InferOutputFileName) || PassThru;
 
         internal bool ShouldCheckHttpStatus => !SkipHttpErrorCheck;
 
         private static ErrorRecord GenerateHttpErrorRecord(HttpMessageFormatter httpResponseMessageFormatter,
             HttpRequestMessage httpRequestMessage)
         {
+            // Load into buffer to avoid stream already consumed issues.
+            httpResponseMessageFormatter.LoadIntoBufferAsync()
+                .GetAwaiter()
+                .GetResult();
             var currentResponse = httpResponseMessageFormatter.HttpResponseMessage;
             var errorMessage =
                 Resources.ResponseStatusCodeFailure.FormatCurrentCulture(currentResponse.StatusCode,
@@ -343,7 +351,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     uriBuilder.Query = uriBuilder.Query.Substring(1) + "&" + bodyAsDictionary.FormatDictionary();
                 }
-                else
+                else if (bodyAsDictionary != null)
                 {
                     uriBuilder.Query = bodyAsDictionary.FormatDictionary();
                 }
@@ -441,7 +449,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (!string.IsNullOrEmpty(StatusCodeVariable))
             {
                 var vi = SessionState.PSVariable;
-                vi.Set(StatusCodeVariable, (int) response.StatusCode);
+                vi.Set(StatusCodeVariable, (int)response.StatusCode);
             }
 
             if (!string.IsNullOrEmpty(ResponseHeadersVariable))
@@ -496,9 +504,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             var cancellationToken = _cancellationTokenSource.Token;
-            var response = client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+            var response = client.SendAsync(request, cancellationToken)
                 .GetAwaiter()
                 .GetResult();
+
             return response;
         }
 
@@ -619,7 +628,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     content = psBody.BaseObject;
                 }
-                else if (content is IDictionary dictionary && request.Method != HttpMethod.Get)
+                if (content is IDictionary dictionary && request.Method != HttpMethod.Get)
                 {
                     SetRequestContent(request, dictionary);
                 }
@@ -635,7 +644,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     // Assume its a string
                     SetRequestContent(request,
-                        (string) LanguagePrimitives.ConvertTo(content, typeof(string), CultureInfo.InvariantCulture));
+                        (string)LanguagePrimitives.ConvertTo(content, typeof(string), CultureInfo.InvariantCulture));
                 }
             }
             else if (InputFilePath != null) // copy InputFilePath data
@@ -822,7 +831,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             // When PATCH or POST is specified, ensure a body is present
-            if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && Body == null)
+            if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && (Body == null && string.IsNullOrWhiteSpace(InputFilePath)))
             {
                 var error = GetValidationError(
                     Resources.BodyMissingWhenMethodIsSpecified.FormatCurrentCulture(nameof(Body), Method),
@@ -859,7 +868,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             // Only Body or InputFilePath can be specified at a time
-            if (Body != null && InputFilePath != null)
+            if (Body != null && !string.IsNullOrWhiteSpace(InputFilePath))
             {
                 var error = GetValidationError(
                     Resources.BodyConflict.FormatCurrentCulture(nameof(Body), nameof(InputFilePath)),
@@ -867,6 +876,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
+            if (InferOutputFileName.IsPresent && !string.IsNullOrWhiteSpace(OutputFilePath))
+            {
+                var error = GetValidationError(
+                    Resources.InferFileNameOutFilePathConflict.FormatCurrentCulture(nameof(InferOutputFileName), nameof(OutputFilePath)),
+                    Errors.InvokeGraphRequestBodyConflictException);
+                ThrowTerminatingError(error);
+            }
             // Ensure InputFilePath is an Existing Item
             if (InputFilePath != null)
             {

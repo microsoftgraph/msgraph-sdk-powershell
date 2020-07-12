@@ -193,4 +193,7 @@
   <data name="InvokeGraphRequestInvalidUriErrorMessage" xml:space="preserve">
     <value>Empty string not allowed for {0}</value>
   </data>
+  <data name="InferFileNameOutFilePathConflict" xml:space="preserve">
+    <value>The cmdlet cannot run because the following conflicting parameters are specified: {0} and {1}. Specify either {0} or {1} then retry.</value>
+  </data>
 </root>
