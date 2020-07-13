@@ -3,12 +3,11 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;
-    using System.IO;
     using System.Linq;
+    using System.Security.Authentication;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
 
@@ -16,30 +15,33 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     {
         static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
-        internal static IAuthenticationProvider GetAuthProvider(IAuthContext authConfig)
+        internal static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
         {
-            if (authConfig.AuthType == AuthenticationType.Delegated)
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            if (authContext.AuthType == AuthenticationType.Delegated)
             {
                 IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
-                   .Create(authConfig.ClientId)
-                   .WithTenantId(authConfig.TenantId)
+                   .Create(authContext.ClientId)
+                   .WithTenantId(authContext.TenantId)
                    .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, authConfig);
-                return new DeviceCodeProvider(publicClientApp, authConfig.Scopes, async (result) => {
+                ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
+                return new Microsoft.Graph.Auth.DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) => {
                     await Console.Out.WriteLineAsync(result.Message);
                 });
             }
             else
             {
                 IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
-                .Create(authConfig.ClientId)
-                .WithTenantId(authConfig.TenantId)
-                .WithCertificate(string.IsNullOrEmpty(authConfig.CertificateThumbprint) ? GetCertificateByName(authConfig.CertificateName) : GetCertificateByThumbprint(authConfig.CertificateThumbprint))
+                .Create(authContext.ClientId)
+                .WithTenantId(authContext.TenantId)
+                .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
                 .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authConfig);
-                return new ClientCredentialProvider(confidentialClientApp);
+                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
+                return new Microsoft.Graph.Auth.ClientCredentialProvider(confidentialClientApp);
             }
         }
 
