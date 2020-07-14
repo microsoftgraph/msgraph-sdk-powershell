@@ -31,10 +31,9 @@ require:
 title: $(service-name)
 subject-prefix: ''
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.5.1
+module-version: 0.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -5,10 +5,7 @@ Param(
     [string] $RepositoryName = "PSGallery",
     [int] $ModulePreviewNumber = -1,
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
-    [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
-    [switch] $BetaGraphVersion,
     [switch] $UpdateAutoRest,
-    [switch] $UseLocalDoc,
     [switch] $Build,
     [switch] $Pack,
     [switch] $Publish,
@@ -30,17 +27,11 @@ if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
     Install-Module powershell-yaml -Force   
 }
 
-$GraphVersion = "v1.0"
-if ($BetaGraphVersion) {
-    $GraphVersion = "beta"
-}
 $ModulePrefix = "Microsoft.Graph"
 $ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
-$OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 $ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
-$DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
@@ -103,11 +94,6 @@ $ModuleMapping.Keys | ForEach-Object {
         }
 
         try {
-            if (-not $UseLocalDoc) {
-                # Download OpenAPI document for module.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
-            }
-
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
             & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose
