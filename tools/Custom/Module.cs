@@ -87,8 +87,8 @@ namespace Microsoft.Graph.PowerShell
                 {
                     var requestString = await requestFormatter.ReadAsStringAsync();
                     var responseString = await responseFormatter.ReadAsStringAsync();
-                    await signal(Events.Debug, cancellationToken, () => EventHelper.CreateLogEvent(requestString));
-                    await signal(Events.Debug, cancellationToken, () => EventHelper.CreateLogEvent(responseString));
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(requestString));
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
                 }
             }
         }

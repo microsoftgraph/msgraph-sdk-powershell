@@ -16,7 +16,7 @@ namespace Microsoft.Graph.PowerShell
         /// Create a tracing event containing a string message
         /// </summary>
         /// <param name="message">The string message to include in event data</param>
-        /// <returns>Valid EventData containign the message</returns>
+        /// <returns>Valid EventData containing the message</returns>
         public static EventData CreateLogEvent(Task<string> message)
         {
             return new EventData
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell
         /// Create a new debug message event
         /// </summary>
         /// <param name="message">The message</param>
-        /// <returns>An event cotnainng the debug message</returns>
+        /// <returns>An event containing the debug message</returns>
         public static EventData CreateDebugEvent(string message)
         {
             return new EventData
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell
         /// Create a new debug message event
         /// </summary>
         /// <param name="message">The message</param>
-        /// <returns>An event cotnainng the debug message</returns>
+        /// <returns>An event containing the debug message</returns>
         public static EventData CreateWarningEvent(string message)
         {
             return new EventData
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.PowerShell
                 Message = message
             };
         }
-        static string SplitPascalCase(string word)
+        public static string SplitPascalCase(string word)
         {
             var regex = new Regex("([a-z]+)([A-Z])");
             var output = regex.Replace(word, "$1 $2");

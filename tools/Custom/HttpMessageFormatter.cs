@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -66,7 +70,7 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="httpRequest">The <see cref="HttpResponseMessage"/> instance to encapsulate.</param>
         public HttpMessageFormatter(HttpRequestMessage httpRequest)
         {
-            HttpRequestMessage = httpRequest ?? throw new ArgumentNullException("httpRequest");
+            HttpRequestMessage = httpRequest ?? throw new ArgumentNullException(nameof(httpRequest));
             Headers.ContentType = new MediaTypeHeaderValue(DefaultMediaType);
             Headers.ContentType.Parameters.Add(new NameValueHeaderValue(MsgTypeParameter, DefaultRequestMsgType));
 
@@ -80,7 +84,7 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="httpResponse">The <see cref="HttpResponseMessage"/> instance to encapsulate.</param>
         public HttpMessageFormatter(HttpResponseMessage httpResponse)
         {
-            HttpResponseMessage = httpResponse ?? throw new ArgumentNullException("httpResponse");
+            HttpResponseMessage = httpResponse ?? throw new ArgumentNullException(nameof(httpResponse));
             Headers.ContentType = new MediaTypeHeaderValue(DefaultMediaType);
             Headers.ContentType.Parameters.Add(new NameValueHeaderValue(MsgTypeParameter, DefaultResponseMsgType));
 
@@ -118,7 +122,7 @@ namespace Microsoft.Graph.PowerShell
         {
             if (content == null)
             {
-                throw new ArgumentNullException("content");
+                throw new ArgumentNullException(nameof(content));
             }
 
             MediaTypeHeaderValue contentType = content.Headers.ContentType;
@@ -128,7 +132,7 @@ namespace Microsoft.Graph.PowerShell
                 {
                     if (throwOnError)
                     {
-                        throw new ArgumentException("HttpMessageInvalidMediaType", "content");
+                        throw new ArgumentException("HttpMessageInvalidMediaType", nameof(content));
                     }
                     else
                     {
@@ -145,7 +149,7 @@ namespace Microsoft.Graph.PowerShell
                         {
                             if (throwOnError)
                             {
-                                throw new ArgumentException("HttpMessageInvalidMediaType", "content");
+                                throw new ArgumentException("HttpMessageInvalidMediaType", nameof(content));
                             }
                             else
                             {
@@ -160,7 +164,7 @@ namespace Microsoft.Graph.PowerShell
 
             if (throwOnError)
             {
-                throw new ArgumentException("HttpMessageInvalidMediaType", "content");
+                throw new ArgumentException("HttpMessageInvalidMediaType", nameof(content));
             }
             else
             {
@@ -195,7 +199,7 @@ namespace Microsoft.Graph.PowerShell
         {
             if (stream == null)
             {
-                throw new ArgumentNullException("stream");
+                throw new ArgumentNullException(nameof(stream));
             }
 
             byte[] header = SerializeHeader();
