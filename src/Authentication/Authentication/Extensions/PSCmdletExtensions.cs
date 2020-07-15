@@ -8,7 +8,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Extensions
     internal static class PSCmdletExtensions
     {
         /// <summary>
-        /// Determines is a parameter has been provided by the user.
+        /// Determines if a parameter has been provided by the user.
         /// </summary>
         /// <param name="cmdlet">The executing cmdlet.</param>
         /// <param name="parameterName">The name of the parameter to check.</param>
