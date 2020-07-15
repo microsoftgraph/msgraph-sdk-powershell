@@ -21,6 +21,19 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public IAuthContext AuthContext { get; set; }
 
+        private byte[] token;
+
+        /// <summary>
+        /// Gets or Sets a session based token.
+        /// This returns an empty byte[] when token is not present.
+        /// </summary>
+        public byte[] Token
+        {
+            get { return token ?? new byte[0]; }
+            set { token = value; }
+        }
+
+
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.
         /// </summary>
