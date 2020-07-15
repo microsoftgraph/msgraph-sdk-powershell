@@ -71,7 +71,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             {
                 GraphSession.Instance.Token = accessToken;
             }
-            else if(authContext.ContextScope == ContextScope.CurrentUser)
+            else if (authContext.ContextScope == ContextScope.CurrentUser)
             {
                 if (Helpers.OperatingSystem.IsWindows())
                 {
