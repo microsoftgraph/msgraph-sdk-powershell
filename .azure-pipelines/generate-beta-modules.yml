@@ -22,7 +22,7 @@ variables:
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation
-  timeoutInMinutes: 300
+  timeoutInMinutes: 600
   pool:
     vmImage: 'windows-latest'
 
@@ -125,7 +125,7 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build -EnableSigning'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -Build -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

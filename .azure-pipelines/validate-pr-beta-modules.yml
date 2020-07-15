@@ -21,7 +21,7 @@ variables:
 jobs:
 - job: MSGraphPSSDKValidation
   displayName: MS Graph PS SDK Beta Validation
-  timeoutInMinutes: 300
+  timeoutInMinutes: 600
   pool:
     vmImage: 'windows-latest'
   
