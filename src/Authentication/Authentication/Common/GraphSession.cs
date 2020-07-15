@@ -93,10 +93,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
                         _instance = instanceCreator();
                         _initialized = true;
                     }
-                    else
-                    {
-                        throw new InvalidOperationException(string.Format(ErrorConstants.Message.InstanceExists, nameof(GraphSession), "Initialize(Func<GraphSession>, bool)"));
-                    }
                 }
                 finally
                 {
