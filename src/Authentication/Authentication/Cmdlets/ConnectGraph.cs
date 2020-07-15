@@ -67,7 +67,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 authContext.AuthType = AuthenticationType.Delegated;
                 authContext.Scopes = Scopes ?? new string[] { "User.Read" };
-                authContext.ContextScope = ContextScope.CurrentUser;
                 // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
             }

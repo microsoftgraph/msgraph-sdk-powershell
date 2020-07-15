@@ -18,7 +18,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         internal static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
         {
             if (authContext is null)
+            {
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            }
 
             if (authContext.AuthType == AuthenticationType.Delegated)
             {
