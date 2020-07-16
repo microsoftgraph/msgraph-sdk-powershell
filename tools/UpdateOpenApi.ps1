@@ -32,7 +32,7 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
     $ModuleName = $_
     $ForceRefresh = $false
-    # Check whether ForceRefresh is required
+    # Check whether ForceRefresh is required, Only required for the First Request.
     if ($RequestCount -eq 0){
         $ForceRefresh = $true
     }
