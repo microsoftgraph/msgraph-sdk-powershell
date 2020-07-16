@@ -31,7 +31,13 @@ jobs:
     displayName: 'Run CredScan'
     inputs:
      debugMode: false
-
+  
+  # Install Node
+  - task: NodeTool@0
+    displayName: Node install
+    inputs:
+      versionSpec: '13.14.0'
+  
   - task: Npm@1
     displayName: 'Install AutoRest'
     inputs:
