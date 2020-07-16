@@ -31,14 +31,20 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
     $ModuleName = $_
+    $ForceRefresh = $false
+    # Check whether ForceRefresh is required
+    if ($RequestCount -eq 0){
+        $ForceRefresh = $true
+    }
+
     try {
         # Download OpenAPI document for module.
-        & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -RequestCount $RequestCount
+        & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount
     }
     catch {
         Write-Error $_.Exception
     }
-    $RequestCount = $RequestCount + 1
+    $RequestCount++
 }
 
 

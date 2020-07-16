@@ -3,7 +3,8 @@ Param(
     [string] $ModuleRegex,
     [string] $OpenApiDocOutput,
     [string] $GraphVersion,
-    [int] $RequestCount
+    [switch] $ForceRefresh,
+    [int] $RequestCount = 1
 )
 
 if (-not (Test-Path $OpenApiDocOutput)) {
@@ -12,9 +13,15 @@ if (-not (Test-Path $OpenApiDocOutput)) {
   
 $OpenApiBaseUrl = "https://graphexplorerapi.azurewebsites.net"
 $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=$GraphVersion" -f $ModuleRegex)
-if ($RequestCount -eq 0) {
+if ($ForceRefresh.IsPresent) {
     $OpenApiServiceUrl = "$OpenApiServiceUrl&forceRefresh=true"
 }
-
 Write-Host -ForegroundColor Green "[$RequestCount] Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
-Invoke-WebRequest $OpenApiServiceUrl -OutFile "$OpenApiDocOutput\$ModuleName.yml"
+try {
+    Invoke-WebRequest $OpenApiServiceUrl -OutFile "$OpenApiDocOutput\$ModuleName.yml"
+}
+catch {
+    $ErrorMessage = $_.Exception.Message
+    Write-Host -ForegroundColor Red "[$RequestCount] Request Failed for $ModuleName Error Message: $ErrorMessage"
+    throw
+}
