@@ -5,14 +5,12 @@ Param(
     [string] $RepositoryName = "PSGallery",
     [int] $ModulePreviewNumber = -1,
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
-    [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
-    [switch] $BetaGraphVersion,
     [switch] $UpdateAutoRest,
-    [switch] $UseLocalDoc,
     [switch] $Build,
     [switch] $Pack,
     [switch] $Publish,
-    [switch] $EnableSigning
+    [switch] $EnableSigning,
+    [switch] $SkipVersionCheck
 )
 enum VersionState {
     Invalid
@@ -25,19 +23,15 @@ if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 # Install Powershell-yaml
-Install-Module powershell-yaml -Force
-
-$GraphVersion = "v1.0"
-if ($BetaGraphVersion) {
-    $GraphVersion = "beta"
+if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
+    Install-Module powershell-yaml -Force   
 }
+
 $ModulePrefix = "Microsoft.Graph"
-$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\"
-$OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion"
+$ModulesOutputDir = Join-Path $PSScriptRoot "..\src\"
+$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts"
 $RequiredGraphModules = @()
 # PS Scripts
-$DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
 $ManageGeneratedModulePS1 = Join-Path $PSScriptRoot ".\ManageGeneratedModule.ps1" -Resolve
 $BuildModulePS1 = Join-Path $PSScriptRoot ".\BuildModule.ps1" -Resolve
 $PackModulePS1 = Join-Path $PSScriptRoot ".\PackModule.ps1" -Resolve
@@ -85,13 +79,13 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     # Validate module version with the one on PSGallery.
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
-    if ($VersionState.Equals([VersionState]::Invalid)) {
+    if ($VersionState.Equals([VersionState]::Invalid) -and !$SkipVersionCheck) {
         Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
     }
-    elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
+    elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
         Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
     }
-    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
+    elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $SkipVersionCheck) {
         # Read release notes from readme.
         $ModuleReleaseNotes = & $ReadModuleReadMePS1 -ReadMePath $ModuleLevelReadMePath -FieldToRead "release-notes"
         if ($ModuleReleaseNotes -eq $null) {
@@ -100,16 +94,9 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
         }
 
         try {
-            if (-not $UseLocalDoc) {
-                # Download OpenAPI document for module. Pass along the Request Counter. No ForceRefresh since it would cause generation to take too long.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -RequestCount $RequestCount
-            }
-
             # Generate PowerShell modules.
             Write-Host -ForegroundColor Green "Generating '$ModulePrefix.$ModuleName' module..."
-            $OpenApiDocPath = Join-Path $OpenApiDocOutput "" -Resolve
-
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName --spec-doc-repo:$OpenApiDocPath $ModuleLevelReadMePath --verbose
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --verbose
             if ($LASTEXITCODE) {
                 Write-Error "Failed to generate '$ModuleName' module."
             }
@@ -117,16 +104,16 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$ModulePrefix.$ModuleName' module..."
-            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion
+            & $ManageGeneratedModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix
 
             if ($Build) {
                 # Build generated module.
                 if ($EnableSigning) {
                     # Sign generated module.
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning
                 }
                 else {
-                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -GraphVersion $GraphVersion -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
+                    & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -RequiredModules $RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes
                 }
 
                 # Get profiles for generated modules.
@@ -154,7 +141,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
 
             if ($Pack) {
                 # Pack generated module.
-                & $PackModulePS1 -Module $ModuleName -GraphVersion $GraphVersion -ArtifactsLocation $ArtifactsLocation
+                & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
             }
         }
         catch {

@@ -21,7 +21,7 @@ variables:
 jobs:
 - job: MSGraphPSSDKValidation
   displayName: MS Graph PS SDK Beta Validation
-  timeoutInMinutes: 300
+  timeoutInMinutes: 600
   pool:
     vmImage: 'windows-latest'
   
@@ -30,6 +30,12 @@ jobs:
     displayName: 'Run CredScan'
     inputs:
      debugMode: false
+
+  # Install Node
+  - task: NodeTool@0
+    displayName: Node install
+    inputs:
+      versionSpec: '13.14.0'
   
   - task: Npm@1
     displayName: 'Install AutoRest'
@@ -41,7 +47,7 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build'
+      arguments: '-RepositoryApiKey $(Api_Key) -Build'
       pwsh: true
   
   - task: YodLabs.O365PostMessage.O365PostMessageBuild.O365PostMessageBuild@0

@@ -38,6 +38,8 @@ paths:
                 - addIns desc
                 - alternativeNames
                 - alternativeNames desc
+                - appDescription
+                - appDescription desc
                 - appDisplayName
                 - appDisplayName desc
                 - appId
@@ -50,6 +52,8 @@ paths:
                 - appRoleAssignmentRequired desc
                 - appRoles
                 - appRoles desc
+                - description
+                - description desc
                 - displayName
                 - displayName desc
                 - errorUrl
@@ -64,6 +68,8 @@ paths:
                 - loginUrl desc
                 - logoutUrl
                 - logoutUrl desc
+                - notes
+                - notes desc
                 - notificationEmailAddresses
                 - notificationEmailAddresses desc
                 - publishedPermissionScopes
@@ -110,12 +116,14 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
+                - appDescription
                 - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - description
                 - displayName
                 - errorUrl
                 - homepage
@@ -123,6 +131,7 @@ paths:
                 - keyCredentials
                 - loginUrl
                 - logoutUrl
+                - notes
                 - notificationEmailAddresses
                 - publishedPermissionScopes
                 - passwordCredentials
@@ -253,12 +262,14 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
+                - appDescription
                 - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - description
                 - displayName
                 - errorUrl
                 - homepage
@@ -266,6 +277,7 @@ paths:
                 - keyCredentials
                 - loginUrl
                 - logoutUrl
+                - notes
                 - notificationEmailAddresses
                 - publishedPermissionScopes
                 - passwordCredentials
@@ -4994,6 +5006,9 @@ components:
               items:
                 type: string
               description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.'
+            appDescription:
+              type: string
+              nullable: true
             appDisplayName:
               type: string
               description: The display name exposed by the associated application.
@@ -5020,6 +5035,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            description:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The display name for the service principal.
@@ -5045,6 +5063,9 @@ components:
             logoutUrl:
               type: string
               description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.'
+              nullable: true
+            notes:
+              type: string
               nullable: true
             notificationEmailAddresses:
               type: array
@@ -5183,6 +5204,7 @@ components:
           - '@odata.type': microsoft.graph.addIn
         alternativeNames:
           - string
+        appDescription: string
         appDisplayName: string
         appId: string
         applicationTemplateId: string
@@ -5190,6 +5212,7 @@ components:
         appRoleAssignmentRequired: true
         appRoles:
           - '@odata.type': microsoft.graph.appRole
+        description: string
         displayName: string
         errorUrl: string
         homepage: string
@@ -5199,6 +5222,7 @@ components:
           - '@odata.type': microsoft.graph.keyCredential
         loginUrl: string
         logoutUrl: string
+        notes: string
         notificationEmailAddresses:
           - string
         publishedPermissionScopes:

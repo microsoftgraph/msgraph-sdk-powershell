@@ -1,6 +1,8 @@
 Param(
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $OpenApiDocsDirectory,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ProfilesDirectory
+    [ValidateNotNullOrEmpty()]
+    [string] $OpenApiDocsDirectory = (Join-Path $PSScriptRoot "..\openApiDocs"),
+    [ValidateNotNullOrEmpty()]
+    [string] $ProfilesDirectory = (Join-Path $PSScriptRoot "..\profiles")
 )
 try {
     # Install dependencies.
@@ -25,7 +27,7 @@ try {
             $allPaths = @()
             $moduleName = $openApiDoc.BaseName
             $openApiRelativePath = ($openApiDoc.FullName | Resolve-Path -Relative) -replace "^.\\|\\", "/"
-            $openApiFiles[$moduleName] += @('$(this-folder)../../'+ $openApiRelativePath)
+            $openApiFiles[$moduleName] += @('$(this-folder)../..'+ $openApiRelativePath)
             # Create required directories.
             $ModuleProfilesDirectory = "$ProfilesDirectory/$moduleName"
             if(!(Test-Path -Path $ModuleProfilesDirectory)){

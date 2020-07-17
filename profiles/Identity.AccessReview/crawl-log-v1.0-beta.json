@@ -1,0 +1,113 @@
+{
+  "resources": [],
+  "operations": {
+    "/accessReviews/{accessReview-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/microsoft.graph.sendReminder": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/businessFlowTemplates": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/reviewers/{accessReviewReviewer-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programs": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/microsoft.graph.applyDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programs/{program-id}/controls/{programControl-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programControls": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviewDecisions/{accessReviewDecision-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/businessFlowTemplates/{businessFlowTemplate-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/decisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programs/{program-id}/controls": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/myDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/microsoft.graph.resetDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/decisions/{accessReviewDecision-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programs/{program-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviewDecisions": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/myDecisions/{accessReviewDecision-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programControls/{programControl-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programControls/{programControl-id}/program": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programControlTypes": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/reviewers": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/programControlTypes/{programControlType-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/microsoft.graph.stop": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/accessReviews/{accessReview-id}/instances/{accessReview-id1}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AccessReview.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

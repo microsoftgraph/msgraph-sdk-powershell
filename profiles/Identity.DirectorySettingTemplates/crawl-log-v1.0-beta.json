@@ -1,0 +1,45 @@
+{
+  "resources": [],
+  "operations": {
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberGroups": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/microsoft.graph.validateProperties": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/microsoft.graph.getUserOwnedObjects": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directorySettingTemplates/{directorySettingTemplate-id}/microsoft.graph.checkMemberObjects": {
+      "originalLocation": "/openApiDocs/beta/Identity.DirectorySettingTemplates.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

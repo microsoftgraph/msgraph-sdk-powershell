@@ -5,8 +5,8 @@
 
 ``` yaml
 require:
-  - $(this-folder)/../../../readme.graph.md
-  - $(this-folder)/../../../../profiles/$(title)/readme.md
+  - $(this-folder)/../../readme.graph.md
+  - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
 ```

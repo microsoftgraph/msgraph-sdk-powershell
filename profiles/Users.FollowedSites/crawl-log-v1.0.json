@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/followedSites": {
+      "originalLocation": "/openApiDocs/v1.0/Users.FollowedSites.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/followedSites/{site-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.FollowedSites.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}
