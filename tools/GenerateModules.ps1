@@ -63,7 +63,7 @@ if ($UpdateAutoRest) {
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Keys | ForEach-Object {
+$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } {
     $ModuleName = $_
     $ModuleProjectDir = Join-Path $ModulesOutputDir "$ModuleName\$ModuleName"
 
@@ -101,8 +101,8 @@ $ModuleMapping.Keys | ForEach-Object {
 
         try {
             if (-not $UseLocalDoc) {
-                # Download OpenAPI document for module.
-                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion
+                # Download OpenAPI document for module. Pass along the Request Counter. No ForceRefresh since it would cause generation to take too long.
+                & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -RequestCount $RequestCount
             }
 
             # Generate PowerShell modules.
@@ -160,6 +160,7 @@ $ModuleMapping.Keys | ForEach-Object {
         catch {
             Write-Error $_.Exception
         }
+        $RequestCount++
     }
 }
 

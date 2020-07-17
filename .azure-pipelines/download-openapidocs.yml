@@ -58,12 +58,14 @@ steps:
 
   - task: PowerShell@2
     displayName: Download v1.0 OpenApiDocs
+    continueOnError: false
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       pwsh: true
 
   - task: PowerShell@2
     displayName: Download beta OpenApiDocs
+    continueOnError: false
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       arguments: '-BetaGraphVersion'
