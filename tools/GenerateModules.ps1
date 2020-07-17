@@ -57,7 +57,7 @@ if ($UpdateAutoRest) {
 }
 
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Keys | ForEach-Object {
+$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } {
     $ModuleName = $_
     $ModuleProjectDir = Join-Path $ModulesOutputDir "$ModuleName\$ModuleName"
 
@@ -147,6 +147,7 @@ $ModuleMapping.Keys | ForEach-Object {
         catch {
             Write-Error $_.Exception
         }
+        $RequestCount++
     }
 }
 
