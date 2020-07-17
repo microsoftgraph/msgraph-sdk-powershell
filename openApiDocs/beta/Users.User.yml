@@ -1305,9 +1305,11 @@ components:
               nullable: true
             externalUserState:
               type: string
+              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq ''PendingAcceptance''.'
               nullable: true
             externalUserStateChangeDateTime:
               type: string
+              description: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
               nullable: true
             userType:
               type: string
@@ -2610,6 +2612,7 @@ components:
               nullable: true
             onPremisesDomainName:
               type: string
+              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -2619,6 +2622,7 @@ components:
               nullable: true
             onPremisesNetBiosName:
               type: string
+              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
               nullable: true
             onPremisesProvisioningErrors:
               type: array
@@ -2627,6 +2631,7 @@ components:
               description: Errors when using Microsoft synchronization product during provisioning. Returned by default.
             onPremisesSamAccountName:
               type: string
+              description: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -4983,12 +4988,16 @@ components:
               type: boolean
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+            regionalAndLanguageSettings:
+              $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
       example:
         id: string (identifier)
         contributionToContentDiscoveryDisabled: true
         contributionToContentDiscoveryAsOrganizationDisabled: true
+        regionalAndLanguageSettings:
+          '@odata.type': microsoft.graph.regionalAndLanguageSettings
         shiftPreferences:
           '@odata.type': microsoft.graph.shiftPreferences
     microsoft.graph.onenote:
@@ -5051,6 +5060,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
+            addresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.itemAddress'
             anniversaries:
               type: array
               items:
@@ -5087,6 +5100,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.personAnnotation'
             skills:
               type: array
               items:
@@ -5103,6 +5120,8 @@ components:
         id: string (identifier)
         account:
           - '@odata.type': microsoft.graph.userAccountInformation
+        addresses:
+          - '@odata.type': microsoft.graph.itemAddress
         anniversaries:
           - '@odata.type': microsoft.graph.personAnniversary
         educationalActivities:
@@ -5121,6 +5140,8 @@ components:
           - '@odata.type': microsoft.graph.workPosition
         projects:
           - '@odata.type': microsoft.graph.projectParticipation
+        notes:
+          - '@odata.type': microsoft.graph.personAnnotation
         skills:
           - '@odata.type': microsoft.graph.skillProficiency
         webAccounts:
@@ -5253,6 +5274,8 @@ components:
               type: string
               description: The display name for the device. Required.
               nullable: true
+            extensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
@@ -5356,6 +5379,8 @@ components:
         deviceMetadata: string
         deviceVersion: integer
         displayName: string
+        extensionAttributes:
+          '@odata.type': microsoft.graph.onPremisesExtensionAttributes
         isCompliant: true
         isManaged: true
         onPremisesLastSyncDateTime: string (timestamp)
@@ -5610,6 +5635,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
             channels:
               type: array
               items:
@@ -5617,10 +5646,6 @@ components:
               description: The collection of channels & messages associated with the team.
             primaryChannel:
               $ref: '#/components/schemas/microsoft.graph.channel'
-            apps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsCatalogApp'
             installedApps:
               type: array
               items:
@@ -5662,12 +5687,12 @@ components:
           '@odata.type': microsoft.graph.profilePhoto
         owners:
           - '@odata.type': microsoft.graph.user
+        members:
+          - '@odata.type': microsoft.graph.conversationMember
         channels:
           - '@odata.type': microsoft.graph.channel
         primaryChannel:
           '@odata.type': microsoft.graph.channel
-        apps:
-          - '@odata.type': microsoft.graph.teamsCatalogApp
         installedApps:
           - '@odata.type': microsoft.graph.teamsAppInstallation
         operations:
@@ -9398,6 +9423,40 @@ components:
           '@odata.type': microsoft.graph.resourceReference
         resource:
           '@odata.type': microsoft.graph.entity
+    microsoft.graph.regionalAndLanguageSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: regionalAndLanguageSettings
+          type: object
+          properties:
+            defaultDisplayLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            authoringLanguages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultTranslationLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultSpeechInputLanguage:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            defaultRegionalFormat:
+              $ref: '#/components/schemas/microsoft.graph.localeInfo'
+            regionalFormatOverrides:
+              $ref: '#/components/schemas/microsoft.graph.regionalFormatOverrides'
+      example:
+        id: string (identifier)
+        defaultDisplayLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        authoringLanguages:
+          - '@odata.type': microsoft.graph.localeInfo
+        defaultTranslationLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        defaultSpeechInputLanguage:
+          '@odata.type': microsoft.graph.localeInfo
+        defaultRegionalFormat:
+          '@odata.type': microsoft.graph.localeInfo
+        regionalFormatOverrides:
+          '@odata.type': microsoft.graph.regionalFormatOverrides
     microsoft.graph.shiftPreferences:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -9718,11 +9777,45 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         ageGroup: string
         countryCode: string
         preferredLanguageTag:
           '@odata.type': microsoft.graph.localeInfo
         userPrincipalName: string
+    microsoft.graph.itemAddress:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: itemAddress
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            detail:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            geoCoordinates:
+              $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        displayName: string
+        detail:
+          '@odata.type': microsoft.graph.physicalAddress
+        geoCoordinates:
+          '@odata.type': microsoft.graph.geoCoordinates
     microsoft.graph.personAnniversary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -9748,6 +9841,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         type:
           '@odata.type': microsoft.graph.anniversaryType
         date: string (timestamp)
@@ -9788,6 +9883,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         completionMonthYear: string (timestamp)
         endMonthYear: string (timestamp)
         institution:
@@ -9820,6 +9917,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         address: string
         displayName: string
         type:
@@ -9843,6 +9942,11 @@ components:
             webUrl:
               type: string
               nullable: true
+            collaborationTags:
+              type: array
+              items:
+                type: string
+                nullable: true
       example:
         id: string (identifier)
         allowedAudiences:
@@ -9855,11 +9959,15 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         categories:
           - string
         description: string
         displayName: string
         webUrl: string
+        collaborationTags:
+          - string
     microsoft.graph.languageProficiency:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -9871,6 +9979,12 @@ components:
             tag:
               type: string
             proficiency:
+              $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
+            spoken:
+              $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
+            written:
+              $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
+            reading:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
       example:
         id: string (identifier)
@@ -9884,9 +9998,17 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         displayName: string
         tag: string
         proficiency:
+          '@odata.type': microsoft.graph.languageProficiencyLevel
+        spoken:
+          '@odata.type': microsoft.graph.languageProficiencyLevel
+        written:
+          '@odata.type': microsoft.graph.languageProficiencyLevel
+        reading:
           '@odata.type': microsoft.graph.languageProficiencyLevel
     microsoft.graph.personName:
       allOf:
@@ -9935,6 +10057,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         displayName: string
         first: string
         initials: string
@@ -9972,6 +10096,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         displayName: string
         type:
           '@odata.type': microsoft.graph.phoneType
@@ -9989,6 +10115,15 @@ components:
                 nullable: true
             detail:
               $ref: '#/components/schemas/microsoft.graph.positionDetail'
+            manager:
+              $ref: '#/components/schemas/microsoft.graph.relatedPerson'
+            colleagues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.relatedPerson'
+            isCurrent:
+              type: boolean
+              nullable: true
       example:
         id: string (identifier)
         allowedAudiences:
@@ -10001,10 +10136,17 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         categories:
           - string
         detail:
           '@odata.type': microsoft.graph.positionDetail
+        manager:
+          '@odata.type': microsoft.graph.relatedPerson
+        colleagues:
+          - '@odata.type': microsoft.graph.relatedPerson
+        isCurrent: true
     microsoft.graph.projectParticipation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10030,6 +10172,11 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
+            collaborationTags:
+              type: array
+              items:
+                type: string
+                nullable: true
       example:
         id: string (identifier)
         allowedAudiences:
@@ -10042,6 +10189,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         categories:
           - string
         client:
@@ -10053,6 +10202,36 @@ components:
           - '@odata.type': microsoft.graph.relatedPerson
         sponsors:
           - '@odata.type': microsoft.graph.relatedPerson
+        collaborationTags:
+          - string
+    microsoft.graph.personAnnotation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: personAnnotation
+          type: object
+          properties:
+            detail:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            displayName:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        detail:
+          '@odata.type': microsoft.graph.itemBody
+        displayName: string
     microsoft.graph.skillProficiency:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10071,6 +10250,11 @@ components:
             webUrl:
               type: string
               nullable: true
+            collaborationTags:
+              type: array
+              items:
+                type: string
+                nullable: true
       example:
         id: string (identifier)
         allowedAudiences:
@@ -10083,12 +10267,16 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         categories:
           - string
         displayName: string
         proficiency:
           '@odata.type': microsoft.graph.skillProficiencyLevel
         webUrl: string
+        collaborationTags:
+          - string
     microsoft.graph.webAccount:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10120,6 +10308,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         description: string
         userId: string
         service:
@@ -10156,6 +10346,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
         categories:
           - string
         description: string
@@ -10954,26 +11146,6 @@ components:
           - '@odata.type': microsoft.graph.conversationMember
         filesFolder:
           '@odata.type': microsoft.graph.driveItem
-    microsoft.graph.teamsCatalogApp:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsCatalogApp
-          type: object
-          properties:
-            externalId:
-              type: string
-              nullable: true
-            name:
-              type: string
-              nullable: true
-            distributionMethod:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
-      example:
-        id: string (identifier)
-        externalId: string
-        name: string
-        distributionMethod:
-          '@odata.type': microsoft.graph.teamsAppDistributionMethod
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13904,6 +14076,39 @@ components:
       example:
         lastAccessedDateTime: string (timestamp)
         lastModifiedDateTime: string (timestamp)
+    microsoft.graph.regionalFormatOverrides:
+      title: regionalFormatOverrides
+      type: object
+      properties:
+        calendar:
+          type: string
+          nullable: true
+        firstDayOfWeek:
+          type: string
+          nullable: true
+        shortDateFormat:
+          type: string
+          nullable: true
+        longDateFormat:
+          type: string
+          nullable: true
+        shortTimeFormat:
+          type: string
+          nullable: true
+        longTimeFormat:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
+      example:
+        calendar: string
+        firstDayOfWeek: string
+        shortDateFormat: string
+        longDateFormat: string
+        shortTimeFormat: string
+        longTimeFormat: string
+        timeZone: string
     microsoft.graph.changeTrackedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14120,6 +14325,8 @@ components:
               format: date-time
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
+            source:
+              $ref: '#/components/schemas/microsoft.graph.personDataSource'
       example:
         id: string (identifier)
         allowedAudiences:
@@ -14132,6 +14339,8 @@ components:
         lastModifiedDateTime: string (timestamp)
         lastModifiedBy:
           '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
     microsoft.graph.anniversaryType:
       title: anniversaryType
       enum:
@@ -14271,6 +14480,23 @@ components:
         role: string
         startMonthYear: string (timestamp)
         summary: string
+    microsoft.graph.relatedPerson:
+      title: relatedPerson
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        relationship:
+          $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        userPrincipalName:
+          type: string
+          nullable: true
+      example:
+        displayName: string
+        relationship:
+          '@odata.type': microsoft.graph.personRelationship
+        userPrincipalName: string
     microsoft.graph.companyDetail:
       title: companyDetail
       type: object
@@ -14299,23 +14525,6 @@ components:
         address:
           '@odata.type': microsoft.graph.physicalAddress
         webUrl: string
-    microsoft.graph.relatedPerson:
-      title: relatedPerson
-      type: object
-      properties:
-        displayName:
-          type: string
-          nullable: true
-        relationship:
-          $ref: '#/components/schemas/microsoft.graph.personRelationship'
-        userPrincipalName:
-          type: string
-          nullable: true
-      example:
-        displayName: string
-        relationship:
-          '@odata.type': microsoft.graph.personRelationship
-        userPrincipalName: string
     microsoft.graph.skillProficiencyLevel:
       title: skillProficiencyLevel
       enum:
@@ -14462,10 +14671,12 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
           format: int32
           nullable: true
         mentionText:
           type: string
+          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
           nullable: true
         mentioned:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -14540,9 +14751,6 @@ components:
               type: string
               description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
-            name:
-              type: string
-              nullable: true
             displayName:
               type: string
               description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
@@ -14557,7 +14765,6 @@ components:
       example:
         id: string (identifier)
         externalId: string
-        name: string
         displayName: string
         distributionMethod:
           '@odata.type': microsoft.graph.teamsAppDistributionMethod
@@ -14584,12 +14791,16 @@ components:
               type: string
               description: The version number of the application.
               nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
       example:
         id: string (identifier)
         teamsAppId: string
         azureADAppId: string
         displayName: string
         version: string
+        publishingState:
+          '@odata.type': microsoft.graph.teamsAppPublishingState
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -14623,6 +14834,9 @@ components:
               type: string
               description: ID of the scheduling group the shift is part of. Required.
               nullable: true
+            isStagedForDeletion:
+              type: boolean
+              nullable: true
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -14635,6 +14849,7 @@ components:
           '@odata.type': microsoft.graph.shiftItem
         userId: string
         schedulingGroupId: string
+        isStagedForDeletion: true
     microsoft.graph.openShift:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -14897,9 +15112,6 @@ components:
         - title: teamsTab
           type: object
           properties:
-            name:
-              type: string
-              nullable: true
             displayName:
               type: string
               description: Name of the tab.
@@ -14923,7 +15135,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
       example:
         id: string (identifier)
-        name: string
         displayName: string
         teamsAppId: string
         sortOrderIndex: string
@@ -14933,14 +15144,6 @@ components:
           '@odata.type': microsoft.graph.teamsTabConfiguration
         teamsApp:
           '@odata.type': microsoft.graph.teamsApp
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
     microsoft.graph.teamsAsyncOperationType:
       title: teamsAsyncOperationType
       enum:
@@ -15977,6 +16180,22 @@ components:
         - allowFalsePositiveOverride
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
+      type: string
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
+        - unknownFutureValue
       type: string
     microsoft.graph.shiftItem:
       allOf:

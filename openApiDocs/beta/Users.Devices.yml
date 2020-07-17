@@ -55,6 +55,8 @@ paths:
                 - deviceVersion desc
                 - displayName
                 - displayName desc
+                - extensionAttributes
+                - extensionAttributes desc
                 - isCompliant
                 - isCompliant desc
                 - isManaged
@@ -108,6 +110,7 @@ paths:
                 - deviceMetadata
                 - deviceVersion
                 - displayName
+                - extensionAttributes
                 - isCompliant
                 - isManaged
                 - onPremisesLastSyncDateTime
@@ -241,6 +244,7 @@ paths:
                 - deviceMetadata
                 - deviceVersion
                 - displayName
+                - extensionAttributes
                 - isCompliant
                 - isManaged
                 - onPremisesLastSyncDateTime
@@ -409,6 +413,8 @@ components:
               type: string
               description: The display name for the device. Required.
               nullable: true
+            extensionAttributes:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
@@ -512,6 +518,8 @@ components:
         deviceMetadata: string
         deviceVersion: integer
         displayName: string
+        extensionAttributes:
+          '@odata.type': microsoft.graph.onPremisesExtensionAttributes
         isCompliant: true
         isManaged: true
         onPremisesLastSyncDateTime: string (timestamp)
@@ -581,6 +589,86 @@ components:
         type: integer
         identityProvider: string
         key: string
+    microsoft.graph.onPremisesExtensionAttributes:
+      title: onPremisesExtensionAttributes
+      type: object
+      properties:
+        extensionAttribute1:
+          type: string
+          description: First customizable extension attribute.
+          nullable: true
+        extensionAttribute2:
+          type: string
+          description: Second customizable extension attribute.
+          nullable: true
+        extensionAttribute3:
+          type: string
+          description: Third customizable extension attribute.
+          nullable: true
+        extensionAttribute4:
+          type: string
+          description: Fourth customizable extension attribute.
+          nullable: true
+        extensionAttribute5:
+          type: string
+          description: Fifth customizable extension attribute.
+          nullable: true
+        extensionAttribute6:
+          type: string
+          description: Sixth customizable extension attribute.
+          nullable: true
+        extensionAttribute7:
+          type: string
+          description: Seventh customizable extension attribute.
+          nullable: true
+        extensionAttribute8:
+          type: string
+          description: Eighth customizable extension attribute.
+          nullable: true
+        extensionAttribute9:
+          type: string
+          description: Ninth customizable extension attribute.
+          nullable: true
+        extensionAttribute10:
+          type: string
+          description: Tenth customizable extension attribute.
+          nullable: true
+        extensionAttribute11:
+          type: string
+          description: Eleventh customizable extension attribute.
+          nullable: true
+        extensionAttribute12:
+          type: string
+          description: Twelfth customizable extension attribute.
+          nullable: true
+        extensionAttribute13:
+          type: string
+          description: Thirteenth customizable extension attribute.
+          nullable: true
+        extensionAttribute14:
+          type: string
+          description: Fourteenth customizable extension attribute.
+          nullable: true
+        extensionAttribute15:
+          type: string
+          description: Fifteenth customizable extension attribute.
+          nullable: true
+      example:
+        extensionAttribute1: string
+        extensionAttribute2: string
+        extensionAttribute3: string
+        extensionAttribute4: string
+        extensionAttribute5: string
+        extensionAttribute6: string
+        extensionAttribute7: string
+        extensionAttribute8: string
+        extensionAttribute9: string
+        extensionAttribute10: string
+        extensionAttribute11: string
+        extensionAttribute12: string
+        extensionAttribute13: string
+        extensionAttribute14: string
+        extensionAttribute15: string
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

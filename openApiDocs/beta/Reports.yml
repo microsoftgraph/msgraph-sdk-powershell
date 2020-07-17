@@ -7595,6 +7595,9 @@ components:
               type: integer
               format: int64
               nullable: true
+            networkDisplayName:
+              type: string
+              nullable: true
             reportPeriod:
               type: string
               nullable: true
@@ -7611,6 +7614,7 @@ components:
         postedCount: integer
         readCount: integer
         likedCount: integer
+        networkDisplayName: string
         reportPeriod: string
     microsoft.graph.yammerGroupsActivityGroupCounts:
       allOf:
