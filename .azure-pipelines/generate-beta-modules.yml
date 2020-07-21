@@ -24,7 +24,8 @@ jobs:
   displayName: MS Graph PS SDK Beta Generation
   timeoutInMinutes: 300
   pool:
-    vmImage: 'windows-latest'
+    name: Microsoft Graph
+    demands: 'Agent.Name -equals PS-Build-Agent'
 
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
@@ -199,7 +200,7 @@ jobs:
                "toolVersion": "1.0"
            }
        ]
-      SessionTimeout: 100
+      SessionTimeout: 160
   
   - task: PowerShell@2
     displayName: 'Pack Modules'
