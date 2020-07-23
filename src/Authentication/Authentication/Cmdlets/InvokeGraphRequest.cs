@@ -293,11 +293,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Compose a request, setting Uri and Headers.
         /// </summary>
+        /// <param name="httpClient"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        private HttpRequestMessage GetRequest(Uri uri)
+        private HttpRequestMessage GetRequest(HttpClient httpClient, Uri uri)
         {
-            var requestUri = PrepareUri(uri);
+            var requestUri = PrepareUri(httpClient, uri);
             var httpMethod = GetHttpMethod(Method);
             // create the base WebRequest object
             var request = new HttpRequestMessage(httpMethod, requestUri);
@@ -356,15 +357,33 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Compose Request Uri
         /// </summary>
+        /// <param name="httpClient"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        private Uri PrepareUri(Uri uri)
+        private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
             // before creating the web request,
             // preprocess Body if content is a dictionary and method is GET (set as query)
             if (Method == GraphRequestMethod.GET && LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary))
             {
-                var uriBuilder = new UriBuilder(uri);
+                UriBuilder uriBuilder;
+                // For AbsoluteUri such as /beta/groups$count=true, Get the scheme and host from httpClient
+                // Then use them to compose a new Url with the URL fragment. 
+                if (!uri.IsAbsoluteUri)
+                {
+                    uriBuilder = new UriBuilder
+                    {
+                        Scheme = httpClient.BaseAddress.Scheme,
+                        Host = httpClient.BaseAddress.Host
+                    };
+                    var newAbsoluteUri = new Uri(uriBuilder.Uri, uri);
+                    uriBuilder = new UriBuilder(newAbsoluteUri);
+                }
+                else
+                {
+                    uriBuilder = new UriBuilder(uri);
+                }
+
                 var bodyQueryParameters = bodyAsDictionary?.FormatDictionary();
                 if (uriBuilder.Query != null && uriBuilder.Query.Length > 1 && !string.IsNullOrWhiteSpace(bodyQueryParameters))
                 {
@@ -1034,7 +1053,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 using (var client = GetHttpClient())
                 {
                     ValidateRequestUri(client);
-                    using (var httpRequestMessage = GetRequest(Uri))
+                    using (var httpRequestMessage = GetRequest(client, Uri))
                     {
                         using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
                         {
