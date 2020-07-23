@@ -25,7 +25,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly InvokeGraphRequestUserAgent _graphRequestUserAgent;
-        private readonly GraphSession _graphSession;
         private string _originalFilePath;
 
         public InvokeGraphRequest()
@@ -33,7 +32,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             _cancellationTokenSource = new CancellationTokenSource();
             _graphRequestUserAgent = new InvokeGraphRequestUserAgent(this);
             Authentication = GraphRequestAuthenticationType.Default;
-            _graphSession = GraphSession.Instance;
         }
 
         /// <summary>
@@ -485,14 +483,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 return new InvokeGraphRequestAuthProvider(GraphRequestSession);
             }
             // Ensure that AuthContext is present in DefaultAuth mode, otherwise demand for Connect-Graph to be called.
-            if (Authentication == GraphRequestAuthenticationType.Default && this._graphSession.AuthContext != null)
+            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext != null)
             {
-                return AuthenticationHelpers.GetAuthProvider(_graphSession.AuthContext);
+                return AuthenticationHelpers.GetAuthProvider(GraphSession.Instance.AuthContext);
             }
             else
             {
-                var error = new ArgumentNullException(Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(this._graphSession.AuthContext)),
-                    nameof(this._graphSession.AuthContext));
+                var error = new ArgumentNullException(Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(GraphSession.Instance.AuthContext)),
+                    nameof(GraphSession.Instance.AuthContext));
                 throw error;
             }
         }
@@ -881,7 +879,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
-            if (Authentication == GraphRequestAuthenticationType.Default && this._graphSession.AuthContext == null)
+            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext == null)
             {
                 var error = GetValidationError(
                     Resources.NotConnectedToGraphException.FormatCurrentCulture(Authentication, nameof(Token)),
