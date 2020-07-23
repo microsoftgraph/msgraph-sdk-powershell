@@ -4,5 +4,7 @@ New-MgConditionalAccessPolicy -DisplayName 'Minimum required Parameters' `
      -GrantControlBuiltInControls @('mfa') `
      -State 'disabled' `
      -GrantControlOperator 'OR' `
-     -UserIncludeUsers 'None' `
-     -ApplicationIncludeApplications 'None'
+     -Conditions @{ `
+       applications = @{includeApplications = 'none'}; `
+       users = @{includeUsers = 'none'} `
+     }
