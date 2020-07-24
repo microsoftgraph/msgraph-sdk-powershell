@@ -133,6 +133,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot convert the JSON string because a dictionary that was converted from the string contains the duplicated key &apos;{0}&apos;..
+        /// </summary>
+        internal static string DuplicateKeysInJsonString {
+            get {
+                return ResourceManager.GetString("DuplicateKeysInJsonString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The cmdlet cannot run because the following conflicting parameters are specified: GraphRequestSession and SessionVariable. Specify either GraphRequestSession or SessionVariable, then retry..
         /// </summary>
         internal static string GraphRequestSessionConflict {
@@ -232,6 +241,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The cmdlet cannot run because {0} is missing and &apos;Authentication&apos; is set to &apos;Default&apos;. Please call &apos;Connect-Graph&apos; then try again..
+        /// </summary>
+        internal static string MissingAuthenticationContext {
+            get {
+                return ResourceManager.GetString("MissingAuthenticationContext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Path &apos;{0}&apos; can be resolved to multiple paths..
         /// </summary>
         internal static string MultiplePathsResolved {
@@ -246,6 +264,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Properties {
         internal static string NoPathResolved {
             get {
                 return ResourceManager.GetString("NoPathResolved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The cmdlet cannot run because Authentication is set to {0} and Connect-Graph was not called. Invoke &apos;Connect-Graph&apos; or specify Authentication to be &apos;UserProvidedToken&apos; and Provide a Token then retry.
+        /// </summary>
+        internal static string NotConnectedToGraphException {
+            get {
+                return ResourceManager.GetString("NotConnectedToGraphException", resourceCulture);
             }
         }
         
