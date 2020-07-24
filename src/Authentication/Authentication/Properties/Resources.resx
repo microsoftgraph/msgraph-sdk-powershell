@@ -196,4 +196,13 @@
   <data name="InferFileNameOutFilePathConflict" xml:space="preserve">
     <value>The cmdlet cannot run because the following conflicting parameters are specified: {0} and {1}. Specify either {0} or {1} then retry.</value>
   </data>
+  <data name="NotConnectedToGraphException" xml:space="preserve">
+    <value>The cmdlet cannot run because Authentication is set to {0} and Connect-Graph was not called. Invoke 'Connect-Graph' or specify Authentication to be 'UserProvidedToken' and Provide a Token then retry</value>
+  </data>
+  <data name="DuplicateKeysInJsonString" xml:space="preserve">
+    <value>Cannot convert the JSON string because a dictionary that was converted from the string contains the duplicated key '{0}'.</value>
+  </data>
+  <data name="MissingAuthenticationContext" xml:space="preserve">
+    <value>The cmdlet cannot run because {0} is missing and 'Authentication' is set to 'Default'. Please call 'Connect-Graph' then try again.</value>
+  </data>
 </root>

@@ -19,5 +19,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         public const string InvokeGraphRequestInputFileMultiplePathsResolvedException = nameof(InvokeGraphRequestInputFileMultiplePathsResolvedException);
         public const string InvokeGraphRequestInputFileNoPathResolvedException = nameof(InvokeGraphRequestInputFileNoPathResolvedException);
         public const string InvokeGraphRequestInputFileNotFilePathException = nameof(InvokeGraphRequestInputFileNotFilePathException);
+        public const string InvokeGraphRequestMissingAuthenticationContext = nameof(InvokeGraphRequestMissingAuthenticationContext);
     }
 }

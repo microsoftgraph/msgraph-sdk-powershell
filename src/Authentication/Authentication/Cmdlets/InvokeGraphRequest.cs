@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             ParameterSetName = Constants.UserParameterSet,
             Position = 4,
             HelpMessage = "Optional Custom Headers")]
-        public IDictionary<string, string> Headers { get; set; }
+        public IDictionary Headers { get; set; }
 
         /// <summary>
         ///     Relative or absolute path where the response body will be saved.
@@ -248,38 +248,57 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     When -Verbose is specified, print out response status
         /// </summary>
-        /// <param name="requestMessage"></param>
-        private void ReportRequestStatus(HttpRequestMessage requestMessage)
+        /// <param name="requestMessageFormatter"></param>
+        private void ReportRequestStatus(HttpMessageFormatter requestMessageFormatter)
         {
+            requestMessageFormatter.LoadIntoBufferAsync()
+                .GetAwaiter()
+                .GetResult();
+            var requestMessage = requestMessageFormatter.HttpRequestMessage;
             var requestContentLength = requestMessage.Content?.Headers.ContentLength.Value ?? 0;
-
             var reqVerboseMsg = Resources.InvokeGraphRequestVerboseMessage.FormatCurrentCulture(requestMessage.Method,
                 requestMessage.RequestUri,
                 requestContentLength);
+            // If Verbose is specified, will print out Uri and Content Length
             WriteVerbose(reqVerboseMsg);
+            var requestString = requestMessageFormatter.ReadAsStringAsync()
+                .GetAwaiter()
+                .GetResult();
+            // If Debug is Specified, will print out the Http Request as a string
+            WriteDebug(requestString);
         }
 
         /// <summary>
         ///     When -Verbose is specified, print out response status
         /// </summary>
-        /// <param name="responseMessage"></param>
-        private void ReportResponseStatus(HttpResponseMessage responseMessage)
+        /// <param name="responseMessageFormatter"></param>
+        private void ReportResponseStatus(HttpMessageFormatter responseMessageFormatter)
         {
-            var contentType = responseMessage.GetContentType();
+            responseMessageFormatter.LoadIntoBufferAsync()
+                .GetAwaiter()
+                .GetResult();
+            var contentType = responseMessageFormatter.HttpResponseMessage.GetContentType();
             var respVerboseMsg = Resources.InvokeGraphResponseVerboseMessage.FormatCurrentCulture(
-                responseMessage.Content.Headers.ContentLength,
+                responseMessageFormatter.HttpResponseMessage.Content.Headers.ContentLength,
                 contentType);
+            // If Verbose is specified, will print out Uri and Content Length
             WriteVerbose(respVerboseMsg);
+            var responseString = responseMessageFormatter.ReadAsStringAsync()
+                .GetAwaiter()
+                .GetResult();
+            // If Debug is Specified, will print out the Http Response as a string
+            WriteDebug(responseString);
         }
 
         /// <summary>
         ///     Compose a request, setting Uri and Headers.
         /// </summary>
+        /// <param name="httpClient"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        private HttpRequestMessage GetRequest(Uri uri)
+        private HttpRequestMessage GetRequest(HttpClient httpClient, Uri uri)
         {
-            var requestUri = PrepareUri(uri);
+            var requestUri = PrepareUri(httpClient, uri);
             var httpMethod = GetHttpMethod(Method);
             // create the base WebRequest object
             var request = new HttpRequestMessage(httpMethod, requestUri);
@@ -338,22 +357,41 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Compose Request Uri
         /// </summary>
+        /// <param name="httpClient"></param>
         /// <param name="uri"></param>
         /// <returns></returns>
-        private Uri PrepareUri(Uri uri)
+        private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
             // before creating the web request,
             // preprocess Body if content is a dictionary and method is GET (set as query)
             if (Method == GraphRequestMethod.GET && LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary))
             {
-                var uriBuilder = new UriBuilder(uri);
-                if (uriBuilder.Query != null && uriBuilder.Query.Length > 1)
+                UriBuilder uriBuilder;
+                // For AbsoluteUri such as /beta/groups$count=true, Get the scheme and host from httpClient
+                // Then use them to compose a new Url with the URL fragment. 
+                if (!uri.IsAbsoluteUri)
                 {
-                    uriBuilder.Query = uriBuilder.Query.Substring(1) + "&" + bodyAsDictionary.FormatDictionary();
+                    uriBuilder = new UriBuilder
+                    {
+                        Scheme = httpClient.BaseAddress.Scheme,
+                        Host = httpClient.BaseAddress.Host
+                    };
+                    var newAbsoluteUri = new Uri(uriBuilder.Uri, uri);
+                    uriBuilder = new UriBuilder(newAbsoluteUri);
                 }
-                else if (bodyAsDictionary != null)
+                else
                 {
-                    uriBuilder.Query = bodyAsDictionary.FormatDictionary();
+                    uriBuilder = new UriBuilder(uri);
+                }
+
+                var bodyQueryParameters = bodyAsDictionary?.FormatDictionary();
+                if (uriBuilder.Query != null && uriBuilder.Query.Length > 1 && !string.IsNullOrWhiteSpace(bodyQueryParameters))
+                {
+                    uriBuilder.Query = uriBuilder.Query.Substring(1) + "&" + bodyQueryParameters;
+                }
+                else if (!string.IsNullOrWhiteSpace(bodyQueryParameters))
+                {
+                    uriBuilder.Query = bodyQueryParameters;
                 }
 
                 uri = uriBuilder.Uri;
@@ -411,14 +449,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                     // NOTE: Tests use this verbose output to verify the encoding.
                     WriteVerbose(Resources.ContentEncodingVerboseMessage.FormatCurrentCulture(encodingVerboseName));
-                    var convertSuccess = str.TryConvert<Hashtable>(out var obj, ref ex);
-                    if (!convertSuccess)
-                    {
-                        // fallback to string
-                        obj = str;
-                    }
-
-                    WriteObject(obj);
+                    WriteObject(str.TryConvertToJson(out var obj, ref ex) ? obj : str);
                 }
             }
 
@@ -470,8 +501,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 return new InvokeGraphRequestAuthProvider(GraphRequestSession);
             }
-
-            return AuthenticationHelpers.GetAuthProvider(GraphSession.Instance.AuthContext);
+            // Ensure that AuthContext is present in DefaultAuth mode, otherwise demand for Connect-Graph to be called.
+            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext != null)
+            {
+                return AuthenticationHelpers.GetAuthProvider(GraphSession.Instance.AuthContext);
+            }
+            else
+            {
+                var error = new ArgumentNullException(Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(GraphSession.Instance.AuthContext)),
+                    nameof(GraphSession.Instance.AuthContext));
+                throw error;
+            }
         }
 
         /// <summary>
@@ -768,7 +808,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             // Store the other supplied headers
             if (Headers != null)
             {
-                foreach (var key in Headers.Keys)
+                foreach (string key in Headers.Keys)
                 {
                     var value = Headers[key];
 
@@ -777,7 +817,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     if (!(value is null))
                     {
                         // add the header value (or overwrite it if already present)
-                        GraphRequestSession.Headers[key] = value;
+                        GraphRequestSession.Headers[key] = value.ToString();
                     }
                 }
             }
@@ -854,6 +894,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 var error = GetValidationError(
                     Resources.AuthenticationTokenConflict.FormatCurrentCulture(Authentication, nameof(Token)),
+                    Errors.InvokeGraphRequestAuthenticationTokenConflictException);
+                ThrowTerminatingError(error);
+            }
+
+            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext == null)
+            {
+                var error = GetValidationError(
+                    Resources.NotConnectedToGraphException.FormatCurrentCulture(Authentication, nameof(Token)),
                     Errors.InvokeGraphRequestAuthenticationTokenConflictException);
                 ThrowTerminatingError(error);
             }
@@ -1005,18 +1053,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 using (var client = GetHttpClient())
                 {
                     ValidateRequestUri(client);
-                    using (var httpRequestMessage = GetRequest(Uri))
+                    using (var httpRequestMessage = GetRequest(client, Uri))
                     {
                         using (var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage))
                         {
                             FillRequestStream(httpRequestMessage);
                             try
                             {
-                                ReportRequestStatus(httpRequestMessageFormatter.HttpRequestMessage);
+                                ReportRequestStatus(httpRequestMessageFormatter);
                                 var httpResponseMessage = GetResponse(client, httpRequestMessage);
                                 using (var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage))
                                 {
-                                    ReportResponseStatus(httpResponseMessageFormatter.HttpResponseMessage);
+                                    ReportResponseStatus(httpResponseMessageFormatter);
                                     var isSuccess = httpResponseMessage.IsSuccessStatusCode;
                                     if (ShouldCheckHttpStatus && !isSuccess)
                                     {
