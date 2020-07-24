@@ -8,3 +8,6 @@ New-MgConditionalAccessPolicy -DisplayName 'Minimum required Parameters' `
        applications = @{includeApplications = 'none'}; `
        users = @{includeUsers = 'none'} `
      }
+
+# Get a list of conditional access policies where DisplayName starts with Minimum.
+Get-MgConditionalAccessPolicy -Filter "StartsWith(DisplayName, 'Minimum')"
