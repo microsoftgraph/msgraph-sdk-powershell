@@ -37,6 +37,15 @@ clear-output-folder: true
 output-folder: .
 ```
 
+> Profiles
+
+``` yaml
+tag: all-api-versions
+profile:
+  - v1.0
+  - v1.0-beta
+```
+
 > Custom Directives
 
 ``` yaml
@@ -80,8 +89,8 @@ directive:
   - where:
       parameter-name: Top
     set:
-      parameter-name: PageSize
-      alias: Top
+      alias:
+        - Limit
   - where:
       parameter-name: Select
     set:
@@ -378,17 +387,41 @@ directive:
         }
         return $;
       }
-# Temporarily disable paging.
+# Override OnDefault to handle all success, 2xx responses, as success and not error.
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2F\w*.cs/gm))
+      {
+        return $;
+      } else {
+        let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
+        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
+        $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
+
+        return $;
+      }
+
+# Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List\d*.cs/gm))
       {
         return $;
       } else {
         let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
-          $ = $.replace(odataNextLinkRegex, '$1result.OdataNextLink = null;\n$1if (result.OdataNextLink != null)$1');
+          $ = $.replace(odataNextLinkRegex, '$1if (result.OdataNextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
+
+          let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
+          $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
+
+          let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
+          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializePaging(ref this.__invocationInfo, ref this._top); }\n$1');
+
+          let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
+          $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
         }
         return $;
       }

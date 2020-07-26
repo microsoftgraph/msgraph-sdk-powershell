@@ -38,6 +38,8 @@ paths:
                 - addIns desc
                 - alternativeNames
                 - alternativeNames desc
+                - appDescription
+                - appDescription desc
                 - appDisplayName
                 - appDisplayName desc
                 - appId
@@ -50,6 +52,8 @@ paths:
                 - appRoleAssignmentRequired desc
                 - appRoles
                 - appRoles desc
+                - description
+                - description desc
                 - displayName
                 - displayName desc
                 - errorUrl
@@ -64,6 +68,8 @@ paths:
                 - loginUrl desc
                 - logoutUrl
                 - logoutUrl desc
+                - notes
+                - notes desc
                 - notificationEmailAddresses
                 - notificationEmailAddresses desc
                 - publishedPermissionScopes
@@ -110,12 +116,14 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
+                - appDescription
                 - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - description
                 - displayName
                 - errorUrl
                 - homepage
@@ -123,6 +131,7 @@ paths:
                 - keyCredentials
                 - loginUrl
                 - logoutUrl
+                - notes
                 - notificationEmailAddresses
                 - publishedPermissionScopes
                 - passwordCredentials
@@ -253,12 +262,14 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
+                - appDescription
                 - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - description
                 - displayName
                 - errorUrl
                 - homepage
@@ -266,6 +277,7 @@ paths:
                 - keyCredentials
                 - loginUrl
                 - logoutUrl
+                - notes
                 - notificationEmailAddresses
                 - publishedPermissionScopes
                 - passwordCredentials
@@ -2769,12 +2781,12 @@ paths:
               enum:
                 - id
                 - id desc
-                - templateId
-                - templateId desc
                 - schedule
                 - schedule desc
                 - status
                 - status desc
+                - templateId
+                - templateId desc
                 - synchronizationJobSettings
                 - synchronizationJobSettings desc
               type: string
@@ -2789,9 +2801,9 @@ paths:
             items:
               enum:
                 - id
-                - templateId
                 - schedule
                 - status
+                - templateId
                 - synchronizationJobSettings
                 - schema
               type: string
@@ -2891,9 +2903,9 @@ paths:
             items:
               enum:
                 - id
-                - templateId
                 - schedule
                 - status
+                - templateId
                 - synchronizationJobSettings
                 - schema
               type: string
@@ -2959,48 +2971,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.apply':
-    post:
-      tags:
-        - servicePrincipals.Actions
-      summary: Invoke action apply
-      operationId: servicePrincipals.synchronization.jobs_apply
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: synchronizationJob-id
-          in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: synchronizationJob
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                objectId:
-                  type: string
-                typeName:
-                  type: string
-                ruleId:
-                  type: string
-                  nullable: true
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
@@ -3200,7 +3170,6 @@ paths:
             items:
               enum:
                 - id
-                - provisioningTaskIdentifier
                 - synchronizationRules
                 - version
                 - directories
@@ -3513,6 +3482,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
+    post:
+      tags:
+        - servicePrincipals.Actions
+      summary: Invoke action discover
+      operationId: servicePrincipals.synchronization.jobs.schema.directories_discover
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: servicePrincipal-id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: 'key: synchronizationJob-id of synchronizationJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: directoryDefinition-id
+          in: path
+          description: 'key: directoryDefinition-id of directoryDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryDefinition
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -3953,7 +3960,6 @@ paths:
             items:
               enum:
                 - id
-                - provisioningTaskIdentifier
                 - synchronizationRules
                 - version
                 - directories
@@ -4266,6 +4272,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
+    post:
+      tags:
+        - servicePrincipals.Actions
+      summary: Invoke action discover
+      operationId: servicePrincipals.synchronization.templates.schema.directories_discover
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: servicePrincipal-id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationTemplate-id
+          in: path
+          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - name: directoryDefinition-id
+          in: path
+          description: 'key: directoryDefinition-id of directoryDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryDefinition
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()':
     get:
       tags:
@@ -4950,43 +4994,60 @@ components:
           properties:
             accountEnabled:
               type: boolean
+              description: 'true if the service principal account is enabled; otherwise, false.'
               nullable: true
             addIns:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.addIn'
+              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.'
             alternativeNames:
               type: array
               items:
                 type: string
+              description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.'
+            appDescription:
+              type: string
+              nullable: true
             appDisplayName:
               type: string
+              description: The display name exposed by the associated application.
               nullable: true
             appId:
               type: string
+              description: The unique identifier for the associated application (its appId property).
               nullable: true
             applicationTemplateId:
               type: string
+              description: Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
               nullable: true
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
               type: boolean
+              description: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable.
             appRoles:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
+              description: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            description:
+              type: string
+              nullable: true
             displayName:
               type: string
+              description: The display name for the service principal.
               nullable: true
             errorUrl:
               type: string
               nullable: true
             homepage:
               type: string
+              description: Home page or landing page of the application.
               nullable: true
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
@@ -4994,16 +5055,23 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyCredential'
+              description: The collection of key credentials associated with the service principal. Not nullable.
             loginUrl:
               type: string
+              description: 'Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Office 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Office 365, the Azure AD My Apps, or the Azure AD SSO URL.'
               nullable: true
             logoutUrl:
+              type: string
+              description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.'
+              nullable: true
+            notes:
               type: string
               nullable: true
             notificationEmailAddresses:
               type: array
               items:
                 type: string
+              description: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
             publishedPermissionScopes:
               type: array
               items:
@@ -5012,6 +5080,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordCredential'
+              description: The collection of password credentials associated with the service principal. Not nullable.
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5022,6 +5091,7 @@ components:
               nullable: true
             preferredSingleSignOnMode:
               type: string
+              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Office 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.'
               nullable: true
             publisherName:
               type: string
@@ -5030,6 +5100,7 @@ components:
               type: array
               items:
                 type: string
+              description: 'The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.'
             samlMetadataUrl:
               type: string
               nullable: true
@@ -5039,8 +5110,10 @@ components:
               type: array
               items:
                 type: string
+              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.'
             servicePrincipalType:
               type: string
+              description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
               nullable: true
             signInAudience:
               type: string
@@ -5049,19 +5122,23 @@ components:
               type: array
               items:
                 type: string
+              description: Custom strings that can be used to categorize and identify the service principal. Not nullable.
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
             appRoleAssignedTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: 'Principals (users, groups, and service principals) that are assigned to this service principal. Read-only.'
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
+              description: Applications that this service principal is assigned to. Read-only. Nullable.
             claimsMappingPolicies:
               type: array
               items:
@@ -5074,14 +5151,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
+              description: Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
             oauth2PermissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+              description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
             transitiveMemberOf:
               type: array
               items:
@@ -5090,6 +5170,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects created by this service principal. Read-only. Nullable.
             licenseDetails:
               type: array
               items:
@@ -5098,10 +5179,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that are owned by this service principal. Read-only. Nullable.
             tokenIssuancePolicies:
               type: array
               items:
@@ -5121,6 +5204,7 @@ components:
           - '@odata.type': microsoft.graph.addIn
         alternativeNames:
           - string
+        appDescription: string
         appDisplayName: string
         appId: string
         applicationTemplateId: string
@@ -5128,6 +5212,7 @@ components:
         appRoleAssignmentRequired: true
         appRoles:
           - '@odata.type': microsoft.graph.appRole
+        description: string
         displayName: string
         errorUrl: string
         homepage: string
@@ -5137,6 +5222,7 @@ components:
           - '@odata.type': microsoft.graph.keyCredential
         loginUrl: string
         logoutUrl: string
+        notes: string
         notificationEmailAddresses:
           - string
         publishedPermissionScopes:
@@ -5198,29 +5284,36 @@ components:
             appRoleId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: 'The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application''s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.'
               format: uuid
             creationTimestamp:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only. Does not support $filter.'
               format: date-time
               nullable: true
             principalDisplayName:
               type: string
+              description: 'The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).'
               nullable: true
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.'
               format: uuid
               nullable: true
             principalType:
               type: string
+              description: 'The type of the assigned principal. This can either be ''User'', ''Group'' or ''ServicePrincipal''. Read-only. Does not support $filter.'
               nullable: true
             resourceDisplayName:
               type: string
+              description: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
               nullable: true
             resourceId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
               nullable: true
       example:
@@ -5271,16 +5364,21 @@ components:
           properties:
             capability:
               type: string
+              description: 'Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.'
             providerId:
               type: string
+              description: Application id of the publishing underlying service. Not nullable. Read-only.
               nullable: true
             providerName:
               type: string
+              description: Name of the publishing underlying service. Read-only.
               nullable: true
             uri:
               type: string
+              description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
+              description: 'For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
@@ -5373,8 +5471,10 @@ components:
           properties:
             clientId:
               type: string
+              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5383,11 +5483,14 @@ components:
               nullable: true
             principalId:
               type: string
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
               nullable: true
             resourceId:
               type: string
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5435,13 +5538,13 @@ components:
         - title: synchronizationJob
           type: object
           properties:
-            templateId:
-              type: string
-              nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchedule'
             status:
               $ref: '#/components/schemas/microsoft.graph.synchronizationStatus'
+            templateId:
+              type: string
+              nullable: true
             synchronizationJobSettings:
               type: array
               items:
@@ -5450,11 +5553,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
       example:
         id: string (identifier)
-        templateId: string
         schedule:
           '@odata.type': microsoft.graph.synchronizationSchedule
         status:
           '@odata.type': microsoft.graph.synchronizationStatus
+        templateId: string
         synchronizationJobSettings:
           - '@odata.type': microsoft.graph.keyValuePair
         schema:
@@ -5487,8 +5590,6 @@ components:
         - title: synchronizationSchema
           type: object
           properties:
-            provisioningTaskIdentifier:
-              type: string
             synchronizationRules:
               type: array
               items:
@@ -5502,7 +5603,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
       example:
         id: string (identifier)
-        provisioningTaskIdentifier: string
         synchronizationRules:
           - '@odata.type': microsoft.graph.synchronizationRule
         version: string
@@ -5768,14 +5868,14 @@ components:
           type: array
           items:
             type: string
-          description: 'Specifies whether this app role definition can be assigned to users and groups by setting to ''User'', or to other applications (that are accessing this application in daemon service scenarios) by setting to ''Application'', or to both.'
+          description: 'Specifies whether this app role can be assigned to users and groups (by setting to [''User'']), to other application''s (by setting to [''Application''], or both (by setting to [''User'', ''Application'']). App roles supporting assignment of other applications'' service principals are also known as application permissions.'
         description:
           type: string
-          description: Permission help text that appears in the admin app assignment and consent experiences.
+          description: 'The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.'
           nullable: true
         displayName:
           type: string
-          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          description: Display name for the permission that appears in the app role assignment and consent experiences.
           nullable: true
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -5787,11 +5887,11 @@ components:
           description: 'When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.'
         origin:
           type: string
-          description: Read-only. Specifies if the app role is defined on the Application object . Must not be included in any POST or PATCH requests.
+          description: Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
           nullable: true
         value:
           type: string
-          description: 'Specifies the value which will be included in the roles claim in authentication and access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
       example:
         allowedMemberTypes:
@@ -5891,39 +5991,38 @@ components:
       properties:
         adminConsentDescription:
           type: string
-          description: Permission help text that appears in the admin consent and app assignment experiences.
+          description: 'A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.'
           nullable: true
         adminConsentDisplayName:
           type: string
-          description: Display name for the permission that appears in the admin consent and app assignment experiences.
+          description: 'The permission''s title, intended to be read by an administrator granting the permission on behalf of all users.'
           nullable: true
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: Unique scope permission identifier inside the oauth2Permissions collection.
+          description: Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.
           format: uuid
         isEnabled:
           type: boolean
-          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false. At that point, in a subsequent call, the permission may be removed.'
+          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
         origin:
           type: string
-          description: For internal use.
           nullable: true
         type:
           type: string
-          description: 'Specifies whether this scope permission can be consented to by an end user, or whether it is a tenant-wide permission that must be consented to by a company administrator. Possible values are User or Admin.'
+          description: 'Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)'
           nullable: true
         userConsentDescription:
           type: string
-          description: Permission help text that appears in the end-user consent experience.
+          description: 'A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.'
           nullable: true
         userConsentDisplayName:
           type: string
-          description: Display name for the permission that appears in the end-user consent experience.
+          description: 'A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.'
           nullable: true
         value:
           type: string
-          description: The value of the scope claim that the resource application should expect in the OAuth 2.0 access token.
+          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
       example:
         adminConsentDescription: string
@@ -5988,6 +6087,7 @@ components:
       properties:
         relayState:
           type: string
+          description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
           nullable: true
       example:
         relayState: string
@@ -6152,13 +6252,13 @@ components:
     microsoft.graph.synchronizationJobRestartScope:
       title: synchronizationJobRestartScope
       enum:
-        - ForceDeletes
-        - Full
-        - QuarantineState
-        - Watermark
-        - Escrows
-        - ConnectorDataStore
         - None
+        - ConnectorDataStore
+        - Escrows
+        - Watermark
+        - QuarantineState
+        - Full
+        - ForceDeletes
       type: string
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
@@ -6193,6 +6293,10 @@ components:
         - SandboxName
         - EnforceDomain
         - SyncNotificationSettings
+        - SkipOutOfScopeDeletions
+        - Oauth2AuthorizationCode
+        - Oauth2RedirectUri
+        - ApplicationTemplateIdentifier
         - Server
         - PerformInboundEntitlementGrants
         - HardDeletesEnabled
@@ -6296,12 +6400,12 @@ components:
     microsoft.graph.attributeType:
       title: attributeType
       enum:
-        - DateTime
-        - Boolean
-        - Binary
-        - Reference
-        - Integer
         - String
+        - Integer
+        - Reference
+        - Binary
+        - Boolean
+        - DateTime
       type: string
     microsoft.graph.attributeMappingParameterSchema:
       title: attributeMappingParameterSchema
@@ -6473,6 +6577,7 @@ components:
       enum:
         - Active
         - Disabled
+        - Paused
       type: string
     microsoft.graph.synchronizationStatusCode:
       title: synchronizationStatusCode
@@ -6765,6 +6870,7 @@ components:
         - Unknown
         - QuarantinedOnDemand
         - TooManyDeletes
+        - IngestionInterrupted
       type: string
     microsoft.graph.attributeMapping:
       title: attributeMapping
@@ -6855,6 +6961,8 @@ components:
         - Always
         - ObjectAddOnly
         - MultiValueAddOnly
+        - ValueAddOnly
+        - AttributeAddOnly
       type: string
     microsoft.graph.filterGroup:
       title: filterGroup

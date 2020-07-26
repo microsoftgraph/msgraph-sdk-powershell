@@ -98,8 +98,6 @@ paths:
                 - id desc
                 - externalId
                 - externalId desc
-                - name
-                - name desc
                 - displayName
                 - displayName desc
                 - distributionMethod
@@ -117,7 +115,6 @@ paths:
               enum:
                 - id
                 - externalId
-                - name
                 - displayName
                 - distributionMethod
                 - appDefinitions
@@ -204,7 +201,6 @@ paths:
               enum:
                 - id
                 - externalId
-                - name
                 - displayName
                 - distributionMethod
                 - appDefinitions
@@ -296,10 +292,14 @@ paths:
                 - id desc
                 - teamsAppId
                 - teamsAppId desc
+                - azureADAppId
+                - azureADAppId desc
                 - displayName
                 - displayName desc
                 - version
                 - version desc
+                - publishingState
+                - publishingState desc
               type: string
         - name: $select
           in: query
@@ -313,8 +313,10 @@ paths:
               enum:
                 - id
                 - teamsAppId
+                - azureADAppId
                 - displayName
                 - version
+                - publishingState
               type: string
         - name: $expand
           in: query
@@ -412,8 +414,10 @@ paths:
               enum:
                 - id
                 - teamsAppId
+                - azureADAppId
                 - displayName
                 - version
+                - publishingState
               type: string
         - name: $expand
           in: query
@@ -495,9 +499,6 @@ components:
               type: string
               description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
               nullable: true
-            name:
-              type: string
-              nullable: true
             displayName:
               type: string
               description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
@@ -512,7 +513,6 @@ components:
       example:
         id: string (identifier)
         externalId: string
-        name: string
         displayName: string
         distributionMethod:
           '@odata.type': microsoft.graph.teamsAppDistributionMethod
@@ -528,6 +528,9 @@ components:
               type: string
               description: The id from the Teams App manifest.
               nullable: true
+            azureADAppId:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The name of the app provided by the app developer.
@@ -536,11 +539,16 @@ components:
               type: string
               description: The version number of the application.
               nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
       example:
         id: string (identifier)
         teamsAppId: string
+        azureADAppId: string
         displayName: string
         version: string
+        publishingState:
+          '@odata.type': microsoft.graph.teamsAppPublishingState
     microsoft.graph.entity:
       title: entity
       type: object
@@ -556,6 +564,14 @@ components:
         - store
         - organization
         - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
         - unknownFutureValue
       type: string
     odata.error:

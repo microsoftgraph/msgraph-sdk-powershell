@@ -359,6 +359,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -602,6 +614,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -11090,6 +11114,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: calendar
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11347,6 +11383,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -15753,6 +15801,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -15996,6 +16056,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
+          required: true
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -22746,7 +22818,6 @@ components:
               nullable: true
             isDefaultCalendar:
               type: boolean
-              description: 'True if this is the default calendar where new events are created by default, false otherwise.'
               nullable: true
             changeKey:
               type: string

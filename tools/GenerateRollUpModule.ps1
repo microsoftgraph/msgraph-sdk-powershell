@@ -6,7 +6,6 @@ Param(
     [string] $RepositoryName = "PSGallery",
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [int] $ModulePreviewNumber = -1,
-    [switch] $BetaGraphVersion,
     [switch] $Pack,
     [switch] $Publish
 )
@@ -27,16 +26,12 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 
 $ModulePrefix = "Microsoft.Graph"
-$GraphVersion = "v1.0"
-if ($BetaGraphVersion) {
-    $GraphVersion = "Beta"
-}
 $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -Resolve
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\$GraphVersion\"
-$GraphModuleLocation = Join-Path $PSScriptRoot "..\src\$GraphVersion\Graph\Graph"
+$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
+$GraphModuleLocation = Join-Path $PSScriptRoot "..\src\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
 $RequiredGraphModules = @()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
@@ -63,7 +58,7 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed)) {
     $NuspecMetadata["version"] = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $NuspecMetadata["version"]
 
-    $RollUpModuleArtifactLocation = "$ArtifactsLocation\Graph"
+    $RollUpModuleArtifactLocation = "$ArtifactsLocation\graph"
     if (-not (Test-Path $RollUpModuleArtifactLocation)) {
         New-Item -Path $RollUpModuleArtifactLocation -Type Directory
     }

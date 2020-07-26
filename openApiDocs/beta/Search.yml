@@ -1356,6 +1356,21 @@ components:
         isQueryable:
           type: boolean
           nullable: true
+        isContent:
+          type: boolean
+          nullable: true
+        isRefinable:
+          type: boolean
+          nullable: true
+        aliases:
+          type: array
+          items:
+            type: string
+            nullable: true
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.label'
       example:
         name: string
         type:
@@ -1363,6 +1378,12 @@ components:
         isSearchable: true
         isRetrievable: true
         isQueryable: true
+        isContent: true
+        isRefinable: true
+        aliases:
+          - string
+        labels:
+          - '@odata.type': microsoft.graph.label
     microsoft.graph.entityType:
       title: entityType
       enum:
@@ -1456,6 +1477,19 @@ components:
         - Int64Collection
         - DoubleCollection
         - DateTimeCollection
+      type: string
+    microsoft.graph.label:
+      title: label
+      enum:
+        - title
+        - url
+        - createdBy
+        - lastModifiedBy
+        - authors
+        - createdDateTime
+        - lastModifiedDateTime
+        - fileName
+        - fileExtension
       type: string
     microsoft.graph.searchQueryString:
       title: searchQueryString

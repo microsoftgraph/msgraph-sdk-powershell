@@ -1,0 +1,161 @@
+{
+  "resources": [],
+  "operations": {
+    "/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addKey": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/createdObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/endpoints": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/ownedObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/owners": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/memberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/microsoft.graph.validateProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addPassword": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removePassword": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/microsoft.graph.removeKey": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ServicePrincipal.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}
