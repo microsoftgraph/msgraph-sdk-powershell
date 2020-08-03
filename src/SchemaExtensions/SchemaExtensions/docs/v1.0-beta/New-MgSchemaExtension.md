@@ -1,0 +1,234 @@
+---
+external help file:
+Module Name: Microsoft.Graph.SchemaExtensions
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.schemaextensions/new-mgschemaextension
+schema: 2.0.0
+---
+
+# New-MgSchemaExtension
+
+## SYNOPSIS
+Add new entity to schemaExtensions
+
+## SYNTAX
+
+### CreateExpanded (Default)
+```
+New-MgSchemaExtension [-Description <String>] [-Id <String>] [-Owner <String>]
+ [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>] [-TargetTypes <String[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-MgSchemaExtension -BodyParameter <IMicrosoftGraphSchemaExtension> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+Add new entity to schemaExtensions
+
+## EXAMPLES
+
+### Example 1: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+## PARAMETERS
+
+### -BodyParameter
+schemaExtension
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Description
+Description for the schema extension.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Owner
+The appId of the application that is the owner of the schema extension.
+This property can be supplied on creation, to set the owner.
+If not supplied, then the calling application's appId will be set as the owner.
+In either case, the signed-in user must be the owner of the application.
+Once set, this property is read-only and cannot be changed.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Properties
+The collection of property names and types that make up the schema extension definition.
+To construct, see NOTES section for PROPERTIES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionSchemaProperty[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Status
+The lifecycle state of the schema extension.
+Possible states are InDevelopment, Available, and Deprecated.
+Automatically set to InDevelopment on creation.
+Schema extensions provides more information on the possible state transitions and behaviors.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetTypes
+Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to.
+Select from contact, device, event, group, message, organization, post, or user.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+
+## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+
+## NOTES
+
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODYPARAMETER <IMicrosoftGraphSchemaExtension>: schemaExtension
+  - `[Id <String>]`: Read-only.
+  - `[Description <String>]`: Description for the schema extension.
+  - `[Owner <String>]`: The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.
+  - `[Properties <IMicrosoftGraphExtensionSchemaProperty[]>]`: The collection of property names and types that make up the schema extension definition.
+    - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.
+    - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+  - `[Status <String>]`: The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. Schema extensions provides more information on the possible state transitions and behaviors.
+  - `[TargetTypes <String[]>]`: Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from contact, device, event, group, message, organization, post, or user.
+
+PROPERTIES <IMicrosoftGraphExtensionSchemaProperty[]>: The collection of property names and types that make up the schema extension definition.
+  - `[Name <String>]`: The name of the strongly-typed property defined as part of a schema extension.
+  - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
+
+## RELATED LINKS
+

@@ -1,0 +1,37 @@
+{
+  "resources": [],
+  "operations": {
+    "/riskyUsers/{riskyUser-id}/history": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers/microsoft.graph.confirmCompromised": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers/microsoft.graph.dismiss": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskDetections/{riskDetection-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskDetections": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers/{riskyUser-id}/history/{riskyUserHistoryItem-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/riskyUsers/{riskyUser-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Protection.yml",
+      "apiVersion": "v1.0-beta"
+    }
+  }
+}

@@ -2,7 +2,6 @@
 # Licensed under the MIT License.
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
-    [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation
 )
 $LASTEXITCODE = $null
@@ -12,9 +11,6 @@ if($PSEdition -ne "Core") {
 }
 
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
-if($PSCmdlet.ParameterSetName -eq "GraphResource"){
-    $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$GraphVersion/$Module/$Module"
-}
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
 
 if (Test-Path $PackModulePS1) {
