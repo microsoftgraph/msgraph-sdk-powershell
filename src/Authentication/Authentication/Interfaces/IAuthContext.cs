@@ -9,6 +9,13 @@ namespace Microsoft.Graph.PowerShell.Authentication
         Delegated,
         AppOnly
     }
+
+    public enum ContextScope
+    {
+        Process,
+        CurrentUser
+    }
+
     public interface IAuthContext
     {
         string ClientId { get; set; }
@@ -19,5 +26,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string CertificateName { get; set; }
         string Account { get; set; }
         string AppName { get; set; }
+        ContextScope ContextScope { get; set; }
     }
 }

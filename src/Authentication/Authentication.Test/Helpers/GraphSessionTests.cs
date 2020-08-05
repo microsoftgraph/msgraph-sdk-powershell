@@ -38,11 +38,21 @@
             GraphSession.Initialize(() => new GraphSession());
             Guid originalSessionId = GraphSession.Instance._graphSessionId;
 
-            InvalidOperationException exception = Assert.Throws<InvalidOperationException>(() => GraphSession.Initialize(() => new GraphSession()));
+            GraphSession.Initialize(() => new GraphSession());
 
-            Assert.Equal("An instance of GraphSession already exists. Call Initialize(Func<GraphSession>, bool) to overwrite it.", exception.Message);
             Assert.NotNull(GraphSession.Instance);
             Assert.Equal(originalSessionId, GraphSession.Instance._graphSessionId);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void ShouldThrowExceptionWhenSessionIsNotInitialized()
+        {
+            InvalidOperationException exception = Assert.Throws<InvalidOperationException>(() => GraphSession.Instance);
+
+            Assert.Equal(ErrorConstants.Codes.SessionNotInitialized, exception.Message);
 
             // reset static instance.
             GraphSession.Reset();

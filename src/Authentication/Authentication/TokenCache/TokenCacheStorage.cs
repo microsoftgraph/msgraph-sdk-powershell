@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using System;
 using System.Globalization;
+using System.Security;
 
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
@@ -16,27 +17,34 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// </summary>
         /// <param name="appId">An app/client id.</param>
         /// <returns></returns>
-        public static byte[] GetToken(string appId)
+        public static byte[] GetToken(IAuthContext authContext)
         {
-            if (string.IsNullOrEmpty(appId))
+            if (string.IsNullOrEmpty(authContext.ClientId))
             {
                 throw new ArgumentNullException(string.Format(
                     CultureInfo.CurrentCulture,
                     ErrorConstants.Message.NullOrEmptyParameter,
-                    nameof(appId)));
+                    nameof(authContext.ClientId)));
             }
 
-            if (Helpers.OperatingSystem.IsWindows())
+            if (authContext.ContextScope == ContextScope.Process)
             {
-                return WindowsTokenCache.GetToken(appId);
-            }
-            else if (Helpers.OperatingSystem.IsMacOS())
-            {
-                return MacTokenCache.GetToken(appId);
+                return GraphSession.Instance.Token;
             }
             else
             {
-                return LinuxTokenCache.GetToken(appId);
+                if (Helpers.OperatingSystem.IsWindows())
+                {
+                    return WindowsTokenCache.GetToken(authContext.ClientId);
+                }
+                else if (Helpers.OperatingSystem.IsMacOS())
+                {
+                    return MacTokenCache.GetToken(authContext.ClientId);
+                }
+                else
+                {
+                    return LinuxTokenCache.GetToken(authContext.ClientId);
+                }
             }
         }
 
@@ -45,31 +53,38 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// </summary>
         /// <param name="appId">An app/client id.</param>
         /// <param name="accessToken">An access token.</param>
-        public static void SetToken(string appId, byte[] accessToken)
+        public static void SetToken(IAuthContext authContext, byte[] accessToken)
         {
-            if (string.IsNullOrEmpty(appId))
+            if (string.IsNullOrEmpty(authContext.ClientId))
             {
                 throw new ArgumentNullException(string.Format(
                     CultureInfo.CurrentCulture,
                     ErrorConstants.Message.NullOrEmptyParameter,
-                    nameof(appId)));
+                    nameof(authContext.ClientId)));
             }
             if (accessToken == null || accessToken.Length == 0)
             {
                 return ;
             }
 
-            if (Helpers.OperatingSystem.IsWindows())
+            if (authContext.ContextScope == ContextScope.Process)
             {
-                WindowsTokenCache.SetToken(appId, accessToken);
+                GraphSession.Instance.Token = accessToken;
             }
-            else if (Helpers.OperatingSystem.IsMacOS())
+            else if (authContext.ContextScope == ContextScope.CurrentUser)
             {
-                MacTokenCache.SetToken(appId, accessToken);
-            }
-            else
-            {
-                LinuxTokenCache.SetToken(appId, accessToken);
+                if (Helpers.OperatingSystem.IsWindows())
+                {
+                    WindowsTokenCache.SetToken(authContext.ClientId, accessToken);
+                }
+                else if (Helpers.OperatingSystem.IsMacOS())
+                {
+                    MacTokenCache.SetToken(authContext.ClientId, accessToken);
+                }
+                else
+                {
+                    LinuxTokenCache.SetToken(authContext.ClientId, accessToken);
+                }
             }
         }
 
@@ -77,27 +92,34 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         /// Deletes an access token from the host OS.
         /// </summary>
         /// <param name="appId">An app/client id.</param>
-        public static void DeleteToken(string appId)
+        public static void DeleteToken(IAuthContext authContext)
         {
-            if (string.IsNullOrEmpty(appId))
+            if (string.IsNullOrEmpty(authContext.ClientId))
             {
                 throw new ArgumentNullException(string.Format(
                     CultureInfo.CurrentCulture,
                     ErrorConstants.Message.NullOrEmptyParameter,
-                    nameof(appId)));
+                    nameof(authContext.ClientId)));
             }
 
-            if (Helpers.OperatingSystem.IsWindows())
+            if (authContext.ContextScope == ContextScope.Process)
             {
-                WindowsTokenCache.DeleteToken(appId);
-            }
-            else if (Helpers.OperatingSystem.IsMacOS())
-            {
-                MacTokenCache.DeleteToken(appId);
+                GraphSession.Instance.Token = null;
             }
             else
             {
-                LinuxTokenCache.DeleteToken(appId);
+                if (Helpers.OperatingSystem.IsWindows())
+                {
+                    WindowsTokenCache.DeleteToken(authContext.ClientId);
+                }
+                else if (Helpers.OperatingSystem.IsMacOS())
+                {
+                    MacTokenCache.DeleteToken(authContext.ClientId);
+                }
+                else
+                {
+                    LinuxTokenCache.DeleteToken(authContext.ClientId);
+                }
             }
         }
     }

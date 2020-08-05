@@ -6,6 +6,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Models;
+    using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Identity.Client;
     using System;
     using System.Collections.Generic;
@@ -18,25 +19,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
     public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
-
-        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet, Position = 1, HelpMessage = "An array of delegated permissions to consent to.")]
         public string[] Scopes { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 1, Mandatory = true, HelpMessage = "The client id of your application.")]
         public string ClientId { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 2, HelpMessage = "The name of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
         public string CertificateName { get; set; }
 
-        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3)]
+        [Parameter(ParameterSetName = Constants.AppParameterSet, Position = 3, HelpMessage = "The thumbprint of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
         public string CertificateThumbprint { get; set; }
 
-        [Parameter(Position = 4)]
+        [Parameter(Position = 4, HelpMessage = "The id of the tenant to connect to.")]
         public string TenantId { get; set; }
 
-        [Parameter(Position = 5)]
+        [Parameter(Position = 5, HelpMessage = "Forces the command to get a new access token silently.")]
         public SwitchParameter ForceRefresh { get; set; }
 
+        [Parameter(Mandatory = false, HelpMessage = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.")]
+        public ContextScope ContextScope { get; set; }
         private CancellationTokenSource cancellationTokenSource;
 
         protected override void BeginProcessing()
@@ -63,6 +65,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 cancellationTokenSource = new CancellationTokenSource(authTimeout);
                 authConfig.AuthType = AuthenticationType.Delegated;
                 authConfig.Scopes = Scopes ?? new string[] { "User.Read" };
+                // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
+                authConfig.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
             }
             else
             {
@@ -71,6 +75,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 authConfig.ClientId = ClientId;
                 authConfig.CertificateThumbprint = CertificateThumbprint;
                 authConfig.CertificateName = CertificateName;
+                // Default to Process but allow the customer to change this via `ContextScope` param.
+                authConfig.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
             }
 
             CancellationToken cancellationToken = cancellationTokenSource.Token;
@@ -117,7 +123,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 authConfig.AppName = jwtPayload?.AppDisplayname;
                 authConfig.Account = jwtPayload?.Upn ?? account?.Username;
 
-                // Save auth config to session state.
+                // Save auth context to session state.
                 GraphSession.Instance.AuthContext = authConfig;
             }
             catch (AuthenticationException authEx)
