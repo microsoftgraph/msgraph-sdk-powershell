@@ -1,0 +1,101 @@
+{
+  "resources": [],
+  "operations": {
+    "/communications/calls/{call-id}/microsoft.graph.unmute": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.keepAlive": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.updateRecordingStatus": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/participants/microsoft.graph.invite": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.mute": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.answer": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.recordResponse": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.subscribeToTone": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/participants/{participant-id}": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/operations": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.playPrompt": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.changeScreenSharingRole": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/microsoft.graph.logTeleconferenceDeviceQuality": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.redirect": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/operations/{commsOperation-id}": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.reject": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/onlineMeetings/{onlineMeeting-id}": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/microsoft.graph.transfer": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/calls/{call-id}/participants": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    },
+    "/communications/onlineMeetings": {
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

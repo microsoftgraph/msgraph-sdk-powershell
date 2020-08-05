@@ -16,6 +16,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         static ReaderWriterLockSlim sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         internal Guid _graphSessionId;
 
+        // Checks if an instance of <see cref="GraphSession"/> exists.
+        public static bool Exists { get { return _initialized; } }
+
         /// <summary>
         /// Gets or Sets <see cref="IAuthContext"/>.
         /// </summary>
@@ -33,6 +36,12 @@ namespace Microsoft.Graph.PowerShell.Authentication
             set { token = value; }
         }
 
+
+        /// <summary>
+        /// The name of the selected Microsoft Graph profile.
+        /// This defaults to v1.0-beta.
+        /// </summary>
+        public string SelectedProfile { get; set; } = Constants.DefaultProfile;
 
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.

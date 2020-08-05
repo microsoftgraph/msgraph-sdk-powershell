@@ -31,7 +31,7 @@ jobs:
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/ -BetaGraphVersion'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

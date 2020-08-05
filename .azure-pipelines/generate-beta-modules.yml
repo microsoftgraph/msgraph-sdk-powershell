@@ -22,7 +22,7 @@ variables:
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation
-  timeoutInMinutes: 300
+  timeoutInMinutes: 600
   pool:
     name: Microsoft Graph
     demands: 'Agent.Name -equals PS-Build-Agent'
@@ -32,7 +32,13 @@ jobs:
     displayName: 'Run CredScan'
     inputs:
      debugMode: false
-
+  
+  # Install Node
+  - task: NodeTool@0
+    displayName: Node install
+    inputs:
+      versionSpec: '13.14.0'
+  
   - task: Npm@1
     displayName: 'Install AutoRest'
     inputs:
@@ -126,7 +132,7 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -UseLocalDoc -BetaGraphVersion -Build -EnableSigning'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\ -Build -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1

@@ -9,13 +9,12 @@ The name of the module to manage.
 #>
 Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Module,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModulePrefix,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $GraphVersion
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModulePrefix
 )
 $LASTEXITCODE = $null
 $NugetPackagesToRemove = "Microsoft.CSharp"
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
-$GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$GraphVersion\$Module"
+$GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$Module"
 $GeneratedModuleProj = Join-Path $GeneratedModuleSlnDir "$Module\$ModulePrefix.$Module.csproj"
 $CustomCodeDir = Join-Path $PSScriptRoot "\Custom\"
 

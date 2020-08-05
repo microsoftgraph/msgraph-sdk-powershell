@@ -3,7 +3,6 @@
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModulePrefix,
-    [Parameter(ParameterSetName = "GraphResource")] [ValidateNotNullOrEmpty()][string] $GraphVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ModuleVersion,
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
@@ -18,9 +17,6 @@ if ($PSEdition -ne "Core") {
 
 $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
-if ($PSCmdlet.ParameterSetName -eq "GraphResource") {
-    $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$GraphVersion/$Module/$Module"
-}
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
 $ModuleCsProj = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.csproj"
 $ModuleManifest = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.psd1"
