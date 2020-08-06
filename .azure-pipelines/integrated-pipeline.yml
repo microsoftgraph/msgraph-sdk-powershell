@@ -11,26 +11,26 @@ trigger:
       - src/Authentication/*
 
 stages:
-    - stage: DownloadOpenApiDocs
-      jobs:
-        - job: DownloadOpenApiDocs
-          steps:
-            - template: ./download-openapidocs.yml
+- stage: DownloadOpenApiDocs
+  jobs:
+  - job: DownloadOpenApiDocs
+    steps:
+    - template: ./download-openapidocs.yml
 
-    - stage: GenerateAuthModules
-      jobs:
-        - job: GenerateAuthModules
-          steps:
-            - template: ./generate-auth-modules.yml
+- stage: GenerateAuthModules
+  jobs:
+  - job: GenerateAuthModules
+    steps:
+    - template: ./generate-auth-modules.yml
     
-    - stage: GenerateBetaModules
-      jobs:
-        - job: GenerateBetaModules
-          steps:
-            - template: ./generate-beta-modules.yml
+- stage: GenerateBetaModules
+  jobs:
+  - job: GenerateBetaModules
+    steps:
+    - template: ./generate-beta-modules.yml
 
-    - stage: GenerateBetaModules
-       jobs:
-         - job: GenerateBetaModules
-            steps:
-              - template: ./generate-beta-modules.yml  
+- stage: GenerateBetaModules
+  jobs:
+  - job: GenerateBetaModules
+    steps:
+    - template: ./generate-beta-modules.yml
