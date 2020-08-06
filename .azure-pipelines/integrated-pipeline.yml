@@ -29,7 +29,9 @@ trigger:
 stages:
 - stage: DownloadOpenApiDocs
   jobs:
-  - template: ./download-openapidocs.yml
+  - job: Download OpenAPi Docs
+    steps:
+    - template: ./download-openapidocs.yml
 
 - stage: GenerateAuthModules
   jobs:
