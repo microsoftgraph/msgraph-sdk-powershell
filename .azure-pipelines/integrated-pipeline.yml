@@ -29,7 +29,7 @@ trigger:
 stages:
 - stage: DownloadOpenApiDocs
   jobs:
-  - job: Download OpenAPi Docs
+  - job: DownloadOpenAPiDocs
     steps:
     - template: ./download-openapidocs.yml
 
