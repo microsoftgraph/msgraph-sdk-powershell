@@ -1,0 +1,36 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+    branches:
+      include:
+      - master
+    paths:
+      include:
+      - src/Authentication/*
+
+stages:
+    - stage: DownloadOpenApiDocs
+      jobs:
+        - job: DownloadOpenApiDocs
+          steps:
+            - template: ./download-openapidocs.yml
+
+    - stage: GenerateAuthModules
+      jobs:
+        - job: GenerateAuthModules
+          steps:
+            - template: ./generate-auth-modules.yml
+    
+    - stage: GenerateBetaModules
+      jobs:
+        - job: GenerateBetaModules
+          steps:
+            - template: ./generate-beta-modules.yml
+
+    - stage: GenerateBetaModules
+       jobs:
+         - job: GenerateBetaModules
+            steps:
+              - template: ./generate-beta-modules.yml  
