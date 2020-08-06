@@ -1,20 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-variables:
-  BRANCH: 'weeklyOpenApiDocsDownload'
-  GitUserEmail: 'GraphTooling@service.microsoft.com'
-  GitUserName: 'Microsoft Graph DevX Tooling'
-  BaseBranch: 'dev'
-
-schedules:
-    - cron: "0 0 * * WED" # Run Every Wednesday
-      displayName: "Weekly OpenApiDocs Download and PR"
-      branches: 
-        include:
-        - dev
-      always: true
-
 steps:
   - checkout: self
     persistCredentials: true

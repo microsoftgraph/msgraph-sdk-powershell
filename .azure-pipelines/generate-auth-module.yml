@@ -2,11 +2,6 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
-variables:
-  MODULE_NAME: 'Authentication'
-  MODULE_PATH: 'src\Authentication\Authentication\'
-  MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
-
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Auth Generation
