@@ -72,6 +72,8 @@ paths:
                 - identities desc
                 - imAddresses
                 - imAddresses desc
+                - infoCatalogs
+                - infoCatalogs desc
                 - isResourceAccount
                 - isResourceAccount desc
                 - jobTitle
@@ -205,6 +207,7 @@ paths:
                 - givenName
                 - identities
                 - imAddresses
+                - infoCatalogs
                 - isResourceAccount
                 - jobTitle
                 - lastPasswordChangeDateTime
@@ -289,6 +292,7 @@ paths:
                 - extensions
                 - approvals
                 - appConsentRequestsForApproval
+                - pendingAccessReviewInstances
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -357,6 +361,7 @@ paths:
                 - extensions
                 - approvals
                 - appConsentRequestsForApproval
+                - pendingAccessReviewInstances
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -469,6 +474,7 @@ paths:
                 - givenName
                 - identities
                 - imAddresses
+                - infoCatalogs
                 - isResourceAccount
                 - jobTitle
                 - lastPasswordChangeDateTime
@@ -553,6 +559,7 @@ paths:
                 - extensions
                 - approvals
                 - appConsentRequestsForApproval
+                - pendingAccessReviewInstances
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -621,6 +628,7 @@ paths:
                 - extensions
                 - approvals
                 - appConsentRequestsForApproval
+                - pendingAccessReviewInstances
                 - agreementAcceptances
                 - deviceEnrollmentConfigurations
                 - managedDevices
@@ -822,6 +830,11 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 appConsentRequest-id: $response.body#/id
+            pendingAccessReviewInstances:
+              operationId: users.GetPendingAccessReviewInstances
+              parameters:
+                user-id: $request.path.user-id
+                accessReviewInstance-id: $response.body#/id
             agreementAcceptances:
               operationId: users.GetAgreementAcceptances
               parameters:
@@ -876,7 +889,7 @@ paths:
               operationId: users.GetInsights
               parameters:
                 user-id: $request.path.user-id
-                officeGraphInsights-id: $response.body#/id
+                itemInsights-id: $response.body#/id
             settings:
               operationId: users.GetSettings
               parameters:
@@ -1154,9 +1167,13 @@ components:
                 type: string
                 nullable: true
               description: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
+            infoCatalogs:
+              type: array
+              items:
+                type: string
             isResourceAccount:
               type: boolean
-              description: 'true if the user is a resource account; otherwise, false. Null value should be considered false.'
+              description: Do not use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
@@ -1513,6 +1530,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+            pendingAccessReviewInstances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
             agreementAcceptances:
               type: array
               items:
@@ -1558,7 +1579,7 @@ components:
             planner:
               $ref: '#/components/schemas/microsoft.graph.plannerUser'
             insights:
-              $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+              $ref: '#/components/schemas/microsoft.graph.itemInsights'
             settings:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
             onenote:
@@ -1622,6 +1643,8 @@ components:
         identities:
           - '@odata.type': microsoft.graph.objectIdentity
         imAddresses:
+          - string
+        infoCatalogs:
           - string
         isResourceAccount: true
         jobTitle: string
@@ -1754,6 +1777,8 @@ components:
           - '@odata.type': microsoft.graph.approval
         appConsentRequestsForApproval:
           - '@odata.type': microsoft.graph.appConsentRequest
+        pendingAccessReviewInstances:
+          - '@odata.type': microsoft.graph.accessReviewInstance
         agreementAcceptances:
           - '@odata.type': microsoft.graph.agreementAcceptance
         deviceEnrollmentConfigurations:
@@ -1775,7 +1800,7 @@ components:
         planner:
           '@odata.type': microsoft.graph.plannerUser
         insights:
-          '@odata.type': microsoft.graph.officeGraphInsights
+          '@odata.type': microsoft.graph.itemInsights
         settings:
           '@odata.type': microsoft.graph.userSettings
         onenote:
@@ -2141,6 +2166,8 @@ components:
           type: string
           description: The time format for the user's mailbox.
           nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
       example:
         automaticRepliesSetting:
           '@odata.type': microsoft.graph.automaticRepliesSetting
@@ -2154,6 +2181,8 @@ components:
           '@odata.type': microsoft.graph.workingHours
         dateFormat: string
         timeFormat: string
+        userPurpose:
+          '@odata.type': microsoft.graph.userPurpose
     microsoft.graph.userAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2544,6 +2573,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with an Microsoft 365 group. Returned only on $select. Read-only.'
             assignedLicenses:
               type: array
               items:
@@ -2573,17 +2603,22 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership.  If the collection contains Unified then the group is an Office 365 group; otherwise it''s a security group.  If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.'
+              description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example.'
               nullable: true
+            infoCatalogs:
+              type: array
+              items:
+                type: string
             isAssignableToRole:
               type: boolean
               nullable: true
@@ -2606,9 +2641,11 @@ components:
               nullable: true
             membershipRule:
               type: string
+              description: 'The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default.'
               nullable: true
             membershipRuleProcessingState:
               type: string
+              description: Indicates whether the dynamic membership processing is on or paused. Possible values are 'On' or 'Paused'. Returned by default.
               nullable: true
             onPremisesDomainName:
               type: string
@@ -2647,6 +2684,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
+              description: The preferred language for an Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
               nullable: true
             proxyAddresses:
               type: array
@@ -2677,10 +2715,11 @@ components:
               nullable: true
             theme:
               type: string
+              description: 'Specifies an Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the visibility of an Office 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.'
+              description: 'Specifies the visibility of a Microsoft 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.'
               nullable: true
             accessType:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
@@ -2737,7 +2776,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups) Nullable.'
+              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups) Nullable.'
             membersWithLicenseErrors:
               type: array
               items:
@@ -2762,7 +2801,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Office 365 groups, security groups and mail-enabled security groups), DELETE (supported for Office 365 groups and security groups). Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.'
             settings:
               type: array
               items:
@@ -2860,6 +2899,8 @@ components:
         groupTypes:
           - string
         hasMembersWithLicenseErrors: true
+        infoCatalogs:
+          - string
         isAssignableToRole: true
         licenseProcessingState:
           '@odata.type': microsoft.graph.licenseProcessingState
@@ -3278,7 +3319,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             responseRequested:
               type: boolean
-              description: Set to true if the sender would like a response when the event is accepted or declined.
+              description: 'Default is true, which represents the organizer would like an invitee to send a response to the event.'
               nullable: true
             seriesMasterId:
               type: string
@@ -3313,6 +3354,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingInfo'
             allowNewTimeProposals:
               type: boolean
+              description: 'True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.'
               nullable: true
             isDraft:
               type: boolean
@@ -4075,6 +4117,40 @@ components:
           - '@odata.type': microsoft.graph.appConsentRequestScope
         userConsentRequests:
           - '@odata.type': microsoft.graph.userConsentRequest
+    microsoft.graph.accessReviewInstance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstance
+          type: object
+          properties:
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+      example:
+        id: string (identifier)
+        startDateTime: string (timestamp)
+        endDateTime: string (timestamp)
+        status: string
+        decisions:
+          - '@odata.type': microsoft.graph.accessReviewInstanceDecisionItem
+        definition:
+          '@odata.type': microsoft.graph.accessReviewScheduleDefinition
     microsoft.graph.agreementAcceptance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4087,13 +4163,20 @@ components:
             userId:
               type: string
               nullable: true
-            agreementFileId:
+            deviceId:
               type: string
               nullable: true
-            recordedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            deviceDisplayName:
               type: string
-              format: date-time
+              nullable: true
+            deviceOSType:
+              type: string
+              nullable: true
+            deviceOSVersion:
+              type: string
+              nullable: true
+            agreementFileId:
+              type: string
               nullable: true
             userDisplayName:
               type: string
@@ -4104,17 +4187,32 @@ components:
             userEmail:
               type: string
               nullable: true
+            recordedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             state:
               $ref: '#/components/schemas/microsoft.graph.agreementAcceptanceState'
       example:
         id: string (identifier)
         agreementId: string
         userId: string
+        deviceId: string
+        deviceDisplayName: string
+        deviceOSType: string
+        deviceOSVersion: string
         agreementFileId: string
-        recordedDateTime: string (timestamp)
         userDisplayName: string
         userPrincipalName: string
         userEmail: string
+        recordedDateTime: string (timestamp)
+        expirationDateTime: string (timestamp)
         state:
           '@odata.type': microsoft.graph.agreementAcceptanceState
     microsoft.graph.deviceEnrollmentConfiguration:
@@ -4485,6 +4583,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: The primary users associated with the managed device.
+            logCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+              description: List of log collection requests
           description: Devices that are managed or pre-enrolled through Intune
       example:
         id: string (identifier)
@@ -4601,6 +4704,8 @@ components:
           '@odata.type': microsoft.graph.windowsProtectionState
         users:
           - '@odata.type': microsoft.graph.user
+        logCollectionRequests:
+          - '@odata.type': microsoft.graph.deviceLogCollectionResponse
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4949,27 +5054,11 @@ components:
           - '@odata.type': microsoft.graph.plannerPlan
         all:
           - '@odata.type': microsoft.graph.plannerDelta
-    microsoft.graph.officeGraphInsights:
+    microsoft.graph.itemInsights:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: officeGraphInsights
+        - $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+        - title: itemInsights
           type: object
-          properties:
-            trending:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-            shared:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-            used:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       example:
         id: string (identifier)
         trending:
@@ -5068,6 +5157,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+            awards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.personAward'
+            certifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.personCertification'
             educationalActivities:
               type: array
               items:
@@ -5088,6 +5185,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.personName'
+            notes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.personAnnotation'
+            patents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.itemPatent'
             phones:
               type: array
               items:
@@ -5100,10 +5205,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
-            notes:
+            publications:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.personAnnotation'
+                $ref: '#/components/schemas/microsoft.graph.itemPublication'
             skills:
               type: array
               items:
@@ -5124,6 +5229,10 @@ components:
           - '@odata.type': microsoft.graph.itemAddress
         anniversaries:
           - '@odata.type': microsoft.graph.personAnniversary
+        awards:
+          - '@odata.type': microsoft.graph.personAward
+        certifications:
+          - '@odata.type': microsoft.graph.personCertification
         educationalActivities:
           - '@odata.type': microsoft.graph.educationalActivity
         emails:
@@ -5134,14 +5243,18 @@ components:
           - '@odata.type': microsoft.graph.languageProficiency
         names:
           - '@odata.type': microsoft.graph.personName
+        notes:
+          - '@odata.type': microsoft.graph.personAnnotation
+        patents:
+          - '@odata.type': microsoft.graph.itemPatent
         phones:
           - '@odata.type': microsoft.graph.itemPhone
         positions:
           - '@odata.type': microsoft.graph.workPosition
         projects:
           - '@odata.type': microsoft.graph.projectParticipation
-        notes:
-          - '@odata.type': microsoft.graph.personAnnotation
+        publications:
+          - '@odata.type': microsoft.graph.itemPublication
         skills:
           - '@odata.type': microsoft.graph.skillProficiency
         webAccounts:
@@ -5518,6 +5631,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+            securityQuestionMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityQuestionAuthenticationMethod'
             phoneMethods:
               type: array
               items:
@@ -5530,16 +5647,54 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+            emailMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+            oathMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.softwareOathAuthenticationMethod'
+            microsoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+            passwordlessMicrosoftAuthenticatorMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+            fido2Methods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+            temporaryAccessPassMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
       example:
         id: string (identifier)
         methods:
           - '@odata.type': microsoft.graph.authenticationMethod
+        securityQuestionMethods:
+          - '@odata.type': microsoft.graph.securityQuestionAuthenticationMethod
         phoneMethods:
           - '@odata.type': microsoft.graph.phoneAuthenticationMethod
         passwordMethods:
           - '@odata.type': microsoft.graph.passwordAuthenticationMethod
         operations:
           - '@odata.type': microsoft.graph.longRunningOperation
+        emailMethods:
+          - '@odata.type': microsoft.graph.emailAuthenticationMethod
+        oathMethods:
+          - '@odata.type': microsoft.graph.softwareOathAuthenticationMethod
+        microsoftAuthenticatorMethods:
+          - '@odata.type': microsoft.graph.microsoftAuthenticatorAuthenticationMethod
+        passwordlessMicrosoftAuthenticatorMethods:
+          - '@odata.type': microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod
+        fido2Methods:
+          - '@odata.type': microsoft.graph.fido2AuthenticationMethod
+        temporaryAccessPassMethods:
+          - '@odata.type': microsoft.graph.temporaryAccessPassAuthenticationMethod
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5623,6 +5778,9 @@ components:
               type: boolean
               description: Whether this team is in read-only mode.
               nullable: true
+            isMembershipLimitedToOwners:
+              type: boolean
+              nullable: true
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
             group:
@@ -5677,6 +5835,7 @@ components:
         discoverySettings:
           '@odata.type': microsoft.graph.teamDiscoverySettings
         isArchived: true
+        isMembershipLimitedToOwners: true
         schedule:
           '@odata.type': microsoft.graph.schedule
         group:
@@ -5706,12 +5865,12 @@ components:
             installedApps:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                $ref: '#/components/schemas/microsoft.graph.userScopeTeamsAppInstallation'
               description: The apps installed in the personal scope of this user.
       example:
         id: string (identifier)
         installedApps:
-          - '@odata.type': microsoft.graph.teamsAppInstallation
+          - '@odata.type': microsoft.graph.userScopeTeamsAppInstallation
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5811,6 +5970,15 @@ components:
         endTime: string (timestamp)
         timeZone:
           '@odata.type': microsoft.graph.timeZoneBase
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      type: object
+      properties:
+        value:
+          $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
+      example:
+        value:
+          '@odata.type': microsoft.graph.mailboxRecipientType
     microsoft.graph.settings:
       title: settings
       type: object
@@ -6478,9 +6646,11 @@ components:
       properties:
         labelId:
           type: string
+          description: The unique identifier of the label.
           nullable: true
         displayName:
           type: string
+          description: The display name of the label. Read-only.
           nullable: true
       example:
         labelId: string
@@ -6546,7 +6716,7 @@ components:
               description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
-              description: 'For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
+              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       example:
@@ -6661,7 +6831,7 @@ components:
               description: 'The Cc: recipients for the thread.'
             preview:
               type: string
-              description: A short summary from the body of the latest post in this converstaion.
+              description: A short summary from the body of the latest post in this conversation.
             isLocked:
               type: boolean
               description: Indicates if the thread is locked.
@@ -7903,11 +8073,123 @@ components:
         createdBy:
           '@odata.type': microsoft.graph.userIdentity
         createdDateTime: string (timestamp)
+    microsoft.graph.accessReviewInstanceDecisionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewInstanceDecisionItem
+          type: object
+          properties:
+            accessReviewId:
+              type: string
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            decision:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+            appliedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            appliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            applyResult:
+              type: string
+              nullable: true
+            recommendation:
+              type: string
+              nullable: true
+            target:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemTarget'
+      example:
+        id: string (identifier)
+        accessReviewId: string
+        reviewedBy:
+          '@odata.type': microsoft.graph.userIdentity
+        reviewedDateTime: string (timestamp)
+        decision: string
+        justification: string
+        appliedBy:
+          '@odata.type': microsoft.graph.userIdentity
+        appliedDateTime: string (timestamp)
+        applyResult: string
+        recommendation: string
+        target:
+          '@odata.type': microsoft.graph.accessReviewInstanceDecisionItemTarget
+    microsoft.graph.accessReviewScheduleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewScheduleDefinition
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            descriptionForAdmins:
+              type: string
+              nullable: true
+            descriptionForReviewers:
+              type: string
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            instances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
+      example:
+        id: string (identifier)
+        displayName: string
+        createdDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
+        status: string
+        descriptionForAdmins: string
+        descriptionForReviewers: string
+        createdBy:
+          '@odata.type': microsoft.graph.userIdentity
+        scope:
+          '@odata.type': microsoft.graph.accessReviewScope
+        reviewers:
+          - '@odata.type': microsoft.graph.accessReviewScope
+        settings:
+          '@odata.type': microsoft.graph.accessReviewScheduleSettings
+        instances:
+          - '@odata.type': microsoft.graph.accessReviewInstance
     microsoft.graph.agreementAcceptanceState:
       title: agreementAcceptanceState
       enum:
         - accepted
         - declined
+        - unknownFutureValue
       type: string
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
@@ -8025,6 +8307,7 @@ components:
           type: integer
           description: Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
           format: int32
+      description: Hardware information of a given device.
       example:
         serialNumber: string
         totalStorageSpace: integer
@@ -8088,6 +8371,7 @@ components:
           type: string
           description: Time the action state was last updated
           format: date-time
+      description: Device action result
       example:
         actionName: string
         actionState:
@@ -8146,6 +8430,7 @@ components:
         - androidForWork
         - androidEnterprise
         - windows10x
+        - androidnGMS
         - blackberry
         - palm
         - unknown
@@ -8273,6 +8558,7 @@ components:
         officeApps:
           type: boolean
           description: Whether Office application is managed by Intune
+      description: configuration Manager client enabled features
       example:
         inventory: true
         modernApps: true
@@ -8475,6 +8761,7 @@ components:
           type: string
           description: Date time when user logs on
           format: date-time
+      description: Logged On User
       example:
         userId: string
         lastLogOnDateTime: string (timestamp)
@@ -8495,6 +8782,7 @@ components:
           type: string
           description: Datetime for last sync with configuration manager management point.
           format: date-time
+      description: Configuration manager client health state
       example:
         state:
           '@odata.type': microsoft.graph.configurationManagerClientState
@@ -8511,6 +8799,7 @@ components:
         isBlocked:
           type: boolean
           description: Configuration Manager Client blocked status from SCCM
+      description: Configuration Manager client information synced from SCCM
       example:
         clientIdentifier: string
         isBlocked: true
@@ -8883,6 +9172,62 @@ components:
         lastReportedDateTime: string (timestamp)
         detectedMalwareState:
           - '@odata.type': microsoft.graph.windowsDeviceMalwareState
+    microsoft.graph.deviceLogCollectionResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceLogCollectionResponse
+          type: object
+          properties:
+            status:
+              type: string
+              description: The status of the log collection request
+              nullable: true
+            managedDeviceId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The device Id
+              format: uuid
+            errorCode:
+              type: integer
+              description: 'The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18'
+              format: int64
+            requestedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the request
+              format: date-time
+              nullable: true
+            receivedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime the request was received
+              format: date-time
+              nullable: true
+            initiatedByUserPrincipalName:
+              type: string
+              description: The UPN for who initiated the request
+              nullable: true
+            expirationDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the expiration of the logs
+              format: date-time
+              nullable: true
+            size:
+              type: number
+              description: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+          description: Windows Log Collection request entity.
+      example:
+        id: string (identifier)
+        status: string
+        managedDeviceId: string
+        errorCode: integer
+        requestedDateTimeUTC: string (timestamp)
+        receivedDateTimeUTC: string (timestamp)
+        initiatedByUserPrincipalName: string
+        expirationDateTimeUTC: string (timestamp)
+        size: double
     microsoft.graph.managedAppFlaggedReason:
       title: managedAppFlaggedReason
       enum:
@@ -8894,6 +9239,7 @@ components:
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
+      description: The identifier for a mobile app.
     microsoft.graph.managedAppPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8990,6 +9336,7 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingErrorResource'
           description: Links to helpful documentation about this failure.
+      description: Object containing detailed information about the error and its remediation.
       example:
         context: string
         failure: string
@@ -9036,6 +9383,7 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.mobileAppSupportedDeviceType'
           description: The supported platforms for the app.
+      description: Mobile App Intent and Install State for a given device.
       example:
         applicationId: string
         displayName: string
@@ -9057,6 +9405,7 @@ components:
           format: date-time
         troubleshootingErrorDetails:
           $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingErrorDetails'
+      description: History Item contained in the Mobile App Troubleshooting Event.
       example:
         occurrenceDateTime: string (timestamp)
         troubleshootingErrorDetails:
@@ -9334,95 +9683,35 @@ components:
           - '@odata.type': microsoft.graph.plannerBucket
         details:
           '@odata.type': microsoft.graph.plannerPlanDetails
-    microsoft.graph.trending:
+    microsoft.graph.officeGraphInsights:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: trending
+        - title: officeGraphInsights
           type: object
           properties:
-            weight:
-              type: number
-              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
-              format: double
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-      example:
-        id: string (identifier)
-        weight: double
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        lastModifiedDateTime: string (timestamp)
-        resource:
-          '@odata.type': microsoft.graph.entity
-    microsoft.graph.sharedInsight:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sharedInsight
-          type: object
-          properties:
-            lastShared:
-              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            sharingHistory:
+            trending:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            lastSharedMethod:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
+                $ref: '#/components/schemas/microsoft.graph.trending'
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+            shared:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+            used:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.usedInsight'
+              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       example:
         id: string (identifier)
-        lastShared:
-          '@odata.type': microsoft.graph.sharingDetail
-        sharingHistory:
-          - '@odata.type': microsoft.graph.sharingDetail
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        lastSharedMethod:
-          '@odata.type': microsoft.graph.entity
-        resource:
-          '@odata.type': microsoft.graph.entity
-    microsoft.graph.usedInsight:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: usedInsight
-          type: object
-          properties:
-            lastUsed:
-              $ref: '#/components/schemas/microsoft.graph.usageDetails'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
-            resource:
-              $ref: '#/components/schemas/microsoft.graph.entity'
-      example:
-        id: string (identifier)
-        lastUsed:
-          '@odata.type': microsoft.graph.usageDetails
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        resource:
-          '@odata.type': microsoft.graph.entity
+        trending:
+          - '@odata.type': microsoft.graph.trending
+        shared:
+          - '@odata.type': microsoft.graph.sharedInsight
+        used:
+          - '@odata.type': microsoft.graph.usedInsight
     microsoft.graph.regionalAndLanguageSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9846,6 +10135,116 @@ components:
         type:
           '@odata.type': microsoft.graph.anniversaryType
         date: string (timestamp)
+    microsoft.graph.personAward:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: personAward
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            issuedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            issuingAuthority:
+              type: string
+              nullable: true
+            thumbnailUrl:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        description: string
+        displayName: string
+        issuedDate: string (timestamp)
+        issuingAuthority: string
+        thumbnailUrl: string
+        webUrl: string
+    microsoft.graph.personCertification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: personCertification
+          type: object
+          properties:
+            certificationId:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            endDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            issuedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            issuingAuthority:
+              type: string
+              nullable: true
+            issuingCompany:
+              type: string
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            thumbnailUrl:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        certificationId: string
+        description: string
+        displayName: string
+        endDate: string (timestamp)
+        issuedDate: string (timestamp)
+        issuingAuthority: string
+        issuingCompany: string
+        startDate: string (timestamp)
+        thumbnailUrl: string
+        webUrl: string
     microsoft.graph.educationalActivity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10071,6 +10470,83 @@ components:
         title: string
         pronunciation:
           '@odata.type': microsoft.graph.yomiPersonName
+    microsoft.graph.personAnnotation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: personAnnotation
+          type: object
+          properties:
+            detail:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            displayName:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        detail:
+          '@odata.type': microsoft.graph.itemBody
+        displayName: string
+    microsoft.graph.itemPatent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.itemFacet'
+        - title: itemPatent
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            isPending:
+              type: boolean
+              nullable: true
+            issuedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            issuingAuthority:
+              type: string
+              nullable: true
+            number:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
+      example:
+        id: string (identifier)
+        allowedAudiences:
+          '@odata.type': microsoft.graph.allowedAudiences
+        inference:
+          '@odata.type': microsoft.graph.inferenceData
+        createdDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
+        lastModifiedDateTime: string (timestamp)
+        lastModifiedBy:
+          '@odata.type': microsoft.graph.identitySet
+        source:
+          '@odata.type': microsoft.graph.personDataSource
+        description: string
+        displayName: string
+        isPending: true
+        issuedDate: string (timestamp)
+        issuingAuthority: string
+        number: string
+        webUrl: string
     microsoft.graph.itemPhone:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10204,15 +10680,29 @@ components:
           - '@odata.type': microsoft.graph.relatedPerson
         collaborationTags:
           - string
-    microsoft.graph.personAnnotation:
+    microsoft.graph.itemPublication:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
-        - title: personAnnotation
+        - title: itemPublication
           type: object
           properties:
-            detail:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            description:
+              type: string
+              nullable: true
             displayName:
+              type: string
+            publishedDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            publisher:
+              type: string
+              nullable: true
+            thumbnailUrl:
+              type: string
+              nullable: true
+            webUrl:
               type: string
               nullable: true
       example:
@@ -10229,9 +10719,12 @@ components:
           '@odata.type': microsoft.graph.identitySet
         source:
           '@odata.type': microsoft.graph.personDataSource
-        detail:
-          '@odata.type': microsoft.graph.itemBody
+        description: string
         displayName: string
+        publishedDate: string (timestamp)
+        publisher: string
+        thumbnailUrl: string
+        webUrl: string
     microsoft.graph.skillProficiency:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
@@ -10616,6 +11109,13 @@ components:
           type: object
       example:
         id: string (identifier)
+    microsoft.graph.securityQuestionAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: securityQuestionAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
     microsoft.graph.phoneAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -10686,6 +11186,48 @@ components:
           '@odata.type': microsoft.graph.longRunningOperationStatus
         statusDetail: string
         resourceLocation: string
+    microsoft.graph.emailAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: emailAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.softwareOathAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: softwareOathAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.microsoftAuthenticatorAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: microsoftAuthenticatorAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: passwordlessMicrosoftAuthenticatorAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.fido2AuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: fido2AuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
+    microsoft.graph.temporaryAccessPassAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: temporaryAccessPassAuthenticationMethod
+          type: object
+      example:
+        id: string (identifier)
     microsoft.graph.conversationMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10751,6 +11293,11 @@ components:
               type: string
               description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
               nullable: true
+            chatId:
+              type: string
+              nullable: true
+            channelIdentity:
+              $ref: '#/components/schemas/microsoft.graph.channelIdentity'
             attachments:
               type: array
               items:
@@ -10798,6 +11345,9 @@ components:
         body:
           '@odata.type': microsoft.graph.itemBody
         summary: string
+        chatId: string
+        channelIdentity:
+          '@odata.type': microsoft.graph.channelIdentity
         attachments:
           - '@odata.type': microsoft.graph.chatMessageAttachment
         mentions:
@@ -11113,6 +11663,8 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            moderationSettings:
+              $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
             messages:
               type: array
               items:
@@ -11138,6 +11690,8 @@ components:
         webUrl: string
         membershipType:
           '@odata.type': microsoft.graph.channelMembershipType
+        moderationSettings:
+          '@odata.type': microsoft.graph.channelModerationSettings
         messages:
           - '@odata.type': microsoft.graph.chatMessage
         tabs:
@@ -11190,6 +11744,22 @@ components:
         targetResourceLocation: string
         error:
           '@odata.type': microsoft.graph.operationError
+    microsoft.graph.userScopeTeamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+        - title: userScopeTeamsAppInstallation
+          type: object
+          properties:
+            chat:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+      example:
+        id: string (identifier)
+        teamsApp:
+          '@odata.type': microsoft.graph.teamsApp
+        teamsAppDefinition:
+          '@odata.type': microsoft.graph.teamsAppDefinition
+        chat:
+          '@odata.type': microsoft.graph.chat
     odata.error.main:
       required:
         - code
@@ -11244,6 +11814,17 @@ components:
           nullable: true
       example:
         name: string
+    microsoft.graph.mailboxRecipientType:
+      title: mailboxRecipientType
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+      type: string
     microsoft.graph.analyticsActivityType:
       title: analyticsActivityType
       enum:
@@ -12077,6 +12658,7 @@ components:
       properties:
         upgradeAvailable:
           type: boolean
+          description: Indicates whether there are higher storage quota plans available. Read-only.
           nullable: true
       example:
         upgradeAvailable: true
@@ -12503,6 +13085,7 @@ components:
           maximum: 32767
           minimum: -32768
           type: integer
+          description: The orientation value from the camera. Writable on OneDrive Personal.
           format: int16
           nullable: true
         takenDateTime:
@@ -12778,6 +13361,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookOperation'
+              description: 'The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.'
       example:
         id: string (identifier)
         application:
@@ -12792,6 +13380,8 @@ components:
           - '@odata.type': microsoft.graph.workbookComment
         functions:
           '@odata.type': microsoft.graph.workbookFunctions
+        operations:
+          - '@odata.type': microsoft.graph.workbookOperation
     microsoft.graph.permission:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13284,6 +13874,7 @@ components:
           nullable: true
         name:
           type: string
+          description: The name of the content type.
           nullable: true
       example:
         id: string
@@ -13332,9 +13923,80 @@ components:
         displayName: string
         ipAddress: string
         userPrincipalName: string
+    microsoft.graph.accessReviewInstanceDecisionItemTarget:
+      title: accessReviewInstanceDecisionItemTarget
+      type: object
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      properties:
+        query:
+          type: string
+          nullable: true
+        queryType:
+          type: string
+          nullable: true
+      example:
+        query: string
+        queryType: string
+    microsoft.graph.accessReviewScheduleSettings:
+      title: accessReviewScheduleSettings
+      type: object
+      properties:
+        mailNotificationsEnabled:
+          type: boolean
+        reminderNotificationsEnabled:
+          type: boolean
+        justificationRequiredOnApproval:
+          type: boolean
+        defaultDecisionEnabled:
+          type: boolean
+        defaultDecision:
+          type: string
+          nullable: true
+        instanceDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        autoApplyDecisionsEnabled:
+          type: boolean
+        applyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
+        recommendationsEnabled:
+          type: boolean
+      example:
+        mailNotificationsEnabled: true
+        reminderNotificationsEnabled: true
+        justificationRequiredOnApproval: true
+        defaultDecisionEnabled: true
+        defaultDecision: string
+        instanceDurationInDays: integer
+        recurrence:
+          '@odata.type': microsoft.graph.patternedRecurrence
+        autoApplyDecisionsEnabled: true
+        applyActions:
+          - '@odata.type': microsoft.graph.accessReviewApplyAction
+        recommendationsEnabled: true
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
+      properties:
+        deviceAndAppManagementAssignmentFilterId:
+          type: string
+          description: The Id of the filter for the target assignment.
+          nullable: true
+        deviceAndAppManagementAssignmentFilterType:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentFilterType'
+      description: Base type for assignment targets.
+      example:
+        deviceAndAppManagementAssignmentFilterId: string
+        deviceAndAppManagementAssignmentFilterType:
+          '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentFilterType
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -13493,6 +14155,7 @@ components:
           type: string
           description: SettingInstanceId
           nullable: true
+      description: Device Configuration Setting State for a given device.
       example:
         setting: string
         settingName: string
@@ -13590,6 +14253,7 @@ components:
           type: string
           description: SettingInstanceId
           nullable: true
+      description: Device Compilance Policy Setting State for a given device.
       example:
         setting: string
         settingName: string
@@ -13661,6 +14325,7 @@ components:
           type: string
           description: SettingInstanceId
           nullable: true
+      description: Managed Device Mobile App Configuration Setting State for a given device.
       example:
         setting: string
         settingName: string
@@ -13763,6 +14428,7 @@ components:
           type: string
           description: 'The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}'
           nullable: true
+      description: 'Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.'
       example:
         text: string
         link: string
@@ -13802,6 +14468,7 @@ components:
           type: string
           description: Maximum OS version
           nullable: true
+      description: Device properties
       example:
         type:
           '@odata.type': microsoft.graph.deviceType
@@ -13962,120 +14629,95 @@ components:
           '@odata.type': microsoft.graph.plannerCategoryDescriptions
         contextDetails:
           '@odata.type': microsoft.graph.plannerPlanContextDetailsCollection
-    microsoft.graph.resourceVisualization:
-      title: resourceVisualization
-      type: object
-      properties:
-        title:
-          type: string
-          description: The item's title text.
-          nullable: true
-        type:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
-          nullable: true
-        mediaType:
-          type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
-          nullable: true
-        previewImageUrl:
-          type: string
-          description: A URL leading to the preview image for the item.
-          nullable: true
-        previewText:
-          type: string
-          description: A preview text for the item.
-          nullable: true
-        containerWebUrl:
-          type: string
-          description: A path leading to the folder in which the item is stored.
-          nullable: true
-        containerDisplayName:
-          type: string
-          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
-          nullable: true
-        containerType:
-          type: string
-          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-          nullable: true
+    microsoft.graph.trending:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: trending
+          type: object
+          properties:
+            weight:
+              type: number
+              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
+              format: double
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
       example:
-        title: string
-        type: string
-        mediaType: string
-        previewImageUrl: string
-        previewText: string
-        containerWebUrl: string
-        containerDisplayName: string
-        containerType: string
-    microsoft.graph.resourceReference:
-      title: resourceReference
-      type: object
-      properties:
-        webUrl:
-          type: string
-          description: A URL leading to the referenced item.
-          nullable: true
-        id:
-          type: string
-          description: The item's unique identifier.
-          nullable: true
-        type:
-          type: string
-          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
-          nullable: true
-      example:
-        webUrl: string
-        id: string
-        type: string
-    microsoft.graph.sharingDetail:
-      title: sharingDetail
-      type: object
-      properties:
-        sharedBy:
-          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
-        sharedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        sharingSubject:
-          type: string
-          description: The subject with which the document was shared.
-          nullable: true
-        sharingType:
-          type: string
-          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
-          nullable: true
-        sharingReference:
-          $ref: '#/components/schemas/microsoft.graph.resourceReference'
-      example:
-        sharedBy:
-          '@odata.type': microsoft.graph.insightIdentity
-        sharedDateTime: string (timestamp)
-        sharingSubject: string
-        sharingType: string
-        sharingReference:
+        id: string (identifier)
+        weight: double
+        resourceVisualization:
+          '@odata.type': microsoft.graph.resourceVisualization
+        resourceReference:
           '@odata.type': microsoft.graph.resourceReference
-    microsoft.graph.usageDetails:
-      title: usageDetails
-      type: object
-      properties:
-        lastAccessedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
-          format: date-time
-          nullable: true
-      example:
-        lastAccessedDateTime: string (timestamp)
         lastModifiedDateTime: string (timestamp)
+        resource:
+          '@odata.type': microsoft.graph.entity
+    microsoft.graph.sharedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharedInsight
+          type: object
+          properties:
+            lastShared:
+              $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            sharingHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            lastSharedMethod:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+      example:
+        id: string (identifier)
+        lastShared:
+          '@odata.type': microsoft.graph.sharingDetail
+        sharingHistory:
+          - '@odata.type': microsoft.graph.sharingDetail
+        resourceVisualization:
+          '@odata.type': microsoft.graph.resourceVisualization
+        resourceReference:
+          '@odata.type': microsoft.graph.resourceReference
+        lastSharedMethod:
+          '@odata.type': microsoft.graph.entity
+        resource:
+          '@odata.type': microsoft.graph.entity
+    microsoft.graph.usedInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usedInsight
+          type: object
+          properties:
+            lastUsed:
+              $ref: '#/components/schemas/microsoft.graph.usageDetails'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resource:
+              $ref: '#/components/schemas/microsoft.graph.entity'
+      example:
+        id: string (identifier)
+        lastUsed:
+          '@odata.type': microsoft.graph.usageDetails
+        resourceVisualization:
+          '@odata.type': microsoft.graph.resourceVisualization
+        resourceReference:
+          '@odata.type': microsoft.graph.resourceReference
+        resource:
+          '@odata.type': microsoft.graph.entity
     microsoft.graph.regionalFormatOverrides:
       title: regionalFormatOverrides
       type: object
@@ -14628,6 +15270,19 @@ components:
         - chatEvent
         - typing
       type: string
+    microsoft.graph.channelIdentity:
+      title: channelIdentity
+      type: object
+      properties:
+        teamId:
+          type: string
+          nullable: true
+        channelId:
+          type: string
+          nullable: true
+      example:
+        teamId: string
+        channelId: string
     microsoft.graph.chatMessageAttachment:
       title: chatMessageAttachment
       type: object
@@ -14793,6 +15448,19 @@ components:
               nullable: true
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
+            shortdescription:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
       example:
         id: string (identifier)
         teamsAppId: string
@@ -14801,6 +15469,11 @@ components:
         version: string
         publishingState:
           '@odata.type': microsoft.graph.teamsAppPublishingState
+        shortdescription: string
+        description: string
+        lastModifiedDateTime: string (timestamp)
+        createdBy:
+          '@odata.type': microsoft.graph.identitySet
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -14864,6 +15537,9 @@ components:
               type: string
               description: ID for the scheduling group that the open shift belongs to.
               nullable: true
+            isStagedForDeletion:
+              type: boolean
+              nullable: true
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -14875,6 +15551,7 @@ components:
         draftOpenShift:
           '@odata.type': microsoft.graph.openShiftItem
         schedulingGroupId: string
+        isStagedForDeletion: true
     microsoft.graph.timeOff:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -14889,6 +15566,9 @@ components:
               type: string
               description: ID of the user assigned to the timeOff. Required.
               nullable: true
+            isStagedForDeletion:
+              type: boolean
+              nullable: true
       example:
         id: string (identifier)
         createdDateTime: string (timestamp)
@@ -14900,6 +15580,7 @@ components:
         draftTimeOff:
           '@odata.type': microsoft.graph.timeOffItem
         userId: string
+        isStagedForDeletion: true
     microsoft.graph.timeOffReason:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -15106,6 +15787,27 @@ components:
         - private
         - unknownFutureValue
       type: string
+    microsoft.graph.channelModerationSettings:
+      title: channelModerationSettings
+      type: object
+      properties:
+        userNewMessageRestriction:
+          $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
+        replyRestriction:
+          $ref: '#/components/schemas/microsoft.graph.replyRestriction'
+        allowNewMessageFromBots:
+          type: boolean
+          nullable: true
+        allowNewMessageFromConnectors:
+          type: boolean
+          nullable: true
+      example:
+        userNewMessageRestriction:
+          '@odata.type': microsoft.graph.userNewMessageRestriction
+        replyRestriction:
+          '@odata.type': microsoft.graph.replyRestriction
+        allowNewMessageFromBots: true
+        allowNewMessageFromConnectors: true
     microsoft.graph.teamsTab:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15127,7 +15829,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: Deep link url of the tab instance. Read only.
+              description: Deep link URL of the tab instance. Read only.
               nullable: true
             configuration:
               $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
@@ -15427,6 +16129,7 @@ components:
           nullable: true
         sha256Hash:
           type: string
+          description: SHA256 hash for the contents of the file (if available). Read-only.
           nullable: true
       example:
         crc32Hash: string
@@ -15460,6 +16163,7 @@ components:
         queuedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Date and time the pending binary operation was queued in UTC time. Read-only.
           format: date-time
           nullable: true
       example:
@@ -15675,6 +16379,27 @@ components:
           type: object
       example:
         id: string (identifier)
+    microsoft.graph.workbookOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookOperation
+          type: object
+          properties:
+            status:
+              $ref: '#/components/schemas/microsoft.graph.workbookOperationStatus'
+            resourceLocation:
+              type: string
+              description: The resource URI for the result.
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.workbookOperationError'
+      example:
+        id: string (identifier)
+        status:
+          '@odata.type': microsoft.graph.workbookOperationStatus
+        resourceLocation: string
+        error:
+          '@odata.type': microsoft.graph.workbookOperationError
     microsoft.graph.sharingInvitation:
       title: sharingInvitation
       type: object
@@ -15864,6 +16589,15 @@ components:
     microsoft.graph.sitePageData:
       title: sitePageData
       type: object
+    microsoft.graph.accessReviewApplyAction:
+      title: accessReviewApplyAction
+      type: object
+    microsoft.graph.deviceAndAppManagementAssignmentFilterType:
+      title: deviceAndAppManagementAssignmentFilterType
+      enum:
+        - none
+        - include
+      type: string
     microsoft.graph.securityBaselineComplianceState:
       title: securityBaselineComplianceState
       enum:
@@ -16043,26 +16777,120 @@ components:
     microsoft.graph.plannerPlanContextDetailsCollection:
       title: plannerPlanContextDetailsCollection
       type: object
-    microsoft.graph.insightIdentity:
-      title: insightIdentity
+    microsoft.graph.resourceVisualization:
+      title: resourceVisualization
       type: object
       properties:
-        displayName:
+        title:
           type: string
-          description: The display name of the user who shared the item.
+          description: The item's title text.
+          nullable: true
+        type:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          nullable: true
+        mediaType:
+          type: string
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          nullable: true
+        previewImageUrl:
+          type: string
+          description: A URL leading to the preview image for the item.
+          nullable: true
+        previewText:
+          type: string
+          description: A preview text for the item.
+          nullable: true
+        containerWebUrl:
+          type: string
+          description: A path leading to the folder in which the item is stored.
+          nullable: true
+        containerDisplayName:
+          type: string
+          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
+          nullable: true
+        containerType:
+          type: string
+          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
+          nullable: true
+      example:
+        title: string
+        type: string
+        mediaType: string
+        previewImageUrl: string
+        previewText: string
+        containerWebUrl: string
+        containerDisplayName: string
+        containerType: string
+    microsoft.graph.resourceReference:
+      title: resourceReference
+      type: object
+      properties:
+        webUrl:
+          type: string
+          description: A URL leading to the referenced item.
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The item's unique identifier.
           nullable: true
-        address:
+        type:
           type: string
-          description: The email address of the user who shared the item.
+          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
           nullable: true
       example:
-        displayName: string
+        webUrl: string
         id: string
-        address: string
+        type: string
+    microsoft.graph.sharingDetail:
+      title: sharingDetail
+      type: object
+      properties:
+        sharedBy:
+          $ref: '#/components/schemas/microsoft.graph.insightIdentity'
+        sharedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        sharingSubject:
+          type: string
+          description: The subject with which the document was shared.
+          nullable: true
+        sharingType:
+          type: string
+          description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
+          nullable: true
+        sharingReference:
+          $ref: '#/components/schemas/microsoft.graph.resourceReference'
+      example:
+        sharedBy:
+          '@odata.type': microsoft.graph.insightIdentity
+        sharedDateTime: string (timestamp)
+        sharingSubject: string
+        sharingType: string
+        sharingReference:
+          '@odata.type': microsoft.graph.resourceReference
+    microsoft.graph.usageDetails:
+      title: usageDetails
+      type: object
+      properties:
+        lastAccessedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+        lastModifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          format: date-time
+          nullable: true
+      example:
+        lastAccessedDateTime: string (timestamp)
+        lastModifiedDateTime: string (timestamp)
     microsoft.graph.timeRange:
       title: timeRange
       type: object
@@ -16337,6 +17165,21 @@ components:
         managerActionDateTime: string (timestamp)
         senderUserId: string
         managerUserId: string
+    microsoft.graph.userNewMessageRestriction:
+      title: userNewMessageRestriction
+      enum:
+        - everyone
+        - everyoneExceptGuests
+        - moderators
+        - unknownFutureValue
+      type: string
+    microsoft.graph.replyRestriction:
+      title: replyRestriction
+      enum:
+        - everyone
+        - authorAndModerators
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -16546,9 +17389,56 @@ components:
         id: string (identifier)
         content: string
         contentType: string
+    microsoft.graph.workbookOperationStatus:
+      title: workbookOperationStatus
+      enum:
+        - notStarted
+        - running
+        - succeeded
+        - failed
+      type: string
+    microsoft.graph.workbookOperationError:
+      title: workbookOperationError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.workbookOperationError'
+      example:
+        code: string
+        message: string
+        innerError:
+          '@odata.type': microsoft.graph.workbookOperationError
     microsoft.graph.accessAction:
       title: accessAction
       type: object
+    microsoft.graph.insightIdentity:
+      title: insightIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the user who shared the item.
+          nullable: true
+        id:
+          type: string
+          description: The id of the user who shared the item.
+          nullable: true
+        address:
+          type: string
+          description: The email address of the user who shared the item.
+          nullable: true
+      example:
+        displayName: string
+        id: string
+        address: string
     microsoft.graph.scheduleEntity:
       title: scheduleEntity
       type: object
