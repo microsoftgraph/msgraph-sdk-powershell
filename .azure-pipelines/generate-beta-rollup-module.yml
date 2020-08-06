@@ -2,15 +2,6 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) for beta roll-up module.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger: none
-pr: none
-variables:
-  MODULE_PREFIX: 'Microsoft.Graph'
-  GRAPH_VERSION: 'beta'
-  MODULE_NAME: 'Graph'
-  MODULE_PATH: 'src/Beta/Graph/Graph'
-
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Roll-Up Generation

@@ -2,15 +2,6 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger:
-  branches:
-    include:
-    - master
-  paths:
-    include:
-    - src/Authentication/*
-pr: none
 variables:
   MODULE_NAME: 'Authentication'
   MODULE_PATH: 'src\Authentication\Authentication\'

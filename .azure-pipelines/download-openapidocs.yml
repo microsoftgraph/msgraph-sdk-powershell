@@ -1,12 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# Generates a release build artifact (nuget) from HEAD of master for auth module.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-
-pool:
-  vmImage: "windows-latest"
-
 variables:
   BRANCH: 'weeklyOpenApiDocsDownload'
   GitUserEmail: 'GraphTooling@service.microsoft.com'

@@ -2,16 +2,6 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) from HEAD of master for beta Graph workload modules.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger:
-  branches:
-    include:
-    - master
-  paths:
-    include:
-    - src/Beta/*
-    - config/ModulesMapping.jsonc
-pr: none
 variables:
   MODULE_PREFIX: 'Microsoft.Graph'
   WORKLOAD_MODULE_PATH: 'src\beta\'

@@ -2,6 +2,8 @@
 # Licensed under the MIT License.
 
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+pool:
+    vmImage: 'windows-latest'
 trigger:
     branches:
       include:
