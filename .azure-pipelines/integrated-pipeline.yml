@@ -29,21 +29,16 @@ trigger:
 stages:
 - stage: DownloadOpenApiDocs
   jobs:
-  - job: DownloadOpenApiDocs
-    steps:
-    - template: ./download-openapidocs.yml
+  - template: ./download-openapidocs.yml
 
 - stage: GenerateAuthModules
   jobs:
-  - job: GenerateAuthModules
-    template: ./generate-auth-modules.yml
+  - template: ./generate-auth-modules.yml
     
 - stage: GenerateBetaModules
   jobs:
-  - job: GenerateBetaModules
-    template: ./generate-beta-modules.yml
+  - template: ./generate-beta-modules.yml
 
 - stage: GenerateRollUpModule
   jobs:
-  - job: GenerateRollUpModule
-    template: ./generate-beta-modules.yml
+  - template: ./generate-beta-modules.yml
