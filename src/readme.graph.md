@@ -79,6 +79,12 @@ directive:
     - microsoft.graph.team
     - microsoft.graph.recipient
     - microsoft.graph.groupPolicyCategory
+    - microsoft.graph.printer
+    - microsoft.graph.printerShare
+    - microsoft.graph.governanceResource
+    - microsoft.graph.governanceRoleAssignment
+    - microsoft.graph.governanceRoleDefinition
+    - microsoft.graph.workbookOperationError
 
   # Set parameter alias
   - where:

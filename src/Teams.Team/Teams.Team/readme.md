@@ -32,6 +32,16 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+  - remove-path-by-operation: teams_GetGroup|team_ListTeam
+```
+
 ### Versioning
 
 ``` yaml

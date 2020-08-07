@@ -1,7 +1,6 @@
 {
     "Analytics": "^users.userAnalytics$|^users.officeGraphInsights$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
-    "CloudCommunications": "^communications\\.",
     "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
     "DevicesApps.MobileAppManagement": "^users.managedAppRegistration$|^users.windowsInformationProtectionDeviceRegistration$",
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
@@ -33,7 +32,7 @@
     "Identity.AuditLogs": "^auditLogs\\.",
     "Identity.AuthenticationMethods": "^users.authentication$",
     "Identity.AzureADPIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedOperationEvents\\.|^privilegedApproval\\.|^privilegedRoleAssignmentRequests\\.",
-    "Identity.ConditionalAccess": "^conditionalAccess.namedLocation$|^conditionalAccess.conditionalAccessPolicy$",
+    "Identity.ConditionalAccess": "^identity.conditionalAccessRoot$",
     "Identity.Contracts": "^contracts\\.",
     "Identity.DataPolicyOperations": "^dataPolicyOperations\\.",
     "Identity.Devices": "^devices\\.",
@@ -87,7 +86,7 @@
     "Users.Drive": "^users.drive$",
     "Users.Extensions": "^users.extension$",
     "Users.FollowedSites": "^users.site$",
-    "Users.Functions": "^users.Functions$",
+    // "Users.Functions": "^users.Functions$", // Fails to download.
     "Users.Groups": "^users.group$|^users.team$",
     "Users.InformationProtection": "^users.informationProtection$", // Missing in docs
     "Users.LicenseDetails": "^users.licenseDetails$",
@@ -101,7 +100,8 @@
     "Users.UserSettings": "^users.userSettings$",
 
     // Fails to build.
-    //"DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
+    // "CloudCommunications": "^communications\\.", \\ OData.OpenAPI should handle multiple namespace.
+    // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported
