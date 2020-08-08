@@ -31,9 +31,22 @@ require:
 title: $(service-name)
 subject-prefix: ''
 
+```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
 directive:
 # Remove paths that are too long.
   - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.policy_assign$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice$
+# Rename cmdlets with duplicates in their name.
+  - where:
+      subject: ^(DeviceAppManagement)(\1)+
+    set:
+      subject: $1
+# Rename cmdlets.
   - where:
       verb: Update
       subject: ^(DeviceAppManagement)(MobileAppRelationship)$
@@ -46,7 +59,22 @@ directive:
       variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
     set:
       subject: $1Multiple$2
+  - where:
+      subject: Io(Lob|Managed)
+    set:
+      subject: iOS$1
+# Rename DeviceAppManagement* cmdlets to DeviceAppMgt*. Alias DeviceAppMgt* to DeviceAppManagement*.
+# This should always be the last directive.
+  - where:
+      subject: ^DeviceAppManagement.*
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: (.*)(DeviceAppManagement)(.*)
+    set:
+      subject: $1DeviceAppMgt$3
 ```
+
 ### Versioning
 
 ``` yaml
