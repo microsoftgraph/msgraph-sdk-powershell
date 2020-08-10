@@ -220,12 +220,12 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        $ModuleMappingConfigPath = "$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc"
+        $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
         [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
-            $ModuleProjectDir = "$(System.DefaultWorkingDirectory)/src/$(GRAPH_VERSION)/$ModuleName/$ModuleName"
-            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion $(GRAPH_VERSION) -ArtifactsLocation $(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\
+            $ModuleProjectDir = '$(System.DefaultWorkingDirectory)/src/$ModuleName/$ModuleName'
+            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion beta -ArtifactsLocation '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
         }
       pwsh: true
   
