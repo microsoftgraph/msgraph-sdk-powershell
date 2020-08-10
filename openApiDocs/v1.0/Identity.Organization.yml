@@ -138,14 +138,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.organization'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - organization.organization
@@ -177,7 +173,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -241,15 +237,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.organization'
           links:
             certificateBasedAuthConfiguration:
-              operationId: organization.GetCertificateBasedAuthConfiguration
+              operationId: organization.ListCertificateBasedAuthConfiguration
               parameters:
                 organization-id: $request.path.organization-id
-                certificateBasedAuthConfiguration-id: $response.body#/id
             extensions:
-              operationId: organization.GetExtensions
+              operationId: organization.ListExtensions
               parameters:
                 organization-id: $request.path.organization-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -261,7 +255,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -287,7 +281,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -312,7 +306,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -375,13 +369,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}':
     get:
@@ -392,14 +383,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: certificateBasedAuthConfiguration-id
           in: path
-          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          description: 'key: id of certificateBasedAuthConfiguration'
           required: true
           schema:
             type: string
@@ -438,6 +429,118 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/certificateBasedAuthConfiguration/$ref':
+    get:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Get ref of certificateBasedAuthConfiguration from organization
+      operationId: organization_ListRefCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - certificateAuthorities
+                - certificateAuthorities desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of certificateBasedAuthConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Create new navigation property ref to certificateBasedAuthConfiguration for organization
+      operationId: organization_CreateRefCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Delete ref of navigation property certificateBasedAuthConfiguration for organization
+      operationId: organization_DeleteRefCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/extensions':
     get:
       tags:
@@ -447,7 +550,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -507,13 +610,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -523,7 +623,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -554,14 +654,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -599,6 +699,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - organization.extension
@@ -607,14 +708,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -632,6 +733,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.extension
+      summary: Delete navigation property extensions for organization
+      operationId: organization_DeleteExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -641,7 +773,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -657,6 +789,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -679,7 +813,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -695,6 +829,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -717,7 +853,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -733,6 +869,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -755,7 +893,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -771,6 +909,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -793,7 +933,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -817,7 +957,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -832,6 +972,38 @@ paths:
                 minimum: -2147483648
                 type: integer
                 format: int32
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /organization/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - organization.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: organization_getAvailableExtensionProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.extensionProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -857,6 +1029,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -897,6 +1071,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1012,45 +1188,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the organization. Read-only. Nullable.
+          additionalProperties:
+            type: object
           description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        assignedPlans:
-          - '@odata.type': microsoft.graph.assignedPlan
-        businessPhones:
-          - string
-        city: string
-        country: string
-        countryLetterCode: string
-        createdDateTime: string (timestamp)
-        displayName: string
-        marketingNotificationEmails:
-          - string
-        onPremisesLastSyncDateTime: string (timestamp)
-        onPremisesSyncEnabled: true
-        postalCode: string
-        preferredLanguage: string
-        privacyProfile:
-          '@odata.type': microsoft.graph.privacyProfile
-        provisionedPlans:
-          - '@odata.type': microsoft.graph.provisionedPlan
-        securityComplianceNotificationMails:
-          - string
-        securityComplianceNotificationPhones:
-          - string
-        state: string
-        street: string
-        technicalNotificationMails:
-          - string
-        verifiedDomains:
-          - '@odata.type': microsoft.graph.verifiedDomain
-        mobileDeviceManagementAuthority:
-          '@odata.type': microsoft.graph.mdmAuthority
-        certificateBasedAuthConfiguration:
-          - '@odata.type': microsoft.graph.certificateBasedAuthConfiguration
-        extensions:
-          - '@odata.type': microsoft.graph.extension
     microsoft.graph.certificateBasedAuthConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1062,17 +1202,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
               description: Collection of certificate authorities which creates a trusted certificate chain.
-      example:
-        id: string (identifier)
-        certificateAuthorities:
-          - '@odata.type': microsoft.graph.certificateAuthority
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1084,10 +1222,37 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
+            dataType:
+              type: string
+              description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              nullable: true
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -1112,11 +1277,8 @@ components:
           description: A GUID that identifies the service plan.
           format: uuid
           nullable: true
-      example:
-        assignedDateTime: string (timestamp)
-        capabilityStatus: string
-        service: string
-        servicePlanId: string
+      additionalProperties:
+        type: object
     microsoft.graph.privacyProfile:
       title: privacyProfile
       type: object
@@ -1129,9 +1291,8 @@ components:
           type: string
           description: A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
           nullable: true
-      example:
-        contactEmail: string
-        statementUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.provisionedPlan:
       title: provisionedPlan
       type: object
@@ -1148,10 +1309,8 @@ components:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
-      example:
-        capabilityStatus: string
-        provisioningStatus: string
-        service: string
+      additionalProperties:
+        type: object
     microsoft.graph.verifiedDomain:
       title: verifiedDomain
       type: object
@@ -1176,12 +1335,8 @@ components:
           type: string
           description: 'For example, ''Managed''.'
           nullable: true
-      example:
-        capabilities: string
-        isDefault: true
-        isInitial: true
-        name: string
-        type: string
+      additionalProperties:
+        type: object
     microsoft.graph.mdmAuthority:
       title: mdmAuthority
       enum:
@@ -1197,8 +1352,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
       type: object
@@ -1224,13 +1379,8 @@ components:
         issuerSki:
           type: string
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
-      example:
-        isRootAuthority: true
-        certificateRevocationListUrl: string
-        deltaCertificateRevocationListUrl: string
-        certificate: string
-        issuer: string
-        issuerSki: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1238,6 +1388,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1256,7 +1408,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1269,6 +1425,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

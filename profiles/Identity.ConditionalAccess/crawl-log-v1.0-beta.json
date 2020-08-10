@@ -1,19 +1,23 @@
 {
   "resources": [],
   "operations": {
-    "/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+    "/identity/conditionalAccess": {
       "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/conditionalAccess/namedLocations": {
+    "/identity/conditionalAccess/namedLocations": {
       "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/conditionalAccess/namedLocations/{namedLocation-id}": {
+    "/identity/conditionalAccess/policies": {
       "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/conditionalAccess/policies": {
+    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
       "apiVersion": "v1.0-beta"
     }

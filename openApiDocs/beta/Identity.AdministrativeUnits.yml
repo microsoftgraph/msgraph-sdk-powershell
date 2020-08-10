@@ -88,6 +88,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -125,7 +127,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -171,22 +173,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: administrativeUnits.GetMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-                directoryObject-id: $response.body#/id
-            scopedRoleMembers:
-              operationId: administrativeUnits.GetScopedRoleMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-                scopedRoleMembership-id: $response.body#/id
-            extensions:
-              operationId: administrativeUnits.GetExtensions
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -198,7 +184,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -224,7 +210,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -249,7 +235,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -311,6 +297,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -325,7 +313,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -356,14 +344,14 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -401,6 +389,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - administrativeUnits.extension
@@ -409,14 +398,14 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -434,6 +423,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - administrativeUnits.extension
+      summary: Delete navigation property extensions for administrativeUnits
+      operationId: administrativeUnits_DeleteExtensions
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/administrativeUnits/{administrativeUnit-id}/members':
     get:
       tags:
@@ -443,7 +463,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -508,6 +528,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -523,14 +545,14 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -569,6 +591,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/members/$ref':
+    get:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Get ref of members from administrativeUnits
+      operationId: administrativeUnits_ListRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Create new navigation property ref to members for administrativeUnits
+      operationId: administrativeUnits_CreateRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Delete ref of navigation property members for administrativeUnits
+      operationId: administrativeUnits_DeleteRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -578,7 +717,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -594,6 +733,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -616,7 +757,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -632,6 +773,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -654,7 +797,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -670,6 +813,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -692,7 +837,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -708,6 +853,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -730,7 +877,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -754,7 +901,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -825,6 +972,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -839,7 +988,7 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
@@ -870,14 +1019,14 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -918,6 +1067,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - administrativeUnits.scopedRoleMembership
@@ -926,14 +1076,14 @@ paths:
       parameters:
         - name: administrativeUnit-id
           in: path
-          description: 'key: administrativeUnit-id of administrativeUnit'
+          description: 'key: id of administrativeUnit'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -945,6 +1095,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - administrativeUnits.scopedRoleMembership
+      summary: Delete navigation property scopedRoleMembers for administrativeUnits
+      operationId: administrativeUnits_DeleteScopedRoleMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: scopedRoleMembership-id
+          in: path
+          description: 'key: id of scopedRoleMembership'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: scopedRoleMembership
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -991,6 +1172,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1023,6 +1206,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1061,6 +1246,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1077,7 +1264,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -1148,6 +1335,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1162,7 +1351,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -1193,14 +1382,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -1241,6 +1430,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.scopedRoleMembership
@@ -1249,14 +1439,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -1268,6 +1458,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.scopedRoleMembership
+      summary: Delete navigation property scopedRoleMemberOf for users
+      operationId: users_DeleteScopedRoleMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: scopedRoleMembership-id
+          in: path
+          description: 'key: id of scopedRoleMembership'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: scopedRoleMembership
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1303,26 +1524,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        displayName: string
-        description: string
-        visibility: string
-        members:
-          - '@odata.type': microsoft.graph.directoryObject
-        scopedRoleMembers:
-          - '@odata.type': microsoft.graph.scopedRoleMembership
-        extensions:
-          - '@odata.type': microsoft.graph.extension
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1334,10 +1545,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.scopedRoleMembership:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1350,12 +1560,8 @@ components:
               type: string
             roleMemberInfo:
               $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        id: string (identifier)
-        roleId: string
-        administrativeUnitId: string
-        roleMemberInfo:
-          '@odata.type': microsoft.graph.identity
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1363,8 +1569,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -1377,9 +1583,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1387,6 +1592,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1405,7 +1612,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1418,6 +1629,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

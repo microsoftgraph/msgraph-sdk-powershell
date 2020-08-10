@@ -123,6 +123,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.orgContact'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -160,7 +162,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -219,27 +221,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-          links:
-            manager:
-              operationId: contacts.GetManager
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-                directoryObject-id: $response.body#/id
-            directReports:
-              operationId: contacts.GetDirectReports
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-                directoryObject-id: $response.body#/id
-            memberOf:
-              operationId: contacts.GetMemberOf
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-                directoryObject-id: $response.body#/id
-            transitiveMemberOf:
-              operationId: contacts.GetTransitiveMemberOf
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-                directoryObject-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -251,7 +232,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -277,7 +258,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -302,7 +283,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -367,6 +348,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -382,14 +365,14 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -428,6 +411,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/directReports/$ref':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get ref of directReports from contacts
+      operationId: contacts_ListRefDirectReports
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - contacts.directoryObject
+      summary: Create new navigation property ref to directReports for contacts
+      operationId: contacts_CreateRefDirectReports
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - contacts.directoryObject
+      summary: Delete ref of navigation property directReports for contacts
+      operationId: contacts_DeleteRefDirectReports
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/manager':
     get:
       tags:
@@ -437,7 +537,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -476,6 +576,81 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/manager/$ref':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get ref of manager from contacts
+      operationId: contacts_GetRefManager
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - contacts.directoryObject
+      summary: Update the ref of navigation property manager in contacts
+      operationId: contacts_UpdateRefManager
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - contacts.directoryObject
+      summary: Delete ref of navigation property manager for contacts
+      operationId: contacts_DeleteRefManager
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/memberOf':
     get:
       tags:
@@ -485,7 +660,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -550,6 +725,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -565,14 +742,14 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -611,6 +788,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/memberOf/$ref':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get ref of memberOf from contacts
+      operationId: contacts_ListRefMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - contacts.directoryObject
+      summary: Create new navigation property ref to memberOf for contacts
+      operationId: contacts_CreateRefMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - contacts.directoryObject
+      summary: Delete ref of navigation property memberOf for contacts
+      operationId: contacts_DeleteRefMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -620,7 +914,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -636,6 +930,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -658,7 +954,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -674,6 +970,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -696,7 +994,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -712,6 +1010,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -734,7 +1034,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -750,6 +1050,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -772,7 +1074,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -796,7 +1098,7 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
@@ -861,6 +1163,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -876,14 +1180,14 @@ paths:
       parameters:
         - name: orgContact-id
           in: path
-          description: 'key: orgContact-id of orgContact'
+          description: 'key: id of orgContact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: orgContact
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -922,6 +1226,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/contacts/{orgContact-id}/transitiveMemberOf/$ref':
+    get:
+      tags:
+        - contacts.directoryObject
+      summary: Get ref of transitiveMemberOf from contacts
+      operationId: contacts_ListRefTransitiveMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - contacts.directoryObject
+      summary: Create new navigation property ref to transitiveMemberOf for contacts
+      operationId: contacts_CreateRefTransitiveMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - contacts.directoryObject
+      summary: Delete ref of navigation property transitiveMemberOf for contacts
+      operationId: contacts_DeleteRefTransitiveMemberOf
+      parameters:
+        - name: orgContact-id
+          in: path
+          description: 'key: id of orgContact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: orgContact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /contacts/microsoft.graph.delta():
     get:
       tags:
@@ -962,6 +1383,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -994,6 +1417,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1032,6 +1457,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1109,36 +1536,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        addresses:
-          - '@odata.type': microsoft.graph.physicalOfficeAddress
-        companyName: string
-        department: string
-        displayName: string
-        givenName: string
-        jobTitle: string
-        mail: string
-        mailNickname: string
-        onPremisesSyncEnabled: true
-        onPremisesLastSyncDateTime: string (timestamp)
-        onPremisesProvisioningErrors:
-          - '@odata.type': microsoft.graph.onPremisesProvisioningError
-        phones:
-          - '@odata.type': microsoft.graph.phone
-        proxyAddresses:
-          - string
-        surname: string
-        manager:
-          '@odata.type': microsoft.graph.directoryObject
-        directReports:
-          - '@odata.type': microsoft.graph.directoryObject
-        memberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        transitiveMemberOf:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1150,10 +1550,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.physicalOfficeAddress:
       title: physicalOfficeAddress
       type: object
@@ -1182,13 +1581,8 @@ components:
           type: string
           description: The street.
           nullable: true
-      example:
-        city: string
-        countryOrRegion: string
-        officeLocation: string
-        postalCode: string
-        state: string
-        street: string
+      additionalProperties:
+        type: object
     microsoft.graph.onPremisesProvisioningError:
       title: onPremisesProvisioningError
       type: object
@@ -1211,11 +1605,8 @@ components:
           description: The date and time at which the error occurred.
           format: date-time
           nullable: true
-      example:
-        value: string
-        category: string
-        propertyCausingError: string
-        occurredDateTime: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.phone:
       title: phone
       type: object
@@ -1226,10 +1617,8 @@ components:
           type: string
           description: The phone number.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.phoneType
-        number: string
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1237,8 +1626,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1246,6 +1635,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.phoneType:
       title: phoneType
       enum:
@@ -1278,7 +1669,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1291,6 +1686,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

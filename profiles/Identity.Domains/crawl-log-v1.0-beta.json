@@ -1,7 +1,35 @@
 {
   "resources": [],
   "operations": {
+    "/domains": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/domainNameReferences/$ref": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/domainNameReferences/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/domains/{domain-id}/microsoft.graph.forceDelete": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/serviceConfigurationRecords/{domainDnsRecord-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/microsoft.graph.verify": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/verificationDnsRecords": {
+      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/domains/{domain-id}/domainNameReferences": {
       "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,31 +41,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/domains": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/verificationDnsRecords": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/domainNameReferences/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/domains/{domain-id}/serviceConfigurationRecords": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/domainNameReferences": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/microsoft.graph.verify": {
-      "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/domains/{domain-id}/serviceConfigurationRecords/{domainDnsRecord-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.Domains.yml",
       "apiVersion": "v1.0-beta"
     }

@@ -5,11 +5,11 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}": {
+    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/assignments/{officeClientConfigurationAssignment-id}": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/officeConfiguration/clientConfigurations": {
+    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -17,7 +17,7 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities": {
+    "/officeConfiguration/clientConfigurations": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -25,7 +25,7 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/assignments/{officeClientConfigurationAssignment-id}": {
+    "/officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
       "apiVersion": "v1.0-beta"
     }

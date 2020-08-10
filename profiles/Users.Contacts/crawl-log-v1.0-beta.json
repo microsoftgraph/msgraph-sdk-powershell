@@ -1,31 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/contactFolders": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts/{contact-id}/extensions/{extension-id}": {
+    "/users/{user-id}/contacts/{contact-id}/photo": {
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -33,39 +9,11 @@
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/contactFolders": {
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -73,27 +21,19 @@
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/contacts/{contact-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts/{contact-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contacts": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions": {
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -101,7 +41,67 @@
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/contacts/{contact-id}/photo": {
+    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Contacts.yml",
       "apiVersion": "v1.0-beta"
     }

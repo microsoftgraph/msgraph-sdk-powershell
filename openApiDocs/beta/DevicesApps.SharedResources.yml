@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -106,6 +106,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -120,7 +122,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -151,14 +153,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
@@ -205,15 +207,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
-          links:
-            appLogCollectionRequests:
-              operationId: user.mobileAppTroubleshootingEvents.GetAppLogCollectionRequests
-              parameters:
-                user-id: $request.path.user-id
-                mobileAppTroubleshootingEvent-id: $request.path.mobileAppTroubleshootingEvent-id
-                appLogCollectionRequest-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mobileAppTroubleshootingEvent
@@ -222,14 +218,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
@@ -247,6 +243,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mobileAppTroubleshootingEvent
+      summary: Delete navigation property mobileAppTroubleshootingEvents for users
+      operationId: users_DeleteMobileAppTroubleshootingEvents
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mobileAppTroubleshootingEvent-id
+          in: path
+          description: 'key: id of mobileAppTroubleshootingEvent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppTroubleshootingEvent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests':
     get:
       tags:
@@ -256,14 +283,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
@@ -337,6 +364,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -351,14 +380,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
@@ -389,21 +418,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
         - name: appLogCollectionRequest-id
           in: path
-          description: 'key: appLogCollectionRequest-id of appLogCollectionRequest'
+          description: 'key: id of appLogCollectionRequest'
           required: true
           schema:
             type: string
@@ -445,6 +474,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mobileAppTroubleshootingEvent
@@ -453,21 +483,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mobileAppTroubleshootingEvent-id
           in: path
-          description: 'key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent'
+          description: 'key: id of mobileAppTroubleshootingEvent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mobileAppTroubleshootingEvent
         - name: appLogCollectionRequest-id
           in: path
-          description: 'key: appLogCollectionRequest-id of appLogCollectionRequest'
+          description: 'key: id of appLogCollectionRequest'
           required: true
           schema:
             type: string
@@ -479,6 +509,44 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mobileAppTroubleshootingEvent
+      summary: Delete navigation property appLogCollectionRequests for users
+      operationId: users.mobileAppTroubleshootingEvents_DeleteAppLogCollectionRequests
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mobileAppTroubleshootingEvent-id
+          in: path
+          description: 'key: id of mobileAppTroubleshootingEvent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppTroubleshootingEvent
+        - name: appLogCollectionRequest-id
+          in: path
+          description: 'key: id of appLogCollectionRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appLogCollectionRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -515,23 +583,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
               description: The collection property of AppLogUploadRequest.
+          additionalProperties:
+            type: object
           description: MobileAppTroubleshootingEvent Entity.
-      example:
-        id: string (identifier)
-        eventDateTime: string (timestamp)
-        correlationId: string
-        troubleshootingErrorDetails:
-          '@odata.type': microsoft.graph.deviceManagementTroubleshootingErrorDetails
-        eventName: string
-        additionalInformation:
-          - '@odata.type': microsoft.graph.keyValuePair
-        managedDeviceIdentifier: string
-        userId: string
-        applicationId: string
-        history:
-          - '@odata.type': microsoft.graph.mobileAppTroubleshootingHistoryItem
-        appLogCollectionRequests:
-          - '@odata.type': microsoft.graph.appLogCollectionRequest
     microsoft.graph.appLogCollectionRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -556,15 +610,9 @@ components:
               description: Time at which the upload log request reached a terminal state
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: AppLogCollectionRequest Entity.
-      example:
-        id: string (identifier)
-        status:
-          '@odata.type': microsoft.graph.appLogUploadState
-        errorMessage: string
-        customLogFolders:
-          - string
-        completedDateTime: string (timestamp)
     microsoft.graph.deviceManagementTroubleshootingEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -591,16 +639,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
               description: A set of string key and string value pairs which provides additional information on the Troubleshooting event
+          additionalProperties:
+            type: object
           description: Event representing an general failure.
-      example:
-        id: string (identifier)
-        eventDateTime: string (timestamp)
-        correlationId: string
-        troubleshootingErrorDetails:
-          '@odata.type': microsoft.graph.deviceManagementTroubleshootingErrorDetails
-        eventName: string
-        additionalInformation:
-          - '@odata.type': microsoft.graph.keyValuePair
     microsoft.graph.mobileAppTroubleshootingHistoryItem:
       title: mobileAppTroubleshootingHistoryItem
       type: object
@@ -612,10 +653,9 @@ components:
           format: date-time
         troubleshootingErrorDetails:
           $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingErrorDetails'
-      example:
-        occurrenceDateTime: string (timestamp)
-        troubleshootingErrorDetails:
-          '@odata.type': microsoft.graph.deviceManagementTroubleshootingErrorDetails
+      additionalProperties:
+        type: object
+      description: History Item contained in the Mobile App Troubleshooting Event.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -623,8 +663,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.appLogUploadState:
       title: appLogUploadState
       enum:
@@ -639,6 +679,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.deviceManagementTroubleshootingErrorDetails:
       title: deviceManagementTroubleshootingErrorDetails
       type: object
@@ -662,13 +704,9 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingErrorResource'
           description: Links to helpful documentation about this failure.
-      example:
-        context: string
-        failure: string
-        failureDetails: string
-        remediation: string
-        resources:
-          - '@odata.type': microsoft.graph.deviceManagementTroubleshootingErrorResource
+      additionalProperties:
+        type: object
+      description: Object containing detailed information about the error and its remediation.
     microsoft.graph.keyValuePair:
       title: keyValuePair
       type: object
@@ -680,9 +718,8 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -701,7 +738,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.deviceManagementTroubleshootingErrorResource:
       title: deviceManagementTroubleshootingErrorResource
       type: object
@@ -713,9 +754,9 @@ components:
           type: string
           description: 'The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}'
           nullable: true
-      example:
-        text: string
-        link: string
+      additionalProperties:
+        type: object
+      description: 'Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.'
     odata.error.detail:
       required:
         - code
@@ -728,6 +769,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -1,211 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/events/{event-id}/calendar/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarPermissions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarPermissions/{calendarPermission-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarPermissions/{calendarPermission-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -213,147 +9,19 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/events/{event-id}/extensions": {
+    "/users/{user-id}/events/{event-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarView/{event-id}/singleValueExtendedProperties": {
+    "/users/{user-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarPermissions/{calendarPermission-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarPermissions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/events/{event-id}/calendar/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -361,23 +29,27 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars": {
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments/{attachment-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances": {
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}": {
+    "/users/{user-id}/events/{event-id}/calendar/calendarPermissions/{calendarPermission-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -385,31 +57,15 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendar/events/{event-id}/attachments/{attachment-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/multiValueExtendedProperties": {
+    "/users/{user-id}/calendarView/{event-id}/singleValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarPermissions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances": {
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -417,59 +73,11 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}": {
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/attachments": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/attachments": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/extensions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}": {
+    "/users/{user-id}/calendar/calendarView/{event-id}/attachments/{attachment-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -477,79 +85,19 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events": {
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarPermissions/{calendarPermission-id}": {
+    "/users/{user-id}/calendar/events/{event-id}/multiValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/events/{event-id}": {
+    "/users/{user-id}/calendar/events/{event-id}/attachments": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendar/events/{event-id}/instances": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/events/{event-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments": {
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -557,7 +105,23 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/singleValueExtendedProperties": {
+    "/users/{user-id}/calendars/{calendar-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/multiValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -565,27 +129,31 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments": {
+    "/users/{user-id}/calendarView/{event-id}/calendar/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions/{extension-id}": {
+    "/users/{user-id}/calendarView/{event-id}/attachments": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/singleValueExtendedProperties": {
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/calendar/singleValueExtendedProperties": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties": {
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/calendar/calendarView/{event-id}/calendar": {
+    "/users/{user-id}/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/extensions": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -593,7 +161,439 @@
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/users/{user-id}/calendar/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarPermissions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarPermissions/{calendarPermission-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarPermissions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/{attachment-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/attachments": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/attachments/{attachment-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/attachments/{attachment-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/extensions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/attachments": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/attachments": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/calendar": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarPermissions/{calendarPermission-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/users/{user-id}/events/{event-id}/calendar/calendarPermissions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarView/{event-id}/calendar/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/multiValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarPermissions": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/instances": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/calendarView/{event-id}/instances/{event-id1}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/attachments/{attachment-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/extensions/{extension-id}": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendars/{calendar-id}/events": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/calendar/events/{event-id}/singleValueExtendedProperties": {
+      "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/events/{event-id}/calendar/calendarView": {
       "originalLocation": "/openApiDocs/beta/Users.Calendar.yml",
       "apiVersion": "v1.0-beta"
     }

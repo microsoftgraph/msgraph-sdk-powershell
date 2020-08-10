@@ -1,10 +1,6 @@
 {
   "resources": [],
   "operations": {
-    "/agreements/{agreement-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/agreements/{agreement-id}/files": {
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
@@ -13,11 +9,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/agreements": {
+    "/agreements/{agreement-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/agreements/{agreement-id}/files/{agreementFile-id}": {
+    "/agreements": {
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -25,11 +21,31 @@
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/agreementAcceptances": {
+    "/agreements/{agreement-id}/acceptances/{agreementAcceptance-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/agreementAcceptances/{agreementAcceptance-id}": {
+    "/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/file": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/agreementAcceptances/$ref": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/file/localizations": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/acceptances": {
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/agreements/{agreement-id}/files/{agreementFileLocalization-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
       "apiVersion": "v1.0-beta"
     }

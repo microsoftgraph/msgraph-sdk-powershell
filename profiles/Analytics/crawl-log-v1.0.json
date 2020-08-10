@@ -1,7 +1,23 @@
 {
   "resources": [],
   "operations": {
+    "/users/{user-id}/insights/shared": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/insights/used": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/insights/used/{usedInsight-id}/resource/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
     "/users/{user-id}/insights/used/{usedInsight-id}/resource": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/insights/trending/{trending-id}": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
@@ -9,11 +25,19 @@
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod": {
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/insights/trending/{trending-id}/resource": {
+    "/users/{user-id}/insights/used/{usedInsight-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/insights": {
+      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
@@ -25,23 +49,15 @@
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/insights/trending/{trending-id}": {
+    "/users/{user-id}/insights/trending/{trending-id}/resource": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/insights": {
+    "/users/{user-id}/insights/trending/{trending-id}/resource/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/insights/used": {
-      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/insights/used/{usedInsight-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/insights/shared": {
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod": {
       "originalLocation": "/openApiDocs/v1.0/Analytics.yml",
       "apiVersion": "v1.0"
     }

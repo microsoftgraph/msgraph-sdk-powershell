@@ -8,6 +8,10 @@
     "/oauth2PermissionGrants": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml",
       "apiVersion": "v1.0"
+    },
+    "/oauth2PermissionGrants/microsoft.graph.delta()": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml",
+      "apiVersion": "v1.0"
     }
   }
 }

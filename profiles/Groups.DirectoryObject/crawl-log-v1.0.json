@@ -1,59 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}": {
+    "/groups/{group-id}/owners/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/transitiveMemberOf": {
+    "/groups/{group-id}/transitiveMemberOf/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/members": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/membersWithLicenseErrors": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/createdOnBehalfOf": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/members/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/memberOf/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/memberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/acceptedSenders/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/rejectedSenders/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/owners": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/acceptedSenders": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/rejectedSenders": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}": {
+    "/groups/{group-id}/transitiveMembers": {
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
@@ -61,11 +17,83 @@
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/owners/{directoryObject-id}": {
+    "/groups/{group-id}/memberOf": {
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
-    "/groups/{group-id}/transitiveMembers": {
+    "/groups/{group-id}/members/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/transitiveMembers/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/createdOnBehalfOf": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/rejectedSenders": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/memberOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/owners/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/members": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/createdOnBehalfOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/owners": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/rejectedSenders/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/acceptedSenders/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/acceptedSenders": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/transitiveMemberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors": {
       "originalLocation": "/openApiDocs/v1.0/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0"
     }

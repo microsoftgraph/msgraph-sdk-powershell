@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -86,6 +86,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directorySetting'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -100,7 +102,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -131,14 +133,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directorySetting-id
           in: path
-          description: 'key: directorySetting-id of directorySetting'
+          description: 'key: id of directorySetting'
           required: true
           schema:
             type: string
@@ -179,6 +181,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directorySetting'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.directorySetting
@@ -187,14 +190,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directorySetting-id
           in: path
-          description: 'key: directorySetting-id of directorySetting'
+          description: 'key: id of directorySetting'
           required: true
           schema:
             type: string
@@ -206,6 +209,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.directorySetting'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directorySetting
+      summary: Delete navigation property settings for groups
+      operationId: groups_DeleteSettings
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: directorySetting-id
+          in: path
+          description: 'key: id of directorySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directorySetting
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -285,6 +319,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directorySetting'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -322,7 +358,7 @@ paths:
       parameters:
         - name: directorySetting-id
           in: path
-          description: 'key: directorySetting-id of directorySetting'
+          description: 'key: id of directorySetting'
           required: true
           schema:
             type: string
@@ -372,7 +408,7 @@ paths:
       parameters:
         - name: directorySetting-id
           in: path
-          description: 'key: directorySetting-id of directorySetting'
+          description: 'key: id of directorySetting'
           required: true
           schema:
             type: string
@@ -398,7 +434,7 @@ paths:
       parameters:
         - name: directorySetting-id
           in: path
-          description: 'key: directorySetting-id of directorySetting'
+          description: 'key: id of directorySetting'
           required: true
           schema:
             type: string
@@ -432,12 +468,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingValue'
-      example:
-        id: string (identifier)
-        displayName: string
-        templateId: string
-        values:
-          - '@odata.type': microsoft.graph.settingValue
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -445,8 +477,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -459,9 +491,8 @@ components:
           type: string
           description: Value of the setting.
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -469,6 +500,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -487,7 +520,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -500,6 +537,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

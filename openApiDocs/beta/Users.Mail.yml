@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -53,14 +53,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
-          links:
-            overrides:
-              operationId: user.inferenceClassification.GetOverrides
-              parameters:
-                user-id: $request.path.user-id
-                inferenceClassificationOverride-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.inferenceClassification
@@ -69,7 +64,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -87,6 +82,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.inferenceClassification
+      summary: Delete navigation property inferenceClassification for users
+      operationId: users_DeleteInferenceClassification
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
     get:
       tags:
@@ -96,7 +115,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -164,6 +183,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -178,7 +199,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -209,14 +230,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: inferenceClassificationOverride-id
           in: path
-          description: 'key: inferenceClassificationOverride-id of inferenceClassificationOverride'
+          description: 'key: id of inferenceClassificationOverride'
           required: true
           schema:
             type: string
@@ -256,6 +277,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.inferenceClassification
@@ -264,14 +286,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: inferenceClassificationOverride-id
           in: path
-          description: 'key: inferenceClassificationOverride-id of inferenceClassificationOverride'
+          description: 'key: id of inferenceClassificationOverride'
           required: true
           schema:
             type: string
@@ -289,6 +311,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.inferenceClassification
+      summary: Delete navigation property overrides for users
+      operationId: users.inferenceClassification_DeleteOverrides
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: inferenceClassificationOverride-id
+          in: path
+          description: 'key: id of inferenceClassificationOverride'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inferenceClassificationOverride
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders':
     get:
       tags:
@@ -298,7 +351,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -390,6 +443,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -404,7 +459,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -435,14 +490,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -496,44 +551,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: user.mailFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: user.mailFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            messages:
-              operationId: user.mailFolders.GetMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $response.body#/id
-            messageRules:
-              operationId: user.mailFolders.GetMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                messageRule-id: $response.body#/id
-            childFolders:
-              operationId: user.mailFolders.GetChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $response.body#/id
-            userConfigurations:
-              operationId: user.mailFolders.GetUserConfigurations
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                userConfiguration-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -542,14 +562,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -567,6 +587,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property mailFolders for users
+      operationId: users_DeleteMailFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders':
     get:
       tags:
@@ -576,14 +627,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -675,6 +726,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -689,14 +742,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -727,21 +780,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -795,50 +848,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: mailFolder.childFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: mailFolder.childFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            messages:
-              operationId: mailFolder.childFolders.GetMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $response.body#/id
-            messageRules:
-              operationId: mailFolder.childFolders.GetMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                messageRule-id: $response.body#/id
-            childFolders:
-              operationId: mailFolder.childFolders.GetChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $response.body#/id
-                mailFolder-id1: $request.path.mailFolder-id1
-            userConfigurations:
-              operationId: mailFolder.childFolders.GetUserConfigurations
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                userConfiguration-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -847,21 +859,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: mailFolder-id1
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -879,6 +891,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property childFolders for users
+      operationId: users.mailFolders_DeleteChildFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
     get:
       tags:
@@ -888,14 +938,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -981,6 +1031,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.messageRule'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -995,14 +1047,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -1033,21 +1085,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: messageRule-id of messageRule'
+          description: 'key: id of messageRule'
           required: true
           schema:
             type: string
@@ -1093,6 +1145,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -1101,21 +1154,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: messageRule-id
           in: path
-          description: 'key: messageRule-id of messageRule'
+          description: 'key: id of messageRule'
           required: true
           schema:
             type: string
@@ -1133,6 +1186,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property messageRules for users
+      operationId: users.mailFolders_DeleteMessageRules
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: messageRule-id
+          in: path
+          description: 'key: id of messageRule'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: messageRule
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
     get:
       tags:
@@ -1142,14 +1233,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -1320,6 +1411,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.message'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1334,14 +1427,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -1372,21 +1465,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1465,44 +1558,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            singleValueExtendedProperties:
-              operationId: mailFolder.messages.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: mailFolder.messages.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            attachments:
-              operationId: mailFolder.messages.GetAttachments
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-                attachment-id: $response.body#/id
-            extensions:
-              operationId: mailFolder.messages.GetExtensions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-                extension-id: $response.body#/id
-            mentions:
-              operationId: mailFolder.messages.GetMentions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-                mention-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -1511,21 +1569,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1543,6 +1601,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property messages for users
+      operationId: users.mailFolders_DeleteMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -1552,21 +1648,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1643,6 +1739,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1657,21 +1755,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1702,28 +1800,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -1766,6 +1864,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -1774,28 +1873,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -1813,6 +1912,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property attachments for users
+      operationId: users.mailFolders.messages_DeleteAttachments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -1822,21 +1966,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1898,6 +2042,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1912,21 +2058,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -1957,28 +2103,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -2016,6 +2162,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -2024,28 +2171,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -2063,6 +2210,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property extensions for users
+      operationId: users.mailFolders.messages_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/mentions':
     get:
       tags:
@@ -2072,21 +2264,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2172,6 +2364,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mention'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2186,21 +2380,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2231,28 +2425,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: mention-id
           in: path
-          description: 'key: mention-id of mention'
+          description: 'key: id of mention'
           required: true
           schema:
             type: string
@@ -2298,6 +2492,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -2306,28 +2501,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: mention-id
           in: path
-          description: 'key: mention-id of mention'
+          description: 'key: id of mention'
           required: true
           schema:
             type: string
@@ -2345,6 +2540,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property mentions for users
+      operationId: users.mailFolders.messages_DeleteMentions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: mention-id
+          in: path
+          description: 'key: id of mention'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mention
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -2354,21 +2594,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2433,6 +2673,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2447,21 +2689,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2492,28 +2734,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2552,6 +2794,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -2560,28 +2803,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2599,6 +2842,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.mailFolders.messages_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -2608,21 +2896,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2687,6 +2975,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2701,21 +2991,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -2746,28 +3036,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2806,6 +3096,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -2814,28 +3105,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2853,6 +3144,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.mailFolders.messages_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -2862,14 +3198,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -2934,6 +3270,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2948,14 +3286,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -2986,21 +3324,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3039,6 +3377,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -3047,21 +3386,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3079,6 +3418,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.mailFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -3088,14 +3465,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -3160,6 +3537,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3174,14 +3553,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -3212,21 +3591,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3265,6 +3644,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -3273,21 +3653,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3305,6 +3685,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.mailFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/userConfigurations':
     get:
       tags:
@@ -3314,14 +3732,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -3386,6 +3804,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.userConfiguration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3400,14 +3820,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
@@ -3438,21 +3858,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: userConfiguration-id
           in: path
-          description: 'key: userConfiguration-id of userConfiguration'
+          description: 'key: id of userConfiguration'
           required: true
           schema:
             type: string
@@ -3491,6 +3911,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
@@ -3499,21 +3920,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: mailFolder-id
           in: path
-          description: 'key: mailFolder-id of mailFolder'
+          description: 'key: id of mailFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: userConfiguration-id
           in: path
-          description: 'key: userConfiguration-id of userConfiguration'
+          description: 'key: id of userConfiguration'
           required: true
           schema:
             type: string
@@ -3531,6 +3952,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property userConfigurations for users
+      operationId: users.mailFolders_DeleteUserConfigurations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: 'key: id of mailFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: userConfiguration-id
+          in: path
+          description: 'key: id of userConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages':
     get:
       tags:
@@ -3540,7 +3999,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -3711,6 +4170,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.message'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3725,7 +4186,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -3756,14 +4217,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -3842,39 +4303,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            singleValueExtendedProperties:
-              operationId: user.messages.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: user.messages.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            attachments:
-              operationId: user.messages.GetAttachments
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-                attachment-id: $response.body#/id
-            extensions:
-              operationId: user.messages.GetExtensions
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-                extension-id: $response.body#/id
-            mentions:
-              operationId: user.messages.GetMentions
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-                mention-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -3883,14 +4314,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -3908,6 +4339,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property messages for users
+      operationId: users_DeleteMessages
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments':
     get:
       tags:
@@ -3917,14 +4379,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4001,6 +4463,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4015,14 +4479,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4053,21 +4517,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -4110,6 +4574,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -4118,21 +4583,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -4150,6 +4615,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property attachments for users
+      operationId: users.messages_DeleteAttachments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -4159,14 +4662,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4228,6 +4731,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4242,14 +4747,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4280,21 +4785,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -4332,6 +4837,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -4340,21 +4846,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -4372,6 +4878,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property extensions for users
+      operationId: users.messages_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/mentions':
     get:
       tags:
@@ -4381,14 +4925,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4474,6 +5018,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mention'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4488,14 +5034,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4526,21 +5072,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: mention-id
           in: path
-          description: 'key: mention-id of mention'
+          description: 'key: id of mention'
           required: true
           schema:
             type: string
@@ -4586,6 +5132,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mention'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -4594,21 +5141,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: mention-id
           in: path
-          description: 'key: mention-id of mention'
+          description: 'key: id of mention'
           required: true
           schema:
             type: string
@@ -4626,6 +5173,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property mentions for users
+      operationId: users.messages_DeleteMentions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: mention-id
+          in: path
+          description: 'key: id of mention'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mention
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -4635,14 +5220,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4707,6 +5292,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4721,14 +5308,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4759,21 +5346,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4812,6 +5399,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -4820,21 +5408,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4852,6 +5440,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.messages_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -4861,14 +5487,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4933,6 +5559,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4947,14 +5575,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
@@ -4985,21 +5613,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5038,6 +5666,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
@@ -5046,21 +5675,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: message-id
           in: path
-          description: 'key: message-id of message'
+          description: 'key: id of message'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5072,6 +5701,44 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.message
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.messages_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: 'key: id of message'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -5091,10 +5758,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
-      example:
-        id: string (identifier)
-        overrides:
-          - '@odata.type': microsoft.graph.inferenceClassificationOverride
+          additionalProperties:
+            type: object
     microsoft.graph.inferenceClassificationOverride:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5105,12 +5770,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassificationType'
             senderEmailAddress:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      example:
-        id: string (identifier)
-        classifyAs:
-          '@odata.type': microsoft.graph.inferenceClassificationType
-        senderEmailAddress:
-          '@odata.type': microsoft.graph.emailAddress
+          additionalProperties:
+            type: object
     microsoft.graph.mailFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5178,26 +5839,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userConfiguration'
-      example:
-        id: string (identifier)
-        displayName: string
-        parentFolderId: string
-        childFolderCount: integer
-        unreadItemCount: integer
-        totalItemCount: integer
-        wellKnownName: string
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        messages:
-          - '@odata.type': microsoft.graph.message
-        messageRules:
-          - '@odata.type': microsoft.graph.messageRule
-        childFolders:
-          - '@odata.type': microsoft.graph.mailFolder
-        userConfigurations:
-          - '@odata.type': microsoft.graph.userConfiguration
+          additionalProperties:
+            type: object
     microsoft.graph.messageRule:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5233,19 +5876,8 @@ components:
               type: boolean
               description: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
               nullable: true
-      example:
-        id: string (identifier)
-        displayName: string
-        sequence: integer
-        conditions:
-          '@odata.type': microsoft.graph.messageRulePredicates
-        actions:
-          '@odata.type': microsoft.graph.messageRuleActions
-        exceptions:
-          '@odata.type': microsoft.graph.messageRulePredicates
-        isEnabled: true
-        hasError: true
-        isReadOnly: true
+          additionalProperties:
+            type: object
     microsoft.graph.message:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -5386,66 +6018,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mention'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
-        receivedDateTime: string (timestamp)
-        sentDateTime: string (timestamp)
-        hasAttachments: true
-        internetMessageId: string
-        internetMessageHeaders:
-          - '@odata.type': microsoft.graph.internetMessageHeader
-        subject: string
-        body:
-          '@odata.type': microsoft.graph.itemBody
-        bodyPreview: string
-        importance:
-          '@odata.type': microsoft.graph.importance
-        parentFolderId: string
-        sender:
-          '@odata.type': microsoft.graph.recipient
-        from:
-          '@odata.type': microsoft.graph.recipient
-        toRecipients:
-          - '@odata.type': microsoft.graph.recipient
-        ccRecipients:
-          - '@odata.type': microsoft.graph.recipient
-        bccRecipients:
-          - '@odata.type': microsoft.graph.recipient
-        replyTo:
-          - '@odata.type': microsoft.graph.recipient
-        conversationId: string
-        conversationIndex: string
-        uniqueBody:
-          '@odata.type': microsoft.graph.itemBody
-        isDeliveryReceiptRequested: true
-        isReadReceiptRequested: true
-        isRead: true
-        isDraft: true
-        webLink: string
-        mentionsPreview:
-          '@odata.type': microsoft.graph.mentionsPreview
-        inferenceClassification:
-          '@odata.type': microsoft.graph.inferenceClassificationType
-        unsubscribeData:
-          - string
-        unsubscribeEnabled: true
-        flag:
-          '@odata.type': microsoft.graph.followupFlag
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        attachments:
-          - '@odata.type': microsoft.graph.attachment
-        extensions:
-          - '@odata.type': microsoft.graph.extension
-        mentions:
-          - '@odata.type': microsoft.graph.mention
+          additionalProperties:
+            type: object
     microsoft.graph.attachment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5475,20 +6049,15 @@ components:
             isInline:
               type: boolean
               description: 'true if the attachment is an inline attachment; otherwise, false.'
-      example:
-        id: string (identifier)
-        lastModifiedDateTime: string (timestamp)
-        name: string
-        contentType: string
-        size: integer
-        isInline: true
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.mention:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5521,18 +6090,8 @@ components:
             application:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        mentioned:
-          '@odata.type': microsoft.graph.emailAddress
-        mentionText: string
-        clientReference: string
-        createdBy:
-          '@odata.type': microsoft.graph.emailAddress
-        createdDateTime: string (timestamp)
-        serverCreatedDateTime: string (timestamp)
-        deepLink: string
-        application: string
+          additionalProperties:
+            type: object
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5545,10 +6104,8 @@ components:
                 type: string
                 nullable: true
               description: A collection of property values.
-      example:
-        id: string (identifier)
-        value:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.singleValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5559,9 +6116,8 @@ components:
               type: string
               description: A property value.
               nullable: true
-      example:
-        id: string (identifier)
-        value: string
+          additionalProperties:
+            type: object
     microsoft.graph.userConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5572,9 +6128,8 @@ components:
               type: string
               format: base64url
               nullable: true
-      example:
-        id: string (identifier)
-        binaryData: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5582,8 +6137,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.inferenceClassificationType:
       title: inferenceClassificationType
       enum:
@@ -5602,9 +6157,8 @@ components:
           type: string
           description: The email address of the person or entity.
           nullable: true
-      example:
-        name: string
-        address: string
+      additionalProperties:
+        type: object
     microsoft.graph.messageRulePredicates:
       title: messageRulePredicates
       type: object
@@ -5737,50 +6291,8 @@ components:
           nullable: true
         withinSizeRange:
           $ref: '#/components/schemas/microsoft.graph.sizeRange'
-      example:
-        categories:
-          - string
-        subjectContains:
-          - string
-        bodyContains:
-          - string
-        bodyOrSubjectContains:
-          - string
-        senderContains:
-          - string
-        recipientContains:
-          - string
-        headerContains:
-          - string
-        messageActionFlag:
-          '@odata.type': microsoft.graph.messageActionFlag
-        importance:
-          '@odata.type': microsoft.graph.importance
-        sensitivity:
-          '@odata.type': microsoft.graph.sensitivity
-        fromAddresses:
-          - '@odata.type': microsoft.graph.recipient
-        sentToAddresses:
-          - '@odata.type': microsoft.graph.recipient
-        sentToMe: true
-        sentOnlyToMe: true
-        sentCcMe: true
-        sentToOrCcMe: true
-        notSentToMe: true
-        hasAttachments: true
-        isApprovalRequest: true
-        isAutomaticForward: true
-        isAutomaticReply: true
-        isEncrypted: true
-        isMeetingRequest: true
-        isMeetingResponse: true
-        isNonDeliveryReport: true
-        isPermissionControlled: true
-        isReadReceipt: true
-        isSigned: true
-        isVoicemail: true
-        withinSizeRange:
-          '@odata.type': microsoft.graph.sizeRange
+      additionalProperties:
+        type: object
     microsoft.graph.messageRuleActions:
       title: messageRuleActions
       type: object
@@ -5832,23 +6344,8 @@ components:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
           nullable: true
-      example:
-        moveToFolder: string
-        copyToFolder: string
-        delete: true
-        permanentDelete: true
-        markAsRead: true
-        markImportance:
-          '@odata.type': microsoft.graph.importance
-        forwardTo:
-          - '@odata.type': microsoft.graph.recipient
-        forwardAsAttachmentTo:
-          - '@odata.type': microsoft.graph.recipient
-        redirectTo:
-          - '@odata.type': microsoft.graph.recipient
-        assignCategories:
-          - string
-        stopProcessingRules: true
+      additionalProperties:
+        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5877,13 +6374,8 @@ components:
                 type: string
                 nullable: true
               description: The categories associated with the item
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.internetMessageHeader:
       title: internetMessageHeader
       type: object
@@ -5896,9 +6388,8 @@ components:
           type: string
           description: The value in a key-value pair.
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -5909,10 +6400,8 @@ components:
           type: string
           description: The content of the item.
           nullable: true
-      example:
-        contentType:
-          '@odata.type': microsoft.graph.bodyType
-        content: string
+      additionalProperties:
+        type: object
     microsoft.graph.importance:
       title: importance
       enum:
@@ -5926,9 +6415,8 @@ components:
       properties:
         emailAddress:
           $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      example:
-        emailAddress:
-          '@odata.type': microsoft.graph.emailAddress
+      additionalProperties:
+        type: object
     microsoft.graph.mentionsPreview:
       title: mentionsPreview
       type: object
@@ -5936,8 +6424,8 @@ components:
         isMentioned:
           type: boolean
           nullable: true
-      example:
-        isMentioned: true
+      additionalProperties:
+        type: object
     microsoft.graph.followupFlag:
       title: followupFlag
       type: object
@@ -5950,15 +6438,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         flagStatus:
           $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
-      example:
-        completedDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        dueDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        startDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        flagStatus:
-          '@odata.type': microsoft.graph.followupFlagStatus
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -5966,6 +6447,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.messageActionFlag:
       title: messageActionFlag
       enum:
@@ -6007,9 +6490,8 @@ components:
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
-      example:
-        minimumSize: integer
-        maximumSize: integer
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -6027,9 +6509,8 @@ components:
           type: string
           description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
-      example:
-        dateTime: string
-        timeZone: string
+      additionalProperties:
+        type: object
     microsoft.graph.followupFlagStatus:
       title: followupFlagStatus
       enum:
@@ -6055,7 +6536,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -6068,6 +6553,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

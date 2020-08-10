@@ -1,11 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/directory/deletedItems/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -17,7 +13,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directory/featureRolloutPolicies": {
+    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -25,7 +21,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/directory/featureRolloutPolicies/{featureRolloutPolicy-id}": {
+    "/directory/deletedItems/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/directory/featureRolloutPolicies": {
       "originalLocation": "/openApiDocs/beta/Identity.Directory.yml",
       "apiVersion": "v1.0-beta"
     }

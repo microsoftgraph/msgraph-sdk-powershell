@@ -1,59 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}": {
+    "/groups/{group-id}/owners/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/transitiveMemberOf": {
+    "/groups/{group-id}/transitiveMemberOf/$ref": {
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/members": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/membersWithLicenseErrors": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/createdOnBehalfOf": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/members/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/memberOf/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/memberOf": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/acceptedSenders/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/rejectedSenders/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/owners": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/acceptedSenders": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/rejectedSenders": {
-      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}": {
+    "/groups/{group-id}/transitiveMembers": {
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -61,11 +17,83 @@
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/owners/{directoryObject-id}": {
+    "/groups/{group-id}/memberOf": {
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/groups/{group-id}/transitiveMembers": {
+    "/groups/{group-id}/members/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/transitiveMembers/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/createdOnBehalfOf": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/rejectedSenders": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/memberOf/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/owners/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/members": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/createdOnBehalfOf/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/memberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/transitiveMemberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/owners": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors/$ref": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/rejectedSenders/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/acceptedSenders/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/members/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/acceptedSenders": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/transitiveMemberOf": {
+      "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/groups/{group-id}/membersWithLicenseErrors": {
       "originalLocation": "/openApiDocs/beta/Groups.DirectoryObject.yml",
       "apiVersion": "v1.0-beta"
     }

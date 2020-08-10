@@ -48,15 +48,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
-          links:
-            deletedItems:
-              operationId: directory.GetDeletedItems
-              parameters:
-                directoryObject-id: $response.body#/id
-            featureRolloutPolicies:
-              operationId: directory.GetFeatureRolloutPolicies
-              parameters:
-                featureRolloutPolicy-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -145,6 +136,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -182,7 +175,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -221,6 +214,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - directory.directoryObject
@@ -229,7 +223,7 @@ paths:
       parameters:
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -241,6 +235,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.directoryObject
+      summary: Delete navigation property deletedItems for directory
+      operationId: directory_DeleteDeletedItems
+      parameters:
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -328,6 +346,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -365,7 +385,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
@@ -408,14 +428,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-          links:
-            appliesTo:
-              operationId: directory.featureRolloutPolicies.GetAppliesTo
-              parameters:
-                featureRolloutPolicy-id: $request.path.featureRolloutPolicy-id
-                directoryObject-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - directory.featureRolloutPolicy
@@ -424,7 +439,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
@@ -442,6 +457,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Delete navigation property featureRolloutPolicies for directory
+      operationId: directory_DeleteFeatureRolloutPolicies
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo':
     get:
       tags:
@@ -451,7 +490,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
@@ -516,6 +555,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -530,7 +571,7 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
@@ -561,14 +602,14 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -607,6 +648,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - directory.featureRolloutPolicy
@@ -615,14 +657,14 @@ paths:
       parameters:
         - name: featureRolloutPolicy-id
           in: path
-          description: 'key: featureRolloutPolicy-id of featureRolloutPolicy'
+          description: 'key: id of featureRolloutPolicy'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: featureRolloutPolicy
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -634,6 +676,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Delete navigation property appliesTo for directory
+      operationId: directory.featureRolloutPolicies_DeleteAppliesTo
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -657,12 +730,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-      example:
-        id: string (identifier)
-        deletedItems:
-          - '@odata.type': microsoft.graph.directoryObject
-        featureRolloutPolicies:
-          - '@odata.type': microsoft.graph.featureRolloutPolicy
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -674,10 +743,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.featureRolloutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -699,16 +767,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        feature:
-          '@odata.type': microsoft.graph.stagedFeatureName
-        isEnabled: true
-        isAppliedToOrganization: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -716,14 +776,15 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.stagedFeatureName:
       title: stagedFeatureName
       enum:
         - passthroughAuthentication
         - seamlessSso
         - passwordHashSync
+        - emailAsAlternateId
         - unknownFutureValue
       type: string
     odata.error:
@@ -733,6 +794,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -751,7 +814,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -764,6 +831,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

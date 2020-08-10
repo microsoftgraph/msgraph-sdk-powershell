@@ -1,27 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/connections/{externalConnection-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections/{externalConnection-id}/items/{externalItem-id}": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections/{externalConnection-id}": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections/{externalConnection-id}/items": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/external/connections": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections": {
       "originalLocation": "/openApiDocs/beta/Search.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -29,15 +9,7 @@
       "originalLocation": "/openApiDocs/beta/Search.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/external": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections/{externalConnection-id}/operations": {
-      "originalLocation": "/openApiDocs/beta/Search.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/connections/{externalConnection-id}/operations/{connectionOperation-id}": {
+    "/external/connections/{externalConnection-id}": {
       "originalLocation": "/openApiDocs/beta/Search.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -45,7 +17,7 @@
       "originalLocation": "/openApiDocs/beta/Search.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/external/connections/{externalConnection-id}": {
+    "/external": {
       "originalLocation": "/openApiDocs/beta/Search.yml",
       "apiVersion": "v1.0-beta"
     }

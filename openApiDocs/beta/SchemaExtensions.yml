@@ -85,6 +85,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.schemaExtension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -122,7 +124,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: schemaExtension-id of schemaExtension'
+          description: 'key: id of schemaExtension'
           required: true
           schema:
             type: string
@@ -174,7 +176,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: schemaExtension-id of schemaExtension'
+          description: 'key: id of schemaExtension'
           required: true
           schema:
             type: string
@@ -200,7 +202,7 @@ paths:
       parameters:
         - name: schemaExtension-id
           in: path
-          description: 'key: schemaExtension-id of schemaExtension'
+          description: 'key: id of schemaExtension'
           required: true
           schema:
             type: string
@@ -244,15 +246,8 @@ components:
             owner:
               type: string
               description: 'The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application''s appId will be set as the owner. In either case, the signed-in user must be the owner of the application. Once set, this property is read-only and cannot be changed.'
-      example:
-        id: string (identifier)
-        description: string
-        targetTypes:
-          - string
-        properties:
-          - '@odata.type': microsoft.graph.extensionSchemaProperty
-        status: string
-        owner: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -260,8 +255,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.extensionSchemaProperty:
       title: extensionSchemaProperty
       type: object
@@ -274,9 +269,8 @@ components:
           type: string
           description: 'The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.'
           nullable: true
-      example:
-        name: string
-        type: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -284,6 +278,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -302,7 +298,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -315,6 +315,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

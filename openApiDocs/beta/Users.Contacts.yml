@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -94,6 +94,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -108,7 +110,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -139,14 +141,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -193,32 +195,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: user.contactFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: user.contactFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            contacts:
-              operationId: user.contactFolders.GetContacts
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $response.body#/id
-            childFolders:
-              operationId: user.contactFolders.GetChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -227,14 +206,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -252,6 +231,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property contactFolders for users
+      operationId: users_DeleteContactFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders':
     get:
       tags:
@@ -261,14 +271,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -347,6 +357,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.contactFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -361,14 +373,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -399,21 +411,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -460,36 +472,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: contactFolder.childFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: contactFolder.childFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            contacts:
-              operationId: contactFolder.childFolders.GetContacts
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-                contact-id: $response.body#/id
-            childFolders:
-              operationId: contactFolder.childFolders.GetChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $response.body#/id
-                contactFolder-id1: $request.path.contactFolder-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -498,21 +483,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contactFolder-id1
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -530,6 +515,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property childFolders for users
+      operationId: users.contactFolders_DeleteChildFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts':
     get:
       tags:
@@ -539,14 +562,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -727,6 +750,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.contact'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -741,14 +766,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -779,21 +804,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -874,37 +899,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-          links:
-            singleValueExtendedProperties:
-              operationId: contactFolder.contacts.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: contactFolder.contacts.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            photo:
-              operationId: contactFolder.contacts.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-                profilePhoto-id: $response.body#/id
-            extensions:
-              operationId: contactFolder.contacts.GetExtensions
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -913,21 +910,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -945,6 +942,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property contacts for users
+      operationId: users.contactFolders_DeleteContacts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions':
     get:
       tags:
@@ -954,21 +989,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1030,6 +1065,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1044,21 +1081,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1089,28 +1126,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -1148,6 +1185,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1156,28 +1194,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -1195,6 +1233,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property extensions for users
+      operationId: users.contactFolders.contacts_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -1204,21 +1287,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1283,6 +1366,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1297,21 +1382,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1342,28 +1427,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1402,6 +1487,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1410,28 +1496,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1449,6 +1535,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.contactFolders.contacts_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -1458,21 +1589,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1512,6 +1643,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1520,21 +1652,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1552,6 +1684,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property photo for users
+      operationId: users.contactFolders.contacts_DeletePhoto
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -1561,21 +1731,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1640,6 +1810,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1654,21 +1826,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -1699,28 +1871,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1759,6 +1931,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -1767,28 +1940,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1806,6 +1979,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.contactFolders.contacts_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -1815,14 +2033,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -1887,6 +2105,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1901,14 +2121,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -1939,21 +2159,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1992,6 +2212,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -2000,21 +2221,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2032,6 +2253,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.contactFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -2041,14 +2300,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -2113,6 +2372,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2127,14 +2388,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
@@ -2165,21 +2426,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2218,6 +2479,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
@@ -2226,21 +2488,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contactFolder-id
           in: path
-          description: 'key: contactFolder-id of contactFolder'
+          description: 'key: id of contactFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2258,6 +2520,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.contactFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts':
     get:
       tags:
@@ -2267,7 +2567,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -2448,6 +2748,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.contact'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2462,7 +2764,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -2493,14 +2795,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2581,33 +2883,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-          links:
-            singleValueExtendedProperties:
-              operationId: user.contacts.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: user.contacts.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            photo:
-              operationId: user.contacts.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-                profilePhoto-id: $response.body#/id
-            extensions:
-              operationId: user.contacts.GetExtensions
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -2616,14 +2894,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2641,6 +2919,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete navigation property contacts for users
+      operationId: users_DeleteContacts
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/extensions':
     get:
       tags:
@@ -2650,14 +2959,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2719,6 +3028,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2733,14 +3044,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2771,21 +3082,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -2823,6 +3134,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -2831,21 +3143,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -2863,6 +3175,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete navigation property extensions for users
+      operationId: users.contacts_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -2872,14 +3222,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2944,6 +3294,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2958,14 +3310,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -2996,21 +3348,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3049,6 +3401,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -3057,21 +3410,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3089,6 +3442,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.contacts_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -3098,14 +3489,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -3145,6 +3536,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -3153,14 +3545,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -3178,6 +3570,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete navigation property photo for users
+      operationId: users.contacts_DeletePhoto
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -3187,14 +3610,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -3259,6 +3682,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3273,14 +3698,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
@@ -3311,21 +3736,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3364,6 +3789,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
@@ -3372,21 +3798,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: contact-id
           in: path
-          description: 'key: contact-id of contact'
+          description: 'key: id of contact'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3398,6 +3824,44 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contact
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.contacts_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -3443,19 +3907,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-      example:
-        id: string (identifier)
-        parentFolderId: string
-        displayName: string
-        wellKnownName: string
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        contacts:
-          - '@odata.type': microsoft.graph.contact
-        childFolders:
-          - '@odata.type': microsoft.graph.contactFolder
+          additionalProperties:
+            type: object
     microsoft.graph.contact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -3615,68 +4068,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the contact. Read-only. Nullable.
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
-        parentFolderId: string
-        birthday: string (timestamp)
-        fileAs: string
-        displayName: string
-        givenName: string
-        initials: string
-        middleName: string
-        nickName: string
-        surname: string
-        title: string
-        yomiGivenName: string
-        yomiSurname: string
-        yomiCompanyName: string
-        generation: string
-        emailAddresses:
-          - '@odata.type': microsoft.graph.typedEmailAddress
-        websites:
-          - '@odata.type': microsoft.graph.website
-        imAddresses:
-          - string
-        jobTitle: string
-        companyName: string
-        department: string
-        officeLocation: string
-        profession: string
-        assistantName: string
-        manager: string
-        phones:
-          - '@odata.type': microsoft.graph.phone
-        postalAddresses:
-          - '@odata.type': microsoft.graph.physicalAddress
-        spouseName: string
-        personalNotes: string
-        children:
-          - string
-        weddingAnniversary: string (timestamp)
-        gender: string
-        isFavorite: true
-        flag:
-          '@odata.type': microsoft.graph.followupFlag
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        photo:
-          '@odata.type': microsoft.graph.profilePhoto
-        extensions:
-          - '@odata.type': microsoft.graph.extension
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3689,10 +4089,8 @@ components:
                 type: string
                 nullable: true
               description: A collection of property values.
-      example:
-        id: string (identifier)
-        value:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.profilePhoto:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3713,10 +4111,8 @@ components:
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
-      example:
-        id: string (identifier)
-        height: integer
-        width: integer
+          additionalProperties:
+            type: object
     microsoft.graph.singleValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3727,9 +4123,8 @@ components:
               type: string
               description: A property value.
               nullable: true
-      example:
-        id: string (identifier)
-        value: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -3737,8 +4132,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3767,13 +4162,8 @@ components:
                 type: string
                 nullable: true
               description: The categories associated with the item
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.typedEmailAddress:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.emailAddress'
@@ -3785,12 +4175,8 @@ components:
             otherLabel:
               type: string
               nullable: true
-      example:
-        name: string
-        address: string
-        type:
-          '@odata.type': microsoft.graph.emailType
-        otherLabel: string
+          additionalProperties:
+            type: object
     microsoft.graph.website:
       title: website
       type: object
@@ -3805,11 +4191,8 @@ components:
           type: string
           description: The display name of the web site.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.websiteType
-        address: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.phone:
       title: phone
       type: object
@@ -3820,10 +4203,8 @@ components:
           type: string
           description: The phone number.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.phoneType
-        number: string
+      additionalProperties:
+        type: object
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -3853,15 +4234,8 @@ components:
           type: string
           description: The postal code.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.physicalAddressType
-        postOfficeBox: string
-        street: string
-        city: string
-        state: string
-        countryOrRegion: string
-        postalCode: string
+      additionalProperties:
+        type: object
     microsoft.graph.followupFlag:
       title: followupFlag
       type: object
@@ -3874,15 +4248,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         flagStatus:
           $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
-      example:
-        completedDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        dueDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        startDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        flagStatus:
-          '@odata.type': microsoft.graph.followupFlagStatus
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -3890,6 +4257,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.emailAddress:
       title: emailAddress
       type: object
@@ -3902,9 +4271,8 @@ components:
           type: string
           description: The email address of the person or entity.
           nullable: true
-      example:
-        name: string
-        address: string
+      additionalProperties:
+        type: object
     microsoft.graph.emailType:
       title: emailType
       enum:
@@ -3956,9 +4324,8 @@ components:
           type: string
           description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
-      example:
-        dateTime: string
-        timeZone: string
+      additionalProperties:
+        type: object
     microsoft.graph.followupFlagStatus:
       title: followupFlagStatus
       enum:
@@ -3984,7 +4351,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -3997,6 +4368,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -1,15 +1,19 @@
 {
   "resources": [],
   "operations": {
+    "/invitations/{invitation-id}/invitedUser/$ref": {
+      "originalLocation": "/openApiDocs/beta/Identity.Invitations.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/invitations/{invitation-id}/invitedUser": {
+      "originalLocation": "/openApiDocs/beta/Identity.Invitations.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/invitations": {
       "originalLocation": "/openApiDocs/beta/Identity.Invitations.yml",
       "apiVersion": "v1.0-beta"
     },
     "/invitations/{invitation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Invitations.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/invitations/{invitation-id}/invitedUser": {
       "originalLocation": "/openApiDocs/beta/Identity.Invitations.yml",
       "apiVersion": "v1.0-beta"
     }

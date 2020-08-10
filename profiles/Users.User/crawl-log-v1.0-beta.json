@@ -5,11 +5,11 @@
       "originalLocation": "/openApiDocs/beta/Users.User.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/presence": {
+    "/users": {
       "originalLocation": "/openApiDocs/beta/Users.User.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users": {
+    "/users/{user-id}/presence": {
       "originalLocation": "/openApiDocs/beta/Users.User.yml",
       "apiVersion": "v1.0-beta"
     }

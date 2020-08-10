@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -80,6 +80,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -95,14 +97,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -141,6 +143,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/createdObjects/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of createdObjects from users
+      operationId: users_ListRefCreatedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to createdObjects for users
+      operationId: users_CreateRefCreatedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property createdObjects for users
+      operationId: users_DeleteRefCreatedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/directReports':
     get:
       tags:
@@ -150,7 +269,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -215,6 +334,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -230,14 +351,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -276,6 +397,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/directReports/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of directReports from users
+      operationId: users_ListRefDirectReports
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to directReports for users
+      operationId: users_CreateRefDirectReports
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property directReports for users
+      operationId: users_DeleteRefDirectReports
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/manager':
     get:
       tags:
@@ -285,7 +523,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -324,6 +562,81 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/manager/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of manager from users
+      operationId: users_GetRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.directoryObject
+      summary: Update the ref of navigation property manager in users
+      operationId: users_UpdateRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property manager for users
+      operationId: users_DeleteRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/memberOf':
     get:
       tags:
@@ -333,7 +646,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -398,6 +711,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -413,14 +728,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -459,6 +774,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/memberOf/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of memberOf from users
+      operationId: users_ListRefMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to memberOf for users
+      operationId: users_CreateRefMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property memberOf for users
+      operationId: users_DeleteRefMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/ownedDevices':
     get:
       tags:
@@ -468,7 +900,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -533,6 +965,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -548,14 +982,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -594,6 +1028,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/ownedDevices/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of ownedDevices from users
+      operationId: users_ListRefOwnedDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to ownedDevices for users
+      operationId: users_CreateRefOwnedDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property ownedDevices for users
+      operationId: users_DeleteRefOwnedDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/ownedObjects':
     get:
       tags:
@@ -603,7 +1154,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -668,6 +1219,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -683,14 +1236,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -729,6 +1282,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/ownedObjects/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of ownedObjects from users
+      operationId: users_ListRefOwnedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to ownedObjects for users
+      operationId: users_CreateRefOwnedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property ownedObjects for users
+      operationId: users_DeleteRefOwnedObjects
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/registeredDevices':
     get:
       tags:
@@ -738,7 +1408,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -803,6 +1473,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -818,14 +1490,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -864,6 +1536,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/registeredDevices/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of registeredDevices from users
+      operationId: users_ListRefRegisteredDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to registeredDevices for users
+      operationId: users_CreateRefRegisteredDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property registeredDevices for users
+      operationId: users_DeleteRefRegisteredDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/transitiveMemberOf':
     get:
       tags:
@@ -873,7 +1662,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -938,6 +1727,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -953,14 +1744,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -999,6 +1790,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/transitiveMemberOf/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of transitiveMemberOf from users
+      operationId: users_ListRefTransitiveMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.directoryObject
+      summary: Create new navigation property ref to transitiveMemberOf for users
+      operationId: users_CreateRefTransitiveMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property transitiveMemberOf for users
+      operationId: users_DeleteRefTransitiveMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.directoryObject:
@@ -1012,10 +1920,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1023,8 +1930,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1032,6 +1939,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1050,7 +1959,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1063,6 +1976,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

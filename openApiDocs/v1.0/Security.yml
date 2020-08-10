@@ -50,19 +50,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
-          links:
-            alerts:
-              operationId: Security.GetAlerts
-              parameters:
-                alert-id: $response.body#/id
-            secureScoreControlProfiles:
-              operationId: Security.GetSecureScoreControlProfiles
-              parameters:
-                secureScoreControlProfile-id: $response.body#/id
-            secureScores:
-              operationId: Security.GetSecureScores
-              parameters:
-                secureScore-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -250,6 +237,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.alert'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -287,7 +276,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: alert-id of alert'
+          description: 'key: id of alert'
           required: true
           schema:
             type: string
@@ -359,6 +348,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - Security.alert
@@ -367,7 +357,7 @@ paths:
       parameters:
         - name: alert-id
           in: path
-          description: 'key: alert-id of alert'
+          description: 'key: id of alert'
           required: true
           schema:
             type: string
@@ -379,6 +369,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - Security.alert
+      summary: Delete navigation property alerts for Security
+      operationId: Security_DeleteAlerts
+      parameters:
+        - name: alert-id
+          in: path
+          description: 'key: id of alert'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -506,6 +520,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -543,7 +559,7 @@ paths:
       parameters:
         - name: secureScoreControlProfile-id
           in: path
-          description: 'key: secureScoreControlProfile-id of secureScoreControlProfile'
+          description: 'key: id of secureScoreControlProfile'
           required: true
           schema:
             type: string
@@ -600,6 +616,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - Security.secureScoreControlProfile
@@ -608,7 +625,7 @@ paths:
       parameters:
         - name: secureScoreControlProfile-id
           in: path
-          description: 'key: secureScoreControlProfile-id of secureScoreControlProfile'
+          description: 'key: id of secureScoreControlProfile'
           required: true
           schema:
             type: string
@@ -620,6 +637,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - Security.secureScoreControlProfile
+      summary: Delete navigation property secureScoreControlProfiles for Security
+      operationId: Security_DeleteSecureScoreControlProfiles
+      parameters:
+        - name: secureScoreControlProfile-id
+          in: path
+          description: 'key: id of secureScoreControlProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScoreControlProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -720,6 +761,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.secureScore'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -757,7 +800,7 @@ paths:
       parameters:
         - name: secureScore-id
           in: path
-          description: 'key: secureScore-id of secureScore'
+          description: 'key: id of secureScore'
           required: true
           schema:
             type: string
@@ -805,6 +848,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - Security.secureScore
@@ -813,7 +857,7 @@ paths:
       parameters:
         - name: secureScore-id
           in: path
-          description: 'key: secureScore-id of secureScore'
+          description: 'key: id of secureScore'
           required: true
           schema:
             type: string
@@ -825,6 +869,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - Security.secureScore
+      summary: Delete navigation property secureScores for Security
+      operationId: Security_DeleteSecureScores
+      parameters:
+        - name: secureScore-id
+          in: path
+          description: 'key: id of secureScore'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: secureScore
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -852,14 +920,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
-      example:
-        id: string (identifier)
-        alerts:
-          - '@odata.type': microsoft.graph.alert
-        secureScoreControlProfiles:
-          - '@odata.type': microsoft.graph.secureScoreControlProfile
-        secureScores:
-          - '@odata.type': microsoft.graph.secureScore
+          additionalProperties:
+            type: object
     microsoft.graph.alert:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1027,64 +1089,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.vulnerabilityState'
               description: Threat intelligence pertaining to one or more vulnerabilities related to this alert.
-      example:
-        id: string (identifier)
-        activityGroupName: string
-        assignedTo: string
-        azureSubscriptionId: string
-        azureTenantId: string
-        category: string
-        closedDateTime: string (timestamp)
-        cloudAppStates:
-          - '@odata.type': microsoft.graph.cloudAppSecurityState
-        comments:
-          - string
-        confidence: integer
-        createdDateTime: string (timestamp)
-        description: string
-        detectionIds:
-          - string
-        eventDateTime: string (timestamp)
-        feedback:
-          '@odata.type': microsoft.graph.alertFeedback
-        fileStates:
-          - '@odata.type': microsoft.graph.fileSecurityState
-        historyStates:
-          - '@odata.type': microsoft.graph.alertHistoryState
-        hostStates:
-          - '@odata.type': microsoft.graph.hostSecurityState
-        incidentIds:
-          - string
-        lastModifiedDateTime: string (timestamp)
-        malwareStates:
-          - '@odata.type': microsoft.graph.malwareState
-        networkConnections:
-          - '@odata.type': microsoft.graph.networkConnection
-        processes:
-          - '@odata.type': microsoft.graph.process
-        recommendedActions:
-          - string
-        registryKeyStates:
-          - '@odata.type': microsoft.graph.registryKeyState
-        securityResources:
-          - '@odata.type': microsoft.graph.securityResource
-        severity:
-          '@odata.type': microsoft.graph.alertSeverity
-        sourceMaterials:
-          - string
-        status:
-          '@odata.type': microsoft.graph.alertStatus
-        tags:
-          - string
-        title: string
-        triggers:
-          - '@odata.type': microsoft.graph.alertTrigger
-        userStates:
-          - '@odata.type': microsoft.graph.userSecurityState
-        vendorInformation:
-          '@odata.type': microsoft.graph.securityVendorInformation
-        vulnerabilityStates:
-          - '@odata.type': microsoft.graph.vulnerabilityState
+          additionalProperties:
+            type: object
     microsoft.graph.secureScoreControlProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1170,31 +1176,8 @@ components:
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
-      example:
-        id: string (identifier)
-        actionType: string
-        actionUrl: string
-        azureTenantId: string
-        complianceInformation:
-          - '@odata.type': microsoft.graph.complianceInformation
-        controlCategory: string
-        controlStateUpdates:
-          - '@odata.type': microsoft.graph.secureScoreControlStateUpdate
-        deprecated: true
-        implementationCost: string
-        lastModifiedDateTime: string (timestamp)
-        maxScore: double
-        rank: integer
-        remediation: string
-        remediationImpact: string
-        service: string
-        threats:
-          - string
-        tier: string
-        title: string
-        userImpact: string
-        vendorInformation:
-          '@odata.type': microsoft.graph.securityVendorInformation
+          additionalProperties:
+            type: object
     microsoft.graph.secureScore:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1252,22 +1235,8 @@ components:
               nullable: true
             vendorInformation:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
-      example:
-        id: string (identifier)
-        activeUserCount: integer
-        averageComparativeScores:
-          - '@odata.type': microsoft.graph.averageComparativeScore
-        azureTenantId: string
-        controlScores:
-          - '@odata.type': microsoft.graph.controlScore
-        createdDateTime: string (timestamp)
-        currentScore: double
-        enabledServices:
-          - string
-        licensedUserCount: integer
-        maxScore: double
-        vendorInformation:
-          '@odata.type': microsoft.graph.securityVendorInformation
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1275,8 +1244,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecurityState:
       title: cloudAppSecurityState
       type: object
@@ -1293,10 +1262,8 @@ components:
           type: string
           description: 'Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.'
           nullable: true
-      example:
-        destinationServiceIp: string
-        destinationServiceName: string
-        riskScore: string
+      additionalProperties:
+        type: object
     microsoft.graph.alertFeedback:
       title: alertFeedback
       enum:
@@ -1324,12 +1291,8 @@ components:
           type: string
           description: 'Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.'
           nullable: true
-      example:
-        fileHash:
-          '@odata.type': microsoft.graph.fileHash
-        name: string
-        path: string
-        riskScore: string
+      additionalProperties:
+        type: object
     microsoft.graph.alertHistoryState:
       title: alertHistoryState
       type: object
@@ -1357,17 +1320,8 @@ components:
         user:
           type: string
           nullable: true
-      example:
-        appId: string
-        assignedTo: string
-        comments:
-          - string
-        feedback:
-          '@odata.type': microsoft.graph.alertFeedback
-        status:
-          '@odata.type': microsoft.graph.alertStatus
-        updatedDateTime: string (timestamp)
-        user: string
+      additionalProperties:
+        type: object
     microsoft.graph.hostSecurityState:
       title: hostSecurityState
       type: object
@@ -1406,16 +1360,8 @@ components:
           type: string
           description: 'Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.'
           nullable: true
-      example:
-        fqdn: string
-        isAzureAdJoined: true
-        isAzureAdRegistered: true
-        isHybridAzureDomainJoined: true
-        netBiosName: string
-        os: string
-        privateIpAddress: string
-        publicIpAddress: string
-        riskScore: string
+      additionalProperties:
+        type: object
     microsoft.graph.malwareState:
       title: malwareState
       type: object
@@ -1440,12 +1386,8 @@ components:
           type: boolean
           description: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
           nullable: true
-      example:
-        category: string
-        family: string
-        name: string
-        severity: string
-        wasRunning: true
+      additionalProperties:
+        type: object
     microsoft.graph.networkConnection:
       title: networkConnection
       type: object
@@ -1526,30 +1468,8 @@ components:
           type: string
           description: Parameters (suffix) of the destination URL.
           nullable: true
-      example:
-        applicationName: string
-        destinationAddress: string
-        destinationDomain: string
-        destinationLocation: string
-        destinationPort: string
-        destinationUrl: string
-        direction:
-          '@odata.type': microsoft.graph.connectionDirection
-        domainRegisteredDateTime: string (timestamp)
-        localDnsName: string
-        natDestinationAddress: string
-        natDestinationPort: string
-        natSourceAddress: string
-        natSourcePort: string
-        protocol:
-          '@odata.type': microsoft.graph.securityNetworkProtocol
-        riskScore: string
-        sourceAddress: string
-        sourceLocation: string
-        sourcePort: string
-        status:
-          '@odata.type': microsoft.graph.connectionStatus
-        urlParameters: string
+      additionalProperties:
+        type: object
     microsoft.graph.process:
       title: process
       type: object
@@ -1608,21 +1528,8 @@ components:
           description: The Process ID (PID) of the process.
           format: int32
           nullable: true
-      example:
-        accountName: string
-        commandLine: string
-        createdDateTime: string (timestamp)
-        fileHash:
-          '@odata.type': microsoft.graph.fileHash
-        integrityLevel:
-          '@odata.type': microsoft.graph.processIntegrityLevel
-        isElevated: true
-        name: string
-        parentProcessCreatedDateTime: string (timestamp)
-        parentProcessId: integer
-        parentProcessName: string
-        path: string
-        processId: integer
+      additionalProperties:
+        type: object
     microsoft.graph.registryKeyState:
       title: registryKeyState
       type: object
@@ -1664,20 +1571,8 @@ components:
           nullable: true
         valueType:
           $ref: '#/components/schemas/microsoft.graph.registryValueType'
-      example:
-        hive:
-          '@odata.type': microsoft.graph.registryHive
-        key: string
-        oldKey: string
-        oldValueData: string
-        oldValueName: string
-        operation:
-          '@odata.type': microsoft.graph.registryOperation
-        processId: integer
-        valueData: string
-        valueName: string
-        valueType:
-          '@odata.type': microsoft.graph.registryValueType
+      additionalProperties:
+        type: object
     microsoft.graph.securityResource:
       title: securityResource
       type: object
@@ -1688,10 +1583,8 @@ components:
           nullable: true
         resourceType:
           $ref: '#/components/schemas/microsoft.graph.securityResourceType'
-      example:
-        resource: string
-        resourceType:
-          '@odata.type': microsoft.graph.securityResourceType
+      additionalProperties:
+        type: object
     microsoft.graph.alertSeverity:
       title: alertSeverity
       enum:
@@ -1728,10 +1621,8 @@ components:
           type: string
           description: Value of the property serving as a detection trigger.
           nullable: true
-      example:
-        name: string
-        type: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.userSecurityState:
       title: userSecurityState
       type: object
@@ -1788,24 +1679,8 @@ components:
           type: string
           description: 'User sign-in name - internet format: (user account name)@(user account DNS domain name).'
           nullable: true
-      example:
-        aadUserId: string
-        accountName: string
-        domainName: string
-        emailRole:
-          '@odata.type': microsoft.graph.emailRole
-        isVpn: true
-        logonDateTime: string (timestamp)
-        logonId: string
-        logonIp: string
-        logonLocation: string
-        logonType:
-          '@odata.type': microsoft.graph.logonType
-        onPremisesSecurityIdentifier: string
-        riskScore: string
-        userAccountType:
-          '@odata.type': microsoft.graph.userAccountSecurityType
-        userPrincipalName: string
+      additionalProperties:
+        type: object
     microsoft.graph.securityVendorInformation:
       title: securityVendorInformation
       type: object
@@ -1826,11 +1701,8 @@ components:
           type: string
           description: 'Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required'
           nullable: true
-      example:
-        provider: string
-        providerVersion: string
-        subProvider: string
-        vendor: string
+      additionalProperties:
+        type: object
     microsoft.graph.vulnerabilityState:
       title: vulnerabilityState
       type: object
@@ -1847,10 +1719,8 @@ components:
           type: boolean
           description: Indicates whether the detected vulnerability (file) was running at the time of detection or was the file detected at rest on the disk.
           nullable: true
-      example:
-        cve: string
-        severity: string
-        wasRunning: true
+      additionalProperties:
+        type: object
     microsoft.graph.complianceInformation:
       title: complianceInformation
       type: object
@@ -1864,10 +1734,8 @@ components:
           type: string
           description: 'Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)'
           nullable: true
-      example:
-        certificationControls:
-          - '@odata.type': microsoft.graph.certificationControl
-        certificationName: string
+      additionalProperties:
+        type: object
     microsoft.graph.secureScoreControlStateUpdate:
       title: secureScoreControlStateUpdate
       type: object
@@ -1894,12 +1762,8 @@ components:
           description: Time at which the control state was updated.
           format: date-time
           nullable: true
-      example:
-        assignedTo: string
-        comment: string
-        state: string
-        updatedBy: string
-        updatedDateTime: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.averageComparativeScore:
       title: averageComparativeScore
       type: object
@@ -1913,9 +1777,8 @@ components:
           type: string
           description: 'Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.'
           nullable: true
-      example:
-        averageScore: double
-        basis: string
+      additionalProperties:
+        type: object
     microsoft.graph.controlScore:
       title: controlScore
       type: object
@@ -1937,11 +1800,8 @@ components:
           description: Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
           format: double
           nullable: true
-      example:
-        controlCategory: string
-        controlName: string
-        description: string
-        score: double
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1949,6 +1809,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.fileHash:
       title: fileHash
       type: object
@@ -1959,10 +1821,8 @@ components:
           type: string
           description: Value of the file hash.
           nullable: true
-      example:
-        hashType:
-          '@odata.type': microsoft.graph.fileHashType
-        hashValue: string
+      additionalProperties:
+        type: object
     microsoft.graph.connectionDirection:
       title: connectionDirection
       enum:
@@ -2107,9 +1967,8 @@ components:
           type: string
           description: URL for the Microsoft Service Trust Portal
           nullable: true
-      example:
-        name: string
-        url: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -2128,7 +1987,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.fileHashType:
       title: fileHashType
       enum:
@@ -2153,6 +2016,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

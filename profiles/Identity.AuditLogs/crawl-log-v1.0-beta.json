@@ -1,11 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/auditLogs/provisioning/{provisioningObjectSummary-id}": {
+    "/auditLogs/signIns": {
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/auditLogs": {
+    "/auditLogs/directoryProvisioning": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/directoryAudits": {
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -21,7 +25,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/auditLogs/directoryAudits": {
+    "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs": {
+      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -29,19 +41,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/auditLogs/signIns": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/auditLogs/directoryProvisioning": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
+    "/auditLogs/provisioning/{provisioningObjectSummary-id}": {
       "originalLocation": "/openApiDocs/beta/Identity.AuditLogs.yml",
       "apiVersion": "v1.0-beta"
     }

@@ -1,43 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/devices": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/registeredOwners": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/registeredUsers": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/memberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/extensions": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/registeredOwners/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/microsoft.graph.getByIds": {
+    "/devices/{device-id}/registeredOwners/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
@@ -45,7 +9,11 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
-    "/devices/{device-id}/transitiveMemberOf": {
+    "/devices/{device-id}/registeredUsers/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/microsoft.graph.checkMemberGroups": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
@@ -53,11 +21,7 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
-    "/devices/{device-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
-      "apiVersion": "v1.0"
-    },
-    "/devices/{device-id}/registeredUsers/{directoryObject-id}": {
+    "/devices/{device-id}/extensions/{extension-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
@@ -69,11 +33,67 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
+    "/devices/{device-id}/memberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/memberOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/registeredUsers/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/registeredOwners": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/transitiveMemberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
     "/devices/microsoft.graph.validateProperties": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     },
+    "/devices/microsoft.graph.getAvailableExtensionProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/registeredUsers": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
     "/devices/{device-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/transitiveMemberOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/extensions": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
+      "apiVersion": "v1.0"
+    },
+    "/devices/{device-id}/registeredOwners/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Devices.yml",
       "apiVersion": "v1.0"
     }

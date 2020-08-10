@@ -52,17 +52,11 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.planner'
           links:
             tasks:
-              operationId: planner.GetTasks
-              parameters:
-                plannerTask-id: $response.body#/id
+              operationId: planner.ListTasks
             plans:
-              operationId: planner.GetPlans
-              parameters:
-                plannerPlan-id: $response.body#/id
+              operationId: planner.ListPlans
             buckets:
-              operationId: planner.GetBuckets
-              parameters:
-                plannerBucket-id: $response.body#/id
+              operationId: planner.ListBuckets
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -157,13 +151,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -196,7 +187,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -239,12 +230,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
           links:
             tasks:
-              operationId: planner.buckets.GetTasks
+              operationId: planner.Buckets.ListTasks
               parameters:
                 plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -253,7 +244,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -271,6 +262,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property buckets for planner
+      operationId: planner_DeleteBuckets
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/buckets/{plannerBucket-id}/tasks':
     get:
       tags:
@@ -280,7 +295,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -408,13 +423,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -424,7 +436,7 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -455,14 +467,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -528,31 +540,28 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
           links:
             details:
-              operationId: plannerBucket.tasks.GetDetails
+              operationId: planner.buckets.Tasks.GetDetails
               parameters:
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerTaskDetails-id: $response.body#/id
             assignedToTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetAssignedToTaskBoardFormat
+              operationId: planner.buckets.Tasks.GetAssignedToTaskBoardFormat
               parameters:
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
             progressTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetProgressTaskBoardFormat
+              operationId: planner.buckets.Tasks.GetProgressTaskBoardFormat
               parameters:
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
             bucketTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetBucketTaskBoardFormat
+              operationId: planner.buckets.Tasks.GetBucketTaskBoardFormat
               parameters:
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -561,14 +570,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -586,6 +595,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property tasks for planner
+      operationId: planner.buckets_DeleteTasks
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
       tags:
@@ -595,14 +635,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -642,6 +682,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -650,14 +691,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -675,6 +716,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property assignedToTaskBoardFormat for planner
+      operationId: planner.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
       tags:
@@ -684,14 +756,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -730,6 +802,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -738,14 +811,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -763,6 +836,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property bucketTaskBoardFormat for planner
+      operationId: planner.buckets.tasks_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details':
     get:
       tags:
@@ -772,14 +876,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -821,6 +925,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -829,14 +934,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -854,6 +959,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property details for planner
+      operationId: planner.buckets.tasks_DeleteDetails
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
       tags:
@@ -863,14 +999,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -909,6 +1045,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerBucket
@@ -917,14 +1054,14 @@ paths:
       parameters:
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -936,6 +1073,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerBucket
+      summary: Delete navigation property progressTaskBoardFormat for planner
+      operationId: planner.buckets.tasks_DeleteProgressTaskBoardFormat
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1022,13 +1190,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1061,7 +1226,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -1109,22 +1274,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
           links:
             tasks:
-              operationId: planner.plans.GetTasks
+              operationId: planner.Plans.ListTasks
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $response.body#/id
             buckets:
-              operationId: planner.plans.GetBuckets
+              operationId: planner.Plans.ListBuckets
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $response.body#/id
             details:
-              operationId: planner.plans.GetDetails
+              operationId: planner.Plans.GetDetails
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
-                plannerPlanDetails-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1133,7 +1296,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -1151,6 +1314,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property plans for planner
+      operationId: planner_DeletePlans
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets':
     get:
       tags:
@@ -1160,7 +1347,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -1231,13 +1418,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1247,7 +1431,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -1278,14 +1462,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -1328,13 +1512,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
           links:
             tasks:
-              operationId: plannerPlan.buckets.GetTasks
+              operationId: planner.plans.Buckets.ListTasks
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1343,14 +1527,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -1368,6 +1552,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property buckets for planner
+      operationId: planner.plans_DeleteBuckets
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks':
     get:
       tags:
@@ -1377,14 +1592,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -1512,13 +1727,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1528,14 +1740,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
@@ -1566,21 +1778,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1646,35 +1858,32 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
           links:
             details:
-              operationId: plannerBucket.tasks.GetDetails
+              operationId: planner.plans.buckets.Tasks.GetDetails
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerTaskDetails-id: $response.body#/id
             assignedToTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetAssignedToTaskBoardFormat
+              operationId: planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
             progressTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetProgressTaskBoardFormat
+              operationId: planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
             bucketTaskBoardFormat:
-              operationId: plannerBucket.tasks.GetBucketTaskBoardFormat
+              operationId: planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerBucket-id: $request.path.plannerBucket-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1683,21 +1892,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1715,6 +1924,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property tasks for planner
+      operationId: planner.plans.buckets_DeleteTasks
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
       tags:
@@ -1724,21 +1971,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1778,6 +2025,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1786,21 +2034,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1818,6 +2066,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property assignedToTaskBoardFormat for planner
+      operationId: planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
       tags:
@@ -1827,21 +2113,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1880,6 +2166,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1888,21 +2175,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1920,6 +2207,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property bucketTaskBoardFormat for planner
+      operationId: planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/details':
     get:
       tags:
@@ -1929,21 +2254,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -1985,6 +2310,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -1993,21 +2319,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2025,6 +2351,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property details for planner
+      operationId: planner.plans.buckets.tasks_DeleteDetails
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
       tags:
@@ -2034,21 +2398,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2087,6 +2451,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2095,21 +2460,21 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerBucket-id
           in: path
-          description: 'key: plannerBucket-id of plannerBucket'
+          description: 'key: id of plannerBucket'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerBucket
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2127,6 +2492,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property progressTaskBoardFormat for planner
+      operationId: planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: 'key: id of plannerBucket'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/details':
     get:
       tags:
@@ -2136,7 +2539,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -2176,6 +2579,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2184,7 +2588,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -2202,6 +2606,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property details for planner
+      operationId: planner.plans_DeleteDetails
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/tasks':
     get:
       tags:
@@ -2211,7 +2639,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -2339,13 +2767,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2355,7 +2780,7 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
@@ -2386,14 +2811,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2459,31 +2884,28 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
           links:
             details:
-              operationId: plannerPlan.tasks.GetDetails
+              operationId: planner.plans.Tasks.GetDetails
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerTaskDetails-id: $response.body#/id
             assignedToTaskBoardFormat:
-              operationId: plannerPlan.tasks.GetAssignedToTaskBoardFormat
+              operationId: planner.plans.Tasks.GetAssignedToTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
             progressTaskBoardFormat:
-              operationId: plannerPlan.tasks.GetProgressTaskBoardFormat
+              operationId: planner.plans.Tasks.GetProgressTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
             bucketTaskBoardFormat:
-              operationId: plannerPlan.tasks.GetBucketTaskBoardFormat
+              operationId: planner.plans.Tasks.GetBucketTaskBoardFormat
               parameters:
                 plannerPlan-id: $request.path.plannerPlan-id
                 plannerTask-id: $request.path.plannerTask-id
-                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2492,14 +2914,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2517,6 +2939,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property tasks for planner
+      operationId: planner.plans_DeleteTasks
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
       tags:
@@ -2526,14 +2979,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2573,6 +3026,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2581,14 +3035,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2606,6 +3060,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property assignedToTaskBoardFormat for planner
+      operationId: planner.plans.tasks_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
       tags:
@@ -2615,14 +3100,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2661,6 +3146,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2669,14 +3155,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2694,6 +3180,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property bucketTaskBoardFormat for planner
+      operationId: planner.plans.tasks_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/details':
     get:
       tags:
@@ -2703,14 +3220,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2752,6 +3269,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2760,14 +3278,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2785,6 +3303,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property details for planner
+      operationId: planner.plans.tasks_DeleteDetails
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
       tags:
@@ -2794,14 +3343,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2840,6 +3389,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerPlan
@@ -2848,14 +3398,14 @@ paths:
       parameters:
         - name: plannerPlan-id
           in: path
-          description: 'key: plannerPlan-id of plannerPlan'
+          description: 'key: id of plannerPlan'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: plannerPlan
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -2867,6 +3417,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerPlan
+      summary: Delete navigation property progressTaskBoardFormat for planner
+      operationId: planner.plans.tasks_DeleteProgressTaskBoardFormat
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: 'key: id of plannerPlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -3003,13 +3584,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3042,7 +3620,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3108,27 +3686,24 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
           links:
             details:
-              operationId: planner.tasks.GetDetails
+              operationId: planner.Tasks.GetDetails
               parameters:
                 plannerTask-id: $request.path.plannerTask-id
-                plannerTaskDetails-id: $response.body#/id
             assignedToTaskBoardFormat:
-              operationId: planner.tasks.GetAssignedToTaskBoardFormat
+              operationId: planner.Tasks.GetAssignedToTaskBoardFormat
               parameters:
                 plannerTask-id: $request.path.plannerTask-id
-                plannerAssignedToTaskBoardTaskFormat-id: $response.body#/id
             progressTaskBoardFormat:
-              operationId: planner.tasks.GetProgressTaskBoardFormat
+              operationId: planner.Tasks.GetProgressTaskBoardFormat
               parameters:
                 plannerTask-id: $request.path.plannerTask-id
-                plannerProgressTaskBoardTaskFormat-id: $response.body#/id
             bucketTaskBoardFormat:
-              operationId: planner.tasks.GetBucketTaskBoardFormat
+              operationId: planner.Tasks.GetBucketTaskBoardFormat
               parameters:
                 plannerTask-id: $request.path.plannerTask-id
-                plannerBucketTaskBoardTaskFormat-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerTask
@@ -3137,7 +3712,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3155,6 +3730,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerTask
+      summary: Delete navigation property tasks for planner
+      operationId: planner_DeleteTasks
+      parameters:
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/tasks/{plannerTask-id}/assignedToTaskBoardFormat':
     get:
       tags:
@@ -3164,7 +3763,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3204,6 +3803,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerTask
@@ -3212,7 +3812,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3230,6 +3830,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerTask
+      summary: Delete navigation property assignedToTaskBoardFormat for planner
+      operationId: planner.tasks_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/tasks/{plannerTask-id}/bucketTaskBoardFormat':
     get:
       tags:
@@ -3239,7 +3863,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3278,6 +3902,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerTask
@@ -3286,7 +3911,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3304,6 +3929,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerTask
+      summary: Delete navigation property bucketTaskBoardFormat for planner
+      operationId: planner.tasks_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/tasks/{plannerTask-id}/details':
     get:
       tags:
@@ -3313,7 +3962,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3355,6 +4004,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerTask
@@ -3363,7 +4013,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3381,6 +4031,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerTask
+      summary: Delete navigation property details for planner
+      operationId: planner.tasks_DeleteDetails
+      parameters:
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/planner/tasks/{plannerTask-id}/progressTaskBoardFormat':
     get:
       tags:
@@ -3390,7 +4064,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3429,6 +4103,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - planner.plannerTask
@@ -3437,7 +4112,7 @@ paths:
       parameters:
         - name: plannerTask-id
           in: path
-          description: 'key: plannerTask-id of plannerTask'
+          description: 'key: id of plannerTask'
           required: true
           schema:
             type: string
@@ -3449,6 +4124,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - planner.plannerTask
+      summary: Delete navigation property progressTaskBoardFormat for planner
+      operationId: planner.tasks_DeleteProgressTaskBoardFormat
+      parameters:
+        - name: plannerTask-id
+          in: path
+          description: 'key: id of plannerTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -3478,14 +4177,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Returns a collection of the specified buckets
-      example:
-        id: string (identifier)
-        tasks:
-          - '@odata.type': microsoft.graph.plannerTask
-        plans:
-          - '@odata.type': microsoft.graph.plannerPlan
-        buckets:
-          - '@odata.type': microsoft.graph.plannerBucket
+          additionalProperties:
+            type: object
     microsoft.graph.plannerBucket:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3508,13 +4201,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
               description: Read-only. Nullable. The collection of tasks in the bucket.
-      example:
-        id: string (identifier)
-        name: string
-        planId: string
-        orderHint: string
-        tasks:
-          - '@odata.type': microsoft.graph.plannerTask
+          additionalProperties:
+            type: object
     microsoft.graph.plannerTask:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3618,41 +4306,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
             bucketTaskBoardFormat:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
-      example:
-        id: string (identifier)
-        createdBy:
-          '@odata.type': microsoft.graph.identitySet
-        planId: string
-        bucketId: string
-        title: string
-        orderHint: string
-        assigneePriority: string
-        percentComplete: integer
-        startDateTime: string (timestamp)
-        createdDateTime: string (timestamp)
-        dueDateTime: string (timestamp)
-        hasDescription: true
-        previewType:
-          '@odata.type': microsoft.graph.plannerPreviewType
-        completedDateTime: string (timestamp)
-        completedBy:
-          '@odata.type': microsoft.graph.identitySet
-        referenceCount: integer
-        checklistItemCount: integer
-        activeChecklistItemCount: integer
-        appliedCategories:
-          '@odata.type': microsoft.graph.plannerAppliedCategories
-        assignments:
-          '@odata.type': microsoft.graph.plannerAssignments
-        conversationThreadId: string
-        details:
-          '@odata.type': microsoft.graph.plannerTaskDetails
-        assignedToTaskBoardFormat:
-          '@odata.type': microsoft.graph.plannerAssignedToTaskBoardTaskFormat
-        progressTaskBoardFormat:
-          '@odata.type': microsoft.graph.plannerProgressTaskBoardTaskFormat
-        bucketTaskBoardFormat:
-          '@odata.type': microsoft.graph.plannerBucketTaskBoardTaskFormat
+          additionalProperties:
+            type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3665,11 +4320,8 @@ components:
               nullable: true
             orderHintsByAssignee:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
-      example:
-        id: string (identifier)
-        unassignedOrderHint: string
-        orderHintsByAssignee:
-          '@odata.type': microsoft.graph.plannerOrderHintsByAssignee
+          additionalProperties:
+            type: object
     microsoft.graph.plannerBucketTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3680,9 +4332,8 @@ components:
               type: string
               description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
               nullable: true
-      example:
-        id: string (identifier)
-        orderHint: string
+          additionalProperties:
+            type: object
     microsoft.graph.plannerTaskDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3699,15 +4350,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
-      example:
-        id: string (identifier)
-        description: string
-        previewType:
-          '@odata.type': microsoft.graph.plannerPreviewType
-        references:
-          '@odata.type': microsoft.graph.plannerExternalReferences
-        checklist:
-          '@odata.type': microsoft.graph.plannerChecklistItems
+          additionalProperties:
+            type: object
     microsoft.graph.plannerProgressTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3718,9 +4362,8 @@ components:
               type: string
               description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
               nullable: true
-      example:
-        id: string (identifier)
-        orderHint: string
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlan:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3754,19 +4397,8 @@ components:
               description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
-      example:
-        id: string (identifier)
-        createdBy:
-          '@odata.type': microsoft.graph.identitySet
-        createdDateTime: string (timestamp)
-        owner: string
-        title: string
-        tasks:
-          - '@odata.type': microsoft.graph.plannerTask
-        buckets:
-          - '@odata.type': microsoft.graph.plannerBucket
-        details:
-          '@odata.type': microsoft.graph.plannerPlanDetails
+          additionalProperties:
+            type: object
     microsoft.graph.plannerPlanDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3777,12 +4409,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
             categoryDescriptions:
               $ref: '#/components/schemas/microsoft.graph.plannerCategoryDescriptions'
-      example:
-        id: string (identifier)
-        sharedWith:
-          '@odata.type': microsoft.graph.plannerUserIds
-        categoryDescriptions:
-          '@odata.type': microsoft.graph.plannerCategoryDescriptions
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -3790,8 +4418,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -3802,13 +4430,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        application:
-          '@odata.type': microsoft.graph.identity
-        device:
-          '@odata.type': microsoft.graph.identity
-        user:
-          '@odata.type': microsoft.graph.identity
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPreviewType:
       title: plannerPreviewType
       enum:
@@ -3821,21 +4444,33 @@ components:
     microsoft.graph.plannerAppliedCategories:
       title: plannerAppliedCategories
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerAssignments:
       title: plannerAssignments
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerUserIds:
       title: plannerUserIds
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
       type: object
@@ -3864,13 +4499,8 @@ components:
           type: string
           description: The label associated with Category 6
           nullable: true
-      example:
-        category1: string
-        category2: string
-        category3: string
-        category4: string
-        category5: string
-        category6: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -3878,6 +4508,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -3890,9 +4522,8 @@ components:
           type: string
           description: Unique identifier for the identity.
           nullable: true
-      example:
-        displayName: string
-        id: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -3911,7 +4542,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -3924,6 +4559,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

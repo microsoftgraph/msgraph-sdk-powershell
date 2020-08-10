@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/places": {
+    "/places/{place-id}": {
       "originalLocation": "/openApiDocs/beta/Places.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/places/{place-id}": {
+    "/places": {
       "originalLocation": "/openApiDocs/beta/Places.yml",
       "apiVersion": "v1.0-beta"
     }

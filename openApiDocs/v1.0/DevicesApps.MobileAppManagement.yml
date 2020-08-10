@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -119,6 +119,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -134,14 +136,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -195,27 +197,147 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: user.managedAppRegistrations.GetAppliedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppPolicy-id: $response.body#/id
-            intendedPolicies:
-              operationId: user.managedAppRegistrations.GetIntendedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppPolicy-id: $response.body#/id
-            operations:
-              operationId: user.managedAppRegistrations.GetOperations
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedAppRegistrations/$ref':
+    get:
+      tags:
+        - users.managedAppRegistration
+      summary: Get ref of managedAppRegistrations from users
+      operationId: users_ListRefManagedAppRegistrations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastSyncDateTime
+                - lastSyncDateTime desc
+                - applicationVersion
+                - applicationVersion desc
+                - managementSdkVersion
+                - managementSdkVersion desc
+                - platformVersion
+                - platformVersion desc
+                - deviceType
+                - deviceType desc
+                - deviceTag
+                - deviceTag desc
+                - deviceName
+                - deviceName desc
+                - flaggedReasons
+                - flaggedReasons desc
+                - userId
+                - userId desc
+                - appIdentifier
+                - appIdentifier desc
+                - version
+                - version desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of managedAppRegistration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.managedAppRegistration
+      summary: Create new navigation property ref to managedAppRegistrations for users
+      operationId: users_CreateRefManagedAppRegistrations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.managedAppRegistration
+      summary: Delete ref of navigation property managedAppRegistrations for users
+      operationId: users_DeleteRefManagedAppRegistrations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.managedAppRegistration:
@@ -288,29 +410,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
               description: Zero or more long running operations triggered on the app registration.
+          additionalProperties:
+            type: object
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastSyncDateTime: string (timestamp)
-        applicationVersion: string
-        managementSdkVersion: string
-        platformVersion: string
-        deviceType: string
-        deviceTag: string
-        deviceName: string
-        flaggedReasons:
-          - '@odata.type': microsoft.graph.managedAppFlaggedReason
-        userId: string
-        appIdentifier:
-          '@odata.type': microsoft.graph.mobileAppIdentifier
-        version: string
-        appliedPolicies:
-          - '@odata.type': microsoft.graph.managedAppPolicy
-        intendedPolicies:
-          - '@odata.type': microsoft.graph.managedAppPolicy
-        operations:
-          - '@odata.type': microsoft.graph.managedAppOperation
     microsoft.graph.entity:
       title: entity
       type: object
@@ -318,8 +420,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.managedAppFlaggedReason:
       title: managedAppFlaggedReason
       enum:
@@ -329,6 +431,9 @@ components:
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
+      additionalProperties:
+        type: object
+      description: The identifier for a mobile app.
     microsoft.graph.managedAppPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -356,14 +461,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: The ManagedAppPolicy resource represents a base type for platform specific policies.
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
     microsoft.graph.managedAppOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -387,13 +487,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an operation applied against an app registration.
-      example:
-        id: string (identifier)
-        displayName: string
-        lastModifiedDateTime: string (timestamp)
-        state: string
-        version: string
     odata.error:
       required:
         - error
@@ -401,6 +497,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -419,7 +517,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -432,6 +534,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

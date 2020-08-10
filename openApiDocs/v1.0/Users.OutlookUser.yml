@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -55,12 +55,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookUser'
           links:
             masterCategories:
-              operationId: user.outlook.GetMasterCategories
+              operationId: users.Outlook.ListMasterCategories
               parameters:
                 user-id: $request.path.user-id
-                outlookCategory-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -69,7 +69,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -87,6 +87,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property outlook for users
+      operationId: users_DeleteOutlook
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/masterCategories':
     get:
       tags:
@@ -96,7 +120,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -162,13 +186,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.outlookCategory'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -178,7 +199,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -209,14 +230,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: outlookCategory-id of outlookCategory'
+          description: 'key: id of outlookCategory'
           required: true
           schema:
             type: string
@@ -256,6 +277,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -264,14 +286,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: outlookCategory-id of outlookCategory'
+          description: 'key: id of outlookCategory'
           required: true
           schema:
             type: string
@@ -283,6 +305,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property masterCategories for users
+      operationId: users.outlook_DeleteMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookCategory-id
+          in: path
+          description: 'key: id of outlookCategory'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookCategory
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -302,10 +355,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
               description: A list of categories defined for the user.
-      example:
-        id: string (identifier)
-        masterCategories:
-          - '@odata.type': microsoft.graph.outlookCategory
+          additionalProperties:
+            type: object
     microsoft.graph.outlookCategory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -318,11 +369,8 @@ components:
               nullable: true
             color:
               $ref: '#/components/schemas/microsoft.graph.categoryColor'
-      example:
-        id: string (identifier)
-        displayName: string
-        color:
-          '@odata.type': microsoft.graph.categoryColor
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -330,8 +378,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.categoryColor:
       title: categoryColor
       enum:
@@ -369,6 +417,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -387,7 +437,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -400,6 +454,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

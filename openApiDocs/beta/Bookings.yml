@@ -113,6 +113,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -150,7 +152,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -207,32 +209,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          links:
-            appointments:
-              operationId: bookingBusinesses.GetAppointments
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-                bookingAppointment-id: $response.body#/id
-            calendarView:
-              operationId: bookingBusinesses.GetCalendarView
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-                bookingAppointment-id: $response.body#/id
-            customers:
-              operationId: bookingBusinesses.GetCustomers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-                bookingCustomer-id: $response.body#/id
-            services:
-              operationId: bookingBusinesses.GetServices
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-                bookingService-id: $response.body#/id
-            staffMembers:
-              operationId: bookingBusinesses.GetStaffMembers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-                bookingStaffMember-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -244,7 +220,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -270,7 +246,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -295,7 +271,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -435,6 +411,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -449,7 +427,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -480,14 +458,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -551,6 +529,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - bookingBusinesses.bookingAppointment
@@ -559,14 +538,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -584,6 +563,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Delete navigation property appointments for bookingBusinesses
+      operationId: bookingBusinesses_DeleteAppointments
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
       tags:
@@ -593,14 +603,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -615,6 +625,8 @@ paths:
                 cancellationMessage:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -631,7 +643,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -783,6 +795,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -797,7 +811,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -828,14 +842,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -911,6 +925,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - bookingBusinesses.bookingAppointment
@@ -919,14 +934,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -944,6 +959,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingAppointment
+      summary: Delete navigation property calendarView for bookingBusinesses
+      operationId: bookingBusinesses_DeleteCalendarView
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingAppointment-id
+          in: path
+          description: 'key: id of bookingAppointment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingAppointment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel':
     post:
       tags:
@@ -953,14 +999,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingAppointment-id
           in: path
-          description: 'key: bookingAppointment-id of bookingAppointment'
+          description: 'key: id of bookingAppointment'
           required: true
           schema:
             type: string
@@ -975,6 +1021,8 @@ paths:
                 cancellationMessage:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -991,7 +1039,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1059,6 +1107,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1073,7 +1123,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1104,14 +1154,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomer-id
           in: path
-          description: 'key: bookingCustomer-id of bookingCustomer'
+          description: 'key: id of bookingCustomer'
           required: true
           schema:
             type: string
@@ -1151,6 +1201,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - bookingBusinesses.bookingCustomer
@@ -1159,14 +1210,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingCustomer-id
           in: path
-          description: 'key: bookingCustomer-id of bookingCustomer'
+          description: 'key: id of bookingCustomer'
           required: true
           schema:
             type: string
@@ -1184,6 +1235,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingCustomer
+      summary: Delete navigation property customers for bookingBusinesses
+      operationId: bookingBusinesses_DeleteCustomers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomer-id
+          in: path
+          description: 'key: id of bookingCustomer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomer
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
@@ -1193,7 +1275,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1213,7 +1295,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1233,7 +1315,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1334,6 +1416,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingService'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1348,7 +1432,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1379,14 +1463,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingService-id
           in: path
-          description: 'key: bookingService-id of bookingService'
+          description: 'key: id of bookingService'
           required: true
           schema:
             type: string
@@ -1437,6 +1521,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - bookingBusinesses.bookingService
@@ -1445,14 +1530,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingService-id
           in: path
-          description: 'key: bookingService-id of bookingService'
+          description: 'key: id of bookingService'
           required: true
           schema:
             type: string
@@ -1470,6 +1555,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingService
+      summary: Delete navigation property services for bookingBusinesses
+      operationId: bookingBusinesses_DeleteServices
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingService-id
+          in: path
+          description: 'key: id of bookingService'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingService
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/bookingBusinesses/{bookingBusiness-id}/staffMembers':
     get:
       tags:
@@ -1479,7 +1595,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1562,6 +1678,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1576,7 +1694,7 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
@@ -1607,14 +1725,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingStaffMember-id
           in: path
-          description: 'key: bookingStaffMember-id of bookingStaffMember'
+          description: 'key: id of bookingStaffMember'
           required: true
           schema:
             type: string
@@ -1659,6 +1777,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - bookingBusinesses.bookingStaffMember
@@ -1667,14 +1786,14 @@ paths:
       parameters:
         - name: bookingBusiness-id
           in: path
-          description: 'key: bookingBusiness-id of bookingBusiness'
+          description: 'key: id of bookingBusiness'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: bookingStaffMember-id
           in: path
-          description: 'key: bookingStaffMember-id of bookingStaffMember'
+          description: 'key: id of bookingStaffMember'
           required: true
           schema:
             type: string
@@ -1686,6 +1805,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingStaffMember
+      summary: Delete navigation property staffMembers for bookingBusinesses
+      operationId: bookingBusinesses_DeleteStaffMembers
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingStaffMember-id
+          in: path
+          description: 'key: id of bookingStaffMember'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingStaffMember
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1759,6 +1909,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1796,7 +1948,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: bookingCurrency-id of bookingCurrency'
+          description: 'key: id of bookingCurrency'
           required: true
           schema:
             type: string
@@ -1844,7 +1996,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: bookingCurrency-id of bookingCurrency'
+          description: 'key: id of bookingCurrency'
           required: true
           schema:
             type: string
@@ -1870,7 +2022,7 @@ paths:
       parameters:
         - name: bookingCurrency-id
           in: path
-          description: 'key: bookingCurrency-id of bookingCurrency'
+          description: 'key: id of bookingCurrency'
           required: true
           schema:
             type: string
@@ -1949,33 +2101,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
               description: All staff members that provides services in this business.
+          additionalProperties:
+            type: object
           description: Represents a Microsot Bookings Business.
-      example:
-        id: string (identifier)
-        displayName: string
-        businessType: string
-        address:
-          '@odata.type': microsoft.graph.physicalAddress
-        phone: string
-        email: string
-        webSiteUrl: string
-        defaultCurrencyIso: string
-        businessHours:
-          - '@odata.type': microsoft.graph.bookingWorkHours
-        schedulingPolicy:
-          '@odata.type': microsoft.graph.bookingSchedulingPolicy
-        isPublished: true
-        publicUrl: string
-        appointments:
-          - '@odata.type': microsoft.graph.bookingAppointment
-        calendarView:
-          - '@odata.type': microsoft.graph.bookingAppointment
-        customers:
-          - '@odata.type': microsoft.graph.bookingCustomer
-        services:
-          - '@odata.type': microsoft.graph.bookingService
-        staffMembers:
-          - '@odata.type': microsoft.graph.bookingStaffMember
     microsoft.graph.bookingAppointment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2061,54 +2189,17 @@ components:
             invoiceUrl:
               type: string
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents a booked appointment of a service by a customer in a business.
-      example:
-        id: string (identifier)
-        selfServiceAppointmentId: string
-        customerId: string
-        customerName: string
-        customerEmailAddress: string
-        customerPhone: string
-        customerLocation:
-          '@odata.type': microsoft.graph.location
-        customerNotes: string
-        serviceId: string
-        serviceName: string
-        start:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        end:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        duration: string
-        preBuffer: string
-        postBuffer: string
-        serviceLocation:
-          '@odata.type': microsoft.graph.location
-        priceType:
-          '@odata.type': microsoft.graph.bookingPriceType
-        price: double
-        serviceNotes: string
-        reminders:
-          - '@odata.type': microsoft.graph.bookingReminder
-        optOutOfCustomerEmail: true
-        staffMemberIds:
-          - string
-        invoiceAmount: double
-        invoiceDate:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        invoiceId: string
-        invoiceStatus:
-          '@odata.type': microsoft.graph.bookingInvoiceStatus
-        invoiceUrl: string
     microsoft.graph.bookingCustomer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingPerson'
         - title: bookingCustomer
           type: object
+          additionalProperties:
+            type: object
           description: Represents a customer of the business.
-      example:
-        id: string (identifier)
-        displayName: string
-        emailAddress: string
     microsoft.graph.bookingService:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
@@ -2154,27 +2245,9 @@ components:
               items:
                 type: string
                 nullable: true
+          additionalProperties:
+            type: object
           description: Represents a particular service offered by a booking business.
-      example:
-        id: string (identifier)
-        displayName: string
-        defaultDuration: string
-        defaultLocation:
-          '@odata.type': microsoft.graph.location
-        defaultPrice: double
-        defaultPriceType:
-          '@odata.type': microsoft.graph.bookingPriceType
-        defaultReminders:
-          - '@odata.type': microsoft.graph.bookingReminder
-        description: string
-        isHiddenFromCustomers: true
-        notes: string
-        preBuffer: string
-        postBuffer: string
-        schedulingPolicy:
-          '@odata.type': microsoft.graph.bookingSchedulingPolicy
-        staffMemberIds:
-          - string
     microsoft.graph.bookingStaffMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingPerson'
@@ -2197,18 +2270,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
+          additionalProperties:
+            type: object
           description: Represents a staff member who provides services in a business.
-      example:
-        id: string (identifier)
-        displayName: string
-        emailAddress: string
-        availabilityIsAffectedByPersonalCalendar: true
-        colorIndex: integer
-        role:
-          '@odata.type': microsoft.graph.bookingStaffRole
-        useBusinessHours: true
-        workingHours:
-          - '@odata.type': microsoft.graph.bookingWorkHours
     microsoft.graph.bookingCurrency:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2217,9 +2281,8 @@ components:
           properties:
             symbol:
               type: string
-      example:
-        id: string (identifier)
-        symbol: string
+          additionalProperties:
+            type: object
     microsoft.graph.bookingNamedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2229,10 +2292,9 @@ components:
             displayName:
               type: string
               description: Display name of this entity.
+          additionalProperties:
+            type: object
           description: Booking entities that provide a display name.
-      example:
-        id: string (identifier)
-        displayName: string
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -2262,15 +2324,8 @@ components:
           type: string
           description: The postal code.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.physicalAddressType
-        postOfficeBox: string
-        street: string
-        city: string
-        state: string
-        countryOrRegion: string
-        postalCode: string
+      additionalProperties:
+        type: object
     microsoft.graph.bookingWorkHours:
       title: bookingWorkHours
       type: object
@@ -2282,11 +2337,9 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.bookingWorkTimeSlot'
           description: A list of start/end times during a day.
-      example:
-        day:
-          '@odata.type': microsoft.graph.dayOfWeek
-        timeSlots:
-          - '@odata.type': microsoft.graph.bookingWorkTimeSlot
+      additionalProperties:
+        type: object
+      description: This type represents the set of working hours in a single day of the week.
     microsoft.graph.bookingSchedulingPolicy:
       title: bookingSchedulingPolicy
       type: object
@@ -2312,12 +2365,9 @@ components:
         allowStaffSelection:
           type: boolean
           description: Allow customers to choose a specific person for the booking.
-      example:
-        timeSlotInterval: string
-        minimumLeadTime: string
-        maximumAdvance: string
-        sendConfirmationsToOwner: true
-        allowStaffSelection: true
+      additionalProperties:
+        type: object
+      description: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2325,8 +2375,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.location:
       title: location
       type: object
@@ -2355,19 +2405,8 @@ components:
           nullable: true
         uniqueIdType:
           $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      example:
-        displayName: string
-        locationEmailAddress: string
-        address:
-          '@odata.type': microsoft.graph.physicalAddress
-        coordinates:
-          '@odata.type': microsoft.graph.outlookGeoCoordinates
-        locationUri: string
-        locationType:
-          '@odata.type': microsoft.graph.locationType
-        uniqueId: string
-        uniqueIdType:
-          '@odata.type': microsoft.graph.locationUniqueIdType
+      additionalProperties:
+        type: object
     microsoft.graph.dateTimeTimeZone:
       title: dateTimeTimeZone
       type: object
@@ -2379,9 +2418,8 @@ components:
           type: string
           description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
-      example:
-        dateTime: string
-        timeZone: string
+      additionalProperties:
+        type: object
     microsoft.graph.bookingPriceType:
       title: bookingPriceType
       enum:
@@ -2408,11 +2446,9 @@ components:
         message:
           type: string
           description: Message to send.
-      example:
-        offset: string
-        recipients:
-          '@odata.type': microsoft.graph.bookingReminderRecipients
-        message: string
+      additionalProperties:
+        type: object
+      description: This type represents when and to whom to send an e-mail reminder.
     microsoft.graph.bookingInvoiceStatus:
       title: bookingInvoiceStatus
       enum:
@@ -2433,11 +2469,9 @@ components:
               type: string
               description: The e-mail address of this person.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents a booking customer or staff member.
-      example:
-        id: string (identifier)
-        displayName: string
-        emailAddress: string
     microsoft.graph.bookingStaffRole:
       title: bookingStaffRole
       enum:
@@ -2453,6 +2487,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.physicalAddressType:
       title: physicalAddressType
       enum:
@@ -2484,9 +2520,8 @@ components:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
           format: time
-      example:
-        start: string (timestamp)
-        end: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -2516,12 +2551,8 @@ components:
           description: The accuracy of the altitude.
           format: double
           nullable: true
-      example:
-        altitude: double
-        latitude: double
-        longitude: double
-        accuracy: double
-        altitudeAccuracy: double
+      additionalProperties:
+        type: object
     microsoft.graph.locationType:
       title: locationType
       enum:
@@ -2570,7 +2601,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2583,6 +2618,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -79,6 +79,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.groupLifecyclePolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -116,7 +118,7 @@ paths:
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
-          description: 'key: groupLifecyclePolicy-id of groupLifecyclePolicy'
+          description: 'key: id of groupLifecyclePolicy'
           required: true
           schema:
             type: string
@@ -166,7 +168,7 @@ paths:
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
-          description: 'key: groupLifecyclePolicy-id of groupLifecyclePolicy'
+          description: 'key: id of groupLifecyclePolicy'
           required: true
           schema:
             type: string
@@ -192,7 +194,7 @@ paths:
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
-          description: 'key: groupLifecyclePolicy-id of groupLifecyclePolicy'
+          description: 'key: id of groupLifecyclePolicy'
           required: true
           schema:
             type: string
@@ -217,7 +219,7 @@ paths:
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
-          description: 'key: groupLifecyclePolicy-id of groupLifecyclePolicy'
+          description: 'key: id of groupLifecyclePolicy'
           required: true
           schema:
             type: string
@@ -231,6 +233,8 @@ paths:
               properties:
                 groupId:
                   type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -252,7 +256,7 @@ paths:
       parameters:
         - name: groupLifecyclePolicy-id
           in: path
-          description: 'key: groupLifecyclePolicy-id of groupLifecyclePolicy'
+          description: 'key: id of groupLifecyclePolicy'
           required: true
           schema:
             type: string
@@ -266,6 +270,8 @@ paths:
               properties:
                 groupId:
                   type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -293,6 +299,8 @@ paths:
               properties:
                 groupId:
                   type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -328,11 +336,8 @@ components:
               type: string
               description: List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
               nullable: true
-      example:
-        id: string (identifier)
-        groupLifetimeInDays: integer
-        managedGroupTypes: string
-        alternateNotificationEmails: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -340,8 +345,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -349,6 +354,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -367,7 +374,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -380,6 +391,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

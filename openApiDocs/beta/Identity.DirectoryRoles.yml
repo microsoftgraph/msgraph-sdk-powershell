@@ -86,6 +86,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryRole'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -123,7 +125,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -167,17 +169,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRole'
-          links:
-            members:
-              operationId: directoryRoles.GetMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-                directoryObject-id: $response.body#/id
-            scopedMembers:
-              operationId: directoryRoles.GetScopedMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-                scopedRoleMembership-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -189,7 +180,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -215,7 +206,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -240,7 +231,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -305,6 +296,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -320,14 +313,14 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: directoryRole
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -366,6 +359,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directoryRoles/{directoryRole-id}/members/$ref':
+    get:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Get ref of members from directoryRoles
+      operationId: directoryRoles_ListRefMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Create new navigation property ref to members for directoryRoles
+      operationId: directoryRoles_CreateRefMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Delete ref of navigation property members for directoryRoles
+      operationId: directoryRoles_DeleteRefMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -375,7 +485,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -391,6 +501,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -413,7 +525,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -429,6 +541,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -451,7 +565,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -467,6 +581,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -489,7 +605,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -505,6 +621,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -527,7 +645,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -551,7 +669,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -622,6 +740,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -636,7 +756,7 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
@@ -667,14 +787,14 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: directoryRole
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -715,6 +835,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - directoryRoles.scopedRoleMembership
@@ -723,14 +844,14 @@ paths:
       parameters:
         - name: directoryRole-id
           in: path
-          description: 'key: directoryRole-id of directoryRole'
+          description: 'key: id of directoryRole'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: directoryRole
         - name: scopedRoleMembership-id
           in: path
-          description: 'key: scopedRoleMembership-id of scopedRoleMembership'
+          description: 'key: id of scopedRoleMembership'
           required: true
           schema:
             type: string
@@ -742,6 +863,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directoryRoles.scopedRoleMembership
+      summary: Delete navigation property scopedMembers for directoryRoles
+      operationId: directoryRoles_DeleteScopedMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - name: scopedRoleMembership-id
+          in: path
+          description: 'key: id of scopedRoleMembership'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: scopedRoleMembership
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -788,6 +940,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -820,6 +974,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -858,6 +1014,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -894,17 +1052,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        roleTemplateId: string
-        members:
-          - '@odata.type': microsoft.graph.directoryObject
-        scopedMembers:
-          - '@odata.type': microsoft.graph.scopedRoleMembership
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -916,10 +1066,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.scopedRoleMembership:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -932,12 +1081,8 @@ components:
               type: string
             roleMemberInfo:
               $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        id: string (identifier)
-        roleId: string
-        administrativeUnitId: string
-        roleMemberInfo:
-          '@odata.type': microsoft.graph.identity
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -945,8 +1090,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -959,9 +1104,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -969,6 +1113,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -987,7 +1133,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1000,6 +1150,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -89,14 +89,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.subscribedSku'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - subscribedSkus.subscribedSku
@@ -128,7 +124,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: subscribedSku-id of subscribedSku'
+          description: 'key: id of subscribedSku'
           required: true
           schema:
             type: string
@@ -182,7 +178,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: subscribedSku-id of subscribedSku'
+          description: 'key: id of subscribedSku'
           required: true
           schema:
             type: string
@@ -208,7 +204,7 @@ paths:
       parameters:
         - name: subscribedSku-id
           in: path
-          description: 'key: subscribedSku-id of subscribedSku'
+          description: 'key: id of subscribedSku'
           required: true
           schema:
             type: string
@@ -264,17 +260,8 @@ components:
               type: string
               description: 'For example, ''User'' or ''Company''.'
               nullable: true
-      example:
-        id: string (identifier)
-        capabilityStatus: string
-        consumedUnits: integer
-        prepaidUnits:
-          '@odata.type': microsoft.graph.licenseUnitsDetail
-        servicePlans:
-          - '@odata.type': microsoft.graph.servicePlanInfo
-        skuId: string
-        skuPartNumber: string
-        appliesTo: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -282,8 +269,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.licenseUnitsDetail:
       title: licenseUnitsDetail
       type: object
@@ -309,10 +296,8 @@ components:
           description: The number of units that are in warning status.
           format: int32
           nullable: true
-      example:
-        enabled: integer
-        suspended: integer
-        warning: integer
+      additionalProperties:
+        type: object
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -335,11 +320,8 @@ components:
           type: string
           description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
           nullable: true
-      example:
-        servicePlanId: string
-        servicePlanName: string
-        provisioningStatus: string
-        appliesTo: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -347,6 +329,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -365,7 +349,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -378,6 +366,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

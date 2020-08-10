@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/joinedTeams/{team-id}": {
+    "/users/{user-id}/joinedTeams": {
       "originalLocation": "/openApiDocs/v1.0/Users.Groups.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/joinedTeams": {
+    "/users/{user-id}/joinedTeams/{team-id}": {
       "originalLocation": "/openApiDocs/v1.0/Users.Groups.yml",
       "apiVersion": "v1.0"
     }

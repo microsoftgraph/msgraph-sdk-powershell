@@ -101,6 +101,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedApproval'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -138,7 +140,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -187,17 +189,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedApproval'
-          links:
-            request:
-              operationId: privilegedApproval.GetRequest
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRoleAssignmentRequest-id: $response.body#/id
-            roleInfo:
-              operationId: privilegedApproval.GetRoleInfo
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -209,7 +200,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -235,7 +226,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -260,7 +251,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -309,14 +300,83 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
-          links:
-            roleInfo:
-              operationId: privilegedApproval.request.GetRoleInfo
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/privilegedApproval/{privilegedApproval-id}/request/$ref':
+    get:
+      tags:
+        - privilegedApproval.privilegedRoleAssignmentRequest
+      summary: Get ref of request from privilegedApproval
+      operationId: privilegedApproval_GetRefRequest
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - privilegedApproval.privilegedRoleAssignmentRequest
+      summary: Update the ref of navigation property request in privilegedApproval
+      operationId: privilegedApproval_UpdateRefRequest
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedApproval.privilegedRoleAssignmentRequest
+      summary: Delete ref of navigation property request for privilegedApproval
+      operationId: privilegedApproval_DeleteRefRequest
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/privilegedApproval/{privilegedApproval-id}/roleInfo':
     get:
       tags:
@@ -326,7 +386,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -369,24 +429,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-          links:
-            settings:
-              operationId: privilegedApproval.roleInfo.GetSettings
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRoleSettings-id: $response.body#/id
-            assignments:
-              operationId: privilegedApproval.roleInfo.GetAssignments
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRoleAssignment-id: $response.body#/id
-            summary:
-              operationId: privilegedApproval.roleInfo.GetSummary
-              parameters:
-                privilegedApproval-id: $request.path.privilegedApproval-id
-                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedApproval.privilegedRole
@@ -395,7 +440,7 @@ paths:
       parameters:
         - name: privilegedApproval-id
           in: path
-          description: 'key: privilegedApproval-id of privilegedApproval'
+          description: 'key: id of privilegedApproval'
           required: true
           schema:
             type: string
@@ -407,6 +452,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedApproval.privilegedRole
+      summary: Delete navigation property roleInfo for privilegedApproval
+      operationId: privilegedApproval_DeleteRoleInfo
+      parameters:
+        - name: privilegedApproval-id
+          in: path
+          description: 'key: id of privilegedApproval'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedApproval
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -537,6 +606,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedOperationEvent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -574,7 +645,7 @@ paths:
       parameters:
         - name: privilegedOperationEvent-id
           in: path
-          description: 'key: privilegedOperationEvent-id of privilegedOperationEvent'
+          description: 'key: id of privilegedOperationEvent'
           required: true
           schema:
             type: string
@@ -635,7 +706,7 @@ paths:
       parameters:
         - name: privilegedOperationEvent-id
           in: path
-          description: 'key: privilegedOperationEvent-id of privilegedOperationEvent'
+          description: 'key: id of privilegedOperationEvent'
           required: true
           schema:
             type: string
@@ -661,7 +732,7 @@ paths:
       parameters:
         - name: privilegedOperationEvent-id
           in: path
-          description: 'key: privilegedOperationEvent-id of privilegedOperationEvent'
+          description: 'key: id of privilegedOperationEvent'
           required: true
           schema:
             type: string
@@ -776,6 +847,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -813,7 +886,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -862,12 +935,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
-          links:
-            roleInfo:
-              operationId: privilegedRoleAssignmentRequests.GetRoleInfo
-              parameters:
-                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
-                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -879,7 +946,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -905,7 +972,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -930,7 +997,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -954,7 +1021,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -997,24 +1064,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-          links:
-            settings:
-              operationId: privilegedRoleAssignmentRequest.roleInfo.GetSettings
-              parameters:
-                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
-                privilegedRoleSettings-id: $response.body#/id
-            assignments:
-              operationId: privilegedRoleAssignmentRequest.roleInfo.GetAssignments
-              parameters:
-                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
-                privilegedRoleAssignment-id: $response.body#/id
-            summary:
-              operationId: privilegedRoleAssignmentRequest.roleInfo.GetSummary
-              parameters:
-                privilegedRoleAssignmentRequest-id: $request.path.privilegedRoleAssignmentRequest-id
-                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoleAssignmentRequests.privilegedRole
@@ -1023,7 +1075,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignmentRequest-id
           in: path
-          description: 'key: privilegedRoleAssignmentRequest-id of privilegedRoleAssignmentRequest'
+          description: 'key: id of privilegedRoleAssignmentRequest'
           required: true
           schema:
             type: string
@@ -1035,6 +1087,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedRoleAssignmentRequests.privilegedRole
+      summary: Delete navigation property roleInfo for privilegedRoleAssignmentRequests
+      operationId: privilegedRoleAssignmentRequests_DeleteRoleInfo
+      parameters:
+        - name: privilegedRoleAssignmentRequest-id
+          in: path
+          description: 'key: id of privilegedRoleAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignmentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1140,6 +1216,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1177,7 +1255,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1220,12 +1298,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
-          links:
-            roleInfo:
-              operationId: privilegedRoleAssignments.GetRoleInfo
-              parameters:
-                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
-                privilegedRole-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1237,7 +1309,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1263,7 +1335,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1288,7 +1360,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1312,7 +1384,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1333,6 +1405,8 @@ paths:
                 ticketSystem:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1353,7 +1427,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1396,23 +1470,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-          links:
-            settings:
-              operationId: privilegedRoleAssignment.roleInfo.GetSettings
-              parameters:
-                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
-                privilegedRoleSettings-id: $response.body#/id
-            assignments:
-              operationId: privilegedRoleAssignment.roleInfo.GetAssignments
-              parameters:
-                privilegedRoleAssignment-id: $response.body#/id
-            summary:
-              operationId: privilegedRoleAssignment.roleInfo.GetSummary
-              parameters:
-                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
-                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoleAssignments.privilegedRole
@@ -1421,7 +1481,7 @@ paths:
       parameters:
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1433,6 +1493,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedRoleAssignments.privilegedRole
+      summary: Delete navigation property roleInfo for privilegedRoleAssignments
+      operationId: privilegedRoleAssignments_DeleteRoleInfo
+      parameters:
+        - name: privilegedRoleAssignment-id
+          in: path
+          description: 'key: id of privilegedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1530,6 +1614,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRole'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1567,7 +1653,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1610,22 +1696,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-          links:
-            settings:
-              operationId: privilegedRoles.GetSettings
-              parameters:
-                privilegedRole-id: $request.path.privilegedRole-id
-                privilegedRoleSettings-id: $response.body#/id
-            assignments:
-              operationId: privilegedRoles.GetAssignments
-              parameters:
-                privilegedRole-id: $request.path.privilegedRole-id
-                privilegedRoleAssignment-id: $response.body#/id
-            summary:
-              operationId: privilegedRoles.GetSummary
-              parameters:
-                privilegedRole-id: $request.path.privilegedRole-id
-                privilegedRoleSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1637,7 +1707,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1663,7 +1733,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1688,7 +1758,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1767,6 +1837,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1782,14 +1854,14 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: privilegedRole
         - name: privilegedRoleAssignment-id
           in: path
-          description: 'key: privilegedRoleAssignment-id of privilegedRoleAssignment'
+          description: 'key: id of privilegedRoleAssignment'
           required: true
           schema:
             type: string
@@ -1832,14 +1904,133 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
-          links:
-            roleInfo:
-              operationId: privilegedRole.assignments.GetRoleInfo
-              parameters:
-                privilegedRole-id: $response.body#/id
-                privilegedRoleAssignment-id: $request.path.privilegedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/privilegedRoles/{privilegedRole-id}/assignments/$ref':
+    get:
+      tags:
+        - privilegedRoles.privilegedRoleAssignment
+      summary: Get ref of assignments from privilegedRoles
+      operationId: privilegedRoles_ListRefAssignments
+      parameters:
+        - name: privilegedRole-id
+          in: path
+          description: 'key: id of privilegedRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRole
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - userId
+                - userId desc
+                - roleId
+                - roleId desc
+                - isElevated
+                - isElevated desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - resultMessage
+                - resultMessage desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of privilegedRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - privilegedRoles.privilegedRoleAssignment
+      summary: Create new navigation property ref to assignments for privilegedRoles
+      operationId: privilegedRoles_CreateRefAssignments
+      parameters:
+        - name: privilegedRole-id
+          in: path
+          description: 'key: id of privilegedRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRole
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedRoles.privilegedRoleAssignment
+      summary: Delete ref of navigation property assignments for privilegedRoles
+      operationId: privilegedRoles_DeleteRefAssignments
+      parameters:
+        - name: privilegedRole-id
+          in: path
+          description: 'key: id of privilegedRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRole
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/privilegedRoles/{privilegedRole-id}/microsoft.graph.selfActivate':
     post:
       tags:
@@ -1849,7 +2040,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1873,6 +2064,8 @@ paths:
                 ticketSystem:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1893,7 +2086,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1917,7 +2110,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1965,6 +2158,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleSettings'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoles.privilegedRoleSettings
@@ -1973,7 +2167,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -1991,6 +2185,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedRoles.privilegedRoleSettings
+      summary: Delete navigation property settings for privilegedRoles
+      operationId: privilegedRoles_DeleteSettings
+      parameters:
+        - name: privilegedRole-id
+          in: path
+          description: 'key: id of privilegedRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRole
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/privilegedRoles/{privilegedRole-id}/summary':
     get:
       tags:
@@ -2000,7 +2218,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -2043,6 +2261,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - privilegedRoles.privilegedRoleSummary
@@ -2051,7 +2270,7 @@ paths:
       parameters:
         - name: privilegedRole-id
           in: path
-          description: 'key: privilegedRole-id of privilegedRole'
+          description: 'key: id of privilegedRole'
           required: true
           schema:
             type: string
@@ -2063,6 +2282,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.privilegedRoleSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - privilegedRoles.privilegedRoleSummary
+      summary: Delete navigation property summary for privilegedRoles
+      operationId: privilegedRoles_DeleteSummary
+      parameters:
+        - name: privilegedRole-id
+          in: path
+          description: 'key: id of privilegedRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: privilegedRole
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -2113,22 +2356,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignmentRequest'
             roleInfo:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-      example:
-        id: string (identifier)
-        userId: string
-        roleId: string
-        approvalType: string
-        approvalState:
-          '@odata.type': microsoft.graph.approvalState
-        approvalDuration: string
-        requestorReason: string
-        approverReason: string
-        startDateTime: string (timestamp)
-        endDateTime: string (timestamp)
-        request:
-          '@odata.type': microsoft.graph.privilegedRoleAssignmentRequest
-        roleInfo:
-          '@odata.type': microsoft.graph.privilegedRole
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedRoleAssignmentRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2171,22 +2400,8 @@ components:
               nullable: true
             roleInfo:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-      example:
-        id: string (identifier)
-        schedule:
-          '@odata.type': microsoft.graph.governanceSchedule
-        userId: string
-        roleId: string
-        type: string
-        assignmentState: string
-        requestedDateTime: string (timestamp)
-        status: string
-        duration: string
-        reason: string
-        ticketNumber: string
-        ticketSystem: string
-        roleInfo:
-          '@odata.type': microsoft.graph.privilegedRole
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2204,15 +2419,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.privilegedRoleAssignment'
             summary:
               $ref: '#/components/schemas/microsoft.graph.privilegedRoleSummary'
-      example:
-        id: string (identifier)
-        name: string
-        settings:
-          '@odata.type': microsoft.graph.privilegedRoleSettings
-        assignments:
-          - '@odata.type': microsoft.graph.privilegedRoleAssignment
-        summary:
-          '@odata.type': microsoft.graph.privilegedRoleSummary
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedOperationEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2265,22 +2473,8 @@ components:
             referenceSystem:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        userId: string
-        userName: string
-        userMail: string
-        roleId: string
-        roleName: string
-        expirationDateTime: string (timestamp)
-        creationDateTime: string (timestamp)
-        requestorId: string
-        requestorName: string
-        tenantId: string
-        requestType: string
-        additionalInformation: string
-        referenceKey: string
-        referenceSystem: string
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2304,15 +2498,8 @@ components:
               nullable: true
             roleInfo:
               $ref: '#/components/schemas/microsoft.graph.privilegedRole'
-      example:
-        id: string (identifier)
-        userId: string
-        roleId: string
-        isElevated: true
-        expirationDateTime: string (timestamp)
-        resultMessage: string
-        roleInfo:
-          '@odata.type': microsoft.graph.privilegedRole
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedRoleSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2357,19 +2544,8 @@ components:
             approvalOnElevation:
               type: boolean
               nullable: true
-      example:
-        id: string (identifier)
-        approverIds:
-          - string
-        minElevationDuration: string
-        maxElavationDuration: string
-        elevationDuration: string
-        notificationToUserOnElevation: true
-        ticketingInfoOnElevation: true
-        mfaOnElevation: true
-        lastGlobalAdmin: true
-        isMfaOnElevationConfigurable: true
-        approvalOnElevation: true
+          additionalProperties:
+            type: object
     microsoft.graph.privilegedRoleSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2399,14 +2575,8 @@ components:
             mfaEnabled:
               type: boolean
               nullable: true
-      example:
-        id: string (identifier)
-        status:
-          '@odata.type': microsoft.graph.roleSummaryStatus
-        usersCount: integer
-        managedCount: integer
-        elevatedCount: integer
-        mfaEnabled: true
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2414,8 +2584,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.approvalState:
       title: approvalState
       enum:
@@ -2447,11 +2617,8 @@ components:
           type: string
           format: duration
           nullable: true
-      example:
-        type: string
-        startDateTime: string (timestamp)
-        endDateTime: string (timestamp)
-        duration: string
+      additionalProperties:
+        type: object
     microsoft.graph.roleSummaryStatus:
       title: roleSummaryStatus
       enum:
@@ -2465,6 +2632,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -2483,7 +2652,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2496,6 +2669,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

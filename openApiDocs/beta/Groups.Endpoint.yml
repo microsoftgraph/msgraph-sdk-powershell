@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -95,6 +95,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.endpoint'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -109,7 +111,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -140,14 +142,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: endpoint-id
           in: path
-          description: 'key: endpoint-id of endpoint'
+          description: 'key: id of endpoint'
           required: true
           schema:
             type: string
@@ -191,6 +193,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.endpoint
@@ -199,14 +202,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: endpoint-id
           in: path
-          description: 'key: endpoint-id of endpoint'
+          description: 'key: id of endpoint'
           required: true
           schema:
             type: string
@@ -218,6 +221,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.endpoint'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.endpoint
+      summary: Delete navigation property endpoints for groups
+      operationId: groups_DeleteEndpoints
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: endpoint-id
+          in: path
+          description: 'key: id of endpoint'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: endpoint
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -248,17 +282,11 @@ components:
               description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
-              description: 'For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
+              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        capability: string
-        providerId: string
-        providerName: string
-        uri: string
-        providerResourceId: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -270,10 +298,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     odata.error:
       required:
         - error
@@ -281,6 +308,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -288,8 +317,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -308,7 +337,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -321,6 +354,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

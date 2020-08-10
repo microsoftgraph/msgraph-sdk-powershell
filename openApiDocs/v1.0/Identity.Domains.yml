@@ -115,6 +115,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.domain'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -152,7 +154,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -207,22 +209,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.domain'
-          links:
-            serviceConfigurationRecords:
-              operationId: domains.GetServiceConfigurationRecords
-              parameters:
-                domain-id: $request.path.domain-id
-                domainDnsRecord-id: $response.body#/id
-            verificationDnsRecords:
-              operationId: domains.GetVerificationDnsRecords
-              parameters:
-                domain-id: $request.path.domain-id
-                domainDnsRecord-id: $response.body#/id
-            domainNameReferences:
-              operationId: domains.GetDomainNameReferences
-              parameters:
-                domain-id: $request.path.domain-id
-                directoryObject-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -234,7 +220,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -260,7 +246,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -285,7 +271,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -350,6 +336,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -365,14 +353,14 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -411,6 +399,123 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/domainNameReferences/$ref':
+    get:
+      tags:
+        - domains.directoryObject
+      summary: Get ref of domainNameReferences from domains
+      operationId: domains_ListRefDomainNameReferences
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - domains.directoryObject
+      summary: Create new navigation property ref to domainNameReferences for domains
+      operationId: domains_CreateRefDomainNameReferences
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - domains.directoryObject
+      summary: Delete ref of navigation property domainNameReferences for domains
+      operationId: domains_DeleteRefDomainNameReferences
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/domains/{domain-id}/microsoft.graph.forceDelete':
     post:
       tags:
@@ -420,7 +525,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -436,6 +541,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -452,7 +559,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -476,7 +583,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -553,6 +660,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -567,7 +676,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -598,14 +707,14 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: domainDnsRecord-id of domainDnsRecord'
+          description: 'key: id of domainDnsRecord'
           required: true
           schema:
             type: string
@@ -648,6 +757,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - domains.domainDnsRecord
@@ -656,14 +766,14 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: domainDnsRecord-id of domainDnsRecord'
+          description: 'key: id of domainDnsRecord'
           required: true
           schema:
             type: string
@@ -681,6 +791,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - domains.domainDnsRecord
+      summary: Delete navigation property serviceConfigurationRecords for domains
+      operationId: domains_DeleteServiceConfigurationRecords
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: domainDnsRecord-id
+          in: path
+          description: 'key: id of domainDnsRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domainDnsRecord
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/domains/{domain-id}/verificationDnsRecords':
     get:
       tags:
@@ -690,7 +831,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -767,6 +908,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -781,7 +924,7 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
@@ -812,14 +955,14 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: domainDnsRecord-id of domainDnsRecord'
+          description: 'key: id of domainDnsRecord'
           required: true
           schema:
             type: string
@@ -862,6 +1005,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - domains.domainDnsRecord
@@ -870,14 +1014,14 @@ paths:
       parameters:
         - name: domain-id
           in: path
-          description: 'key: domain-id of domain'
+          description: 'key: id of domain'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: domain
         - name: domainDnsRecord-id
           in: path
-          description: 'key: domainDnsRecord-id of domainDnsRecord'
+          description: 'key: id of domainDnsRecord'
           required: true
           schema:
             type: string
@@ -889,6 +1033,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - domains.domainDnsRecord
+      summary: Delete navigation property verificationDnsRecords for domains
+      operationId: domains_DeleteVerificationDnsRecords
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: domainDnsRecord-id
+          in: path
+          description: 'key: id of domainDnsRecord'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domainDnsRecord
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -912,7 +1087,7 @@ components:
               nullable: true
             isAdminManaged:
               type: boolean
-              description: 'The value of the property is false if the DNS record management of the domain has been delegated to Office 365. Otherwise, the value is true. Not nullable'
+              description: 'The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable'
             isDefault:
               type: boolean
               description: True if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
@@ -967,29 +1142,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Read-only, Nullable'
-      example:
-        id: string (identifier)
-        authenticationType: string
-        availabilityStatus: string
-        isAdminManaged: true
-        isDefault: true
-        isInitial: true
-        isRoot: true
-        isVerified: true
-        manufacturer: string
-        model: string
-        passwordNotificationWindowInDays: integer
-        passwordValidityPeriodInDays: integer
-        supportedServices:
-          - string
-        state:
-          '@odata.type': microsoft.graph.domainState
-        serviceConfigurationRecords:
-          - '@odata.type': microsoft.graph.domainDnsRecord
-        verificationDnsRecords:
-          - '@odata.type': microsoft.graph.domainDnsRecord
-        domainNameReferences:
-          - '@odata.type': microsoft.graph.directoryObject
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1001,10 +1155,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.domainDnsRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1030,13 +1183,8 @@ components:
               type: integer
               description: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
               format: int32
-      example:
-        id: string (identifier)
-        isOptional: true
-        label: string
-        recordType: string
-        supportedService: string
-        ttl: integer
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1044,8 +1192,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.domainState:
       title: domainState
       type: object
@@ -1064,10 +1212,8 @@ components:
           description: 'Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.'
           format: date-time
           nullable: true
-      example:
-        status: string
-        operation: string
-        lastActionDateTime: string (timestamp)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1075,6 +1221,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1093,7 +1241,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1106,6 +1258,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

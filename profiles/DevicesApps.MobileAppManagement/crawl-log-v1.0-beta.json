@@ -1,7 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}": {
+    "/users/{user-id}/managedAppRegistrations/$ref": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}": {
+      "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/$ref": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,7 +21,7 @@
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/windowsInformationProtectionDeviceRegistrations/{windowsInformationProtectionDeviceRegistration-id}": {
+    "/users/{user-id}/managedAppRegistrations/{managedAppRegistration-id}": {
       "originalLocation": "/openApiDocs/beta/DevicesApps.MobileAppManagement.yml",
       "apiVersion": "v1.0-beta"
     }

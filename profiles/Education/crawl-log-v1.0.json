@@ -1,47 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/education/classes/{educationClass-id}": {
+    "/education/classes": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education/users/{educationUser-id}/schools/{educationSchool-id}": {
+    "/education/schools/{educationSchool-id}/users/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education/classes/{educationClass-id}/group": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/users/{educationUser-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/classes/{educationClass-id}/schools": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/users/{educationUser-id}/classes/{educationClass-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/classes/{educationClass-id}/teachers": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/me/user": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/schools/{educationSchool-id}/users/{educationUser-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/schools/{educationSchool-id}/users": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/classes/{educationClass-id}/members": {
+    "/education/classes/{educationClass-id}/group/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
@@ -49,7 +17,51 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education/classes/{educationClass-id}/schools/{educationSchool-id}": {
+    "/education/classes/{educationClass-id}/group": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools/{educationSchool-id}/users": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/me/classes": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/me/schools/{educationSchool-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/teachers/{educationUser-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/members": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/teachers/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools/{educationSchool-id}/users/{educationUser-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/user/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/schools": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
@@ -61,7 +73,7 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education/users/{educationUser-id}/schools": {
+    "/education/me/user": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
@@ -69,39 +81,7 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/schools/{educationSchool-id}/classes/{educationClass-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/schools": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/classes/{educationClass-id}/teachers/{educationUser-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/users/{educationUser-id}/classes": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
     "/education/users": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/schools/{educationSchool-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/classes": {
-      "originalLocation": "/openApiDocs/v1.0/Education.yml",
-      "apiVersion": "v1.0"
-    },
-    "/education/me/classes": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
@@ -109,11 +89,79 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
+    "/education/users/{educationUser-id}/schools/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/schools": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools/{educationSchool-id}/classes/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools/{educationSchool-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/classes/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
     "/education/classes/{educationClass-id}/members/{educationUser-id}": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     },
-    "/education/me/schools/{educationSchool-id}": {
+    "/education": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/schools/{educationSchool-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/me/schools/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/schools/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/teachers": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/classes/{educationClass-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/me/classes/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/classes": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/schools/{educationSchool-id}/classes/{educationClass-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/users/{educationUser-id}/schools/{educationSchool-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/me/user/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Education.yml",
+      "apiVersion": "v1.0"
+    },
+    "/education/classes/{educationClass-id}/members/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Education.yml",
       "apiVersion": "v1.0"
     }

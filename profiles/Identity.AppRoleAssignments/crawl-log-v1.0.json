@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/appRoleAssignments": {
+    "/users/{user-id}/appRoleAssignments": {
       "originalLocation": "/openApiDocs/v1.0/Identity.AppRoleAssignments.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/appRoleAssignments": {
+    "/groups/{group-id}/appRoleAssignments": {
       "originalLocation": "/openApiDocs/v1.0/Identity.AppRoleAssignments.yml",
       "apiVersion": "v1.0"
     },

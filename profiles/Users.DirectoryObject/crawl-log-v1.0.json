@@ -1,43 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/memberOf/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/ownedObjects/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/ownedObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/registeredDevices": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/ownedDevices": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/manager": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/memberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/ownedDevices/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/createdObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
-      "apiVersion": "v1.0"
-    },
-    "/users/{user-id}/registeredDevices/{directoryObject-id}": {
+    "/users/{user-id}/ownedDevices/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
@@ -45,7 +9,23 @@
       "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
-    "/users/{user-id}/createdObjects/{directoryObject-id}": {
+    "/users/{user-id}/ownedObjects/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/ownedDevices/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/manager": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/manager/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/registeredDevices": {
       "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
@@ -57,7 +37,59 @@
       "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
       "apiVersion": "v1.0"
     },
+    "/users/{user-id}/createdObjects/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/registeredDevices/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/memberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/createdObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/ownedDevices": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/registeredDevices/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
     "/users/{user-id}/transitiveMemberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/ownedObjects/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/ownedObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/memberOf/{directoryObject-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/transitiveMemberOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/directReports/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/memberOf/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
+      "apiVersion": "v1.0"
+    },
+    "/users/{user-id}/createdObjects/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Users.DirectoryObject.yml",
       "apiVersion": "v1.0"
     }

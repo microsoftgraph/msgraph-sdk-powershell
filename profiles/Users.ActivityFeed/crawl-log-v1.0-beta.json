@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/activities/{userActivity-id}": {
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}": {
       "originalLocation": "/openApiDocs/beta/Users.ActivityFeed.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
+    "/users/{user-id}/activities/{userActivity-id}": {
       "originalLocation": "/openApiDocs/beta/Users.ActivityFeed.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -13,7 +13,11 @@
       "originalLocation": "/openApiDocs/beta/Users.ActivityFeed.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}": {
+    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
+      "originalLocation": "/openApiDocs/beta/Users.ActivityFeed.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
       "originalLocation": "/openApiDocs/beta/Users.ActivityFeed.yml",
       "apiVersion": "v1.0-beta"
     },

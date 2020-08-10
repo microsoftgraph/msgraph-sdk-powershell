@@ -1,11 +1,11 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/devices": {
+    "/users/{user-id}/devices/{device-id}": {
       "originalLocation": "/openApiDocs/beta/Users.Devices.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/users/{user-id}/devices/{device-id}": {
+    "/users/{user-id}/devices": {
       "originalLocation": "/openApiDocs/beta/Users.Devices.yml",
       "apiVersion": "v1.0-beta"
     }

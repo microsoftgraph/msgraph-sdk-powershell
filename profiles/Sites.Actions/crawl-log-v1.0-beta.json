@@ -1,123 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -125,83 +9,7 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/microsoft.graph.remove": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.publish": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -209,19 +17,23 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -229,15 +41,35 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
     "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/microsoft.graph.add": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -245,7 +77,103 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/microsoft.graph.add": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -253,7 +181,179 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/microsoft.graph.remove": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.publish": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
+      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -265,79 +365,19 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection": {
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -345,71 +385,31 @@
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/microsoft.graph.getNotebookFromWebUrl": {
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToSectionGroup": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
+    "/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentNotebook/microsoft.graph.copyNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup/sections/{onenoteSection-id1}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection/microsoft.graph.copyToSectionGroup": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/parentSectionGroup/parentNotebook/sections/{onenoteSection-id}/microsoft.graph.copyToNotebook": {
-      "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook/microsoft.graph.copyNotebook": {
+    "/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
       "originalLocation": "/openApiDocs/beta/Sites.Actions.yml",
       "apiVersion": "v1.0-beta"
     }

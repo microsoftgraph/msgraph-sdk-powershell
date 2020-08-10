@@ -86,14 +86,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - dataPolicyOperations.dataPolicyOperation
@@ -125,7 +121,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          description: 'key: id of dataPolicyOperation'
           required: true
           schema:
             type: string
@@ -178,7 +174,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          description: 'key: id of dataPolicyOperation'
           required: true
           schema:
             type: string
@@ -204,7 +200,7 @@ paths:
       parameters:
         - name: dataPolicyOperation-id
           in: path
-          description: 'key: dataPolicyOperation-id of dataPolicyOperation'
+          description: 'key: id of dataPolicyOperation'
           required: true
           schema:
             type: string
@@ -252,15 +248,8 @@ components:
               type: number
               description: Specifies the progress of an operation.
               format: double
-      example:
-        id: string (identifier)
-        completedDateTime: string (timestamp)
-        status:
-          '@odata.type': microsoft.graph.dataPolicyOperationStatus
-        storageLocation: string
-        userId: string
-        submittedDateTime: string (timestamp)
-        progress: double
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -268,8 +257,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.dataPolicyOperationStatus:
       title: dataPolicyOperationStatus
       enum:
@@ -286,6 +275,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -304,7 +295,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -317,6 +312,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

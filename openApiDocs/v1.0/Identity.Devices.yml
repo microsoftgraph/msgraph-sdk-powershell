@@ -138,14 +138,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.device'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - devices.device
@@ -177,7 +173,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -245,30 +241,25 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
           links:
             memberOf:
-              operationId: devices.GetMemberOf
+              operationId: devices.ListMemberOf
               parameters:
                 device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
             registeredOwners:
-              operationId: devices.GetRegisteredOwners
+              operationId: devices.ListRegisteredOwners
               parameters:
                 device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
             registeredUsers:
-              operationId: devices.GetRegisteredUsers
+              operationId: devices.ListRegisteredUsers
               parameters:
                 device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
             transitiveMemberOf:
-              operationId: devices.GetTransitiveMemberOf
+              operationId: devices.ListTransitiveMemberOf
               parameters:
                 device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
             extensions:
-              operationId: devices.GetExtensions
+              operationId: devices.ListExtensions
               parameters:
                 device-id: $request.path.device-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -280,7 +271,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -306,7 +297,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -331,7 +322,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -391,13 +382,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -407,7 +395,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -438,14 +426,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -483,6 +471,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - devices.extension
@@ -491,14 +480,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -516,6 +505,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.extension
+      summary: Delete navigation property extensions for devices
+      operationId: devices_DeleteExtensions
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/devices/{device-id}/memberOf':
     get:
       tags:
@@ -525,7 +545,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -588,13 +608,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/memberOf/{directoryObject-id}':
     get:
@@ -605,14 +622,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -651,6 +668,118 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/memberOf/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of memberOf from devices
+      operationId: devices_ListRefMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to memberOf for devices
+      operationId: devices_CreateRefMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.directoryObject
+      summary: Delete ref of navigation property memberOf for devices
+      operationId: devices_DeleteRefMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/devices/{device-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -660,7 +789,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -676,6 +805,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -698,7 +829,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -714,6 +845,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -736,7 +869,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -752,6 +885,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -774,7 +909,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -790,6 +925,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -812,7 +949,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -836,7 +973,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -899,13 +1036,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredOwners/{directoryObject-id}':
     get:
@@ -916,14 +1050,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -962,6 +1096,118 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredOwners/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of registeredOwners from devices
+      operationId: devices_ListRefRegisteredOwners
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to registeredOwners for devices
+      operationId: devices_CreateRefRegisteredOwners
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.directoryObject
+      summary: Delete ref of navigation property registeredOwners for devices
+      operationId: devices_DeleteRefRegisteredOwners
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredUsers':
     get:
       tags:
@@ -971,7 +1217,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -1034,13 +1280,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredUsers/{directoryObject-id}':
     get:
@@ -1051,14 +1294,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1097,6 +1340,118 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredUsers/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of registeredUsers from devices
+      operationId: devices_ListRefRegisteredUsers
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to registeredUsers for devices
+      operationId: devices_CreateRefRegisteredUsers
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.directoryObject
+      summary: Delete ref of navigation property registeredUsers for devices
+      operationId: devices_DeleteRefRegisteredUsers
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/devices/{device-id}/transitiveMemberOf':
     get:
       tags:
@@ -1106,7 +1461,7 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -1169,13 +1524,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}':
     get:
@@ -1186,14 +1538,14 @@ paths:
       parameters:
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: device
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1232,6 +1584,150 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/transitiveMemberOf/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of transitiveMemberOf from devices
+      operationId: devices_ListRefTransitiveMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to transitiveMemberOf for devices
+      operationId: devices_CreateRefTransitiveMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: String
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.directoryObject
+      summary: Delete ref of navigation property transitiveMemberOf for devices
+      operationId: devices_DeleteRefTransitiveMemberOf
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /devices/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - devices.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: devices_getAvailableExtensionProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /devices/microsoft.graph.getByIds:
     post:
       tags:
@@ -1254,6 +1750,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1294,6 +1792,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1421,49 +1921,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the device. Read-only. Nullable.
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        accountEnabled: true
-        alternativeSecurityIds:
-          - '@odata.type': microsoft.graph.alternativeSecurityId
-        approximateLastSignInDateTime: string (timestamp)
-        complianceExpirationDateTime: string (timestamp)
-        deviceId: string
-        deviceMetadata: string
-        deviceVersion: integer
-        displayName: string
-        isCompliant: true
-        isManaged: true
-        mdmAppId: string
-        onPremisesLastSyncDateTime: string (timestamp)
-        onPremisesSyncEnabled: true
-        operatingSystem: string
-        operatingSystemVersion: string
-        physicalIds:
-          - string
-        profileType: string
-        systemLabels:
-          - string
-        trustType: string
-        memberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        registeredOwners:
-          - '@odata.type': microsoft.graph.directoryObject
-        registeredUsers:
-          - '@odata.type': microsoft.graph.directoryObject
-        transitiveMemberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        extensions:
-          - '@odata.type': microsoft.graph.extension
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1475,10 +1942,37 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
+            dataType:
+              type: string
+              description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              nullable: true
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
@@ -1499,10 +1993,8 @@ components:
           description: For internal use only
           format: base64url
           nullable: true
-      example:
-        type: integer
-        identityProvider: string
-        key: string
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1510,8 +2002,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1519,6 +2011,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1537,7 +2031,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1550,6 +2048,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

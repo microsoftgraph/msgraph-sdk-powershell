@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -59,22 +59,20 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
           links:
             trending:
-              operationId: user.insights.GetTrending
+              operationId: users.Insights.ListTrending
               parameters:
                 user-id: $request.path.user-id
-                trending-id: $response.body#/id
             shared:
-              operationId: user.insights.GetShared
+              operationId: users.Insights.ListShared
               parameters:
                 user-id: $request.path.user-id
-                sharedInsight-id: $response.body#/id
             used:
-              operationId: user.insights.GetUsed
+              operationId: users.Insights.ListUsed
               parameters:
                 user-id: $request.path.user-id
-                usedInsight-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -83,7 +81,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -101,6 +99,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete navigation property insights for users
+      operationId: users_DeleteInsights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/shared':
     get:
       tags:
@@ -110,7 +132,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -186,13 +208,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -202,7 +221,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -233,14 +252,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: sharedInsight-id of sharedInsight'
+          description: 'key: id of sharedInsight'
           required: true
           schema:
             type: string
@@ -286,19 +305,18 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
           links:
             lastSharedMethod:
-              operationId: officeGraphInsights.shared.GetLastSharedMethod
+              operationId: users.insights.Shared.GetLastSharedMethod
               parameters:
                 user-id: $request.path.user-id
                 sharedInsight-id: $request.path.sharedInsight-id
-                entity-id: $response.body#/id
             resource:
-              operationId: officeGraphInsights.shared.GetResource
+              operationId: users.insights.Shared.GetResource
               parameters:
                 user-id: $request.path.user-id
                 sharedInsight-id: $request.path.sharedInsight-id
-                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -307,14 +325,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: sharedInsight-id of sharedInsight'
+          description: 'key: id of sharedInsight'
           required: true
           schema:
             type: string
@@ -332,6 +350,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete navigation property shared for users
+      operationId: users.insights_DeleteShared
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod':
     get:
       tags:
@@ -341,14 +390,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: sharedInsight-id of sharedInsight'
+          description: 'key: id of sharedInsight'
           required: true
           schema:
             type: string
@@ -386,6 +435,102 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/$ref':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get ref of lastSharedMethod from users
+      operationId: users.insights.shared_GetRefLastSharedMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.officeGraphInsights
+      summary: Update the ref of navigation property lastSharedMethod in users
+      operationId: users.insights.shared_UpdateRefLastSharedMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete ref of navigation property lastSharedMethod for users
+      operationId: users.insights.shared_DeleteRefLastSharedMethod
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/shared/{sharedInsight-id}/resource':
     get:
       tags:
@@ -395,14 +540,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: sharedInsight-id
           in: path
-          description: 'key: sharedInsight-id of sharedInsight'
+          description: 'key: id of sharedInsight'
           required: true
           schema:
             type: string
@@ -440,6 +585,102 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/shared/{sharedInsight-id}/resource/$ref':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get ref of resource from users
+      operationId: users.insights.shared_GetRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.officeGraphInsights
+      summary: Update the ref of navigation property resource in users
+      operationId: users.insights.shared_UpdateRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete ref of navigation property resource for users
+      operationId: users.insights.shared_DeleteRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/trending':
     get:
       tags:
@@ -449,7 +690,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -523,13 +764,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.trending'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -539,7 +777,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -570,14 +808,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: trending-id of trending'
+          description: 'key: id of trending'
           required: true
           schema:
             type: string
@@ -621,13 +859,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.trending'
           links:
             resource:
-              operationId: officeGraphInsights.trending.GetResource
+              operationId: users.insights.Trending.GetResource
               parameters:
                 user-id: $request.path.user-id
                 trending-id: $request.path.trending-id
-                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -636,14 +874,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: trending-id of trending'
+          description: 'key: id of trending'
           required: true
           schema:
             type: string
@@ -661,6 +899,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete navigation property trending for users
+      operationId: users.insights_DeleteTrending
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: trending-id
+          in: path
+          description: 'key: id of trending'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trending
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/trending/{trending-id}/resource':
     get:
       tags:
@@ -670,14 +939,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: trending-id
           in: path
-          description: 'key: trending-id of trending'
+          description: 'key: id of trending'
           required: true
           schema:
             type: string
@@ -715,6 +984,102 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/trending/{trending-id}/resource/$ref':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get ref of resource from users
+      operationId: users.insights.trending_GetRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: trending-id
+          in: path
+          description: 'key: id of trending'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trending
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.officeGraphInsights
+      summary: Update the ref of navigation property resource in users
+      operationId: users.insights.trending_UpdateRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: trending-id
+          in: path
+          description: 'key: id of trending'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trending
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete ref of navigation property resource for users
+      operationId: users.insights.trending_DeleteRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: trending-id
+          in: path
+          description: 'key: id of trending'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trending
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/used':
     get:
       tags:
@@ -724,7 +1089,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -795,13 +1160,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.usedInsight'
-                  '@odata.nextLink':
-                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -811,7 +1173,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -842,14 +1204,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: usedInsight-id of usedInsight'
+          description: 'key: id of usedInsight'
           required: true
           schema:
             type: string
@@ -892,13 +1254,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
           links:
             resource:
-              operationId: officeGraphInsights.used.GetResource
+              operationId: users.insights.Used.GetResource
               parameters:
                 user-id: $request.path.user-id
                 usedInsight-id: $request.path.usedInsight-id
-                entity-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.officeGraphInsights
@@ -907,14 +1269,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: usedInsight-id of usedInsight'
+          description: 'key: id of usedInsight'
           required: true
           schema:
             type: string
@@ -932,6 +1294,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete navigation property used for users
+      operationId: users.insights_DeleteUsed
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: usedInsight-id
+          in: path
+          description: 'key: id of usedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usedInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/used/{usedInsight-id}/resource':
     get:
       tags:
@@ -941,14 +1334,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: usedInsight-id
           in: path
-          description: 'key: usedInsight-id of usedInsight'
+          description: 'key: id of usedInsight'
           required: true
           schema:
             type: string
@@ -986,6 +1379,102 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.entity'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/used/{usedInsight-id}/resource/$ref':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get ref of resource from users
+      operationId: users.insights.used_GetRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: usedInsight-id
+          in: path
+          description: 'key: id of usedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usedInsight
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.officeGraphInsights
+      summary: Update the ref of navigation property resource in users
+      operationId: users.insights.used_UpdateRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: usedInsight-id
+          in: path
+          description: 'key: id of usedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usedInsight
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: String
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.officeGraphInsights
+      summary: Delete ref of navigation property resource for users
+      operationId: users.insights.used_DeleteRefResource
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: usedInsight-id
+          in: path
+          description: 'key: id of usedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usedInsight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.officeGraphInsights:
@@ -1009,14 +1498,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
               description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-      example:
-        id: string (identifier)
-        trending:
-          - '@odata.type': microsoft.graph.trending
-        shared:
-          - '@odata.type': microsoft.graph.sharedInsight
-        used:
-          - '@odata.type': microsoft.graph.usedInsight
+          additionalProperties:
+            type: object
     microsoft.graph.sharedInsight:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1037,20 +1520,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.entity'
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
-      example:
-        id: string (identifier)
-        lastShared:
-          '@odata.type': microsoft.graph.sharingDetail
-        sharingHistory:
-          - '@odata.type': microsoft.graph.sharingDetail
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        lastSharedMethod:
-          '@odata.type': microsoft.graph.entity
-        resource:
-          '@odata.type': microsoft.graph.entity
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1058,8 +1529,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.trending:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1081,16 +1552,8 @@ components:
               nullable: true
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
-      example:
-        id: string (identifier)
-        weight: double
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        lastModifiedDateTime: string (timestamp)
-        resource:
-          '@odata.type': microsoft.graph.entity
+          additionalProperties:
+            type: object
     microsoft.graph.usedInsight:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1105,16 +1568,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.resourceReference'
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
-      example:
-        id: string (identifier)
-        lastUsed:
-          '@odata.type': microsoft.graph.usageDetails
-        resourceVisualization:
-          '@odata.type': microsoft.graph.resourceVisualization
-        resourceReference:
-          '@odata.type': microsoft.graph.resourceReference
-        resource:
-          '@odata.type': microsoft.graph.entity
+          additionalProperties:
+            type: object
     microsoft.graph.sharingDetail:
       title: sharingDetail
       type: object
@@ -1137,14 +1592,8 @@ components:
           nullable: true
         sharingReference:
           $ref: '#/components/schemas/microsoft.graph.resourceReference'
-      example:
-        sharedBy:
-          '@odata.type': microsoft.graph.insightIdentity
-        sharedDateTime: string (timestamp)
-        sharingSubject: string
-        sharingType: string
-        sharingReference:
-          '@odata.type': microsoft.graph.resourceReference
+      additionalProperties:
+        type: object
     microsoft.graph.resourceVisualization:
       title: resourceVisualization
       type: object
@@ -1181,15 +1630,8 @@ components:
           type: string
           description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
           nullable: true
-      example:
-        title: string
-        type: string
-        mediaType: string
-        previewImageUrl: string
-        previewText: string
-        containerWebUrl: string
-        containerDisplayName: string
-        containerType: string
+      additionalProperties:
+        type: object
     microsoft.graph.resourceReference:
       title: resourceReference
       type: object
@@ -1206,10 +1648,8 @@ components:
           type: string
           description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
           nullable: true
-      example:
-        webUrl: string
-        id: string
-        type: string
+      additionalProperties:
+        type: object
     microsoft.graph.usageDetails:
       title: usageDetails
       type: object
@@ -1226,9 +1666,8 @@ components:
           description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
-      example:
-        lastAccessedDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1236,6 +1675,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.insightIdentity:
       title: insightIdentity
       type: object
@@ -1252,10 +1693,8 @@ components:
           type: string
           description: The email address of the user who shared the item.
           nullable: true
-      example:
-        displayName: string
-        id: string
-        address: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1274,7 +1713,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1287,6 +1730,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

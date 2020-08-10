@@ -1,19 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
-      "apiVersion": "v1.0"
-    },
     "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     },
-    "/directoryObjects": {
+    "/directoryObjects/microsoft.graph.getAvailableExtensionProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
+      "apiVersion": "v1.0"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     },
@@ -25,7 +21,7 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     },
-    "/directoryObjects/microsoft.graph.getByIds": {
+    "/directoryObjects/microsoft.graph.administrativeUnit/microsoft.graph.delta()": {
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     },
@@ -33,7 +29,19 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
+    "/directoryObjects/microsoft.graph.getByIds": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
+      "apiVersion": "v1.0"
+    },
+    "/directoryObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
+      "apiVersion": "v1.0"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
+      "apiVersion": "v1.0"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups": {
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryObjects.yml",
       "apiVersion": "v1.0"
     }

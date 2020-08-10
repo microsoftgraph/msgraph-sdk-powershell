@@ -1,11 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
+    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
-    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
+    "/organization/microsoft.graph.getAvailableExtensionProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
+      "apiVersion": "v1.0"
+    },
+    "/organization/microsoft.graph.getByIds": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
@@ -17,7 +21,15 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
+    "/organization/microsoft.graph.validateProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
+      "apiVersion": "v1.0"
+    },
     "/organization": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
+      "apiVersion": "v1.0"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
@@ -25,15 +37,7 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
-    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
-      "apiVersion": "v1.0"
-    },
-    "/organization/{organization-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
-      "apiVersion": "v1.0"
-    },
-    "/organization/microsoft.graph.getByIds": {
+    "/organization/{organization-id}/microsoft.graph.setMobileDeviceManagementAuthority": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
@@ -41,19 +45,23 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
-    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
-      "apiVersion": "v1.0"
-    },
     "/organization/{organization-id}/extensions/{extension-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
-    "/organization/microsoft.graph.validateProperties": {
+    "/organization/{organization-id}/microsoft.graph.getMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
+      "apiVersion": "v1.0"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     },
     "/organization/{organization-id}/microsoft.graph.restore": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
+      "apiVersion": "v1.0"
+    },
+    "/organization/{organization-id}/microsoft.graph.getMemberObjects": {
       "originalLocation": "/openApiDocs/v1.0/Identity.Organization.yml",
       "apiVersion": "v1.0"
     }

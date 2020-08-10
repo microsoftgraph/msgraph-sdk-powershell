@@ -1,15 +1,7 @@
 {
   "resources": [],
   "operations": {
-    "/trustFramework": {
-      "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadSecret": {
-      "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}": {
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.getActiveKey()": {
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -17,7 +9,7 @@
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/trustFramework/policies": {
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadPkcs12": {
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -25,11 +17,15 @@
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/trustFramework/keySets": {
+    "/trustFramework": {
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadPkcs12": {
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}": {
+      "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/trustFramework/policies": {
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
@@ -37,7 +33,11 @@
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     },
-    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.getActiveKey()": {
+    "/trustFramework/keySets": {
+      "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.uploadSecret": {
       "originalLocation": "/openApiDocs/beta/Identity.TrustFramework.yml",
       "apiVersion": "v1.0-beta"
     }

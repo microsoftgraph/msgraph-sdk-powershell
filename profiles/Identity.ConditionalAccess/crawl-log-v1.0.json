@@ -1,0 +1,25 @@
+{
+  "resources": [],
+  "operations": {
+    "/identity/conditionalAccess": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0"
+    },
+    "/identity/conditionalAccess/namedLocations": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0"
+    },
+    "/identity/conditionalAccess/policies": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0"
+    },
+    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0"
+    },
+    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.ConditionalAccess.yml",
+      "apiVersion": "v1.0"
+    }
+  }
+}

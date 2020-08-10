@@ -1,11 +1,15 @@
 {
   "resources": [],
   "operations": {
-    "/contacts/microsoft.graph.validateProperties": {
+    "/contacts/{orgContact-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/directReports": {
+    "/contacts": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/microsoft.graph.validateProperties": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
@@ -13,15 +17,11 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/manager": {
+    "/contacts/{orgContact-id}/memberOf": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts": {
+    "/contacts/{orgContact-id}/directReports/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
@@ -33,15 +33,15 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/directReports/{directoryObject-id}": {
+    "/contacts/{orgContact-id}/microsoft.graph.restore": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/microsoft.graph.delta()": {
+    "/contacts/{orgContact-id}/memberOf/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
+    "/contacts/{orgContact-id}/directReports": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
@@ -49,11 +49,27 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/microsoft.graph.restore": {
+    "/contacts/{orgContact-id}/transitiveMemberOf/$ref": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/memberOf": {
+    "/contacts/{orgContact-id}/transitiveMemberOf": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/microsoft.graph.getAvailableExtensionProperties": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/{orgContact-id}/manager/$ref": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/{orgContact-id}/manager": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/microsoft.graph.delta()": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
@@ -61,11 +77,15 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}": {
+    "/contacts/{orgContact-id}/microsoft.graph.getMemberGroups": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     },
-    "/contacts/{orgContact-id}/transitiveMemberOf": {
+    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
+      "apiVersion": "v1.0"
+    },
+    "/contacts/{orgContact-id}/directReports/{directoryObject-id}": {
       "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
       "apiVersion": "v1.0"
     }
