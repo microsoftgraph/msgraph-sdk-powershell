@@ -43,6 +43,9 @@ stages:
   - template: ./generate-auth-module.yml
     parameters:
       Api_Key: $(Api_Key)
+      MODULE_NAME: $(MODULE_NAME)
+      MODULE_PATH: $(MODULE_PATH)
+      MODULE_DLL_PATTERN: $(MODULE_DLL_PATTERN)
 
     
 - stage: GenerateBetaModules
@@ -50,9 +53,17 @@ stages:
   - template: ./generate-beta-modules.yml
     parameters:
       Api_Key: $(Api_Key)
+      MODULE_PREFIX: $(MODULE_PREFIX)
+      WORKLOAD_MODULE_PATH: $(WORKLOAD_MODULE_PATH)
+      GRAPH_VERSION: $(GRAPH_VERSION)
+      AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
+      AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
 
 - stage: GenerateRollUpModule
   jobs:
   - template: ./generate-beta-modules.yml
     parameters:
       Api_Key: $(Api_Key)
+      MODULE_PATH: $(MODULE_PATH)
+      MODULE_NAME: $(MODULE_NAME)
+      GRAPH_VERSION: $(GRAPH_VERSION)
