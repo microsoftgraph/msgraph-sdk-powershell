@@ -3,15 +3,15 @@
 
 # Generates a release build artifact (nuget) from HEAD of master for auth module.
 parameters:
-  - name: MODULE_PATH
-    displayName: 'Module Path'
+  - name: AUTH_MODULE_PATH
+    displayName: 'Authentication Module Path'
     type: string
     default: 'src\Authentication\Authentication\'
-  - name: MODULE_NAME
-    displayName: 'Module Name'
+  - name: AUTH_MODULE_NAME
+    displayName: 'Authentication Module Name'
     type: string
     default: 'Authentication'
-  - name: MODULE_DLL_PATTERN
+  - name: AUTH_MODULE_DLL_PATTERN
     displayName: 'Module DLL Pattern'
     type: string
     default: 'Microsoft.Graph.Authentication.dll'
