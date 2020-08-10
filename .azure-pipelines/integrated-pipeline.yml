@@ -7,14 +7,14 @@ variables:
     GitUserEmail: 'GraphTooling@service.microsoft.com'
     GitUserName: 'Microsoft Graph DevX Tooling'
     BaseBranch: 'dev'
-    MODULE_NAME: 'Authentication'
-    MODULE_PATH: 'src\Authentication\Authentication\'
+    AUTH_MODULE_PATH: 'src\Authentication\Authentication\'
+    AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
     MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
-    MODULE_PREFIX: 'Microsoft.Graph'
+    BETA_MODULE_PREFIX: 'Microsoft.Graph'
+    ROLLUP_MODULE_NAME: 'Graph'
+    ROLLUP_MODULE_PATH: 'src\'
     WORKLOAD_MODULE_PATH: 'src\'
     GRAPH_VERSION: 'beta'
-    AUTH_MODULE_PATH: 'src\Authentication\Authentication\bin\'
-    AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
     Api_Key: 'Api_Key'
   
 pool:
@@ -53,7 +53,7 @@ stages:
   - template: ./generate-beta-modules.yml
     parameters:
       Api_Key: $(Api_Key)
-      MODULE_PREFIX: $(MODULE_PREFIX)
+      BETA_MODULE_PREFIX: $(BETA_MODULE_PREFIX)
       WORKLOAD_MODULE_PATH: $(WORKLOAD_MODULE_PATH)
       GRAPH_VERSION: $(GRAPH_VERSION)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
@@ -61,9 +61,9 @@ stages:
 
 - stage: GenerateRollUpModule
   jobs:
-  - template: ./generate-beta-modules.yml
+  - template: ./generate-beta-rollup-module.yml
     parameters:
       Api_Key: $(Api_Key)
-      MODULE_PATH: $(MODULE_PATH)
-      MODULE_NAME: $(MODULE_NAME)
+      ROLLUP_MODULE_PATH: $(MODULE_PATH)
+      ROLLUP_MODULE_NAME: $(MODULE_NAME)
       GRAPH_VERSION: $(GRAPH_VERSION)
