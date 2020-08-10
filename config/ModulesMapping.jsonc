@@ -6,7 +6,7 @@
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
     "DevicesApps.SharedResources": "^users.mobileAppTroubleshootingEvent$",
     "Education": "^education\\.",
-    "Files.Drives": "^drives\\.",
+    "Files.Drives": "^drives\\.|^drive\\.",
     "Files.Permissions": "^groups.resourceSpecificPermissionGrant$", // Missing in docs
     "Files.Shares": "^shares\\.",
     "Financials": "^financials\\.",
@@ -86,7 +86,7 @@
     "Users.Drive": "^users.drive$",
     "Users.Extensions": "^users.extension$",
     "Users.FollowedSites": "^users.site$",
-    // "Users.Functions": "^users.Functions$", // Fails to download.
+    "Users.Functions": "^users.Functions$",
     "Users.Groups": "^users.group$|^users.team$",
     "Users.InformationProtection": "^users.informationProtection$", // Missing in docs
     "Users.LicenseDetails": "^users.licenseDetails$",
