@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="cmdlet">The executing cmdlet.</param>
         /// <param name="parameterName">The name of the parameter to check.</param>
         /// <returns>True is the parameter was set by the user, otherwise false.</returns>
-        internal static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)
+        public static bool IsParameterBound(this PSCmdlet cmdlet, string parameterName)
         {
             return cmdlet.MyInvocation?.BoundParameters.ContainsKey(parameterName) ?? false;
         }

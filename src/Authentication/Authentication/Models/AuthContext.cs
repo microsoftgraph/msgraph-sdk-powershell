@@ -14,6 +14,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string CertificateName { get; set; }
         public string Account { get; set; }
         public string AppName { get; set; }
+        public ContextScope ContextScope { get ; set ; }
 
         public AuthContext()
         {
