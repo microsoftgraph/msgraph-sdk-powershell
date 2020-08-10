@@ -3,11 +3,11 @@
 
 # Generates a release build artifact (nuget) for beta roll-up module.
 parameters:
-  - name: MODULE_PATH
+  - name: ROLLUP_MODULE_PATH
     displayName: 'Module Path'
     type: string
     default: 'src/Beta/Graph/Graph'
-  - name: MODULE_NAME
+  - name: ROLLUP_MODULE_NAME
     displayName: 'Module Name'
     type: string
     default: 'Graph'
@@ -49,7 +49,7 @@ jobs:
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
+      FolderPath: $(ROLLUP_MODULE_PATH)
       Pattern: '$(MODULE_PREFIX).psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
@@ -97,7 +97,7 @@ jobs:
     inputs:
       command: 'pack'
       Configuration: Release
-      packagesToPack: '$(System.DefaultWorkingDirectory)/$(MODULE_PATH)/$(MODULE_PREFIX).nuspec'
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(MODULE_PREFIX).nuspec'
       packDestination: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
       versioningScheme: 'off'
   

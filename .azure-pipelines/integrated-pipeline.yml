@@ -65,6 +65,6 @@ stages:
   - template: ./generate-beta-rollup-module.yml
     parameters:
       Api_Key: $(Api_Key)
-      ROLLUP_MODULE_PATH: $(MODULE_PATH)
-      ROLLUP_MODULE_NAME: $(MODULE_NAME)
+      ROLLUP_MODULE_PATH: $(ROLLUP_MODULE_PATH)
+      ROLLUP_MODULE_NAME: $(ROLLUP_MODULE_NAME)
       GRAPH_VERSION: $(GRAPH_VERSION)
