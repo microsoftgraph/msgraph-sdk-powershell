@@ -21,7 +21,7 @@ parameters:
     - name: WORKLOAD_MODULE_PATH
       displayName: 'Workload Module Path'
       type: string
-      default: 'src\beta\'
+      default: 'src\'
     - name: MODULE_PREFIX
       displayName: 'Module Prefix'
       type: string
