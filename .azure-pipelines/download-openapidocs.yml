@@ -1,6 +1,19 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
+parameters:
+  - name: GitUserEmail
+    displayName: 'Git User Email'
+    type: string
+    default: 'GraphTooling@service.microsoft.com'
+  - name: GitUserName
+    displayName: 'Git User Name'
+    type: string
+    default: 'Microsoft Graph DevX Tooling'
+  - name: BaseBranch
+    displayName: 'Base Branch'
+    type: string
+    default: 'dev'
+    
 steps:
   - checkout: self
     persistCredentials: true

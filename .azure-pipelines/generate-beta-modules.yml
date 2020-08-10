@@ -2,6 +2,31 @@
 # Licensed under the MIT License.
 
 # Generates a release build artifact (nuget) from HEAD of master for beta Graph workload modules.
+parameters:
+    - name: AUTH_MODULE_PATH
+      displayName: 'Module Path'
+      type: string
+      default: 'src\Authentication\Authentication\bin\'
+    - name: AUTH_MODULE_DLL_PATTERN
+      displayName: 'Module Pattern'
+      type: string
+      default: 'Microsoft.Graph.Authentication.dll'
+    - name: Api_Key
+      displayName: 'Api Key'
+      type: string
+    - name: GRAPH_VERSION
+      displayName: 'Graph Version'
+      type: string
+      default: 'beta'
+    - name: WORKLOAD_MODULE_PATH
+      displayName: 'Workload Module Path'
+      type: string
+      default: 'src\beta\'
+    - name: MODULE_PREFIX
+      displayName: 'Module Prefix'
+      type: string
+      default: 'Microsoft.Graph'
+
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation

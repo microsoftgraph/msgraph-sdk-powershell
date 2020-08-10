@@ -32,15 +32,26 @@ stages:
   - job: DownloadOpenAPiDocs
     steps:
     - template: ./download-openapidocs.yml
+      parameters:
+        GitUserEmail: $(GitUserEmail)
+        GitUserName: $(GitUserName)
+        BaseBranch: $(BaseBranch)
 
 - stage: GenerateAuthModules
   jobs:
   - template: ./generate-auth-module.yml
+    parameters:
+      Api_Key: $(Api_Key)
+
     
 - stage: GenerateBetaModules
   jobs:
   - template: ./generate-beta-modules.yml
+    parameters:
+      Api_Key: $(Api_Key)
 
 - stage: GenerateRollUpModule
   jobs:
   - template: ./generate-beta-modules.yml
+    parameters:
+      Api_Key: $(Api_Key)
