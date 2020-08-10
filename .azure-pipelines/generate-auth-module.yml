@@ -12,7 +12,7 @@ parameters:
     type: string
     default: 'Authentication'
   - name: AUTH_MODULE_DLL_PATTERN
-    displayName: 'Module DLL Pattern'
+    displayName: 'Authentication Module DLL Pattern'
     type: string
     default: 'Microsoft.Graph.Authentication.dll'
   - name: Api_Key
