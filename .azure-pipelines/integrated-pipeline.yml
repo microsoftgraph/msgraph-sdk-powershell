@@ -15,6 +15,7 @@ variables:
     GRAPH_VERSION: 'beta'
     AUTH_MODULE_PATH: 'src\Authentication\Authentication\bin\'
     AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
+    Api_Key: $(Api_Key)
   
 pool:
     vmImage: 'windows-latest'
