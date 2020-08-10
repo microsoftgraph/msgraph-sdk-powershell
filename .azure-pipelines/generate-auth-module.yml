@@ -46,8 +46,8 @@ jobs:
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
-      Pattern: $(MODULE_DLL_PATTERN)
+      FolderPath: $(AUTH_MODULE_PATH)
+      Pattern: $(AUTH_MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -72,8 +72,8 @@ jobs:
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
-      Pattern: $(MODULE_DLL_PATTERN)
+      FolderPath: $(AUTH_MODULE_PATH)
+      Pattern: $(AUTH_MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -120,15 +120,15 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+        & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: '$(Build.ArtifactStagingDirectory)\$(MODULE_NAME)'
-      Pattern: 'Microsoft.Graph.$(MODULE_NAME)*.nupkg'
+      FolderPath: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)'
+      Pattern: 'Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'
       signConfigType: inlineSignParams
       inlineOperation: |
             [
@@ -152,7 +152,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact Microsoft.Graph.Authentication.nupkg'
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(MODULE_NAME)'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(AUTH_MODULE_NAME)'
       ArtifactName: 'drop'
       publishLocation: 'Container'
 
