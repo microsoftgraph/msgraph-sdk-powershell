@@ -44,6 +44,11 @@ directive:
       subject: ^(OnPremisPublishingProfile)(\1)+
     set:
       subject: $1
+# Fix AutoREST OnPremis* typo.
+  - where:
+      subject: ^OnPremis(PublishingProfile.*)$
+    set:
+      subject: OnPremise$1
 ```
 
 ### Versioning
