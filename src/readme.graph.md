@@ -350,6 +350,11 @@ directive:
       variant: ^Check(.*)
     set:
       verb: Confirm
+# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
+  - where:
+      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+    set:
+      subject: $1$2ByRef
 # Remove cmdlets
   - where:
       verb: Test
