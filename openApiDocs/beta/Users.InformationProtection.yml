@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -61,34 +61,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
-          links:
-            policy:
-              operationId: user.informationProtection.GetPolicy
-              parameters:
-                user-id: $request.path.user-id
-                informationProtectionPolicy-id: $response.body#/id
-            sensitivityLabels:
-              operationId: user.informationProtection.GetSensitivityLabels
-              parameters:
-                user-id: $request.path.user-id
-                sensitivityLabel-id: $response.body#/id
-            sensitivityPolicySettings:
-              operationId: user.informationProtection.GetSensitivityPolicySettings
-              parameters:
-                user-id: $request.path.user-id
-                sensitivityPolicySettings-id: $response.body#/id
-            dataLossPreventionPolicies:
-              operationId: user.informationProtection.GetDataLossPreventionPolicies
-              parameters:
-                user-id: $request.path.user-id
-                dataLossPreventionPolicy-id: $response.body#/id
-            threatAssessmentRequests:
-              operationId: user.informationProtection.GetThreatAssessmentRequests
-              parameters:
-                user-id: $request.path.user-id
-                threatAssessmentRequest-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.informationProtection
@@ -97,7 +72,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -109,6 +84,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.informationProtection
+      summary: Delete navigation property informationProtection for users
+      operationId: users_DeleteInformationProtection
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -139,18 +138,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-      example:
-        id: string (identifier)
-        policy:
-          '@odata.type': microsoft.graph.informationProtectionPolicy
-        sensitivityLabels:
-          - '@odata.type': microsoft.graph.sensitivityLabel
-        sensitivityPolicySettings:
-          '@odata.type': microsoft.graph.sensitivityPolicySettings
-        dataLossPreventionPolicies:
-          - '@odata.type': microsoft.graph.dataLossPreventionPolicy
-        threatAssessmentRequests:
-          - '@odata.type': microsoft.graph.threatAssessmentRequest
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -158,8 +147,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.informationProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -170,10 +159,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.informationProtectionLabel'
-      example:
-        id: string (identifier)
-        labels:
-          - '@odata.type': microsoft.graph.informationProtectionLabel
+          additionalProperties:
+            type: object
     microsoft.graph.sensitivityLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -222,27 +209,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-      example:
-        id: string (identifier)
-        name: string
-        displayName: string
-        description: string
-        toolTip: string
-        isEndpointProtectionEnabled: true
-        isDefault: true
-        applicationMode:
-          '@odata.type': microsoft.graph.applicationMode
-        labelActions:
-          - '@odata.type': microsoft.graph.labelActionBase
-        assignedPolicies:
-          - '@odata.type': microsoft.graph.labelPolicy
-        priority: integer
-        autoLabeling:
-          '@odata.type': microsoft.graph.autoLabeling
-        applicableTo:
-          '@odata.type': microsoft.graph.sensitivityLabelTarget
-        sublabels:
-          - '@odata.type': microsoft.graph.sensitivityLabel
+          additionalProperties:
+            type: object
     microsoft.graph.sensitivityPolicySettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -260,13 +228,8 @@ components:
               nullable: true
             applicableTo:
               $ref: '#/components/schemas/microsoft.graph.sensitivityLabelTarget'
-      example:
-        id: string (identifier)
-        isMandatory: true
-        helpWebUrl: string
-        downgradeSensitivityRequiresJustification: true
-        applicableTo:
-          '@odata.type': microsoft.graph.sensitivityLabelTarget
+          additionalProperties:
+            type: object
     microsoft.graph.dataLossPreventionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -276,9 +239,8 @@ components:
             name:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        name: string
+          additionalProperties:
+            type: object
     microsoft.graph.threatAssessmentRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -308,23 +270,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
               description: 'A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        contentType:
-          '@odata.type': microsoft.graph.threatAssessmentContentType
-        expectedAssessment:
-          '@odata.type': microsoft.graph.threatExpectedAssessment
-        category:
-          '@odata.type': microsoft.graph.threatCategory
-        status:
-          '@odata.type': microsoft.graph.threatAssessmentStatus
-        requestSource:
-          '@odata.type': microsoft.graph.threatAssessmentRequestSource
-        createdBy:
-          '@odata.type': microsoft.graph.identitySet
-        results:
-          - '@odata.type': microsoft.graph.threatAssessmentResult
+          additionalProperties:
+            type: object
     odata.error:
       required:
         - error
@@ -332,6 +279,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.informationProtectionLabel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -357,14 +306,8 @@ components:
               nullable: true
             isActive:
               type: boolean
-      example:
-        id: string (identifier)
-        name: string
-        description: string
-        color: string
-        sensitivity: integer
-        tooltip: string
-        isActive: true
+          additionalProperties:
+            type: object
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -379,8 +322,8 @@ components:
         name:
           type: string
           nullable: true
-      example:
-        name: string
+      additionalProperties:
+        type: object
     microsoft.graph.labelPolicy:
       title: labelPolicy
       type: object
@@ -390,9 +333,8 @@ components:
         name:
           type: string
           nullable: true
-      example:
-        id: string
-        name: string
+      additionalProperties:
+        type: object
     microsoft.graph.autoLabeling:
       title: autoLabeling
       type: object
@@ -405,10 +347,8 @@ components:
         message:
           type: string
           nullable: true
-      example:
-        sensitiveTypeIds:
-          - string
-        message: string
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivityLabelTarget:
       title: sensitivityLabelTarget
       enum:
@@ -462,13 +402,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        application:
-          '@odata.type': microsoft.graph.identity
-        device:
-          '@odata.type': microsoft.graph.identity
-        user:
-          '@odata.type': microsoft.graph.identity
+      additionalProperties:
+        type: object
     microsoft.graph.threatAssessmentResult:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -487,12 +422,8 @@ components:
               type: string
               description: The result message for each threat assessment.
               nullable: true
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        resultType:
-          '@odata.type': microsoft.graph.threatAssessmentResultType
-        message: string
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -511,7 +442,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -524,9 +459,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.threatAssessmentResultType:
       title: threatAssessmentResultType
       enum:
@@ -546,6 +480,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

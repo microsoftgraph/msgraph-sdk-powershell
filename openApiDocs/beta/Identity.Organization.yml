@@ -120,6 +120,7 @@ paths:
                 - brandings
                 - certificateBasedAuthConfiguration
                 - extensions
+                - settings
               type: string
         - name: $expand
           in: query
@@ -135,6 +136,7 @@ paths:
                 - brandings
                 - certificateBasedAuthConfiguration
                 - extensions
+                - settings
               type: string
       responses:
         '200':
@@ -151,6 +153,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.organization'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -188,7 +192,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -232,6 +236,7 @@ paths:
                 - brandings
                 - certificateBasedAuthConfiguration
                 - extensions
+                - settings
               type: string
         - name: $expand
           in: query
@@ -247,6 +252,7 @@ paths:
                 - brandings
                 - certificateBasedAuthConfiguration
                 - extensions
+                - settings
               type: string
       responses:
         '200':
@@ -255,22 +261,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
-          links:
-            brandings:
-              operationId: organization.GetBrandings
-              parameters:
-                organization-id: $request.path.organization-id
-                organizationalBranding-id: $response.body#/id
-            certificateBasedAuthConfiguration:
-              operationId: organization.GetCertificateBasedAuthConfiguration
-              parameters:
-                organization-id: $request.path.organization-id
-                certificateBasedAuthConfiguration-id: $response.body#/id
-            extensions:
-              operationId: organization.GetExtensions
-              parameters:
-                organization-id: $request.path.organization-id
-                extension-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -282,7 +272,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -308,7 +298,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -333,7 +323,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -416,6 +406,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -430,7 +422,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -461,14 +453,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: organizationalBranding-id
           in: path
-          description: 'key: organizationalBranding-id of organizationalBranding'
+          description: 'key: id of organizationalBranding'
           required: true
           schema:
             type: string
@@ -513,6 +505,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - organization.organizationalBranding
@@ -521,14 +514,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: organizationalBranding-id
           in: path
-          description: 'key: organizationalBranding-id of organizationalBranding'
+          description: 'key: id of organizationalBranding'
           required: true
           schema:
             type: string
@@ -546,6 +539,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationalBranding
+      summary: Delete navigation property brandings for organization
+      operationId: organization_DeleteBrandings
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/certificateBasedAuthConfiguration':
     get:
       tags:
@@ -555,7 +579,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -620,6 +644,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -635,14 +661,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: certificateBasedAuthConfiguration-id
           in: path
-          description: 'key: certificateBasedAuthConfiguration-id of certificateBasedAuthConfiguration'
+          description: 'key: id of certificateBasedAuthConfiguration'
           required: true
           schema:
             type: string
@@ -681,6 +707,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/certificateBasedAuthConfiguration/$ref':
+    get:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Get ref of certificateBasedAuthConfiguration from organization
+      operationId: organization_ListRefCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - certificateAuthorities
+                - certificateAuthorities desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of certificateBasedAuthConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - organization.certificateBasedAuthConfiguration
+      summary: Create new navigation property ref to certificateBasedAuthConfiguration for organization
+      operationId: organization_CreateRefCertificateBasedAuthConfiguration
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/extensions':
     get:
       tags:
@@ -690,7 +808,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -752,6 +870,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -766,7 +886,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -797,14 +917,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -842,6 +962,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - organization.extension
@@ -850,14 +971,14 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: organization
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -875,6 +996,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.extension
+      summary: Delete navigation property extensions for organization
+      operationId: organization_DeleteExtensions
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -884,7 +1036,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -900,6 +1052,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -922,7 +1076,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -938,6 +1092,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -960,7 +1116,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -976,6 +1132,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -998,7 +1156,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -1014,6 +1172,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1036,7 +1196,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -1060,7 +1220,7 @@ paths:
       parameters:
         - name: organization-id
           in: path
-          description: 'key: organization-id of organization'
+          description: 'key: id of organization'
           required: true
           schema:
             type: string
@@ -1078,6 +1238,444 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/organization/{organization-id}/settings':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get settings from organization
+      operationId: organization_GetSettings
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - profileCardProperties
+                - itemInsights
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - profileCardProperties
+                - itemInsights
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.organizationSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property settings in organization
+      operationId: organization_UpdateSettings
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.organizationSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property settings for organization
+      operationId: organization_DeleteSettings
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/itemInsights':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get itemInsights from organization
+      operationId: organization.settings_GetItemInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isEnabledInOrganization
+                - disabledForGroup
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property itemInsights in organization
+      operationId: organization.settings_UpdateItemInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property itemInsights for organization
+      operationId: organization.settings_DeleteItemInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/profileCardProperties':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get profileCardProperties from organization
+      operationId: organization.settings_ListProfileCardProperties
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - directoryPropertyName
+                - directoryPropertyName desc
+                - annotations
+                - annotations desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - directoryPropertyName
+                - annotations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of profileCardProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - organization.organizationSettings
+      summary: Create new navigation property to profileCardProperties for organization
+      operationId: organization.settings_CreateProfileCardProperties
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/profileCardProperties/{profileCardProperty-id}':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get profileCardProperties from organization
+      operationId: organization.settings_GetProfileCardProperties
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: profileCardProperty-id
+          in: path
+          description: 'key: id of profileCardProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - directoryPropertyName
+                - annotations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property profileCardProperties in organization
+      operationId: organization.settings_UpdateProfileCardProperties
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: profileCardProperty-id
+          in: path
+          description: 'key: id of profileCardProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property profileCardProperties for organization
+      operationId: organization.settings_DeleteProfileCardProperties
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: profileCardProperty-id
+          in: path
+          description: 'key: id of profileCardProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /organization/microsoft.graph.getByIds:
     post:
       tags:
@@ -1100,6 +1698,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1132,6 +1732,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1170,6 +1772,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1297,52 +1901,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the organization. Read-only. Nullable.
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.organizationSettings'
+          additionalProperties:
+            type: object
           description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        assignedPlans:
-          - '@odata.type': microsoft.graph.assignedPlan
-        businessPhones:
-          - string
-        city: string
-        country: string
-        countryLetterCode: string
-        createdDateTime: string (timestamp)
-        directorySizeQuota:
-          '@odata.type': microsoft.graph.directorySizeQuota
-        displayName: string
-        isMultipleDataLocationsForServicesEnabled: true
-        marketingNotificationEmails:
-          - string
-        onPremisesLastSyncDateTime: string (timestamp)
-        onPremisesSyncEnabled: true
-        postalCode: string
-        preferredLanguage: string
-        privacyProfile:
-          '@odata.type': microsoft.graph.privacyProfile
-        provisionedPlans:
-          - '@odata.type': microsoft.graph.provisionedPlan
-        securityComplianceNotificationMails:
-          - string
-        securityComplianceNotificationPhones:
-          - string
-        state: string
-        street: string
-        technicalNotificationMails:
-          - string
-        verifiedDomains:
-          - '@odata.type': microsoft.graph.verifiedDomain
-        mobileDeviceManagementAuthority:
-          '@odata.type': microsoft.graph.mdmAuthority
-        certificateConnectorSetting:
-          '@odata.type': microsoft.graph.certificateConnectorSetting
-        brandings:
-          - '@odata.type': microsoft.graph.organizationalBranding
-        certificateBasedAuthConfiguration:
-          - '@odata.type': microsoft.graph.certificateBasedAuthConfiguration
-        extensions:
-          - '@odata.type': microsoft.graph.extension
     microsoft.graph.organizationalBranding:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1370,15 +1933,8 @@ components:
             usernameHintText:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        backgroundColor: string
-        backgroundImage: string
-        bannerLogo: string
-        locale: string
-        signInPageText: string
-        squareLogo: string
-        usernameHintText: string
+          additionalProperties:
+            type: object
     microsoft.graph.certificateBasedAuthConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1390,17 +1946,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateAuthority'
               description: Collection of certificate authorities which creates a trusted certificate chain.
-      example:
-        id: string (identifier)
-        certificateAuthorities:
-          - '@odata.type': microsoft.graph.certificateAuthority
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1412,10 +1966,52 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
+    microsoft.graph.organizationSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: organizationSettings
+          type: object
+          properties:
+            profileCardProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+            itemInsights:
+              $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+          additionalProperties:
+            type: object
+    microsoft.graph.itemInsightsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemInsightsSettings
+          type: object
+          properties:
+            isEnabledInOrganization:
+              type: boolean
+              nullable: true
+            disabledForGroup:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.profileCardProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profileCardProperty
+          type: object
+          properties:
+            directoryPropertyName:
+              type: string
+              nullable: true
+            annotations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileCardAnnotation'
+          additionalProperties:
+            type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -1440,11 +2036,8 @@ components:
           description: A GUID that identifies the service plan.
           format: uuid
           nullable: true
-      example:
-        assignedDateTime: string (timestamp)
-        capabilityStatus: string
-        service: string
-        servicePlanId: string
+      additionalProperties:
+        type: object
     microsoft.graph.directorySizeQuota:
       title: directorySizeQuota
       type: object
@@ -1461,9 +2054,8 @@ components:
           type: integer
           format: int32
           nullable: true
-      example:
-        used: integer
-        total: integer
+      additionalProperties:
+        type: object
     microsoft.graph.privacyProfile:
       title: privacyProfile
       type: object
@@ -1476,9 +2068,8 @@ components:
           type: string
           description: A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
           nullable: true
-      example:
-        contactEmail: string
-        statementUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.provisionedPlan:
       title: provisionedPlan
       type: object
@@ -1495,10 +2086,8 @@ components:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
           nullable: true
-      example:
-        capabilityStatus: string
-        provisioningStatus: string
-        service: string
+      additionalProperties:
+        type: object
     microsoft.graph.verifiedDomain:
       title: verifiedDomain
       type: object
@@ -1523,12 +2112,8 @@ components:
           type: string
           description: 'For example, ''Managed''.'
           nullable: true
-      example:
-        capabilities: string
-        isDefault: true
-        isInitial: true
-        name: string
-        type: string
+      additionalProperties:
+        type: object
     microsoft.graph.mdmAuthority:
       title: mdmAuthority
       enum:
@@ -1569,13 +2154,9 @@ components:
           type: integer
           description: Version of last uploaded certificate connector
           format: int64
-      example:
-        status: integer
-        certExpiryTime: string (timestamp)
-        enrollmentError: string
-        lastConnectorConnectionTime: string (timestamp)
-        connectorVersion: string
-        lastUploadVersion: integer
+      additionalProperties:
+        type: object
+      description: Certificate connector settings.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1583,8 +2164,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
       type: object
@@ -1610,13 +2191,21 @@ components:
         issuerSki:
           type: string
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
-      example:
-        isRootAuthority: true
-        certificateRevocationListUrl: string
-        deltaCertificateRevocationListUrl: string
-        certificate: string
-        issuer: string
-        issuerSki: string
+      additionalProperties:
+        type: object
+    microsoft.graph.profileCardAnnotation:
+      title: profileCardAnnotation
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        localizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1624,6 +2213,20 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.displayNameLocalization:
+      title: displayNameLocalization
+      type: object
+      properties:
+        languageTag:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1642,7 +2245,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1655,6 +2262,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

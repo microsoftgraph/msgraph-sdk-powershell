@@ -2,16 +2,16 @@
   "resources": [],
   "operations": {
     "/groups/{group-id}/drives/{drive-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml"
     },
     "/groups/{group-id}/drives": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml"
     },
     "/groups/{group-id}/drive": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.Drive.yml"
     }
   }
 }

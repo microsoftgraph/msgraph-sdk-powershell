@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -55,6 +55,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profilePhoto
@@ -63,7 +64,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -81,6 +82,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.profilePhoto
+      summary: Delete navigation property photo for users
+      operationId: users_DeletePhoto
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/photos':
     get:
       tags:
@@ -90,7 +115,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -158,6 +183,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.profilePhoto'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -172,7 +199,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -203,14 +230,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: profilePhoto-id
           in: path
-          description: 'key: profilePhoto-id of profilePhoto'
+          description: 'key: id of profilePhoto'
           required: true
           schema:
             type: string
@@ -250,6 +277,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profilePhoto
@@ -258,14 +286,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: profilePhoto-id
           in: path
-          description: 'key: profilePhoto-id of profilePhoto'
+          description: 'key: id of profilePhoto'
           required: true
           schema:
             type: string
@@ -277,6 +305,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.profilePhoto
+      summary: Delete navigation property photos for users
+      operationId: users_DeletePhotos
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -305,10 +364,8 @@ components:
               description: The width of the photo. Read-only.
               format: int32
               nullable: true
-      example:
-        id: string (identifier)
-        height: integer
-        width: integer
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -316,8 +373,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -325,6 +382,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -343,7 +402,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -356,6 +419,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

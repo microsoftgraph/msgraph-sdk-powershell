@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -86,6 +86,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.licenseDetails'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -100,7 +102,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -131,14 +133,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: licenseDetails-id
           in: path
-          description: 'key: licenseDetails-id of licenseDetails'
+          description: 'key: id of licenseDetails'
           required: true
           schema:
             type: string
@@ -179,6 +181,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.licenseDetails
@@ -187,14 +190,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: licenseDetails-id
           in: path
-          description: 'key: licenseDetails-id of licenseDetails'
+          description: 'key: id of licenseDetails'
           required: true
           schema:
             type: string
@@ -206,6 +209,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.licenseDetails
+      summary: Delete navigation property licenseDetails for users
+      operationId: users_DeleteLicenseDetails
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: licenseDetails-id
+          in: path
+          description: 'key: id of licenseDetails'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: licenseDetails
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -235,12 +269,8 @@ components:
               type: string
               description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
               nullable: true
-      example:
-        id: string (identifier)
-        servicePlans:
-          - '@odata.type': microsoft.graph.servicePlanInfo
-        skuId: string
-        skuPartNumber: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -248,8 +278,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -272,11 +302,8 @@ components:
           type: string
           description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
           nullable: true
-      example:
-        servicePlanId: string
-        servicePlanName: string
-        provisioningStatus: string
-        appliesTo: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -284,6 +311,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -302,7 +331,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -315,6 +348,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

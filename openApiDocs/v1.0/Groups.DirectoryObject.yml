@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -80,6 +80,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -94,7 +96,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -125,14 +127,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -171,6 +173,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.directoryObject
@@ -179,14 +182,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -204,6 +207,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Delete navigation property acceptedSenders for groups
+      operationId: groups_DeleteAcceptedSenders
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/createdOnBehalfOf':
     get:
       tags:
@@ -213,7 +247,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -252,6 +286,83 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/createdOnBehalfOf/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of createdOnBehalfOf from groups
+      operationId: groups_GetRefCreatedOnBehalfOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.directoryObject
+      summary: Update the ref of navigation property createdOnBehalfOf in groups
+      operationId: groups_UpdateRefCreatedOnBehalfOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Delete ref of navigation property createdOnBehalfOf for groups
+      operationId: groups_DeleteRefCreatedOnBehalfOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/memberOf':
     get:
       tags:
@@ -261,7 +372,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -326,6 +437,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -341,14 +454,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -387,6 +500,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/memberOf/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of memberOf from groups
+      operationId: groups_ListRefMemberOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to memberOf for groups
+      operationId: groups_CreateRefMemberOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/members':
     get:
       tags:
@@ -396,7 +601,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -461,6 +666,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -476,14 +683,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -522,6 +729,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/members/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of members from groups
+      operationId: groups_ListRefMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to members for groups
+      operationId: groups_CreateRefMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/membersWithLicenseErrors':
     get:
       tags:
@@ -531,7 +830,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -596,6 +895,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -611,14 +912,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -657,6 +958,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/membersWithLicenseErrors/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of membersWithLicenseErrors from groups
+      operationId: groups_ListRefMembersWithLicenseErrors
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to membersWithLicenseErrors for groups
+      operationId: groups_CreateRefMembersWithLicenseErrors
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/owners':
     get:
       tags:
@@ -666,7 +1059,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -731,6 +1124,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -746,14 +1141,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -792,6 +1187,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/owners/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of owners from groups
+      operationId: groups_ListRefOwners
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to owners for groups
+      operationId: groups_CreateRefOwners
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/rejectedSenders':
     get:
       tags:
@@ -801,7 +1288,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -866,6 +1353,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -880,7 +1369,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -911,14 +1400,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -957,6 +1446,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.directoryObject
@@ -965,14 +1455,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -990,6 +1480,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.directoryObject
+      summary: Delete navigation property rejectedSenders for groups
+      operationId: groups_DeleteRejectedSenders
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/transitiveMemberOf':
     get:
       tags:
@@ -999,7 +1520,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -1064,6 +1585,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1079,14 +1602,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1125,6 +1648,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMemberOf/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of transitiveMemberOf from groups
+      operationId: groups_ListRefTransitiveMemberOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to transitiveMemberOf for groups
+      operationId: groups_CreateRefTransitiveMemberOf
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/transitiveMembers':
     get:
       tags:
@@ -1134,7 +1749,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -1199,6 +1814,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1214,14 +1831,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1260,6 +1877,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groups/{group-id}/transitiveMembers/$ref':
+    get:
+      tags:
+        - groups.directoryObject
+      summary: Get ref of transitiveMembers from groups
+      operationId: groups_ListRefTransitiveMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groups.directoryObject
+      summary: Create new navigation property ref to transitiveMembers for groups
+      operationId: groups_CreateRefTransitiveMembers
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.directoryObject:
@@ -1273,10 +1982,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1284,8 +1992,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1293,6 +2001,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1311,7 +2021,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1324,6 +2038,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

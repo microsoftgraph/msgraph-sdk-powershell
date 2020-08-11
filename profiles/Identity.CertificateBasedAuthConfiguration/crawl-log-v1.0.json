@@ -2,12 +2,12 @@
   "resources": [],
   "operations": {
     "/certificateBasedAuthConfiguration": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.CertificateBasedAuthConfiguration.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.CertificateBasedAuthConfiguration.yml"
     },
     "/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.CertificateBasedAuthConfiguration.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.CertificateBasedAuthConfiguration.yml"
     }
   }
 }

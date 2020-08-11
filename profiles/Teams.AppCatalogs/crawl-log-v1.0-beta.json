@@ -1,25 +1,25 @@
 {
   "resources": [],
   "operations": {
-    "/appCatalogs/teamsApps/{teamsApp-id}": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/appCatalogs/teamsApps": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml"
     },
     "/appCatalogs": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml"
     },
     "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions/{teamsAppDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml"
+    },
+    "/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.AppCatalogs.yml"
     }
   }
 }

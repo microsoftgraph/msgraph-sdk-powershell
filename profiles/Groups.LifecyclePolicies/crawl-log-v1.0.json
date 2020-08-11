@@ -2,20 +2,20 @@
   "resources": [],
   "operations": {
     "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.removeGroup": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml"
     },
     "/groupLifecyclePolicies": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml"
     },
     "/groupLifecyclePolicies/{groupLifecyclePolicy-id}/microsoft.graph.addGroup": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml"
     },
     "/groupLifecyclePolicies/{groupLifecyclePolicy-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.LifecyclePolicies.yml"
     }
   }
 }

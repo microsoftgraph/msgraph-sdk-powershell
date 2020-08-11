@@ -46,11 +46,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appCatalogs'
-          links:
-            teamsApps:
-              operationId: appCatalogs.GetTeamsApps
-              parameters:
-                teamsApp-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -147,6 +142,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.teamsApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -184,7 +181,7 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
@@ -225,14 +222,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          links:
-            appDefinitions:
-              operationId: appCatalogs.teamsApps.GetAppDefinitions
-              parameters:
-                teamsApp-id: $request.path.teamsApp-id
-                teamsAppDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - appCatalogs.teamsApp
@@ -241,7 +233,7 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
@@ -259,6 +251,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property teamsApps for appCatalogs
+      operationId: appCatalogs_DeleteTeamsApps
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/appCatalogs/teamsApps/{teamsApp-id}/appDefinitions':
     get:
       tags:
@@ -268,7 +284,7 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
@@ -339,6 +355,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -353,7 +371,7 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
@@ -384,14 +402,14 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: teamsApp
         - name: teamsAppDefinition-id
           in: path
-          description: 'key: teamsAppDefinition-id of teamsAppDefinition'
+          description: 'key: id of teamsAppDefinition'
           required: true
           schema:
             type: string
@@ -432,6 +450,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - appCatalogs.teamsApp
@@ -440,14 +459,14 @@ paths:
       parameters:
         - name: teamsApp-id
           in: path
-          description: 'key: teamsApp-id of teamsApp'
+          description: 'key: id of teamsApp'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: teamsApp
         - name: teamsAppDefinition-id
           in: path
-          description: 'key: teamsAppDefinition-id of teamsAppDefinition'
+          description: 'key: id of teamsAppDefinition'
           required: true
           schema:
             type: string
@@ -459,6 +478,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - appCatalogs.teamsApp
+      summary: Delete navigation property appDefinitions for appCatalogs
+      operationId: appCatalogs.teamsApps_DeleteAppDefinitions
+      parameters:
+        - name: teamsApp-id
+          in: path
+          description: 'key: id of teamsApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsApp
+        - name: teamsAppDefinition-id
+          in: path
+          description: 'key: id of teamsAppDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: teamsAppDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -477,10 +527,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
-      example:
-        id: string (identifier)
-        teamsApps:
-          - '@odata.type': microsoft.graph.teamsApp
+          additionalProperties:
+            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -502,14 +550,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
               description: The details for each version of the app.
-      example:
-        id: string (identifier)
-        externalId: string
-        displayName: string
-        distributionMethod:
-          '@odata.type': microsoft.graph.teamsAppDistributionMethod
-        appDefinitions:
-          - '@odata.type': microsoft.graph.teamsAppDefinition
+          additionalProperties:
+            type: object
     microsoft.graph.teamsAppDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -528,11 +570,8 @@ components:
               type: string
               description: The version number of the application.
               nullable: true
-      example:
-        id: string (identifier)
-        teamsAppId: string
-        displayName: string
-        version: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -540,8 +579,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -557,6 +596,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -575,7 +616,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -588,6 +633,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

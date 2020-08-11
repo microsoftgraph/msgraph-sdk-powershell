@@ -130,6 +130,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.riskDetection'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -167,7 +169,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: riskDetection-id of riskDetection'
+          description: 'key: id of riskDetection'
           required: true
           schema:
             type: string
@@ -234,7 +236,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: riskDetection-id of riskDetection'
+          description: 'key: id of riskDetection'
           required: true
           schema:
             type: string
@@ -260,7 +262,7 @@ paths:
       parameters:
         - name: riskDetection-id
           in: path
-          description: 'key: riskDetection-id of riskDetection'
+          description: 'key: id of riskDetection'
           required: true
           schema:
             type: string
@@ -366,6 +368,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.riskyUser'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -403,7 +407,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
@@ -449,12 +453,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.riskyUser'
-          links:
-            history:
-              operationId: riskyUsers.GetHistory
-              parameters:
-                riskyUser-id: $request.path.riskyUser-id
-                riskyUserHistoryItem-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -466,7 +464,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
@@ -492,7 +490,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
@@ -517,7 +515,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
@@ -614,6 +612,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -628,7 +628,7 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
@@ -659,14 +659,14 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyUser
         - name: riskyUserHistoryItem-id
           in: path
-          description: 'key: riskyUserHistoryItem-id of riskyUserHistoryItem'
+          description: 'key: id of riskyUserHistoryItem'
           required: true
           schema:
             type: string
@@ -717,6 +717,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - riskyUsers.riskyUserHistoryItem
@@ -725,14 +726,14 @@ paths:
       parameters:
         - name: riskyUser-id
           in: path
-          description: 'key: riskyUser-id of riskyUser'
+          description: 'key: id of riskyUser'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: riskyUser
         - name: riskyUserHistoryItem-id
           in: path
-          description: 'key: riskyUserHistoryItem-id of riskyUserHistoryItem'
+          description: 'key: id of riskyUserHistoryItem'
           required: true
           schema:
             type: string
@@ -744,6 +745,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - riskyUsers.riskyUserHistoryItem
+      summary: Delete navigation property history for riskyUsers
+      operationId: riskyUsers_DeleteHistory
+      parameters:
+        - name: riskyUser-id
+          in: path
+          description: 'key: id of riskyUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyUser
+        - name: riskyUserHistoryItem-id
+          in: path
+          description: 'key: id of riskyUserHistoryItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: riskyUserHistoryItem
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -768,6 +800,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -793,6 +827,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -810,12 +846,15 @@ components:
           properties:
             requestId:
               type: string
+              description: Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
               nullable: true
             correlationId:
               type: string
+              description: Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
               nullable: true
             riskEventType:
               type: string
+              description: 'The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, genericadminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, and unknownFutureValue. If the risk detection is a premium detection, will show generic'
               nullable: true
             riskType:
               $ref: '#/components/schemas/microsoft.graph.riskEventType'
@@ -827,6 +866,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             source:
               type: string
+              description: 'Source of the risk detection. For example, ''activeDirectory''.'
               nullable: true
             detectionTimingType:
               $ref: '#/components/schemas/microsoft.graph.riskDetectionTimingType'
@@ -836,66 +876,46 @@ components:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
             ipAddress:
               type: string
+              description: Provides the IP address of the client from where the risk occurred.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time that the risky activity occurred.
               format: date-time
               nullable: true
             detectedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time that the risk was detected.
               format: date-time
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time that the risk detection was last updated.
               format: date-time
               nullable: true
             userId:
               type: string
+              description: Unique ID of the user.
               nullable: true
             userDisplayName:
               type: string
+              description: The user principal name (UPN) of the user.
               nullable: true
             userPrincipalName:
               type: string
+              description: The user principal name (UPN) of the user.
               nullable: true
             additionalInfo:
               type: string
+              description: Additional information associated with the risk detection in JSON format.
               nullable: true
-      example:
-        id: string (identifier)
-        requestId: string
-        correlationId: string
-        riskEventType: string
-        riskType:
-          '@odata.type': microsoft.graph.riskEventType
-        riskState:
-          '@odata.type': microsoft.graph.riskState
-        riskLevel:
-          '@odata.type': microsoft.graph.riskLevel
-        riskDetail:
-          '@odata.type': microsoft.graph.riskDetail
-        source: string
-        detectionTimingType:
-          '@odata.type': microsoft.graph.riskDetectionTimingType
-        activity:
-          '@odata.type': microsoft.graph.activityType
-        tokenIssuerType:
-          '@odata.type': microsoft.graph.tokenIssuerType
-        ipAddress: string
-        location:
-          '@odata.type': microsoft.graph.signInLocation
-        activityDateTime: string (timestamp)
-        detectedDateTime: string (timestamp)
-        lastUpdatedDateTime: string (timestamp)
-        userId: string
-        userDisplayName: string
-        userPrincipalName: string
-        additionalInfo: string
+          additionalProperties:
+            type: object
     microsoft.graph.riskyUser:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -904,13 +924,16 @@ components:
           properties:
             isDeleted:
               type: boolean
+              description: 'Indicates whether the user is deleted. Possible values are: true, false'
               nullable: true
             isProcessing:
               type: boolean
+              description: Indicates wehther a user's risky state is being processed by the backend
               nullable: true
             riskLastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date and time that the risky user was last updated.
               format: date-time
               nullable: true
             riskLevel:
@@ -921,29 +944,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             userDisplayName:
               type: string
+              description: Risky user display name.
               nullable: true
             userPrincipalName:
               type: string
+              description: Risky user principal name.
               nullable: true
             history:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
-      example:
-        id: string (identifier)
-        isDeleted: true
-        isProcessing: true
-        riskLastUpdatedDateTime: string (timestamp)
-        riskLevel:
-          '@odata.type': microsoft.graph.riskLevel
-        riskState:
-          '@odata.type': microsoft.graph.riskState
-        riskDetail:
-          '@odata.type': microsoft.graph.riskDetail
-        userDisplayName: string
-        userPrincipalName: string
-        history:
-          - '@odata.type': microsoft.graph.riskyUserHistoryItem
+              description: The activity related to user risk level change
+          additionalProperties:
+            type: object
     microsoft.graph.riskyUserHistoryItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.riskyUser'
@@ -952,31 +965,16 @@ components:
           properties:
             userId:
               type: string
+              description: The id of the user.
               nullable: true
             initiatedBy:
               type: string
+              description: The id of actor that does the operation.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.riskUserActivity'
-      example:
-        id: string (identifier)
-        isDeleted: true
-        isProcessing: true
-        riskLastUpdatedDateTime: string (timestamp)
-        riskLevel:
-          '@odata.type': microsoft.graph.riskLevel
-        riskState:
-          '@odata.type': microsoft.graph.riskState
-        riskDetail:
-          '@odata.type': microsoft.graph.riskDetail
-        userDisplayName: string
-        userPrincipalName: string
-        history:
-          - '@odata.type': microsoft.graph.riskyUserHistoryItem
-        userId: string
-        initiatedBy: string
-        activity:
-          '@odata.type': microsoft.graph.riskUserActivity
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -984,8 +982,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.riskEventType:
       title: riskEventType
       enum:
@@ -1083,12 +1081,8 @@ components:
           nullable: true
         geoCoordinates:
           $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
-      example:
-        city: string
-        state: string
-        countryOrRegion: string
-        geoCoordinates:
-          '@odata.type': microsoft.graph.geoCoordinates
+      additionalProperties:
+        type: object
     microsoft.graph.riskUserActivity:
       title: riskUserActivity
       type: object
@@ -1102,15 +1096,11 @@ components:
           items:
             type: string
             nullable: true
+          description: The type of risk event detected.
         detail:
           $ref: '#/components/schemas/microsoft.graph.riskDetail'
-      example:
-        eventTypes:
-          - '@odata.type': microsoft.graph.riskEventType
-        riskEventTypes:
-          - string
-        detail:
-          '@odata.type': microsoft.graph.riskDetail
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -1118,6 +1108,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
       type: object
@@ -1137,10 +1129,8 @@ components:
           description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
-      example:
-        altitude: double
-        latitude: double
-        longitude: double
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -1159,7 +1149,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -1172,6 +1166,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

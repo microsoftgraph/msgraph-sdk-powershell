@@ -1,13 +1,13 @@
 {
   "resources": [],
   "operations": {
-    "/subscriptions/{subscription-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Subscriptions.yml",
-      "apiVersion": "v1.0"
-    },
     "/subscriptions": {
-      "originalLocation": "/openApiDocs/v1.0/Subscriptions.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Subscriptions.yml"
+    },
+    "/subscriptions/{subscription-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Subscriptions.yml"
     }
   }
 }

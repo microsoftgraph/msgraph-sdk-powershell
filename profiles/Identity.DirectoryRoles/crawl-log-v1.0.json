@@ -1,53 +1,61 @@
 {
   "resources": [],
   "operations": {
-    "/directoryRoles/{directoryRole-id}/members/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
     "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
-    },
-    "/directoryRoles/{directoryRole-id}/members": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
     },
     "/directoryRoles/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/members/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/members/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/microsoft.graph.getAvailableExtensionProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
     },
     "/directoryRoles": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
+    },
+    "/directoryRoles/{directoryRole-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryRoles.yml"
     }
   }
 }

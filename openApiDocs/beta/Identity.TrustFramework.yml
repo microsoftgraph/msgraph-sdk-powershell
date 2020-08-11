@@ -48,15 +48,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trustFramework'
-          links:
-            policies:
-              operationId: trustFramework.GetPolicies
-              parameters:
-                trustFrameworkPolicy-id: $response.body#/id
-            keySets:
-              operationId: trustFramework.GetKeySets
-              parameters:
-                trustFrameworkKeySet-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -145,6 +136,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -182,7 +175,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -221,6 +214,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - trustFramework.trustFrameworkKeySet
@@ -229,7 +223,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -247,6 +241,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - trustFramework.trustFrameworkKeySet
+      summary: Delete navigation property keySets for trustFramework
+      operationId: trustFramework_DeleteKeySets
+      parameters:
+        - name: trustFrameworkKeySet-id
+          in: path
+          description: 'key: id of trustFrameworkKeySet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trustFrameworkKeySet
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/trustFramework/keySets/{trustFrameworkKeySet-id}/microsoft.graph.generateKey':
     post:
       tags:
@@ -256,7 +274,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -282,6 +300,8 @@ paths:
                   type: integer
                   format: int64
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -302,7 +322,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -326,7 +346,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -341,6 +361,8 @@ paths:
                 key:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -361,7 +383,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -379,6 +401,8 @@ paths:
                 password:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -399,7 +423,7 @@ paths:
       parameters:
         - name: trustFrameworkKeySet-id
           in: path
-          description: 'key: trustFrameworkKeySet-id of trustFrameworkKeySet'
+          description: 'key: id of trustFrameworkKeySet'
           required: true
           schema:
             type: string
@@ -425,6 +449,8 @@ paths:
                   type: integer
                   format: int64
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -500,6 +526,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -537,7 +565,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: trustFrameworkPolicy-id of trustFrameworkPolicy'
+          description: 'key: id of trustFrameworkPolicy'
           required: true
           schema:
             type: string
@@ -575,6 +603,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - trustFramework.trustFrameworkPolicy
@@ -583,7 +612,7 @@ paths:
       parameters:
         - name: trustFrameworkPolicy-id
           in: path
-          description: 'key: trustFrameworkPolicy-id of trustFrameworkPolicy'
+          description: 'key: id of trustFrameworkPolicy'
           required: true
           schema:
             type: string
@@ -595,6 +624,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.trustFrameworkPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - trustFramework.trustFrameworkPolicy
+      summary: Delete navigation property policies for trustFramework
+      operationId: trustFramework_DeletePolicies
+      parameters:
+        - name: trustFrameworkPolicy-id
+          in: path
+          description: 'key: id of trustFrameworkPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trustFrameworkPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -617,12 +670,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
-      example:
-        id: string (identifier)
-        policies:
-          - '@odata.type': microsoft.graph.trustFrameworkPolicy
-        keySets:
-          - '@odata.type': microsoft.graph.trustFrameworkKeySet
+          additionalProperties:
+            type: object
     microsoft.graph.trustFrameworkKeySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -633,10 +682,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkKey'
-      example:
-        id: string (identifier)
-        keys:
-          - '@odata.type': microsoft.graph.trustFrameworkKey
+          additionalProperties:
+            type: object
     microsoft.graph.trustFrameworkKey:
       title: trustFrameworkKey
       type: object
@@ -693,31 +740,15 @@ components:
         qi:
           type: string
           nullable: true
-      example:
-        k: string
-        x5c:
-          - string
-        x5t: string
-        kty: string
-        use: string
-        exp: integer
-        nbf: integer
-        kid: string
-        e: string
-        n: string
-        d: string
-        p: string
-        q: string
-        dp: string
-        dq: string
-        qi: string
+      additionalProperties:
+        type: object
     microsoft.graph.trustFrameworkPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: trustFrameworkPolicy
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -725,8 +756,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -734,6 +765,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -752,7 +785,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -765,6 +802,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -25,12 +25,16 @@ paths:
               enum:
                 - id
                 - authenticationFlowsPolicy
+                - deviceRegistrationPolicy
                 - activityBasedTimeoutPolicies
+                - authorizationPolicy
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
+                - permissionGrantPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - adminConsentRequestPolicy
+                - directoryRoleAccessReviewPolicy
                 - identitySecurityDefaultsEnforcementPolicy
                 - conditionalAccessPolicies
               type: string
@@ -46,12 +50,16 @@ paths:
               enum:
                 - '*'
                 - authenticationFlowsPolicy
+                - deviceRegistrationPolicy
                 - activityBasedTimeoutPolicies
+                - authorizationPolicy
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
+                - permissionGrantPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - adminConsentRequestPolicy
+                - directoryRoleAccessReviewPolicy
                 - identitySecurityDefaultsEnforcementPolicy
                 - conditionalAccessPolicies
               type: string
@@ -62,43 +70,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policyRoot'
-          links:
-            authenticationFlowsPolicy:
-              operationId: policies.GetAuthenticationFlowsPolicy
-              parameters:
-                authenticationFlowsPolicy-id: $response.body#/id
-            activityBasedTimeoutPolicies:
-              operationId: policies.GetActivityBasedTimeoutPolicies
-              parameters:
-                activityBasedTimeoutPolicy-id: $response.body#/id
-            claimsMappingPolicies:
-              operationId: policies.GetClaimsMappingPolicies
-              parameters:
-                claimsMappingPolicy-id: $response.body#/id
-            homeRealmDiscoveryPolicies:
-              operationId: policies.GetHomeRealmDiscoveryPolicies
-              parameters:
-                homeRealmDiscoveryPolicy-id: $response.body#/id
-            tokenIssuancePolicies:
-              operationId: policies.GetTokenIssuancePolicies
-              parameters:
-                tokenIssuancePolicy-id: $response.body#/id
-            tokenLifetimePolicies:
-              operationId: policies.GetTokenLifetimePolicies
-              parameters:
-                tokenLifetimePolicy-id: $response.body#/id
-            adminConsentRequestPolicy:
-              operationId: policies.GetAdminConsentRequestPolicy
-              parameters:
-                adminConsentRequestPolicy-id: $response.body#/id
-            identitySecurityDefaultsEnforcementPolicy:
-              operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
-              parameters:
-                identitySecurityDefaultsEnforcementPolicy-id: $response.body#/id
-            conditionalAccessPolicies:
-              operationId: policies.GetConditionalAccessPolicies
-              parameters:
-                conditionalAccessPolicy-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -201,6 +172,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -238,7 +211,7 @@ paths:
       parameters:
         - name: activityBasedTimeoutPolicy-id
           in: path
-          description: 'key: activityBasedTimeoutPolicy-id of activityBasedTimeoutPolicy'
+          description: 'key: id of activityBasedTimeoutPolicy'
           required: true
           schema:
             type: string
@@ -283,6 +256,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.activityBasedTimeoutPolicy
@@ -291,7 +265,7 @@ paths:
       parameters:
         - name: activityBasedTimeoutPolicy-id
           in: path
-          description: 'key: activityBasedTimeoutPolicy-id of activityBasedTimeoutPolicy'
+          description: 'key: id of activityBasedTimeoutPolicy'
           required: true
           schema:
             type: string
@@ -303,6 +277,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.activityBasedTimeoutPolicy
+      summary: Delete navigation property activityBasedTimeoutPolicies for policies
+      operationId: policies_DeleteActivityBasedTimeoutPolicies
+      parameters:
+        - name: activityBasedTimeoutPolicy-id
+          in: path
+          description: 'key: id of activityBasedTimeoutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: activityBasedTimeoutPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -355,6 +353,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.adminConsentRequestPolicy
@@ -367,6 +366,23 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.adminConsentRequestPolicy
+      summary: Delete navigation property adminConsentRequestPolicy for policies
+      operationId: policies_DeleteAdminConsentRequestPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -416,6 +432,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.authenticationFlowsPolicy
@@ -428,6 +445,243 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.authenticationFlowsPolicy
+      summary: Delete navigation property authenticationFlowsPolicy for policies
+      operationId: policies_DeleteAuthenticationFlowsPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/authorizationPolicy:
+    get:
+      tags:
+        - policies.authorizationPolicy
+      summary: Get authorizationPolicy from policies
+      operationId: policies_ListAuthorizationPolicy
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - blockMsolPowerShell
+                - blockMsolPowerShell desc
+                - enabledPreviewFeatures
+                - enabledPreviewFeatures desc
+                - guestUserRoleId
+                - guestUserRoleId desc
+                - permissionGrantPolicyIdsAssignedToDefaultUserRole
+                - permissionGrantPolicyIdsAssignedToDefaultUserRole desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - blockMsolPowerShell
+                - enabledPreviewFeatures
+                - guestUserRoleId
+                - permissionGrantPolicyIdsAssignedToDefaultUserRole
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of authorizationPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.authorizationPolicy
+      summary: Create new navigation property to authorizationPolicy for policies
+      operationId: policies_CreateAuthorizationPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/authorizationPolicy/{authorizationPolicy-id}':
+    get:
+      tags:
+        - policies.authorizationPolicy
+      summary: Get authorizationPolicy from policies
+      operationId: policies_GetAuthorizationPolicy
+      parameters:
+        - name: authorizationPolicy-id
+          in: path
+          description: 'key: id of authorizationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - blockMsolPowerShell
+                - enabledPreviewFeatures
+                - guestUserRoleId
+                - permissionGrantPolicyIdsAssignedToDefaultUserRole
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.authorizationPolicy
+      summary: Update the navigation property authorizationPolicy in policies
+      operationId: policies_UpdateAuthorizationPolicy
+      parameters:
+        - name: authorizationPolicy-id
+          in: path
+          description: 'key: id of authorizationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.authorizationPolicy
+      summary: Delete navigation property authorizationPolicy for policies
+      operationId: policies_DeleteAuthorizationPolicy
+      parameters:
+        - name: authorizationPolicy-id
+          in: path
+          description: 'key: id of authorizationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -515,6 +769,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -552,7 +808,7 @@ paths:
       parameters:
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: claimsMappingPolicy-id of claimsMappingPolicy'
+          description: 'key: id of claimsMappingPolicy'
           required: true
           schema:
             type: string
@@ -597,6 +853,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.claimsMappingPolicy
@@ -605,7 +862,7 @@ paths:
       parameters:
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: claimsMappingPolicy-id of claimsMappingPolicy'
+          description: 'key: id of claimsMappingPolicy'
           required: true
           schema:
             type: string
@@ -617,6 +874,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.claimsMappingPolicy
+      summary: Delete navigation property claimsMappingPolicies for policies
+      operationId: policies_DeleteClaimsMappingPolicies
+      parameters:
+        - name: claimsMappingPolicy-id
+          in: path
+          description: 'key: id of claimsMappingPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: claimsMappingPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -711,6 +992,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -748,7 +1031,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: conditionalAccessPolicy-id of conditionalAccessPolicy'
+          description: 'key: id of conditionalAccessPolicy'
           required: true
           schema:
             type: string
@@ -794,6 +1077,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.conditionalAccessPolicy
@@ -802,7 +1086,7 @@ paths:
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: conditionalAccessPolicy-id of conditionalAccessPolicy'
+          description: 'key: id of conditionalAccessPolicy'
           required: true
           schema:
             type: string
@@ -814,6 +1098,183 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.conditionalAccessPolicy
+      summary: Delete navigation property conditionalAccessPolicies for policies
+      operationId: policies_DeleteConditionalAccessPolicies
+      parameters:
+        - name: conditionalAccessPolicy-id
+          in: path
+          description: 'key: id of conditionalAccessPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/deviceRegistrationPolicy:
+    get:
+      tags:
+        - policies.deviceRegistrationPolicy
+      summary: Get deviceRegistrationPolicy from policies
+      operationId: policies_GetDeviceRegistrationPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.deviceRegistrationPolicy
+      summary: Update the navigation property deviceRegistrationPolicy in policies
+      operationId: policies_UpdateDeviceRegistrationPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.deviceRegistrationPolicy
+      summary: Delete navigation property deviceRegistrationPolicy for policies
+      operationId: policies_DeleteDeviceRegistrationPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/directoryRoleAccessReviewPolicy:
+    get:
+      tags:
+        - policies.directoryRoleAccessReviewPolicy
+      summary: Get directoryRoleAccessReviewPolicy from policies
+      operationId: policies_GetDirectoryRoleAccessReviewPolicy
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - settings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.directoryRoleAccessReviewPolicy
+      summary: Update the navigation property directoryRoleAccessReviewPolicy in policies
+      operationId: policies_UpdateDirectoryRoleAccessReviewPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.directoryRoleAccessReviewPolicy
+      summary: Delete navigation property directoryRoleAccessReviewPolicy for policies
+      operationId: policies_DeleteDirectoryRoleAccessReviewPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -901,6 +1362,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -938,7 +1401,7 @@ paths:
       parameters:
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: homeRealmDiscoveryPolicy-id of homeRealmDiscoveryPolicy'
+          description: 'key: id of homeRealmDiscoveryPolicy'
           required: true
           schema:
             type: string
@@ -983,6 +1446,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.homeRealmDiscoveryPolicy
@@ -991,7 +1455,7 @@ paths:
       parameters:
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: homeRealmDiscoveryPolicy-id of homeRealmDiscoveryPolicy'
+          description: 'key: id of homeRealmDiscoveryPolicy'
           required: true
           schema:
             type: string
@@ -1003,6 +1467,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.homeRealmDiscoveryPolicy
+      summary: Delete navigation property homeRealmDiscoveryPolicies for policies
+      operationId: policies_DeleteHomeRealmDiscoveryPolicies
+      parameters:
+        - name: homeRealmDiscoveryPolicy-id
+          in: path
+          description: 'key: id of homeRealmDiscoveryPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: homeRealmDiscoveryPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1053,6 +1541,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
@@ -1065,6 +1554,755 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.identitySecurityDefaultsEnforcementPolicy
+      summary: Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+      operationId: policies_DeleteIdentitySecurityDefaultsEnforcementPolicy
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/permissionGrantPolicies:
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get permissionGrantPolicies from policies
+      operationId: policies_ListPermissionGrantPolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - includes
+                - excludes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - includes
+                - excludes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to permissionGrantPolicies for policies
+      operationId: policies_CreatePermissionGrantPolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get permissionGrantPolicies from policies
+      operationId: policies_GetPermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - includes
+                - excludes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - includes
+                - excludes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property permissionGrantPolicies in policies
+      operationId: policies_UpdatePermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property permissionGrantPolicies for policies
+      operationId: policies_DeletePermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get excludes from policies
+      operationId: policies.permissionGrantPolicies_ListExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - permissionClassification
+                - permissionClassification desc
+                - permissionType
+                - permissionType desc
+                - resourceApplication
+                - resourceApplication desc
+                - permissions
+                - permissions desc
+                - clientApplicationIds
+                - clientApplicationIds desc
+                - clientApplicationTenantIds
+                - clientApplicationTenantIds desc
+                - clientApplicationPublisherIds
+                - clientApplicationPublisherIds desc
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationsFromVerifiedPublisherOnly desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - permissionClassification
+                - permissionType
+                - resourceApplication
+                - permissions
+                - clientApplicationIds
+                - clientApplicationTenantIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantConditionSet
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to excludes for policies
+      operationId: policies.permissionGrantPolicies_CreateExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get excludes from policies
+      operationId: policies.permissionGrantPolicies_GetExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - permissionClassification
+                - permissionType
+                - resourceApplication
+                - permissions
+                - clientApplicationIds
+                - clientApplicationTenantIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property excludes in policies
+      operationId: policies.permissionGrantPolicies_UpdateExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property excludes for policies
+      operationId: policies.permissionGrantPolicies_DeleteExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get includes from policies
+      operationId: policies.permissionGrantPolicies_ListIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - permissionClassification
+                - permissionClassification desc
+                - permissionType
+                - permissionType desc
+                - resourceApplication
+                - resourceApplication desc
+                - permissions
+                - permissions desc
+                - clientApplicationIds
+                - clientApplicationIds desc
+                - clientApplicationTenantIds
+                - clientApplicationTenantIds desc
+                - clientApplicationPublisherIds
+                - clientApplicationPublisherIds desc
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationsFromVerifiedPublisherOnly desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - permissionClassification
+                - permissionType
+                - resourceApplication
+                - permissions
+                - clientApplicationIds
+                - clientApplicationTenantIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantConditionSet
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to includes for policies
+      operationId: policies.permissionGrantPolicies_CreateIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get includes from policies
+      operationId: policies.permissionGrantPolicies_GetIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - permissionClassification
+                - permissionType
+                - resourceApplication
+                - permissions
+                - clientApplicationIds
+                - clientApplicationTenantIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property includes in policies
+      operationId: policies.permissionGrantPolicies_UpdateIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property includes for policies
+      operationId: policies.permissionGrantPolicies_DeleteIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1152,6 +2390,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1189,7 +2429,7 @@ paths:
       parameters:
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: tokenIssuancePolicy-id of tokenIssuancePolicy'
+          description: 'key: id of tokenIssuancePolicy'
           required: true
           schema:
             type: string
@@ -1234,6 +2474,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.tokenIssuancePolicy
@@ -1242,7 +2483,7 @@ paths:
       parameters:
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: tokenIssuancePolicy-id of tokenIssuancePolicy'
+          description: 'key: id of tokenIssuancePolicy'
           required: true
           schema:
             type: string
@@ -1254,6 +2495,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.tokenIssuancePolicy
+      summary: Delete navigation property tokenIssuancePolicies for policies
+      operationId: policies_DeleteTokenIssuancePolicies
+      parameters:
+        - name: tokenIssuancePolicy-id
+          in: path
+          description: 'key: id of tokenIssuancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tokenIssuancePolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1341,6 +2606,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1378,7 +2645,7 @@ paths:
       parameters:
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: tokenLifetimePolicy-id of tokenLifetimePolicy'
+          description: 'key: id of tokenLifetimePolicy'
           required: true
           schema:
             type: string
@@ -1423,6 +2690,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - policies.tokenLifetimePolicy
@@ -1431,7 +2699,7 @@ paths:
       parameters:
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: tokenLifetimePolicy-id of tokenLifetimePolicy'
+          description: 'key: id of tokenLifetimePolicy'
           required: true
           schema:
             type: string
@@ -1449,6 +2717,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.tokenLifetimePolicy
+      summary: Delete navigation property tokenLifetimePolicies for policies
+      operationId: policies_DeleteTokenLifetimePolicies
+      parameters:
+        - name: tokenLifetimePolicy-id
+          in: path
+          description: 'key: id of tokenLifetimePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tokenLifetimePolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.policyRoot:
@@ -1459,10 +2751,16 @@ components:
           properties:
             authenticationFlowsPolicy:
               $ref: '#/components/schemas/microsoft.graph.authenticationFlowsPolicy'
+            deviceRegistrationPolicy:
+              $ref: '#/components/schemas/microsoft.graph.deviceRegistrationPolicy'
             activityBasedTimeoutPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+            authorizationPolicy:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
             claimsMappingPolicies:
               type: array
               items:
@@ -1471,6 +2769,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+            permissionGrantPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
             tokenIssuancePolicies:
               type: array
               items:
@@ -1481,48 +2783,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
             adminConsentRequestPolicy:
               $ref: '#/components/schemas/microsoft.graph.adminConsentRequestPolicy'
+            directoryRoleAccessReviewPolicy:
+              $ref: '#/components/schemas/microsoft.graph.directoryRoleAccessReviewPolicy'
             identitySecurityDefaultsEnforcementPolicy:
               $ref: '#/components/schemas/microsoft.graph.identitySecurityDefaultsEnforcementPolicy'
             conditionalAccessPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-      example:
-        id: string (identifier)
-        authenticationFlowsPolicy:
-          '@odata.type': microsoft.graph.authenticationFlowsPolicy
-        activityBasedTimeoutPolicies:
-          - '@odata.type': microsoft.graph.activityBasedTimeoutPolicy
-        claimsMappingPolicies:
-          - '@odata.type': microsoft.graph.claimsMappingPolicy
-        homeRealmDiscoveryPolicies:
-          - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
-        tokenIssuancePolicies:
-          - '@odata.type': microsoft.graph.tokenIssuancePolicy
-        tokenLifetimePolicies:
-          - '@odata.type': microsoft.graph.tokenLifetimePolicy
-        adminConsentRequestPolicy:
-          '@odata.type': microsoft.graph.adminConsentRequestPolicy
-        identitySecurityDefaultsEnforcementPolicy:
-          '@odata.type': microsoft.graph.identitySecurityDefaultsEnforcementPolicy
-        conditionalAccessPolicies:
-          - '@odata.type': microsoft.graph.conditionalAccessPolicy
+          additionalProperties:
+            type: object
     microsoft.graph.activityBasedTimeoutPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: activityBasedTimeoutPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.adminConsentRequestPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1549,15 +2827,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
-      example:
-        id: string (identifier)
-        isEnabled: true
-        version: integer
-        notifyReviewers: true
-        remindersEnabled: true
-        requestDurationInDays: integer
-        reviewers:
-          - '@odata.type': microsoft.graph.accessReviewScope
+          additionalProperties:
+            type: object
     microsoft.graph.authenticationFlowsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1572,28 +2843,43 @@ components:
             description:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        selfServiceSignUp:
-          '@odata.type': microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration
-        displayName: string
-        description: string
+          additionalProperties:
+            type: object
+    microsoft.graph.authorizationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: authorizationPolicy
+          type: object
+          properties:
+            blockMsolPowerShell:
+              type: boolean
+              nullable: true
+            enabledPreviewFeatures:
+              type: array
+              items:
+                type: string
+                nullable: true
+            guestUserRoleId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              format: uuid
+              nullable: true
+            permissionGrantPolicyIdsAssignedToDefaultUserRole:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.claimsMappingPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.conditionalAccessPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1603,15 +2889,18 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Readonly.'
               format: date-time
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Readonly.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Specifies a display name for the conditionalAccessPolicy object.
             description:
               type: string
               nullable: true
@@ -1623,36 +2912,33 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControls'
             sessionControls:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        modifiedDateTime: string (timestamp)
-        displayName: string
-        description: string
-        state:
-          '@odata.type': microsoft.graph.conditionalAccessPolicyState
-        conditions:
-          '@odata.type': microsoft.graph.conditionalAccessConditionSet
-        grantControls:
-          '@odata.type': microsoft.graph.conditionalAccessGrantControls
-        sessionControls:
-          '@odata.type': microsoft.graph.conditionalAccessSessionControls
+          additionalProperties:
+            type: object
+    microsoft.graph.deviceRegistrationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceRegistrationPolicy
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryRoleAccessReviewPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryRoleAccessReviewPolicy
+          type: object
+          properties:
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.identitySecurityDefaultsEnforcementPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -1661,45 +2947,82 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: 'If set to true, Azure Active Directory security defaults is enabled for the tenant.'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        isEnabled: true
+    microsoft.graph.permissionGrantPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: permissionGrantPolicy
+          type: object
+          properties:
+            includes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+            excludes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.permissionGrantConditionSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: permissionGrantConditionSet
+          type: object
+          properties:
+            permissionClassification:
+              type: string
+              nullable: true
+            permissionType:
+              $ref: '#/components/schemas/microsoft.graph.permissionType'
+            resourceApplication:
+              type: string
+              nullable: true
+            permissions:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationTenantIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationPublisherIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationsFromVerifiedPublisherOnly:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.tokenIssuancePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenIssuancePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.tokenLifetimePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1707,8 +3030,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.stsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -1728,17 +3051,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.accessReviewScope:
       title: accessReviewScope
       type: object
@@ -1749,17 +3064,31 @@ components:
         queryType:
           type: string
           nullable: true
-      example:
-        query: string
-        queryType: string
+      additionalProperties:
+        type: object
     microsoft.graph.selfServiceSignUpAuthenticationFlowConfiguration:
       title: selfServiceSignUpAuthenticationFlowConfiguration
       type: object
       properties:
         isEnabled:
           type: boolean
-      example:
-        isEnabled: true
+      additionalProperties:
+        type: object
+    microsoft.graph.policyBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: policyBase
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description for this policy.
+            displayName:
+              type: string
+              description: Display name for this policy.
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.conditionalAccessPolicyState:
       title: conditionalAccessPolicyState
       enum:
@@ -1779,6 +3108,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
+          description: 'Risk levels included in the policy. Possible values are: low, medium, high, none.'
         userRiskLevels:
           type: array
           items:
@@ -1791,56 +3121,38 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
+          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other.'
         deviceStates:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDeviceStates'
         devices:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
-      example:
-        applications:
-          '@odata.type': microsoft.graph.conditionalAccessApplications
-        users:
-          '@odata.type': microsoft.graph.conditionalAccessUsers
-        signInRiskLevels:
-          - '@odata.type': microsoft.graph.riskLevel
-        userRiskLevels:
-          - '@odata.type': microsoft.graph.riskLevel
-        platforms:
-          '@odata.type': microsoft.graph.conditionalAccessPlatforms
-        locations:
-          '@odata.type': microsoft.graph.conditionalAccessLocations
-        clientAppTypes:
-          - '@odata.type': microsoft.graph.conditionalAccessClientApp
-        deviceStates:
-          '@odata.type': microsoft.graph.conditionalAccessDeviceStates
-        devices:
-          '@odata.type': microsoft.graph.conditionalAccessDevices
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessGrantControls:
       title: conditionalAccessGrantControls
       type: object
       properties:
         operator:
           type: string
+          description: 'Defines the relationship of the grant controls. Possible values: AND, OR.'
           nullable: true
         builtInControls:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControl'
+          description: 'List of values of built-in controls required by the policy. Possible values: Block, Mfa, CompliantDevice, DomainJoinedDevice, ApprovedApplication, CompliantApplication'
         customAuthenticationFactors:
           type: array
           items:
             type: string
+          description: 'List of custom controls IDs required by the policy. For more information, see Custom controls.'
         termsOfUse:
           type: array
           items:
             type: string
-      example:
-        operator: string
-        builtInControls:
-          - '@odata.type': microsoft.graph.conditionalAccessGrantControl
-        customAuthenticationFactors:
-          - string
-        termsOfUse:
-          - string
+          description: List of terms of use IDs required by the policy.
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessSessionControls:
       title: conditionalAccessSessionControls
       type: object
@@ -1853,33 +3165,47 @@ components:
           $ref: '#/components/schemas/microsoft.graph.signInFrequencySessionControl'
         persistentBrowser:
           $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionControl'
-      example:
-        applicationEnforcedRestrictions:
-          '@odata.type': microsoft.graph.applicationEnforcedRestrictionsSessionControl
-        cloudAppSecurity:
-          '@odata.type': microsoft.graph.cloudAppSecuritySessionControl
-        signInFrequency:
-          '@odata.type': microsoft.graph.signInFrequencySessionControl
-        persistentBrowser:
-          '@odata.type': microsoft.graph.persistentBrowserSessionControl
-    microsoft.graph.policyBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: policyBase
-          type: object
-          properties:
-            description:
-              type: string
-              description: Description for this policy.
-            displayName:
-              type: string
-              description: Display name for this policy.
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewScheduleSettings:
+      title: accessReviewScheduleSettings
+      type: object
+      properties:
+        mailNotificationsEnabled:
+          type: boolean
+        reminderNotificationsEnabled:
+          type: boolean
+        justificationRequiredOnApproval:
+          type: boolean
+        defaultDecisionEnabled:
+          type: boolean
+        defaultDecision:
+          type: string
+          nullable: true
+        instanceDurationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        autoApplyDecisionsEnabled:
+          type: boolean
+        applyActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewApplyAction'
+        recommendationsEnabled:
+          type: boolean
+      additionalProperties:
+        type: object
+    microsoft.graph.permissionType:
+      title: permissionType
+      enum:
+        - application
+        - delegated
+        - delegatedUserConsentable
+      type: string
     odata.error:
       required:
         - error
@@ -1887,6 +3213,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1898,10 +3226,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
       type: object
@@ -1910,21 +3237,19 @@ components:
           type: array
           items:
             type: string
+          description: 'The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.'
         excludeApplications:
           type: array
           items:
             type: string
+          description: The list of application IDs explicitly excluded from the policy.
         includeUserActions:
           type: array
           items:
             type: string
-      example:
-        includeApplications:
-          - string
-        excludeApplications:
-          - string
-        includeUserActions:
-          - string
+          description: 'User actions to include. For example, urn:user:registersecurityinfo'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessUsers:
       title: conditionalAccessUsers
       type: object
@@ -1933,39 +3258,34 @@ components:
           type: array
           items:
             type: string
+          description: 'User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.'
         excludeUsers:
           type: array
           items:
             type: string
+          description: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
         includeGroups:
           type: array
           items:
             type: string
+          description: 'Group IDs in scope of policy unless explicitly excluded, or All.'
         excludeGroups:
           type: array
           items:
             type: string
+          description: Group IDs excluded from scope of policy.
         includeRoles:
           type: array
           items:
             type: string
+          description: 'Role IDs in scope of policy unless explicitly excluded, or All.'
         excludeRoles:
           type: array
           items:
             type: string
-      example:
-        includeUsers:
-          - string
-        excludeUsers:
-          - string
-        includeGroups:
-          - string
-        excludeGroups:
-          - string
-        includeRoles:
-          - string
-        excludeRoles:
-          - string
+          description: Role IDs excluded from scope of policy.
+      additionalProperties:
+        type: object
     microsoft.graph.riskLevel:
       title: riskLevel
       enum:
@@ -1984,15 +3304,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.'
         excludePlatforms:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-      example:
-        includePlatforms:
-          - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform
-        excludePlatforms:
-          - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, unknownFutureValue.'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessLocations:
       title: conditionalAccessLocations
       type: object
@@ -2001,25 +3320,22 @@ components:
           type: array
           items:
             type: string
+          description: 'Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.'
         excludeLocations:
           type: array
           items:
             type: string
-      example:
-        includeLocations:
-          - string
-        excludeLocations:
-          - string
+          description: Location IDs excluded from scope of policy.
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessClientApp:
       title: conditionalAccessClientApp
       enum:
         - all
         - browser
-        - modern
         - mobileAppsAndDesktopClients
         - exchangeActiveSync
         - easSupported
-        - easUnsupported
         - other
         - unknownFutureValue
       type: string
@@ -2035,11 +3351,8 @@ components:
           type: array
           items:
             type: string
-      example:
-        includeStates:
-          - string
-        excludeStates:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessDevices:
       title: conditionalAccessDevices
       type: object
@@ -2052,11 +3365,8 @@ components:
           type: array
           items:
             type: string
-      example:
-        includeDeviceStates:
-          - string
-        excludeDeviceStates:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessGrantControl:
       title: conditionalAccessGrantControl
       enum:
@@ -2074,8 +3384,8 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
         - title: applicationEnforcedRestrictionsSessionControl
           type: object
-      example:
-        isEnabled: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudAppSecuritySessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -2084,10 +3394,8 @@ components:
           properties:
             cloudAppSecurityType:
               $ref: '#/components/schemas/microsoft.graph.cloudAppSecuritySessionControlType'
-      example:
-        isEnabled: true
-        cloudAppSecurityType:
-          '@odata.type': microsoft.graph.cloudAppSecuritySessionControlType
+          additionalProperties:
+            type: object
     microsoft.graph.signInFrequencySessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -2098,15 +3406,13 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of days or hours.
               format: int32
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.signinFrequencyType'
-      example:
-        isEnabled: true
-        value: integer
-        type:
-          '@odata.type': microsoft.graph.signinFrequencyType
+          additionalProperties:
+            type: object
     microsoft.graph.persistentBrowserSessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -2115,10 +3421,23 @@ components:
           properties:
             mode:
               $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionMode'
-      example:
-        isEnabled: true
-        mode:
-          '@odata.type': microsoft.graph.persistentBrowserSessionMode
+          additionalProperties:
+            type: object
+    microsoft.graph.patternedRecurrence:
+      title: patternedRecurrence
+      type: object
+      properties:
+        pattern:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
+        range:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewApplyAction:
+      title: accessReviewApplyAction
+      type: object
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -2137,7 +3456,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessDevicePlatform:
       title: conditionalAccessDevicePlatform
       enum:
@@ -2155,9 +3478,10 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Specifies whether the session control is enabled.
           nullable: true
-      example:
-        isEnabled: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecuritySessionControlType:
       title: cloudAppSecuritySessionControlType
       enum:
@@ -2178,6 +3502,71 @@ components:
         - always
         - never
       type: string
+    microsoft.graph.recurrencePattern:
+      title: recurrencePattern
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
+        interval:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.'
+          format: int32
+        month:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The month in which the event occurs.  This is a number from 1 to 12.
+          format: int32
+        dayOfMonth:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+          format: int32
+        daysOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+        firstDayOfWeek:
+          $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
+        index:
+          $ref: '#/components/schemas/microsoft.graph.weekIndex'
+      additionalProperties:
+        type: object
+    microsoft.graph.recurrenceRange:
+      title: recurrenceRange
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.'
+          format: date
+          nullable: true
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: 'The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.'
+          format: date
+          nullable: true
+        recurrenceTimeZone:
+          type: string
+          description: 'Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.'
+          nullable: true
+        numberOfOccurrences:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of times to repeat the event. Required and must be positive if type is numbered.
+          format: int32
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2190,6 +3579,45 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.recurrencePatternType:
+      title: recurrencePatternType
+      enum:
+        - daily
+        - weekly
+        - absoluteMonthly
+        - relativeMonthly
+        - absoluteYearly
+        - relativeYearly
+      type: string
+    microsoft.graph.dayOfWeek:
+      title: dayOfWeek
+      enum:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+      type: string
+    microsoft.graph.weekIndex:
+      title: weekIndex
+      enum:
+        - first
+        - second
+        - third
+        - fourth
+        - last
+      type: string
+    microsoft.graph.recurrenceRangeType:
+      title: recurrenceRangeType
+      enum:
+        - endDate
+        - noEnd
+        - numbered
+      type: string
   responses:
     error:
       description: error

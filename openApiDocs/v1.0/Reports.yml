@@ -2044,9 +2044,9 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: reportRoot
           type: object
+          additionalProperties:
+            type: object
           description: The resource that represents an instance of History Reports.
-      example:
-        id: string (identifier)
     microsoft.graph.report:
       title: report
       type: object
@@ -2056,8 +2056,9 @@ components:
           description: Not yet documented
           format: base64url
           nullable: true
-      example:
-        content: string
+      additionalProperties:
+        type: object
+      description: Device Configuration profile History reports.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2065,8 +2066,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -2074,6 +2075,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -2092,7 +2095,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2105,6 +2112,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -79,6 +79,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryRoleTemplate'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -116,7 +118,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -166,7 +168,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -192,7 +194,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -217,7 +219,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -233,6 +235,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -255,7 +259,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -271,6 +275,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -293,7 +299,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -309,6 +315,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -331,7 +339,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -347,6 +355,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -369,7 +379,7 @@ paths:
       parameters:
         - name: directoryRoleTemplate-id
           in: path
-          description: 'key: directoryRoleTemplate-id of directoryRoleTemplate'
+          description: 'key: id of directoryRoleTemplate'
           required: true
           schema:
             type: string
@@ -406,6 +416,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -438,6 +450,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -476,6 +490,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -499,12 +515,9 @@ components:
               type: string
               description: The display name to set for the directory role. Read-only.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -516,10 +529,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.entity:
       title: entity
       type: object
@@ -527,8 +539,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -536,6 +548,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -554,7 +568,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -567,6 +585,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

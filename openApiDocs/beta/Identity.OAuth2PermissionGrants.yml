@@ -91,6 +91,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -128,7 +130,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: oAuth2PermissionGrant-id of oAuth2PermissionGrant'
+          description: 'key: id of oAuth2PermissionGrant'
           required: true
           schema:
             type: string
@@ -182,7 +184,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: oAuth2PermissionGrant-id of oAuth2PermissionGrant'
+          description: 'key: id of oAuth2PermissionGrant'
           required: true
           schema:
             type: string
@@ -208,7 +210,7 @@ paths:
       parameters:
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: oAuth2PermissionGrant-id of oAuth2PermissionGrant'
+          description: 'key: id of oAuth2PermissionGrant'
           required: true
           schema:
             type: string
@@ -278,15 +280,8 @@ components:
               type: string
               format: date-time
               nullable: true
-      example:
-        id: string (identifier)
-        clientId: string
-        consentType: string
-        expiryTime: string (timestamp)
-        principalId: string
-        resourceId: string
-        scope: string
-        startTime: string (timestamp)
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -294,8 +289,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -303,6 +298,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -321,7 +318,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -334,6 +335,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

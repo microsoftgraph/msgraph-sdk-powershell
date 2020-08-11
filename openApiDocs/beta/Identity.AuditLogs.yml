@@ -54,27 +54,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-          links:
-            signIns:
-              operationId: auditLogs.GetSignIns
-              parameters:
-                signIn-id: $response.body#/id
-            directoryAudits:
-              operationId: auditLogs.GetDirectoryAudits
-              parameters:
-                directoryAudit-id: $response.body#/id
-            restrictedSignIns:
-              operationId: auditLogs.GetRestrictedSignIns
-              parameters:
-                restrictedSignIn-id: $response.body#/id
-            directoryProvisioning:
-              operationId: auditLogs.GetDirectoryProvisioning
-              parameters:
-                provisioningObjectSummary-id: $response.body#/id
-            provisioning:
-              operationId: auditLogs.GetProvisioning
-              parameters:
-                provisioningObjectSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -193,6 +172,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryAudit'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -230,7 +211,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: directoryAudit-id of directoryAudit'
+          description: 'key: id of directoryAudit'
           required: true
           schema:
             type: string
@@ -279,6 +260,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.directoryAudit
@@ -287,7 +269,7 @@ paths:
       parameters:
         - name: directoryAudit-id
           in: path
-          description: 'key: directoryAudit-id of directoryAudit'
+          description: 'key: id of directoryAudit'
           required: true
           schema:
             type: string
@@ -299,6 +281,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.directoryAudit'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.directoryAudit
+      summary: Delete navigation property directoryAudits for auditLogs
+      operationId: auditLogs_DeleteDirectoryAudits
+      parameters:
+        - name: directoryAudit-id
+          in: path
+          description: 'key: id of directoryAudit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryAudit
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -417,6 +423,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -454,7 +462,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: provisioningObjectSummary-id of provisioningObjectSummary'
+          description: 'key: id of provisioningObjectSummary'
           required: true
           schema:
             type: string
@@ -508,6 +516,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.provisioningObjectSummary
@@ -516,7 +525,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: provisioningObjectSummary-id of provisioningObjectSummary'
+          description: 'key: id of provisioningObjectSummary'
           required: true
           schema:
             type: string
@@ -528,6 +537,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Delete navigation property directoryProvisioning for auditLogs
+      operationId: auditLogs_DeleteDirectoryProvisioning
+      parameters:
+        - name: provisioningObjectSummary-id
+          in: path
+          description: 'key: id of provisioningObjectSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningObjectSummary
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -646,6 +679,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -683,7 +718,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: provisioningObjectSummary-id of provisioningObjectSummary'
+          description: 'key: id of provisioningObjectSummary'
           required: true
           schema:
             type: string
@@ -737,6 +772,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.provisioningObjectSummary
@@ -745,7 +781,7 @@ paths:
       parameters:
         - name: provisioningObjectSummary-id
           in: path
-          description: 'key: provisioningObjectSummary-id of provisioningObjectSummary'
+          description: 'key: id of provisioningObjectSummary'
           required: true
           schema:
             type: string
@@ -757,6 +793,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Delete navigation property provisioning for auditLogs
+      operationId: auditLogs_DeleteProvisioning
+      parameters:
+        - name: provisioningObjectSummary-id
+          in: path
+          description: 'key: id of provisioningObjectSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningObjectSummary
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -845,10 +905,14 @@ paths:
                 - resourceDisplayName desc
                 - resourceId
                 - resourceId desc
+                - resourceTenantId
+                - resourceTenantId desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
                 - servicePrincipalName desc
+                - signInEventTypes
+                - signInEventTypes desc
                 - status
                 - status desc
                 - tokenIssuerName
@@ -906,8 +970,10 @@ paths:
                 - riskState
                 - resourceDisplayName
                 - resourceId
+                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
+                - signInEventTypes
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -944,6 +1010,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -981,7 +1049,7 @@ paths:
       parameters:
         - name: restrictedSignIn-id
           in: path
-          description: 'key: restrictedSignIn-id of restrictedSignIn'
+          description: 'key: id of restrictedSignIn'
           required: true
           schema:
             type: string
@@ -1026,8 +1094,10 @@ paths:
                 - riskState
                 - resourceDisplayName
                 - resourceId
+                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
+                - signInEventTypes
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -1058,6 +1128,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.restrictedSignIn
@@ -1066,7 +1137,7 @@ paths:
       parameters:
         - name: restrictedSignIn-id
           in: path
-          description: 'key: restrictedSignIn-id of restrictedSignIn'
+          description: 'key: id of restrictedSignIn'
           required: true
           schema:
             type: string
@@ -1078,6 +1149,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.restrictedSignIn
+      summary: Delete navigation property restrictedSignIns for auditLogs
+      operationId: auditLogs_DeleteRestrictedSignIns
+      parameters:
+        - name: restrictedSignIn-id
+          in: path
+          description: 'key: id of restrictedSignIn'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: restrictedSignIn
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1166,10 +1261,14 @@ paths:
                 - resourceDisplayName desc
                 - resourceId
                 - resourceId desc
+                - resourceTenantId
+                - resourceTenantId desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
                 - servicePrincipalName desc
+                - signInEventTypes
+                - signInEventTypes desc
                 - status
                 - status desc
                 - tokenIssuerName
@@ -1225,8 +1324,10 @@ paths:
                 - riskState
                 - resourceDisplayName
                 - resourceId
+                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
+                - signInEventTypes
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -1262,6 +1363,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.signIn'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1299,7 +1402,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: signIn-id of signIn'
+          description: 'key: id of signIn'
           required: true
           schema:
             type: string
@@ -1344,8 +1447,10 @@ paths:
                 - riskState
                 - resourceDisplayName
                 - resourceId
+                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
+                - signInEventTypes
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -1375,6 +1480,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.signIn
@@ -1383,7 +1489,7 @@ paths:
       parameters:
         - name: signIn-id
           in: path
-          description: 'key: signIn-id of signIn'
+          description: 'key: id of signIn'
           required: true
           schema:
             type: string
@@ -1395,6 +1501,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.signIn'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.signIn
+      summary: Delete navigation property signIns for auditLogs
+      operationId: auditLogs_DeleteSignIns
+      parameters:
+        - name: signIn-id
+          in: path
+          description: 'key: id of signIn'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: signIn
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1431,18 +1561,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-      example:
-        id: string (identifier)
-        signIns:
-          - '@odata.type': microsoft.graph.signIn
-        directoryAudits:
-          - '@odata.type': microsoft.graph.directoryAudit
-        restrictedSignIns:
-          - '@odata.type': microsoft.graph.restrictedSignIn
-        directoryProvisioning:
-          - '@odata.type': microsoft.graph.provisioningObjectSummary
-        provisioning:
-          - '@odata.type': microsoft.graph.provisioningObjectSummary
+          additionalProperties:
+            type: object
     microsoft.graph.directoryAudit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1489,23 +1609,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
               description: Indicates additional details on the activity.
-      example:
-        id: string (identifier)
-        category: string
-        correlationId: string
-        result:
-          '@odata.type': microsoft.graph.operationResult
-        resultReason: string
-        activityDisplayName: string
-        activityDateTime: string (timestamp)
-        loggedByService: string
-        operationType: string
-        initiatedBy:
-          '@odata.type': microsoft.graph.auditActivityInitiator
-        targetResources:
-          - '@odata.type': microsoft.graph.targetResource
-        additionalDetails:
-          - '@odata.type': microsoft.graph.keyValue
+          additionalProperties:
+            type: object
     microsoft.graph.provisioningObjectSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1559,33 +1664,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
-      example:
-        id: string (identifier)
-        activityDateTime: string (timestamp)
-        tenantId: string
-        jobId: string
-        cycleId: string
-        changeId: string
-        action: string
-        durationInMilliseconds: integer
-        servicePrincipal:
-          '@odata.type': microsoft.graph.provisioningServicePrincipal
-        initiatedBy:
-          '@odata.type': microsoft.graph.initiator
-        sourceSystem:
-          '@odata.type': microsoft.graph.provisioningSystemDetails
-        targetSystem:
-          '@odata.type': microsoft.graph.provisioningSystemDetails
-        sourceIdentity:
-          '@odata.type': microsoft.graph.provisionedIdentity
-        targetIdentity:
-          '@odata.type': microsoft.graph.provisionedIdentity
-        statusInfo:
-          '@odata.type': microsoft.graph.statusBase
-        provisioningSteps:
-          - '@odata.type': microsoft.graph.provisioningStep
-        modifiedProperties:
-          - '@odata.type': microsoft.graph.modifiedProperty
+          additionalProperties:
+            type: object
     microsoft.graph.restrictedSignIn:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.signIn'
@@ -1597,65 +1677,8 @@ components:
               type: string
               format: uuid
               nullable: true
-      example:
-        id: string (identifier)
-        alternateSignInName: string
-        appDisplayName: string
-        appId: string
-        appliedConditionalAccessPolicies:
-          - '@odata.type': microsoft.graph.appliedConditionalAccessPolicy
-        authenticationDetails:
-          - '@odata.type': microsoft.graph.authenticationDetail
-        authenticationMethodsUsed:
-          - string
-        authenticationProcessingDetails:
-          - '@odata.type': microsoft.graph.keyValue
-        authenticationRequirement: string
-        authenticationRequirementPolicies:
-          - '@odata.type': microsoft.graph.authenticationRequirementPolicy
-        clientAppUsed: string
-        conditionalAccessStatus:
-          '@odata.type': microsoft.graph.conditionalAccessStatus
-        correlationId: string
-        createdDateTime: string (timestamp)
-        deviceDetail:
-          '@odata.type': microsoft.graph.deviceDetail
-        isInteractive: true
-        ipAddress: string
-        location:
-          '@odata.type': microsoft.graph.signInLocation
-        mfaDetail:
-          '@odata.type': microsoft.graph.mfaDetail
-        networkLocationDetails:
-          - '@odata.type': microsoft.graph.networkLocationDetail
-        originalRequestId: string
-        processingTimeInMilliseconds: integer
-        riskDetail:
-          '@odata.type': microsoft.graph.riskDetail
-        riskEventTypes:
-          - '@odata.type': microsoft.graph.riskEventType
-        riskEventTypes_v2:
-          - string
-        riskLevelAggregated:
-          '@odata.type': microsoft.graph.riskLevel
-        riskLevelDuringSignIn:
-          '@odata.type': microsoft.graph.riskLevel
-        riskState:
-          '@odata.type': microsoft.graph.riskState
-        resourceDisplayName: string
-        resourceId: string
-        servicePrincipalId: string
-        servicePrincipalName: string
-        status:
-          '@odata.type': microsoft.graph.signInStatus
-        tokenIssuerName: string
-        tokenIssuerType:
-          '@odata.type': microsoft.graph.tokenIssuerType
-        userAgent: string
-        userDisplayName: string
-        userId: string
-        userPrincipalName: string
-        targetTenantId: string
+          additionalProperties:
+            type: object
     microsoft.graph.signIn:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1766,11 +1789,19 @@ components:
               type: string
               description: ID of the resource that the user signed into.
               nullable: true
+            resourceTenantId:
+              type: string
+              nullable: true
             servicePrincipalId:
               type: string
             servicePrincipalName:
               type: string
               nullable: true
+            signInEventTypes:
+              type: array
+              items:
+                type: string
+                nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             tokenIssuerName:
@@ -1792,64 +1823,8 @@ components:
               type: string
               description: User principal name of the user that initiated the sign-in.
               nullable: true
-      example:
-        id: string (identifier)
-        alternateSignInName: string
-        appDisplayName: string
-        appId: string
-        appliedConditionalAccessPolicies:
-          - '@odata.type': microsoft.graph.appliedConditionalAccessPolicy
-        authenticationDetails:
-          - '@odata.type': microsoft.graph.authenticationDetail
-        authenticationMethodsUsed:
-          - string
-        authenticationProcessingDetails:
-          - '@odata.type': microsoft.graph.keyValue
-        authenticationRequirement: string
-        authenticationRequirementPolicies:
-          - '@odata.type': microsoft.graph.authenticationRequirementPolicy
-        clientAppUsed: string
-        conditionalAccessStatus:
-          '@odata.type': microsoft.graph.conditionalAccessStatus
-        correlationId: string
-        createdDateTime: string (timestamp)
-        deviceDetail:
-          '@odata.type': microsoft.graph.deviceDetail
-        isInteractive: true
-        ipAddress: string
-        location:
-          '@odata.type': microsoft.graph.signInLocation
-        mfaDetail:
-          '@odata.type': microsoft.graph.mfaDetail
-        networkLocationDetails:
-          - '@odata.type': microsoft.graph.networkLocationDetail
-        originalRequestId: string
-        processingTimeInMilliseconds: integer
-        riskDetail:
-          '@odata.type': microsoft.graph.riskDetail
-        riskEventTypes:
-          - '@odata.type': microsoft.graph.riskEventType
-        riskEventTypes_v2:
-          - string
-        riskLevelAggregated:
-          '@odata.type': microsoft.graph.riskLevel
-        riskLevelDuringSignIn:
-          '@odata.type': microsoft.graph.riskLevel
-        riskState:
-          '@odata.type': microsoft.graph.riskState
-        resourceDisplayName: string
-        resourceId: string
-        servicePrincipalId: string
-        servicePrincipalName: string
-        status:
-          '@odata.type': microsoft.graph.signInStatus
-        tokenIssuerName: string
-        tokenIssuerType:
-          '@odata.type': microsoft.graph.tokenIssuerType
-        userAgent: string
-        userDisplayName: string
-        userId: string
-        userPrincipalName: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1857,8 +1832,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.operationResult:
       title: operationResult
       enum:
@@ -1875,11 +1850,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userIdentity'
         app:
           $ref: '#/components/schemas/microsoft.graph.appIdentity'
-      example:
-        user:
-          '@odata.type': microsoft.graph.userIdentity
-        app:
-          '@odata.type': microsoft.graph.appIdentity
+      additionalProperties:
+        type: object
     microsoft.graph.targetResource:
       title: targetResource
       type: object
@@ -1907,15 +1879,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
           description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
-      example:
-        id: string
-        displayName: string
-        type: string
-        userPrincipalName: string
-        groupType:
-          '@odata.type': microsoft.graph.groupType
-        modifiedProperties:
-          - '@odata.type': microsoft.graph.modifiedProperty
+      additionalProperties:
+        type: object
     microsoft.graph.keyValue:
       title: keyValue
       type: object
@@ -1928,17 +1893,15 @@ components:
           type: string
           description: Value for the key-value pair.
           nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.provisioningServicePrincipal:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
         - title: provisioningServicePrincipal
           type: object
-      example:
-        id: string
-        displayName: string
+          additionalProperties:
+            type: object
     microsoft.graph.initiator:
       title: initiator
       type: object
@@ -1951,11 +1914,8 @@ components:
           nullable: true
         initiatorType:
           $ref: '#/components/schemas/microsoft.graph.initiatorType'
-      example:
-        id: string
-        displayName: string
-        initiatorType:
-          '@odata.type': microsoft.graph.initiatorType
+      additionalProperties:
+        type: object
     microsoft.graph.provisioningSystemDetails:
       title: provisioningSystemDetails
       type: object
@@ -1968,11 +1928,8 @@ components:
           nullable: true
         details:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
-      example:
-        id: string
-        displayName: string
-        details:
-          '@odata.type': microsoft.graph.detailsInfo
+      additionalProperties:
+        type: object
     microsoft.graph.provisionedIdentity:
       title: provisionedIdentity
       type: object
@@ -1988,21 +1945,16 @@ components:
           nullable: true
         details:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
-      example:
-        id: string
-        displayName: string
-        identityType: string
-        details:
-          '@odata.type': microsoft.graph.detailsInfo
+      additionalProperties:
+        type: object
     microsoft.graph.statusBase:
       title: statusBase
       type: object
       properties:
         status:
           $ref: '#/components/schemas/microsoft.graph.provisioningResult'
-      example:
-        status:
-          '@odata.type': microsoft.graph.provisioningResult
+      additionalProperties:
+        type: object
     microsoft.graph.provisioningStep:
       title: provisioningStep
       type: object
@@ -2019,15 +1971,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.detailsInfo'
         provisioningStepType:
           $ref: '#/components/schemas/microsoft.graph.provisioningStepType'
-      example:
-        name: string
-        status:
-          '@odata.type': microsoft.graph.provisioningResult
-        description: string
-        details:
-          '@odata.type': microsoft.graph.detailsInfo
-        provisioningStepType:
-          '@odata.type': microsoft.graph.provisioningStepType
+      additionalProperties:
+        type: object
     microsoft.graph.modifiedProperty:
       title: modifiedProperty
       type: object
@@ -2044,10 +1989,8 @@ components:
           type: string
           description: Indicates the updated value for the propery.
           nullable: true
-      example:
-        displayName: string
-        oldValue: string
-        newValue: string
+      additionalProperties:
+        type: object
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
       type: object
@@ -2078,19 +2021,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
-      example:
-        id: string
-        displayName: string
-        enforcedGrantControls:
-          - string
-        enforcedSessionControls:
-          - string
-        conditionsSatisfied:
-          '@odata.type': microsoft.graph.conditionalAccessConditions
-        conditionsNotSatisfied:
-          '@odata.type': microsoft.graph.conditionalAccessConditions
-        result:
-          '@odata.type': microsoft.graph.appliedConditionalAccessPolicyResult
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationDetail:
       title: authenticationDetail
       type: object
@@ -2115,13 +2047,8 @@ components:
         authenticationStepRequirement:
           type: string
           nullable: true
-      example:
-        authenticationStepDateTime: string (timestamp)
-        authenticationMethod: string
-        authenticationMethodDetail: string
-        succeeded: true
-        authenticationStepResultDetail: string
-        authenticationStepRequirement: string
+      additionalProperties:
+        type: object
     microsoft.graph.authenticationRequirementPolicy:
       title: authenticationRequirementPolicy
       type: object
@@ -2131,10 +2058,8 @@ components:
         detail:
           type: string
           nullable: true
-      example:
-        requirementProvider:
-          '@odata.type': microsoft.graph.requirementProvider
-        detail: string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessStatus:
       title: conditionalAccessStatus
       enum:
@@ -2178,15 +2103,8 @@ components:
           type: string
           description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
-      example:
-        deviceId: string
-        displayName: string
-        operatingSystem: string
-        browser: string
-        browserId: string
-        isCompliant: true
-        isManaged: true
-        trustType: string
+      additionalProperties:
+        type: object
     microsoft.graph.signInLocation:
       title: signInLocation
       type: object
@@ -2205,12 +2123,8 @@ components:
           nullable: true
         geoCoordinates:
           $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
-      example:
-        city: string
-        state: string
-        countryOrRegion: string
-        geoCoordinates:
-          '@odata.type': microsoft.graph.geoCoordinates
+      additionalProperties:
+        type: object
     microsoft.graph.mfaDetail:
       title: mfaDetail
       type: object
@@ -2221,9 +2135,8 @@ components:
         authDetail:
           type: string
           nullable: true
-      example:
-        authMethod: string
-        authDetail: string
+      additionalProperties:
+        type: object
     microsoft.graph.networkLocationDetail:
       title: networkLocationDetail
       type: object
@@ -2235,11 +2148,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        networkType:
-          '@odata.type': microsoft.graph.networkType
-        networkNames:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.riskDetail:
       title: riskDetail
       enum:
@@ -2315,10 +2225,8 @@ components:
           type: string
           description: Provides additional details on the sign-in activity
           nullable: true
-      example:
-        errorCode: integer
-        failureReason: string
-        additionalDetails: string
+      additionalProperties:
+        type: object
     microsoft.graph.tokenIssuerType:
       title: tokenIssuerType
       enum:
@@ -2333,6 +2241,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -2347,11 +2257,8 @@ components:
               type: string
               description: The userPrincipalName attribute of the user.
               nullable: true
-      example:
-        id: string
-        displayName: string
-        ipAddress: string
-        userPrincipalName: string
+          additionalProperties:
+            type: object
     microsoft.graph.appIdentity:
       title: appIdentity
       type: object
@@ -2372,11 +2279,8 @@ components:
           type: string
           description: Refers to the Service Principal Name is the Application name in the tenant.
           nullable: true
-      example:
-        appId: string
-        displayName: string
-        servicePrincipalId: string
-        servicePrincipalName: string
+      additionalProperties:
+        type: object
     microsoft.graph.groupType:
       title: groupType
       enum:
@@ -2396,9 +2300,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.initiatorType:
       title: initiatorType
       enum:
@@ -2410,6 +2313,8 @@ components:
     microsoft.graph.detailsInfo:
       title: detailsInfo
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.provisioningResult:
       title: provisioningResult
       enum:
@@ -2484,10 +2389,8 @@ components:
           description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
-      example:
-        altitude: double
-        latitude: double
-        longitude: double
+      additionalProperties:
+        type: object
     microsoft.graph.networkType:
       title: networkType
       enum:
@@ -2515,7 +2418,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2528,6 +2435,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

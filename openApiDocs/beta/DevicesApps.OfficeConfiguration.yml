@@ -48,11 +48,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeConfiguration'
-          links:
-            clientConfigurations:
-              operationId: officeConfiguration.GetClientConfigurations
-              parameters:
-                officeClientConfiguration-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -161,6 +156,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -198,7 +195,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
@@ -243,14 +240,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
-          links:
-            assignments:
-              operationId: officeConfiguration.clientConfigurations.GetAssignments
-              parameters:
-                officeClientConfiguration-id: $request.path.officeClientConfiguration-id
-                officeClientConfigurationAssignment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - officeConfiguration.officeClientConfiguration
@@ -259,7 +251,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
@@ -277,6 +269,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Delete navigation property clientConfigurations for officeConfiguration
+      operationId: officeConfiguration_DeleteClientConfigurations
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/assignments':
     get:
       tags:
@@ -286,7 +302,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
@@ -351,6 +367,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -365,7 +383,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
@@ -396,14 +414,14 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: officeClientConfiguration
         - name: officeClientConfigurationAssignment-id
           in: path
-          description: 'key: officeClientConfigurationAssignment-id of officeClientConfigurationAssignment'
+          description: 'key: id of officeClientConfigurationAssignment'
           required: true
           schema:
             type: string
@@ -442,6 +460,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - officeConfiguration.officeClientConfiguration
@@ -450,14 +469,14 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: officeClientConfiguration
         - name: officeClientConfigurationAssignment-id
           in: path
-          description: 'key: officeClientConfigurationAssignment-id of officeClientConfigurationAssignment'
+          description: 'key: id of officeClientConfigurationAssignment'
           required: true
           schema:
             type: string
@@ -475,6 +494,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Delete navigation property assignments for officeConfiguration
+      operationId: officeConfiguration.clientConfigurations_DeleteAssignments
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+        - name: officeClientConfigurationAssignment-id
+          in: path
+          description: 'key: id of officeClientConfigurationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfigurationAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -484,7 +534,7 @@ paths:
       parameters:
         - name: officeClientConfiguration-id
           in: path
-          description: 'key: officeClientConfiguration-id of officeClientConfiguration'
+          description: 'key: id of officeClientConfiguration'
           required: true
           schema:
             type: string
@@ -500,6 +550,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -538,6 +590,8 @@ paths:
                     minimum: -2147483648
                     type: integer
                     format: int32
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -563,14 +617,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
-      example:
-        id: string (identifier)
-        tenantCheckinStatuses:
-          - '@odata.type': microsoft.graph.officeClientCheckinStatus
-        tenantUserCheckinSummary:
-          '@odata.type': microsoft.graph.officeUserCheckinSummary
-        clientConfigurations:
-          - '@odata.type': microsoft.graph.officeClientConfiguration
+          additionalProperties:
+            type: object
     microsoft.graph.officeClientConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -606,19 +654,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
-      example:
-        id: string (identifier)
-        userPreferencePayload: string
-        policyPayload: string
-        description: string
-        displayName: string
-        priority: integer
-        userCheckinSummary:
-          '@odata.type': microsoft.graph.officeUserCheckinSummary
-        checkinStatuses:
-          - '@odata.type': microsoft.graph.officeClientCheckinStatus
-        assignments:
-          - '@odata.type': microsoft.graph.officeClientConfigurationAssignment
+          additionalProperties:
+            type: object
     microsoft.graph.officeClientConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -627,10 +664,8 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.officeConfigurationAssignmentTarget'
-      example:
-        id: string (identifier)
-        target:
-          '@odata.type': microsoft.graph.officeConfigurationAssignmentTarget
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -638,8 +673,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.officeClientCheckinStatus:
       title: officeClientCheckinStatus
       type: object
@@ -672,17 +707,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        userPrincipalName: string
-        deviceName: string
-        devicePlatform: string
-        devicePlatformVersion: string
-        wasSuccessful: true
-        userId: string
-        checkinDateTime: string (timestamp)
-        errorMessage: string
-        appliedPolicies:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.officeUserCheckinSummary:
       title: officeUserCheckinSummary
       type: object
@@ -697,12 +723,13 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-      example:
-        succeededUserCount: integer
-        failedUserCount: integer
+      additionalProperties:
+        type: object
     microsoft.graph.officeConfigurationAssignmentTarget:
       title: officeConfigurationAssignmentTarget
       type: object
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -710,6 +737,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -728,7 +757,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -741,6 +774,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

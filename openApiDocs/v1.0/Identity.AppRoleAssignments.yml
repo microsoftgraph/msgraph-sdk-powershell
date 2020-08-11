@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -101,6 +101,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -115,7 +117,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -146,14 +148,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -199,6 +201,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.appRoleAssignment
@@ -207,14 +210,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -232,6 +235,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.appRoleAssignment
+      summary: Delete navigation property appRoleAssignments for groups
+      operationId: groups_DeleteAppRoleAssignments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/appRoleAssignments':
     get:
       tags:
@@ -241,7 +275,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -327,6 +361,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -341,7 +377,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -372,14 +408,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -425,6 +461,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.appRoleAssignment
@@ -433,14 +470,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -452,6 +489,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.appRoleAssignment
+      summary: Delete navigation property appRoleAssignments for users
+      operationId: users_DeleteAppRoleAssignments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -500,17 +568,9 @@ components:
               description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        appRoleId: string
-        createdDateTime: string (timestamp)
-        principalDisplayName: string
-        principalId: string
-        principalType: string
-        resourceDisplayName: string
-        resourceId: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -522,10 +582,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     odata.error:
       required:
         - error
@@ -533,6 +592,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -540,8 +601,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -560,7 +621,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -573,6 +638,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

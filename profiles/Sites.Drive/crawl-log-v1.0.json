@@ -1,17 +1,17 @@
 {
   "resources": [],
   "operations": {
-    "/sites/{site-id}/drives/{drive-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml",
-      "apiVersion": "v1.0"
-    },
     "/sites/{site-id}/drive": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml"
     },
     "/sites/{site-id}/drives": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml"
+    },
+    "/sites/{site-id}/drives/{drive-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Drive.yml"
     }
   }
 }
