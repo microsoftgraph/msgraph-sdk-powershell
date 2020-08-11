@@ -350,6 +350,11 @@ directive:
       variant: ^Check(.*)
     set:
       verb: Confirm
+# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
+  - where:
+      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+    set:
+      subject: $1$2ByRef
 # Remove cmdlets
   - where:
       verb: Test
@@ -360,7 +365,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.json.cs/gm))
+      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*\d*.json.cs/gm))
       {
         return $;
       } else {
@@ -373,10 +378,16 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*.cs/gm))
+      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*\d*.cs/gm))
       {
         return $;
       } else {
+        // Add new modifier to 'values' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        let valuesPropertiesRegex = /(SerializedName\s*=\s*@"values".*\s*.*)(\s*)(.*Values\s*{\s*get;\s*set;\s*})/gmi
+        if($.match(valuesPropertiesRegex)) {
+          $ = $.replace(valuesPropertiesRegex, '$1$2 new $3');
+        }
+
         let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
         let regexArray;
         while ((regexArray = regexPattern.exec($)) !== null) {
@@ -397,7 +408,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2F\w*.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2F\w*\d*.cs/gm))
       {
         return $;
       } else {

@@ -76,63 +76,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
-          links:
-            managedEBooks:
-              operationId: deviceAppManagement.GetManagedEBooks
-              parameters:
-                managedEBook-id: $response.body#/id
-            mobileApps:
-              operationId: deviceAppManagement.GetMobileApps
-              parameters:
-                mobileApp-id: $response.body#/id
-            mobileAppCategories:
-              operationId: deviceAppManagement.GetMobileAppCategories
-              parameters:
-                mobileAppCategory-id: $response.body#/id
-            mobileAppConfigurations:
-              operationId: deviceAppManagement.GetMobileAppConfigurations
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $response.body#/id
-            vppTokens:
-              operationId: deviceAppManagement.GetVppTokens
-              parameters:
-                vppToken-id: $response.body#/id
-            managedAppPolicies:
-              operationId: deviceAppManagement.GetManagedAppPolicies
-              parameters:
-                managedAppPolicy-id: $response.body#/id
-            iosManagedAppProtections:
-              operationId: deviceAppManagement.GetIosManagedAppProtections
-              parameters:
-                iosManagedAppProtection-id: $response.body#/id
-            androidManagedAppProtections:
-              operationId: deviceAppManagement.GetAndroidManagedAppProtections
-              parameters:
-                androidManagedAppProtection-id: $response.body#/id
-            defaultManagedAppProtections:
-              operationId: deviceAppManagement.GetDefaultManagedAppProtections
-              parameters:
-                defaultManagedAppProtection-id: $response.body#/id
-            targetedManagedAppConfigurations:
-              operationId: deviceAppManagement.GetTargetedManagedAppConfigurations
-              parameters:
-                targetedManagedAppConfiguration-id: $response.body#/id
-            mdmWindowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.GetMdmWindowsInformationProtectionPolicies
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $response.body#/id
-            windowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.GetWindowsInformationProtectionPolicies
-              parameters:
-                windowsInformationProtectionPolicy-id: $response.body#/id
-            managedAppRegistrations:
-              operationId: deviceAppManagement.GetManagedAppRegistrations
-              parameters:
-                managedAppRegistration-id: $response.body#/id
-            managedAppStatuses:
-              operationId: deviceAppManagement.GetManagedAppStatuses
-              parameters:
-                managedAppStatus-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -347,6 +290,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -384,7 +329,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -467,19 +412,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.androidManagedAppProtections.GetApps
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-                managedMobileApp-id: $response.body#/id
-            deploymentSummary:
-              operationId: deviceAppManagement.androidManagedAppProtections.GetDeploymentSummary
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -488,7 +423,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -506,6 +441,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.androidManagedAppProtection
+      summary: Delete navigation property androidManagedAppProtections for deviceAppManagement
+      operationId: deviceAppManagement_DeleteAndroidManagedAppProtections
+      parameters:
+        - name: androidManagedAppProtection-id
+          in: path
+          description: 'key: id of androidManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: androidManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/apps':
     get:
       tags:
@@ -515,7 +474,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -583,6 +542,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -597,7 +558,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -628,14 +589,14 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -675,6 +636,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -683,14 +645,14 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: androidManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -708,6 +670,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.androidManagedAppProtection
+      summary: Delete navigation property apps for deviceAppManagement
+      operationId: deviceAppManagement.androidManagedAppProtections_DeleteApps
+      parameters:
+        - name: androidManagedAppProtection-id
+          in: path
+          description: 'key: id of androidManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: androidManagedAppProtection
+        - name: managedMobileApp-id
+          in: path
+          description: 'key: id of managedMobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedMobileApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -717,7 +710,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -760,6 +753,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
@@ -768,7 +762,7 @@ paths:
       parameters:
         - name: androidManagedAppProtection-id
           in: path
-          description: 'key: androidManagedAppProtection-id of androidManagedAppProtection'
+          description: 'key: id of androidManagedAppProtection'
           required: true
           schema:
             type: string
@@ -780,6 +774,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.androidManagedAppProtection
+      summary: Delete navigation property deploymentSummary for deviceAppManagement
+      operationId: deviceAppManagement.androidManagedAppProtections_DeleteDeploymentSummary
+      parameters:
+        - name: androidManagedAppProtection-id
+          in: path
+          description: 'key: id of androidManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: androidManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -980,6 +998,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1017,7 +1037,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1099,19 +1119,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.defaultManagedAppProtections.GetApps
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
-                managedMobileApp-id: $response.body#/id
-            deploymentSummary:
-              operationId: deviceAppManagement.defaultManagedAppProtections.GetDeploymentSummary
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
-                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1120,7 +1130,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1138,6 +1148,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.defaultManagedAppProtection
+      summary: Delete navigation property defaultManagedAppProtections for deviceAppManagement
+      operationId: deviceAppManagement_DeleteDefaultManagedAppProtections
+      parameters:
+        - name: defaultManagedAppProtection-id
+          in: path
+          description: 'key: id of defaultManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: defaultManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/apps':
     get:
       tags:
@@ -1147,7 +1181,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1215,6 +1249,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1229,7 +1265,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1260,14 +1296,14 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -1307,6 +1343,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1315,14 +1352,14 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: defaultManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -1340,6 +1377,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.defaultManagedAppProtection
+      summary: Delete navigation property apps for deviceAppManagement
+      operationId: deviceAppManagement.defaultManagedAppProtections_DeleteApps
+      parameters:
+        - name: defaultManagedAppProtection-id
+          in: path
+          description: 'key: id of defaultManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: defaultManagedAppProtection
+        - name: managedMobileApp-id
+          in: path
+          description: 'key: id of managedMobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedMobileApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -1349,7 +1417,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1392,6 +1460,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
@@ -1400,7 +1469,7 @@ paths:
       parameters:
         - name: defaultManagedAppProtection-id
           in: path
-          description: 'key: defaultManagedAppProtection-id of defaultManagedAppProtection'
+          description: 'key: id of defaultManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1412,6 +1481,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.defaultManagedAppProtection
+      summary: Delete navigation property deploymentSummary for deviceAppManagement
+      operationId: deviceAppManagement.defaultManagedAppProtections_DeleteDeploymentSummary
+      parameters:
+        - name: defaultManagedAppProtection-id
+          in: path
+          description: 'key: id of defaultManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: defaultManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1602,6 +1695,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1639,7 +1734,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1719,19 +1814,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.iosManagedAppProtections.GetApps
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-                managedMobileApp-id: $response.body#/id
-            deploymentSummary:
-              operationId: deviceAppManagement.iosManagedAppProtections.GetDeploymentSummary
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-                managedAppPolicyDeploymentSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -1740,7 +1825,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1758,6 +1843,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.iosManagedAppProtection
+      summary: Delete navigation property iosManagedAppProtections for deviceAppManagement
+      operationId: deviceAppManagement_DeleteIosManagedAppProtections
+      parameters:
+        - name: iosManagedAppProtection-id
+          in: path
+          description: 'key: id of iosManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/apps':
     get:
       tags:
@@ -1767,7 +1876,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1835,6 +1944,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1849,7 +1960,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -1880,14 +1991,14 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -1927,6 +2038,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -1935,14 +2047,14 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: iosManagedAppProtection
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -1960,6 +2072,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.iosManagedAppProtection
+      summary: Delete navigation property apps for deviceAppManagement
+      operationId: deviceAppManagement.iosManagedAppProtections_DeleteApps
+      parameters:
+        - name: iosManagedAppProtection-id
+          in: path
+          description: 'key: id of iosManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosManagedAppProtection
+        - name: managedMobileApp-id
+          in: path
+          description: 'key: id of managedMobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedMobileApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -1969,7 +2112,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -2012,6 +2155,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
@@ -2020,7 +2164,7 @@ paths:
       parameters:
         - name: iosManagedAppProtection-id
           in: path
-          description: 'key: iosManagedAppProtection-id of iosManagedAppProtection'
+          description: 'key: id of iosManagedAppProtection'
           required: true
           schema:
             type: string
@@ -2032,6 +2176,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.iosManagedAppProtection
+      summary: Delete navigation property deploymentSummary for deviceAppManagement
+      operationId: deviceAppManagement.iosManagedAppProtections_DeleteDeploymentSummary
+      parameters:
+        - name: iosManagedAppProtection-id
+          in: path
+          description: 'key: id of iosManagedAppProtection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: iosManagedAppProtection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -2117,6 +2285,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2154,7 +2324,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2197,6 +2367,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppPolicy
@@ -2205,7 +2376,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2223,6 +2394,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppPolicy
+      summary: Delete navigation property managedAppPolicies for deviceAppManagement
+      operationId: deviceAppManagement_DeleteManagedAppPolicies
+      parameters:
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -2232,7 +2427,7 @@ paths:
       parameters:
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2248,6 +2443,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -2361,6 +2558,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2398,7 +2597,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2452,24 +2651,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: deviceAppManagement.managedAppRegistrations.GetAppliedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppPolicy-id: $response.body#/id
-            intendedPolicies:
-              operationId: deviceAppManagement.managedAppRegistrations.GetIntendedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppPolicy-id: $response.body#/id
-            operations:
-              operationId: deviceAppManagement.managedAppRegistrations.GetOperations
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-                managedAppOperation-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -2478,7 +2662,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2496,6 +2680,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Delete navigation property managedAppRegistrations for deviceAppManagement
+      operationId: deviceAppManagement_DeleteManagedAppRegistrations
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies':
     get:
       tags:
@@ -2505,7 +2713,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2582,6 +2790,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2596,7 +2806,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2627,14 +2837,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2677,6 +2887,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -2685,14 +2896,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2710,6 +2921,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Delete navigation property appliedPolicies for deviceAppManagement
+      operationId: deviceAppManagement.managedAppRegistrations_DeleteAppliedPolicies
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -2719,14 +2961,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2742,6 +2984,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -2758,7 +3002,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2835,6 +3079,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2849,7 +3095,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -2880,14 +3126,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2930,6 +3176,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -2938,14 +3185,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2963,6 +3210,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Delete navigation property intendedPolicies for deviceAppManagement
+      operationId: deviceAppManagement.managedAppRegistrations_DeleteIntendedPolicies
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppPolicy-id
+          in: path
+          description: 'key: id of managedAppPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetApps':
     post:
       tags:
@@ -2972,14 +3250,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppPolicy-id
           in: path
-          description: 'key: managedAppPolicy-id of managedAppPolicy'
+          description: 'key: id of managedAppPolicy'
           required: true
           schema:
             type: string
@@ -2995,6 +3273,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -3011,7 +3291,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -3085,6 +3365,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3099,7 +3381,7 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
@@ -3130,14 +3412,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppOperation-id
           in: path
-          description: 'key: managedAppOperation-id of managedAppOperation'
+          description: 'key: id of managedAppOperation'
           required: true
           schema:
             type: string
@@ -3179,6 +3461,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
@@ -3187,14 +3470,14 @@ paths:
       parameters:
         - name: managedAppRegistration-id
           in: path
-          description: 'key: managedAppRegistration-id of managedAppRegistration'
+          description: 'key: id of managedAppRegistration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedAppRegistration
         - name: managedAppOperation-id
           in: path
-          description: 'key: managedAppOperation-id of managedAppOperation'
+          description: 'key: id of managedAppOperation'
           required: true
           schema:
             type: string
@@ -3206,6 +3489,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Delete navigation property operations for deviceAppManagement
+      operationId: deviceAppManagement.managedAppRegistrations_DeleteOperations
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: 'key: id of managedAppRegistration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - name: managedAppOperation-id
+          in: path
+          description: 'key: id of managedAppOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -3301,6 +3615,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3338,7 +3654,7 @@ paths:
       parameters:
         - name: managedAppStatus-id
           in: path
-          description: 'key: managedAppStatus-id of managedAppStatus'
+          description: 'key: id of managedAppStatus'
           required: true
           schema:
             type: string
@@ -3378,6 +3694,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedAppStatus
@@ -3386,7 +3703,7 @@ paths:
       parameters:
         - name: managedAppStatus-id
           in: path
-          description: 'key: managedAppStatus-id of managedAppStatus'
+          description: 'key: id of managedAppStatus'
           required: true
           schema:
             type: string
@@ -3398,6 +3715,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedAppStatus
+      summary: Delete navigation property managedAppStatuses for deviceAppManagement
+      operationId: deviceAppManagement_DeleteManagedAppStatuses
+      parameters:
+        - name: managedAppStatus-id
+          in: path
+          description: 'key: id of managedAppStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -3503,6 +3844,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedEBook'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3540,7 +3883,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3593,29 +3936,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedEBook'
-          links:
-            assignments:
-              operationId: deviceAppManagement.managedEBooks.GetAssignments
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                managedEBookAssignment-id: $response.body#/id
-            installSummary:
-              operationId: deviceAppManagement.managedEBooks.GetInstallSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                eBookInstallSummary-id: $response.body#/id
-            deviceStates:
-              operationId: deviceAppManagement.managedEBooks.GetDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                deviceInstallState-id: $response.body#/id
-            userStateSummary:
-              operationId: deviceAppManagement.managedEBooks.GetUserStateSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                userInstallStateSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -3624,7 +3947,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3642,6 +3965,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property managedEBooks for deviceAppManagement
+      operationId: deviceAppManagement_DeleteManagedEBooks
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/assignments':
     get:
       tags:
@@ -3651,7 +3998,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3719,6 +4066,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3733,7 +4082,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3764,14 +4113,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: managedEBookAssignment-id
           in: path
-          description: 'key: managedEBookAssignment-id of managedEBookAssignment'
+          description: 'key: id of managedEBookAssignment'
           required: true
           schema:
             type: string
@@ -3811,6 +4160,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -3819,14 +4169,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: managedEBookAssignment-id
           in: path
-          description: 'key: managedEBookAssignment-id of managedEBookAssignment'
+          description: 'key: id of managedEBookAssignment'
           required: true
           schema:
             type: string
@@ -3844,6 +4194,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property assignments for deviceAppManagement
+      operationId: deviceAppManagement.managedEBooks_DeleteAssignments
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: managedEBookAssignment-id
+          in: path
+          description: 'key: id of managedEBookAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBookAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates':
     get:
       tags:
@@ -3853,7 +4234,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3939,6 +4320,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3953,7 +4336,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -3984,14 +4367,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: deviceInstallState-id
           in: path
-          description: 'key: deviceInstallState-id of deviceInstallState'
+          description: 'key: id of deviceInstallState'
           required: true
           schema:
             type: string
@@ -4037,6 +4420,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -4045,14 +4429,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: deviceInstallState-id
           in: path
-          description: 'key: deviceInstallState-id of deviceInstallState'
+          description: 'key: id of deviceInstallState'
           required: true
           schema:
             type: string
@@ -4070,6 +4454,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property deviceStates for deviceAppManagement
+      operationId: deviceAppManagement.managedEBooks_DeleteDeviceStates
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: deviceInstallState-id
+          in: path
+          description: 'key: id of deviceInstallState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceInstallState
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/installSummary':
     get:
       tags:
@@ -4079,7 +4494,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -4123,6 +4538,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.eBookInstallSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -4131,7 +4547,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -4149,6 +4565,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property installSummary for deviceAppManagement
+      operationId: deviceAppManagement.managedEBooks_DeleteInstallSummary
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/microsoft.graph.assign':
     post:
       tags:
@@ -4158,7 +4598,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -4174,6 +4614,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -4190,7 +4632,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -4266,6 +4708,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4280,7 +4724,7 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
@@ -4311,14 +4755,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
@@ -4360,15 +4804,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
-          links:
-            deviceStates:
-              operationId: managedEBook.userStateSummary.GetDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                userInstallStateSummary-id: $request.path.userInstallStateSummary-id
-                deviceInstallState-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -4377,14 +4815,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
@@ -4402,6 +4840,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property userStateSummary for deviceAppManagement
+      operationId: deviceAppManagement.managedEBooks_DeleteUserStateSummary
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: userInstallStateSummary-id
+          in: path
+          description: 'key: id of userInstallStateSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userInstallStateSummary
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/{userInstallStateSummary-id}/deviceStates':
     get:
       tags:
@@ -4411,14 +4880,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
@@ -4504,6 +4973,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4518,14 +4989,14 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
@@ -4556,21 +5027,21 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
         - name: deviceInstallState-id
           in: path
-          description: 'key: deviceInstallState-id of deviceInstallState'
+          description: 'key: id of deviceInstallState'
           required: true
           schema:
             type: string
@@ -4616,6 +5087,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedEBook
@@ -4624,21 +5096,21 @@ paths:
       parameters:
         - name: managedEBook-id
           in: path
-          description: 'key: managedEBook-id of managedEBook'
+          description: 'key: id of managedEBook'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedEBook
         - name: userInstallStateSummary-id
           in: path
-          description: 'key: userInstallStateSummary-id of userInstallStateSummary'
+          description: 'key: id of userInstallStateSummary'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: userInstallStateSummary
         - name: deviceInstallState-id
           in: path
-          description: 'key: deviceInstallState-id of deviceInstallState'
+          description: 'key: id of deviceInstallState'
           required: true
           schema:
             type: string
@@ -4650,6 +5122,44 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Delete navigation property deviceStates for deviceAppManagement
+      operationId: deviceAppManagement.managedEBooks.userStateSummary_DeleteDeviceStates
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: 'key: id of managedEBook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: userInstallStateSummary-id
+          in: path
+          description: 'key: id of userInstallStateSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userInstallStateSummary
+        - name: deviceInstallState-id
+          in: path
+          description: 'key: id of deviceInstallState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceInstallState
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -4807,6 +5317,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4844,7 +5356,7 @@ paths:
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
-          description: 'key: mdmWindowsInformationProtectionPolicy-id of mdmWindowsInformationProtectionPolicy'
+          description: 'key: id of mdmWindowsInformationProtectionPolicy'
           required: true
           schema:
             type: string
@@ -4915,6 +5427,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
@@ -4923,7 +5436,7 @@ paths:
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
           in: path
-          description: 'key: mdmWindowsInformationProtectionPolicy-id of mdmWindowsInformationProtectionPolicy'
+          description: 'key: id of mdmWindowsInformationProtectionPolicy'
           required: true
           schema:
             type: string
@@ -4935,6 +5448,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.mdmWindowsInformationProtectionPolicy
+      summary: Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+      operationId: deviceAppManagement_DeleteMdmWindowsInformationProtectionPolicies
+      parameters:
+        - name: mdmWindowsInformationProtectionPolicy-id
+          in: path
+          description: 'key: id of mdmWindowsInformationProtectionPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mdmWindowsInformationProtectionPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -5023,6 +5560,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5060,7 +5599,7 @@ paths:
       parameters:
         - name: mobileAppCategory-id
           in: path
-          description: 'key: mobileAppCategory-id of mobileAppCategory'
+          description: 'key: id of mobileAppCategory'
           required: true
           schema:
             type: string
@@ -5100,6 +5639,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileAppCategory
@@ -5108,7 +5648,7 @@ paths:
       parameters:
         - name: mobileAppCategory-id
           in: path
-          description: 'key: mobileAppCategory-id of mobileAppCategory'
+          description: 'key: id of mobileAppCategory'
           required: true
           schema:
             type: string
@@ -5120,6 +5660,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.mobileAppCategory
+      summary: Delete navigation property mobileAppCategories for deviceAppManagement
+      operationId: deviceAppManagement_DeleteMobileAppCategories
+      parameters:
+        - name: mobileAppCategory-id
+          in: path
+          description: 'key: id of mobileAppCategory'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppCategory
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -5218,6 +5782,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5255,7 +5821,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5307,34 +5873,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-          links:
-            assignments:
-              operationId: deviceAppManagement.mobileAppConfigurations.GetAssignments
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-                managedDeviceMobileAppConfigurationAssignment-id: $response.body#/id
-            deviceStatuses:
-              operationId: deviceAppManagement.mobileAppConfigurations.GetDeviceStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-                managedDeviceMobileAppConfigurationDeviceStatus-id: $response.body#/id
-            userStatuses:
-              operationId: deviceAppManagement.mobileAppConfigurations.GetUserStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-                managedDeviceMobileAppConfigurationUserStatus-id: $response.body#/id
-            deviceStatusSummary:
-              operationId: deviceAppManagement.mobileAppConfigurations.GetDeviceStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-                managedDeviceMobileAppConfigurationDeviceSummary-id: $response.body#/id
-            userStatusSummary:
-              operationId: deviceAppManagement.mobileAppConfigurations.GetUserStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-                managedDeviceMobileAppConfigurationUserSummary-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -5343,7 +5884,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5361,6 +5902,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property mobileAppConfigurations for deviceAppManagement
+      operationId: deviceAppManagement_DeleteMobileAppConfigurations
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/assignments':
     get:
       tags:
@@ -5370,7 +5935,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5435,6 +6000,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5449,7 +6016,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5480,14 +6047,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationAssignment-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationAssignment-id of managedDeviceMobileAppConfigurationAssignment'
+          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
           required: true
           schema:
             type: string
@@ -5526,6 +6093,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -5534,14 +6102,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationAssignment-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationAssignment-id of managedDeviceMobileAppConfigurationAssignment'
+          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
           required: true
           schema:
             type: string
@@ -5559,6 +6127,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property assignments for deviceAppManagement
+      operationId: deviceAppManagement.mobileAppConfigurations_DeleteAssignments
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: managedDeviceMobileAppConfigurationAssignment-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfigurationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfigurationAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatuses':
     get:
       tags:
@@ -5568,7 +6167,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5651,6 +6250,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5665,7 +6266,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5696,14 +6297,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationDeviceStatus-id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
           required: true
           schema:
             type: string
@@ -5748,6 +6349,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -5756,14 +6358,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationDeviceStatus-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationDeviceStatus-id of managedDeviceMobileAppConfigurationDeviceStatus'
+          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
           required: true
           schema:
             type: string
@@ -5781,6 +6383,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property deviceStatuses for deviceAppManagement
+      operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatuses
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: managedDeviceMobileAppConfigurationDeviceStatus-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfigurationDeviceStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfigurationDeviceStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatusSummary':
     get:
       tags:
@@ -5790,7 +6423,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5835,6 +6468,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -5843,7 +6477,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5861,6 +6495,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property deviceStatusSummary for deviceAppManagement
+      operationId: deviceAppManagement.mobileAppConfigurations_DeleteDeviceStatusSummary
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -5870,7 +6528,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5886,6 +6544,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -5902,7 +6562,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -5979,6 +6639,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5993,7 +6655,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -6024,14 +6686,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationUserStatus-id of managedDeviceMobileAppConfigurationUserStatus'
+          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
           required: true
           schema:
             type: string
@@ -6074,6 +6736,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -6082,14 +6745,14 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: managedDeviceMobileAppConfiguration
         - name: managedDeviceMobileAppConfigurationUserStatus-id
           in: path
-          description: 'key: managedDeviceMobileAppConfigurationUserStatus-id of managedDeviceMobileAppConfigurationUserStatus'
+          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
           required: true
           schema:
             type: string
@@ -6107,6 +6770,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property userStatuses for deviceAppManagement
+      operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatuses
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: managedDeviceMobileAppConfigurationUserStatus-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfigurationUserStatus'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfigurationUserStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatusSummary':
     get:
       tags:
@@ -6116,7 +6810,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -6161,6 +6855,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
@@ -6169,7 +6864,7 @@ paths:
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
           in: path
-          description: 'key: managedDeviceMobileAppConfiguration-id of managedDeviceMobileAppConfiguration'
+          description: 'key: id of managedDeviceMobileAppConfiguration'
           required: true
           schema:
             type: string
@@ -6181,6 +6876,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Delete navigation property userStatusSummary for deviceAppManagement
+      operationId: deviceAppManagement.mobileAppConfigurations_DeleteUserStatusSummary
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: 'key: id of managedDeviceMobileAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -6294,6 +7013,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mobileApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6331,7 +7052,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6384,19 +7105,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            categories:
-              operationId: deviceAppManagement.mobileApps.GetCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppCategory-id: $response.body#/id
-            assignments:
-              operationId: deviceAppManagement.mobileApps.GetAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppAssignment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -6405,7 +7116,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6423,6 +7134,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Delete navigation property mobileApps for deviceAppManagement
+      operationId: deviceAppManagement_DeleteMobileApps
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: 'key: id of mobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/assignments':
     get:
       tags:
@@ -6432,7 +7167,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6503,6 +7238,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6517,7 +7254,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6548,14 +7285,14 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
         - name: mobileAppAssignment-id
           in: path
-          description: 'key: mobileAppAssignment-id of mobileAppAssignment'
+          description: 'key: id of mobileAppAssignment'
           required: true
           schema:
             type: string
@@ -6596,6 +7333,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.mobileApp
@@ -6604,14 +7342,14 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
         - name: mobileAppAssignment-id
           in: path
-          description: 'key: mobileAppAssignment-id of mobileAppAssignment'
+          description: 'key: id of mobileAppAssignment'
           required: true
           schema:
             type: string
@@ -6629,6 +7367,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Delete navigation property assignments for deviceAppManagement
+      operationId: deviceAppManagement.mobileApps_DeleteAssignments
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: 'key: id of mobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - name: mobileAppAssignment-id
+          in: path
+          description: 'key: id of mobileAppAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/categories':
     get:
       tags:
@@ -6638,7 +7407,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6706,6 +7475,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6721,14 +7492,14 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: mobileApp
         - name: mobileAppCategory-id
           in: path
-          description: 'key: mobileAppCategory-id of mobileAppCategory'
+          description: 'key: id of mobileAppCategory'
           required: true
           schema:
             type: string
@@ -6768,6 +7539,100 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileApps/{mobileApp-id}/categories/$ref':
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get ref of categories from deviceAppManagement
+      operationId: deviceAppManagement.mobileApps_ListRefCategories
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: 'key: id of mobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of mobileAppCategory
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Create new navigation property ref to categories for deviceAppManagement
+      operationId: deviceAppManagement.mobileApps_CreateRefCategories
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: 'key: id of mobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.assign':
     post:
       tags:
@@ -6777,7 +7642,7 @@ paths:
       parameters:
         - name: mobileApp-id
           in: path
-          description: 'key: mobileApp-id of mobileApp'
+          description: 'key: id of mobileApp'
           required: true
           schema:
             type: string
@@ -6793,6 +7658,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -6894,6 +7761,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -6931,7 +7800,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -6981,24 +7850,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-          links:
-            apps:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetApps
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-                managedMobileApp-id: $response.body#/id
-            deploymentSummary:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetDeploymentSummary
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-                managedAppPolicyDeploymentSummary-id: $response.body#/id
-            assignments:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.GetAssignments
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-                targetedManagedAppPolicyAssignment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -7007,7 +7861,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7025,6 +7879,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+      operationId: deviceAppManagement_DeleteTargetedManagedAppConfigurations
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: 'key: id of targetedManagedAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/apps':
     get:
       tags:
@@ -7034,7 +7912,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7102,6 +7980,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7116,7 +7996,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7147,14 +8027,14 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -7194,6 +8074,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -7202,14 +8083,14 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: managedMobileApp-id
           in: path
-          description: 'key: managedMobileApp-id of managedMobileApp'
+          description: 'key: id of managedMobileApp'
           required: true
           schema:
             type: string
@@ -7227,6 +8108,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Delete navigation property apps for deviceAppManagement
+      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteApps
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: 'key: id of targetedManagedAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - name: managedMobileApp-id
+          in: path
+          description: 'key: id of managedMobileApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedMobileApp
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assignments':
     get:
       tags:
@@ -7236,7 +8148,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7301,6 +8213,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7315,7 +8229,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7346,14 +8260,14 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: targetedManagedAppPolicyAssignment-id of targetedManagedAppPolicyAssignment'
+          description: 'key: id of targetedManagedAppPolicyAssignment'
           required: true
           schema:
             type: string
@@ -7392,6 +8306,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -7400,14 +8315,14 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: targetedManagedAppConfiguration
         - name: targetedManagedAppPolicyAssignment-id
           in: path
-          description: 'key: targetedManagedAppPolicyAssignment-id of targetedManagedAppPolicyAssignment'
+          description: 'key: id of targetedManagedAppPolicyAssignment'
           required: true
           schema:
             type: string
@@ -7425,6 +8340,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Delete navigation property assignments for deviceAppManagement
+      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteAssignments
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: 'key: id of targetedManagedAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - name: targetedManagedAppPolicyAssignment-id
+          in: path
+          description: 'key: id of targetedManagedAppPolicyAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppPolicyAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/deploymentSummary':
     get:
       tags:
@@ -7434,7 +8380,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7477,6 +8423,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
@@ -7485,7 +8432,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7503,6 +8450,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Delete navigation property deploymentSummary for deviceAppManagement
+      operationId: deviceAppManagement.targetedManagedAppConfigurations_DeleteDeploymentSummary
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: 'key: id of targetedManagedAppConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -7512,7 +8483,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7528,6 +8499,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -7544,7 +8517,7 @@ paths:
       parameters:
         - name: targetedManagedAppConfiguration-id
           in: path
-          description: 'key: targetedManagedAppConfiguration-id of targetedManagedAppConfiguration'
+          description: 'key: id of targetedManagedAppConfiguration'
           required: true
           schema:
             type: string
@@ -7560,6 +8533,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -7664,6 +8639,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.vppToken'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -7701,7 +8678,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: vppToken-id of vppToken'
+          description: 'key: id of vppToken'
           required: true
           schema:
             type: string
@@ -7750,6 +8727,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.vppToken'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.vppToken
@@ -7758,7 +8736,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: vppToken-id of vppToken'
+          description: 'key: id of vppToken'
           required: true
           schema:
             type: string
@@ -7776,6 +8754,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.vppToken
+      summary: Delete navigation property vppTokens for deviceAppManagement
+      operationId: deviceAppManagement_DeleteVppTokens
+      parameters:
+        - name: vppToken-id
+          in: path
+          description: 'key: id of vppToken'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: vppToken
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/deviceAppManagement/vppTokens/{vppToken-id}/microsoft.graph.syncLicenses':
     post:
       tags:
@@ -7785,7 +8787,7 @@ paths:
       parameters:
         - name: vppToken-id
           in: path
-          description: 'key: vppToken-id of vppToken'
+          description: 'key: id of vppToken'
           required: true
           schema:
             type: string
@@ -7987,6 +8989,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -8024,7 +9028,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
-          description: 'key: windowsInformationProtectionPolicy-id of windowsInformationProtectionPolicy'
+          description: 'key: id of windowsInformationProtectionPolicy'
           required: true
           schema:
             type: string
@@ -8107,6 +9111,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
@@ -8115,7 +9120,7 @@ paths:
       parameters:
         - name: windowsInformationProtectionPolicy-id
           in: path
-          description: 'key: windowsInformationProtectionPolicy-id of windowsInformationProtectionPolicy'
+          description: 'key: id of windowsInformationProtectionPolicy'
           required: true
           schema:
             type: string
@@ -8127,6 +9132,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceAppManagement.windowsInformationProtectionPolicy
+      summary: Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+      operationId: deviceAppManagement_DeleteWindowsInformationProtectionPolicies
+      parameters:
+        - name: windowsInformationProtectionPolicy-id
+          in: path
+          description: 'key: id of windowsInformationProtectionPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsInformationProtectionPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -8228,41 +9257,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
               description: The managed app statuses.
+          additionalProperties:
+            type: object
           description: Singleton entity that acts as a container for all device app management functionality.
-      example:
-        id: string (identifier)
-        microsoftStoreForBusinessLastSuccessfulSyncDateTime: string (timestamp)
-        isEnabledForMicrosoftStoreForBusiness: true
-        microsoftStoreForBusinessLanguage: string
-        microsoftStoreForBusinessLastCompletedApplicationSyncTime: string (timestamp)
-        managedEBooks:
-          - '@odata.type': microsoft.graph.managedEBook
-        mobileApps:
-          - '@odata.type': microsoft.graph.mobileApp
-        mobileAppCategories:
-          - '@odata.type': microsoft.graph.mobileAppCategory
-        mobileAppConfigurations:
-          - '@odata.type': microsoft.graph.managedDeviceMobileAppConfiguration
-        vppTokens:
-          - '@odata.type': microsoft.graph.vppToken
-        managedAppPolicies:
-          - '@odata.type': microsoft.graph.managedAppPolicy
-        iosManagedAppProtections:
-          - '@odata.type': microsoft.graph.iosManagedAppProtection
-        androidManagedAppProtections:
-          - '@odata.type': microsoft.graph.androidManagedAppProtection
-        defaultManagedAppProtections:
-          - '@odata.type': microsoft.graph.defaultManagedAppProtection
-        targetedManagedAppConfigurations:
-          - '@odata.type': microsoft.graph.targetedManagedAppConfiguration
-        mdmWindowsInformationProtectionPolicies:
-          - '@odata.type': microsoft.graph.mdmWindowsInformationProtectionPolicy
-        windowsInformationProtectionPolicies:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionPolicy
-        managedAppRegistrations:
-          - '@odata.type': microsoft.graph.managedAppRegistration
-        managedAppStatuses:
-          - '@odata.type': microsoft.graph.managedAppStatus
     microsoft.graph.androidManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.targetedManagedAppProtection'
@@ -8307,62 +9304,9 @@ components:
               description: List of apps to which the policy is deployed.
             deploymentSummary:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          additionalProperties:
+            type: object
           description: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        periodOfflineBeforeAccessCheck: string
-        periodOnlineBeforeAccessCheck: string
-        allowedInboundDataTransferSources:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        allowedOutboundDataTransferDestinations:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        organizationalCredentialsRequired: true
-        allowedOutboundClipboardSharingLevel:
-          '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
-        dataBackupBlocked: true
-        deviceComplianceRequired: true
-        managedBrowserToOpenLinksRequired: true
-        saveAsBlocked: true
-        periodOfflineBeforeWipeIsEnforced: string
-        pinRequired: true
-        maximumPinRetries: integer
-        simplePinBlocked: true
-        minimumPinLength: integer
-        pinCharacterSet:
-          '@odata.type': microsoft.graph.managedAppPinCharacterSet
-        periodBeforePinReset: string
-        allowedDataStorageLocations:
-          - '@odata.type': microsoft.graph.managedAppDataStorageLocation
-        contactSyncBlocked: true
-        printBlocked: true
-        fingerprintBlocked: true
-        disableAppPinIfDevicePinIsSet: true
-        minimumRequiredOsVersion: string
-        minimumWarningOsVersion: string
-        minimumRequiredAppVersion: string
-        minimumWarningAppVersion: string
-        managedBrowser:
-          '@odata.type': microsoft.graph.managedBrowserType
-        isAssigned: true
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
-        screenCaptureBlocked: true
-        disableAppEncryptionIfDeviceEncryptionIsEnabled: true
-        encryptAppData: true
-        deployedAppCount: integer
-        minimumRequiredPatchVersion: string
-        minimumWarningPatchVersion: string
-        customBrowserPackageId: string
-        customBrowserDisplayName: string
-        apps:
-          - '@odata.type': microsoft.graph.managedMobileApp
-        deploymentSummary:
-          '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
     microsoft.graph.managedMobileApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8375,12 +9319,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: The identifier for the deployment an app.
-      example:
-        id: string (identifier)
-        mobileAppIdentifier:
-          '@odata.type': microsoft.graph.mobileAppIdentifier
-        version: string
     microsoft.graph.managedAppPolicyDeploymentSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8411,15 +9352,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-      example:
-        id: string (identifier)
-        displayName: string
-        configurationDeployedUserCount: integer
-        lastRefreshTime: string (timestamp)
-        configurationDeploymentSummaryPerApp:
-          - '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummaryPerApp
-        version: string
     microsoft.graph.defaultManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppProtection'
@@ -8470,63 +9405,9 @@ components:
               description: List of apps to which the policy is deployed.
             deploymentSummary:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          additionalProperties:
+            type: object
           description: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        periodOfflineBeforeAccessCheck: string
-        periodOnlineBeforeAccessCheck: string
-        allowedInboundDataTransferSources:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        allowedOutboundDataTransferDestinations:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        organizationalCredentialsRequired: true
-        allowedOutboundClipboardSharingLevel:
-          '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
-        dataBackupBlocked: true
-        deviceComplianceRequired: true
-        managedBrowserToOpenLinksRequired: true
-        saveAsBlocked: true
-        periodOfflineBeforeWipeIsEnforced: string
-        pinRequired: true
-        maximumPinRetries: integer
-        simplePinBlocked: true
-        minimumPinLength: integer
-        pinCharacterSet:
-          '@odata.type': microsoft.graph.managedAppPinCharacterSet
-        periodBeforePinReset: string
-        allowedDataStorageLocations:
-          - '@odata.type': microsoft.graph.managedAppDataStorageLocation
-        contactSyncBlocked: true
-        printBlocked: true
-        fingerprintBlocked: true
-        disableAppPinIfDevicePinIsSet: true
-        minimumRequiredOsVersion: string
-        minimumWarningOsVersion: string
-        minimumRequiredAppVersion: string
-        minimumWarningAppVersion: string
-        managedBrowser:
-          '@odata.type': microsoft.graph.managedBrowserType
-        appDataEncryptionType:
-          '@odata.type': microsoft.graph.managedAppDataEncryptionType
-        screenCaptureBlocked: true
-        encryptAppData: true
-        disableAppEncryptionIfDeviceEncryptionIsEnabled: true
-        minimumRequiredSdkVersion: string
-        customSettings:
-          - '@odata.type': microsoft.graph.keyValuePair
-        deployedAppCount: integer
-        minimumRequiredPatchVersion: string
-        minimumWarningPatchVersion: string
-        faceIdBlocked: true
-        apps:
-          - '@odata.type': microsoft.graph.managedMobileApp
-        deploymentSummary:
-          '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
     microsoft.graph.iosManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.targetedManagedAppProtection'
@@ -8559,60 +9440,9 @@ components:
               description: List of apps to which the policy is deployed.
             deploymentSummary:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
+          additionalProperties:
+            type: object
           description: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        periodOfflineBeforeAccessCheck: string
-        periodOnlineBeforeAccessCheck: string
-        allowedInboundDataTransferSources:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        allowedOutboundDataTransferDestinations:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        organizationalCredentialsRequired: true
-        allowedOutboundClipboardSharingLevel:
-          '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
-        dataBackupBlocked: true
-        deviceComplianceRequired: true
-        managedBrowserToOpenLinksRequired: true
-        saveAsBlocked: true
-        periodOfflineBeforeWipeIsEnforced: string
-        pinRequired: true
-        maximumPinRetries: integer
-        simplePinBlocked: true
-        minimumPinLength: integer
-        pinCharacterSet:
-          '@odata.type': microsoft.graph.managedAppPinCharacterSet
-        periodBeforePinReset: string
-        allowedDataStorageLocations:
-          - '@odata.type': microsoft.graph.managedAppDataStorageLocation
-        contactSyncBlocked: true
-        printBlocked: true
-        fingerprintBlocked: true
-        disableAppPinIfDevicePinIsSet: true
-        minimumRequiredOsVersion: string
-        minimumWarningOsVersion: string
-        minimumRequiredAppVersion: string
-        minimumWarningAppVersion: string
-        managedBrowser:
-          '@odata.type': microsoft.graph.managedBrowserType
-        isAssigned: true
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
-        appDataEncryptionType:
-          '@odata.type': microsoft.graph.managedAppDataEncryptionType
-        minimumRequiredSdkVersion: string
-        deployedAppCount: integer
-        faceIdBlocked: true
-        customBrowserProtocol: string
-        apps:
-          - '@odata.type': microsoft.graph.managedMobileApp
-        deploymentSummary:
-          '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
     microsoft.graph.managedAppPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8640,14 +9470,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: The ManagedAppPolicy resource represents a base type for platform specific policies.
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
     microsoft.graph.managedAppRegistration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8718,29 +9543,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
               description: Zero or more long running operations triggered on the app registration.
+          additionalProperties:
+            type: object
           description: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastSyncDateTime: string (timestamp)
-        applicationVersion: string
-        managementSdkVersion: string
-        platformVersion: string
-        deviceType: string
-        deviceTag: string
-        deviceName: string
-        flaggedReasons:
-          - '@odata.type': microsoft.graph.managedAppFlaggedReason
-        userId: string
-        appIdentifier:
-          '@odata.type': microsoft.graph.mobileAppIdentifier
-        version: string
-        appliedPolicies:
-          - '@odata.type': microsoft.graph.managedAppPolicy
-        intendedPolicies:
-          - '@odata.type': microsoft.graph.managedAppPolicy
-        operations:
-          - '@odata.type': microsoft.graph.managedAppOperation
     microsoft.graph.managedAppOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8764,13 +9569,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an operation applied against an app registration.
-      example:
-        id: string (identifier)
-        displayName: string
-        lastModifiedDateTime: string (timestamp)
-        state: string
-        version: string
     microsoft.graph.managedAppStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8785,11 +9586,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents app protection and configuration status for the organization.
-      example:
-        id: string (identifier)
-        displayName: string
-        version: string
     microsoft.graph.managedEBook:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8849,27 +9648,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
               description: The list of installation states for this eBook.
+          additionalProperties:
+            type: object
           description: An abstract class containing the base properties for Managed eBook.
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        publisher: string
-        publishedDateTime: string (timestamp)
-        largeCover:
-          '@odata.type': microsoft.graph.mimeContent
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        informationUrl: string
-        privacyInformationUrl: string
-        assignments:
-          - '@odata.type': microsoft.graph.managedEBookAssignment
-        installSummary:
-          '@odata.type': microsoft.graph.eBookInstallSummary
-        deviceStates:
-          - '@odata.type': microsoft.graph.deviceInstallState
-        userStateSummary:
-          - '@odata.type': microsoft.graph.userInstallStateSummary
     microsoft.graph.managedEBookAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8880,13 +9661,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
             installIntent:
               $ref: '#/components/schemas/microsoft.graph.installIntent'
+          additionalProperties:
+            type: object
           description: Contains properties used to assign a eBook to a group.
-      example:
-        id: string (identifier)
-        target:
-          '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget
-        installIntent:
-          '@odata.type': microsoft.graph.installIntent
     microsoft.graph.deviceInstallState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8924,18 +9701,9 @@ components:
               type: string
               description: Device User Name.
               nullable: true
+          additionalProperties:
+            type: object
           description: Contains properties for the installation state for a device.
-      example:
-        id: string (identifier)
-        deviceName: string
-        deviceId: string
-        lastSyncDateTime: string (timestamp)
-        installState:
-          '@odata.type': microsoft.graph.installState
-        errorCode: string
-        osVersion: string
-        osDescription: string
-        userName: string
     microsoft.graph.eBookInstallSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8978,15 +9746,9 @@ components:
               type: integer
               description: Number of Users that did not install this book.
               format: int32
+          additionalProperties:
+            type: object
           description: Contains properties for the installation summary of a book for a device.
-      example:
-        id: string (identifier)
-        installedDeviceCount: integer
-        failedDeviceCount: integer
-        notInstalledDeviceCount: integer
-        installedUserCount: integer
-        failedUserCount: integer
-        notInstalledUserCount: integer
     microsoft.graph.userInstallStateSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9020,68 +9782,17 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
               description: The install state of the eBook.
+          additionalProperties:
+            type: object
           description: Contains properties for the installation state summary for a user.
-      example:
-        id: string (identifier)
-        userName: string
-        installedDeviceCount: integer
-        failedDeviceCount: integer
-        notInstalledDeviceCount: integer
-        deviceStates:
-          - '@odata.type': microsoft.graph.deviceInstallState
     microsoft.graph.mdmWindowsInformationProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.windowsInformationProtection'
         - title: mdmWindowsInformationProtectionPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Policy for Windows information protection with MDM
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        enforcementLevel:
-          '@odata.type': microsoft.graph.windowsInformationProtectionEnforcementLevel
-        enterpriseDomain: string
-        enterpriseProtectedDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        protectionUnderLockConfigRequired: true
-        dataRecoveryCertificate:
-          '@odata.type': microsoft.graph.windowsInformationProtectionDataRecoveryCertificate
-        revokeOnUnenrollDisabled: true
-        rightsManagementServicesTemplateId: string
-        azureRightsManagementServicesAllowed: true
-        iconsVisible: true
-        protectedApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        exemptApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        enterpriseNetworkDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxiedDomains:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionProxiedDomainCollection
-        enterpriseIPRanges:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionIPRangeCollection
-        enterpriseIPRangesAreAuthoritative: true
-        enterpriseProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseInternalProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxyServersAreAuthoritative: true
-        neutralDomainResources:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        indexingEncryptedStoresOrItemsBlocked: true
-        smbAutoEncryptedFileExtensions:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        isAssigned: true
-        protectedAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        exemptAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
     microsoft.graph.mobileAppCategory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9097,11 +9808,9 @@ components:
               type: string
               description: The date and time the mobileAppCategory was last modified.
               format: date-time
+          additionalProperties:
+            type: object
           description: Contains properties for a single Intune app category.
-      example:
-        id: string (identifier)
-        displayName: string
-        lastModifiedDateTime: string (timestamp)
     microsoft.graph.managedDeviceMobileAppConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9156,26 +9865,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
             userStatusSummary:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
+          additionalProperties:
+            type: object
           description: An abstract class for Mobile app configuration for enrolled devices.
-      example:
-        id: string (identifier)
-        targetedMobileApps:
-          - string
-        createdDateTime: string (timestamp)
-        description: string
-        lastModifiedDateTime: string (timestamp)
-        displayName: string
-        version: integer
-        assignments:
-          - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationAssignment
-        deviceStatuses:
-          - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus
-        userStatuses:
-          - '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationUserStatus
-        deviceStatusSummary:
-          '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary
-        userStatusSummary:
-          '@odata.type': microsoft.graph.managedDeviceMobileAppConfigurationUserSummary
     microsoft.graph.managedDeviceMobileAppConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9184,11 +9876,9 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
           description: Contains the properties used to assign an MDM app configuration to a group.
-      example:
-        id: string (identifier)
-        target:
-          '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget
     microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9223,17 +9913,9 @@ components:
               type: string
               description: UserPrincipalName.
               nullable: true
+          additionalProperties:
+            type: object
           description: 'Contains properties, inherited properties and actions for an MDM mobile app configuration status for a device.'
-      example:
-        id: string (identifier)
-        deviceDisplayName: string
-        userName: string
-        deviceModel: string
-        complianceGracePeriodExpirationDateTime: string (timestamp)
-        status:
-          '@odata.type': microsoft.graph.complianceStatus
-        lastReportedDateTime: string (timestamp)
-        userPrincipalName: string
     microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9281,16 +9963,9 @@ components:
               type: integer
               description: Version of the policy for that overview
               format: int32
+          additionalProperties:
+            type: object
           description: 'Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.'
-      example:
-        id: string (identifier)
-        pendingCount: integer
-        notApplicableCount: integer
-        successCount: integer
-        errorCount: integer
-        failedCount: integer
-        lastUpdateDateTime: string (timestamp)
-        configurationVersion: integer
     microsoft.graph.managedDeviceMobileAppConfigurationUserStatus:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9318,15 +9993,9 @@ components:
               type: string
               description: UserPrincipalName.
               nullable: true
+          additionalProperties:
+            type: object
           description: 'Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.'
-      example:
-        id: string (identifier)
-        userDisplayName: string
-        devicesCount: integer
-        status:
-          '@odata.type': microsoft.graph.complianceStatus
-        lastReportedDateTime: string (timestamp)
-        userPrincipalName: string
     microsoft.graph.managedDeviceMobileAppConfigurationUserSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9374,16 +10043,9 @@ components:
               type: integer
               description: Version of the policy for that overview
               format: int32
+          additionalProperties:
+            type: object
           description: 'Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.'
-      example:
-        id: string (identifier)
-        pendingCount: integer
-        notApplicableCount: integer
-        successCount: integer
-        errorCount: integer
-        failedCount: integer
-        lastUpdateDateTime: string (timestamp)
-        configurationVersion: integer
     microsoft.graph.mobileApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9449,28 +10111,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
               description: The list of group assignments for this mobile app.
+          additionalProperties:
+            type: object
           description: An abstract class containing the base properties for Intune mobile apps.
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        publisher: string
-        largeIcon:
-          '@odata.type': microsoft.graph.mimeContent
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        isFeatured: true
-        privacyInformationUrl: string
-        informationUrl: string
-        owner: string
-        developer: string
-        notes: string
-        publishingState:
-          '@odata.type': microsoft.graph.mobileAppPublishingState
-        categories:
-          - '@odata.type': microsoft.graph.mobileAppCategory
-        assignments:
-          - '@odata.type': microsoft.graph.mobileAppAssignment
     microsoft.graph.mobileAppAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9483,15 +10126,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
             settings:
               $ref: '#/components/schemas/microsoft.graph.mobileAppAssignmentSettings'
+          additionalProperties:
+            type: object
           description: A class containing the properties used for Group Assignment of a Mobile App.
-      example:
-        id: string (identifier)
-        intent:
-          '@odata.type': microsoft.graph.installIntent
-        target:
-          '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget
-        settings:
-          '@odata.type': microsoft.graph.mobileAppAssignmentSettings
     microsoft.graph.targetedManagedAppConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppConfiguration'
@@ -9519,24 +10156,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+          additionalProperties:
+            type: object
           description: Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        customSettings:
-          - '@odata.type': microsoft.graph.keyValuePair
-        deployedAppCount: integer
-        isAssigned: true
-        apps:
-          - '@odata.type': microsoft.graph.managedMobileApp
-        deploymentSummary:
-          '@odata.type': microsoft.graph.managedAppPolicyDeploymentSummary
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
     microsoft.graph.targetedManagedAppPolicyAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9545,11 +10167,9 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
           description: The type for deployment of groups or apps.
-      example:
-        id: string (identifier)
-        target:
-          '@odata.type': microsoft.graph.deviceAndAppManagementAssignmentTarget
     microsoft.graph.vppToken:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9596,23 +10216,9 @@ components:
               type: string
               description: Whether or not apps for the VPP token will be automatically updated.
               nullable: true
+          additionalProperties:
+            type: object
           description: You purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
-      example:
-        id: string (identifier)
-        organizationName: string
-        vppTokenAccountType:
-          '@odata.type': microsoft.graph.vppTokenAccountType
-        appleId: string
-        expirationDateTime: string (timestamp)
-        lastSyncDateTime: string (timestamp)
-        token: string
-        lastModifiedDateTime: string (timestamp)
-        state:
-          '@odata.type': microsoft.graph.vppTokenState
-        lastSyncStatus:
-          '@odata.type': microsoft.graph.vppTokenSyncStatus
-        automaticallyUpdateApps: true
-        countryOrRegion: string
     microsoft.graph.windowsInformationProtectionPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.windowsInformationProtection'
@@ -9671,69 +10277,9 @@ components:
               type: integer
               description: Offline interval before app data is wiped (days)
               format: int32
+          additionalProperties:
+            type: object
           description: Policy for Windows information protection without MDM
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        enforcementLevel:
-          '@odata.type': microsoft.graph.windowsInformationProtectionEnforcementLevel
-        enterpriseDomain: string
-        enterpriseProtectedDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        protectionUnderLockConfigRequired: true
-        dataRecoveryCertificate:
-          '@odata.type': microsoft.graph.windowsInformationProtectionDataRecoveryCertificate
-        revokeOnUnenrollDisabled: true
-        rightsManagementServicesTemplateId: string
-        azureRightsManagementServicesAllowed: true
-        iconsVisible: true
-        protectedApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        exemptApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        enterpriseNetworkDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxiedDomains:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionProxiedDomainCollection
-        enterpriseIPRanges:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionIPRangeCollection
-        enterpriseIPRangesAreAuthoritative: true
-        enterpriseProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseInternalProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxyServersAreAuthoritative: true
-        neutralDomainResources:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        indexingEncryptedStoresOrItemsBlocked: true
-        smbAutoEncryptedFileExtensions:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        isAssigned: true
-        protectedAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        exemptAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
-        revokeOnMdmHandoffDisabled: true
-        mdmEnrollmentUrl: string
-        windowsHelloForBusinessBlocked: true
-        pinMinimumLength: integer
-        pinUppercaseLetters:
-          '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
-        pinLowercaseLetters:
-          '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
-        pinSpecialCharacters:
-          '@odata.type': microsoft.graph.windowsInformationProtectionPinCharacterRequirements
-        pinExpirationDays: integer
-        numberOfPastPinsRemembered: integer
-        passwordMaximumAttemptCount: integer
-        minutesOfInactivityBeforeDeviceLock: integer
-        daysWithoutContactBeforeUnenroll: integer
     microsoft.graph.entity:
       title: entity
       type: object
@@ -9741,8 +10287,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.targetedManagedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppProtection'
@@ -9757,53 +10303,15 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               description: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+          additionalProperties:
+            type: object
           description: Policy used to configure detailed management settings targeted to specific security groups
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        periodOfflineBeforeAccessCheck: string
-        periodOnlineBeforeAccessCheck: string
-        allowedInboundDataTransferSources:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        allowedOutboundDataTransferDestinations:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        organizationalCredentialsRequired: true
-        allowedOutboundClipboardSharingLevel:
-          '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
-        dataBackupBlocked: true
-        deviceComplianceRequired: true
-        managedBrowserToOpenLinksRequired: true
-        saveAsBlocked: true
-        periodOfflineBeforeWipeIsEnforced: string
-        pinRequired: true
-        maximumPinRetries: integer
-        simplePinBlocked: true
-        minimumPinLength: integer
-        pinCharacterSet:
-          '@odata.type': microsoft.graph.managedAppPinCharacterSet
-        periodBeforePinReset: string
-        allowedDataStorageLocations:
-          - '@odata.type': microsoft.graph.managedAppDataStorageLocation
-        contactSyncBlocked: true
-        printBlocked: true
-        fingerprintBlocked: true
-        disableAppPinIfDevicePinIsSet: true
-        minimumRequiredOsVersion: string
-        minimumWarningOsVersion: string
-        minimumRequiredAppVersion: string
-        minimumWarningAppVersion: string
-        managedBrowser:
-          '@odata.type': microsoft.graph.managedBrowserType
-        isAssigned: true
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
+      additionalProperties:
+        type: object
+      description: The identifier for a mobile app.
     microsoft.graph.managedAppPolicyDeploymentSummaryPerApp:
       title: managedAppPolicyDeploymentSummaryPerApp
       type: object
@@ -9816,10 +10324,9 @@ components:
           type: integer
           description: Number of users the policy is applied.
           format: int32
-      example:
-        mobileAppIdentifier:
-          '@odata.type': microsoft.graph.mobileAppIdentifier
-        configurationAppliedUserCount: integer
+      additionalProperties:
+        type: object
+      description: Represents policy deployment summary per app.
     microsoft.graph.managedAppProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
@@ -9922,47 +10429,9 @@ components:
               nullable: true
             managedBrowser:
               $ref: '#/components/schemas/microsoft.graph.managedBrowserType'
+          additionalProperties:
+            type: object
           description: Policy used to configure detailed management settings for a specified set of apps
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        periodOfflineBeforeAccessCheck: string
-        periodOnlineBeforeAccessCheck: string
-        allowedInboundDataTransferSources:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        allowedOutboundDataTransferDestinations:
-          '@odata.type': microsoft.graph.managedAppDataTransferLevel
-        organizationalCredentialsRequired: true
-        allowedOutboundClipboardSharingLevel:
-          '@odata.type': microsoft.graph.managedAppClipboardSharingLevel
-        dataBackupBlocked: true
-        deviceComplianceRequired: true
-        managedBrowserToOpenLinksRequired: true
-        saveAsBlocked: true
-        periodOfflineBeforeWipeIsEnforced: string
-        pinRequired: true
-        maximumPinRetries: integer
-        simplePinBlocked: true
-        minimumPinLength: integer
-        pinCharacterSet:
-          '@odata.type': microsoft.graph.managedAppPinCharacterSet
-        periodBeforePinReset: string
-        allowedDataStorageLocations:
-          - '@odata.type': microsoft.graph.managedAppDataStorageLocation
-        contactSyncBlocked: true
-        printBlocked: true
-        fingerprintBlocked: true
-        disableAppPinIfDevicePinIsSet: true
-        minimumRequiredOsVersion: string
-        minimumWarningOsVersion: string
-        minimumRequiredAppVersion: string
-        minimumWarningAppVersion: string
-        managedBrowser:
-          '@odata.type': microsoft.graph.managedBrowserType
     microsoft.graph.managedAppDataEncryptionType:
       title: managedAppDataEncryptionType
       enum:
@@ -9982,9 +10451,9 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
+      description: Key value pair for storing custom settings
     microsoft.graph.managedAppFlaggedReason:
       title: managedAppFlaggedReason
       enum:
@@ -10004,12 +10473,15 @@ components:
           description: The byte array that contains the actual content.
           format: base64url
           nullable: true
-      example:
-        type: string
-        value: string
+      additionalProperties:
+        type: object
+      description: Contains properties for a generic mime content.
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
     microsoft.graph.installIntent:
       title: installIntent
       enum:
@@ -10137,54 +10609,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
               description: Navigation property to list of security groups targeted for policy.
+          additionalProperties:
+            type: object
           description: Policy for Windows information protection to configure detailed management settings
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        enforcementLevel:
-          '@odata.type': microsoft.graph.windowsInformationProtectionEnforcementLevel
-        enterpriseDomain: string
-        enterpriseProtectedDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        protectionUnderLockConfigRequired: true
-        dataRecoveryCertificate:
-          '@odata.type': microsoft.graph.windowsInformationProtectionDataRecoveryCertificate
-        revokeOnUnenrollDisabled: true
-        rightsManagementServicesTemplateId: string
-        azureRightsManagementServicesAllowed: true
-        iconsVisible: true
-        protectedApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        exemptApps:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionApp
-        enterpriseNetworkDomainNames:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxiedDomains:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionProxiedDomainCollection
-        enterpriseIPRanges:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionIPRangeCollection
-        enterpriseIPRangesAreAuthoritative: true
-        enterpriseProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseInternalProxyServers:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        enterpriseProxyServersAreAuthoritative: true
-        neutralDomainResources:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        indexingEncryptedStoresOrItemsBlocked: true
-        smbAutoEncryptedFileExtensions:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionResourceCollection
-        isAssigned: true
-        protectedAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        exemptAppLockerFiles:
-          - '@odata.type': microsoft.graph.windowsInformationProtectionAppLockerFile
-        assignments:
-          - '@odata.type': microsoft.graph.targetedManagedAppPolicyAssignment
     microsoft.graph.complianceStatus:
       title: complianceStatus
       enum:
@@ -10207,6 +10634,9 @@ components:
     microsoft.graph.mobileAppAssignmentSettings:
       title: mobileAppAssignmentSettings
       type: object
+      additionalProperties:
+        type: object
+      description: Abstract class to contain properties used to assign a mobile app to a group.
     microsoft.graph.managedAppConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
@@ -10218,16 +10648,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
               description: 'A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service'
+          additionalProperties:
+            type: object
           description: Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        version: string
-        customSettings:
-          - '@odata.type': microsoft.graph.keyValuePair
     microsoft.graph.vppTokenAccountType:
       title: vppTokenAccountType
       enum:
@@ -10265,6 +10688,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.managedAppDataTransferLevel:
       title: managedAppDataTransferLevel
       enum:
@@ -10320,10 +10745,9 @@ components:
             type: string
             nullable: true
           description: Collection of resources
-      example:
-        displayName: string
-        resources:
-          - string
+      additionalProperties:
+        type: object
+      description: Windows Information Protection Resource Collection
     microsoft.graph.windowsInformationProtectionDataRecoveryCertificate:
       title: windowsInformationProtectionDataRecoveryCertificate
       type: object
@@ -10346,11 +10770,9 @@ components:
           description: Data recovery Certificate
           format: base64url
           nullable: true
-      example:
-        subjectName: string
-        description: string
-        expirationDateTime: string (timestamp)
-        certificate: string
+      additionalProperties:
+        type: object
+      description: Windows Information Protection DataRecoveryCertificate
     microsoft.graph.windowsInformationProtectionApp:
       title: windowsInformationProtectionApp
       type: object
@@ -10373,12 +10795,9 @@ components:
         denied:
           type: boolean
           description: 'If true, app is denied protection or exemption.'
-      example:
-        displayName: string
-        description: string
-        publisherName: string
-        productName: string
-        denied: true
+      additionalProperties:
+        type: object
+      description: App for Windows information protection
     microsoft.graph.windowsInformationProtectionProxiedDomainCollection:
       title: windowsInformationProtectionProxiedDomainCollection
       type: object
@@ -10391,10 +10810,9 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.proxiedDomain'
           description: Collection of proxied domains
-      example:
-        displayName: string
-        proxiedDomains:
-          - '@odata.type': microsoft.graph.proxiedDomain
+      additionalProperties:
+        type: object
+      description: Windows Information Protection Proxied Domain Collection
     microsoft.graph.windowsInformationProtectionIPRangeCollection:
       title: windowsInformationProtectionIPRangeCollection
       type: object
@@ -10407,10 +10825,9 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.ipRange'
           description: Collection of Internet protocol address ranges
-      example:
-        displayName: string
-        ranges:
-          - '@odata.type': microsoft.graph.ipRange
+      additionalProperties:
+        type: object
+      description: Windows Information Protection IP Range Collection
     microsoft.graph.windowsInformationProtectionAppLockerFile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10434,13 +10851,9 @@ components:
               type: string
               description: Version of the entity.
               nullable: true
+          additionalProperties:
+            type: object
           description: Windows Information Protection AppLocker File
-      example:
-        id: string (identifier)
-        displayName: string
-        fileHash: string
-        file: string
-        version: string
     odata.error.main:
       required:
         - code
@@ -10459,7 +10872,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.proxiedDomain:
       title: proxiedDomain
       type: object
@@ -10471,12 +10888,14 @@ components:
           type: string
           description: Proxy IP or FQDN
           nullable: true
-      example:
-        ipAddressOrFQDN: string
-        proxy: string
+      additionalProperties:
+        type: object
+      description: Proxied Domain
     microsoft.graph.ipRange:
       title: ipRange
       type: object
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -10489,6 +10908,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -1,13 +1,17 @@
 {
   "resources": [],
   "operations": {
-    "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml",
-      "apiVersion": "v1.0"
+    "/oauth2PermissionGrants/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml"
     },
     "/oauth2PermissionGrants": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml"
+    },
+    "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OAuth2PermissionGrants.yml"
     }
   }
 }

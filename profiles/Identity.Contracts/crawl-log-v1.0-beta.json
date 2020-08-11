@@ -2,44 +2,44 @@
   "resources": [],
   "operations": {
     "/contracts/{contract-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/contracts/{contract-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
     },
     "/contracts/{contract-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
     },
-    "/contracts/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
+    "/contracts/{contract-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
     },
     "/contracts/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
+    },
+    "/contracts/{contract-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Contracts.yml"
     }
   }
 }

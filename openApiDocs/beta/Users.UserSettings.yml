@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -57,19 +57,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
-          links:
-            regionalAndLanguageSettings:
-              operationId: user.settings.GetRegionalAndLanguageSettings
-              parameters:
-                user-id: $request.path.user-id
-                regionalAndLanguageSettings-id: $response.body#/id
-            shiftPreferences:
-              operationId: user.settings.GetShiftPreferences
-              parameters:
-                user-id: $request.path.user-id
-                shiftPreferences-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
@@ -78,7 +68,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -96,6 +86,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property settings for users
+      operationId: users_DeleteSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/settings/regionalAndLanguageSettings':
     get:
       tags:
@@ -105,7 +119,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -149,6 +163,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
@@ -157,7 +172,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -175,6 +190,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property regionalAndLanguageSettings for users
+      operationId: users.settings_DeleteRegionalAndLanguageSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/settings/shiftPreferences':
     get:
       tags:
@@ -184,7 +223,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -226,6 +265,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
@@ -234,7 +274,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -246,6 +286,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property shiftPreferences for users
+      operationId: users.settings_DeleteShiftPreferences
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -268,14 +332,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
-      example:
-        id: string (identifier)
-        contributionToContentDiscoveryDisabled: true
-        contributionToContentDiscoveryAsOrganizationDisabled: true
-        regionalAndLanguageSettings:
-          '@odata.type': microsoft.graph.regionalAndLanguageSettings
-        shiftPreferences:
-          '@odata.type': microsoft.graph.shiftPreferences
+          additionalProperties:
+            type: object
     microsoft.graph.regionalAndLanguageSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -296,20 +354,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
             regionalFormatOverrides:
               $ref: '#/components/schemas/microsoft.graph.regionalFormatOverrides'
-      example:
-        id: string (identifier)
-        defaultDisplayLanguage:
-          '@odata.type': microsoft.graph.localeInfo
-        authoringLanguages:
-          - '@odata.type': microsoft.graph.localeInfo
-        defaultTranslationLanguage:
-          '@odata.type': microsoft.graph.localeInfo
-        defaultSpeechInputLanguage:
-          '@odata.type': microsoft.graph.localeInfo
-        defaultRegionalFormat:
-          '@odata.type': microsoft.graph.localeInfo
-        regionalFormatOverrides:
-          '@odata.type': microsoft.graph.regionalFormatOverrides
+          additionalProperties:
+            type: object
     microsoft.graph.shiftPreferences:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -321,14 +367,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        lastModifiedBy:
-          '@odata.type': microsoft.graph.identitySet
-        availability:
-          - '@odata.type': microsoft.graph.shiftAvailability
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -336,8 +376,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.localeInfo:
       title: localeInfo
       type: object
@@ -350,9 +390,8 @@ components:
           type: string
           description: 'A name representing the user''s locale in natural language, for example, ''English (United States)''.'
           nullable: true
-      example:
-        locale: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.regionalFormatOverrides:
       title: regionalFormatOverrides
       type: object
@@ -378,14 +417,8 @@ components:
         timeZone:
           type: string
           nullable: true
-      example:
-        calendar: string
-        firstDayOfWeek: string
-        shortDateFormat: string
-        longDateFormat: string
-        shortTimeFormat: string
-        longTimeFormat: string
-        timeZone: string
+      additionalProperties:
+        type: object
     microsoft.graph.changeTrackedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -406,12 +439,8 @@ components:
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        lastModifiedBy:
-          '@odata.type': microsoft.graph.identitySet
+          additionalProperties:
+            type: object
     microsoft.graph.shiftAvailability:
       title: shiftAvailability
       type: object
@@ -427,12 +456,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.timeRange'
           description: The time slot(s) preferred by the user.
-      example:
-        recurrence:
-          '@odata.type': microsoft.graph.patternedRecurrence
-        timeZone: string
-        timeSlots:
-          - '@odata.type': microsoft.graph.timeRange
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -440,6 +465,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -450,13 +477,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        application:
-          '@odata.type': microsoft.graph.identity
-        device:
-          '@odata.type': microsoft.graph.identity
-        user:
-          '@odata.type': microsoft.graph.identity
+      additionalProperties:
+        type: object
     microsoft.graph.patternedRecurrence:
       title: patternedRecurrence
       type: object
@@ -465,11 +487,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
         range:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
-      example:
-        pattern:
-          '@odata.type': microsoft.graph.recurrencePattern
-        range:
-          '@odata.type': microsoft.graph.recurrenceRange
+      additionalProperties:
+        type: object
     microsoft.graph.timeRange:
       title: timeRange
       type: object
@@ -486,9 +505,8 @@ components:
           description: End time for the time range.
           format: time
           nullable: true
-      example:
-        startTime: string (timestamp)
-        endTime: string (timestamp)
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -507,7 +525,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -520,9 +542,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.recurrencePattern:
       title: recurrencePattern
       type: object
@@ -556,18 +577,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
           $ref: '#/components/schemas/microsoft.graph.weekIndex'
-      example:
-        type:
-          '@odata.type': microsoft.graph.recurrencePatternType
-        interval: integer
-        month: integer
-        dayOfMonth: integer
-        daysOfWeek:
-          - '@odata.type': microsoft.graph.dayOfWeek
-        firstDayOfWeek:
-          '@odata.type': microsoft.graph.dayOfWeek
-        index:
-          '@odata.type': microsoft.graph.weekIndex
+      additionalProperties:
+        type: object
     microsoft.graph.recurrenceRange:
       title: recurrenceRange
       type: object
@@ -596,13 +607,8 @@ components:
           type: integer
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
-      example:
-        type:
-          '@odata.type': microsoft.graph.recurrenceRangeType
-        startDate: string (timestamp)
-        endDate: string (timestamp)
-        recurrenceTimeZone: string
-        numberOfOccurrences: integer
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -615,6 +621,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
     microsoft.graph.recurrencePatternType:
       title: recurrencePatternType
       enum:

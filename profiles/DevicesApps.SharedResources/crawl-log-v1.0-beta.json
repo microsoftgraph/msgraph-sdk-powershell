@@ -1,21 +1,21 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml"
     },
     "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml"
     },
-    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml"
     },
     "/users/{user-id}/mobileAppTroubleshootingEvents": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.SharedResources.yml"
     }
   }
 }

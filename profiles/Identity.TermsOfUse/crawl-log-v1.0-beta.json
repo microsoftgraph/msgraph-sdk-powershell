@@ -1,37 +1,53 @@
 {
   "resources": [],
   "operations": {
-    "/agreements/{agreement-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+    "/agreements/{agreement-id}/file": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
     "/agreements/{agreement-id}/files": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
+    },
+    "/agreements/{agreement-id}/file/localizations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
+    },
+    "/agreements/{agreement-id}/files/{agreementFileLocalization-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
+    },
+    "/agreements/{agreement-id}/acceptances/{agreementAcceptance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
     "/users/{user-id}/agreementAcceptances": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
+    },
+    "/agreements/{agreement-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
     "/agreements": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/agreements/{agreement-id}/files/{agreementFile-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
     "/users/{user-id}/agreementAcceptances/{agreementAcceptance-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
-    "/agreementAcceptances": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/agreementAcceptances/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     },
-    "/agreementAcceptances/{agreementAcceptance-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml",
-      "apiVersion": "v1.0-beta"
+    "/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
+    },
+    "/agreements/{agreement-id}/acceptances": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.TermsOfUse.yml"
     }
   }
 }

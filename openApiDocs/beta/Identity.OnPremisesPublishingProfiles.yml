@@ -86,6 +86,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -123,7 +125,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -171,32 +173,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
-          links:
-            agents:
-              operationId: onPremisesPublishingProfiles.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $response.body#/id
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $response.body#/id
-            publishedResources:
-              operationId: onPremisesPublishingProfiles.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $response.body#/id
-            connectors:
-              operationId: onPremisesPublishingProfiles.GetConnectors
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connector-id: $response.body#/id
-            connectorGroups:
-              operationId: onPremisesPublishingProfiles.GetConnectorGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -208,7 +184,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -234,7 +210,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -259,7 +235,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -334,6 +310,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -348,7 +326,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -379,14 +357,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -429,21 +407,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: onPremisesPublishingProfile.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $response.body#/id
-            publishedResources:
-              operationId: onPremisesPublishingProfile.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -452,14 +418,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -477,6 +443,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents':
     get:
       tags:
@@ -486,14 +483,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -569,6 +566,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -583,14 +582,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -621,21 +620,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -677,15 +676,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.agents.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $response.body#/id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -694,21 +687,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -726,6 +719,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Delete navigation property agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_DeleteAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups':
     get:
       tags:
@@ -735,21 +766,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -824,6 +855,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -838,21 +871,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -883,28 +916,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -947,24 +980,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: onPremisesAgent.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $response.body#/id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
-            publishedResources:
-              operationId: onPremisesAgent.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
-                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -973,28 +991,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1012,6 +1030,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.agents_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
     get:
       tags:
@@ -1021,14 +1084,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1101,6 +1164,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1115,14 +1180,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1153,21 +1218,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -1208,15 +1273,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $response.body#/id
-                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -1225,21 +1284,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -1257,6 +1316,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups_DeletePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups':
     get:
       tags:
@@ -1266,21 +1363,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -1355,6 +1452,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1369,21 +1468,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -1414,28 +1513,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1478,24 +1577,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: publishedResource.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
-                onPremisesAgent-id: $response.body#/id
-            publishedResources:
-              operationId: publishedResource.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $response.body#/id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
@@ -1504,28 +1588,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1543,6 +1627,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgentGroup
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agentGroups.publishedResources_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents':
     get:
       tags:
@@ -1552,7 +1681,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -1628,6 +1757,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1642,7 +1773,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -1673,14 +1804,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -1722,15 +1853,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfile.agents.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -1739,14 +1864,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -1764,6 +1889,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Delete navigation property agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles_DeleteAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups':
     get:
       tags:
@@ -1773,14 +1929,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -1855,6 +2011,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1869,14 +2027,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -1907,21 +2065,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -1964,22 +2122,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: onPremisesAgent.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $response.body#/id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-            publishedResources:
-              operationId: onPremisesAgent.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -1988,21 +2133,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2020,6 +2165,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/agents':
     get:
       tags:
@@ -2029,21 +2212,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2119,6 +2302,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2133,21 +2318,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2178,28 +2363,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id1
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -2241,16 +2426,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.agents.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id: $response.body#/id
-                onPremisesAgent-id1: $request.path.onPremisesAgent-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2259,28 +2437,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id1
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -2298,6 +2476,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Delete navigation property agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_DeleteAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id1
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
     get:
       tags:
@@ -2307,21 +2530,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2394,6 +2617,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2408,21 +2633,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2453,28 +2678,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -2515,16 +2740,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id: $response.body#/id
-                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2533,28 +2751,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -2572,6 +2790,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups_DeletePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/agents/{onPremisesAgent-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources/{publishedResource-id}/agentGroups':
     get:
       tags:
@@ -2581,28 +2844,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -2677,6 +2940,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2691,28 +2956,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -2743,35 +3008,35 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2814,25 +3079,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: publishedResource.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $response.body#/id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
-            publishedResources:
-              operationId: publishedResource.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $response.body#/id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
@@ -2841,35 +3090,35 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -2887,6 +3136,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.onPremisesAgent
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.agents.agentGroups.publishedResources_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectorGroups':
     get:
       tags:
@@ -2896,7 +3197,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -2974,6 +3275,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.connectorGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2988,7 +3291,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -3019,14 +3322,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: connectorGroup-id
           in: path
-          description: 'key: connectorGroup-id of connectorGroup'
+          description: 'key: id of connectorGroup'
           required: true
           schema:
             type: string
@@ -3070,21 +3373,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
-          links:
-            members:
-              operationId: onPremisesPublishingProfile.connectorGroups.GetMembers
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                connector-id: $response.body#/id
-            applications:
-              operationId: onPremisesPublishingProfile.connectorGroups.GetApplications
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
@@ -3093,14 +3384,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: connectorGroup-id
           in: path
-          description: 'key: connectorGroup-id of connectorGroup'
+          description: 'key: id of connectorGroup'
           required: true
           schema:
             type: string
@@ -3118,6 +3409,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connectorGroup
+      summary: Delete navigation property connectorGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles_DeleteConnectorGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connectorGroup-id
+          in: path
+          description: 'key: id of connectorGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectorGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/connectors':
     get:
       tags:
@@ -3127,7 +3449,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -3200,6 +3522,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.connector'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3214,7 +3538,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -3245,14 +3569,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: connector-id
           in: path
-          description: 'key: connector-id of connector'
+          description: 'key: id of connector'
           required: true
           schema:
             type: string
@@ -3293,15 +3617,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connector'
-          links:
-            memberOf:
-              operationId: onPremisesPublishingProfile.connectors.GetMemberOf
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connector-id: $request.path.connector-id
-                connectorGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.connector
@@ -3310,14 +3628,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: connector-id
           in: path
-          description: 'key: connector-id of connector'
+          description: 'key: id of connector'
           required: true
           schema:
             type: string
@@ -3335,6 +3653,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.connector
+      summary: Delete navigation property connectors for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles_DeleteConnectors
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: connector-id
+          in: path
+          description: 'key: id of connector'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connector
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources':
     get:
       tags:
@@ -3344,7 +3693,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -3417,6 +3766,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3431,7 +3782,7 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
@@ -3462,14 +3813,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -3510,15 +3861,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfile.publishedResources.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -3527,14 +3872,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -3552,6 +3897,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles_DeletePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups':
     get:
       tags:
@@ -3561,14 +3937,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -3643,6 +4019,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3657,14 +4035,14 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -3695,21 +4073,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -3752,22 +4130,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: publishedResource.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $response.body#/id
-            publishedResources:
-              operationId: publishedResource.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $response.body#/id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -3776,21 +4141,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -3808,6 +4173,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents':
     get:
       tags:
@@ -3817,21 +4220,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -3907,6 +4310,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3921,21 +4326,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -3966,28 +4371,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -4029,16 +4434,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.agents.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id: $response.body#/id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -4047,28 +4445,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -4086,6 +4484,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Delete navigation property agents for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_DeleteAgents
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/agents/{onPremisesAgent-id}/agentGroups':
     get:
       tags:
@@ -4095,28 +4538,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -4191,6 +4634,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4205,28 +4650,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
@@ -4257,35 +4702,35 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -4328,25 +4773,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: onPremisesAgent.agentGroups.GetAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $response.body#/id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
-            publishedResources:
-              operationId: onPremisesAgent.agentGroups.GetPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $response.body#/id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
-                onPremisesAgentGroup-id1: $request.path.onPremisesAgentGroup-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -4355,35 +4784,35 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: onPremisesAgent-id
           in: path
-          description: 'key: onPremisesAgent-id of onPremisesAgent'
+          description: 'key: id of onPremisesAgent'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgent
         - name: onPremisesAgentGroup-id1
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -4401,6 +4830,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups.agents_DeleteAgentGroups
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: onPremisesAgent-id
+          in: path
+          description: 'key: id of onPremisesAgent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgent
+        - name: onPremisesAgentGroup-id1
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/onPremisesPublishingProfiles/{onPremisesPublishingProfile-id}/publishedResources/{publishedResource-id}/agentGroups/{onPremisesAgentGroup-id}/publishedResources':
     get:
       tags:
@@ -4410,21 +4891,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -4497,6 +4978,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.publishedResource'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4511,21 +4994,21 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
@@ -4556,28 +5039,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id1
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -4618,16 +5101,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesAgentGroup.publishedResources.GetAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
-                onPremisesAgentGroup-id: $response.body#/id
-                publishedResource-id1: $request.path.publishedResource-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
@@ -4636,28 +5112,28 @@ paths:
       parameters:
         - name: onPremisesPublishingProfile-id
           in: path
-          description: 'key: onPremisesPublishingProfile-id of onPremisesPublishingProfile'
+          description: 'key: id of onPremisesPublishingProfile'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesPublishingProfile
         - name: publishedResource-id
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: publishedResource
         - name: onPremisesAgentGroup-id
           in: path
-          description: 'key: onPremisesAgentGroup-id of onPremisesAgentGroup'
+          description: 'key: id of onPremisesAgentGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: onPremisesAgentGroup
         - name: publishedResource-id1
           in: path
-          description: 'key: publishedResource-id of publishedResource'
+          description: 'key: id of publishedResource'
           required: true
           schema:
             type: string
@@ -4669,6 +5145,51 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.publishedResource'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - onPremisesPublishingProfiles.publishedResource
+      summary: Delete navigation property publishedResources for onPremisesPublishingProfiles
+      operationId: onPremisesPublishingProfiles.publishedResources.agentGroups_DeletePublishedResources
+      parameters:
+        - name: onPremisesPublishingProfile-id
+          in: path
+          description: 'key: id of onPremisesPublishingProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesPublishingProfile
+        - name: publishedResource-id
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: onPremisesAgentGroup-id
+          in: path
+          description: 'key: id of onPremisesAgentGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onPremisesAgentGroup
+        - name: publishedResource-id1
+          in: path
+          description: 'key: id of publishedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: publishedResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -4708,21 +5229,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
-      example:
-        id: string (identifier)
-        isEnabled: true
-        hybridAgentUpdaterConfiguration:
-          '@odata.type': microsoft.graph.hybridAgentUpdaterConfiguration
-        agents:
-          - '@odata.type': microsoft.graph.onPremisesAgent
-        agentGroups:
-          - '@odata.type': microsoft.graph.onPremisesAgentGroup
-        publishedResources:
-          - '@odata.type': microsoft.graph.publishedResource
-        connectors:
-          - '@odata.type': microsoft.graph.connector
-        connectorGroups:
-          - '@odata.type': microsoft.graph.connectorGroup
+          additionalProperties:
+            type: object
     microsoft.graph.onPremisesAgentGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4743,16 +5251,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-      example:
-        id: string (identifier)
-        displayName: string
-        publishingType:
-          '@odata.type': microsoft.graph.onPremisesPublishingType
-        isDefault: true
-        agents:
-          - '@odata.type': microsoft.graph.onPremisesAgent
-        publishedResources:
-          - '@odata.type': microsoft.graph.publishedResource
+          additionalProperties:
+            type: object
     microsoft.graph.onPremisesAgent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4773,16 +5273,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-      example:
-        id: string (identifier)
-        machineName: string
-        externalIp: string
-        status:
-          '@odata.type': microsoft.graph.agentStatus
-        supportedPublishingTypes:
-          - '@odata.type': microsoft.graph.onPremisesPublishingType
-        agentGroups:
-          - '@odata.type': microsoft.graph.onPremisesAgentGroup
+          additionalProperties:
+            type: object
     microsoft.graph.publishedResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4801,14 +5293,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-      example:
-        id: string (identifier)
-        displayName: string
-        resourceName: string
-        publishingType:
-          '@odata.type': microsoft.graph.onPremisesPublishingType
-        agentGroups:
-          - '@odata.type': microsoft.graph.onPremisesAgentGroup
+          additionalProperties:
+            type: object
     microsoft.graph.connectorGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4831,18 +5317,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.application'
-      example:
-        id: string (identifier)
-        name: string
-        connectorGroupType:
-          '@odata.type': microsoft.graph.connectorGroupType
-        isDefault: true
-        region:
-          '@odata.type': microsoft.graph.connectorGroupRegion
-        members:
-          - '@odata.type': microsoft.graph.connector
-        applications:
-          - '@odata.type': microsoft.graph.application
+          additionalProperties:
+            type: object
     microsoft.graph.connector:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4859,14 +5335,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
-      example:
-        id: string (identifier)
-        machineName: string
-        externalIp: string
-        status:
-          '@odata.type': microsoft.graph.connectorStatus
-        memberOf:
-          - '@odata.type': microsoft.graph.connectorGroup
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -4874,8 +5344,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.hybridAgentUpdaterConfiguration:
       title: hybridAgentUpdaterConfiguration
       type: object
@@ -4889,11 +5359,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.updateWindow'
         allowUpdateConfigurationOverride:
           type: boolean
-      example:
-        deferUpdateDateTime: string (timestamp)
-        updateWindow:
-          '@odata.type': microsoft.graph.updateWindow
-        allowUpdateConfigurationOverride: true
+      additionalProperties:
+        type: object
     microsoft.graph.onPremisesPublishingType:
       title: onPremisesPublishingType
       enum:
@@ -5030,10 +5497,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
               description: Read-only. Nullable.
-            claimsMappingPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             owners:
@@ -5057,66 +5520,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.connectorGroup'
             synchronization:
               $ref: '#/components/schemas/microsoft.graph.synchronization'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        api:
-          '@odata.type': microsoft.graph.apiApplication
-        appId: string
-        appRoles:
-          - '@odata.type': microsoft.graph.appRole
-        createdDateTime: string (timestamp)
-        description: string
-        isFallbackPublicClient: true
-        identifierUris:
-          - string
-        displayName: string
-        groupMembershipClaims: string
-        info:
-          '@odata.type': microsoft.graph.informationalUrl
-        isDeviceOnlyAuthSupported: true
-        keyCredentials:
-          - '@odata.type': microsoft.graph.keyCredential
-        logo: string
-        notes: string
-        optionalClaims:
-          '@odata.type': microsoft.graph.optionalClaims
-        parentalControlSettings:
-          '@odata.type': microsoft.graph.parentalControlSettings
-        passwordCredentials:
-          - '@odata.type': microsoft.graph.passwordCredential
-        publicClient:
-          '@odata.type': microsoft.graph.publicClientApplication
-        publisherDomain: string
-        requiredResourceAccess:
-          - '@odata.type': microsoft.graph.requiredResourceAccess
-        signInAudience: string
-        tags:
-          - string
-        tokenEncryptionKeyId: string
-        web:
-          '@odata.type': microsoft.graph.webApplication
-        onPremisesPublishing:
-          '@odata.type': microsoft.graph.onPremisesPublishing
-        extensionProperties:
-          - '@odata.type': microsoft.graph.extensionProperty
-        claimsMappingPolicies:
-          - '@odata.type': microsoft.graph.claimsMappingPolicy
-        createdOnBehalfOf:
-          '@odata.type': microsoft.graph.directoryObject
-        owners:
-          - '@odata.type': microsoft.graph.directoryObject
-        homeRealmDiscoveryPolicies:
-          - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
-        tokenIssuancePolicies:
-          - '@odata.type': microsoft.graph.tokenIssuancePolicy
-        tokenLifetimePolicies:
-          - '@odata.type': microsoft.graph.tokenLifetimePolicy
-        connectorGroup:
-          '@odata.type': microsoft.graph.connectorGroup
-        synchronization:
-          '@odata.type': microsoft.graph.synchronization
     microsoft.graph.connectorStatus:
       title: connectorStatus
       enum:
@@ -5130,6 +5536,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.updateWindow:
       title: updateWindow
       type: object
@@ -5144,9 +5552,8 @@ components:
           type: string
           format: time
           nullable: true
-      example:
-        updateWindowStartTime: string (timestamp)
-        updateWindowEndTime: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5158,10 +5565,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.apiApplication:
       title: apiApplication
       type: object
@@ -5195,15 +5601,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.permissionScope'
           description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
-      example:
-        acceptMappedClaims: true
-        knownClientApplications:
-          - string
-        preAuthorizedApplications:
-          - '@odata.type': microsoft.graph.preAuthorizedApplication
-        requestedAccessTokenVersion: integer
-        oauth2PermissionScopes:
-          - '@odata.type': microsoft.graph.permissionScope
+      additionalProperties:
+        type: object
     microsoft.graph.appRole:
       title: appRole
       type: object
@@ -5237,15 +5636,8 @@ components:
           type: string
           description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
-      example:
-        allowedMemberTypes:
-          - string
-        description: string
-        displayName: string
-        id: string
-        isEnabled: true
-        origin: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.informationalUrl:
       title: informationalUrl
       type: object
@@ -5270,12 +5662,8 @@ components:
           type: string
           description: 'Link to the application''s terms of service statement. For example, https://www.contoso.com/app/termsofservice'
           nullable: true
-      example:
-        logoUrl: string
-        marketingUrl: string
-        privacyStatementUrl: string
-        supportUrl: string
-        termsOfServiceUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.keyCredential:
       title: keyCredential
       type: object
@@ -5320,15 +5708,8 @@ components:
           type: string
           description: Friendly name for the key. Optional.
           nullable: true
-      example:
-        customKeyIdentifier: string
-        endDateTime: string (timestamp)
-        keyId: string
-        startDateTime: string (timestamp)
-        type: string
-        usage: string
-        key: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.optionalClaims:
       title: optionalClaims
       type: object
@@ -5348,13 +5729,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.optionalClaim'
           description: The optional claims returned in the SAML token.
-      example:
-        idToken:
-          - '@odata.type': microsoft.graph.optionalClaim
-        accessToken:
-          - '@odata.type': microsoft.graph.optionalClaim
-        saml2Token:
-          - '@odata.type': microsoft.graph.optionalClaim
+      additionalProperties:
+        type: object
     microsoft.graph.parentalControlSettings:
       title: parentalControlSettings
       type: object
@@ -5369,10 +5745,8 @@ components:
           type: string
           description: 'Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.'
           nullable: true
-      example:
-        countriesBlockedForMinors:
-          - string
-        legalAgeGroupRule: string
+      additionalProperties:
+        type: object
     microsoft.graph.passwordCredential:
       title: passwordCredential
       type: object
@@ -5412,14 +5786,8 @@ components:
           type: string
           description: Friendly name for the password. Optional.
           nullable: true
-      example:
-        customKeyIdentifier: string
-        endDateTime: string (timestamp)
-        keyId: string
-        startDateTime: string (timestamp)
-        secretText: string
-        hint: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.publicClientApplication:
       title: publicClientApplication
       type: object
@@ -5429,9 +5797,8 @@ components:
           items:
             type: string
           description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
-      example:
-        redirectUris:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.requiredResourceAccess:
       title: requiredResourceAccess
       type: object
@@ -5444,10 +5811,8 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.resourceAccess'
           description: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
-      example:
-        resourceAppId: string
-        resourceAccess:
-          - '@odata.type': microsoft.graph.resourceAccess
+      additionalProperties:
+        type: object
     microsoft.graph.webApplication:
       title: webApplication
       type: object
@@ -5470,14 +5835,8 @@ components:
           nullable: true
         implicitGrantSettings:
           $ref: '#/components/schemas/microsoft.graph.implicitGrantSettings'
-      example:
-        homePageUrl: string
-        redirectUris:
-          - string
-        oauth2AllowImplicitFlow: true
-        logoutUrl: string
-        implicitGrantSettings:
-          '@odata.type': microsoft.graph.implicitGrantSettings
+      additionalProperties:
+        type: object
     microsoft.graph.onPremisesPublishing:
       title: onPremisesPublishing
       type: object
@@ -5528,29 +5887,8 @@ components:
         useAlternateUrlForTranslationAndRedirect:
           type: boolean
           nullable: true
-      example:
-        externalUrl: string
-        internalUrl: string
-        externalAuthenticationType:
-          '@odata.type': microsoft.graph.externalAuthenticationType
-        isTranslateHostHeaderEnabled: true
-        isTranslateLinksInBodyEnabled: true
-        isOnPremPublishingEnabled: true
-        applicationServerTimeout: string
-        verifiedCustomDomainKeyCredential:
-          '@odata.type': microsoft.graph.keyCredential
-        verifiedCustomDomainPasswordCredential:
-          '@odata.type': microsoft.graph.passwordCredential
-        verifiedCustomDomainCertificatesMetadata:
-          '@odata.type': microsoft.graph.verifiedCustomDomainCertificatesMetadata
-        singleSignOnSettings:
-          '@odata.type': microsoft.graph.onPremisesPublishingSingleSignOn
-        applicationType: string
-        isHttpOnlyCookieEnabled: true
-        isSecureCookieEnabled: true
-        isPersistentCookieEnabled: true
-        alternateUrl: string
-        useAlternateUrlForTranslationAndRedirect: true
+      additionalProperties:
+        type: object
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -5576,80 +5914,33 @@ components:
               items:
                 type: string
               description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        appDisplayName: string
-        name: string
-        dataType: string
-        isSyncedFromOnPremises: true
-        targetObjects:
-          - string
-    microsoft.graph.claimsMappingPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: claimsMappingPolicy
-          type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.homeRealmDiscoveryPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.tokenIssuancePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenIssuancePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.tokenLifetimePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.synchronization:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5668,14 +5959,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-      example:
-        id: string (identifier)
-        secrets:
-          - '@odata.type': microsoft.graph.synchronizationSecretKeyStringValuePair
-        jobs:
-          - '@odata.type': microsoft.graph.synchronizationJob
-        templates:
-          - '@odata.type': microsoft.graph.synchronizationTemplate
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -5694,7 +5979,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.preAuthorizedApplication:
       title: preAuthorizedApplication
       type: object
@@ -5706,10 +5995,8 @@ components:
           type: array
           items:
             type: string
-      example:
-        appId: string
-        permissionIds:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.permissionScope:
       title: permissionScope
       type: object
@@ -5749,16 +6036,8 @@ components:
           type: string
           description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
-      example:
-        adminConsentDescription: string
-        adminConsentDisplayName: string
-        id: string
-        isEnabled: true
-        origin: string
-        type: string
-        userConsentDescription: string
-        userConsentDisplayName: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.optionalClaim:
       title: optionalClaim
       type: object
@@ -5779,12 +6058,8 @@ components:
             type: string
             nullable: true
           description: 'Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.'
-      example:
-        name: string
-        source: string
-        essential: true
-        additionalProperties:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.resourceAccess:
       title: resourceAccess
       type: object
@@ -5798,9 +6073,8 @@ components:
           type: string
           description: Specifies whether the id property references an oauth2PermissionScopes or an appRole. Possible values are Scope or Role.
           nullable: true
-      example:
-        id: string
-        type: string
+      additionalProperties:
+        type: object
     microsoft.graph.implicitGrantSettings:
       title: implicitGrantSettings
       type: object
@@ -5813,9 +6087,8 @@ components:
           type: boolean
           description: Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
           nullable: true
-      example:
-        enableIdTokenIssuance: true
-        enableAccessTokenIssuance: true
+      additionalProperties:
+        type: object
     microsoft.graph.externalAuthenticationType:
       title: externalAuthenticationType
       enum:
@@ -5845,12 +6118,8 @@ components:
           type: string
           format: date-time
           nullable: true
-      example:
-        thumbprint: string
-        subjectName: string
-        issuerName: string
-        issueDate: string (timestamp)
-        expiryDate: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.onPremisesPublishingSingleSignOn:
       title: onPremisesPublishingSingleSignOn
       type: object
@@ -5859,11 +6128,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.singleSignOnMode'
         KerberosSignOnSettings:
           $ref: '#/components/schemas/microsoft.graph.kerberosSignOnSettings'
-      example:
-        SingleSignOnMode:
-          '@odata.type': microsoft.graph.singleSignOnMode
-        KerberosSignOnSettings:
-          '@odata.type': microsoft.graph.kerberosSignOnSettings
+      additionalProperties:
+        type: object
     microsoft.graph.stsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -5883,17 +6149,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
       type: object
@@ -5903,10 +6161,8 @@ components:
         value:
           type: string
           nullable: true
-      example:
-        key:
-          '@odata.type': microsoft.graph.synchronizationSecret
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5926,17 +6182,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-      example:
-        id: string (identifier)
-        schedule:
-          '@odata.type': microsoft.graph.synchronizationSchedule
-        status:
-          '@odata.type': microsoft.graph.synchronizationStatus
-        templateId: string
-        synchronizationJobSettings:
-          - '@odata.type': microsoft.graph.keyValuePair
-        schema:
-          '@odata.type': microsoft.graph.synchronizationSchema
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5963,17 +6210,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.metadataEntry'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-      example:
-        id: string (identifier)
-        applicationId: string
-        default: true
-        description: string
-        discoverable: true
-        factoryTag: string
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        schema:
-          '@odata.type': microsoft.graph.synchronizationSchema
+          additionalProperties:
+            type: object
     odata.error.detail:
       required:
         - code
@@ -5986,6 +6224,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
     microsoft.graph.singleSignOnMode:
       title: singleSignOnMode
       enum:
@@ -6002,10 +6242,8 @@ components:
           nullable: true
         KerberosSignOnMappingAttributeType:
           $ref: '#/components/schemas/microsoft.graph.kerberosSignOnMappingAttributeType'
-      example:
-        KerberosServicePrincipalName: string
-        KerberosSignOnMappingAttributeType:
-          '@odata.type': microsoft.graph.kerberosSignOnMappingAttributeType
+      additionalProperties:
+        type: object
     microsoft.graph.policyBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -6018,12 +6256,9 @@ components:
             displayName:
               type: string
               description: Display name for this policy.
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
     microsoft.graph.synchronizationSecret:
       title: synchronizationSecret
       enum:
@@ -6084,11 +6319,8 @@ components:
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
-      example:
-        expiration: string (timestamp)
-        interval: string
-        state:
-          '@odata.type': microsoft.graph.synchronizationScheduleState
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationStatus:
       title: synchronizationStatus
       type: object
@@ -6127,26 +6359,8 @@ components:
         troubleshootingUrl:
           type: string
           nullable: true
-      example:
-        countSuccessiveCompleteFailures: integer
-        escrowsPruned: true
-        code:
-          '@odata.type': microsoft.graph.synchronizationStatusCode
-        lastExecution:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        lastSuccessfulExecution:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        lastSuccessfulExecutionWithExports:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        progress:
-          - '@odata.type': microsoft.graph.synchronizationProgress
-        quarantine:
-          '@odata.type': microsoft.graph.synchronizationQuarantine
-        steadyStateFirstAchievedTime: string (timestamp)
-        steadyStateLastAchievedTime: string (timestamp)
-        synchronizedEntryCountByType:
-          - '@odata.type': microsoft.graph.stringKeyLongValuePair
-        troubleshootingUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.keyValuePair:
       title: keyValuePair
       type: object
@@ -6158,9 +6372,8 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6178,13 +6391,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-      example:
-        id: string (identifier)
-        synchronizationRules:
-          - '@odata.type': microsoft.graph.synchronizationRule
-        version: string
-        directories:
-          - '@odata.type': microsoft.graph.directoryDefinition
+          additionalProperties:
+            type: object
     microsoft.graph.metadataEntry:
       title: metadataEntry
       type: object
@@ -6195,9 +6403,8 @@ components:
         value:
           type: string
           nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.kerberosSignOnMappingAttributeType:
       title: kerberosSignOnMappingAttributeType
       enum:
@@ -6269,23 +6476,8 @@ components:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           format: date-time
-      example:
-        activityIdentifier: string
-        countEntitled: integer
-        countEntitledForProvisioning: integer
-        countEscrowed: integer
-        countEscrowedRaw: integer
-        countExported: integer
-        countExports: integer
-        countImported: integer
-        countImportedDeltas: integer
-        countImportedReferenceDeltas: integer
-        state:
-          '@odata.type': microsoft.graph.synchronizationTaskExecutionResult
-        error:
-          '@odata.type': microsoft.graph.synchronizationError
-        timeBegan: string (timestamp)
-        timeEnded: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationProgress:
       title: synchronizationProgress
       type: object
@@ -6303,11 +6495,8 @@ components:
         units:
           type: string
           nullable: true
-      example:
-        completedUnits: integer
-        progressObservationDateTime: string (timestamp)
-        totalUnits: integer
-        units: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationQuarantine:
       title: synchronizationQuarantine
       type: object
@@ -6331,15 +6520,8 @@ components:
         seriesCount:
           type: integer
           format: int64
-      example:
-        currentBegan: string (timestamp)
-        nextAttempt: string (timestamp)
-        reason:
-          '@odata.type': microsoft.graph.quarantineReason
-        error:
-          '@odata.type': microsoft.graph.synchronizationError
-        seriesBegan: string (timestamp)
-        seriesCount: integer
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyLongValuePair:
       title: stringKeyLongValuePair
       type: object
@@ -6350,9 +6532,8 @@ components:
         value:
           type: integer
           format: int64
-      example:
-        key: string
-        value: integer
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationRule:
       title: synchronizationRule
       type: object
@@ -6384,17 +6565,8 @@ components:
         targetDirectoryName:
           type: string
           nullable: true
-      example:
-        editable: true
-        id: string
-        metadata:
-          - '@odata.type': microsoft.graph.stringKeyStringValuePair
-        name: string
-        objectMappings:
-          - '@odata.type': microsoft.graph.objectMapping
-        priority: integer
-        sourceDirectoryName: string
-        targetDirectoryName: string
+      additionalProperties:
+        type: object
     microsoft.graph.directoryDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6420,16 +6592,8 @@ components:
             version:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        discoveryDateTime: string (timestamp)
-        discoverabilities:
-          '@odata.type': microsoft.graph.directoryDefinitionDiscoverabilities
-        name: string
-        objects:
-          - '@odata.type': microsoft.graph.objectDefinition
-        readOnly: true
-        version: string
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationTaskExecutionResult:
       title: synchronizationTaskExecutionResult
       enum:
@@ -6449,10 +6613,8 @@ components:
           nullable: true
         tenantActionable:
           type: boolean
-      example:
-        code: string
-        message: string
-        tenantActionable: true
+      additionalProperties:
+        type: object
     microsoft.graph.quarantineReason:
       title: quarantineReason
       enum:
@@ -6475,9 +6637,8 @@ components:
         value:
           type: string
           nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.objectMapping:
       title: objectMapping
       type: object
@@ -6505,19 +6666,8 @@ components:
         targetObjectName:
           type: string
           nullable: true
-      example:
-        attributeMappings:
-          - '@odata.type': microsoft.graph.attributeMapping
-        enabled: true
-        flowTypes:
-          '@odata.type': microsoft.graph.objectFlowTypes
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        name: string
-        scope:
-          '@odata.type': microsoft.graph.filter
-        sourceObjectName: string
-        targetObjectName: string
+      additionalProperties:
+        type: object
     microsoft.graph.directoryDefinitionDiscoverabilities:
       title: directoryDefinitionDiscoverabilities
       enum:
@@ -6548,14 +6698,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        attributes:
-          - '@odata.type': microsoft.graph.attributeDefinition
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        name: string
-        supportedApis:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
@@ -6579,17 +6723,8 @@ components:
         targetAttributeName:
           type: string
           nullable: true
-      example:
-        defaultValue: string
-        exportMissingReferences: true
-        flowBehavior:
-          '@odata.type': microsoft.graph.attributeFlowBehavior
-        flowType:
-          '@odata.type': microsoft.graph.attributeFlowType
-        matchingPriority: integer
-        source:
-          '@odata.type': microsoft.graph.attributeMappingSource
-        targetAttributeName: string
+      additionalProperties:
+        type: object
     microsoft.graph.objectFlowTypes:
       title: objectFlowTypes
       enum:
@@ -6614,13 +6749,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-      example:
-        groups:
-          - '@odata.type': microsoft.graph.filterGroup
-        inputFilterGroups:
-          - '@odata.type': microsoft.graph.filterGroup
-        categoryFilterGroups:
-          - '@odata.type': microsoft.graph.filterGroup
+      additionalProperties:
+        type: object
     microsoft.graph.attributeDefinition:
       title: attributeDefinition
       type: object
@@ -6636,6 +6766,8 @@ components:
         defaultValue:
           type: string
           nullable: true
+        flowNullValues:
+          type: boolean
         metadata:
           type: array
           items:
@@ -6655,23 +6787,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.referencedObject'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
-      example:
-        anchor: true
-        apiExpressions:
-          - '@odata.type': microsoft.graph.stringKeyStringValuePair
-        caseExact: true
-        defaultValue: string
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        multivalued: true
-        mutability:
-          '@odata.type': microsoft.graph.mutability
-        name: string
-        required: true
-        referencedObjects:
-          - '@odata.type': microsoft.graph.referencedObject
-        type:
-          '@odata.type': microsoft.graph.attributeType
+      additionalProperties:
+        type: object
     microsoft.graph.attributeFlowBehavior:
       title: attributeFlowBehavior
       enum:
@@ -6703,13 +6820,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
-      example:
-        expression: string
-        name: string
-        parameters:
-          - '@odata.type': microsoft.graph.stringKeyAttributeMappingSourceValuePair
-        type:
-          '@odata.type': microsoft.graph.attributeMappingSourceType
+      additionalProperties:
+        type: object
     microsoft.graph.filterGroup:
       title: filterGroup
       type: object
@@ -6721,10 +6833,8 @@ components:
         name:
           type: string
           nullable: true
-      example:
-        clauses:
-          - '@odata.type': microsoft.graph.filterClause
-        name: string
+      additionalProperties:
+        type: object
     microsoft.graph.mutability:
       title: mutability
       enum:
@@ -6743,9 +6853,8 @@ components:
         referencedProperty:
           type: string
           nullable: true
-      example:
-        referencedObjectName: string
-        referencedProperty: string
+      additionalProperties:
+        type: object
     microsoft.graph.attributeType:
       title: attributeType
       enum:
@@ -6765,10 +6874,8 @@ components:
           nullable: true
         value:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
-      example:
-        key: string
-        value:
-          '@odata.type': microsoft.graph.attributeMappingSource
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMappingSourceType:
       title: attributeMappingSourceType
       enum:
@@ -6788,11 +6895,8 @@ components:
           nullable: true
         targetOperand:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
-      example:
-        operatorName: string
-        sourceOperandName: string
-        targetOperand:
-          '@odata.type': microsoft.graph.filterOperand
+      additionalProperties:
+        type: object
     microsoft.graph.filterOperand:
       title: filterOperand
       type: object
@@ -6802,9 +6906,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        values:
-          - string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

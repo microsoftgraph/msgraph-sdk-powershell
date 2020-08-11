@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -59,29 +59,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookUser'
-          links:
-            masterCategories:
-              operationId: user.outlook.GetMasterCategories
-              parameters:
-                user-id: $request.path.user-id
-                outlookCategory-id: $response.body#/id
-            taskGroups:
-              operationId: user.outlook.GetTaskGroups
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $response.body#/id
-            taskFolders:
-              operationId: user.outlook.GetTaskFolders
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $response.body#/id
-            tasks:
-              operationId: user.outlook.GetTasks
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -90,7 +70,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -108,6 +88,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property outlook for users
+      operationId: users_DeleteOutlook
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/masterCategories':
     get:
       tags:
@@ -117,7 +121,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -185,6 +189,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookCategory'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -199,7 +205,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -230,14 +236,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: outlookCategory-id of outlookCategory'
+          description: 'key: id of outlookCategory'
           required: true
           schema:
             type: string
@@ -277,6 +283,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -285,14 +292,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookCategory-id
           in: path
-          description: 'key: outlookCategory-id of outlookCategory'
+          description: 'key: id of outlookCategory'
           required: true
           schema:
             type: string
@@ -310,6 +317,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property masterCategories for users
+      operationId: users.outlook_DeleteMasterCategories
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookCategory-id
+          in: path
+          description: 'key: id of outlookCategory'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookCategory
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders':
     get:
       tags:
@@ -319,7 +357,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -399,6 +437,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -413,7 +453,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -444,14 +484,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -497,27 +537,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-          links:
-            tasks:
-              operationId: outlookUser.taskFolders.GetTasks
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $response.body#/id
-            singleValueExtendedProperties:
-              operationId: outlookUser.taskFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: outlookUser.taskFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -526,14 +548,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -551,6 +573,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property taskFolders for users
+      operationId: users.outlook_DeleteTaskFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -560,14 +613,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -632,6 +685,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -646,14 +701,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -684,21 +739,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -737,6 +792,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -745,21 +801,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -777,6 +833,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.outlook.taskFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -786,14 +880,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -858,6 +952,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -872,14 +968,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -910,21 +1006,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -963,6 +1059,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -971,21 +1068,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1003,6 +1100,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.outlook.taskFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
       tags:
@@ -1012,14 +1147,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -1144,6 +1279,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTask'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1158,14 +1295,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -1196,21 +1333,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1271,30 +1408,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            singleValueExtendedProperties:
-              operationId: outlookTaskFolder.tasks.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: outlookTaskFolder.tasks.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            attachments:
-              operationId: outlookTaskFolder.tasks.GetAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                attachment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -1303,21 +1419,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1335,6 +1451,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property tasks for users
+      operationId: users.outlook.taskFolders_DeleteTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments':
     get:
       tags:
@@ -1344,21 +1498,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1435,6 +1589,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1449,21 +1605,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1494,28 +1650,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -1558,6 +1714,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -1566,28 +1723,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -1605,6 +1762,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property attachments for users
+      operationId: users.outlook.taskFolders.tasks_DeleteAttachments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -1614,21 +1816,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1693,6 +1895,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1707,21 +1911,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1752,28 +1956,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1812,6 +2016,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -1820,28 +2025,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1859,6 +2064,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.outlook.taskFolders.tasks_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -1868,21 +2118,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -1947,6 +2197,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1961,21 +2213,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -2006,28 +2258,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2066,6 +2318,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -2074,28 +2327,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2113,6 +2366,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.outlook.taskFolders.tasks_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups':
     get:
       tags:
@@ -2122,7 +2420,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -2198,6 +2496,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2212,7 +2512,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -2243,14 +2543,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
@@ -2292,15 +2592,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
-          links:
-            taskFolders:
-              operationId: outlookUser.taskGroups.GetTaskFolders
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -2309,14 +2603,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
@@ -2334,6 +2628,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property taskGroups for users
+      operationId: users.outlook_DeleteTaskGroups
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders':
     get:
       tags:
@@ -2343,14 +2668,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
@@ -2430,6 +2755,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2444,14 +2771,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
@@ -2482,21 +2809,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -2542,30 +2869,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-          links:
-            tasks:
-              operationId: outlookTaskGroup.taskFolders.GetTasks
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $response.body#/id
-            singleValueExtendedProperties:
-              operationId: outlookTaskGroup.taskFolders.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: outlookTaskGroup.taskFolders.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -2574,21 +2880,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -2606,6 +2912,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property taskFolders for users
+      operationId: users.outlook.taskGroups_DeleteTaskFolders
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -2615,21 +2959,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -2694,6 +3038,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2708,21 +3054,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -2753,28 +3099,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2813,6 +3159,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -2821,28 +3168,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -2860,6 +3207,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.outlook.taskGroups.taskFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -2869,21 +3261,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -2948,6 +3340,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2962,21 +3356,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -3007,28 +3401,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3067,6 +3461,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -3075,28 +3470,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -3114,6 +3509,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.outlook.taskGroups.taskFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
       tags:
@@ -3123,21 +3563,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -3262,6 +3702,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTask'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3276,21 +3718,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
@@ -3321,28 +3763,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3403,33 +3845,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            singleValueExtendedProperties:
-              operationId: outlookTaskFolder.tasks.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: outlookTaskFolder.tasks.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            attachments:
-              operationId: outlookTaskFolder.tasks.GetAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-                attachment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -3438,28 +3856,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3477,6 +3895,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property tasks for users
+      operationId: users.outlook.taskGroups.taskFolders_DeleteTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/attachments':
     get:
       tags:
@@ -3486,28 +3949,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3584,6 +4047,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3598,28 +4063,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3650,35 +4115,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -3721,6 +4186,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -3729,35 +4195,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -3775,6 +4241,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property attachments for users
+      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteAttachments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -3784,28 +4302,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3870,6 +4388,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3884,28 +4404,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -3936,35 +4456,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4003,6 +4523,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -4011,35 +4532,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4057,6 +4578,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -4066,28 +4639,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4152,6 +4725,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4166,28 +4741,28 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4218,35 +4793,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4285,6 +4860,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -4293,35 +4869,35 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTaskGroup-id
           in: path
-          description: 'key: outlookTaskGroup-id of outlookTaskGroup'
+          description: 'key: id of outlookTaskGroup'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskGroup
         - name: outlookTaskFolder-id
           in: path
-          description: 'key: outlookTaskFolder-id of outlookTaskFolder'
+          description: 'key: id of outlookTaskFolder'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTaskFolder
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -4339,6 +4915,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.outlook.taskGroups.taskFolders.tasks_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTaskGroup-id
+          in: path
+          description: 'key: id of outlookTaskGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskGroup
+        - name: outlookTaskFolder-id
+          in: path
+          description: 'key: id of outlookTaskFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTaskFolder
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks':
     get:
       tags:
@@ -4348,7 +4976,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -4473,6 +5101,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.outlookTask'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4487,7 +5117,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -4518,14 +5148,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4586,27 +5216,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            singleValueExtendedProperties:
-              operationId: outlookUser.tasks.GetSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: outlookUser.tasks.GetMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            attachments:
-              operationId: outlookUser.tasks.GetAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-                attachment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -4615,14 +5227,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4640,6 +5252,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property tasks for users
+      operationId: users.outlook_DeleteTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/attachments':
     get:
       tags:
@@ -4649,14 +5292,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4733,6 +5376,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4747,14 +5392,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4785,21 +5430,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -4842,6 +5487,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -4850,21 +5496,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -4882,6 +5528,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property attachments for users
+      operationId: users.outlook.tasks_DeleteAttachments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -4891,14 +5575,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -4963,6 +5647,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4977,14 +5663,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -5015,21 +5701,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5068,6 +5754,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -5076,21 +5763,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5108,6 +5795,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.outlook.tasks_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -5117,14 +5842,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -5189,6 +5914,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -5203,14 +5930,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
@@ -5241,21 +5968,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5294,6 +6021,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
@@ -5302,21 +6030,21 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: outlookTask-id
           in: path
-          description: 'key: outlookTask-id of outlookTask'
+          description: 'key: id of outlookTask'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: outlookTask
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -5328,6 +6056,44 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.outlookUser
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.outlook.tasks_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: outlookTask-id
+          in: path
+          description: 'key: id of outlookTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outlookTask
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -5359,16 +6125,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-      example:
-        id: string (identifier)
-        masterCategories:
-          - '@odata.type': microsoft.graph.outlookCategory
-        taskGroups:
-          - '@odata.type': microsoft.graph.outlookTaskGroup
-        taskFolders:
-          - '@odata.type': microsoft.graph.outlookTaskFolder
-        tasks:
-          - '@odata.type': microsoft.graph.outlookTask
+          additionalProperties:
+            type: object
     microsoft.graph.outlookCategory:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5381,11 +6139,8 @@ components:
               nullable: true
             color:
               $ref: '#/components/schemas/microsoft.graph.categoryColor'
-      example:
-        id: string (identifier)
-        displayName: string
-        color:
-          '@odata.type': microsoft.graph.categoryColor
+          additionalProperties:
+            type: object
     microsoft.graph.outlookTaskFolder:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5418,18 +6173,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-      example:
-        id: string (identifier)
-        changeKey: string
-        name: string
-        isDefaultFolder: true
-        parentGroupKey: string
-        tasks:
-          - '@odata.type': microsoft.graph.outlookTask
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
+          additionalProperties:
+            type: object
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5442,10 +6187,8 @@ components:
                 type: string
                 nullable: true
               description: A collection of property values.
-      example:
-        id: string (identifier)
-        value:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.singleValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5456,9 +6199,8 @@ components:
               type: string
               description: A property value.
               nullable: true
-      example:
-        id: string (identifier)
-        value: string
+          additionalProperties:
+            type: object
     microsoft.graph.outlookTask:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -5513,43 +6255,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
-        assignedTo: string
-        body:
-          '@odata.type': microsoft.graph.itemBody
-        completedDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        dueDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        hasAttachments: true
-        importance:
-          '@odata.type': microsoft.graph.importance
-        isReminderOn: true
-        owner: string
-        parentFolderId: string
-        recurrence:
-          '@odata.type': microsoft.graph.patternedRecurrence
-        reminderDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        sensitivity:
-          '@odata.type': microsoft.graph.sensitivity
-        startDateTime:
-          '@odata.type': microsoft.graph.dateTimeTimeZone
-        status:
-          '@odata.type': microsoft.graph.taskStatus
-        subject: string
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        attachments:
-          - '@odata.type': microsoft.graph.attachment
+          additionalProperties:
+            type: object
     microsoft.graph.attachment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5579,13 +6286,8 @@ components:
             isInline:
               type: boolean
               description: 'true if the attachment is an inline attachment; otherwise, false.'
-      example:
-        id: string (identifier)
-        lastModifiedDateTime: string (timestamp)
-        name: string
-        contentType: string
-        size: integer
-        isInline: true
+          additionalProperties:
+            type: object
     microsoft.graph.outlookTaskGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5610,14 +6312,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-      example:
-        id: string (identifier)
-        changeKey: string
-        isDefaultGroup: true
-        name: string
-        groupKey: string
-        taskFolders:
-          - '@odata.type': microsoft.graph.outlookTaskFolder
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -5625,8 +6321,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.categoryColor:
       title: categoryColor
       enum:
@@ -5685,13 +6381,8 @@ components:
                 type: string
                 nullable: true
               description: The categories associated with the item
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -5702,10 +6393,8 @@ components:
           type: string
           description: The content of the item.
           nullable: true
-      example:
-        contentType:
-          '@odata.type': microsoft.graph.bodyType
-        content: string
+      additionalProperties:
+        type: object
     microsoft.graph.dateTimeTimeZone:
       title: dateTimeTimeZone
       type: object
@@ -5717,9 +6406,8 @@ components:
           type: string
           description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
-      example:
-        dateTime: string
-        timeZone: string
+      additionalProperties:
+        type: object
     microsoft.graph.importance:
       title: importance
       enum:
@@ -5735,11 +6423,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
         range:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
-      example:
-        pattern:
-          '@odata.type': microsoft.graph.recurrencePattern
-        range:
-          '@odata.type': microsoft.graph.recurrenceRange
+      additionalProperties:
+        type: object
     microsoft.graph.sensitivity:
       title: sensitivity
       enum:
@@ -5764,6 +6449,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -5803,18 +6490,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
           $ref: '#/components/schemas/microsoft.graph.weekIndex'
-      example:
-        type:
-          '@odata.type': microsoft.graph.recurrencePatternType
-        interval: integer
-        month: integer
-        dayOfMonth: integer
-        daysOfWeek:
-          - '@odata.type': microsoft.graph.dayOfWeek
-        firstDayOfWeek:
-          '@odata.type': microsoft.graph.dayOfWeek
-        index:
-          '@odata.type': microsoft.graph.weekIndex
+      additionalProperties:
+        type: object
     microsoft.graph.recurrenceRange:
       title: recurrenceRange
       type: object
@@ -5843,13 +6520,8 @@ components:
           type: integer
           description: The number of times to repeat the event. Required and must be positive if type is numbered.
           format: int32
-      example:
-        type:
-          '@odata.type': microsoft.graph.recurrenceRangeType
-        startDate: string (timestamp)
-        endDate: string (timestamp)
-        recurrenceTimeZone: string
-        numberOfOccurrences: integer
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -5868,7 +6540,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.recurrencePatternType:
       title: recurrencePatternType
       enum:
@@ -5918,6 +6594,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

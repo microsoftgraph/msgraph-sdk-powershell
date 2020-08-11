@@ -82,6 +82,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.place'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -119,7 +121,7 @@ paths:
       parameters:
         - name: place-id
           in: path
-          description: 'key: place-id of place'
+          description: 'key: id of place'
           required: true
           schema:
             type: string
@@ -170,7 +172,7 @@ paths:
       parameters:
         - name: place-id
           in: path
-          description: 'key: place-id of place'
+          description: 'key: id of place'
           required: true
           schema:
             type: string
@@ -196,7 +198,7 @@ paths:
       parameters:
         - name: place-id
           in: path
-          description: 'key: place-id of place'
+          description: 'key: id of place'
           required: true
           schema:
             type: string
@@ -231,14 +233,8 @@ components:
               nullable: true
             address:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-      example:
-        id: string (identifier)
-        displayName: string
-        geoCoordinates:
-          '@odata.type': microsoft.graph.outlookGeoCoordinates
-        phone: string
-        address:
-          '@odata.type': microsoft.graph.physicalAddress
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -246,8 +242,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -277,12 +273,8 @@ components:
           description: The accuracy of the altitude.
           format: double
           nullable: true
-      example:
-        latitude: double
-        longitude: double
-        accuracy: double
-        altitude: double
-        altitudeAccuracy: double
+      additionalProperties:
+        type: object
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
@@ -307,12 +299,8 @@ components:
           type: string
           description: The postal code.
           nullable: true
-      example:
-        street: string
-        city: string
-        state: string
-        countryOrRegion: string
-        postalCode: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -320,6 +308,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -338,7 +328,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -351,6 +345,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

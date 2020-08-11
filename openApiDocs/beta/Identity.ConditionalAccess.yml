@@ -6,12 +6,92 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /conditionalAccess/namedLocations:
+  /identity/conditionalAccess:
     get:
       tags:
-        - conditionalAccess.namedLocation
-      summary: Get namedLocations from conditionalAccess
-      operationId: conditionalAccess_ListNamedLocations
+        - identity.conditionalAccessRoot
+      summary: Get conditionalAccess from identity
+      operationId: identity_GetConditionalAccess
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - policies
+                - namedLocations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - policies
+                - namedLocations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property conditionalAccess in identity
+      operationId: identity_UpdateConditionalAccess
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property conditionalAccess for identity
+      operationId: identity_DeleteConditionalAccess
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/namedLocations:
+    get:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Get namedLocations from identity
+      operationId: identity.conditionalAccess_ListNamedLocations
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -79,6 +159,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.namedLocation'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -87,9 +169,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - conditionalAccess.namedLocation
-      summary: Create new navigation property to namedLocations for conditionalAccess
-      operationId: conditionalAccess_CreateNamedLocations
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to namedLocations for identity
+      operationId: identity.conditionalAccess_CreateNamedLocations
       requestBody:
         description: New navigation property
         content:
@@ -107,16 +189,16 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/conditionalAccess/namedLocations/{namedLocation-id}':
+  '/identity/conditionalAccess/namedLocations/{namedLocation-id}':
     get:
       tags:
-        - conditionalAccess.namedLocation
-      summary: Get namedLocations from conditionalAccess
-      operationId: conditionalAccess_GetNamedLocations
+        - identity.conditionalAccessRoot
+      summary: Get namedLocations from identity
+      operationId: identity.conditionalAccess_GetNamedLocations
       parameters:
         - name: namedLocation-id
           in: path
-          description: 'key: namedLocation-id of namedLocation'
+          description: 'key: id of namedLocation'
           required: true
           schema:
             type: string
@@ -157,15 +239,16 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.namedLocation'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
-        - conditionalAccess.namedLocation
-      summary: Update the navigation property namedLocations in conditionalAccess
-      operationId: conditionalAccess_UpdateNamedLocations
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property namedLocations in identity
+      operationId: identity.conditionalAccess_UpdateNamedLocations
       parameters:
         - name: namedLocation-id
           in: path
-          description: 'key: namedLocation-id of namedLocation'
+          description: 'key: id of namedLocation'
           required: true
           schema:
             type: string
@@ -183,12 +266,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /conditionalAccess/policies:
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property namedLocations for identity
+      operationId: identity.conditionalAccess_DeleteNamedLocations
+      parameters:
+        - name: namedLocation-id
+          in: path
+          description: 'key: id of namedLocation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: namedLocation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identity/conditionalAccess/policies:
     get:
       tags:
-        - conditionalAccess.conditionalAccessPolicy
-      summary: Get policies from conditionalAccess
-      operationId: conditionalAccess_ListPolicies
+        - identity.conditionalAccessRoot
+      summary: Get policies from identity
+      operationId: identity.conditionalAccess_ListPolicies
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -271,6 +378,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -279,9 +388,9 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - conditionalAccess.conditionalAccessPolicy
-      summary: Create new navigation property to policies for conditionalAccess
-      operationId: conditionalAccess_CreatePolicies
+        - identity.conditionalAccessRoot
+      summary: Create new navigation property to policies for identity
+      operationId: identity.conditionalAccess_CreatePolicies
       requestBody:
         description: New navigation property
         content:
@@ -299,16 +408,16 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/conditionalAccess/policies/{conditionalAccessPolicy-id}':
+  '/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}':
     get:
       tags:
-        - conditionalAccess.conditionalAccessPolicy
-      summary: Get policies from conditionalAccess
-      operationId: conditionalAccess_GetPolicies
+        - identity.conditionalAccessRoot
+      summary: Get policies from identity
+      operationId: identity.conditionalAccess_GetPolicies
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: conditionalAccessPolicy-id of conditionalAccessPolicy'
+          description: 'key: id of conditionalAccessPolicy'
           required: true
           schema:
             type: string
@@ -354,15 +463,16 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
-        - conditionalAccess.conditionalAccessPolicy
-      summary: Update the navigation property policies in conditionalAccess
-      operationId: conditionalAccess_UpdatePolicies
+        - identity.conditionalAccessRoot
+      summary: Update the navigation property policies in identity
+      operationId: identity.conditionalAccess_UpdatePolicies
       parameters:
         - name: conditionalAccessPolicy-id
           in: path
-          description: 'key: conditionalAccessPolicy-id of conditionalAccessPolicy'
+          description: 'key: id of conditionalAccessPolicy'
           required: true
           schema:
             type: string
@@ -380,8 +490,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identity.conditionalAccessRoot
+      summary: Delete navigation property policies for identity
+      operationId: identity.conditionalAccess_DeletePolicies
+      parameters:
+        - name: conditionalAccessPolicy-id
+          in: path
+          description: 'key: id of conditionalAccessPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conditionalAccessPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
+    microsoft.graph.conditionalAccessRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conditionalAccessRoot
+          type: object
+          properties:
+            policies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+            namedLocations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.namedLocation'
+          additionalProperties:
+            type: object
     microsoft.graph.namedLocation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -390,21 +540,21 @@ components:
           properties:
             displayName:
               type: string
+              description: Human-readable name of the location.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
-      example:
-        id: string (identifier)
-        displayName: string
-        createdDateTime: string (timestamp)
-        modifiedDateTime: string (timestamp)
+          additionalProperties:
+            type: object
     microsoft.graph.conditionalAccessPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -414,15 +564,18 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Readonly.'
               format: date-time
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Readonly.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Specifies a display name for the conditionalAccessPolicy object.
             description:
               type: string
               nullable: true
@@ -434,20 +587,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControls'
             sessionControls:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControls'
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        modifiedDateTime: string (timestamp)
-        displayName: string
-        description: string
-        state:
-          '@odata.type': microsoft.graph.conditionalAccessPolicyState
-        conditions:
-          '@odata.type': microsoft.graph.conditionalAccessConditionSet
-        grantControls:
-          '@odata.type': microsoft.graph.conditionalAccessGrantControls
-        sessionControls:
-          '@odata.type': microsoft.graph.conditionalAccessSessionControls
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -455,8 +596,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessPolicyState:
       title: conditionalAccessPolicyState
       enum:
@@ -476,6 +617,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
+          description: 'Risk levels included in the policy. Possible values are: low, medium, high, none.'
+        userRiskLevels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.riskLevel'
         platforms:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessPlatforms'
         locations:
@@ -484,54 +630,38 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
+          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other.'
         deviceStates:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDeviceStates'
         devices:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
-      example:
-        applications:
-          '@odata.type': microsoft.graph.conditionalAccessApplications
-        users:
-          '@odata.type': microsoft.graph.conditionalAccessUsers
-        signInRiskLevels:
-          - '@odata.type': microsoft.graph.riskLevel
-        platforms:
-          '@odata.type': microsoft.graph.conditionalAccessPlatforms
-        locations:
-          '@odata.type': microsoft.graph.conditionalAccessLocations
-        clientAppTypes:
-          - '@odata.type': microsoft.graph.conditionalAccessClientApp
-        deviceStates:
-          '@odata.type': microsoft.graph.conditionalAccessDeviceStates
-        devices:
-          '@odata.type': microsoft.graph.conditionalAccessDevices
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessGrantControls:
       title: conditionalAccessGrantControls
       type: object
       properties:
         operator:
           type: string
+          description: 'Defines the relationship of the grant controls. Possible values: AND, OR.'
           nullable: true
         builtInControls:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessGrantControl'
+          description: 'List of values of built-in controls required by the policy. Possible values: Block, Mfa, CompliantDevice, DomainJoinedDevice, ApprovedApplication, CompliantApplication'
         customAuthenticationFactors:
           type: array
           items:
             type: string
+          description: 'List of custom controls IDs required by the policy. For more information, see Custom controls.'
         termsOfUse:
           type: array
           items:
             type: string
-      example:
-        operator: string
-        builtInControls:
-          - '@odata.type': microsoft.graph.conditionalAccessGrantControl
-        customAuthenticationFactors:
-          - string
-        termsOfUse:
-          - string
+          description: List of terms of use IDs required by the policy.
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessSessionControls:
       title: conditionalAccessSessionControls
       type: object
@@ -544,15 +674,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.signInFrequencySessionControl'
         persistentBrowser:
           $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionControl'
-      example:
-        applicationEnforcedRestrictions:
-          '@odata.type': microsoft.graph.applicationEnforcedRestrictionsSessionControl
-        cloudAppSecurity:
-          '@odata.type': microsoft.graph.cloudAppSecuritySessionControl
-        signInFrequency:
-          '@odata.type': microsoft.graph.signInFrequencySessionControl
-        persistentBrowser:
-          '@odata.type': microsoft.graph.persistentBrowserSessionControl
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -560,6 +683,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
       type: object
@@ -568,21 +693,19 @@ components:
           type: array
           items:
             type: string
+          description: 'The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.'
         excludeApplications:
           type: array
           items:
             type: string
+          description: The list of application IDs explicitly excluded from the policy.
         includeUserActions:
           type: array
           items:
             type: string
-      example:
-        includeApplications:
-          - string
-        excludeApplications:
-          - string
-        includeUserActions:
-          - string
+          description: 'User actions to include. For example, urn:user:registersecurityinfo'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessUsers:
       title: conditionalAccessUsers
       type: object
@@ -591,39 +714,34 @@ components:
           type: array
           items:
             type: string
+          description: 'User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.'
         excludeUsers:
           type: array
           items:
             type: string
+          description: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
         includeGroups:
           type: array
           items:
             type: string
+          description: 'Group IDs in scope of policy unless explicitly excluded, or All.'
         excludeGroups:
           type: array
           items:
             type: string
+          description: Group IDs excluded from scope of policy.
         includeRoles:
           type: array
           items:
             type: string
+          description: 'Role IDs in scope of policy unless explicitly excluded, or All.'
         excludeRoles:
           type: array
           items:
             type: string
-      example:
-        includeUsers:
-          - string
-        excludeUsers:
-          - string
-        includeGroups:
-          - string
-        excludeGroups:
-          - string
-        includeRoles:
-          - string
-        excludeRoles:
-          - string
+          description: Role IDs excluded from scope of policy.
+      additionalProperties:
+        type: object
     microsoft.graph.riskLevel:
       title: riskLevel
       enum:
@@ -642,15 +760,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.'
         excludePlatforms:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-      example:
-        includePlatforms:
-          - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform
-        excludePlatforms:
-          - '@odata.type': microsoft.graph.conditionalAccessDevicePlatform
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, unknownFutureValue.'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessLocations:
       title: conditionalAccessLocations
       type: object
@@ -659,26 +776,24 @@ components:
           type: array
           items:
             type: string
+          description: 'Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.'
         excludeLocations:
           type: array
           items:
             type: string
-      example:
-        includeLocations:
-          - string
-        excludeLocations:
-          - string
+          description: Location IDs excluded from scope of policy.
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessClientApp:
       title: conditionalAccessClientApp
       enum:
         - all
         - browser
-        - modern
         - mobileAppsAndDesktopClients
         - exchangeActiveSync
         - easSupported
-        - easUnsupported
         - other
+        - unknownFutureValue
       type: string
     microsoft.graph.conditionalAccessDeviceStates:
       title: conditionalAccessDeviceStates
@@ -692,11 +807,8 @@ components:
           type: array
           items:
             type: string
-      example:
-        includeStates:
-          - string
-        excludeStates:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessDevices:
       title: conditionalAccessDevices
       type: object
@@ -709,11 +821,8 @@ components:
           type: array
           items:
             type: string
-      example:
-        includeDeviceStates:
-          - string
-        excludeDeviceStates:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessGrantControl:
       title: conditionalAccessGrantControl
       enum:
@@ -723,14 +832,16 @@ components:
         - domainJoinedDevice
         - approvedApplication
         - compliantApplication
+        - passwordChange
+        - unknownFutureValue
       type: string
     microsoft.graph.applicationEnforcedRestrictionsSessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
         - title: applicationEnforcedRestrictionsSessionControl
           type: object
-      example:
-        isEnabled: true
+          additionalProperties:
+            type: object
     microsoft.graph.cloudAppSecuritySessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -739,10 +850,8 @@ components:
           properties:
             cloudAppSecurityType:
               $ref: '#/components/schemas/microsoft.graph.cloudAppSecuritySessionControlType'
-      example:
-        isEnabled: true
-        cloudAppSecurityType:
-          '@odata.type': microsoft.graph.cloudAppSecuritySessionControlType
+          additionalProperties:
+            type: object
     microsoft.graph.signInFrequencySessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -753,15 +862,13 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of days or hours.
               format: int32
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.signinFrequencyType'
-      example:
-        isEnabled: true
-        value: integer
-        type:
-          '@odata.type': microsoft.graph.signinFrequencyType
+          additionalProperties:
+            type: object
     microsoft.graph.persistentBrowserSessionControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.conditionalAccessSessionControl'
@@ -770,10 +877,8 @@ components:
           properties:
             mode:
               $ref: '#/components/schemas/microsoft.graph.persistentBrowserSessionMode'
-      example:
-        isEnabled: true
-        mode:
-          '@odata.type': microsoft.graph.persistentBrowserSessionMode
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -792,7 +897,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessDevicePlatform:
       title: conditionalAccessDevicePlatform
       enum:
@@ -802,6 +911,7 @@ components:
         - windowsPhone
         - macOS
         - all
+        - unknownFutureValue
       type: string
     microsoft.graph.conditionalAccessSessionControl:
       title: conditionalAccessSessionControl
@@ -809,15 +919,17 @@ components:
       properties:
         isEnabled:
           type: boolean
+          description: Specifies whether the session control is enabled.
           nullable: true
-      example:
-        isEnabled: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudAppSecuritySessionControlType:
       title: cloudAppSecuritySessionControlType
       enum:
         - mcasConfigured
         - monitorOnly
         - blockDownloads
+        - unknownFutureValue
       type: string
     microsoft.graph.signinFrequencyType:
       title: signinFrequencyType
@@ -843,6 +955,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

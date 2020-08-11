@@ -85,6 +85,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.contract'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -122,7 +124,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -174,7 +176,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -200,7 +202,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -225,7 +227,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -241,6 +243,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -263,7 +267,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -279,6 +283,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -301,7 +307,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -317,6 +323,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -339,7 +347,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -355,6 +363,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -377,7 +387,7 @@ paths:
       parameters:
         - name: contract-id
           in: path
-          description: 'key: contract-id of contract'
+          description: 'key: id of contract'
           required: true
           schema:
             type: string
@@ -389,6 +399,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /contracts/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - contracts.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: contracts_getAvailableExtensionProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.extensionProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -414,6 +456,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -454,6 +498,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -487,14 +533,9 @@ components:
               type: string
               description: A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        contractType: string
-        customerId: string
-        defaultDomainName: string
-        displayName: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -506,10 +547,37 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
+    microsoft.graph.extensionProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: extensionProperty
+          type: object
+          properties:
+            appDisplayName:
+              type: string
+              description: Display name of the application object on which this extension property is defined. Read-only.
+              nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
+            dataType:
+              type: string
+              description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+            isSyncedFromOnPremises:
+              type: boolean
+              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              nullable: true
+            targetObjects:
+              type: array
+              items:
+                type: string
+              description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -517,8 +585,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -526,6 +594,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -544,7 +614,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -557,6 +631,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

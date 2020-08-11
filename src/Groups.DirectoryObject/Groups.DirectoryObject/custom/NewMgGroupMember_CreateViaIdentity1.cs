@@ -329,8 +329,8 @@
                     return;
                 }
                 // Error Response : default
-                var code = (await response)?.Code;
-                var message = (await response)?.Message;
+                var code = (await response)?.Error?.Code;
+                var message = (await response)?.Error?.Message;
                 if ((null == code || null == message))
                 {
                     // Unrecognized Response. Create an error record based on what we have.

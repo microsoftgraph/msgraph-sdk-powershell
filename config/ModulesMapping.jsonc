@@ -97,7 +97,7 @@
     "Users.Planner": "^users.plannerUser$",
     "Users.ProfilePhoto": "^users.profilePhoto$",
     "Users.User": "^users.user$|^users.presence$",
-    "Users.UserSettings": "^users.userSettings$",
+    "Users.UserSettings": "^users.userSettings$"
 
     // Fails to build.
     // "CloudCommunications": "^communications\\.", \\ OData.OpenAPI should handle multiple namespace.

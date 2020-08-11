@@ -205,6 +205,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -242,7 +244,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -343,82 +345,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
-          links:
-            appRoleAssignedTo:
-              operationId: servicePrincipals.GetAppRoleAssignedTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                appRoleAssignment-id: $response.body#/id
-            appRoleAssignments:
-              operationId: servicePrincipals.GetAppRoleAssignments
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                appRoleAssignment-id: $response.body#/id
-            claimsMappingPolicies:
-              operationId: servicePrincipals.GetClaimsMappingPolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                claimsMappingPolicy-id: $response.body#/id
-            homeRealmDiscoveryPolicies:
-              operationId: servicePrincipals.GetHomeRealmDiscoveryPolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                homeRealmDiscoveryPolicy-id: $response.body#/id
-            endpoints:
-              operationId: servicePrincipals.GetEndpoints
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                endpoint-id: $response.body#/id
-            oauth2PermissionGrants:
-              operationId: servicePrincipals.GetOauth2PermissionGrants
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                oAuth2PermissionGrant-id: $response.body#/id
-            memberOf:
-              operationId: servicePrincipals.GetMemberOf
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                directoryObject-id: $response.body#/id
-            transitiveMemberOf:
-              operationId: servicePrincipals.GetTransitiveMemberOf
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                directoryObject-id: $response.body#/id
-            createdObjects:
-              operationId: servicePrincipals.GetCreatedObjects
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                directoryObject-id: $response.body#/id
-            licenseDetails:
-              operationId: servicePrincipals.GetLicenseDetails
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                licenseDetails-id: $response.body#/id
-            owners:
-              operationId: servicePrincipals.GetOwners
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                directoryObject-id: $response.body#/id
-            ownedObjects:
-              operationId: servicePrincipals.GetOwnedObjects
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                directoryObject-id: $response.body#/id
-            tokenIssuancePolicies:
-              operationId: servicePrincipals.GetTokenIssuancePolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                tokenIssuancePolicy-id: $response.body#/id
-            tokenLifetimePolicies:
-              operationId: servicePrincipals.GetTokenLifetimePolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                tokenLifetimePolicy-id: $response.body#/id
-            synchronization:
-              operationId: servicePrincipals.GetSynchronization
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronization-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -430,7 +356,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -456,7 +382,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -481,7 +407,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -564,6 +490,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -578,7 +506,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -609,14 +537,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -661,6 +589,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.appRoleAssignment
@@ -669,14 +598,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -694,6 +623,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.appRoleAssignment
+      summary: Delete navigation property appRoleAssignedTo for servicePrincipals
+      operationId: servicePrincipals_DeleteAppRoleAssignedTo
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appRoleAssignments':
     get:
       tags:
@@ -703,7 +663,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -786,6 +746,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -800,7 +762,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -831,14 +793,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -883,6 +845,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.appRoleAssignment
@@ -891,14 +854,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -916,6 +879,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.appRoleAssignment
+      summary: Delete navigation property appRoleAssignments for servicePrincipals
+      operationId: servicePrincipals_DeleteAppRoleAssignments
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies':
     get:
       tags:
@@ -925,7 +919,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1004,6 +998,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1019,14 +1015,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: claimsMappingPolicy-id
           in: path
-          description: 'key: claimsMappingPolicy-id of claimsMappingPolicy'
+          description: 'key: id of claimsMappingPolicy'
           required: true
           schema:
             type: string
@@ -1071,6 +1067,106 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.claimsMappingPolicy
+      summary: Get ref of claimsMappingPolicies from servicePrincipals
+      operationId: servicePrincipals_ListRefClaimsMappingPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of claimsMappingPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.claimsMappingPolicy
+      summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      operationId: servicePrincipals_CreateRefClaimsMappingPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects':
     get:
       tags:
@@ -1080,7 +1176,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1145,6 +1241,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1160,14 +1258,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1206,6 +1304,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/createdObjects/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of createdObjects from servicePrincipals
+      operationId: servicePrincipals_ListRefCreatedObjects
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to createdObjects for servicePrincipals
+      operationId: servicePrincipals_CreateRefCreatedObjects
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/endpoints':
     get:
       tags:
@@ -1215,7 +1405,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1295,6 +1485,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.endpoint'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1309,7 +1501,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1340,14 +1532,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: endpoint-id
           in: path
-          description: 'key: endpoint-id of endpoint'
+          description: 'key: id of endpoint'
           required: true
           schema:
             type: string
@@ -1391,6 +1583,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.endpoint
@@ -1399,14 +1592,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: endpoint-id
           in: path
-          description: 'key: endpoint-id of endpoint'
+          description: 'key: id of endpoint'
           required: true
           schema:
             type: string
@@ -1424,6 +1617,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.endpoint
+      summary: Delete navigation property endpoints for servicePrincipals
+      operationId: servicePrincipals_DeleteEndpoints
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: endpoint-id
+          in: path
+          description: 'key: id of endpoint'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: endpoint
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies':
     get:
       tags:
@@ -1433,7 +1657,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1512,6 +1736,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1527,14 +1753,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: homeRealmDiscoveryPolicy-id
           in: path
-          description: 'key: homeRealmDiscoveryPolicy-id of homeRealmDiscoveryPolicy'
+          description: 'key: id of homeRealmDiscoveryPolicy'
           required: true
           schema:
             type: string
@@ -1579,6 +1805,106 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.homeRealmDiscoveryPolicy
+      summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      operationId: servicePrincipals_ListRefHomeRealmDiscoveryPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of homeRealmDiscoveryPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.homeRealmDiscoveryPolicy
+      summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      operationId: servicePrincipals_CreateRefHomeRealmDiscoveryPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/licenseDetails':
     get:
       tags:
@@ -1588,7 +1914,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1659,6 +1985,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.licenseDetails'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1673,7 +2001,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1704,14 +2032,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: licenseDetails-id
           in: path
-          description: 'key: licenseDetails-id of licenseDetails'
+          description: 'key: id of licenseDetails'
           required: true
           schema:
             type: string
@@ -1752,6 +2080,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.licenseDetails
@@ -1760,14 +2089,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: licenseDetails-id
           in: path
-          description: 'key: licenseDetails-id of licenseDetails'
+          description: 'key: id of licenseDetails'
           required: true
           schema:
             type: string
@@ -1785,6 +2114,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.licenseDetails
+      summary: Delete navigation property licenseDetails for servicePrincipals
+      operationId: servicePrincipals_DeleteLicenseDetails
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: licenseDetails-id
+          in: path
+          description: 'key: id of licenseDetails'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: licenseDetails
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf':
     get:
       tags:
@@ -1794,7 +2154,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1859,6 +2219,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1874,14 +2236,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -1920,6 +2282,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/memberOf/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of memberOf from servicePrincipals
+      operationId: servicePrincipals_ListRefMemberOf
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to memberOf for servicePrincipals
+      operationId: servicePrincipals_CreateRefMemberOf
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -1929,7 +2383,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1945,6 +2399,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -1967,7 +2423,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -1983,6 +2439,8 @@ paths:
                   type: array
                   items:
                     type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -2005,7 +2463,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2023,6 +2481,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.credential'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -2043,7 +2503,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2057,6 +2517,8 @@ paths:
               properties:
                 id:
                   type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -2073,7 +2535,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2089,6 +2551,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -2111,7 +2575,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2127,6 +2591,8 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -2149,7 +2615,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2163,6 +2629,8 @@ paths:
               properties:
                 id:
                   type: string
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -2183,7 +2651,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2207,7 +2675,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2225,6 +2693,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.credential'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -2241,7 +2711,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2324,6 +2794,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2339,14 +2811,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: oAuth2PermissionGrant-id
           in: path
-          description: 'key: oAuth2PermissionGrant-id of oAuth2PermissionGrant'
+          description: 'key: id of oAuth2PermissionGrant'
           required: true
           schema:
             type: string
@@ -2391,6 +2863,110 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$ref':
+    get:
+      tags:
+        - servicePrincipals.oAuth2PermissionGrant
+      summary: Get ref of oauth2PermissionGrants from servicePrincipals
+      operationId: servicePrincipals_ListRefOauth2PermissionGrants
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - consentType
+                - consentType desc
+                - expiryTime
+                - expiryTime desc
+                - principalId
+                - principalId desc
+                - resourceId
+                - resourceId desc
+                - scope
+                - scope desc
+                - startTime
+                - startTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of oAuth2PermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.oAuth2PermissionGrant
+      summary: Create new navigation property ref to oauth2PermissionGrants for servicePrincipals
+      operationId: servicePrincipals_CreateRefOauth2PermissionGrants
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects':
     get:
       tags:
@@ -2400,7 +2976,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2465,6 +3041,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2480,14 +3058,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -2526,6 +3104,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/ownedObjects/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of ownedObjects from servicePrincipals
+      operationId: servicePrincipals_ListRefOwnedObjects
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to ownedObjects for servicePrincipals
+      operationId: servicePrincipals_CreateRefOwnedObjects
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners':
     get:
       tags:
@@ -2535,7 +3205,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2600,6 +3270,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2615,14 +3287,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -2661,6 +3333,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/owners/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of owners from servicePrincipals
+      operationId: servicePrincipals_ListRefOwners
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to owners for servicePrincipals
+      operationId: servicePrincipals_CreateRefOwners
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization':
     get:
       tags:
@@ -2670,7 +3434,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2711,19 +3475,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronization'
-          links:
-            jobs:
-              operationId: servicePrincipal.synchronization.GetJobs
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationJob-id: $response.body#/id
-            templates:
-              operationId: servicePrincipal.synchronization.GetTemplates
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationTemplate-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -2732,7 +3486,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2750,6 +3504,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property synchronization for servicePrincipals
+      operationId: servicePrincipals_DeleteSynchronization
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs':
     get:
       tags:
@@ -2759,7 +3537,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2835,6 +3613,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2849,7 +3629,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -2880,14 +3660,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -2929,15 +3709,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
-          links:
-            schema:
-              operationId: synchronization.jobs.GetSchema
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-                synchronizationSchema-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -2946,14 +3720,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -2971,6 +3745,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property jobs for servicePrincipals
+      operationId: servicePrincipals.synchronization_DeleteJobs
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: 'key: id of synchronizationJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
       tags:
@@ -2980,14 +3785,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -2995,6 +3800,51 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand':
+    post:
+      tags:
+        - servicePrincipals.Actions
+      summary: Invoke action provisionOnDemand
+      operationId: servicePrincipals.synchronization.jobs_provisionOnDemand
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: 'key: id of synchronizationJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                parameters:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.synchronizationJobApplicationParameters'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -3007,14 +3857,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3028,6 +3878,8 @@ paths:
               properties:
                 criteria:
                   $ref: '#/components/schemas/microsoft.graph.synchronizationJobRestartCriteria'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -3044,14 +3896,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3071,14 +3923,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3098,14 +3950,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3131,6 +3983,8 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -3147,14 +4001,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3194,15 +4048,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: synchronizationJob.schema.GetDirectories
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-                directoryDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3211,14 +4059,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3236,6 +4084,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property schema for servicePrincipals
+      operationId: servicePrincipals.synchronization.jobs_DeleteSchema
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: 'key: id of synchronizationJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories':
     get:
       tags:
@@ -3245,14 +4124,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3332,6 +4211,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3346,14 +4227,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3384,21 +4265,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationJob
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -3442,6 +4323,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3450,21 +4332,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationJob
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -3482,6 +4364,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property directories for servicePrincipals
+      operationId: servicePrincipals.synchronization.jobs.schema_DeleteDirectories
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: 'key: id of synchronizationJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: directoryDefinition-id
+          in: path
+          description: 'key: id of directoryDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
@@ -3491,21 +4411,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationJob
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -3529,14 +4449,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3562,14 +4482,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3595,14 +4515,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationJob-id
           in: path
-          description: 'key: synchronizationJob-id of synchronizationJob'
+          description: 'key: id of synchronizationJob'
           required: true
           schema:
             type: string
@@ -3621,6 +4541,8 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.expressionInputObject'
                 targetAttributeDefinition:
                   $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -3641,7 +4563,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -3667,6 +4589,42 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/microsoft.graph.acquireAccessToken':
+    post:
+      tags:
+        - servicePrincipals.Actions
+      summary: Invoke action acquireAccessToken
+      operationId: servicePrincipals.synchronization_acquireAccessToken
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                credentials:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -3683,7 +4641,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -3708,7 +4666,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -3790,6 +4748,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -3804,7 +4764,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -3835,14 +4795,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -3886,15 +4846,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-          links:
-            schema:
-              operationId: synchronization.templates.GetSchema
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
-                synchronizationSchema-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -3903,14 +4857,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -3928,6 +4882,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property templates for servicePrincipals
+      operationId: servicePrincipals.synchronization_DeleteTemplates
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationTemplate-id
+          in: path
+          description: 'key: id of synchronizationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema':
     get:
       tags:
@@ -3937,14 +4922,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -3984,15 +4969,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: synchronizationTemplate.schema.GetDirectories
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
-                directoryDefinition-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -4001,14 +4980,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4026,6 +5005,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property schema for servicePrincipals
+      operationId: servicePrincipals.synchronization.templates_DeleteSchema
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationTemplate-id
+          in: path
+          description: 'key: id of synchronizationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories':
     get:
       tags:
@@ -4035,14 +5045,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4122,6 +5132,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4136,14 +5148,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4174,21 +5186,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationTemplate
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -4232,6 +5244,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - servicePrincipals.synchronization
@@ -4240,21 +5253,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationTemplate
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -4272,6 +5285,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property directories for servicePrincipals
+      operationId: servicePrincipals.synchronization.templates.schema_DeleteDirectories
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationTemplate-id
+          in: path
+          description: 'key: id of synchronizationTemplate'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationTemplate
+        - name: directoryDefinition-id
+          in: path
+          description: 'key: id of directoryDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover':
     post:
       tags:
@@ -4281,21 +5332,21 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: synchronizationTemplate
         - name: directoryDefinition-id
           in: path
-          description: 'key: directoryDefinition-id of directoryDefinition'
+          description: 'key: id of directoryDefinition'
           required: true
           schema:
             type: string
@@ -4319,14 +5370,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4352,14 +5403,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4385,14 +5436,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: synchronizationTemplate-id
           in: path
-          description: 'key: synchronizationTemplate-id of synchronizationTemplate'
+          description: 'key: id of synchronizationTemplate'
           required: true
           schema:
             type: string
@@ -4411,6 +5462,8 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.expressionInputObject'
                 targetAttributeDefinition:
                   $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -4431,7 +5484,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -4510,6 +5563,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4525,14 +5580,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: tokenIssuancePolicy-id
           in: path
-          description: 'key: tokenIssuancePolicy-id of tokenIssuancePolicy'
+          description: 'key: id of tokenIssuancePolicy'
           required: true
           schema:
             type: string
@@ -4577,6 +5632,106 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Get ref of tokenIssuancePolicies from servicePrincipals
+      operationId: servicePrincipals_ListRefTokenIssuancePolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of tokenIssuancePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.tokenIssuancePolicy
+      summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+      operationId: servicePrincipals_CreateRefTokenIssuancePolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies':
     get:
       tags:
@@ -4586,7 +5741,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -4665,6 +5820,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4680,14 +5837,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: tokenLifetimePolicy-id
           in: path
-          description: 'key: tokenLifetimePolicy-id of tokenLifetimePolicy'
+          description: 'key: id of tokenLifetimePolicy'
           required: true
           schema:
             type: string
@@ -4732,6 +5889,106 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: Get ref of tokenLifetimePolicies from servicePrincipals
+      operationId: servicePrincipals_ListRefTokenLifetimePolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - definition
+                - definition desc
+                - isOrganizationDefault
+                - isOrganizationDefault desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of tokenLifetimePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.tokenLifetimePolicy
+      summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
+      operationId: servicePrincipals_CreateRefTokenLifetimePolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf':
     get:
       tags:
@@ -4741,7 +5998,7 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
@@ -4806,6 +6063,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -4821,14 +6080,14 @@ paths:
       parameters:
         - name: servicePrincipal-id
           in: path
-          description: 'key: servicePrincipal-id of servicePrincipal'
+          description: 'key: id of servicePrincipal'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
         - name: directoryObject-id
           in: path
-          description: 'key: directoryObject-id of directoryObject'
+          description: 'key: id of directoryObject'
           required: true
           schema:
             type: string
@@ -4867,6 +6126,98 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of transitiveMemberOf from servicePrincipals
+      operationId: servicePrincipals_ListRefTransitiveMemberOf
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to transitiveMemberOf for servicePrincipals
+      operationId: servicePrincipals_CreateRefTransitiveMemberOf
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /servicePrincipals/microsoft.graph.delta():
     get:
       tags:
@@ -4907,6 +6258,8 @@ paths:
                   items:
                     type: string
                     nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -4939,6 +6292,8 @@ paths:
                 type:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '200':
@@ -4977,6 +6332,8 @@ paths:
                   type: string
                   format: uuid
                   nullable: true
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -5000,7 +6357,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.addIn'
-              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.'
+              description: 'Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its ''FileHandler'' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.'
             alternativeNames:
               type: array
               items:
@@ -5058,7 +6415,7 @@ components:
               description: The collection of key credentials associated with the service principal. Not nullable.
             loginUrl:
               type: string
-              description: 'Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Office 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Office 365, the Azure AD My Apps, or the Azure AD SSO URL.'
+              description: 'Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.'
               nullable: true
             logoutUrl:
               type: string
@@ -5091,7 +6448,7 @@ components:
               nullable: true
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Office 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.'
               nullable: true
             publisherName:
               type: string
@@ -5143,10 +6500,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+              description: The claimsMappingPolicies assigned to this service principal.
             homeRealmDiscoveryPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+              description: The homeRealmDiscoveryPolicies assigned to this service principal.
             endpoints:
               type: array
               items:
@@ -5189,92 +6548,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+              description: The tokenIssuancePolicies assigned to this service principal.
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+              description: The tokenLifetimePolicies assigned to this service principal.
             synchronization:
               $ref: '#/components/schemas/microsoft.graph.synchronization'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        accountEnabled: true
-        addIns:
-          - '@odata.type': microsoft.graph.addIn
-        alternativeNames:
-          - string
-        appDescription: string
-        appDisplayName: string
-        appId: string
-        applicationTemplateId: string
-        appOwnerOrganizationId: string
-        appRoleAssignmentRequired: true
-        appRoles:
-          - '@odata.type': microsoft.graph.appRole
-        description: string
-        displayName: string
-        errorUrl: string
-        homepage: string
-        info:
-          '@odata.type': microsoft.graph.informationalUrl
-        keyCredentials:
-          - '@odata.type': microsoft.graph.keyCredential
-        loginUrl: string
-        logoutUrl: string
-        notes: string
-        notificationEmailAddresses:
-          - string
-        publishedPermissionScopes:
-          - '@odata.type': microsoft.graph.permissionScope
-        passwordCredentials:
-          - '@odata.type': microsoft.graph.passwordCredential
-        preferredTokenSigningKeyEndDateTime: string (timestamp)
-        preferredTokenSigningKeyThumbprint: string
-        preferredSingleSignOnMode: string
-        publisherName: string
-        replyUrls:
-          - string
-        samlMetadataUrl: string
-        samlSingleSignOnSettings:
-          '@odata.type': microsoft.graph.samlSingleSignOnSettings
-        servicePrincipalNames:
-          - string
-        servicePrincipalType: string
-        signInAudience: string
-        tags:
-          - string
-        tokenEncryptionKeyId: string
-        appRoleAssignedTo:
-          - '@odata.type': microsoft.graph.appRoleAssignment
-        appRoleAssignments:
-          - '@odata.type': microsoft.graph.appRoleAssignment
-        claimsMappingPolicies:
-          - '@odata.type': microsoft.graph.claimsMappingPolicy
-        homeRealmDiscoveryPolicies:
-          - '@odata.type': microsoft.graph.homeRealmDiscoveryPolicy
-        endpoints:
-          - '@odata.type': microsoft.graph.endpoint
-        oauth2PermissionGrants:
-          - '@odata.type': microsoft.graph.oAuth2PermissionGrant
-        memberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        transitiveMemberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        createdObjects:
-          - '@odata.type': microsoft.graph.directoryObject
-        licenseDetails:
-          - '@odata.type': microsoft.graph.licenseDetails
-        owners:
-          - '@odata.type': microsoft.graph.directoryObject
-        ownedObjects:
-          - '@odata.type': microsoft.graph.directoryObject
-        tokenIssuancePolicies:
-          - '@odata.type': microsoft.graph.tokenIssuancePolicy
-        tokenLifetimePolicies:
-          - '@odata.type': microsoft.graph.tokenLifetimePolicy
-        synchronization:
-          '@odata.type': microsoft.graph.synchronization
     microsoft.graph.appRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5316,31 +6600,16 @@ components:
               description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
               nullable: true
-      example:
-        id: string (identifier)
-        appRoleId: string
-        creationTimestamp: string (timestamp)
-        principalDisplayName: string
-        principalId: string
-        principalType: string
-        resourceDisplayName: string
-        resourceId: string
+          additionalProperties:
+            type: object
     microsoft.graph.claimsMappingPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: claimsMappingPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5352,10 +6621,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.endpoint:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -5378,33 +6646,19 @@ components:
               description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
-              description: 'For Office 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
+              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        capability: string
-        providerId: string
-        providerName: string
-        uri: string
-        providerResourceId: string
     microsoft.graph.homeRealmDiscoveryPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.licenseDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5426,12 +6680,8 @@ components:
               type: string
               description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
               nullable: true
-      example:
-        id: string (identifier)
-        servicePlans:
-          - '@odata.type': microsoft.graph.servicePlanInfo
-        skuId: string
-        skuPartNumber: string
+          additionalProperties:
+            type: object
     microsoft.graph.credential:
       title: credential
       type: object
@@ -5445,10 +6695,8 @@ components:
         type:
           type: string
           nullable: true
-      example:
-        fieldId: string
-        value: string
-        type: string
+      additionalProperties:
+        type: object
     microsoft.graph.passwordSingleSignOnCredentialSet:
       title: passwordSingleSignOnCredentialSet
       type: object
@@ -5459,10 +6707,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.credential'
-      example:
-        id: string
-        credentials:
-          - '@odata.type': microsoft.graph.credential
+      additionalProperties:
+        type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5497,15 +6743,8 @@ components:
               type: string
               format: date-time
               nullable: true
-      example:
-        id: string (identifier)
-        clientId: string
-        consentType: string
-        expiryTime: string (timestamp)
-        principalId: string
-        resourceId: string
-        scope: string
-        startTime: string (timestamp)
+          additionalProperties:
+            type: object
     microsoft.graph.synchronization:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5524,14 +6763,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-      example:
-        id: string (identifier)
-        secrets:
-          - '@odata.type': microsoft.graph.synchronizationSecretKeyStringValuePair
-        jobs:
-          - '@odata.type': microsoft.graph.synchronizationJob
-        templates:
-          - '@odata.type': microsoft.graph.synchronizationTemplate
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationJob:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5551,26 +6784,41 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-      example:
-        id: string (identifier)
-        schedule:
-          '@odata.type': microsoft.graph.synchronizationSchedule
-        status:
-          '@odata.type': microsoft.graph.synchronizationStatus
-        templateId: string
-        synchronizationJobSettings:
-          - '@odata.type': microsoft.graph.keyValuePair
-        schema:
-          '@odata.type': microsoft.graph.synchronizationSchema
+          additionalProperties:
+            type: object
+    microsoft.graph.synchronizationJobApplicationParameters:
+      title: synchronizationJobApplicationParameters
+      type: object
+      properties:
+        ruleId:
+          type: string
+          nullable: true
+        subjects:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
+      additionalProperties:
+        type: object
+    microsoft.graph.stringKeyStringValuePair:
+      title: stringKeyStringValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationJobRestartCriteria:
       title: synchronizationJobRestartCriteria
       type: object
       properties:
         resetScope:
           $ref: '#/components/schemas/microsoft.graph.synchronizationJobRestartScope'
-      example:
-        resetScope:
-          '@odata.type': microsoft.graph.synchronizationJobRestartScope
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
       type: object
@@ -5580,10 +6828,8 @@ components:
         value:
           type: string
           nullable: true
-      example:
-        key:
-          '@odata.type': microsoft.graph.synchronizationSecret
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5601,13 +6847,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-      example:
-        id: string (identifier)
-        synchronizationRules:
-          - '@odata.type': microsoft.graph.synchronizationRule
-        version: string
-        directories:
-          - '@odata.type': microsoft.graph.directoryDefinition
+          additionalProperties:
+            type: object
     microsoft.graph.directoryDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5633,16 +6874,8 @@ components:
             version:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        discoveryDateTime: string (timestamp)
-        discoverabilities:
-          '@odata.type': microsoft.graph.directoryDefinitionDiscoverabilities
-        name: string
-        objects:
-          - '@odata.type': microsoft.graph.objectDefinition
-        readOnly: true
-        version: string
+          additionalProperties:
+            type: object
     microsoft.graph.filterOperatorSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5657,14 +6890,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeType'
-      example:
-        id: string (identifier)
-        arity:
-          '@odata.type': microsoft.graph.scopeOperatorType
-        multivaluedComparisonType:
-          '@odata.type': microsoft.graph.scopeOperatorMultiValuedComparisonType
-        supportedAttributeTypes:
-          - '@odata.type': microsoft.graph.attributeType
+          additionalProperties:
+            type: object
     microsoft.graph.attributeMappingFunctionSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5675,10 +6902,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeMappingParameterSchema'
-      example:
-        id: string (identifier)
-        parameters:
-          - '@odata.type': microsoft.graph.attributeMappingParameterSchema
+          additionalProperties:
+            type: object
     microsoft.graph.expressionInputObject:
       title: expressionInputObject
       type: object
@@ -5689,11 +6914,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyObjectValuePair'
-      example:
-        definition:
-          '@odata.type': microsoft.graph.objectDefinition
-        properties:
-          - '@odata.type': microsoft.graph.stringKeyObjectValuePair
+      additionalProperties:
+        type: object
     microsoft.graph.attributeDefinition:
       title: attributeDefinition
       type: object
@@ -5709,6 +6931,8 @@ components:
         defaultValue:
           type: string
           nullable: true
+        flowNullValues:
+          type: boolean
         metadata:
           type: array
           items:
@@ -5728,23 +6952,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.referencedObject'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
-      example:
-        anchor: true
-        apiExpressions:
-          - '@odata.type': microsoft.graph.stringKeyStringValuePair
-        caseExact: true
-        defaultValue: string
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        multivalued: true
-        mutability:
-          '@odata.type': microsoft.graph.mutability
-        name: string
-        required: true
-        referencedObjects:
-          - '@odata.type': microsoft.graph.referencedObject
-        type:
-          '@odata.type': microsoft.graph.attributeType
+      additionalProperties:
+        type: object
     microsoft.graph.parseExpressionResponse:
       title: parseExpressionResponse
       type: object
@@ -5762,15 +6971,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
         parsingSucceeded:
           type: boolean
-      example:
-        error:
-          '@odata.type': microsoft.graph.publicError
-        evaluationSucceeded: true
-        evaluationResult:
-          - string
-        parsedExpression:
-          '@odata.type': microsoft.graph.attributeMappingSource
-        parsingSucceeded: true
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5797,49 +6999,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.metadataEntry'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-      example:
-        id: string (identifier)
-        applicationId: string
-        default: true
-        description: string
-        discoverable: true
-        factoryTag: string
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        schema:
-          '@odata.type': microsoft.graph.synchronizationSchema
+          additionalProperties:
+            type: object
     microsoft.graph.tokenIssuancePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenIssuancePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.tokenLifetimePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.addIn:
       title: addIn
       type: object
@@ -5855,11 +7032,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
-      example:
-        id: string
-        type: string
-        properties:
-          - '@odata.type': microsoft.graph.keyValue
+      additionalProperties:
+        type: object
     microsoft.graph.appRole:
       title: appRole
       type: object
@@ -5893,15 +7067,8 @@ components:
           type: string
           description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
-      example:
-        allowedMemberTypes:
-          - string
-        description: string
-        displayName: string
-        id: string
-        isEnabled: true
-        origin: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.informationalUrl:
       title: informationalUrl
       type: object
@@ -5926,12 +7093,8 @@ components:
           type: string
           description: 'Link to the application''s terms of service statement. For example, https://www.contoso.com/app/termsofservice'
           nullable: true
-      example:
-        logoUrl: string
-        marketingUrl: string
-        privacyStatementUrl: string
-        supportUrl: string
-        termsOfServiceUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.keyCredential:
       title: keyCredential
       type: object
@@ -5976,15 +7139,8 @@ components:
           type: string
           description: Friendly name for the key. Optional.
           nullable: true
-      example:
-        customKeyIdentifier: string
-        endDateTime: string (timestamp)
-        keyId: string
-        startDateTime: string (timestamp)
-        type: string
-        usage: string
-        key: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.permissionScope:
       title: permissionScope
       type: object
@@ -6024,16 +7180,8 @@ components:
           type: string
           description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed.'
           nullable: true
-      example:
-        adminConsentDescription: string
-        adminConsentDisplayName: string
-        id: string
-        isEnabled: true
-        origin: string
-        type: string
-        userConsentDescription: string
-        userConsentDisplayName: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.passwordCredential:
       title: passwordCredential
       type: object
@@ -6073,14 +7221,8 @@ components:
           type: string
           description: Friendly name for the password. Optional.
           nullable: true
-      example:
-        customKeyIdentifier: string
-        endDateTime: string (timestamp)
-        keyId: string
-        startDateTime: string (timestamp)
-        secretText: string
-        hint: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.samlSingleSignOnSettings:
       title: samlSingleSignOnSettings
       type: object
@@ -6089,8 +7231,8 @@ components:
           type: string
           description: The relative URI the service provider would redirect to after completion of the single sign-on flow.
           nullable: true
-      example:
-        relayState: string
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -6098,8 +7240,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.stsPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.policyBase'
@@ -6119,17 +7261,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
-        definition:
-          - string
-        isOrganizationDefault: true
-        appliesTo:
-          - '@odata.type': microsoft.graph.directoryObject
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -6152,11 +7286,8 @@ components:
           type: string
           description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
           nullable: true
-      example:
-        servicePlanId: string
-        servicePlanName: string
-        provisioningStatus: string
-        appliesTo: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationSchedule:
       title: synchronizationSchedule
       type: object
@@ -6172,11 +7303,8 @@ components:
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
-      example:
-        expiration: string (timestamp)
-        interval: string
-        state:
-          '@odata.type': microsoft.graph.synchronizationScheduleState
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationStatus:
       title: synchronizationStatus
       type: object
@@ -6215,26 +7343,8 @@ components:
         troubleshootingUrl:
           type: string
           nullable: true
-      example:
-        countSuccessiveCompleteFailures: integer
-        escrowsPruned: true
-        code:
-          '@odata.type': microsoft.graph.synchronizationStatusCode
-        lastExecution:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        lastSuccessfulExecution:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        lastSuccessfulExecutionWithExports:
-          '@odata.type': microsoft.graph.synchronizationTaskExecution
-        progress:
-          - '@odata.type': microsoft.graph.synchronizationProgress
-        quarantine:
-          '@odata.type': microsoft.graph.synchronizationQuarantine
-        steadyStateFirstAchievedTime: string (timestamp)
-        steadyStateLastAchievedTime: string (timestamp)
-        synchronizedEntryCountByType:
-          - '@odata.type': microsoft.graph.stringKeyLongValuePair
-        troubleshootingUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.keyValuePair:
       title: keyValuePair
       type: object
@@ -6246,9 +7356,20 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
-      example:
-        name: string
-        value: string
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationJobSubject:
+      title: synchronizationJobSubject
+      type: object
+      properties:
+        objectId:
+          type: string
+          nullable: true
+        objectTypeName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationJobRestartScope:
       title: synchronizationJobRestartScope
       enum:
@@ -6336,17 +7457,8 @@ components:
         targetDirectoryName:
           type: string
           nullable: true
-      example:
-        editable: true
-        id: string
-        metadata:
-          - '@odata.type': microsoft.graph.stringKeyStringValuePair
-        name: string
-        objectMappings:
-          - '@odata.type': microsoft.graph.objectMapping
-        priority: integer
-        sourceDirectoryName: string
-        targetDirectoryName: string
+      additionalProperties:
+        type: object
     microsoft.graph.directoryDefinitionDiscoverabilities:
       title: directoryDefinitionDiscoverabilities
       enum:
@@ -6377,14 +7489,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        attributes:
-          - '@odata.type': microsoft.graph.attributeDefinition
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        name: string
-        supportedApis:
-          - string
+      additionalProperties:
+        type: object
     microsoft.graph.scopeOperatorType:
       title: scopeOperatorType
       enum:
@@ -6420,12 +7526,8 @@ components:
           type: boolean
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
-      example:
-        allowMultipleOccurrences: true
-        name: string
-        required: true
-        type:
-          '@odata.type': microsoft.graph.attributeType
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyObjectValuePair:
       title: stringKeyObjectValuePair
       type: object
@@ -6433,21 +7535,8 @@ components:
         key:
           type: string
           nullable: true
-      example:
-        key: string
-    microsoft.graph.stringKeyStringValuePair:
-      title: stringKeyStringValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          nullable: true
-        value:
-          type: string
-          nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.metadataEntry:
       title: metadataEntry
       type: object
@@ -6458,9 +7547,8 @@ components:
         value:
           type: string
           nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.mutability:
       title: mutability
       enum:
@@ -6479,9 +7567,8 @@ components:
         referencedProperty:
           type: string
           nullable: true
-      example:
-        referencedObjectName: string
-        referencedProperty: string
+      additionalProperties:
+        type: object
     microsoft.graph.publicError:
       title: publicError
       type: object
@@ -6501,14 +7588,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
         innerError:
           $ref: '#/components/schemas/microsoft.graph.publicInnerError'
-      example:
-        code: string
-        message: string
-        target: string
-        details:
-          - '@odata.type': microsoft.graph.publicErrorDetail
-        innerError:
-          '@odata.type': microsoft.graph.publicInnerError
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMappingSource:
       title: attributeMappingSource
       type: object
@@ -6525,13 +7606,8 @@ components:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
-      example:
-        expression: string
-        name: string
-        parameters:
-          - '@odata.type': microsoft.graph.stringKeyAttributeMappingSourceValuePair
-        type:
-          '@odata.type': microsoft.graph.attributeMappingSourceType
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -6539,6 +7615,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.keyValue:
       title: keyValue
       type: object
@@ -6551,9 +7629,8 @@ components:
           type: string
           description: Value for the key-value pair.
           nullable: true
-      example:
-        key: string
-        value: string
+      additionalProperties:
+        type: object
     microsoft.graph.policyBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -6566,12 +7643,9 @@ components:
             displayName:
               type: string
               description: Display name for this policy.
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        description: string
-        displayName: string
     microsoft.graph.synchronizationScheduleState:
       title: synchronizationScheduleState
       enum:
@@ -6634,23 +7708,8 @@ components:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           format: date-time
-      example:
-        activityIdentifier: string
-        countEntitled: integer
-        countEntitledForProvisioning: integer
-        countEscrowed: integer
-        countEscrowedRaw: integer
-        countExported: integer
-        countExports: integer
-        countImported: integer
-        countImportedDeltas: integer
-        countImportedReferenceDeltas: integer
-        state:
-          '@odata.type': microsoft.graph.synchronizationTaskExecutionResult
-        error:
-          '@odata.type': microsoft.graph.synchronizationError
-        timeBegan: string (timestamp)
-        timeEnded: string (timestamp)
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationProgress:
       title: synchronizationProgress
       type: object
@@ -6668,11 +7727,8 @@ components:
         units:
           type: string
           nullable: true
-      example:
-        completedUnits: integer
-        progressObservationDateTime: string (timestamp)
-        totalUnits: integer
-        units: string
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationQuarantine:
       title: synchronizationQuarantine
       type: object
@@ -6696,15 +7752,8 @@ components:
         seriesCount:
           type: integer
           format: int64
-      example:
-        currentBegan: string (timestamp)
-        nextAttempt: string (timestamp)
-        reason:
-          '@odata.type': microsoft.graph.quarantineReason
-        error:
-          '@odata.type': microsoft.graph.synchronizationError
-        seriesBegan: string (timestamp)
-        seriesCount: integer
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyLongValuePair:
       title: stringKeyLongValuePair
       type: object
@@ -6715,9 +7764,8 @@ components:
         value:
           type: integer
           format: int64
-      example:
-        key: string
-        value: integer
+      additionalProperties:
+        type: object
     microsoft.graph.objectMapping:
       title: objectMapping
       type: object
@@ -6745,19 +7793,8 @@ components:
         targetObjectName:
           type: string
           nullable: true
-      example:
-        attributeMappings:
-          - '@odata.type': microsoft.graph.attributeMapping
-        enabled: true
-        flowTypes:
-          '@odata.type': microsoft.graph.objectFlowTypes
-        metadata:
-          - '@odata.type': microsoft.graph.metadataEntry
-        name: string
-        scope:
-          '@odata.type': microsoft.graph.filter
-        sourceObjectName: string
-        targetObjectName: string
+      additionalProperties:
+        type: object
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -6771,10 +7808,8 @@ components:
         target:
           type: string
           nullable: true
-      example:
-        code: string
-        message: string
-        target: string
+      additionalProperties:
+        type: object
     microsoft.graph.publicInnerError:
       title: publicInnerError
       type: object
@@ -6792,12 +7827,8 @@ components:
         target:
           type: string
           nullable: true
-      example:
-        code: string
-        details:
-          - '@odata.type': microsoft.graph.publicErrorDetail
-        message: string
-        target: string
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
       type: object
@@ -6807,10 +7838,8 @@ components:
           nullable: true
         value:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
-      example:
-        key: string
-        value:
-          '@odata.type': microsoft.graph.attributeMappingSource
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMappingSourceType:
       title: attributeMappingSourceType
       enum:
@@ -6836,7 +7865,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.synchronizationTaskExecutionResult:
       title: synchronizationTaskExecutionResult
       enum:
@@ -6856,10 +7889,8 @@ components:
           nullable: true
         tenantActionable:
           type: boolean
-      example:
-        code: string
-        message: string
-        tenantActionable: true
+      additionalProperties:
+        type: object
     microsoft.graph.quarantineReason:
       title: quarantineReason
       enum:
@@ -6895,17 +7926,8 @@ components:
         targetAttributeName:
           type: string
           nullable: true
-      example:
-        defaultValue: string
-        exportMissingReferences: true
-        flowBehavior:
-          '@odata.type': microsoft.graph.attributeFlowBehavior
-        flowType:
-          '@odata.type': microsoft.graph.attributeFlowType
-        matchingPriority: integer
-        source:
-          '@odata.type': microsoft.graph.attributeMappingSource
-        targetAttributeName: string
+      additionalProperties:
+        type: object
     microsoft.graph.objectFlowTypes:
       title: objectFlowTypes
       enum:
@@ -6930,13 +7952,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-      example:
-        groups:
-          - '@odata.type': microsoft.graph.filterGroup
-        inputFilterGroups:
-          - '@odata.type': microsoft.graph.filterGroup
-        categoryFilterGroups:
-          - '@odata.type': microsoft.graph.filterGroup
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -6949,6 +7966,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
     microsoft.graph.attributeFlowBehavior:
       title: attributeFlowBehavior
       enum:
@@ -6975,10 +7994,8 @@ components:
         name:
           type: string
           nullable: true
-      example:
-        clauses:
-          - '@odata.type': microsoft.graph.filterClause
-        name: string
+      additionalProperties:
+        type: object
     microsoft.graph.filterClause:
       title: filterClause
       type: object
@@ -6991,11 +8008,8 @@ components:
           nullable: true
         targetOperand:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
-      example:
-        operatorName: string
-        sourceOperandName: string
-        targetOperand:
-          '@odata.type': microsoft.graph.filterOperand
+      additionalProperties:
+        type: object
     microsoft.graph.filterOperand:
       title: filterOperand
       type: object
@@ -7005,9 +8019,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        values:
-          - string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error
