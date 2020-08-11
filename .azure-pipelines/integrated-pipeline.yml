@@ -50,7 +50,7 @@ stages:
       AUTH_MODULE_NAME: $(AUTH_MODULE)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
-      EnableSigning: $(EnableSigning)
+      EnableSigning: ${{EnableSigning}}
 
     
 - stage: GenerateBetaModules
@@ -64,7 +64,7 @@ stages:
       GRAPH_VERSION: $(GRAPH_VERSION)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
-      EnableSigning: $(EnableSigning)
+      EnableSigning: ${{EnableSigning}}
 
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'
@@ -75,4 +75,4 @@ stages:
       ROLLUP_MODULE_PATH: $(ROLLUP_MODULE_PATH)
       ROLLUP_MODULE_NAME: $(ROLLUP_MODULE_NAME)
       GRAPH_VERSION: $(GRAPH_VERSION)
-      EnableSigning: $(EnableSigning)
+      EnableSigning: ${{EnableSigning}}
