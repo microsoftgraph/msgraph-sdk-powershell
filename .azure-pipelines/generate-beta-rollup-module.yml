@@ -98,6 +98,17 @@ jobs:
        ]
       SessionTimeout: 20
   
+  - task: Bash@3
+    displayName : "Commit Downloaded Files"
+    env: 
+        targetType: 'inline'
+        script: |
+         ls -R '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
+         ls -R '$(System.DefaultWorkingDirectory)/artifacts/graph/'
+         echo $(GRAPH_VERSION)
+         echo $(BETA_MODULE_PREFIX)
+         echo $(ROLLUP_MODULE_PATH)
+
   - task: NuGetCommand@2
     displayName: 'Pack Roll-Up Module'
     inputs:
