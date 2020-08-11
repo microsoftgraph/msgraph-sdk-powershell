@@ -51,7 +51,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
-    enabled: $(EnableSigning)
+    enabled: false
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(ROLLUP_MODULE_PATH)
@@ -108,7 +108,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
-    enabled: $(EnableSigning)
+    enabled: false
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
