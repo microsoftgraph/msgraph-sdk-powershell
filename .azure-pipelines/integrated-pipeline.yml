@@ -32,7 +32,7 @@ variables:
 - name: Api_Key
   value: 'Api_Key'
 - name: EnableSigning
-  value: 'false'
+  value: ${{false}}
   
 pool:
     vmImage: 'windows-latest'
