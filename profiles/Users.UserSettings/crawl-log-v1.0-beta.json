@@ -1,17 +1,17 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/settings/regionalAndLanguageSettings": {
-      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/settings": {
-      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml"
     },
     "/users/{user-id}/settings/shiftPreferences": {
-      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml"
+    },
+    "/users/{user-id}/settings/regionalAndLanguageSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.UserSettings.yml"
     }
   }
 }

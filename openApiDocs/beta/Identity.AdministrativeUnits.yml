@@ -667,7 +667,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -675,36 +677,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - administrativeUnits.directoryObject
-      summary: Delete ref of navigation property members for administrativeUnits
-      operationId: administrativeUnits_DeleteRefMembers
-      parameters:
-        - name: administrativeUnit-id
-          in: path
-          description: 'key: id of administrativeUnit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: administrativeUnit
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

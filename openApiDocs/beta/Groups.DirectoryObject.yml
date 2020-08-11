@@ -311,7 +311,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - groups.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in groups
@@ -329,7 +329,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -574,7 +576,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -582,36 +586,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property memberOf for groups
-      operationId: groups_DeleteRefMemberOf
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -828,7 +805,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -836,36 +815,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property members for groups
-      operationId: groups_DeleteRefMembers
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1082,7 +1034,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1090,36 +1044,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property membersWithLicenseErrors for groups
-      operationId: groups_DeleteRefMembersWithLicenseErrors
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1336,7 +1263,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1344,36 +1273,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property owners for groups
-      operationId: groups_DeleteRefOwners
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1822,7 +1724,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1830,36 +1734,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property transitiveMemberOf for groups
-      operationId: groups_DeleteRefTransitiveMemberOf
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2076,7 +1953,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -2084,36 +1963,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - groups.directoryObject
-      summary: Delete ref of navigation property transitiveMembers for groups
-      operationId: groups_DeleteRefTransitiveMembers
-      parameters:
-        - name: group-id
-          in: path
-          description: 'key: id of group'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

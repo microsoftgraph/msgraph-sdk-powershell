@@ -58,21 +58,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policyRoot'
-          links:
-            activityBasedTimeoutPolicies:
-              operationId: policies.ListActivityBasedTimeoutPolicies
-            claimsMappingPolicies:
-              operationId: policies.ListClaimsMappingPolicies
-            homeRealmDiscoveryPolicies:
-              operationId: policies.ListHomeRealmDiscoveryPolicies
-            tokenIssuancePolicies:
-              operationId: policies.ListTokenIssuancePolicies
-            tokenLifetimePolicies:
-              operationId: policies.ListTokenLifetimePolicies
-            identitySecurityDefaultsEnforcementPolicy:
-              operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
-            conditionalAccessPolicies:
-              operationId: policies.ListConditionalAccessPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -173,10 +158,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -252,11 +242,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ActivityBasedTimeoutPolicies.ListAppliesTo
-              parameters:
-                activityBasedTimeoutPolicy-id: $request.path.activityBasedTimeoutPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -389,10 +374,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -468,11 +458,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ClaimsMappingPolicies.ListAppliesTo
-              parameters:
-                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -612,10 +597,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -824,10 +814,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -903,11 +898,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          links:
-            appliesTo:
-              operationId: policies.HomeRealmDiscoveryPolicies.ListAppliesTo
-              parameters:
-                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1120,10 +1110,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1199,11 +1194,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenIssuancePolicies.ListAppliesTo
-              parameters:
-                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1336,10 +1326,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1415,11 +1410,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenLifetimePolicies.ListAppliesTo
-              parameters:
-                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

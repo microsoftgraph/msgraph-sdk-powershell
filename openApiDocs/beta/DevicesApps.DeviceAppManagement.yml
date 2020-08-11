@@ -6943,7 +6943,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -6951,36 +6953,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.managedEBook
-      summary: Delete ref of navigation property categories for deviceAppManagement
-      operationId: deviceAppManagement.managedEBooks_DeleteRefCategories
-      parameters:
-        - name: managedEBook-id
-          in: path
-          description: 'key: id of managedEBook'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedEBook
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10464,7 +10439,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -10472,36 +10449,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete ref of navigation property categories for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteRefCategories
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: 'key: id of mobileApp'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10900,7 +10850,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
@@ -10925,7 +10875,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -11912,7 +11864,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
@@ -11937,7 +11889,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -12547,7 +12501,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
@@ -12579,7 +12533,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -16194,7 +16150,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the ref of navigation property policy in deviceAppManagement
@@ -16219,7 +16175,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -17209,7 +17167,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Update the ref of navigation property windowsManagementApp in deviceAppManagement
@@ -17219,7 +17177,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':

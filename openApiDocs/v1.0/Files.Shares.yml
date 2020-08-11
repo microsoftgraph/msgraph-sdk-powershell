@@ -116,10 +116,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - shares.sharedDriveItem
@@ -215,43 +221,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
-          links:
-            createdByUser:
-              operationId: shares.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            driveItem:
-              operationId: shares.GetDriveItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            items:
-              operationId: shares.ListItems
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            list:
-              operationId: shares.GetList
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            listItem:
-              operationId: shares.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            permission:
-              operationId: shares.GetPermission
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            root:
-              operationId: shares.GetRoot
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            site:
-              operationId: shares.GetSite
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -401,47 +370,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.DriveItem.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.DriveItem.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            workbook:
-              operationId: shares.DriveItem.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            analytics:
-              operationId: shares.DriveItem.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            children:
-              operationId: shares.DriveItem.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            listItem:
-              operationId: shares.DriveItem.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            permissions:
-              operationId: shares.DriveItem.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            subscriptions:
-              operationId: shares.DriveItem.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            thumbnails:
-              operationId: shares.DriveItem.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            versions:
-              operationId: shares.DriveItem.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -677,10 +605,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -815,57 +748,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.Items.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            lastModifiedByUser:
-              operationId: shares.Items.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            workbook:
-              operationId: shares.Items.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            analytics:
-              operationId: shares.Items.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            children:
-              operationId: shares.Items.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            listItem:
-              operationId: shares.Items.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            permissions:
-              operationId: shares.Items.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            subscriptions:
-              operationId: shares.Items.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            thumbnails:
-              operationId: shares.Items.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            versions:
-              operationId: shares.Items.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1005,35 +887,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.list'
-          links:
-            createdByUser:
-              operationId: shares.List.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.List.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            columns:
-              operationId: shares.List.ListColumns
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            contentTypes:
-              operationId: shares.List.ListContentTypes
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            drive:
-              operationId: shares.List.GetDrive
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            items:
-              operationId: shares.List.ListItems
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            subscriptions:
-              operationId: shares.List.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1216,10 +1069,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1488,10 +1346,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1586,12 +1449,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-          links:
-            columnLinks:
-              operationId: shares.list.ContentTypes.ListColumnLinks
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                contentType-id: $request.path.contentType-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1738,10 +1595,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnLink'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1994,35 +1856,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
-          links:
-            createdByUser:
-              operationId: shares.list.Drive.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.list.Drive.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            following:
-              operationId: shares.list.Drive.ListFollowing
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            items:
-              operationId: shares.list.Drive.ListItems
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            list:
-              operationId: shares.list.Drive.GetList
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            root:
-              operationId: shares.list.Drive.GetRoot
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            special:
-              operationId: shares.list.Drive.ListSpecial
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2190,10 +2023,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItem'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2300,37 +2138,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
-          links:
-            createdByUser:
-              operationId: shares.list.Items.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            lastModifiedByUser:
-              operationId: shares.list.Items.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            analytics:
-              operationId: shares.list.Items.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            driveItem:
-              operationId: shares.list.Items.GetDriveItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            fields:
-              operationId: shares.list.Items.GetFields
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            versions:
-              operationId: shares.list.Items.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2456,22 +2263,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-          links:
-            itemActivityStats:
-              operationId: shares.list.items.Analytics.ListItemActivityStats
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            allTime:
-              operationId: shares.list.items.Analytics.GetAllTime
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            lastSevenDays:
-              operationId: shares.list.items.Analytics.GetLastSevenDays
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2503,26 +2294,10 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            itemActivityStats:
-              operationId: shares.list.items.Analytics.ListItemActivityStats
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            allTime:
-              operationId: shares.list.items.Analytics.GetAllTime
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            lastSevenDays:
-              operationId: shares.list.items.Analytics.GetLastSevenDays
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - shares.list
       summary: Update the ref of navigation property analytics in shares
@@ -2547,7 +2322,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -2689,57 +2466,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.list.items.DriveItem.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            lastModifiedByUser:
-              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            workbook:
-              operationId: shares.list.items.DriveItem.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            analytics:
-              operationId: shares.list.items.DriveItem.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            children:
-              operationId: shares.list.items.DriveItem.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            listItem:
-              operationId: shares.list.items.DriveItem.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            permissions:
-              operationId: shares.list.items.DriveItem.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            subscriptions:
-              operationId: shares.list.items.DriveItem.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            thumbnails:
-              operationId: shares.list.items.DriveItem.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-            versions:
-              operationId: shares.list.items.DriveItem.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3097,10 +2823,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3203,13 +2934,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-          links:
-            fields:
-              operationId: shares.list.items.Versions.GetFields
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItem-id: $request.path.listItem-id
-                listItemVersion-id: $request.path.listItemVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3558,10 +3282,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.subscription'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3788,31 +3517,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
-          links:
-            createdByUser:
-              operationId: shares.ListItem.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.ListItem.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            analytics:
-              operationId: shares.ListItem.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            driveItem:
-              operationId: shares.ListItem.GetDriveItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            fields:
-              operationId: shares.ListItem.GetFields
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            versions:
-              operationId: shares.ListItem.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3917,19 +3621,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-          links:
-            itemActivityStats:
-              operationId: shares.listItem.Analytics.ListItemActivityStats
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            allTime:
-              operationId: shares.listItem.Analytics.GetAllTime
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastSevenDays:
-              operationId: shares.listItem.Analytics.GetLastSevenDays
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3954,23 +3645,10 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            itemActivityStats:
-              operationId: shares.listItem.Analytics.ListItemActivityStats
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            allTime:
-              operationId: shares.listItem.Analytics.GetAllTime
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastSevenDays:
-              operationId: shares.listItem.Analytics.GetLastSevenDays
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - shares.listItem
       summary: Update the ref of navigation property analytics in shares
@@ -3988,7 +3666,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -4116,47 +3796,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.listItem.DriveItem.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            workbook:
-              operationId: shares.listItem.DriveItem.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            analytics:
-              operationId: shares.listItem.DriveItem.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            children:
-              operationId: shares.listItem.DriveItem.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            listItem:
-              operationId: shares.listItem.DriveItem.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            permissions:
-              operationId: shares.listItem.DriveItem.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            subscriptions:
-              operationId: shares.listItem.DriveItem.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            thumbnails:
-              operationId: shares.listItem.DriveItem.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            versions:
-              operationId: shares.listItem.DriveItem.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4458,10 +4097,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4550,12 +4194,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-          links:
-            fields:
-              operationId: shares.listItem.Versions.GetFields
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                listItemVersion-id: $request.path.listItemVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5017,47 +4655,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.Root.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.Root.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            workbook:
-              operationId: shares.Root.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            analytics:
-              operationId: shares.Root.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            children:
-              operationId: shares.Root.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            listItem:
-              operationId: shares.Root.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            permissions:
-              operationId: shares.Root.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            subscriptions:
-              operationId: shares.Root.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            thumbnails:
-              operationId: shares.Root.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            versions:
-              operationId: shares.Root.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5192,51 +4789,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: shares.Site.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lastModifiedByUser:
-              operationId: shares.Site.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            analytics:
-              operationId: shares.Site.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            columns:
-              operationId: shares.Site.ListColumns
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            contentTypes:
-              operationId: shares.Site.ListContentTypes
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            drive:
-              operationId: shares.Site.GetDrive
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            drives:
-              operationId: shares.Site.ListDrives
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            items:
-              operationId: shares.Site.ListItems
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            lists:
-              operationId: shares.Site.ListLists
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            sites:
-              operationId: shares.Site.ListSites
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-            onenote:
-              operationId: shares.Site.GetOnenote
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

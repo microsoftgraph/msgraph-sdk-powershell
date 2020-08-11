@@ -1031,7 +1031,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1039,36 +1041,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - devices.directoryObject
-      summary: Delete ref of navigation property memberOf for devices
-      operationId: devices_DeleteRefMemberOf
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1469,7 +1444,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1477,36 +1454,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - devices.directoryObject
-      summary: Delete ref of navigation property registeredOwners for devices
-      operationId: devices_DeleteRefRegisteredOwners
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1723,7 +1673,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1731,36 +1683,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - devices.directoryObject
-      summary: Delete ref of navigation property registeredUsers for devices
-      operationId: devices_DeleteRefRegisteredUsers
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1977,7 +1902,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1985,36 +1912,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - devices.directoryObject
-      summary: Delete ref of navigation property transitiveMemberOf for devices
-      operationId: devices_DeleteRefTransitiveMemberOf
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

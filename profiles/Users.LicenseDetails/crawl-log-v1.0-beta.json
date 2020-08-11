@@ -2,12 +2,12 @@
   "resources": [],
   "operations": {
     "/users/{user-id}/licenseDetails": {
-      "originalLocation": "/openApiDocs/beta/Users.LicenseDetails.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.LicenseDetails.yml"
     },
     "/users/{user-id}/licenseDetails/{licenseDetails-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.LicenseDetails.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.LicenseDetails.yml"
     }
   }
 }

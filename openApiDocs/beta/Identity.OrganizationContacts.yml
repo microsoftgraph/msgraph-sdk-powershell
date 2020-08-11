@@ -487,7 +487,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -495,36 +497,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - contacts.directoryObject
-      summary: Delete ref of navigation property directReports for contacts
-      operationId: contacts_DeleteRefDirectReports
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -601,7 +576,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
@@ -619,7 +594,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -864,7 +841,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -872,36 +851,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - contacts.directoryObject
-      summary: Delete ref of navigation property memberOf for contacts
-      operationId: contacts_DeleteRefMemberOf
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1302,7 +1254,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1310,36 +1264,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - contacts.directoryObject
-      summary: Delete ref of navigation property transitiveMemberOf for contacts
-      operationId: contacts_DeleteRefTransitiveMemberOf
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

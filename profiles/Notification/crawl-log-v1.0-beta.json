@@ -1,13 +1,13 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/notifications/{notification-id}": {
-      "originalLocation": "/openApiDocs/beta/Notification.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/notifications": {
-      "originalLocation": "/openApiDocs/beta/Notification.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notification.yml"
+    },
+    "/users/{user-id}/notifications/{notification-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Notification.yml"
     }
   }
 }

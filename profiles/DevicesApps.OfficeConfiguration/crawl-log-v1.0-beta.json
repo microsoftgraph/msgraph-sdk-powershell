@@ -1,33 +1,33 @@
 {
   "resources": [],
   "operations": {
+    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
+    },
     "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/assignments": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
     },
     "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/assignments/{officeClientConfigurationAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
     },
     "/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/microsoft.graph.assign": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
     },
     "/officeConfiguration/clientConfigurations": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/officeConfiguration": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
     },
     "/officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities": {
-      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
+    },
+    "/officeConfiguration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DevicesApps.OfficeConfiguration.yml"
     }
   }
 }

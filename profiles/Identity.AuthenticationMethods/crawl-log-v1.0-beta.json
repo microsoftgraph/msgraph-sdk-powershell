@@ -1,97 +1,97 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/fido2Methods/{fido2AuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/oathMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/operations/{longRunningOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/methods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/securityQuestionMethods/{securityQuestionAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/users/{user-id}/authentication/passwordMethods/{passwordAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/phoneMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/securityQuestionMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/emailMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/operations": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/fido2Methods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
     },
     "/users/{user-id}/authentication/oathMethods/{softwareOathAuthenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
     },
-    "/users/{user-id}/authentication/passwordMethods": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods/{passwordlessMicrosoftAuthenticatorAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods/{emailAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/securityQuestionMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/oathMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/securityQuestionMethods/{securityQuestionAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/methods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/fido2Methods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/emailMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
     },
     "/users/{user-id}/authentication/methods/{authenticationMethod-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/operations/{longRunningOperation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/fido2Methods/{fido2AuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/passwordMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/phoneMethods/{phoneAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
+    },
+    "/users/{user-id}/authentication/passwordlessMicrosoftAuthenticatorMethods": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AuthenticationMethods.yml"
     }
   }
 }

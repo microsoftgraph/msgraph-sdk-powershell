@@ -1,21 +1,21 @@
 {
   "resources": [],
   "operations": {
+    "/invitations/{invitation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml"
+    },
     "/invitations/{invitation-id}/invitedUser/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml"
     },
     "/invitations/{invitation-id}/invitedUser": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml"
     },
     "/invitations": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
-      "apiVersion": "v1.0"
-    },
-    "/invitations/{invitation-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Invitations.yml"
     }
   }
 }

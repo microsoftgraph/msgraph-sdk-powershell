@@ -1,117 +1,117 @@
 {
   "resources": [],
   "operations": {
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleDefinitions": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
     },
     "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/roleManagement/directory/roleDefinitions": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
     },
     "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes/{appScope-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/principals": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleDefinitions/{unifiedRoleDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/directoryScopes/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
     },
     "/roleManagement/deviceManagement/roleAssignments/{unifiedRoleAssignmentMultiple-id}/appScopes": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
     },
     "/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/deviceManagement": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
+    },
+    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.RoleManagement.yml"
     }
   }
 }

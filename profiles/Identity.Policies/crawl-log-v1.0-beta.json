@@ -1,109 +1,109 @@
 {
   "resources": [],
   "operations": {
-    "/policies/adminConsentRequestPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/claimsMappingPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+    "/policies/tokenLifetimePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
     "/policies/permissionGrantPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/conditionalAccessPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/authorizationPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/authenticationFlowsPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/authorizationPolicy/{authorizationPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/deviceRegistrationPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/identitySecurityDefaultsEnforcementPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
     "/policies/claimsMappingPolicies/{claimsMappingPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
-    "/policies/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+    "/policies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
     "/policies/activityBasedTimeoutPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
-    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+    "/policies/authorizationPolicy/{authorizationPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/deviceRegistrationPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
     "/policies/directoryRoleAccessReviewPolicy": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/authenticationFlowsPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/conditionalAccessPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/tokenIssuancePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/authorizationPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/claimsMappingPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/adminConsentRequestPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     },
     "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
+    },
+    "/policies/identitySecurityDefaultsEnforcementPolicy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Policies.yml"
     }
   }
 }

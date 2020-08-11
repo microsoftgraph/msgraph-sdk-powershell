@@ -2,16 +2,16 @@
   "resources": [],
   "operations": {
     "/directory/deletedItems": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
     },
     "/directory": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
     },
     "/directory/deletedItems/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
     }
   }
 }

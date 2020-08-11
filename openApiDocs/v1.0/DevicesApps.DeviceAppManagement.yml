@@ -76,35 +76,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
-          links:
-            managedEBooks:
-              operationId: deviceAppManagement.ListManagedEBooks
-            mobileApps:
-              operationId: deviceAppManagement.ListMobileApps
-            mobileAppCategories:
-              operationId: deviceAppManagement.ListMobileAppCategories
-            mobileAppConfigurations:
-              operationId: deviceAppManagement.ListMobileAppConfigurations
-            vppTokens:
-              operationId: deviceAppManagement.ListVppTokens
-            managedAppPolicies:
-              operationId: deviceAppManagement.ListManagedAppPolicies
-            iosManagedAppProtections:
-              operationId: deviceAppManagement.ListIosManagedAppProtections
-            androidManagedAppProtections:
-              operationId: deviceAppManagement.ListAndroidManagedAppProtections
-            defaultManagedAppProtections:
-              operationId: deviceAppManagement.ListDefaultManagedAppProtections
-            targetedManagedAppConfigurations:
-              operationId: deviceAppManagement.ListTargetedManagedAppConfigurations
-            mdmWindowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListMdmWindowsInformationProtectionPolicies
-            windowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListWindowsInformationProtectionPolicies
-            managedAppRegistrations:
-              operationId: deviceAppManagement.ListManagedAppRegistrations
-            managedAppStatuses:
-              operationId: deviceAppManagement.ListManagedAppStatuses
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -317,10 +288,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -436,19 +412,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListAssignments
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListApps
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.GetDeploymentSummary
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -577,10 +540,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1028,10 +996,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1146,15 +1119,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.ListApps
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.GetDeploymentSummary
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1283,10 +1247,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1724,10 +1693,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1840,19 +1814,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListAssignments
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListApps
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.IosManagedAppProtections.GetDeploymentSummary
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1981,10 +1942,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2317,10 +2283,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2585,10 +2556,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2675,19 +2651,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListAppliedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            intendedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListIntendedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            operations:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListOperations
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2825,10 +2788,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3109,10 +3077,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3390,10 +3363,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3635,10 +3613,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3859,10 +3842,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBook'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3948,23 +3936,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedEBook'
-          links:
-            assignments:
-              operationId: deviceAppManagement.ManagedEBooks.ListAssignments
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            installSummary:
-              operationId: deviceAppManagement.ManagedEBooks.GetInstallSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            deviceStates:
-              operationId: deviceAppManagement.ManagedEBooks.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            userStateSummary:
-              operationId: deviceAppManagement.ManagedEBooks.ListUserStateSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4093,10 +4064,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4342,10 +4318,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4725,10 +4706,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4818,12 +4804,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
-          links:
-            deviceStates:
-              operationId: deviceAppManagement.managedEBooks.UserStateSummary.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                userInstallStateSummary-id: $request.path.userInstallStateSummary-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4991,10 +4971,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5330,10 +5315,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5435,19 +5425,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
-          links:
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            assignments:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5581,10 +5558,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5798,10 +5780,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5886,27 +5873,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListAssignments
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListDeviceStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListUserStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetDeviceStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetUserStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6032,10 +5998,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6277,10 +6248,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6661,10 +6637,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7030,10 +7011,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileApp'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7119,15 +7105,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            categories:
-              operationId: deviceAppManagement.MobileApps.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            assignments:
-              operationId: deviceAppManagement.MobileApps.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7259,10 +7236,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7491,10 +7473,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/categories/{mobileAppCategory-id}':
     get:
@@ -7602,10 +7589,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7625,7 +7617,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -7633,36 +7627,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete ref of navigation property categories for deviceAppManagement
-      operationId: deviceAppManagement.mobileApps_DeleteRefCategories
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: 'key: id of mobileApp'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7792,10 +7759,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7878,19 +7850,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-          links:
-            apps:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListApps
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            deploymentSummary:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.GetDeploymentSummary
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            assignments:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListAssignments
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8019,10 +7978,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8247,10 +8211,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8668,10 +8637,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.vppToken'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9013,10 +8987,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9130,19 +9109,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
-          links:
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            assignments:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

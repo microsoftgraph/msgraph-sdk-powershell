@@ -50,13 +50,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.planner'
-          links:
-            tasks:
-              operationId: planner.ListTasks
-            plans:
-              operationId: planner.ListPlans
-            buckets:
-              operationId: planner.ListBuckets
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -151,10 +144,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -228,11 +226,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: planner.Buckets.ListTasks
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -423,10 +416,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -538,27 +536,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            details:
-              operationId: planner.buckets.Tasks.GetDetails
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            assignedToTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1190,10 +1167,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1272,19 +1254,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-          links:
-            tasks:
-              operationId: planner.Plans.ListTasks
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-            buckets:
-              operationId: planner.Plans.ListBuckets
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-            details:
-              operationId: planner.Plans.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1418,10 +1387,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1510,12 +1484,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: planner.plans.Buckets.ListTasks
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1727,10 +1695,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1856,31 +1829,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            details:
-              operationId: planner.plans.buckets.Tasks.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            assignedToTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2767,10 +2715,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2882,27 +2835,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            details:
-              operationId: planner.plans.Tasks.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            assignedToTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3584,10 +3516,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.plannerTask'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3684,23 +3621,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            details:
-              operationId: planner.Tasks.GetDetails
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            assignedToTaskBoardFormat:
-              operationId: planner.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

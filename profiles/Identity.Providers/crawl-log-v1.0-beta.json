@@ -1,17 +1,17 @@
 {
   "resources": [],
   "operations": {
+    "/identityProviders/{identityProvider-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml"
+    },
     "/identityProviders": {
-      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml"
     },
     "/identityProviders/microsoft.graph.availableProviderTypes()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/identityProviders/{identityProvider-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Providers.yml"
     }
   }
 }

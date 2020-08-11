@@ -1,25 +1,25 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/chat": {
-      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/teamwork/installedApps": {
-      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}": {
-      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/teamwork": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml"
     },
     "/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/chat/$ref": {
-      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml"
     },
-    "/users/{user-id}/teamwork": {
-      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/chat": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml"
+    },
+    "/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml"
+    },
+    "/users/{user-id}/teamwork/installedApps": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.Teamwork.yml"
     }
   }
 }

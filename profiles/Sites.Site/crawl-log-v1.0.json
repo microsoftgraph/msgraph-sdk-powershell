@@ -1,53 +1,53 @@
 {
   "resources": [],
   "operations": {
-    "/sites/{site-id}/analytics": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
-    },
-    "/sites/{site-id}/contentTypes/{contentType-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+    "/sites": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
     "/sites/{site-id}/sites": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
-    "/sites": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+    "/sites/{site-id}/analytics": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
-    "/sites/{site-id}/contentTypes": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
-    },
-    "/sites/{site-id}/contentTypes/{contentType-id}/columnLinks": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
-    },
-    "/sites/{site-id}/columns/{columnDefinition-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+    "/sites/{site-id}/contentTypes/{contentType-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
     "/sites/{site-id}/analytics/$ref": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
-    "/sites/{site-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
-    },
-    "/sites/{site-id}/sites/{site-id1}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+    "/sites/{site-id}/contentTypes/{contentType-id}/columnLinks": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
     "/sites/{site-id}/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
+    },
+    "/sites/{site-id}/contentTypes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
+    },
+    "/sites/{site-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
+    },
+    "/sites/{site-id}/columns/{columnDefinition-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
+    },
+    "/sites/{site-id}/sites/{site-id1}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     },
     "/sites/{site-id}/columns": {
-      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Sites.Site.yml"
     }
   }
 }

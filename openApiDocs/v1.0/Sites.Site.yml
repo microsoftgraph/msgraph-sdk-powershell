@@ -132,10 +132,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - sites.site
@@ -239,51 +245,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: sites.GetCreatedByUser
-              parameters:
-                site-id: $request.path.site-id
-            lastModifiedByUser:
-              operationId: sites.GetLastModifiedByUser
-              parameters:
-                site-id: $request.path.site-id
-            analytics:
-              operationId: sites.GetAnalytics
-              parameters:
-                site-id: $request.path.site-id
-            columns:
-              operationId: sites.ListColumns
-              parameters:
-                site-id: $request.path.site-id
-            contentTypes:
-              operationId: sites.ListContentTypes
-              parameters:
-                site-id: $request.path.site-id
-            drive:
-              operationId: sites.GetDrive
-              parameters:
-                site-id: $request.path.site-id
-            drives:
-              operationId: sites.ListDrives
-              parameters:
-                site-id: $request.path.site-id
-            items:
-              operationId: sites.ListItems
-              parameters:
-                site-id: $request.path.site-id
-            lists:
-              operationId: sites.ListLists
-              parameters:
-                site-id: $request.path.site-id
-            sites:
-              operationId: sites.ListSites
-              parameters:
-                site-id: $request.path.site-id
-            onenote:
-              operationId: sites.GetOnenote
-              parameters:
-                site-id: $request.path.site-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -388,19 +349,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-          links:
-            itemActivityStats:
-              operationId: sites.Analytics.ListItemActivityStats
-              parameters:
-                site-id: $request.path.site-id
-            allTime:
-              operationId: sites.Analytics.GetAllTime
-              parameters:
-                site-id: $request.path.site-id
-            lastSevenDays:
-              operationId: sites.Analytics.GetLastSevenDays
-              parameters:
-                site-id: $request.path.site-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -425,23 +373,10 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            itemActivityStats:
-              operationId: sites.Analytics.ListItemActivityStats
-              parameters:
-                site-id: $request.path.site-id
-            allTime:
-              operationId: sites.Analytics.GetAllTime
-              parameters:
-                site-id: $request.path.site-id
-            lastSevenDays:
-              operationId: sites.Analytics.GetLastSevenDays
-              parameters:
-                site-id: $request.path.site-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - sites.itemAnalytics
       summary: Update the ref of navigation property analytics in sites
@@ -459,7 +394,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -620,10 +557,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -892,10 +834,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -990,12 +937,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
-          links:
-            columnLinks:
-              operationId: sites.ContentTypes.ListColumnLinks
-              parameters:
-                site-id: $request.path.site-id
-                contentType-id: $request.path.contentType-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1142,10 +1083,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnLink'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1458,10 +1404,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1581,62 +1532,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: sites.Sites.GetCreatedByUser
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            lastModifiedByUser:
-              operationId: sites.Sites.GetLastModifiedByUser
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            analytics:
-              operationId: sites.Sites.GetAnalytics
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            columns:
-              operationId: sites.Sites.ListColumns
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            contentTypes:
-              operationId: sites.Sites.ListContentTypes
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            drive:
-              operationId: sites.Sites.GetDrive
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            drives:
-              operationId: sites.Sites.ListDrives
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            items:
-              operationId: sites.Sites.ListItems
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            lists:
-              operationId: sites.Sites.ListLists
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            sites:
-              operationId: sites.Sites.ListSites
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
-            onenote:
-              operationId: sites.Sites.GetOnenote
-              parameters:
-                site-id: $request.path.site-id
-                site-id1: $request.path.site-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

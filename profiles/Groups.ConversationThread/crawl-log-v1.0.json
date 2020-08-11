@@ -1,57 +1,57 @@
 {
   "resources": [],
   "operations": {
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/{extension-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
     "/groups/{group-id}/threads": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
-    },
-    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/{attachment-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
     },
     "/groups/{group-id}/threads/{conversationThread-id}/posts": {
-      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments/{attachment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
+    },
+    "/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ConversationThread.yml"
     }
   }
 }

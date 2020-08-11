@@ -1151,7 +1151,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1159,36 +1161,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.claimsMappingPolicy
-      summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteRefClaimsMappingPolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1405,7 +1380,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1413,36 +1390,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property createdObjects for servicePrincipals
-      operationId: servicePrincipals_DeleteRefCreatedObjects
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1939,7 +1889,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1947,36 +1899,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteRefHomeRealmDiscoveryPolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2433,7 +2358,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -2441,36 +2368,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property memberOf for servicePrincipals
-      operationId: servicePrincipals_DeleteRefMemberOf
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3051,7 +2951,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -3059,36 +2961,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.oAuth2PermissionGrant
-      summary: Delete ref of navigation property oauth2PermissionGrants for servicePrincipals
-      operationId: servicePrincipals_DeleteRefOauth2PermissionGrants
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3305,7 +3180,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -3313,36 +3190,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property ownedObjects for servicePrincipals
-      operationId: servicePrincipals_DeleteRefOwnedObjects
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3559,7 +3409,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -3567,36 +3419,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property owners for servicePrincipals
-      operationId: servicePrincipals_DeleteRefOwners
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5891,7 +5716,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -5899,36 +5726,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.tokenIssuancePolicy
-      summary: Delete ref of navigation property tokenIssuancePolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteRefTokenIssuancePolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6173,7 +5973,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -6181,36 +5983,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.tokenLifetimePolicy
-      summary: Delete ref of navigation property tokenLifetimePolicies for servicePrincipals
-      operationId: servicePrincipals_DeleteRefTokenLifetimePolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6427,7 +6202,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -6435,36 +6212,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property transitiveMemberOf for servicePrincipals
-      operationId: servicePrincipals_DeleteRefTransitiveMemberOf
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

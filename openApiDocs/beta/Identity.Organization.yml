@@ -783,7 +783,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -791,36 +793,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - organization.certificateBasedAuthConfiguration
-      summary: Delete ref of navigation property certificateBasedAuthConfiguration for organization
-      operationId: organization_DeleteRefCertificateBasedAuthConfiguration
-      parameters:
-        - name: organization-id
-          in: path
-          description: 'key: id of organization'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: organization
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

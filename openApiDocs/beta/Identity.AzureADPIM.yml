@@ -327,7 +327,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - privilegedApproval.privilegedRoleAssignmentRequest
       summary: Update the ref of navigation property request in privilegedApproval
@@ -345,7 +345,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1990,7 +1992,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '201':
@@ -1998,36 +2002,9 @@ paths:
           content:
             application/json:
               schema:
-                type: String
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - privilegedRoles.privilegedRoleAssignment
-      summary: Delete ref of navigation property assignments for privilegedRoles
-      operationId: privilegedRoles_DeleteRefAssignments
-      parameters:
-        - name: privilegedRole-id
-          in: path
-          description: 'key: id of privilegedRole'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: privilegedRole
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-        - name: '@id'
-          in: query
-          description: Delete Uri
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

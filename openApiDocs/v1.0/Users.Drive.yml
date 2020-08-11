@@ -79,35 +79,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
-          links:
-            createdByUser:
-              operationId: users.Drive.GetCreatedByUser
-              parameters:
-                user-id: $request.path.user-id
-            lastModifiedByUser:
-              operationId: users.Drive.GetLastModifiedByUser
-              parameters:
-                user-id: $request.path.user-id
-            following:
-              operationId: users.Drive.ListFollowing
-              parameters:
-                user-id: $request.path.user-id
-            items:
-              operationId: users.Drive.ListItems
-              parameters:
-                user-id: $request.path.user-id
-            list:
-              operationId: users.Drive.GetList
-              parameters:
-                user-id: $request.path.user-id
-            root:
-              operationId: users.Drive.GetRoot
-              parameters:
-                user-id: $request.path.user-id
-            special:
-              operationId: users.Drive.ListSpecial
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -286,10 +257,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.drive'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -401,42 +377,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
-          links:
-            createdByUser:
-              operationId: users.Drives.GetCreatedByUser
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            lastModifiedByUser:
-              operationId: users.Drives.GetLastModifiedByUser
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            following:
-              operationId: users.Drives.ListFollowing
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            items:
-              operationId: users.Drives.ListItems
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            list:
-              operationId: users.Drives.GetList
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            root:
-              operationId: users.Drives.GetRoot
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
-            special:
-              operationId: users.Drives.ListSpecial
-              parameters:
-                user-id: $request.path.user-id
-                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

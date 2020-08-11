@@ -234,10 +234,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.group'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - groups.group
@@ -395,111 +401,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: groups.ListAppRoleAssignments
-              parameters:
-                group-id: $request.path.group-id
-            members:
-              operationId: groups.ListMembers
-              parameters:
-                group-id: $request.path.group-id
-            memberOf:
-              operationId: groups.ListMemberOf
-              parameters:
-                group-id: $request.path.group-id
-            membersWithLicenseErrors:
-              operationId: groups.ListMembersWithLicenseErrors
-              parameters:
-                group-id: $request.path.group-id
-            transitiveMembers:
-              operationId: groups.ListTransitiveMembers
-              parameters:
-                group-id: $request.path.group-id
-            transitiveMemberOf:
-              operationId: groups.ListTransitiveMemberOf
-              parameters:
-                group-id: $request.path.group-id
-            createdOnBehalfOf:
-              operationId: groups.GetCreatedOnBehalfOf
-              parameters:
-                group-id: $request.path.group-id
-            owners:
-              operationId: groups.ListOwners
-              parameters:
-                group-id: $request.path.group-id
-            settings:
-              operationId: groups.ListSettings
-              parameters:
-                group-id: $request.path.group-id
-            conversations:
-              operationId: groups.ListConversations
-              parameters:
-                group-id: $request.path.group-id
-            photos:
-              operationId: groups.ListPhotos
-              parameters:
-                group-id: $request.path.group-id
-            acceptedSenders:
-              operationId: groups.ListAcceptedSenders
-              parameters:
-                group-id: $request.path.group-id
-            rejectedSenders:
-              operationId: groups.ListRejectedSenders
-              parameters:
-                group-id: $request.path.group-id
-            threads:
-              operationId: groups.ListThreads
-              parameters:
-                group-id: $request.path.group-id
-            calendar:
-              operationId: groups.GetCalendar
-              parameters:
-                group-id: $request.path.group-id
-            calendarView:
-              operationId: groups.ListCalendarView
-              parameters:
-                group-id: $request.path.group-id
-            events:
-              operationId: groups.ListEvents
-              parameters:
-                group-id: $request.path.group-id
-            photo:
-              operationId: groups.GetPhoto
-              parameters:
-                group-id: $request.path.group-id
-            drive:
-              operationId: groups.GetDrive
-              parameters:
-                group-id: $request.path.group-id
-            drives:
-              operationId: groups.ListDrives
-              parameters:
-                group-id: $request.path.group-id
-            sites:
-              operationId: groups.ListSites
-              parameters:
-                group-id: $request.path.group-id
-            extensions:
-              operationId: groups.ListExtensions
-              parameters:
-                group-id: $request.path.group-id
-            groupLifecyclePolicies:
-              operationId: groups.ListGroupLifecyclePolicies
-              parameters:
-                group-id: $request.path.group-id
-            planner:
-              operationId: groups.GetPlanner
-              parameters:
-                group-id: $request.path.group-id
-            onenote:
-              operationId: groups.GetOnenote
-              parameters:
-                group-id: $request.path.group-id
-            team:
-              operationId: groups.GetTeam
-              parameters:
-                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

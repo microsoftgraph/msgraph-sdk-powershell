@@ -48,11 +48,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-          links:
-            policies:
-              operationId: identity.ConditionalAccess.ListPolicies
-            namedLocations:
-              operationId: identity.ConditionalAccess.ListNamedLocations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -162,10 +157,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.namedLocation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -376,10 +376,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

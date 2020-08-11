@@ -1,261 +1,261 @@
 {
   "resources": [],
   "operations": {
-    "/applications/{application-id}/tokenLifetimePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/owners": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.removeKey": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.addKey": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/extensionProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/owners/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/homeRealmDiscoveryPolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/connectorGroup/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenIssuancePolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.removePassword": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/applications/{application-id}/createdOnBehalfOf": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.addPassword": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenLifetimePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/homeRealmDiscoveryPolicies/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
     "/applications/{application-id}/createdOnBehalfOf/$ref": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/connectorGroup/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applicationTemplates": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/connectorGroup": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/tokenIssuancePolicies": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/microsoft.graph.Ping()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/applications/{application-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/tokenLifetimePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
     "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.parseExpression": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/connectorGroup": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/microsoft.graph.validateCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/homeRealmDiscoveryPolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.removeKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/owners/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.provisionOnDemand": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/extensionProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.addPassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/microsoft.graph.acquireAccessToken": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
     "/applications/{application-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applications/{application-id}/owners/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
-    "/applicationTemplates/{applicationTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+    "/applications/{application-id}/tokenLifetimePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.removePassword": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applicationTemplates/{applicationTemplate-id}/microsoft.graph.instantiate": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.start": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.addKey": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
     "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.parseExpression": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.filterOperators()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/owners": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/owners/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories/{directoryDefinition-id}/microsoft.graph.discover": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applicationTemplates/{applicationTemplate-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.restart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     },
     "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.stop": {
-      "originalLocation": "/openApiDocs/beta/Identity.Application.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/templates/{synchronizationTemplate-id}/schema/microsoft.graph.functions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applicationTemplates": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/schema/directories": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/synchronization/microsoft.graph.Ping()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
+    },
+    "/applications/{application-id}/tokenIssuancePolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Application.yml"
     }
   }
 }

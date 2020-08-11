@@ -57,19 +57,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
-          links:
-            trending:
-              operationId: users.Insights.ListTrending
-              parameters:
-                user-id: $request.path.user-id
-            shared:
-              operationId: users.Insights.ListShared
-              parameters:
-                user-id: $request.path.user-id
-            used:
-              operationId: users.Insights.ListUsed
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -208,10 +195,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -303,17 +295,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-          links:
-            lastSharedMethod:
-              operationId: users.insights.Shared.GetLastSharedMethod
-              parameters:
-                user-id: $request.path.user-id
-                sharedInsight-id: $request.path.sharedInsight-id
-            resource:
-              operationId: users.insights.Shared.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                sharedInsight-id: $request.path.sharedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -467,7 +448,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property lastSharedMethod in users
@@ -492,7 +473,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -617,7 +600,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
@@ -642,7 +625,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -764,10 +749,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.trending'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -857,12 +847,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-          links:
-            resource:
-              operationId: users.insights.Trending.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                trending-id: $request.path.trending-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1016,7 +1000,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
@@ -1041,7 +1025,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -1160,10 +1146,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.usedInsight'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1252,12 +1243,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-          links:
-            resource:
-              operationId: users.insights.Used.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                usedInsight-id: $request.path.usedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1411,7 +1396,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
@@ -1436,7 +1421,9 @@ paths:
         content:
           application/json:
             schema:
-              type: String
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':

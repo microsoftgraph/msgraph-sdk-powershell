@@ -127,10 +127,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.team'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -242,47 +247,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            schedule:
-              operationId: users.JoinedTeams.GetSchedule
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            group:
-              operationId: users.JoinedTeams.GetGroup
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            template:
-              operationId: users.JoinedTeams.GetTemplate
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            members:
-              operationId: users.JoinedTeams.ListMembers
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            channels:
-              operationId: users.JoinedTeams.ListChannels
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            primaryChannel:
-              operationId: users.JoinedTeams.GetPrimaryChannel
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            installedApps:
-              operationId: users.JoinedTeams.ListInstalledApps
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            operations:
-              operationId: users.JoinedTeams.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

@@ -2,12 +2,12 @@
   "resources": [],
   "operations": {
     "/sites/{site-id}/pages": {
-      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml"
     },
     "/sites/{site-id}/pages/{sitePage-id}": {
-      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml"
     }
   }
 }
