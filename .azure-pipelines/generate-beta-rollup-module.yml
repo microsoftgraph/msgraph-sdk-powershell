@@ -146,7 +146,7 @@ jobs:
       SessionTimeout: 20
 
   - task: PublishBuildArtifacts@1
-    displayName: Publish Artifact Microsoft.Graph.nupkg'
+    displayName: 'Publish Artifact Microsoft.Graph.nupkg'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)'
       ArtifactName: 'drop'
