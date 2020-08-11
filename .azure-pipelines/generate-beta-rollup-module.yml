@@ -18,7 +18,7 @@ parameters:
     displayName: 'Graph Version'
     type: string
     default: 'beta'
-  - name: MODULE_PREFIX
+  - name: BETA_MODULE_PREFIX
     displayName: 'Module Prefix'
     type: string
     default: 'Microsoft.Graph'
@@ -103,7 +103,7 @@ jobs:
     inputs:
       command: 'pack'
       Configuration: Release
-      packagesToPack: '$(System.DefaultWorkingDirectory)/$(MODULE_PREFIX).nuspec'
+      packagesToPack: '$(System.DefaultWorkingDirectory)/artifacts/$(BETA_MODULE_PREFIX).nuspec'
       packDestination: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
       versioningScheme: 'off'
   
