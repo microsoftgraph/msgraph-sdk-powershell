@@ -23,7 +23,8 @@ jobs:
   displayName: MS Graph PS SDK Beta Validation
   timeoutInMinutes: 600
   pool:
-    vmImage: 'windows-latest'
+    name: Microsoft Graph
+    demands: 'Agent.Name -equals PS-Build-Agent'
   
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
