@@ -33,7 +33,6 @@ variables:
   value: 'Api_Key'
 - name: EnableSigning
   value: false
-  type: boolean
   
 pool:
     vmImage: 'windows-latest'
