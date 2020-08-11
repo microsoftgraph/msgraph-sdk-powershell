@@ -18,6 +18,10 @@ parameters:
   - name: Api_Key
     displayName: 'Api Key'
     type: string
+  - name: EnableSigning
+    displayName: 'Enable Signing'
+    type: boolean
+    default: false
 
 jobs:
 - job: MSGraphPSSDKGeneration
@@ -39,11 +43,12 @@ jobs:
     displayName: 'Generate and Build Auth Module'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
-      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
+      arguments: '-RepositoryApiKey $(Api_Key) -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning:$$(EnableSigning)'
       pwsh: true
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
+    enabled: $(EnableSigning)
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(AUTH_MODULE_PATH)
@@ -70,6 +75,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
+    enabled: $(EnableSigning)
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(AUTH_MODULE_PATH)
@@ -125,6 +131,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
+    enabled: $(EnableSigning)
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)'
