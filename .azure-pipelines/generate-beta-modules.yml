@@ -40,6 +40,7 @@ jobs:
 
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
+    enabled: false
     displayName: 'Run CredScan'
     inputs:
      debugMode: false
@@ -233,7 +234,7 @@ jobs:
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
             $ModuleProjectDir = '$(System.DefaultWorkingDirectory)/src/$ModuleName/$ModuleName'
-            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -GraphVersion beta -ArtifactsLocation '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
+            & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $ModuleName -ArtifactsLocation '$(Build.ArtifactStagingDirectory)\$(GRAPH_VERSION)\'
         }
       pwsh: true
   

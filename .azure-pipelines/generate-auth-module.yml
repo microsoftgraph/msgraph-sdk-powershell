@@ -33,6 +33,7 @@ jobs:
   steps:
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: 'Run CredScan'
+    enabled: false
     inputs:
       debugMode: false
   
