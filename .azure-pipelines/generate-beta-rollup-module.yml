@@ -103,7 +103,7 @@ jobs:
     inputs:
       command: 'pack'
       Configuration: Release
-      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(MODULE_PREFIX).nuspec'
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(MODULE_PREFIX).nuspec'
       packDestination: '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
       versioningScheme: 'off'
   
