@@ -13,8 +13,8 @@ variables:
       value : 'dev'
     - name: AUTH_MODULE_NAME
       value: 'Authentication'
-    - name: AUTH_MODULE_PATH\
-      value: 'src\Authentication\Authentication\'
+    - name: AUTH_MODULE_PATH
+      value: 'src\Authentication\Authentication'
     - name: AUTH_MODULE_DLL_PATTERN
       value: 'Microsoft.Graph.Authentication.dll'
     - name: MODULE_DLL_PATTERN
@@ -24,9 +24,9 @@ variables:
     - name: ROLLUP_MODULE_NAME
       value: 'Graph'
     - name: ROLLUP_MODULE_PATH
-      value: 'src\'
+      value: 'src'
     - name: WORKLOAD_MODULE_PATH
-      value: 'src\'
+      value: 'src'
     - name: GRAPH_VERSION
       value: 'beta'
      -name: Api_Key
