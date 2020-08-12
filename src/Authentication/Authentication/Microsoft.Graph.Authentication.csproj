@@ -27,7 +27,6 @@
     <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.6.0" />
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="5.6.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
-    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="6.0.4" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
