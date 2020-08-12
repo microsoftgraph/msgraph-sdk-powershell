@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove paths that are too long.
-  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.policy_assign$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice$
+  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses(.policy_assign|_GetPolicy|_GetRefPolicy|_UpdateRefPolicy|_DeleteRefPolicy)$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice$
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(DeviceAppManagement)(\1)+
