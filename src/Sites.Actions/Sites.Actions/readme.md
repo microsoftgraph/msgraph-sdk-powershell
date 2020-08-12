@@ -30,22 +30,17 @@ require:
   - $(this-folder)/../../../profiles/$(title)/readme.md
 title: $(service-name)
 subject-prefix: ''
+```
 
-# Custom directives.
-declare-directive:
-  where-operation-byRegex: >-
-    (() => {
-      return { from: "openapi-document", where: `$..paths.*[?(/${$}/i.exec(@.operationId))]` };
-    })()
-  remove-operation-byRegex: >-
-    [{
-      from: 'openapi-document',
-      "where-operation-byRegex": $,
-      transform: '$ = undefined'
-    }]
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+
 directive:
-# Remove paths that have /parent*. The parent can be passed via an id parameter.
-  - remove-operation-byRegex: sites.onenote..*.parent.*
+# Remove paths that are not valid.
+  - remove-path-by-operation: .*.onenote..*.parent.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
 # Remove Add|Remove-MgSite. They are duplicate of Sites.Site.
   - where:
       subject: (^Site$)
@@ -57,6 +52,7 @@ directive:
     set:
       subject: $1Content
 ```
+
 ### Versioning
 
 ``` yaml

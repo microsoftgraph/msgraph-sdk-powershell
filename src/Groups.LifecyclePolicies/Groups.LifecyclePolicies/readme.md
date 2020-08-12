@@ -32,6 +32,35 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+``` yaml
+directive:
+# Rename cmdlets with duplicates in their name.
+  - where:
+      subject: ^(GroupLifecyclePolicy)(\1)+
+    set:
+      subject: $1
+# Rename cmdlets
+  - where:
+      verb: Remove
+      subject: ^(Group)(LifecyclePolicy)Group$
+    set:
+      subject: $1From$2
+  - where:
+      verb: Add
+      subject: ^(Group)(LifecyclePolicy)Group$
+    set:
+      subject: $1To$2
+  - where:
+      verb: Invoke
+      subject: ^(RenewGroup)(LifecyclePolicy)Group$
+    set:
+      subject: $1$2
+```
+
 ### Versioning
 
 ``` yaml

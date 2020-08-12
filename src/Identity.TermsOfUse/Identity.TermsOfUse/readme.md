@@ -32,6 +32,20 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Rename cmdlets
+  - where:
+      subject: AgreementFile
+      variant: Get1|GetViaIdentity1|Delete1|DeleteViaIdentity1|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+    remove: true
+```
+
 ### Versioning
 
 ``` yaml
