@@ -98,9 +98,9 @@ jobs:
        ]
       SessionTimeout: 20
   
-  - task: Bash@3
-    displayName : "Commit Downloaded Files"
-    env: 
+  - task: PowerShell@2
+    displayName : 'List Files'
+    inputs: 
         targetType: 'inline'
         script: |
          ls -R '$(Build.ArtifactStagingDirectory)/$(GRAPH_VERSION)/'
