@@ -2,16 +2,16 @@
   "resources": [],
   "operations": {
     "/users/{user-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.User.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
     },
     "/users/{user-id}/presence": {
-      "originalLocation": "/openApiDocs/beta/Users.User.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
     },
     "/users": {
-      "originalLocation": "/openApiDocs/beta/Users.User.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
     }
   }
 }

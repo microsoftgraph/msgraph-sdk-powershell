@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -98,6 +98,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.notification'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -112,7 +114,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -143,14 +145,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: notification-id
           in: path
-          description: 'key: notification-id of notification'
+          description: 'key: id of notification'
           required: true
           schema:
             type: string
@@ -195,6 +197,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notification'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.notification
@@ -203,14 +206,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: notification-id
           in: path
-          description: 'key: notification-id of notification'
+          description: 'key: id of notification'
           required: true
           schema:
             type: string
@@ -222,6 +225,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.notification'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.notification
+      summary: Delete navigation property notifications for users
+      operationId: users_DeleteNotifications
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notification-id
+          in: path
+          description: 'key: id of notification'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notification
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -258,18 +292,8 @@ components:
               nullable: true
             targetPolicy:
               $ref: '#/components/schemas/microsoft.graph.targetPolicyEndpoints'
-      example:
-        id: string (identifier)
-        targetHostName: string
-        expirationDateTime: string (timestamp)
-        payload:
-          '@odata.type': microsoft.graph.payloadTypes
-        displayTimeToLive: integer
-        priority:
-          '@odata.type': microsoft.graph.priority
-        groupName: string
-        targetPolicy:
-          '@odata.type': microsoft.graph.targetPolicyEndpoints
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -277,8 +301,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.payloadTypes:
       title: payloadTypes
       type: object
@@ -288,10 +312,8 @@ components:
           nullable: true
         visualContent:
           $ref: '#/components/schemas/microsoft.graph.visualProperties'
-      example:
-        rawContent: string
-        visualContent:
-          '@odata.type': microsoft.graph.visualProperties
+      additionalProperties:
+        type: object
     microsoft.graph.priority:
       title: priority
       enum:
@@ -308,9 +330,8 @@ components:
           items:
             type: string
             nullable: true
-      example:
-        platformTypes:
-          - string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -318,6 +339,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.visualProperties:
       title: visualProperties
       type: object
@@ -328,9 +351,8 @@ components:
         body:
           type: string
           nullable: true
-      example:
-        title: string
-        body: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -349,7 +371,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -362,6 +388,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

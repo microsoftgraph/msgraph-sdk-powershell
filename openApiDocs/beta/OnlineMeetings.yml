@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -131,6 +131,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -145,7 +147,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -176,14 +178,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: onlineMeeting-id of onlineMeeting'
+          description: 'key: id of onlineMeeting'
           required: true
           schema:
             type: string
@@ -239,6 +241,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
@@ -247,14 +250,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: onlineMeeting-id
           in: path
-          description: 'key: onlineMeeting-id of onlineMeeting'
+          description: 'key: id of onlineMeeting'
           required: true
           schema:
             type: string
@@ -266,6 +269,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete navigation property onlineMeetings for users
+      operationId: users_DeleteOnlineMeetings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -345,32 +379,8 @@ components:
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
-      example:
-        id: string (identifier)
-        creationDateTime: string (timestamp)
-        startDateTime: string (timestamp)
-        endDateTime: string (timestamp)
-        canceledDateTime: string (timestamp)
-        expirationDateTime: string (timestamp)
-        entryExitAnnouncement: true
-        joinUrl: string
-        subject: string
-        isCancelled: true
-        participants:
-          '@odata.type': microsoft.graph.meetingParticipants
-        isBroadcast: true
-        accessLevel:
-          '@odata.type': microsoft.graph.accessLevel
-        capabilities:
-          - '@odata.type': microsoft.graph.meetingCapabilities
-        audioConferencing:
-          '@odata.type': microsoft.graph.audioConferencing
-        chatInfo:
-          '@odata.type': microsoft.graph.chatInfo
-        videoTeleconferenceId: string
-        externalId: string
-        joinInformation:
-          '@odata.type': microsoft.graph.itemBody
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -378,8 +388,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.meetingParticipants:
       title: meetingParticipants
       type: object
@@ -398,15 +408,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-      example:
-        organizer:
-          '@odata.type': microsoft.graph.meetingParticipantInfo
-        attendees:
-          - '@odata.type': microsoft.graph.meetingParticipantInfo
-        producers:
-          - '@odata.type': microsoft.graph.meetingParticipantInfo
-        contributors:
-          - '@odata.type': microsoft.graph.meetingParticipantInfo
+      additionalProperties:
+        type: object
     microsoft.graph.accessLevel:
       title: accessLevel
       enum:
@@ -441,11 +444,8 @@ components:
           type: string
           description: A URL to the externally-accessible web page that contains dial-in information.
           nullable: true
-      example:
-        conferenceId: string
-        tollNumber: string
-        tollFreeNumber: string
-        dialinUrl: string
+      additionalProperties:
+        type: object
     microsoft.graph.chatInfo:
       title: chatInfo
       type: object
@@ -462,10 +462,8 @@ components:
           type: string
           description: The ID of the reply message.
           nullable: true
-      example:
-        threadId: string
-        messageId: string
-        replyChainMessageId: string
+      additionalProperties:
+        type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -476,10 +474,8 @@ components:
           type: string
           description: The content of the item.
           nullable: true
-      example:
-        contentType:
-          '@odata.type': microsoft.graph.bodyType
-        content: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -487,6 +483,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -497,10 +495,8 @@ components:
           type: string
           description: User principal name of the participant.
           nullable: true
-      example:
-        identity:
-          '@odata.type': microsoft.graph.identitySet
-        upn: string
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -525,7 +521,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -536,13 +536,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
-      example:
-        application:
-          '@odata.type': microsoft.graph.identity
-        device:
-          '@odata.type': microsoft.graph.identity
-        user:
-          '@odata.type': microsoft.graph.identity
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -555,6 +550,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -567,9 +564,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -2,44 +2,44 @@
   "resources": [],
   "operations": {
     "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.getUserOwnedObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
     },
     "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
     },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
     },
     "/directoryRoleTemplates/{directoryRoleTemplate-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
-    },
-    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
     },
     "/directoryRoleTemplates": {
-      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
+    },
+    "/directoryRoleTemplates/{directoryRoleTemplate-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
+    },
+    "/directoryRoleTemplates/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryRoleTemplates.yml"
     }
   }
 }

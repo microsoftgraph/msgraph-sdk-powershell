@@ -1,13 +1,17 @@
 {
   "resources": [],
   "operations": {
-    "/users/{user-id}/followedSites": {
-      "originalLocation": "/openApiDocs/beta/Users.FollowedSites.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/followedSites/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.FollowedSites.yml"
     },
     "/users/{user-id}/followedSites/{site-id}": {
-      "originalLocation": "/openApiDocs/beta/Users.FollowedSites.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.FollowedSites.yml"
+    },
+    "/users/{user-id}/followedSites": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.FollowedSites.yml"
     }
   }
 }

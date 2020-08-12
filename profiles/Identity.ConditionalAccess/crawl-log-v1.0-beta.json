@@ -1,21 +1,25 @@
 {
   "resources": [],
   "operations": {
-    "/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml"
     },
-    "/conditionalAccess/namedLocations": {
-      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml"
     },
-    "/conditionalAccess/namedLocations/{namedLocation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/namedLocations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml"
     },
-    "/conditionalAccess/policies": {
-      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml",
-      "apiVersion": "v1.0-beta"
+    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml"
+    },
+    "/identity/conditionalAccess/policies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.ConditionalAccess.yml"
     }
   }
 }

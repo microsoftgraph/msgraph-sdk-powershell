@@ -1,13 +1,13 @@
 {
   "resources": [],
   "operations": {
-    "/dataPolicyOperations": {
-      "originalLocation": "/openApiDocs/beta/Identity.DataPolicyOperations.yml",
-      "apiVersion": "v1.0-beta"
-    },
     "/dataPolicyOperations/{dataPolicyOperation-id}": {
-      "originalLocation": "/openApiDocs/beta/Identity.DataPolicyOperations.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DataPolicyOperations.yml"
+    },
+    "/dataPolicyOperations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DataPolicyOperations.yml"
     }
   }
 }

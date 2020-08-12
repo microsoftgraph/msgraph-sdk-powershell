@@ -1,73 +1,93 @@
 {
   "resources": [],
   "operations": {
-    "/contacts/microsoft.graph.validateProperties": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/directReports": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/memberOf/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/manager": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.getMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/microsoft.graph.getByIds": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/directReports/{directoryObject-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/microsoft.graph.delta()": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.checkMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/microsoft.graph.restore": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
-    },
-    "/contacts/{orgContact-id}/memberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
+    "/contacts/{orgContact-id}/memberOf/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
     },
     "/contacts/{orgContact-id}/microsoft.graph.getMemberObjects": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
     },
-    "/contacts/{orgContact-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
+    "/contacts/{orgContact-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/manager": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/memberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/directReports/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/memberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/directReports": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/directReports/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
     },
     "/contacts/{orgContact-id}/transitiveMemberOf": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/microsoft.graph.getAvailableExtensionProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/{orgContact-id}/manager/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
+    },
+    "/contacts/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.OrganizationContacts.yml"
     }
   }
 }

@@ -1,7 +1,6 @@
 {
-    "Analytics": "^activitystatistics\\.|^users.userAnalytics$|^users.officeGraphInsights$",
+    "Analytics": "^users.userAnalytics$|^users.officeGraphInsights$",
     "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
-    "CloudCommunications": "^communications\\.",
     "DevicesApps.DeviceAppManagement": "^deviceAppManagement\\.",
     "DevicesApps.MobileAppManagement": "^users.managedAppRegistration$|^users.windowsInformationProtectionDeviceRegistration$",
     "DevicesApps.OfficeConfiguration": "^officeConfiguration\\.",
@@ -26,15 +25,14 @@
     "Groups.Planner": "^groups.plannerGroup$",
     "Groups.ProfilePhoto": "^groups.profilePhoto$",
     "Groups.Site": "^groups.site$",
-    "Identity.AccessReview": "^accessReviews\\.|^accessReviewDecisions\\.|^businessFlowTemplates\\.|^programControlTypes\\.|^programs\\.|^programControls\\.",
+    "Identity.AccessReview": "^accessReviews\\.|^businessFlowTemplates\\.|^programControlTypes\\.|^programs\\.|^programControls\\.",
     "Identity.AdministrativeUnits": "^administrativeUnits\\.|^users.scopedRoleMembership$",
     "Identity.Application": "^applications\\.|^applicationTemplates\\.",
-    "Identity.AppRoleAssignments": "^appRoleAssignments\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
+    "Identity.AppRoleAssignments": "^users.appRoleAssignment$|^groups.appRoleAssignment$",
     "Identity.AuditLogs": "^auditLogs\\.",
     "Identity.AuthenticationMethods": "^users.authentication$",
     "Identity.AzureADPIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedOperationEvents\\.|^privilegedApproval\\.|^privilegedRoleAssignmentRequests\\.",
-    "Identity.CertificateBasedAuthConfiguration": "^certificateBasedAuthConfiguration\\.",
-    "Identity.ConditionalAccess": "^conditionalAccess.namedLocation$|^conditionalAccess.conditionalAccessPolicy$",
+    "Identity.ConditionalAccess": "^identity.conditionalAccessRoot$",
     "Identity.Contracts": "^contracts\\.",
     "Identity.DataPolicyOperations": "^dataPolicyOperations\\.",
     "Identity.Devices": "^devices\\.",
@@ -56,7 +54,7 @@
     "Identity.RoleManagement": "^roleManagement\\.",
     "Identity.ServicePrincipal": "^servicePrincipals\\.",
     "Identity.SubscribedSkus": "^subscribedSkus\\.",
-    "Identity.TermsOfUse": "^agreements\\.|^agreementAcceptances\\.|^users.agreementAcceptance$",
+    "Identity.TermsOfUse": "^agreements\\.|^users.agreementAcceptance$",
     "Identity.TrustFramework": "^trustFramework\\.",
     "Identity.UserFlows": "^identity.identityUserFlow$",
     "Notification": "^users.notification$",
@@ -65,7 +63,7 @@
     "Planner": "^planner\\.",
     "Reports": "^reports\\.",
     "SchemaExtensions": "^schemaExtensions\\.",
-    "Search": "^search\\.|^external\\.|^connections\\.",
+    "Search": "^search\\.|^external\\.",
     "Security": "^Security\\.",
     "Sites.Actions": "^sites.Actions$",
     "Sites.Drive": "^sites.drive$",
@@ -77,7 +75,7 @@
     "Subscriptions": "^subscriptions\\.",
     "Teams.AppCatalogs": "^appCatalogs\\.",
     "Teams.Chats": "^chats\\.|^users.chat$",
-    "Teams.Team": "^teams\\.|^teamsTemplates\\.|^teamwork\\.|^groups.team$",
+    "Teams.Team": "^teams\\.|^teamwork\\.|^groups.team$",
     "Teams.Teamwork": "^users.userTeamwork$",
     "Users.Actions": "^users.Actions$",
     "Users.ActivityFeed": "^users.userActivity$",
@@ -99,10 +97,11 @@
     "Users.Planner": "^users.plannerUser$",
     "Users.ProfilePhoto": "^users.profilePhoto$",
     "Users.User": "^users.user$|^users.presence$",
-    "Users.UserSettings": "^users.userSettings$",
+    "Users.UserSettings": "^users.userSettings$"
 
     // Fails to build.
-    //"DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
+    // "CloudCommunications": "^communications\\.", \\ OData.OpenAPI should handle multiple namespace.
+    // "DevicesApps.DeviceManagement": "^deviceManagement\\.|^users.deviceEnrollmentConfiguration$|^users.deviceManagementTroubleshootingEvent$|^users.managedDevice$|^users.mobileAppIntentAndState$",
     // "Workbooks": "^workbooks\\.", - Too large
 
     // Invalid / No longer supported

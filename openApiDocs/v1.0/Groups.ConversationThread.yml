@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -103,6 +103,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.conversationThread'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -117,7 +119,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -148,14 +150,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
@@ -201,15 +203,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conversationThread'
-          links:
-            posts:
-              operationId: group.threads.GetPosts
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -218,14 +214,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
@@ -243,6 +239,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property threads for groups
+      operationId: groups_DeleteThreads
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts':
     get:
       tags:
@@ -252,14 +279,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
@@ -367,6 +394,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.post'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -381,14 +410,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
@@ -419,21 +448,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -491,43 +520,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.post'
-          links:
-            inReplyTo:
-              operationId: conversationThread.posts.GetInReplyTo
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $response.body#/id
-            singleValueExtendedProperties:
-              operationId: conversationThread.posts.GetSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: conversationThread.posts.GetMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            extensions:
-              operationId: conversationThread.posts.GetExtensions
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                extension-id: $response.body#/id
-            attachments:
-              operationId: conversationThread.posts.GetAttachments
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                attachment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -536,21 +531,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -568,6 +563,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property posts for groups
+      operationId: groups.threads_DeletePosts
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/attachments':
     get:
       tags:
@@ -577,21 +610,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -668,6 +701,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -682,21 +717,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -727,28 +762,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -791,6 +826,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -799,28 +835,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: attachment-id
           in: path
-          description: 'key: attachment-id of attachment'
+          description: 'key: id of attachment'
           required: true
           schema:
             type: string
@@ -838,6 +874,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property attachments for groups
+      operationId: groups.threads.posts_DeleteAttachments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: attachment-id
+          in: path
+          description: 'key: id of attachment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attachment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/extensions':
     get:
       tags:
@@ -847,21 +928,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -923,6 +1004,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.extension'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -937,21 +1020,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -982,28 +1065,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -1041,6 +1124,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -1049,28 +1133,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: extension-id
           in: path
-          description: 'key: extension-id of extension'
+          description: 'key: id of extension'
           required: true
           schema:
             type: string
@@ -1088,6 +1172,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property extensions for groups
+      operationId: groups.threads.posts_DeleteExtensions
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/inReplyTo':
     get:
       tags:
@@ -1097,21 +1226,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1169,43 +1298,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.post'
-          links:
-            inReplyTo:
-              operationId: post.inReplyTo.GetInReplyTo
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $response.body#/id
-            singleValueExtendedProperties:
-              operationId: post.inReplyTo.GetSingleValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                singleValueLegacyExtendedProperty-id: $response.body#/id
-            multiValueExtendedProperties:
-              operationId: post.inReplyTo.GetMultiValueExtendedProperties
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                multiValueLegacyExtendedProperty-id: $response.body#/id
-            extensions:
-              operationId: post.inReplyTo.GetExtensions
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                extension-id: $response.body#/id
-            attachments:
-              operationId: post.inReplyTo.GetAttachments
-              parameters:
-                group-id: $request.path.group-id
-                conversationThread-id: $request.path.conversationThread-id
-                post-id: $request.path.post-id
-                attachment-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -1214,21 +1309,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1246,6 +1341,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property inReplyTo for groups
+      operationId: groups.threads.posts_DeleteInReplyTo
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -1255,21 +1388,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1334,6 +1467,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1348,21 +1483,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1393,28 +1528,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1453,6 +1588,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -1461,28 +1597,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: multiValueLegacyExtendedProperty-id
           in: path
-          description: 'key: multiValueLegacyExtendedProperty-id of multiValueLegacyExtendedProperty'
+          description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1500,6 +1636,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property multiValueExtendedProperties for groups
+      operationId: groups.threads.posts_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: multiValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of multiValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: multiValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/threads/{conversationThread-id}/posts/{post-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -1509,21 +1690,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1588,6 +1769,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1602,21 +1785,21 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
@@ -1647,28 +1830,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1707,6 +1890,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.conversationThread
@@ -1715,28 +1899,28 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: conversationThread-id
           in: path
-          description: 'key: conversationThread-id of conversationThread'
+          description: 'key: id of conversationThread'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: conversationThread
         - name: post-id
           in: path
-          description: 'key: post-id of post'
+          description: 'key: id of post'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: post
         - name: singleValueLegacyExtendedProperty-id
           in: path
-          description: 'key: singleValueLegacyExtendedProperty-id of singleValueLegacyExtendedProperty'
+          description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
           schema:
             type: string
@@ -1748,6 +1932,51 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.conversationThread
+      summary: Delete navigation property singleValueExtendedProperties for groups
+      operationId: groups.threads.posts_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: conversationThread-id
+          in: path
+          description: 'key: id of conversationThread'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: conversationThread
+        - name: post-id
+          in: path
+          description: 'key: id of post'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: post
+        - name: singleValueLegacyExtendedProperty-id
+          in: path
+          description: 'key: id of singleValueLegacyExtendedProperty'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: singleValueLegacyExtendedProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1799,21 +2028,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.post'
               description: Read-only. Nullable.
-      example:
-        id: string (identifier)
-        toRecipients:
-          - '@odata.type': microsoft.graph.recipient
-        topic: string
-        hasAttachments: true
-        lastDeliveredDateTime: string (timestamp)
-        uniqueSenders:
-          - string
-        ccRecipients:
-          - '@odata.type': microsoft.graph.recipient
-        preview: string
-        isLocked: true
-        posts:
-          - '@odata.type': microsoft.graph.post
+          additionalProperties:
+            type: object
     microsoft.graph.post:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.outlookItem'
@@ -1869,35 +2085,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: Read-only. Nullable.
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
-        body:
-          '@odata.type': microsoft.graph.itemBody
-        receivedDateTime: string (timestamp)
-        hasAttachments: true
-        from:
-          '@odata.type': microsoft.graph.recipient
-        sender:
-          '@odata.type': microsoft.graph.recipient
-        conversationThreadId: string
-        newParticipants:
-          - '@odata.type': microsoft.graph.recipient
-        conversationId: string
-        inReplyTo:
-          '@odata.type': microsoft.graph.post
-        singleValueExtendedProperties:
-          - '@odata.type': microsoft.graph.singleValueLegacyExtendedProperty
-        multiValueExtendedProperties:
-          - '@odata.type': microsoft.graph.multiValueLegacyExtendedProperty
-        extensions:
-          - '@odata.type': microsoft.graph.extension
-        attachments:
-          - '@odata.type': microsoft.graph.attachment
+          additionalProperties:
+            type: object
     microsoft.graph.attachment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1927,20 +2116,15 @@ components:
             isInline:
               type: boolean
               description: 'true if the attachment is an inline attachment; otherwise, false.'
-      example:
-        id: string (identifier)
-        lastModifiedDateTime: string (timestamp)
-        name: string
-        contentType: string
-        size: integer
-        isInline: true
+          additionalProperties:
+            type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.multiValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1953,10 +2137,8 @@ components:
                 type: string
                 nullable: true
               description: A collection of property values.
-      example:
-        id: string (identifier)
-        value:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.singleValueLegacyExtendedProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -1967,9 +2149,8 @@ components:
               type: string
               description: A property value.
               nullable: true
-      example:
-        id: string (identifier)
-        value: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -1977,17 +2158,16 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.recipient:
       title: recipient
       type: object
       properties:
         emailAddress:
           $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      example:
-        emailAddress:
-          '@odata.type': microsoft.graph.emailAddress
+      additionalProperties:
+        type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2016,13 +2196,8 @@ components:
                 type: string
                 nullable: true
               description: The categories associated with the item
-      example:
-        id: string (identifier)
-        createdDateTime: string (timestamp)
-        lastModifiedDateTime: string (timestamp)
-        changeKey: string
-        categories:
-          - string
+          additionalProperties:
+            type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
@@ -2033,10 +2208,8 @@ components:
           type: string
           description: The content of the item.
           nullable: true
-      example:
-        contentType:
-          '@odata.type': microsoft.graph.bodyType
-        content: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -2044,6 +2217,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.emailAddress:
       title: emailAddress
       type: object
@@ -2056,9 +2231,8 @@ components:
           type: string
           description: The email address of the person or entity.
           nullable: true
-      example:
-        name: string
-        address: string
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -2083,7 +2257,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -2096,6 +2274,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

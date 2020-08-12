@@ -6,232 +6,6 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /accessReviewDecisions:
-    get:
-      tags:
-        - accessReviewDecisions.accessReviewDecision
-      summary: Get entities from accessReviewDecisions
-      operationId: accessReviewDecisions.accessReviewDecision_ListAccessReviewDecision
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - accessReviewId
-                - accessReviewId desc
-                - reviewedBy
-                - reviewedBy desc
-                - reviewedDateTime
-                - reviewedDateTime desc
-                - reviewResult
-                - reviewResult desc
-                - justification
-                - justification desc
-                - appliedBy
-                - appliedBy desc
-                - appliedDateTime
-                - appliedDateTime desc
-                - applyResult
-                - applyResult desc
-                - accessRecommendation
-                - accessRecommendation desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - accessReviewId
-                - reviewedBy
-                - reviewedDateTime
-                - reviewResult
-                - justification
-                - appliedBy
-                - appliedDateTime
-                - applyResult
-                - accessRecommendation
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of accessReviewDecision
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
-                  '@odata.nextLink':
-                    type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - accessReviewDecisions.accessReviewDecision
-      summary: Add new entity to accessReviewDecisions
-      operationId: accessReviewDecisions.accessReviewDecision_CreateAccessReviewDecision
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/accessReviewDecisions/{accessReviewDecision-id}':
-    get:
-      tags:
-        - accessReviewDecisions.accessReviewDecision
-      summary: Get entity from accessReviewDecisions by key
-      operationId: accessReviewDecisions.accessReviewDecision_GetAccessReviewDecision
-      parameters:
-        - name: accessReviewDecision-id
-          in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: accessReviewDecision
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - accessReviewId
-                - reviewedBy
-                - reviewedDateTime
-                - reviewResult
-                - justification
-                - appliedBy
-                - appliedDateTime
-                - applyResult
-                - accessRecommendation
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - accessReviewDecisions.accessReviewDecision
-      summary: Update entity in accessReviewDecisions
-      operationId: accessReviewDecisions.accessReviewDecision_UpdateAccessReviewDecision
-      parameters:
-        - name: accessReviewDecision-id
-          in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: accessReviewDecision
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - accessReviewDecisions.accessReviewDecision
-      summary: Delete entity from accessReviewDecisions
-      operationId: accessReviewDecisions.accessReviewDecision_DeleteAccessReviewDecision
-      parameters:
-        - name: accessReviewDecision-id
-          in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: accessReviewDecision
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /accessReviews:
     get:
       tags:
@@ -334,6 +108,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.accessReview'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -371,7 +147,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -425,26 +201,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
-          links:
-            reviewers:
-              operationId: accessReviews.GetReviewers
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReviewReviewer-id: $response.body#/id
-            decisions:
-              operationId: accessReviews.GetDecisions
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReviewDecision-id: $response.body#/id
-            myDecisions:
-              operationId: accessReviews.GetMyDecisions
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReviewDecision-id: $response.body#/id
-            instances:
-              operationId: accessReviews.GetInstances
-              parameters:
-                accessReview-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -456,7 +212,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -482,7 +238,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -507,7 +263,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -596,6 +352,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -610,7 +368,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -641,14 +399,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewDecision-id
           in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
+          description: 'key: id of accessReviewDecision'
           required: true
           schema:
             type: string
@@ -695,6 +453,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewDecision
@@ -703,14 +462,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewDecision-id
           in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
+          description: 'key: id of accessReviewDecision'
           required: true
           schema:
             type: string
@@ -728,6 +487,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - accessReviews.accessReviewDecision
+      summary: Delete navigation property decisions for accessReviews
+      operationId: accessReviews_DeleteDecisions
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReviewDecision-id
+          in: path
+          description: 'key: id of accessReviewDecision'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewDecision
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/accessReviews/{accessReview-id}/instances':
     get:
       tags:
@@ -737,7 +527,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -837,6 +627,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.accessReview'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -851,7 +643,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -882,14 +674,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReview-id1
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -943,32 +735,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
-          links:
-            reviewers:
-              operationId: accessReview.instances.GetReviewers
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReview-id1: $request.path.accessReview-id1
-                accessReviewReviewer-id: $response.body#/id
-            decisions:
-              operationId: accessReview.instances.GetDecisions
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReview-id1: $request.path.accessReview-id1
-                accessReviewDecision-id: $response.body#/id
-            myDecisions:
-              operationId: accessReview.instances.GetMyDecisions
-              parameters:
-                accessReview-id: $request.path.accessReview-id
-                accessReview-id1: $request.path.accessReview-id1
-                accessReviewDecision-id: $response.body#/id
-            instances:
-              operationId: accessReview.instances.GetInstances
-              parameters:
-                accessReview-id: $response.body#/id
-                accessReview-id1: $request.path.accessReview-id1
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReview
@@ -977,14 +746,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReview-id1
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1002,6 +771,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - accessReviews.accessReview
+      summary: Delete navigation property instances for accessReviews
+      operationId: accessReviews_DeleteInstances
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReview-id1
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/accessReviews/{accessReview-id}/microsoft.graph.applyDecisions':
     post:
       tags:
@@ -1011,7 +811,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1031,7 +831,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1051,7 +851,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1071,7 +871,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1091,7 +891,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1180,6 +980,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1194,7 +996,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1225,14 +1027,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewDecision-id
           in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
+          description: 'key: id of accessReviewDecision'
           required: true
           schema:
             type: string
@@ -1279,6 +1081,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewDecision'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewDecision
@@ -1287,14 +1090,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewDecision-id
           in: path
-          description: 'key: accessReviewDecision-id of accessReviewDecision'
+          description: 'key: id of accessReviewDecision'
           required: true
           schema:
             type: string
@@ -1312,6 +1115,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - accessReviews.accessReviewDecision
+      summary: Delete navigation property myDecisions for accessReviews
+      operationId: accessReviews_DeleteMyDecisions
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReviewDecision-id
+          in: path
+          description: 'key: id of accessReviewDecision'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewDecision
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/accessReviews/{accessReview-id}/reviewers':
     get:
       tags:
@@ -1321,7 +1155,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1389,6 +1223,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1403,7 +1239,7 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
@@ -1434,14 +1270,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewReviewer-id
           in: path
-          description: 'key: accessReviewReviewer-id of accessReviewReviewer'
+          description: 'key: id of accessReviewReviewer'
           required: true
           schema:
             type: string
@@ -1481,6 +1317,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - accessReviews.accessReviewReviewer
@@ -1489,14 +1326,14 @@ paths:
       parameters:
         - name: accessReview-id
           in: path
-          description: 'key: accessReview-id of accessReview'
+          description: 'key: id of accessReview'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: accessReview
         - name: accessReviewReviewer-id
           in: path
-          description: 'key: accessReviewReviewer-id of accessReviewReviewer'
+          description: 'key: id of accessReviewReviewer'
           required: true
           schema:
             type: string
@@ -1508,6 +1345,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - accessReviews.accessReviewReviewer
+      summary: Delete navigation property reviewers for accessReviews
+      operationId: accessReviews_DeleteReviewers
+      parameters:
+        - name: accessReview-id
+          in: path
+          description: 'key: id of accessReview'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReview
+        - name: accessReviewReviewer-id
+          in: path
+          description: 'key: id of accessReviewReviewer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewReviewer
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -1581,6 +1449,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.businessFlowTemplate'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1618,7 +1488,7 @@ paths:
       parameters:
         - name: businessFlowTemplate-id
           in: path
-          description: 'key: businessFlowTemplate-id of businessFlowTemplate'
+          description: 'key: id of businessFlowTemplate'
           required: true
           schema:
             type: string
@@ -1666,7 +1536,7 @@ paths:
       parameters:
         - name: businessFlowTemplate-id
           in: path
-          description: 'key: businessFlowTemplate-id of businessFlowTemplate'
+          description: 'key: id of businessFlowTemplate'
           required: true
           schema:
             type: string
@@ -1692,7 +1562,7 @@ paths:
       parameters:
         - name: businessFlowTemplate-id
           in: path
-          description: 'key: businessFlowTemplate-id of businessFlowTemplate'
+          description: 'key: id of businessFlowTemplate'
           required: true
           schema:
             type: string
@@ -1798,6 +1668,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.programControl'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1835,7 +1707,7 @@ paths:
       parameters:
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -1881,12 +1753,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
-          links:
-            program:
-              operationId: programControls.GetProgram
-              parameters:
-                programControl-id: $request.path.programControl-id
-                program-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1898,7 +1764,7 @@ paths:
       parameters:
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -1924,7 +1790,7 @@ paths:
       parameters:
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -1949,7 +1815,7 @@ paths:
       parameters:
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -1989,13 +1855,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.program'
-          links:
-            controls:
-              operationId: programControl.program.GetControls
-              parameters:
-                programControl-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - programControls.program
@@ -2004,7 +1866,7 @@ paths:
       parameters:
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -2016,6 +1878,30 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.program'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - programControls.program
+      summary: Delete navigation property program for programControls
+      operationId: programControls_DeleteProgram
+      parameters:
+        - name: programControl-id
+          in: path
+          description: 'key: id of programControl'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: programControl
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -2092,6 +1978,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.programControlType'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2129,7 +2017,7 @@ paths:
       parameters:
         - name: programControlType-id
           in: path
-          description: 'key: programControlType-id of programControlType'
+          description: 'key: id of programControlType'
           required: true
           schema:
             type: string
@@ -2178,7 +2066,7 @@ paths:
       parameters:
         - name: programControlType-id
           in: path
-          description: 'key: programControlType-id of programControlType'
+          description: 'key: id of programControlType'
           required: true
           schema:
             type: string
@@ -2204,7 +2092,7 @@ paths:
       parameters:
         - name: programControlType-id
           in: path
-          description: 'key: programControlType-id of programControlType'
+          description: 'key: id of programControlType'
           required: true
           schema:
             type: string
@@ -2292,6 +2180,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.program'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2329,7 +2219,7 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
@@ -2369,12 +2259,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.program'
-          links:
-            controls:
-              operationId: programs.GetControls
-              parameters:
-                program-id: $request.path.program-id
-                programControl-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2386,7 +2270,7 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
@@ -2412,7 +2296,7 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
@@ -2437,7 +2321,7 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
@@ -2525,6 +2409,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.programControl'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2539,7 +2425,7 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
@@ -2570,14 +2456,14 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: program
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -2623,14 +2509,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
-          links:
-            program:
-              operationId: program.controls.GetProgram
-              parameters:
-                program-id: $response.body#/id
-                programControl-id: $request.path.programControl-id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - programs.programControl
@@ -2639,14 +2520,14 @@ paths:
       parameters:
         - name: program-id
           in: path
-          description: 'key: program-id of program'
+          description: 'key: id of program'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: program
         - name: programControl-id
           in: path
-          description: 'key: programControl-id of programControl'
+          description: 'key: id of programControl'
           required: true
           schema:
             type: string
@@ -2664,56 +2545,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - programs.programControl
+      summary: Delete navigation property controls for programs
+      operationId: programs_DeleteControls
+      parameters:
+        - name: program-id
+          in: path
+          description: 'key: id of program'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: program
+        - name: programControl-id
+          in: path
+          description: 'key: id of programControl'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: programControl
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
-    microsoft.graph.accessReviewDecision:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: accessReviewDecision
-          type: object
-          properties:
-            accessReviewId:
-              type: string
-              nullable: true
-            reviewedBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            reviewedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            reviewResult:
-              type: string
-              nullable: true
-            justification:
-              type: string
-              nullable: true
-            appliedBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            appliedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            applyResult:
-              type: string
-              nullable: true
-            accessRecommendation:
-              type: string
-              nullable: true
-      example:
-        id: string (identifier)
-        accessReviewId: string
-        reviewedBy:
-          '@odata.type': microsoft.graph.userIdentity
-        reviewedDateTime: string (timestamp)
-        reviewResult: string
-        justification: string
-        appliedBy:
-          '@odata.type': microsoft.graph.userIdentity
-        appliedDateTime: string (timestamp)
-        applyResult: string
-        accessRecommendation: string
     microsoft.graph.accessReview:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2763,29 +2627,45 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReview'
-      example:
-        id: string (identifier)
-        displayName: string
-        startDateTime: string (timestamp)
-        endDateTime: string (timestamp)
-        status: string
-        createdBy:
-          '@odata.type': microsoft.graph.userIdentity
-        businessFlowTemplateId: string
-        reviewerType: string
-        description: string
-        settings:
-          '@odata.type': microsoft.graph.accessReviewSettings
-        reviewedEntity:
-          '@odata.type': microsoft.graph.identity
-        reviewers:
-          - '@odata.type': microsoft.graph.accessReviewReviewer
-        decisions:
-          - '@odata.type': microsoft.graph.accessReviewDecision
-        myDecisions:
-          - '@odata.type': microsoft.graph.accessReviewDecision
-        instances:
-          - '@odata.type': microsoft.graph.accessReview
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewDecision:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewDecision
+          type: object
+          properties:
+            accessReviewId:
+              type: string
+              nullable: true
+            reviewedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            reviewedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            reviewResult:
+              type: string
+              nullable: true
+            justification:
+              type: string
+              nullable: true
+            appliedBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            appliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            applyResult:
+              type: string
+              nullable: true
+            accessRecommendation:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.accessReviewReviewer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2798,10 +2678,8 @@ components:
             userPrincipalName:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        displayName: string
-        userPrincipalName: string
+          additionalProperties:
+            type: object
     microsoft.graph.businessFlowTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2811,9 +2689,8 @@ components:
             displayName:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        displayName: string
+          additionalProperties:
+            type: object
     microsoft.graph.programControl:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2842,20 +2719,8 @@ components:
               format: date-time
             program:
               $ref: '#/components/schemas/microsoft.graph.program'
-      example:
-        id: string (identifier)
-        controlId: string
-        programId: string
-        controlTypeId: string
-        displayName: string
-        status: string
-        owner:
-          '@odata.type': microsoft.graph.userIdentity
-        resource:
-          '@odata.type': microsoft.graph.programResource
-        createdDateTime: string (timestamp)
-        program:
-          '@odata.type': microsoft.graph.program
+          additionalProperties:
+            type: object
     microsoft.graph.program:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2870,12 +2735,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.programControl'
-      example:
-        id: string (identifier)
-        displayName: string
-        description: string
-        controls:
-          - '@odata.type': microsoft.graph.programControl
+          additionalProperties:
+            type: object
     microsoft.graph.programControlType:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2888,10 +2749,8 @@ components:
             displayName:
               type: string
               nullable: true
-      example:
-        id: string (identifier)
-        controlTypeGroupId: string
-        displayName: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2899,8 +2758,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -2915,11 +2774,8 @@ components:
               type: string
               description: The userPrincipalName attribute of the user.
               nullable: true
-      example:
-        id: string
-        displayName: string
-        ipAddress: string
-        userPrincipalName: string
+          additionalProperties:
+            type: object
     microsoft.graph.accessReviewSettings:
       title: accessReviewSettings
       type: object
@@ -2945,18 +2801,8 @@ components:
           type: boolean
         accessRecommendationsEnabled:
           type: boolean
-      example:
-        mailNotificationsEnabled: true
-        remindersEnabled: true
-        justificationRequiredOnApproval: true
-        recurrenceSettings:
-          '@odata.type': microsoft.graph.accessReviewRecurrenceSettings
-        autoReviewEnabled: true
-        activityDurationInDays: integer
-        autoReviewSettings:
-          '@odata.type': microsoft.graph.autoReviewSettings
-        autoApplyReviewResultsEnabled: true
-        accessRecommendationsEnabled: true
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
@@ -2969,9 +2815,8 @@ components:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-      example:
-        id: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.programResource:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -2981,10 +2826,8 @@ components:
             type:
               type: string
               nullable: true
-      example:
-        id: string
-        displayName: string
-        type: string
+          additionalProperties:
+            type: object
     odata.error:
       required:
         - error
@@ -2992,6 +2835,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewRecurrenceSettings:
       title: accessReviewRecurrenceSettings
       type: object
@@ -3012,11 +2857,8 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-      example:
-        recurrenceType: string
-        recurrenceEndType: string
-        durationInDays: integer
-        recurrenceCount: integer
+      additionalProperties:
+        type: object
     microsoft.graph.autoReviewSettings:
       title: autoReviewSettings
       type: object
@@ -3024,8 +2866,8 @@ components:
         notReviewedResult:
           type: string
           nullable: true
-      example:
-        notReviewedResult: string
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -3044,7 +2886,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -3057,6 +2903,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

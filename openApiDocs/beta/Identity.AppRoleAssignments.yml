@@ -6,224 +6,6 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /appRoleAssignments:
-    get:
-      tags:
-        - appRoleAssignments.appRoleAssignment
-      summary: Get entities from appRoleAssignments
-      operationId: appRoleAssignments.appRoleAssignment_ListAppRoleAssignment
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - appRoleId
-                - appRoleId desc
-                - creationTimestamp
-                - creationTimestamp desc
-                - principalDisplayName
-                - principalDisplayName desc
-                - principalId
-                - principalId desc
-                - principalType
-                - principalType desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - appRoleId
-                - creationTimestamp
-                - principalDisplayName
-                - principalId
-                - principalType
-                - resourceDisplayName
-                - resourceId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of appRoleAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - appRoleAssignments.appRoleAssignment
-      summary: Add new entity to appRoleAssignments
-      operationId: appRoleAssignments.appRoleAssignment_CreateAppRoleAssignment
-      requestBody:
-        description: New entity
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-        required: true
-      responses:
-        '201':
-          description: Created entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/appRoleAssignments/{appRoleAssignment-id}':
-    get:
-      tags:
-        - appRoleAssignments.appRoleAssignment
-      summary: Get entity from appRoleAssignments by key
-      operationId: appRoleAssignments.appRoleAssignment_GetAppRoleAssignment
-      parameters:
-        - name: appRoleAssignment-id
-          in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: appRoleAssignment
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - appRoleId
-                - creationTimestamp
-                - principalDisplayName
-                - principalId
-                - principalType
-                - resourceDisplayName
-                - resourceId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - appRoleAssignments.appRoleAssignment
-      summary: Update entity in appRoleAssignments
-      operationId: appRoleAssignments.appRoleAssignment_UpdateAppRoleAssignment
-      parameters:
-        - name: appRoleAssignment-id
-          in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: appRoleAssignment
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - appRoleAssignments.appRoleAssignment
-      summary: Delete entity from appRoleAssignments
-      operationId: appRoleAssignments.appRoleAssignment_DeleteAppRoleAssignment
-      parameters:
-        - name: appRoleAssignment-id
-          in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: appRoleAssignment
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/groups/{group-id}/appRoleAssignments':
     get:
       tags:
@@ -233,7 +15,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -316,6 +98,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -330,7 +114,7 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
@@ -361,14 +145,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -413,6 +197,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - groups.appRoleAssignment
@@ -421,14 +206,14 @@ paths:
       parameters:
         - name: group-id
           in: path
-          description: 'key: group-id of group'
+          description: 'key: id of group'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: group
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -446,6 +231,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.appRoleAssignment
+      summary: Delete navigation property appRoleAssignments for groups
+      operationId: groups_DeleteAppRoleAssignments
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/appRoleAssignments':
     get:
       tags:
@@ -455,7 +271,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -538,6 +354,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -552,7 +370,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -583,14 +401,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -635,6 +453,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.appRoleAssignment
@@ -643,14 +462,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: appRoleAssignment-id
           in: path
-          description: 'key: appRoleAssignment-id of appRoleAssignment'
+          description: 'key: id of appRoleAssignment'
           required: true
           schema:
             type: string
@@ -662,6 +481,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.appRoleAssignment
+      summary: Delete navigation property appRoleAssignments for users
+      operationId: users_DeleteAppRoleAssignments
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: appRoleAssignment-id
+          in: path
+          description: 'key: id of appRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: appRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -711,15 +561,8 @@ components:
               description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
               nullable: true
-      example:
-        id: string (identifier)
-        appRoleId: string
-        creationTimestamp: string (timestamp)
-        principalDisplayName: string
-        principalId: string
-        principalType: string
-        resourceDisplayName: string
-        resourceId: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -727,8 +570,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -736,6 +579,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -754,7 +599,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -767,6 +616,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -137,6 +137,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.person'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -151,7 +153,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -182,14 +184,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: person-id
           in: path
-          description: 'key: person-id of person'
+          description: 'key: id of person'
           required: true
           schema:
             type: string
@@ -247,6 +249,7 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.person'
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.person
@@ -255,14 +258,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: person-id
           in: path
-          description: 'key: person-id of person'
+          description: 'key: id of person'
           required: true
           schema:
             type: string
@@ -274,6 +277,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.person'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.person
+      summary: Delete navigation property people for users
+      operationId: users_DeletePeople
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: person-id
+          in: path
+          description: 'key: id of person'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: person
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -369,33 +403,8 @@ components:
               type: string
               description: 'The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person''s email name. The general format is alias@domain.'
               nullable: true
-      example:
-        id: string (identifier)
-        displayName: string
-        givenName: string
-        surname: string
-        birthday: string
-        personNotes: string
-        isFavorite: true
-        emailAddresses:
-          - '@odata.type': microsoft.graph.rankedEmailAddress
-        phones:
-          - '@odata.type': microsoft.graph.phone
-        postalAddresses:
-          - '@odata.type': microsoft.graph.location
-        websites:
-          - '@odata.type': microsoft.graph.website
-        title: string
-        companyName: string
-        yomiCompany: string
-        department: string
-        officeLocation: string
-        profession: string
-        sources:
-          - '@odata.type': microsoft.graph.personDataSource
-        mailboxType: string
-        personType: string
-        userPrincipalName: string
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -403,8 +412,8 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.rankedEmailAddress:
       title: rankedEmailAddress
       type: object
@@ -416,9 +425,8 @@ components:
           type: number
           format: double
           nullable: true
-      example:
-        address: string
-        rank: double
+      additionalProperties:
+        type: object
     microsoft.graph.phone:
       title: phone
       type: object
@@ -429,10 +437,8 @@ components:
           type: string
           description: The phone number.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.phoneType
-        number: string
+      additionalProperties:
+        type: object
     microsoft.graph.location:
       title: location
       type: object
@@ -461,19 +467,8 @@ components:
           nullable: true
         uniqueIdType:
           $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      example:
-        displayName: string
-        locationEmailAddress: string
-        address:
-          '@odata.type': microsoft.graph.physicalAddress
-        coordinates:
-          '@odata.type': microsoft.graph.outlookGeoCoordinates
-        locationUri: string
-        locationType:
-          '@odata.type': microsoft.graph.locationType
-        uniqueId: string
-        uniqueIdType:
-          '@odata.type': microsoft.graph.locationUniqueIdType
+      additionalProperties:
+        type: object
     microsoft.graph.website:
       title: website
       type: object
@@ -488,11 +483,8 @@ components:
           type: string
           description: The display name of the web site.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.websiteType
-        address: string
-        displayName: string
+      additionalProperties:
+        type: object
     microsoft.graph.personDataSource:
       title: personDataSource
       type: object
@@ -500,8 +492,8 @@ components:
         type:
           type: string
           nullable: true
-      example:
-        type: string
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -509,6 +501,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.phoneType:
       title: phoneType
       enum:
@@ -552,15 +546,8 @@ components:
           type: string
           description: The postal code.
           nullable: true
-      example:
-        type:
-          '@odata.type': microsoft.graph.physicalAddressType
-        postOfficeBox: string
-        street: string
-        city: string
-        state: string
-        countryOrRegion: string
-        postalCode: string
+      additionalProperties:
+        type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
@@ -590,12 +577,8 @@ components:
           description: The accuracy of the altitude.
           format: double
           nullable: true
-      example:
-        altitude: double
-        latitude: double
-        longitude: double
-        accuracy: double
-        altitudeAccuracy: double
+      additionalProperties:
+        type: object
     microsoft.graph.locationType:
       title: locationType
       enum:
@@ -646,7 +629,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     microsoft.graph.physicalAddressType:
       title: physicalAddressType
       enum:
@@ -667,6 +654,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

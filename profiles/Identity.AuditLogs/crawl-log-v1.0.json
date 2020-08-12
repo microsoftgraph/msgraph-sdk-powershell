@@ -1,33 +1,33 @@
 {
   "resources": [],
   "operations": {
-    "/auditLogs": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
-    },
-    "/auditLogs/directoryAudits/{directoryAudit-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+    "/auditLogs/signIns/{signIn-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     },
     "/auditLogs/directoryAudits": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     },
     "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     },
-    "/auditLogs/signIns/{signIn-id}": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+    "/auditLogs": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     },
     "/auditLogs/restrictedSignIns": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/directoryAudits/{directoryAudit-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     },
     "/auditLogs/signIns": {
-      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml",
-      "apiVersion": "v1.0"
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
     }
   }
 }

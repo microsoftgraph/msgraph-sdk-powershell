@@ -15,7 +15,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -167,6 +167,8 @@ paths:
                       $ref: '#/components/schemas/microsoft.graph.device'
                   '@odata.nextLink':
                     type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -181,7 +183,7 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
@@ -212,14 +214,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -293,45 +295,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            memberOf:
-              operationId: user.devices.GetMemberOf
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
-            registeredOwners:
-              operationId: user.devices.GetRegisteredOwners
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
-            registeredUsers:
-              operationId: user.devices.GetRegisteredUsers
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
-            transitiveMemberOf:
-              operationId: user.devices.GetTransitiveMemberOf
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                directoryObject-id: $response.body#/id
-            extensions:
-              operationId: user.devices.GetExtensions
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                extension-id: $response.body#/id
-            commands:
-              operationId: user.devices.GetCommands
-              parameters:
-                user-id: $request.path.user-id
-                device-id: $request.path.device-id
-                command-id: $response.body#/id
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
@@ -340,14 +306,14 @@ paths:
       parameters:
         - name: user-id
           in: path
-          description: 'key: user-id of user'
+          description: 'key: id of user'
           required: true
           schema:
             type: string
           x-ms-docs-key-type: user
         - name: device-id
           in: path
-          description: 'key: device-id of device'
+          description: 'key: id of device'
           required: true
           schema:
             type: string
@@ -359,6 +325,37 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.device
+      summary: Delete navigation property devices for users
+      operationId: users_DeleteDevices
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -505,51 +502,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
-        accountEnabled: true
-        alternativeSecurityIds:
-          - '@odata.type': microsoft.graph.alternativeSecurityId
-        approximateLastSignInDateTime: string (timestamp)
-        complianceExpirationDateTime: string (timestamp)
-        deviceId: string
-        deviceMetadata: string
-        deviceVersion: integer
-        displayName: string
-        extensionAttributes:
-          '@odata.type': microsoft.graph.onPremisesExtensionAttributes
-        isCompliant: true
-        isManaged: true
-        onPremisesLastSyncDateTime: string (timestamp)
-        onPremisesSyncEnabled: true
-        operatingSystem: string
-        operatingSystemVersion: string
-        physicalIds:
-          - string
-        profileType: string
-        systemLabels:
-          - string
-        trustType: string
-        Name: string
-        Manufacturer: string
-        Model: string
-        Kind: string
-        Status: string
-        Platform: string
-        memberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        registeredOwners:
-          - '@odata.type': microsoft.graph.directoryObject
-        registeredUsers:
-          - '@odata.type': microsoft.graph.directoryObject
-        transitiveMemberOf:
-          - '@odata.type': microsoft.graph.directoryObject
-        extensions:
-          - '@odata.type': microsoft.graph.extension
-        commands:
-          - '@odata.type': microsoft.graph.command
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -561,10 +516,9 @@ components:
               type: string
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-      example:
-        id: string (identifier)
-        deletedDateTime: string (timestamp)
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
@@ -585,10 +539,8 @@ components:
           description: For internal use only
           format: base64url
           nullable: true
-      example:
-        type: integer
-        identityProvider: string
-        key: string
+      additionalProperties:
+        type: object
     microsoft.graph.onPremisesExtensionAttributes:
       title: onPremisesExtensionAttributes
       type: object
@@ -653,29 +605,15 @@ components:
           type: string
           description: Fifteenth customizable extension attribute.
           nullable: true
-      example:
-        extensionAttribute1: string
-        extensionAttribute2: string
-        extensionAttribute3: string
-        extensionAttribute4: string
-        extensionAttribute5: string
-        extensionAttribute6: string
-        extensionAttribute7: string
-        extensionAttribute8: string
-        extensionAttribute9: string
-        extensionAttribute10: string
-        extensionAttribute11: string
-        extensionAttribute12: string
-        extensionAttribute13: string
-        extensionAttribute14: string
-        extensionAttribute15: string
+      additionalProperties:
+        type: object
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     microsoft.graph.command:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -707,19 +645,8 @@ components:
               nullable: true
             responsepayload:
               $ref: '#/components/schemas/microsoft.graph.payloadResponse'
-      example:
-        id: string (identifier)
-        Status: string
-        Type: string
-        AppServiceName: string
-        PackageFamilyName: string
-        Error: string
-        Payload:
-          '@odata.type': microsoft.graph.PayloadRequest
-        PermissionTicket: string
-        PostBackUri: string
-        responsepayload:
-          '@odata.type': microsoft.graph.payloadResponse
+          additionalProperties:
+            type: object
     odata.error:
       required:
         - error
@@ -727,6 +654,8 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -734,18 +663,20 @@ components:
         id:
           type: string
           description: Read-only.
-      example:
-        id: string (identifier)
+      additionalProperties:
+        type: object
     microsoft.graph.PayloadRequest:
       title: PayloadRequest
       type: object
+      additionalProperties:
+        type: object
     microsoft.graph.payloadResponse:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: payloadResponse
           type: object
-      example:
-        id: string (identifier)
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -764,7 +695,11 @@ components:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
           type: object
+          additionalProperties:
+            type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
@@ -777,6 +712,8 @@ components:
           type: string
         target:
           type: string
+      additionalProperties:
+        type: object
   responses:
     error:
       description: error

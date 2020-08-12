@@ -32,6 +32,25 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Rename cmdlets with duplicates in their name.
+  - where:
+      subject: ^(OnPremisPublishingProfile)(\1)+
+    set:
+      subject: $1
+# Fix AutoREST OnPremis* typo.
+  - where:
+      subject: ^OnPremis(PublishingProfile.*)$
+    set:
+      subject: OnPremise$1
+```
+
 ### Versioning
 
 ``` yaml
