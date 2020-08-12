@@ -31,7 +31,20 @@ require:
 title: $(service-name)
 subject-prefix: ''
 
+```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
 directive:
+# Remove paths that are not valid.
+  - remove-path-by-operation: sites.onenote..*.parent.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
+# Remove cmdlets
+  - where:
+      subject: ^SiteListItemActivityListItemActivity$|^SiteListActivityListItemActivity$
+    remove: true
 # Rename cmdlets
   - where:
       verb: Get
@@ -45,14 +58,14 @@ directive:
       subject: $1ByInterval
   - where:
       verb: Get
-      subject: (^SiteListItemActivity$|^SiteListItemActivityListItemActivity$|^SiteListActivityListItemActivity$)
+      subject: (^SiteListItemActivity$)
     set:
       subject: $1ByInterval
   - where:
       verb: Get
-      subject: ^SiteOnenoteNotebook(RecentNotebook$)
+      subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
-      subject: Get$1
+      subject: $1$2
   - where:
       verb: Invoke
       subject: ^PreviewSite(.*)

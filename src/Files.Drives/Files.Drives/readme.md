@@ -32,6 +32,18 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove paths that are not valid.
+  - remove-path-by-operation: ^.*.drive_(Create|Update|Delete)Drive$|^drive.*_(Create|Update|Delete)Activities$
+
+```
+
 ### Versioning
 
 ``` yaml

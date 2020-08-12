@@ -32,6 +32,34 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Rename cmdlets
+  - where:
+      verb: Get
+      subject: ^(PrivilegedRoleAssignment)$
+    set:
+      subject: Role$1
+# Rename cmdlets with duplicates in their name.
+  - where:
+      subject: ^(PrivilegedRoleAssignment)(\1)+
+    set:
+      subject: $1
+  - where:
+      subject: ^(PrivilegedRoleAssignmentRequest)(\1)+
+    set:
+      subject: $1
+  - where:
+      subject: ^(PrivilegedOperationEvent)(\1)+
+    set:
+      subject: $1
+```
+
 ### Versioning
 
 ``` yaml

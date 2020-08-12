@@ -31,9 +31,17 @@ require:
 title: $(service-name)
 subject-prefix: ''
 
+```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+
 directive:
 # Remove paths that have /parent* or /calendarView*.
-  - remove-path-by-operation: groups.onenote..*.parent.*|groups.*.calendarView.*
+  - remove-path-by-operation: groups.onenote..*.parent.*|groups.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
 # Remove cmdlets.
   - where:
       verb: Test
@@ -76,6 +84,7 @@ directive:
     set:
       subject: $1Content
 ```
+
 ### Versioning
 
 ``` yaml
