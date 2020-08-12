@@ -722,13 +722,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 if (SkipHeaderValidation)
                 {
-                    request.Content.Headers.TryAddWithoutValidation(entry.Key, entry.Value);
+                    request.Content?.Headers.TryAddWithoutValidation(entry.Key, entry.Value);
                 }
                 else
                 {
                     try
                     {
-                        request.Content.Headers.Add(entry.Key, entry.Value);
+                        request.Content?.Headers.Add(entry.Key, entry.Value);
                     }
                     catch (FormatException ex)
                     {
