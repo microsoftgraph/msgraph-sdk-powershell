@@ -82,7 +82,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
     if ($VersionState.Equals([VersionState]::Invalid) -and !$SkipVersionCheck) {
-        Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
+        Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
     }
     elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
         Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."

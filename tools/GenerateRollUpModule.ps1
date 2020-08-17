@@ -50,7 +50,7 @@ if ($null -eq $NuspecMetadata["version"]) {
 [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName $ModulePrefix -NextVersion $NuspecMetadata["version"]
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
-    Write-Error "The specified version in $ModulePrefix module is either higher or lower than what's on $RepositoryName. Update 'version' in $ModuleMetadataJson."
+    Write-Warning "The specified version in $ModulePrefix module is either higher or lower than what's on $RepositoryName. Update 'version' in $ModuleMetadataJson."
 }
 elseif ($VersionState.Equals([VersionState]::EqualToFeed)) {
     Write-Warning "$ModulePrefix module skipped. Version has not changed and is equal to what's on $RepositoryName."

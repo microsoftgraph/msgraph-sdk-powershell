@@ -42,7 +42,7 @@ if ($null -eq $ManifestContent.ModuleVersion) {
 [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
-  Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
+  Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
 }
 elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual) {
   Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
