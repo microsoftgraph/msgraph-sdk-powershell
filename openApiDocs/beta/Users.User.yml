@@ -2576,9 +2576,21 @@ components:
               type: boolean
               description: 'True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.'
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+                nullable: true
+            occurrenceId:
+              type: string
+              nullable: true
             isDraft:
               type: boolean
               nullable: true
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
             attachments:
               type: array
               items:
@@ -11908,6 +11920,14 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: chatMessageHostedContent
           type: object
+          properties:
+            contentBytes:
+              type: string
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsApp:
