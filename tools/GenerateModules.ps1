@@ -136,6 +136,15 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
                     }
                 } | Set-Content $ModulePsm1
 
+                # Address AutoREST bug where it looks for exports in the wrong directory.
+                $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$ModulePrefix.$ModuleName.internal.psm1"
+                (Get-Content -Path $InternalModulePsm1) | ForEach-Object{
+                    $_
+                    if ($_ -match '\$exportsPath = \$PSScriptRoot') {
+                        '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
+                    }
+                } | Set-Content $InternalModulePsm1
+                
                 if ($LASTEXITCODE) {
                     Write-Error "Failed to build '$ModuleName' module."
                 }

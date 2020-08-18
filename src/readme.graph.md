@@ -361,7 +361,7 @@ directive:
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
-# Add AfterToJson
+# Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
     transform: >
@@ -369,12 +369,18 @@ directive:
       {
         return $;
       } else {
+        // Add AfterToJson
         let afterJsonDeclarationRegex = /(^\s*)(partial\s*void\s*AfterFromJson\s*\(Microsoft.Graph.PowerShell.Runtime.Json.JsonObject\s*json\s*\);$)/gm
         $ = $.replace(afterJsonDeclarationRegex, '$1$2\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode);\n');
         let afterJsonRegex = /(^\s*)(AfterToJson\(ref\s*container\s*\);$)/gm
         $ = $.replace(afterJsonRegex, '$1$2\n$1AfterToJson(ref container, serializationMode);\n');
+
+        // Pass exclusion properties to base classes during serialization.
+        let baseClassInitializerRegex = /(new\s*Microsoft.Graph.PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
+        $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$2');
         return $;
       }
+# Modify generated .cs model classes.
   - from: source-file-csharp
     where: $
     transform: >
@@ -386,6 +392,24 @@ directive:
         let valuesPropertiesRegex = /(SerializedName\s*=\s*@"values".*\s*.*)(\s*)(.*Values\s*{\s*get;\s*set;\s*})/gmi
         if($.match(valuesPropertiesRegex)) {
           $ = $.replace(valuesPropertiesRegex, '$1$2 new $3');
+        }
+
+        // Add new modifier to 'additionalProperties' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        let additionalPropertiesRegex = /(SerializedName\s*=\s*@"additionalProperties".*\s*.*)(\s*)(.*AdditionalProperties\s*{\s*get;\s*set;\s*})/gmi
+        if($.match(additionalPropertiesRegex)) {
+          $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
+        }
+
+        // Add new modifier to 'keys' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        let keysRegex = /(SerializedName\s*=\s*@"keys".*\s*.*)(\s*)(.*Keys\s*{\s*get;\s*set;\s*})/gmi
+        if($.match(keysRegex)) {
+          $ = $.replace(keysRegex, '$1$2 new $3');
+        }
+
+        // Add new modifier to 'count' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        let countRegex = /(SerializedName\s*=\s*@"count".*\s*.*)(\s*)(.*Count\s*{\s*get;\s*set;\s*})/gmi
+        if($.match(countRegex)) {
+          $ = $.replace(countRegex, '$1$2 new $3');
         }
 
         let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
@@ -404,7 +428,7 @@ directive:
         }
         return $;
       }
-# Override OnDefault to handle all success, 2xx responses, as success and not error.
+# Modify generated .cs cmdlets.
   - from: source-file-csharp
     where: $
     transform: >
@@ -412,6 +436,12 @@ directive:
       {
         return $;
       } else {
+        // Initialize AdditionalProperties prop to a new Hashtable by default.
+        let additionalPropertiesPropRegex = /System.Collections.Hashtable\s*AdditionalProperties\s*{\s*get;\s*set;\s*}$/gmi
+        let newAdditionalPropertiesProp = "System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();"
+        $ = $.replace(additionalPropertiesPropRegex, newAdditionalPropertiesProp);
+
+        // Override OnDefault to handle all success, 2xx responses, as success and not error.
         let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
         let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
@@ -419,7 +449,7 @@ directive:
         return $;
       }
 
-# Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
+# Modify generated .cs list cmdlets.
   - from: source-file-csharp
     where: $
     transform: >
@@ -427,6 +457,7 @@ directive:
       {
         return $;
       } else {
+        // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
         let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
           $ = $.replace(odataNextLinkRegex, '$1if (result.OdataNextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
@@ -440,6 +471,23 @@ directive:
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
         }
+        return $;
+      }
+
+# Modify generated runtime TypeConverterExtensions class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CTypeConverterExtensions.cs/gm))
+      {
+        return $;
+      } else {
+        // Use a case-insensitive contains search.
+        let keyValueContainsRegex = /(exclusions|inclusions)(\?.Contains\(key\?.ToString\(\))(\)\))/gm
+        $ = $.replace(keyValueContainsRegex, '$1$2, System.StringComparer.OrdinalIgnoreCase$3');
+
+        let propertyContainsRegex = /(exclusions|inclusions)(\?.Contains\(property.Name)(\)\))/gm
+        $ = $.replace(propertyContainsRegex, '$1$2, System.StringComparer.OrdinalIgnoreCase$3');
         return $;
       }
 ```
