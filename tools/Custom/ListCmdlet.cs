@@ -98,9 +98,12 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             {
                 currentPageSize = limit;
             }
-            // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
-            invocationInfo.BoundParameters["Top"] = currentPageSize;
-            top = currentPageSize;
+
+            if (invocationInfo.BoundParameters.ContainsKey("PageSize") || invocationInfo.BoundParameters.ContainsKey("Top") || invocationInfo.BoundParameters.ContainsKey("All")){
+                // Explicitly set `-Top` parameter to currentPageSize in order for the generated cmdlets to construct a URL with a `$top` query parameter.
+                invocationInfo.BoundParameters["Top"] = currentPageSize;
+                top = currentPageSize;
+            }
 
             if (limit != default)
             {
