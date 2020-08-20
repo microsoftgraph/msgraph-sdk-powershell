@@ -9562,7 +9562,7 @@ components:
           properties:
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             displayName:
               type: string

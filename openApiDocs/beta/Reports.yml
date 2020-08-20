@@ -1319,6 +1319,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppPlatformUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppPlatformUserCounts
+      operationId: reports_getM365AppPlatformUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserCounts
+      operationId: reports_getM365AppUserCounts
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserDetail
+      operationId: reports_getM365AppUserDetail-2b20
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getM365AppUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getM365AppUserDetail
+      operationId: reports_getM365AppUserDetail-c8df
+      parameters:
+        - name: period
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getMailboxUsageDetail(period=''{period}'')':
     get:
       tags:

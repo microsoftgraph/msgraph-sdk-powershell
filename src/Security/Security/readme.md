@@ -38,31 +38,32 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-directive:
-# Rename cmdlets
-  - where:
-      verb: Remove
-      subject: SecurityTiIndicator
-      variant: Delete1|DeleteExpanded1
-    set:
-      subject: SecurityTiIndicatorByExternalId
-  - where:
-      verb: Update
-      subject: SecurityAlert
-      variant: Update1|UpdateExpanded1
-    set:
-      subject: SecurityAlertMultiple
-  - where:
-      verb: Update
-      subject: SecurityTiIndicator
-      variant: Update1|UpdateExpanded1
-    set:
-      subject: SecurityTiIndicatorMultiple
-# Remove cmdlets
-  - where:
-      verb: Get|Update
-      subject: Security
-    remove: true
+# Needs validation
+# directive:
+# # Rename cmdlets
+#   - where:
+#       verb: Remove
+#       subject: SecurityTiIndicator
+#       variant: Delete1|DeleteExpanded1
+#     set:
+#       subject: SecurityTiIndicatorByExternalId
+#   - where:
+#       verb: Update
+#       subject: SecurityAlert
+#       variant: Update1|UpdateExpanded1
+#     set:
+#       subject: SecurityAlertMultiple
+#   - where:
+#       verb: Update
+#       subject: SecurityTiIndicator
+#       variant: Update1|UpdateExpanded1
+#     set:
+#       subject: SecurityTiIndicatorMultiple
+# # Remove cmdlets
+#   - where:
+#       verb: Get|Update
+#       subject: Security
+#     remove: true
 ```
 ### Versioning
 

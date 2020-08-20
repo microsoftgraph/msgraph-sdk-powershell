@@ -32,6 +32,23 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+# Needs validation
+# directive:
+  # - where:
+  #     verb: Update
+  #     subject: UserPlanner
+  #     variant: Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+  #   set:
+  #     subject: AllUserPlanner
+
+```
+
 ### Versioning
 
 ``` yaml

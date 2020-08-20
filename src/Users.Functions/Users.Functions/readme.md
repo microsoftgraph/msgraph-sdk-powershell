@@ -39,15 +39,16 @@ subject-prefix: ''
 
 ``` yaml
 
-directive:
-# Remove paths that have /parent* or /calendarView*.
-  - remove-path-by-operation: users.onenote..*.parent.*|users.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
-# Rename cmdlets.
-  - where:
-      verb: Get
-      subject: ^(GroupOnenote)Notebook(RecentNotebook)$
-    set:
-      subject: $1$2
+# Needs directive
+# directive:
+# # Remove paths that have /parent* or /calendarView*.
+#   - remove-path-by-operation: users.onenote..*.parent.*|users.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
+# # Rename cmdlets.
+#   - where:
+#       verb: Get
+#       subject: ^(GroupOnenote)Notebook(RecentNotebook)$
+#     set:
+#       subject: $1$2
 ```
 
 ### Versioning

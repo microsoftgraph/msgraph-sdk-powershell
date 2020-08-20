@@ -42,47 +42,48 @@ subject-prefix: ''
 directive:
 # Remove paths that have /parent* or /calendarView*.
   - remove-path-by-operation: groups.onenote..*.parent.*|groups.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
-# Remove cmdlets.
-  - where:
-      verb: Test
-      subject: ^GroupProperty$
-      variant: ^Validate1$|^ValidateExpanded1$|^Validate3$|^ValidateExpanded3$
-    remove: true
-  - where:
-      verb: Test
-      subject: ^GroupDynamicMembership$
-      variant: ^Evaluate1$|^EvaluateExpanded1$
-    remove: true
-  - where:
-      verb: Get
-      subject: ^Group$
-    set:
-      subject: GroupById
-  - where:
-      verb: Update
-      subject: ^(GroupOnenotePage)$
-    set:
-      subject: $1Content
-  - where:
-      verb: Update
-      subject: ^(GroupOnenoteSectionPage)$
-    set:
-      subject: $1Content
-  - where:
-      verb: Update
-      subject: ^(GroupOnenoteNotebookSectionPage)$
-    set:
-      subject: $1Content
-  - where:
-      verb: Update
-      subject: ^(GroupOnenoteSectionGroupSectionPage)$
-    set:
-      subject: $1Content
-  - where:
-      verb: Update
-      subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
-    set:
-      subject: $1Content
+  # Needs validation
+# # Remove cmdlets.
+#   - where:
+#       verb: Test
+#       subject: ^GroupProperty$
+#       variant: ^Validate1$|^ValidateExpanded1$|^Validate3$|^ValidateExpanded3$
+#     remove: true
+#   - where:
+#       verb: Test
+#       subject: ^GroupDynamicMembership$
+#       variant: ^Evaluate1$|^EvaluateExpanded1$
+#     remove: true
+#   - where:
+#       verb: Get
+#       subject: ^Group$
+#     set:
+#       subject: GroupById
+#   - where:
+#       verb: Update
+#       subject: ^(GroupOnenotePage)$
+#     set:
+#       subject: $1Content
+#   - where:
+#       verb: Update
+#       subject: ^(GroupOnenoteSectionPage)$
+#     set:
+#       subject: $1Content
+#   - where:
+#       verb: Update
+#       subject: ^(GroupOnenoteNotebookSectionPage)$
+#     set:
+#       subject: $1Content
+#   - where:
+#       verb: Update
+#       subject: ^(GroupOnenoteSectionGroupSectionPage)$
+#     set:
+#       subject: $1Content
+#   - where:
+#       verb: Update
+#       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
+#     set:
+#       subject: $1Content
 ```
 
 ### Versioning

@@ -14,11 +14,11 @@
     "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$",
     "Groups.Actions":"^groups.Actions&",
     "Groups.Functions":"^groups.Functions&",
-    "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings $|^organization.Actions$|^organization.extension$",
     "Identity.AccessReviews": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.",
+    "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings $|^organization.Actions$|^organization.extension$",
     "Identity.PIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.",
-    "Identity.TermsOfUse": "^agreements\\.|^users.agreementAcceptance$",
     "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^riskDetections\\.|^riskyUsers\\.|^dataPolicyOperations\\.|^auditLogs\\.|^identity.identityUserFlow$|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^identity.conditionalAccessRoot$",
+    "Identity.TermsOfUse": "^agreements\\.|^users.agreementAcceptance$",
     "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
     "Notes.Users":"^users.onenote$",
     "Notes.Groups":"^groups.onenote$",
@@ -35,7 +35,7 @@
     "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs$|^users.userTeamwork$|^teamwork\\.|^users.team$|^users.userTeamwork$|^groups.team$",
     "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$",
     "Users.Actions": "^users.Actions$",
-    "Users.Functions": "^users.Functions$",
+    "Users.Functions": "^users.Functions$"
 
     // "CloudCommunications": "^communications\\.", // Needs multi-namespace support.
     // "Identity.EntitlementManagement": "^identityGovernance\\.", // - Too large.

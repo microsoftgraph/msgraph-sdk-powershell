@@ -33,17 +33,6 @@ subject-prefix: ''
 
 ```
 
-### Directives
-
-``` yaml
-directive:
-  - where:
-      verb: Invoke
-      subject: MuteCommunicationCallParticipant
-      variant: MuteViaIdentityExpanded1|MuteExpanded1|MuteViaIdentity1|Mute1
-    set:
-      subject: MuteAllCommunicationCallParticipant
-```
 ### Versioning
 
 ``` yaml
