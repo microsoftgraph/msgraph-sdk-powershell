@@ -355,12 +355,6 @@ directive:
       subject: ^(\w*[a-z])Ref([A-Z]\w*)$
     set:
       subject: $1$2ByRef
-# Remove cmdlets
-  - where:
-      verb: Test
-      subject: (Application|ServicePrincipal)SynchronizationJobCredentials
-      variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
-    remove: true
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

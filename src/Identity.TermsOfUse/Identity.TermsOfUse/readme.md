@@ -38,18 +38,16 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Needs validation
-# directive:
-# # Rename cmdlets
-#   - where:
-#       subject: AgreementFile
-#       variant: Get1|GetViaIdentity1|Delete1|DeleteViaIdentity1|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
-#     remove: true
+directive:
+# Rename cmdlets
+  - where:
+      subject: AgreementFile
+      variant: Get1|GetViaIdentity1|Delete1|DeleteViaIdentity1|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
+    remove: true
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 0.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
