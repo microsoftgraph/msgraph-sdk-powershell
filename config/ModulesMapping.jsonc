@@ -4,20 +4,22 @@
     "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
     "ChangeNotifications": "^subscriptions\\.",
     "CloudCommunications": "^users.onlineMeeting$|^users.presence$",
+    "Compliance": "^compliance\\.",
     "CrossDeviceExperiences": "^users.userActivity$|^users.device$",
     "Devices.CloudPrint": "^print\\.",
-    "Devices.CorporateManagement": "^roleManagement\\.|^deviceAppManagement\\.|^officeConfiguration\\.|^users.mobileAppIntentAndState$|^users.mobileAppTroubleshootingEvent$|^users.windowsInformationProtectionDeviceRegistration$|^users.managedAppRegistration$|^users.managedDevice$|^users.deviceManagementTroubleshootingEvent$|^users.deviceEnrollmentConfiguration$",
+    "Devices.CorporateManagement": "^roleManagement\\.|^deviceAppManagement\\.|^officeConfiguration\\.|^users.mobileAppIntentAndState$|^users.mobileAppTroubleshootingEvent$|^users.windowsInformationProtectionDeviceRegistration$|^users.managedAppRegistration$|^users.managedDevice$|^users.deviceManagementTroubleshootingEvent$|^users.deviceEnrollmentConfiguration$|^deviceManagement\\.",
     "DirectoryObjects": "^directoryObjects\\.",
     "Education": "^education\\.",
-    "Files": "^drive\\.|^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
+    "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
     "Financials": "^financials\\.",
     "Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$",
     "Groups.Actions":"^groups.Actions&",
     "Groups.Functions":"^groups.Functions&",
     "Identity.AccessReviews": "^accessReviews\\.|^businessFlowTemplates\\.|^programs\\.|^programControls\\.|^programControlTypes\\.",
     "Identity.DirectoryManagement": "^administrativeUnits\\.|^contacts\\.|^devices\\.|^domains\\.|^directoryRoles\\.|^directoryRoleTemplates\\.|^directorySettingTemplates\\.|^settings\\.|^subscribedSkus\\.|^contracts\\.|^directory\\.|^users.scopedRoleMembership$|^organization.organization$|^organization.organizationalBranding$|^organization.organizationSettings $|^organization.Actions$|^organization.extension$",
+    "Identity.EntitlementManagement": "^identityGovernance\\.",
     "Identity.PIM": "^privilegedRoles\\.|^privilegedRoleAssignments\\.|^privilegedRoleAssignmentRequests\\.|^privilegedApproval\\.|^privilegedOperationEvents\\.|^privilegedAccess\\.",
-    "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^riskDetections\\.|^riskyUsers\\.|^dataPolicyOperations\\.|^auditLogs\\.|^identity.identityUserFlow$|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^identity.conditionalAccessRoot$",
+    "Identity.SignIns": "^organization.certificateBasedAuthConfiguration$|^invitations\\.|^identityProviders\\.|^oauth2PermissionGrants\\.|^riskDetections\\.|^riskyUsers\\.|^dataPolicyOperations\\.|^identity.identityUserFlow$|^trustFramework\\.|^informationProtection\\.|^policies\\.|^users.authentication$|^users.informationProtection$|^identity.conditionalAccessRoot$",
     "Identity.TermsOfUse": "^agreements\\.|^users.agreementAcceptance$",
     "Mail": "^users.inferenceClassification$|^users.mailFolder$|^users.message$",
     "Notes.Users":"^users.onenote$",
@@ -26,7 +28,7 @@
     "People": "^users.person$|^users.profile$|^users.officeGraphInsights$|^users.userAnalytics$",
     "PersonalContacts":"^users.contactFolder$|^users.contact$",
     "Planner": "^planner\\.|^users.plannerUser$|^groups.plannerGroup$",
-    "Reports": "^reports\\.",
+    "Reports": "^reports\\.|^auditLogs\\.",
     "SchemaExtensions": "^schemaExtensions\\.",
     "Search": "^search\\.|^external\\.",
     "Security": "^Security\\.",
@@ -38,7 +40,5 @@
     "Users.Functions": "^users.Functions$"
 
     // "CloudCommunications": "^communications\\.", // Needs multi-namespace support.
-    // "Identity.EntitlementManagement": "^identityGovernance\\.", // - Too large.
-    // "Devices.CorporateManagement": "^deviceManagement\\."// Fails to download.
     // "WorkBooks": "^workbooks\\.",// Max limit.
 }

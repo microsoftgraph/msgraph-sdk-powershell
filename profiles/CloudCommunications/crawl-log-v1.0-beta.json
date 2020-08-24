@@ -1,17 +1,17 @@
 {
+  "resources": [],
   "operations": {
-    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
-      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/presence": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
     "/users/{user-id}/onlineMeetings": {
-      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml",
-      "apiVersion": "v1.0-beta"
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
-    "/users/{user-id}/presence": {
-      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml",
-      "apiVersion": "v1.0-beta"
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     }
-  },
-  "resources": []
+  }
 }

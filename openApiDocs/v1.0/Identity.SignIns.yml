@@ -6,879 +6,6 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /auditLogs:
-    get:
-      tags:
-        - auditLogs.auditLogRoot
-      summary: Get auditLogs
-      operationId: auditLogs.auditLogRoot_GetAuditLogRoot
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - signIns
-                - directoryAudits
-                - restrictedSignIns
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - signIns
-                - directoryAudits
-                - restrictedSignIns
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - auditLogs.auditLogRoot
-      summary: Update auditLogs
-      operationId: auditLogs.auditLogRoot_UpdateAuditLogRoot
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /auditLogs/directoryAudits:
-    get:
-      tags:
-        - auditLogs.directoryAudit
-      summary: Get directoryAudits from auditLogs
-      operationId: auditLogs_ListDirectoryAudits
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - category
-                - category desc
-                - correlationId
-                - correlationId desc
-                - result
-                - result desc
-                - resultReason
-                - resultReason desc
-                - activityDisplayName
-                - activityDisplayName desc
-                - activityDateTime
-                - activityDateTime desc
-                - loggedByService
-                - loggedByService desc
-                - operationType
-                - operationType desc
-                - initiatedBy
-                - initiatedBy desc
-                - targetResources
-                - targetResources desc
-                - additionalDetails
-                - additionalDetails desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - category
-                - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
-                - loggedByService
-                - operationType
-                - initiatedBy
-                - targetResources
-                - additionalDetails
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryAudit
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - auditLogs.directoryAudit
-      summary: Create new navigation property to directoryAudits for auditLogs
-      operationId: auditLogs_CreateDirectoryAudits
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/auditLogs/directoryAudits/{directoryAudit-id}':
-    get:
-      tags:
-        - auditLogs.directoryAudit
-      summary: Get directoryAudits from auditLogs
-      operationId: auditLogs_GetDirectoryAudits
-      parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - category
-                - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
-                - loggedByService
-                - operationType
-                - initiatedBy
-                - targetResources
-                - additionalDetails
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - auditLogs.directoryAudit
-      summary: Update the navigation property directoryAudits in auditLogs
-      operationId: auditLogs_UpdateDirectoryAudits
-      parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - auditLogs.directoryAudit
-      summary: Delete navigation property directoryAudits for auditLogs
-      operationId: auditLogs_DeleteDirectoryAudits
-      parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /auditLogs/restrictedSignIns:
-    get:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Get restrictedSignIns from auditLogs
-      operationId: auditLogs_ListRestrictedSignIns
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userId
-                - userId desc
-                - appId
-                - appId desc
-                - appDisplayName
-                - appDisplayName desc
-                - ipAddress
-                - ipAddress desc
-                - status
-                - status desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - deviceDetail
-                - deviceDetail desc
-                - location
-                - location desc
-                - correlationId
-                - correlationId desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
-                - appliedConditionalAccessPolicies
-                - appliedConditionalAccessPolicies desc
-                - isInteractive
-                - isInteractive desc
-                - riskDetail
-                - riskDetail desc
-                - riskLevelAggregated
-                - riskLevelAggregated desc
-                - riskLevelDuringSignIn
-                - riskLevelDuringSignIn desc
-                - riskState
-                - riskState desc
-                - riskEventTypes
-                - riskEventTypes desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-                - targetTenantId
-                - targetTenantId desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
-                - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
-                - appliedConditionalAccessPolicies
-                - isInteractive
-                - riskDetail
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
-                - targetTenantId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of restrictedSignIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Create new navigation property to restrictedSignIns for auditLogs
-      operationId: auditLogs_CreateRestrictedSignIns
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/auditLogs/restrictedSignIns/{restrictedSignIn-id}':
-    get:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Get restrictedSignIns from auditLogs
-      operationId: auditLogs_GetRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
-                - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
-                - appliedConditionalAccessPolicies
-                - isInteractive
-                - riskDetail
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
-                - targetTenantId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Update the navigation property restrictedSignIns in auditLogs
-      operationId: auditLogs_UpdateRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - auditLogs.restrictedSignIn
-      summary: Delete navigation property restrictedSignIns for auditLogs
-      operationId: auditLogs_DeleteRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /auditLogs/signIns:
-    get:
-      tags:
-        - auditLogs.signIn
-      summary: Get signIns from auditLogs
-      operationId: auditLogs_ListSignIns
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userId
-                - userId desc
-                - appId
-                - appId desc
-                - appDisplayName
-                - appDisplayName desc
-                - ipAddress
-                - ipAddress desc
-                - status
-                - status desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - deviceDetail
-                - deviceDetail desc
-                - location
-                - location desc
-                - correlationId
-                - correlationId desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
-                - appliedConditionalAccessPolicies
-                - appliedConditionalAccessPolicies desc
-                - isInteractive
-                - isInteractive desc
-                - riskDetail
-                - riskDetail desc
-                - riskLevelAggregated
-                - riskLevelAggregated desc
-                - riskLevelDuringSignIn
-                - riskLevelDuringSignIn desc
-                - riskState
-                - riskState desc
-                - riskEventTypes
-                - riskEventTypes desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
-                - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
-                - appliedConditionalAccessPolicies
-                - isInteractive
-                - riskDetail
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of signIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.signIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - auditLogs.signIn
-      summary: Create new navigation property to signIns for auditLogs
-      operationId: auditLogs_CreateSignIns
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.signIn'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/auditLogs/signIns/{signIn-id}':
-    get:
-      tags:
-        - auditLogs.signIn
-      summary: Get signIns from auditLogs
-      operationId: auditLogs_GetSignIns
-      parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
-                - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
-                - appliedConditionalAccessPolicies
-                - isInteractive
-                - riskDetail
-                - riskLevelAggregated
-                - riskLevelDuringSignIn
-                - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - auditLogs.signIn
-      summary: Update the navigation property signIns in auditLogs
-      operationId: auditLogs_UpdateSignIns
-      parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.signIn'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - auditLogs.signIn
-      summary: Delete navigation property signIns for auditLogs
-      operationId: auditLogs_DeleteSignIns
-      parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /dataPolicyOperations:
     get:
       tags:
@@ -959,16 +86,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - dataPolicyOperations.dataPolicyOperation
@@ -1137,6 +258,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
+          links:
+            policies:
+              operationId: identity.ConditionalAccess.ListPolicies
+            namedLocations:
+              operationId: identity.ConditionalAccess.ListNamedLocations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1246,15 +372,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.namedLocation'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1465,15 +586,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1677,16 +793,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.identityProvider'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - identityProviders.identityProvider
@@ -1851,6 +961,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
+          links:
+            threatAssessmentRequests:
+              operationId: informationProtection.ListThreatAssessmentRequests
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1957,15 +1070,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2043,6 +1151,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+          links:
+            results:
+              operationId: informationProtection.ThreatAssessmentRequests.ListResults
+              parameters:
+                threatAssessmentRequest-id: $request.path.threatAssessmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2174,15 +1287,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2424,16 +1532,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.invitation'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - invitations.invitation
@@ -2511,6 +1613,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.invitation'
+          links:
+            invitedUser:
+              operationId: invitations.GetInvitedUser
+              parameters:
+                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2753,6 +1860,163 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
+          links:
+            appRoleAssignments:
+              operationId: invitations.InvitedUser.ListAppRoleAssignments
+              parameters:
+                invitation-id: $request.path.invitation-id
+            ownedDevices:
+              operationId: invitations.InvitedUser.ListOwnedDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            registeredDevices:
+              operationId: invitations.InvitedUser.ListRegisteredDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            manager:
+              operationId: invitations.InvitedUser.GetManager
+              parameters:
+                invitation-id: $request.path.invitation-id
+            directReports:
+              operationId: invitations.InvitedUser.ListDirectReports
+              parameters:
+                invitation-id: $request.path.invitation-id
+            memberOf:
+              operationId: invitations.InvitedUser.ListMemberOf
+              parameters:
+                invitation-id: $request.path.invitation-id
+            createdObjects:
+              operationId: invitations.InvitedUser.ListCreatedObjects
+              parameters:
+                invitation-id: $request.path.invitation-id
+            oauth2PermissionGrants:
+              operationId: invitations.InvitedUser.ListOauth2PermissionGrants
+              parameters:
+                invitation-id: $request.path.invitation-id
+            ownedObjects:
+              operationId: invitations.InvitedUser.ListOwnedObjects
+              parameters:
+                invitation-id: $request.path.invitation-id
+            licenseDetails:
+              operationId: invitations.InvitedUser.ListLicenseDetails
+              parameters:
+                invitation-id: $request.path.invitation-id
+            transitiveMemberOf:
+              operationId: invitations.InvitedUser.ListTransitiveMemberOf
+              parameters:
+                invitation-id: $request.path.invitation-id
+            outlook:
+              operationId: invitations.InvitedUser.GetOutlook
+              parameters:
+                invitation-id: $request.path.invitation-id
+            messages:
+              operationId: invitations.InvitedUser.ListMessages
+              parameters:
+                invitation-id: $request.path.invitation-id
+            mailFolders:
+              operationId: invitations.InvitedUser.ListMailFolders
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendar:
+              operationId: invitations.InvitedUser.GetCalendar
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendars:
+              operationId: invitations.InvitedUser.ListCalendars
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendarGroups:
+              operationId: invitations.InvitedUser.ListCalendarGroups
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendarView:
+              operationId: invitations.InvitedUser.ListCalendarView
+              parameters:
+                invitation-id: $request.path.invitation-id
+            events:
+              operationId: invitations.InvitedUser.ListEvents
+              parameters:
+                invitation-id: $request.path.invitation-id
+            people:
+              operationId: invitations.InvitedUser.ListPeople
+              parameters:
+                invitation-id: $request.path.invitation-id
+            contacts:
+              operationId: invitations.InvitedUser.ListContacts
+              parameters:
+                invitation-id: $request.path.invitation-id
+            contactFolders:
+              operationId: invitations.InvitedUser.ListContactFolders
+              parameters:
+                invitation-id: $request.path.invitation-id
+            inferenceClassification:
+              operationId: invitations.InvitedUser.GetInferenceClassification
+              parameters:
+                invitation-id: $request.path.invitation-id
+            photo:
+              operationId: invitations.InvitedUser.GetPhoto
+              parameters:
+                invitation-id: $request.path.invitation-id
+            photos:
+              operationId: invitations.InvitedUser.ListPhotos
+              parameters:
+                invitation-id: $request.path.invitation-id
+            drive:
+              operationId: invitations.InvitedUser.GetDrive
+              parameters:
+                invitation-id: $request.path.invitation-id
+            drives:
+              operationId: invitations.InvitedUser.ListDrives
+              parameters:
+                invitation-id: $request.path.invitation-id
+            followedSites:
+              operationId: invitations.InvitedUser.ListFollowedSites
+              parameters:
+                invitation-id: $request.path.invitation-id
+            extensions:
+              operationId: invitations.InvitedUser.ListExtensions
+              parameters:
+                invitation-id: $request.path.invitation-id
+            managedDevices:
+              operationId: invitations.InvitedUser.ListManagedDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            managedAppRegistrations:
+              operationId: invitations.InvitedUser.ListManagedAppRegistrations
+              parameters:
+                invitation-id: $request.path.invitation-id
+            deviceManagementTroubleshootingEvents:
+              operationId: invitations.InvitedUser.ListDeviceManagementTroubleshootingEvents
+              parameters:
+                invitation-id: $request.path.invitation-id
+            planner:
+              operationId: invitations.InvitedUser.GetPlanner
+              parameters:
+                invitation-id: $request.path.invitation-id
+            insights:
+              operationId: invitations.InvitedUser.GetInsights
+              parameters:
+                invitation-id: $request.path.invitation-id
+            settings:
+              operationId: invitations.InvitedUser.GetSettings
+              parameters:
+                invitation-id: $request.path.invitation-id
+            onenote:
+              operationId: invitations.InvitedUser.GetOnenote
+              parameters:
+                invitation-id: $request.path.invitation-id
+            activities:
+              operationId: invitations.InvitedUser.ListActivities
+              parameters:
+                invitation-id: $request.path.invitation-id
+            onlineMeetings:
+              operationId: invitations.InvitedUser.ListOnlineMeetings
+              parameters:
+                invitation-id: $request.path.invitation-id
+            joinedTeams:
+              operationId: invitations.InvitedUser.ListJoinedTeams
+              parameters:
+                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2777,6 +2041,163 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            appRoleAssignments:
+              operationId: invitations.InvitedUser.ListAppRoleAssignments
+              parameters:
+                invitation-id: $request.path.invitation-id
+            ownedDevices:
+              operationId: invitations.InvitedUser.ListOwnedDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            registeredDevices:
+              operationId: invitations.InvitedUser.ListRegisteredDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            manager:
+              operationId: invitations.InvitedUser.GetManager
+              parameters:
+                invitation-id: $request.path.invitation-id
+            directReports:
+              operationId: invitations.InvitedUser.ListDirectReports
+              parameters:
+                invitation-id: $request.path.invitation-id
+            memberOf:
+              operationId: invitations.InvitedUser.ListMemberOf
+              parameters:
+                invitation-id: $request.path.invitation-id
+            createdObjects:
+              operationId: invitations.InvitedUser.ListCreatedObjects
+              parameters:
+                invitation-id: $request.path.invitation-id
+            oauth2PermissionGrants:
+              operationId: invitations.InvitedUser.ListOauth2PermissionGrants
+              parameters:
+                invitation-id: $request.path.invitation-id
+            ownedObjects:
+              operationId: invitations.InvitedUser.ListOwnedObjects
+              parameters:
+                invitation-id: $request.path.invitation-id
+            licenseDetails:
+              operationId: invitations.InvitedUser.ListLicenseDetails
+              parameters:
+                invitation-id: $request.path.invitation-id
+            transitiveMemberOf:
+              operationId: invitations.InvitedUser.ListTransitiveMemberOf
+              parameters:
+                invitation-id: $request.path.invitation-id
+            outlook:
+              operationId: invitations.InvitedUser.GetOutlook
+              parameters:
+                invitation-id: $request.path.invitation-id
+            messages:
+              operationId: invitations.InvitedUser.ListMessages
+              parameters:
+                invitation-id: $request.path.invitation-id
+            mailFolders:
+              operationId: invitations.InvitedUser.ListMailFolders
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendar:
+              operationId: invitations.InvitedUser.GetCalendar
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendars:
+              operationId: invitations.InvitedUser.ListCalendars
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendarGroups:
+              operationId: invitations.InvitedUser.ListCalendarGroups
+              parameters:
+                invitation-id: $request.path.invitation-id
+            calendarView:
+              operationId: invitations.InvitedUser.ListCalendarView
+              parameters:
+                invitation-id: $request.path.invitation-id
+            events:
+              operationId: invitations.InvitedUser.ListEvents
+              parameters:
+                invitation-id: $request.path.invitation-id
+            people:
+              operationId: invitations.InvitedUser.ListPeople
+              parameters:
+                invitation-id: $request.path.invitation-id
+            contacts:
+              operationId: invitations.InvitedUser.ListContacts
+              parameters:
+                invitation-id: $request.path.invitation-id
+            contactFolders:
+              operationId: invitations.InvitedUser.ListContactFolders
+              parameters:
+                invitation-id: $request.path.invitation-id
+            inferenceClassification:
+              operationId: invitations.InvitedUser.GetInferenceClassification
+              parameters:
+                invitation-id: $request.path.invitation-id
+            photo:
+              operationId: invitations.InvitedUser.GetPhoto
+              parameters:
+                invitation-id: $request.path.invitation-id
+            photos:
+              operationId: invitations.InvitedUser.ListPhotos
+              parameters:
+                invitation-id: $request.path.invitation-id
+            drive:
+              operationId: invitations.InvitedUser.GetDrive
+              parameters:
+                invitation-id: $request.path.invitation-id
+            drives:
+              operationId: invitations.InvitedUser.ListDrives
+              parameters:
+                invitation-id: $request.path.invitation-id
+            followedSites:
+              operationId: invitations.InvitedUser.ListFollowedSites
+              parameters:
+                invitation-id: $request.path.invitation-id
+            extensions:
+              operationId: invitations.InvitedUser.ListExtensions
+              parameters:
+                invitation-id: $request.path.invitation-id
+            managedDevices:
+              operationId: invitations.InvitedUser.ListManagedDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            managedAppRegistrations:
+              operationId: invitations.InvitedUser.ListManagedAppRegistrations
+              parameters:
+                invitation-id: $request.path.invitation-id
+            deviceManagementTroubleshootingEvents:
+              operationId: invitations.InvitedUser.ListDeviceManagementTroubleshootingEvents
+              parameters:
+                invitation-id: $request.path.invitation-id
+            planner:
+              operationId: invitations.InvitedUser.GetPlanner
+              parameters:
+                invitation-id: $request.path.invitation-id
+            insights:
+              operationId: invitations.InvitedUser.GetInsights
+              parameters:
+                invitation-id: $request.path.invitation-id
+            settings:
+              operationId: invitations.InvitedUser.GetSettings
+              parameters:
+                invitation-id: $request.path.invitation-id
+            onenote:
+              operationId: invitations.InvitedUser.GetOnenote
+              parameters:
+                invitation-id: $request.path.invitation-id
+            activities:
+              operationId: invitations.InvitedUser.ListActivities
+              parameters:
+                invitation-id: $request.path.invitation-id
+            onlineMeetings:
+              operationId: invitations.InvitedUser.ListOnlineMeetings
+              parameters:
+                invitation-id: $request.path.invitation-id
+            joinedTeams:
+              operationId: invitations.InvitedUser.ListJoinedTeams
+              parameters:
+                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2909,16 +2330,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
@@ -3134,15 +2549,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}':
     get:
@@ -3247,15 +2657,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3343,6 +2748,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policyRoot'
+          links:
+            activityBasedTimeoutPolicies:
+              operationId: policies.ListActivityBasedTimeoutPolicies
+            claimsMappingPolicies:
+              operationId: policies.ListClaimsMappingPolicies
+            homeRealmDiscoveryPolicies:
+              operationId: policies.ListHomeRealmDiscoveryPolicies
+            tokenIssuancePolicies:
+              operationId: policies.ListTokenIssuancePolicies
+            tokenLifetimePolicies:
+              operationId: policies.ListTokenLifetimePolicies
+            identitySecurityDefaultsEnforcementPolicy:
+              operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
+            conditionalAccessPolicies:
+              operationId: policies.ListConditionalAccessPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3443,15 +2863,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3527,6 +2942,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+          links:
+            appliesTo:
+              operationId: policies.ActivityBasedTimeoutPolicies.ListAppliesTo
+              parameters:
+                activityBasedTimeoutPolicy-id: $request.path.activityBasedTimeoutPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3659,15 +3079,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3743,6 +3158,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+          links:
+            appliesTo:
+              operationId: policies.ClaimsMappingPolicies.ListAppliesTo
+              parameters:
+                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3882,15 +3302,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4099,15 +3514,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4183,6 +3593,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+          links:
+            appliesTo:
+              operationId: policies.HomeRealmDiscoveryPolicies.ListAppliesTo
+              parameters:
+                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4395,15 +3810,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4479,6 +3889,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          links:
+            appliesTo:
+              operationId: policies.TokenIssuancePolicies.ListAppliesTo
+              parameters:
+                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4611,15 +4026,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4695,6 +4105,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+          links:
+            appliesTo:
+              operationId: policies.TokenLifetimePolicies.ListAppliesTo
+              parameters:
+                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4750,176 +4165,6 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
-    microsoft.graph.auditLogRoot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: auditLogRoot
-          type: object
-          properties:
-            signIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-              description: Read-only. Nullable.
-            directoryAudits:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-              description: Read-only. Nullable.
-            restrictedSignIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-          additionalProperties:
-            type: object
-    microsoft.graph.directoryAudit:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryAudit
-          type: object
-          properties:
-            category:
-              type: string
-              description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
-            correlationId:
-              type: string
-              description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
-              nullable: true
-            result:
-              $ref: '#/components/schemas/microsoft.graph.operationResult'
-            resultReason:
-              type: string
-              description: Describes cause of 'failure' or 'timeout' results.
-              nullable: true
-            activityDisplayName:
-              type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
-            activityDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
-              format: date-time
-            loggedByService:
-              type: string
-              description: 'Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.'
-              nullable: true
-            operationType:
-              type: string
-              nullable: true
-            initiatedBy:
-              $ref: '#/components/schemas/microsoft.graph.auditActivityInitiator'
-            targetResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.targetResource'
-              description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
-            additionalDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Indicates additional details on the activity.
-          additionalProperties:
-            type: object
-    microsoft.graph.restrictedSignIn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.signIn'
-        - title: restrictedSignIn
-          type: object
-          properties:
-            targetTenantId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              format: uuid
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.signIn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: signIn
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
-              format: date-time
-            userDisplayName:
-              type: string
-              description: Display name of the user that initiated the sign-in.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: User principal name of the user that initiated the sign-in.
-              nullable: true
-            userId:
-              type: string
-              description: ID of the user that initiated the sign-in.
-            appId:
-              type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory.
-              nullable: true
-            appDisplayName:
-              type: string
-              description: App name displayed in the Azure Portal.
-              nullable: true
-            ipAddress:
-              type: string
-              description: IP address of the client used to sign in.
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.signInStatus'
-            clientAppUsed:
-              type: string
-              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
-              nullable: true
-            deviceDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceDetail'
-            location:
-              $ref: '#/components/schemas/microsoft.graph.signInLocation'
-            correlationId:
-              type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
-              nullable: true
-            conditionalAccessStatus:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
-            appliedConditionalAccessPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
-            isInteractive:
-              type: boolean
-              description: Indicates if a sign-in is interactive or not.
-              nullable: true
-            riskDetail:
-              $ref: '#/components/schemas/microsoft.graph.riskDetail'
-            riskLevelAggregated:
-              $ref: '#/components/schemas/microsoft.graph.riskLevel'
-            riskLevelDuringSignIn:
-              $ref: '#/components/schemas/microsoft.graph.riskLevel'
-            riskState:
-              $ref: '#/components/schemas/microsoft.graph.riskState'
-            riskEventTypes:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.'
-            riskEventTypes_v2:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
-            resourceDisplayName:
-              type: string
-              description: Name of the resource the user signed into.
-              nullable: true
-            resourceId:
-              type: string
-              description: ID of the resource that the user signed into.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.dataPolicyOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5734,234 +4979,6 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.operationResult:
-      title: operationResult
-      enum:
-        - success
-        - failure
-        - timeout
-        - unknownFutureValue
-      type: string
-    microsoft.graph.auditActivityInitiator:
-      title: auditActivityInitiator
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/microsoft.graph.userIdentity'
-        app:
-          $ref: '#/components/schemas/microsoft.graph.appIdentity'
-      additionalProperties:
-        type: object
-    microsoft.graph.targetResource:
-      title: targetResource
-      type: object
-      properties:
-        id:
-          type: string
-          description: Indicates the unique ID of the resource.
-          nullable: true
-        displayName:
-          type: string
-          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
-          nullable: true
-        type:
-          type: string
-          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
-          nullable: true
-        groupType:
-          $ref: '#/components/schemas/microsoft.graph.groupType'
-        modifiedProperties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
-          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
-      additionalProperties:
-        type: object
-    microsoft.graph.keyValue:
-      title: keyValue
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key for the key-value pair.
-          nullable: true
-        value:
-          type: string
-          description: Value for the key-value pair.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.signInStatus:
-      title: signInStatus
-      type: object
-      properties:
-        errorCode:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
-          format: int32
-          nullable: true
-        failureReason:
-          type: string
-          description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-          nullable: true
-        additionalDetails:
-          type: string
-          description: Provides additional details on the sign-in activity
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.deviceDetail:
-      title: deviceDetail
-      type: object
-      properties:
-        deviceId:
-          type: string
-          description: Refers to the UniqueID of the device used for signing in.
-          nullable: true
-        displayName:
-          type: string
-          description: Refers to the name of the device used for signing in.
-          nullable: true
-        operatingSystem:
-          type: string
-          description: Indicates the operating system name and version used for signing in.
-          nullable: true
-        browser:
-          type: string
-          description: Indicates the browser information of the used for signing in.
-          nullable: true
-        isCompliant:
-          type: boolean
-          description: Indicates whether the device is compliant.
-          nullable: true
-        isManaged:
-          type: boolean
-          description: Indicates whether the device is managed.
-          nullable: true
-        trustType:
-          type: string
-          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.signInLocation:
-      title: signInLocation
-      type: object
-      properties:
-        city:
-          type: string
-          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        state:
-          type: string
-          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        countryOrRegion:
-          type: string
-          description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        geoCoordinates:
-          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
-      additionalProperties:
-        type: object
-    microsoft.graph.conditionalAccessStatus:
-      title: conditionalAccessStatus
-      enum:
-        - success
-        - failure
-        - notApplied
-        - unknownFutureValue
-      type: string
-    microsoft.graph.appliedConditionalAccessPolicy:
-      title: appliedConditionalAccessPolicy
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique GUID of the conditional access policy.
-          nullable: true
-        displayName:
-          type: string
-          description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
-          nullable: true
-        enforcedGrantControls:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'Refers to the grant controls enforced by the conditional access policy (example: ''Require multi-factor authentication'').'
-        enforcedSessionControls:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
-        result:
-          $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
-      additionalProperties:
-        type: object
-    microsoft.graph.riskDetail:
-      title: riskDetail
-      enum:
-        - none
-        - adminGeneratedTemporaryPassword
-        - userPerformedSecuredPasswordChange
-        - userPerformedSecuredPasswordReset
-        - adminConfirmedSigninSafe
-        - aiConfirmedSigninSafe
-        - userPassedMFADrivenByRiskBasedPolicy
-        - adminDismissedAllRiskForUser
-        - adminConfirmedSigninCompromised
-        - hidden
-        - adminConfirmedUserCompromised
-        - unknownFutureValue
-      type: string
-    microsoft.graph.riskLevel:
-      title: riskLevel
-      enum:
-        - low
-        - medium
-        - high
-        - hidden
-        - none
-        - unknownFutureValue
-      type: string
-    microsoft.graph.riskState:
-      title: riskState
-      enum:
-        - none
-        - confirmedSafe
-        - remediated
-        - dismissed
-        - atRisk
-        - confirmedCompromised
-        - unknownFutureValue
-      type: string
-    microsoft.graph.riskEventType:
-      title: riskEventType
-      enum:
-        - unlikelyTravel
-        - anonymizedIPAddress
-        - maliciousIPAddress
-        - unfamiliarFeatures
-        - malwareInfectedIPAddress
-        - suspiciousIPAddress
-        - leakedCredentials
-        - investigationsThreatIntelligence
-        - generic
-        - adminConfirmedUserCompromised
-        - mcasImpossibleTravel
-        - mcasSuspiciousInboxManipulationRules
-        - investigationsThreatIntelligenceSigninLinked
-        - maliciousIPAddressValidCredentialsBlockedIP
-        - unknownFutureValue
-      type: string
     microsoft.graph.dataPolicyOperationStatus:
       title: dataPolicyOperationStatus
       enum:
@@ -7936,106 +6953,6 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
-    microsoft.graph.userIdentity:
-      title: userIdentity
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        displayName:
-          type: string
-          description: The identity's display name. Note that this may not always be available or up-to-date.
-          nullable: true
-        ipAddress:
-          type: string
-          description: Indicates the client IP address used by user performing the activity (audit log only).
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: The userPrincipalName attribute of the user.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.appIdentity:
-      title: appIdentity
-      type: object
-      properties:
-        appId:
-          type: string
-          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-          nullable: true
-        displayName:
-          type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
-          nullable: true
-        servicePrincipalId:
-          type: string
-          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
-          nullable: true
-        servicePrincipalName:
-          type: string
-          description: Refers to the Service Principal Name is the Application name in the tenant.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.groupType:
-      title: groupType
-      enum:
-        - unifiedGroups
-        - azureAD
-        - unknownFutureValue
-      type: string
-    microsoft.graph.modifiedProperty:
-      title: modifiedProperty
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Indicates the property name of the target attribute that was changed.
-          nullable: true
-        oldValue:
-          type: string
-          description: Indicates the previous value (before the update) for the property.
-          nullable: true
-        newValue:
-          type: string
-          description: Indicates the updated value for the propery.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.geoCoordinates:
-      title: geoCoordinates
-      type: object
-      properties:
-        altitude:
-          type: number
-          description: 'Optional. The altitude (height), in feet,  above sea level for the item. Read-only.'
-          format: double
-          nullable: true
-        latitude:
-          type: number
-          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.appliedConditionalAccessPolicyResult:
-      title: appliedConditionalAccessPolicyResult
-      enum:
-        - success
-        - failure
-        - notApplied
-        - notEnabled
-        - unknown
-        - unknownFutureValue
-      type: string
     microsoft.graph.conditionalAccessApplications:
       title: conditionalAccessApplications
       type: object
@@ -8093,6 +7010,16 @@ components:
           description: Role IDs excluded from scope of policy.
       additionalProperties:
         type: object
+    microsoft.graph.riskLevel:
+      title: riskLevel
+      enum:
+        - low
+        - medium
+        - high
+        - hidden
+        - none
+        - unknownFutureValue
+      type: string
     microsoft.graph.conditionalAccessPlatforms:
       title: conditionalAccessPlatforms
       type: object
@@ -11501,6 +10428,27 @@ components:
           type: integer
           description: 'Optional. Width of the image, in pixels. Read-only.'
           format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.geoCoordinates:
+      title: geoCoordinates
+      type: object
+      properties:
+        altitude:
+          type: number
+          description: 'Optional. The altitude (height), in feet,  above sea level for the item. Read-only.'
+          format: double
+          nullable: true
+        latitude:
+          type: number
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
+          format: double
           nullable: true
       additionalProperties:
         type: object

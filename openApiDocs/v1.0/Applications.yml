@@ -164,16 +164,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.application'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - applications.application
@@ -281,6 +275,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.application'
+          links:
+            extensionProperties:
+              operationId: applications.ListExtensionProperties
+              parameters:
+                application-id: $request.path.application-id
+            createdOnBehalfOf:
+              operationId: applications.GetCreatedOnBehalfOf
+              parameters:
+                application-id: $request.path.application-id
+            homeRealmDiscoveryPolicies:
+              operationId: applications.ListHomeRealmDiscoveryPolicies
+              parameters:
+                application-id: $request.path.application-id
+            owners:
+              operationId: applications.ListOwners
+              parameters:
+                application-id: $request.path.application-id
+            tokenLifetimePolicies:
+              operationId: applications.ListTokenLifetimePolicies
+              parameters:
+                application-id: $request.path.application-id
+            tokenIssuancePolicies:
+              operationId: applications.ListTokenIssuancePolicies
+              parameters:
+                application-id: $request.path.application-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -546,15 +565,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -797,15 +811,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
     get:
@@ -866,6 +875,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+          links:
+            appliesTo:
+              operationId: applications.HomeRealmDiscoveryPolicies.ListAppliesTo
+              parameters:
+                application-id: $request.path.application-id
+                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -924,15 +939,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1422,15 +1432,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/owners/{directoryObject-id}':
     get:
@@ -1535,15 +1540,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1665,15 +1665,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
     get:
@@ -1734,6 +1729,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          links:
+            appliesTo:
+              operationId: applications.TokenIssuancePolicies.ListAppliesTo
+              parameters:
+                application-id: $request.path.application-id
+                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1792,15 +1793,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1922,15 +1918,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
     get:
@@ -1991,6 +1982,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+          links:
+            appliesTo:
+              operationId: applications.TokenLifetimePolicies.ListAppliesTo
+              parameters:
+                application-id: $request.path.application-id
+                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2049,15 +2046,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2309,15 +2301,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2654,16 +2641,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - servicePrincipals.servicePrincipal
@@ -2787,6 +2768,59 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+          links:
+            appRoleAssignedTo:
+              operationId: servicePrincipals.ListAppRoleAssignedTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            appRoleAssignments:
+              operationId: servicePrincipals.ListAppRoleAssignments
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            claimsMappingPolicies:
+              operationId: servicePrincipals.ListClaimsMappingPolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            endpoints:
+              operationId: servicePrincipals.ListEndpoints
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            homeRealmDiscoveryPolicies:
+              operationId: servicePrincipals.ListHomeRealmDiscoveryPolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            oauth2PermissionGrants:
+              operationId: servicePrincipals.ListOauth2PermissionGrants
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            memberOf:
+              operationId: servicePrincipals.ListMemberOf
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            transitiveMemberOf:
+              operationId: servicePrincipals.ListTransitiveMemberOf
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            createdObjects:
+              operationId: servicePrincipals.ListCreatedObjects
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            owners:
+              operationId: servicePrincipals.ListOwners
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            ownedObjects:
+              operationId: servicePrincipals.ListOwnedObjects
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            tokenIssuancePolicies:
+              operationId: servicePrincipals.ListTokenIssuancePolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            tokenLifetimePolicies:
+              operationId: servicePrincipals.ListTokenLifetimePolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2933,15 +2967,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3193,15 +3222,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3446,15 +3470,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}':
     get:
@@ -3515,6 +3534,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+          links:
+            appliesTo:
+              operationId: servicePrincipals.ClaimsMappingPolicies.ListAppliesTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3573,15 +3598,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3689,15 +3709,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}':
     get:
@@ -3802,15 +3817,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3933,15 +3943,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.endpoint'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4184,15 +4189,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
     get:
@@ -4253,6 +4253,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+          links:
+            appliesTo:
+              operationId: servicePrincipals.HomeRealmDiscoveryPolicies.ListAppliesTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4311,15 +4317,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4427,15 +4428,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}':
     get:
@@ -4540,15 +4536,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4998,15 +4989,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}':
     get:
@@ -5123,15 +5109,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5239,15 +5220,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}':
     get:
@@ -5352,15 +5328,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5468,15 +5439,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}':
     get:
@@ -5581,15 +5547,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5711,15 +5672,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
     get:
@@ -5780,6 +5736,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+          links:
+            appliesTo:
+              operationId: servicePrincipals.TokenIssuancePolicies.ListAppliesTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5838,15 +5800,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5968,15 +5925,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
     get:
@@ -6037,6 +5989,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+          links:
+            appliesTo:
+              operationId: servicePrincipals.TokenLifetimePolicies.ListAppliesTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6095,15 +6053,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6211,15 +6164,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}':
     get:
@@ -6324,15 +6272,10 @@ paths:
                     type: array
                     items:
                       type: string
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6584,15 +6527,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

@@ -6,3613 +6,6 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
-  /drive:
-    get:
-      tags:
-        - drive.drive
-      summary: Get drive
-      operationId: drive.drive_GetDrive
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - driveType
-                - owner
-                - quota
-                - sharePointIds
-                - system
-                - createdByUser
-                - lastModifiedByUser
-                - following
-                - items
-                - list
-                - root
-                - special
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - following
-                - items
-                - list
-                - root
-                - special
-              type: string
-      responses:
-        '200':
-          description: Retrieved entity
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.drive'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.drive
-      summary: Update drive
-      operationId: drive.drive_UpdateDrive
-      requestBody:
-        description: New property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/following:
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get following from drive
-      operationId: drive_ListFollowing
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - eTag
-                - eTag desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - parentReference
-                - parentReference desc
-                - webUrl
-                - webUrl desc
-                - audio
-                - audio desc
-                - content
-                - content desc
-                - cTag
-                - cTag desc
-                - deleted
-                - deleted desc
-                - file
-                - file desc
-                - fileSystemInfo
-                - fileSystemInfo desc
-                - folder
-                - folder desc
-                - image
-                - image desc
-                - location
-                - location desc
-                - package
-                - package desc
-                - pendingOperations
-                - pendingOperations desc
-                - photo
-                - photo desc
-                - publication
-                - publication desc
-                - remoteItem
-                - remoteItem desc
-                - root
-                - root desc
-                - searchResult
-                - searchResult desc
-                - shared
-                - shared desc
-                - sharepointIds
-                - sharepointIds desc
-                - size
-                - size desc
-                - specialFolder
-                - specialFolder desc
-                - video
-                - video desc
-                - webDavUrl
-                - webDavUrl desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of driveItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.driveItem
-      summary: Create new navigation property to following for drive
-      operationId: drive_CreateFollowing
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/following/{driveItem-id}':
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get following from drive
-      operationId: drive_GetFollowing
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.driveItem
-      summary: Update the navigation property following in drive
-      operationId: drive_UpdateFollowing
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.driveItem
-      summary: Delete navigation property following for drive
-      operationId: drive_DeleteFollowing
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/items:
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get items from drive
-      operationId: drive_ListItems
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - eTag
-                - eTag desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - parentReference
-                - parentReference desc
-                - webUrl
-                - webUrl desc
-                - audio
-                - audio desc
-                - content
-                - content desc
-                - cTag
-                - cTag desc
-                - deleted
-                - deleted desc
-                - file
-                - file desc
-                - fileSystemInfo
-                - fileSystemInfo desc
-                - folder
-                - folder desc
-                - image
-                - image desc
-                - location
-                - location desc
-                - package
-                - package desc
-                - pendingOperations
-                - pendingOperations desc
-                - photo
-                - photo desc
-                - publication
-                - publication desc
-                - remoteItem
-                - remoteItem desc
-                - root
-                - root desc
-                - searchResult
-                - searchResult desc
-                - shared
-                - shared desc
-                - sharepointIds
-                - sharepointIds desc
-                - size
-                - size desc
-                - specialFolder
-                - specialFolder desc
-                - video
-                - video desc
-                - webDavUrl
-                - webDavUrl desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of driveItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.driveItem
-      summary: Create new navigation property to items for drive
-      operationId: drive_CreateItems
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/items/{driveItem-id}':
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get items from drive
-      operationId: drive_GetItems
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.driveItem
-      summary: Update the navigation property items in drive
-      operationId: drive_UpdateItems
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.driveItem
-      summary: Delete navigation property items for drive
-      operationId: drive_DeleteItems
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/list:
-    get:
-      tags:
-        - drive.list
-      summary: Get list from drive
-      operationId: drive_GetList
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - displayName
-                - list
-                - sharepointIds
-                - system
-                - createdByUser
-                - lastModifiedByUser
-                - columns
-                - contentTypes
-                - drive
-                - items
-                - subscriptions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - columns
-                - contentTypes
-                - drive
-                - items
-                - subscriptions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.list'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property list in drive
-      operationId: drive_UpdateList
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.list'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property list for drive
-      operationId: drive_DeleteList
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/list/columns:
-    get:
-      tags:
-        - drive.list
-      summary: Get columns from drive
-      operationId: drive.list_ListColumns
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - boolean
-                - boolean desc
-                - calculated
-                - calculated desc
-                - choice
-                - choice desc
-                - columnGroup
-                - columnGroup desc
-                - currency
-                - currency desc
-                - dateTime
-                - dateTime desc
-                - defaultValue
-                - defaultValue desc
-                - description
-                - description desc
-                - displayName
-                - displayName desc
-                - enforceUniqueValues
-                - enforceUniqueValues desc
-                - geolocation
-                - geolocation desc
-                - hidden
-                - hidden desc
-                - indexed
-                - indexed desc
-                - lookup
-                - lookup desc
-                - name
-                - name desc
-                - number
-                - number desc
-                - personOrGroup
-                - personOrGroup desc
-                - readOnly
-                - readOnly desc
-                - required
-                - required desc
-                - text
-                - text desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - boolean
-                - calculated
-                - choice
-                - columnGroup
-                - currency
-                - dateTime
-                - defaultValue
-                - description
-                - displayName
-                - enforceUniqueValues
-                - geolocation
-                - hidden
-                - indexed
-                - lookup
-                - name
-                - number
-                - personOrGroup
-                - readOnly
-                - required
-                - text
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of columnDefinition
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to columns for drive
-      operationId: drive.list_CreateColumns
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/columns/{columnDefinition-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get columns from drive
-      operationId: drive.list_GetColumns
-      parameters:
-        - name: columnDefinition-id
-          in: path
-          description: 'key: id of columnDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnDefinition
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - boolean
-                - calculated
-                - choice
-                - columnGroup
-                - currency
-                - dateTime
-                - defaultValue
-                - description
-                - displayName
-                - enforceUniqueValues
-                - geolocation
-                - hidden
-                - indexed
-                - lookup
-                - name
-                - number
-                - personOrGroup
-                - readOnly
-                - required
-                - text
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property columns in drive
-      operationId: drive.list_UpdateColumns
-      parameters:
-        - name: columnDefinition-id
-          in: path
-          description: 'key: id of columnDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnDefinition
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property columns for drive
-      operationId: drive.list_DeleteColumns
-      parameters:
-        - name: columnDefinition-id
-          in: path
-          description: 'key: id of columnDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnDefinition
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/list/contentTypes:
-    get:
-      tags:
-        - drive.list
-      summary: Get contentTypes from drive
-      operationId: drive.list_ListContentTypes
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - description
-                - description desc
-                - group
-                - group desc
-                - hidden
-                - hidden desc
-                - inheritedFrom
-                - inheritedFrom desc
-                - name
-                - name desc
-                - order
-                - order desc
-                - parentId
-                - parentId desc
-                - readOnly
-                - readOnly desc
-                - sealed
-                - sealed desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - description
-                - group
-                - hidden
-                - inheritedFrom
-                - name
-                - order
-                - parentId
-                - readOnly
-                - sealed
-                - columnLinks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - columnLinks
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contentType
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contentType'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to contentTypes for drive
-      operationId: drive.list_CreateContentTypes
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.contentType'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.contentType'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/contentTypes/{contentType-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get contentTypes from drive
-      operationId: drive.list_GetContentTypes
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - description
-                - group
-                - hidden
-                - inheritedFrom
-                - name
-                - order
-                - parentId
-                - readOnly
-                - sealed
-                - columnLinks
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - columnLinks
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.contentType'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property contentTypes in drive
-      operationId: drive.list_UpdateContentTypes
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.contentType'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property contentTypes for drive
-      operationId: drive.list_DeleteContentTypes
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/contentTypes/{contentType-id}/columnLinks':
-    get:
-      tags:
-        - drive.list
-      summary: Get columnLinks from drive
-      operationId: drive.list.contentTypes_ListColumnLinks
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - name
-                - name desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - name
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of columnLink
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.columnLink'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to columnLinks for drive
-      operationId: drive.list.contentTypes_CreateColumnLinks
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.columnLink'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.columnLink'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get columnLinks from drive
-      operationId: drive.list.contentTypes_GetColumnLinks
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - name: columnLink-id
-          in: path
-          description: 'key: id of columnLink'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnLink
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - name
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.columnLink'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property columnLinks in drive
-      operationId: drive.list.contentTypes_UpdateColumnLinks
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - name: columnLink-id
-          in: path
-          description: 'key: id of columnLink'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnLink
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.columnLink'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property columnLinks for drive
-      operationId: drive.list.contentTypes_DeleteColumnLinks
-      parameters:
-        - name: contentType-id
-          in: path
-          description: 'key: id of contentType'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contentType
-        - name: columnLink-id
-          in: path
-          description: 'key: id of columnLink'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: columnLink
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/list/drive:
-    get:
-      tags:
-        - drive.list
-      summary: Get drive from drive
-      operationId: drive.list_GetDrive
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - driveType
-                - owner
-                - quota
-                - sharePointIds
-                - system
-                - createdByUser
-                - lastModifiedByUser
-                - following
-                - items
-                - list
-                - root
-                - special
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - following
-                - items
-                - list
-                - root
-                - special
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.drive'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property drive in drive
-      operationId: drive.list_UpdateDrive
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property drive for drive
-      operationId: drive.list_DeleteDrive
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/list/items:
-    get:
-      tags:
-        - drive.list
-      summary: Get items from drive
-      operationId: drive.list_ListItems
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - eTag
-                - eTag desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - parentReference
-                - parentReference desc
-                - webUrl
-                - webUrl desc
-                - contentType
-                - contentType desc
-                - sharepointIds
-                - sharepointIds desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - contentType
-                - sharepointIds
-                - createdByUser
-                - lastModifiedByUser
-                - analytics
-                - driveItem
-                - fields
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - analytics
-                - driveItem
-                - fields
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of listItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.listItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to items for drive
-      operationId: drive.list_CreateItems
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.listItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.listItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get items from drive
-      operationId: drive.list_GetItems
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - contentType
-                - sharepointIds
-                - createdByUser
-                - lastModifiedByUser
-                - analytics
-                - driveItem
-                - fields
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - analytics
-                - driveItem
-                - fields
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.listItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property items in drive
-      operationId: drive.list_UpdateItems
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.listItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property items for drive
-      operationId: drive.list_DeleteItems
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/analytics':
-    get:
-      tags:
-        - drive.list
-      summary: Get analytics from drive
-      operationId: drive.list.items_GetAnalytics
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - itemActivityStats
-                - allTime
-                - lastSevenDays
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - itemActivityStats
-                - allTime
-                - lastSevenDays
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/analytics/$ref':
-    get:
-      tags:
-        - drive.list
-      summary: Get ref of analytics from drive
-      operationId: drive.list.items_GetRefAnalytics
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - drive.list
-      summary: Update the ref of navigation property analytics in drive
-      operationId: drive.list.items_UpdateRefAnalytics
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete ref of navigation property analytics for drive
-      operationId: drive.list.items_DeleteRefAnalytics
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/driveItem':
-    get:
-      tags:
-        - drive.list
-      summary: Get driveItem from drive
-      operationId: drive.list.items_GetDriveItem
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property driveItem in drive
-      operationId: drive.list.items_UpdateDriveItem
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property driveItem for drive
-      operationId: drive.list.items_DeleteDriveItem
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/fields':
-    get:
-      tags:
-        - drive.list
-      summary: Get fields from drive
-      operationId: drive.list.items_GetFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property fields in drive
-      operationId: drive.list.items_UpdateFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property fields for drive
-      operationId: drive.list.items_DeleteFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval()':
-    get:
-      tags:
-        - drive.Functions
-      summary: Invoke function getActivitiesByInterval
-      operationId: drive.list.items_getActivitiesByInterval-96b0
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/drive/list/items/{listItem-id}/microsoft.graph.getActivitiesByInterval(startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'',interval=''{interval}'')':
-    get:
-      tags:
-        - drive.Functions
-      summary: Invoke function getActivitiesByInterval
-      operationId: drive.list.items_getActivitiesByInterval-53ee
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: startDateTime
-          in: path
-          required: true
-          schema:
-            type: string
-            nullable: true
-        - name: endDateTime
-          in: path
-          required: true
-          schema:
-            type: string
-            nullable: true
-        - name: interval
-          in: path
-          required: true
-          schema:
-            type: string
-            nullable: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.itemActivityStat'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/drive/list/items/{listItem-id}/versions':
-    get:
-      tags:
-        - drive.list
-      summary: Get versions from drive
-      operationId: drive.list.items_ListVersions
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - publication
-                - publication desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - publication
-                - fields
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - fields
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of listItemVersion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to versions for drive
-      operationId: drive.list.items_CreateVersions
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/versions/{listItemVersion-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get versions from drive
-      operationId: drive.list.items_GetVersions
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - publication
-                - fields
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - fields
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property versions in drive
-      operationId: drive.list.items_UpdateVersions
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property versions for drive
-      operationId: drive.list.items_DeleteVersions
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/versions/{listItemVersion-id}/fields':
-    get:
-      tags:
-        - drive.list
-      summary: Get fields from drive
-      operationId: drive.list.items.versions_GetFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property fields in drive
-      operationId: drive.list.items.versions_UpdateFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property fields for drive
-      operationId: drive.list.items.versions_DeleteFields
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion':
-    post:
-      tags:
-        - drive.Actions
-      summary: Invoke action restoreVersion
-      operationId: drive.list.items.versions_restoreVersion
-      parameters:
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-        - name: listItemVersion-id
-          in: path
-          description: 'key: id of listItemVersion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItemVersion
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  /drive/list/subscriptions:
-    get:
-      tags:
-        - drive.list
-      summary: Get subscriptions from drive
-      operationId: drive.list_ListSubscriptions
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - resource
-                - resource desc
-                - changeType
-                - changeType desc
-                - clientState
-                - clientState desc
-                - notificationUrl
-                - notificationUrl desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - applicationId
-                - applicationId desc
-                - creatorId
-                - creatorId desc
-                - latestSupportedTlsVersion
-                - latestSupportedTlsVersion desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - resource
-                - changeType
-                - clientState
-                - notificationUrl
-                - expirationDateTime
-                - applicationId
-                - creatorId
-                - latestSupportedTlsVersion
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of subscription
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.subscription'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.list
-      summary: Create new navigation property to subscriptions for drive
-      operationId: drive.list_CreateSubscriptions
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.subscription'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.subscription'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/list/subscriptions/{subscription-id}':
-    get:
-      tags:
-        - drive.list
-      summary: Get subscriptions from drive
-      operationId: drive.list_GetSubscriptions
-      parameters:
-        - name: subscription-id
-          in: path
-          description: 'key: id of subscription'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: subscription
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - resource
-                - changeType
-                - clientState
-                - notificationUrl
-                - expirationDateTime
-                - applicationId
-                - creatorId
-                - latestSupportedTlsVersion
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.subscription'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.list
-      summary: Update the navigation property subscriptions in drive
-      operationId: drive.list_UpdateSubscriptions
-      parameters:
-        - name: subscription-id
-          in: path
-          description: 'key: id of subscription'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: subscription
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.subscription'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.list
-      summary: Delete navigation property subscriptions for drive
-      operationId: drive.list_DeleteSubscriptions
-      parameters:
-        - name: subscription-id
-          in: path
-          description: 'key: id of subscription'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: subscription
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/microsoft.graph.recent():
-    get:
-      tags:
-        - drive.Functions
-      summary: Invoke function recent
-      operationId: drive_recent
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/drive/microsoft.graph.search(q=''{q}'')':
-    get:
-      tags:
-        - drive.Functions
-      summary: Invoke function search
-      operationId: drive_search
-      parameters:
-        - name: q
-          in: path
-          required: true
-          schema:
-            type: string
-            nullable: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  /drive/microsoft.graph.sharedWithMe():
-    get:
-      tags:
-        - drive.Functions
-      summary: Invoke function sharedWithMe
-      operationId: drive_sharedWithMe
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  /drive/root:
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get root from drive
-      operationId: drive_GetRoot
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.driveItem
-      summary: Update the navigation property root in drive
-      operationId: drive_UpdateRoot
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.driveItem
-      summary: Delete navigation property root for drive
-      operationId: drive_DeleteRoot
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /drive/special:
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get special from drive
-      operationId: drive_ListSpecial
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdBy
-                - createdBy desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - eTag
-                - eTag desc
-                - lastModifiedBy
-                - lastModifiedBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - name
-                - name desc
-                - parentReference
-                - parentReference desc
-                - webUrl
-                - webUrl desc
-                - audio
-                - audio desc
-                - content
-                - content desc
-                - cTag
-                - cTag desc
-                - deleted
-                - deleted desc
-                - file
-                - file desc
-                - fileSystemInfo
-                - fileSystemInfo desc
-                - folder
-                - folder desc
-                - image
-                - image desc
-                - location
-                - location desc
-                - package
-                - package desc
-                - pendingOperations
-                - pendingOperations desc
-                - photo
-                - photo desc
-                - publication
-                - publication desc
-                - remoteItem
-                - remoteItem desc
-                - root
-                - root desc
-                - searchResult
-                - searchResult desc
-                - shared
-                - shared desc
-                - sharepointIds
-                - sharepointIds desc
-                - size
-                - size desc
-                - specialFolder
-                - specialFolder desc
-                - video
-                - video desc
-                - webDavUrl
-                - webDavUrl desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of driveItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drive.driveItem
-      summary: Create new navigation property to special for drive
-      operationId: drive_CreateSpecial
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drive/special/{driveItem-id}':
-    get:
-      tags:
-        - drive.driveItem
-      summary: Get special from drive
-      operationId: drive_GetSpecial
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdBy
-                - createdDateTime
-                - description
-                - eTag
-                - lastModifiedBy
-                - lastModifiedDateTime
-                - name
-                - parentReference
-                - webUrl
-                - audio
-                - content
-                - cTag
-                - deleted
-                - file
-                - fileSystemInfo
-                - folder
-                - image
-                - location
-                - package
-                - pendingOperations
-                - photo
-                - publication
-                - remoteItem
-                - root
-                - searchResult
-                - shared
-                - sharepointIds
-                - size
-                - specialFolder
-                - video
-                - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - drive.driveItem
-      summary: Update the navigation property special in drive
-      operationId: drive_UpdateSpecial
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drive.driveItem
-      summary: Delete navigation property special for drive
-      operationId: drive_DeleteSpecial
-      parameters:
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /drives:
     get:
       tags:
@@ -3731,16 +124,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.drive'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - drives.drive
@@ -3836,6 +223,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: drives.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: drives.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            following:
+              operationId: drives.ListFollowing
+              parameters:
+                drive-id: $request.path.drive-id
+            items:
+              operationId: drives.ListItems
+              parameters:
+                drive-id: $request.path.drive-id
+            list:
+              operationId: drives.GetList
+              parameters:
+                drive-id: $request.path.drive-id
+            root:
+              operationId: drives.GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+            special:
+              operationId: drives.ListSpecial
+              parameters:
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4071,15 +487,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4214,6 +625,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: drives.Following.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            lastModifiedByUser:
+              operationId: drives.Following.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            workbook:
+              operationId: drives.Following.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            analytics:
+              operationId: drives.Following.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            children:
+              operationId: drives.Following.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            listItem:
+              operationId: drives.Following.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            permissions:
+              operationId: drives.Following.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            subscriptions:
+              operationId: drives.Following.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            thumbnails:
+              operationId: drives.Following.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            versions:
+              operationId: drives.Following.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4463,15 +925,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4606,6 +1063,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: drives.Items.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            lastModifiedByUser:
+              operationId: drives.Items.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            workbook:
+              operationId: drives.Items.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            analytics:
+              operationId: drives.Items.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            children:
+              operationId: drives.Items.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            listItem:
+              operationId: drives.Items.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            permissions:
+              operationId: drives.Items.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            subscriptions:
+              operationId: drives.Items.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            thumbnails:
+              operationId: drives.Items.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            versions:
+              operationId: drives.Items.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4745,6 +1253,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.list'
+          links:
+            createdByUser:
+              operationId: drives.List.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: drives.List.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            columns:
+              operationId: drives.List.ListColumns
+              parameters:
+                drive-id: $request.path.drive-id
+            contentTypes:
+              operationId: drives.List.ListContentTypes
+              parameters:
+                drive-id: $request.path.drive-id
+            drive:
+              operationId: drives.List.GetDrive
+              parameters:
+                drive-id: $request.path.drive-id
+            items:
+              operationId: drives.List.ListItems
+              parameters:
+                drive-id: $request.path.drive-id
+            subscriptions:
+              operationId: drives.List.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4927,15 +1464,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5204,15 +1736,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5307,6 +1834,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+          links:
+            columnLinks:
+              operationId: drives.list.ContentTypes.ListColumnLinks
+              parameters:
+                drive-id: $request.path.drive-id
+                contentType-id: $request.path.contentType-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5453,15 +1986,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnLink'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5714,6 +2242,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: drives.list.Drive.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: drives.list.Drive.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            following:
+              operationId: drives.list.Drive.ListFollowing
+              parameters:
+                drive-id: $request.path.drive-id
+            items:
+              operationId: drives.list.Drive.ListItems
+              parameters:
+                drive-id: $request.path.drive-id
+            list:
+              operationId: drives.list.Drive.GetList
+              parameters:
+                drive-id: $request.path.drive-id
+            root:
+              operationId: drives.list.Drive.GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+            special:
+              operationId: drives.list.Drive.ListSpecial
+              parameters:
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5881,15 +2438,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5996,6 +2548,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
+          links:
+            createdByUser:
+              operationId: drives.list.Items.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: drives.list.Items.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: drives.list.Items.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            driveItem:
+              operationId: drives.list.Items.GetDriveItem
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            fields:
+              operationId: drives.list.Items.GetFields
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: drives.list.Items.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6121,6 +2704,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+          links:
+            itemActivityStats:
+              operationId: drives.list.items.Analytics.ListItemActivityStats
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            allTime:
+              operationId: drives.list.items.Analytics.GetAllTime
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            lastSevenDays:
+              operationId: drives.list.items.Analytics.GetLastSevenDays
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6152,6 +2751,22 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            itemActivityStats:
+              operationId: drives.list.items.Analytics.ListItemActivityStats
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            allTime:
+              operationId: drives.list.items.Analytics.GetAllTime
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            lastSevenDays:
+              operationId: drives.list.items.Analytics.GetLastSevenDays
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6324,6 +2939,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: drives.list.items.DriveItem.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: drives.list.items.DriveItem.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            workbook:
+              operationId: drives.list.items.DriveItem.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: drives.list.items.DriveItem.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            children:
+              operationId: drives.list.items.DriveItem.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            listItem:
+              operationId: drives.list.items.DriveItem.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            permissions:
+              operationId: drives.list.items.DriveItem.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            subscriptions:
+              operationId: drives.list.items.DriveItem.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            thumbnails:
+              operationId: drives.list.items.DriveItem.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: drives.list.items.DriveItem.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6681,15 +3347,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6792,6 +3453,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+          links:
+            fields:
+              operationId: drives.list.items.Versions.GetFields
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+                listItemVersion-id: $request.path.listItemVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7140,15 +3808,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.subscription'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7487,6 +4150,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: drives.Root.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: drives.Root.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            workbook:
+              operationId: drives.Root.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+            analytics:
+              operationId: drives.Root.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+            children:
+              operationId: drives.Root.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+            listItem:
+              operationId: drives.Root.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+            permissions:
+              operationId: drives.Root.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+            subscriptions:
+              operationId: drives.Root.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+            thumbnails:
+              operationId: drives.Root.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+            versions:
+              operationId: drives.Root.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7722,15 +4426,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7865,6 +4564,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: drives.Special.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            lastModifiedByUser:
+              operationId: drives.Special.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            workbook:
+              operationId: drives.Special.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            analytics:
+              operationId: drives.Special.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            children:
+              operationId: drives.Special.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            listItem:
+              operationId: drives.Special.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            permissions:
+              operationId: drives.Special.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            subscriptions:
+              operationId: drives.Special.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            thumbnails:
+              operationId: drives.Special.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
+            versions:
+              operationId: drives.Special.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                driveItem-id: $request.path.driveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8005,6 +4755,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: groups.Drive.GetCreatedByUser
+              parameters:
+                group-id: $request.path.group-id
+            lastModifiedByUser:
+              operationId: groups.Drive.GetLastModifiedByUser
+              parameters:
+                group-id: $request.path.group-id
+            following:
+              operationId: groups.Drive.ListFollowing
+              parameters:
+                group-id: $request.path.group-id
+            items:
+              operationId: groups.Drive.ListItems
+              parameters:
+                group-id: $request.path.group-id
+            list:
+              operationId: groups.Drive.GetList
+              parameters:
+                group-id: $request.path.group-id
+            root:
+              operationId: groups.Drive.GetRoot
+              parameters:
+                group-id: $request.path.group-id
+            special:
+              operationId: groups.Drive.ListSpecial
+              parameters:
+                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8183,15 +4962,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.drive'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8303,6 +5077,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: groups.Drives.GetCreatedByUser
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: groups.Drives.GetLastModifiedByUser
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            following:
+              operationId: groups.Drives.ListFollowing
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            items:
+              operationId: groups.Drives.ListItems
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            list:
+              operationId: groups.Drives.GetList
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            root:
+              operationId: groups.Drives.GetRoot
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
+            special:
+              operationId: groups.Drives.ListSpecial
+              parameters:
+                group-id: $request.path.group-id
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8480,16 +5290,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - shares.sharedDriveItem
@@ -8585,6 +5389,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedDriveItem'
+          links:
+            createdByUser:
+              operationId: shares.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            driveItem:
+              operationId: shares.GetDriveItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            list:
+              operationId: shares.GetList
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permission:
+              operationId: shares.GetPermission
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            root:
+              operationId: shares.GetRoot
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            site:
+              operationId: shares.GetSite
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8734,6 +5575,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: shares.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8969,15 +5851,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.driveItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9112,6 +5989,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: shares.Items.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            lastModifiedByUser:
+              operationId: shares.Items.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            workbook:
+              operationId: shares.Items.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            analytics:
+              operationId: shares.Items.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            children:
+              operationId: shares.Items.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            listItem:
+              operationId: shares.Items.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            permissions:
+              operationId: shares.Items.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            subscriptions:
+              operationId: shares.Items.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            thumbnails:
+              operationId: shares.Items.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
+            versions:
+              operationId: shares.Items.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                driveItem-id: $request.path.driveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9251,6 +6179,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.list'
+          links:
+            createdByUser:
+              operationId: shares.List.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.List.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            columns:
+              operationId: shares.List.ListColumns
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            contentTypes:
+              operationId: shares.List.ListContentTypes
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            drive:
+              operationId: shares.List.GetDrive
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.List.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.List.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9433,15 +6390,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnDefinition'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9710,15 +6662,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contentType'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9813,6 +6760,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+          links:
+            columnLinks:
+              operationId: shares.list.ContentTypes.ListColumnLinks
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                contentType-id: $request.path.contentType-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9959,15 +6912,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.columnLink'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10220,6 +7168,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: shares.list.Drive.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.list.Drive.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            following:
+              operationId: shares.list.Drive.ListFollowing
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.list.Drive.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            list:
+              operationId: shares.list.Drive.GetList
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            root:
+              operationId: shares.list.Drive.GetRoot
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            special:
+              operationId: shares.list.Drive.ListSpecial
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10387,15 +7364,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItem'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10502,6 +7474,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
+          links:
+            createdByUser:
+              operationId: shares.list.Items.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: shares.list.Items.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: shares.list.Items.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            driveItem:
+              operationId: shares.list.Items.GetDriveItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            fields:
+              operationId: shares.list.Items.GetFields
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: shares.list.Items.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10627,6 +7630,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+          links:
+            itemActivityStats:
+              operationId: shares.list.items.Analytics.ListItemActivityStats
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            allTime:
+              operationId: shares.list.items.Analytics.GetAllTime
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            lastSevenDays:
+              operationId: shares.list.items.Analytics.GetLastSevenDays
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10658,6 +7677,22 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            itemActivityStats:
+              operationId: shares.list.items.Analytics.ListItemActivityStats
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            allTime:
+              operationId: shares.list.items.Analytics.GetAllTime
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            lastSevenDays:
+              operationId: shares.list.items.Analytics.GetLastSevenDays
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10830,6 +7865,57 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: shares.list.items.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            workbook:
+              operationId: shares.list.items.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: shares.list.items.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            children:
+              operationId: shares.list.items.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            listItem:
+              operationId: shares.list.items.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            permissions:
+              operationId: shares.list.items.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            subscriptions:
+              operationId: shares.list.items.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            thumbnails:
+              operationId: shares.list.items.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: shares.list.items.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11187,15 +8273,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11298,6 +8379,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+          links:
+            fields:
+              operationId: shares.list.items.Versions.GetFields
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+                listItemVersion-id: $request.path.listItemVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11646,15 +8734,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.subscription'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11881,6 +8964,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
+          links:
+            createdByUser:
+              operationId: shares.ListItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.ListItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.ListItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            driveItem:
+              operationId: shares.ListItem.GetDriveItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            fields:
+              operationId: shares.ListItem.GetFields
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.ListItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11985,6 +9093,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAnalytics'
+          links:
+            itemActivityStats:
+              operationId: shares.listItem.Analytics.ListItemActivityStats
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            allTime:
+              operationId: shares.listItem.Analytics.GetAllTime
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastSevenDays:
+              operationId: shares.listItem.Analytics.GetLastSevenDays
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12009,6 +9130,19 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            itemActivityStats:
+              operationId: shares.listItem.Analytics.ListItemActivityStats
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            allTime:
+              operationId: shares.listItem.Analytics.GetAllTime
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastSevenDays:
+              operationId: shares.listItem.Analytics.GetLastSevenDays
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12160,6 +9294,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: shares.listItem.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.listItem.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.listItem.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.listItem.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.listItem.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.listItem.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.listItem.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.listItem.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.listItem.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12461,15 +9636,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.listItemVersion'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12558,6 +9728,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.listItemVersion'
+          links:
+            fields:
+              operationId: shares.listItem.Versions.GetFields
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItemVersion-id: $request.path.listItemVersion-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13019,6 +10195,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
+          links:
+            createdByUser:
+              operationId: shares.Root.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.Root.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.Root.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.Root.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.Root.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.Root.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.Root.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.Root.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.Root.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.Root.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13153,6 +10370,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
+          links:
+            createdByUser:
+              operationId: shares.Site.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.Site.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.Site.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            columns:
+              operationId: shares.Site.ListColumns
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            contentTypes:
+              operationId: shares.Site.ListContentTypes
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            drive:
+              operationId: shares.Site.GetDrive
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            drives:
+              operationId: shares.Site.ListDrives
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.Site.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lists:
+              operationId: shares.Site.ListLists
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            sites:
+              operationId: shares.Site.ListSites
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            onenote:
+              operationId: shares.Site.GetOnenote
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13279,6 +10541,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: users.Drive.GetCreatedByUser
+              parameters:
+                user-id: $request.path.user-id
+            lastModifiedByUser:
+              operationId: users.Drive.GetLastModifiedByUser
+              parameters:
+                user-id: $request.path.user-id
+            following:
+              operationId: users.Drive.ListFollowing
+              parameters:
+                user-id: $request.path.user-id
+            items:
+              operationId: users.Drive.ListItems
+              parameters:
+                user-id: $request.path.user-id
+            list:
+              operationId: users.Drive.GetList
+              parameters:
+                user-id: $request.path.user-id
+            root:
+              operationId: users.Drive.GetRoot
+              parameters:
+                user-id: $request.path.user-id
+            special:
+              operationId: users.Drive.ListSpecial
+              parameters:
+                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13457,15 +10748,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.drive'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13577,6 +10863,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.drive'
+          links:
+            createdByUser:
+              operationId: users.Drives.GetCreatedByUser
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: users.Drives.GetLastModifiedByUser
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            following:
+              operationId: users.Drives.ListFollowing
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            items:
+              operationId: users.Drives.ListItems
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            list:
+              operationId: users.Drives.GetList
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            root:
+              operationId: users.Drives.GetRoot
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
+            special:
+              operationId: users.Drives.ListSpecial
+              parameters:
+                user-id: $request.path.user-id
+                drive-id: $request.path.drive-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

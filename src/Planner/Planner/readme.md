@@ -38,20 +38,14 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Needs validation
-# directive:
-  # - where:
-  #     verb: Update
-  #     subject: UserPlanner
-  #     variant: Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1
-  #   set:
-  #     subject: AllUserPlanner
+directive:
+# Remove paths that are not valid.
+  - remove-path-by-operation: ^users.planner_(Create|Update|Delete)All$
 
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 0.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

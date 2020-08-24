@@ -72,6 +72,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: groups.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+            multiValueExtendedProperties:
+              operationId: groups.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+            calendarPermissions:
+              operationId: groups.Calendar.ListCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+            events:
+              operationId: groups.Calendar.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+            calendarView:
+              operationId: groups.Calendar.ListCalendarView
+              parameters:
+                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -209,15 +230,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -577,15 +593,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -730,6 +741,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendar.CalendarView.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: groups.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: groups.calendar.CalendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: groups.calendar.CalendarView.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: groups.calendar.CalendarView.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -888,15 +930,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1153,6 +1190,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: groups.calendar.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.calendar.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: groups.calendar.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            events:
+              operationId: groups.calendar.calendarView.Calendar.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: groups.calendar.calendarView.Calendar.ListCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1296,15 +1359,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1682,15 +1740,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1837,6 +1890,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendar.calendarView.Instances.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.calendar.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.calendar.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.calendar.calendarView.Instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.calendar.calendarView.Instances.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.calendar.calendarView.Instances.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1997,15 +2087,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2264,15 +2349,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2644,15 +2724,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2785,6 +2860,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendar.Events.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: groups.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: groups.calendar.Events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: groups.calendar.Events.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: groups.calendar.Events.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2943,15 +3049,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3208,6 +3309,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: groups.calendar.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.calendar.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: groups.calendar.events.Calendar.ListCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            events:
+              operationId: groups.calendar.events.Calendar.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: groups.calendar.events.Calendar.ListCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3351,15 +3478,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3737,15 +3859,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3892,6 +4009,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendar.events.Instances.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.calendar.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.calendar.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.calendar.events.Instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.calendar.events.Instances.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.calendar.events.Instances.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4052,15 +4206,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4319,15 +4468,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4579,15 +4723,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4811,15 +4950,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5175,15 +5309,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5328,6 +5457,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.CalendarView.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: groups.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: groups.CalendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: groups.CalendarView.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: groups.CalendarView.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5486,15 +5646,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5751,6 +5906,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: groups.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: groups.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            events:
+              operationId: groups.calendarView.Calendar.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: groups.calendarView.Calendar.ListCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5909,15 +6090,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6300,15 +6476,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6455,6 +6626,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendarView.calendar.CalendarView.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.calendarView.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.calendarView.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.calendarView.calendar.CalendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.calendarView.calendar.CalendarView.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.calendarView.calendar.CalendarView.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6735,15 +6943,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6890,6 +7093,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendarView.calendar.Events.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.calendarView.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.calendarView.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.calendarView.calendar.Events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.calendarView.calendar.Events.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.calendarView.calendar.Events.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7050,15 +7290,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7317,15 +7552,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7581,15 +7811,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7967,15 +8192,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8122,6 +8342,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.calendarView.Instances.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.calendarView.Instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.calendarView.Instances.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.calendarView.Instances.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8282,15 +8539,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8549,15 +8801,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8929,15 +9176,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9070,6 +9312,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.Events.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: groups.Events.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.Events.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: groups.Events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: groups.Events.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: groups.Events.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9228,15 +9501,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -9493,6 +9761,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: groups.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: groups.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: groups.events.Calendar.ListCalendarPermissions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            events:
+              operationId: groups.events.Calendar.ListEvents
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: groups.events.Calendar.ListCalendarView
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9651,15 +9945,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10042,15 +10331,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10197,6 +10481,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.events.calendar.CalendarView.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.events.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.events.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.events.calendar.CalendarView.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.events.calendar.CalendarView.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.events.calendar.CalendarView.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10477,15 +10798,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -10632,6 +10948,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.events.calendar.Events.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.events.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.events.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.events.calendar.Events.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.events.calendar.Events.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.events.calendar.Events.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10792,15 +11145,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11059,15 +11407,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11323,15 +11666,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11709,15 +12047,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -11864,6 +12197,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: groups.events.Instances.ListAttachments
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: groups.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: groups.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: groups.events.Instances.GetCalendar
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: groups.events.Instances.ListInstances
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: groups.events.Instances.ListExtensions
+              parameters:
+                group-id: $request.path.group-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12024,15 +12394,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12291,15 +12656,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -12553,16 +12913,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.place'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
     post:
       tags:
         - places.place
@@ -12753,6 +13107,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+            multiValueExtendedProperties:
+              operationId: users.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+            calendarPermissions:
+              operationId: users.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+            events:
+              operationId: users.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+            calendarView:
+              operationId: users.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12890,15 +13265,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13258,15 +13628,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13411,6 +13776,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendar.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendar.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendar.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendar.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13569,15 +13965,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -13834,6 +14225,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendar.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendar.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendar.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendar.calendarView.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendar.calendarView.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13977,15 +14394,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -14363,15 +14775,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -14518,6 +14925,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendar.calendarView.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendar.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendar.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendar.calendarView.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendar.calendarView.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendar.calendarView.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14678,15 +15122,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -14945,15 +15384,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -15325,15 +15759,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -15466,6 +15895,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendar.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendar.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendar.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendar.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15624,15 +16084,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -15889,6 +16344,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendar.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendar.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendar.events.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendar.events.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendar.events.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16032,15 +16513,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -16418,15 +16894,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -16573,6 +17044,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendar.events.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendar.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendar.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendar.events.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendar.events.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendar.events.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16733,15 +17241,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -17000,15 +17503,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -17260,15 +17758,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -17492,15 +17985,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -17732,15 +18220,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarGroup'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -17829,6 +18312,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendarGroup'
+          links:
+            calendars:
+              operationId: users.CalendarGroups.ListCalendars
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18015,15 +18504,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendar'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -18142,6 +18626,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.Calendars.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.Calendars.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+            calendarPermissions:
+              operationId: users.calendarGroups.Calendars.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+            events:
+              operationId: users.calendarGroups.Calendars.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+            calendarView:
+              operationId: users.calendarGroups.Calendars.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18321,15 +18836,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -18747,15 +19257,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -18916,6 +19421,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarGroups.calendars.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendarGroups.calendars.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendarGroups.calendars.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendarGroups.calendars.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19116,15 +19664,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -19451,6 +19994,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendarGroups.calendars.calendarView.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19636,15 +20215,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -20092,15 +20666,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -20275,6 +20844,55 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendarGroups.calendars.calendarView.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20477,15 +21095,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -20814,15 +21427,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -21264,15 +21872,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -21433,6 +22036,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarGroups.calendars.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendarGroups.calendars.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendarGroups.calendars.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendarGroups.calendars.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21633,15 +22279,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -21968,6 +22609,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendarGroups.calendars.events.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendarGroups.calendars.events.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendarGroups.calendars.events.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22153,15 +22830,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -22609,15 +23281,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -22792,6 +23459,55 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarGroups.calendars.events.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendarGroups.calendars.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendarGroups.calendars.events.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendarGroups.calendars.events.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendarGroups.calendars.events.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendarGroup-id: $request.path.calendarGroup-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22994,15 +23710,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -23331,15 +24042,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -23661,15 +24367,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -23963,15 +24664,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -24291,15 +24987,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendar'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -24404,6 +25095,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.Calendars.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+            multiValueExtendedProperties:
+              operationId: users.Calendars.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+            calendarPermissions:
+              operationId: users.Calendars.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+            events:
+              operationId: users.Calendars.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+            calendarView:
+              operationId: users.Calendars.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24562,15 +25279,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -24965,15 +25677,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -25132,6 +25839,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendars.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendars.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendars.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendars.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendars.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendars.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25311,15 +26055,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -25611,6 +26350,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendars.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendars.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendars.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendars.calendarView.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendars.calendarView.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25775,15 +26545,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -26196,15 +26961,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -26365,6 +27125,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendars.calendarView.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendars.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendars.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendars.calendarView.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendars.calendarView.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendars.calendarView.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26546,15 +27349,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -26848,15 +27646,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -27263,15 +28056,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -27418,6 +28206,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendars.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.calendars.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendars.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.calendars.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.calendars.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.calendars.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -27597,15 +28422,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -27897,6 +28717,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendars.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendars.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendars.events.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendars.events.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendars.events.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28061,15 +28912,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -28482,15 +29328,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -28651,6 +29492,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendars.events.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendars.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendars.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendars.events.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendars.events.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendars.events.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                calendar-id: $request.path.calendar-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28832,15 +29716,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -29134,15 +30013,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -29429,15 +30303,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -29696,15 +30565,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -30088,15 +30952,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -30241,6 +31100,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30399,15 +31289,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -30664,6 +31549,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.calendarView.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.calendarView.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.calendarView.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.calendarView.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.calendarView.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30822,15 +31733,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -31213,15 +32119,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -31368,6 +32269,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarView.calendar.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendarView.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendarView.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendarView.calendar.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendarView.calendar.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendarView.calendar.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31648,15 +32586,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -31803,6 +32736,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarView.calendar.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendarView.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendarView.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendarView.calendar.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendarView.calendar.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendarView.calendar.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31963,15 +32933,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -32230,15 +33195,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -32494,15 +33454,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -32880,15 +33835,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -33035,6 +33985,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.calendarView.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.calendarView.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.calendarView.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.calendarView.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.calendarView.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.calendarView.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33195,15 +34182,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -33462,15 +34444,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -33842,15 +34819,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -33983,6 +34955,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            singleValueExtendedProperties:
+              operationId: users.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendar:
+              operationId: users.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            instances:
+              operationId: users.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            extensions:
+              operationId: users.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34141,15 +35144,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -34406,6 +35404,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.calendar'
+          links:
+            singleValueExtendedProperties:
+              operationId: users.events.Calendar.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            multiValueExtendedProperties:
+              operationId: users.events.Calendar.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarPermissions:
+              operationId: users.events.Calendar.ListCalendarPermissions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            events:
+              operationId: users.events.Calendar.ListEvents
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+            calendarView:
+              operationId: users.events.Calendar.ListCalendarView
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -34564,15 +35588,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.calendarPermission'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -34955,15 +35974,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -35110,6 +36124,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.events.calendar.CalendarView.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.events.calendar.CalendarView.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.events.calendar.CalendarView.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.events.calendar.CalendarView.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.events.calendar.CalendarView.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.events.calendar.CalendarView.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35390,15 +36441,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -35545,6 +36591,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.events.calendar.Events.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.events.calendar.Events.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.events.calendar.Events.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.events.calendar.Events.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.events.calendar.Events.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.events.calendar.Events.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -35705,15 +36788,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -35972,15 +37050,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -36236,15 +37309,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -36622,15 +37690,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.event'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -36777,6 +37840,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.event'
+          links:
+            attachments:
+              operationId: users.events.Instances.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            singleValueExtendedProperties:
+              operationId: users.events.Instances.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            multiValueExtendedProperties:
+              operationId: users.events.Instances.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            calendar:
+              operationId: users.events.Instances.GetCalendar
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            instances:
+              operationId: users.events.Instances.ListInstances
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
+            extensions:
+              operationId: users.events.Instances.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                event-id: $request.path.event-id
+                event-id1: $request.path.event-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36937,15 +38037,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -37204,15 +38299,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

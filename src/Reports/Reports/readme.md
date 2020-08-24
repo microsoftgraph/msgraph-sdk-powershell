@@ -38,30 +38,29 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Needs validation
-# directive:
-# # Remove cmdlets
-#   - where:
-#       verb: Get
-#       subject: ReportTenantSecureScore
-#     remove: true
-# # Rename cmdlets
-#   - where:
-#       verb: New|Update|Get
-#       subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-#       variant: ^Create$|^CreateExpanded$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Get$|^GetViaIdentity$|^List$
-#     set:
-#       subject: $1ByPrinter
-#   - where:
-#       verb: New|Update|Get
-#       subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-#       variant: ^Create1$|^CreateExpanded1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Get1$|^GetViaIdentity1$|^List1$
-#     set:
-#       subject: $1ByUser
+directive:
+# Remove cmdlets
+  - where:
+      verb: Get
+      subject: ReportTenantSecureScore
+    remove: true
+# Rename cmdlets
+  - where:
+      verb: New|Update|Get
+      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
+      variant: ^Create$|^CreateExpanded$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Get$|^GetViaIdentity$|^List$
+    set:
+      subject: $1ByPrinter
+  - where:
+      verb: New|Update|Get
+      subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
+      variant: ^Create1$|^CreateExpanded1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Get1$|^GetViaIdentity1$|^List1$
+    set:
+      subject: $1ByUser
 ```
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 0.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

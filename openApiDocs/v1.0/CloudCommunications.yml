@@ -108,15 +108,10 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-                  '@odata.nextLink':
-                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
