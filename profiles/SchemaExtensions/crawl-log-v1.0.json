@@ -1,13 +1,13 @@
 {
-  "resources": [],
   "operations": {
-    "/schemaExtensions": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/SchemaExtensions.yml"
-    },
     "/schemaExtensions/{schemaExtension-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/SchemaExtensions.yml"
+    },
+    "/schemaExtensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/SchemaExtensions.yml"
     }
-  }
+  },
+  "resources": []
 }

@@ -1,6 +1,9 @@
 {
-  "resources": [],
   "operations": {
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
     "/users/{user-id}/presence": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
@@ -8,10 +11,7 @@
     "/users/{user-id}/onlineMeetings": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
-    },
-    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     }
-  }
+  },
+  "resources": []
 }

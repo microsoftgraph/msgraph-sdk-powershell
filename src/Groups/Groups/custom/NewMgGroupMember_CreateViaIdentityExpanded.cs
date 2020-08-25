@@ -34,7 +34,7 @@
         public System.Management.Automation.SwitchParameter Break { get; set; }
 
         /// <summary>The reference to the client API class.</summary>
-        public GroupsDirectoryObject Client => Module.Instance.ClientAPI;
+        public Groups Client => Module.Instance.ClientAPI;
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -60,12 +60,12 @@
         public string DirectoryObjectId { get => BodyParameterBody.Id ?? null; set => BodyParameterBody.Id = value; }
 
         /// <summary>Backing field for <see cref="InputObject" /> property.</summary>
-        private Models.IGroupsDirectoryObjectIdentity _inputObject;
+        private Models.IGroupsIdentity _inputObject;
 
         /// <summary>Identity Parameter</summary>
         [System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Identity Parameter", ValueFromPipeline = true)]
         [Category(ParameterCategory.Path)]
-        public Models.IGroupsDirectoryObjectIdentity InputObject { get => this._inputObject; set => this._inputObject = value; }
+        public Models.IGroupsIdentity InputObject { get => this._inputObject; set => this._inputObject = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation; set { __invocationInfo = value; } }

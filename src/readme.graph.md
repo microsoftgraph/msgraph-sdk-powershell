@@ -355,6 +355,24 @@ directive:
       subject: ^(\w*[a-z])Ref([A-Z]\w*)$
     set:
       subject: $1$2ByRef
+  - where:
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^List3$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
+    set:
+      subject: GroupMemberOfByRef
+  - where:
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
+    set:
+      subject: GroupMemberWithLicenseErrorByRef
+  - where:
+      verb: Get
+      subject: ^GroupTransitiveMemberByRef$
+      variant: ^List$|^List2$
+    set:
+      subject: GroupTransitiveMemberOfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

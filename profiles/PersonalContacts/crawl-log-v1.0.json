@@ -1,63 +1,6 @@
 {
-  "resources": [],
   "operations": {
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/{extension-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contacts": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contacts/{contact-id}/extensions/{extension-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
@@ -69,23 +12,15 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
-    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+    "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+    "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
-    "/users/{user-id}/contacts/{contact-id}/photo": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contacts/{contact-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
-    },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
@@ -93,17 +28,82 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
+    "/users/{user-id}/contactFolders": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contacts/{contact-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
     "/users/{user-id}/contactFolders/{contactFolder-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
-    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo": {
+    "/users/{user-id}/contacts/{contact-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     },
     "/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contacts/{contact-id}/photo": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contacts": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
+    },
+    "/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/PersonalContacts.yml"
     }
-  }
+  },
+  "resources": []
 }

@@ -1,13 +1,13 @@
 {
-  "resources": [],
   "operations": {
-    "/users/{user-id}/onlineMeetings": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
-    },
     "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     }
-  }
+  },
+  "resources": []
 }

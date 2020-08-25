@@ -1,15 +1,10 @@
 {
-  "resources": [],
   "operations": {
     "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/activities": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
-    },
-    "/users/{user-id}/activities/{userActivity-id}": {
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
@@ -17,11 +12,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
+    "/users/{user-id}/activities": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
     "/users/{user-id}/activities/{userActivity-id}/historyItems": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/devices/{device-id}": {
+    "/users/{user-id}/activities/{userActivity-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
@@ -29,9 +28,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
+    "/users/{user-id}/devices/{device-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     }
-  }
+  },
+  "resources": []
 }

@@ -1,19 +1,18 @@
 {
-  "resources": [],
   "operations": {
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/$ref": {
+    "/users/{user-id}/insights/trending/{trending-id}/resource/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/insights": {
+    "/users/{user-id}/insights/shared/{sharedInsight-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/insights/used/{usedInsight-id}/resource": {
+    "/users/{user-id}/insights/trending/{trending-id}/resource": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/insights/used/{usedInsight-id}": {
+    "/users/{user-id}/people": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
@@ -21,7 +20,19 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/insights/trending/{trending-id}/resource": {
+    "/users/{user-id}/insights/used/{usedInsight-id}/resource": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/People.yml"
+    },
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/People.yml"
+    },
+    "/users/{user-id}/insights/used/{usedInsight-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/People.yml"
+    },
+    "/users/{user-id}/people/{person-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
@@ -33,23 +44,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/insights/trending": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/People.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/People.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/People.yml"
-    },
-    "/users/{user-id}/insights/shared/{sharedInsight-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/People.yml"
-    },
-    "/users/{user-id}/people/{person-id}": {
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
@@ -57,17 +52,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
-    "/users/{user-id}/people": {
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/People.yml"
+    },
+    "/users/{user-id}/insights": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/People.yml"
+    },
+    "/users/{user-id}/insights/trending": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
     },
     "/users/{user-id}/insights/shared": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/People.yml"
-    },
-    "/users/{user-id}/insights/trending/{trending-id}/resource/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/People.yml"
     }
-  }
+  },
+  "resources": []
 }

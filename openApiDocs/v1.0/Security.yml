@@ -50,13 +50,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
-          links:
-            alerts:
-              operationId: Security.ListAlerts
-            secureScoreControlProfiles:
-              operationId: Security.ListSecureScoreControlProfiles
-            secureScores:
-              operationId: Security.ListSecureScores
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -242,10 +235,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.alert'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -520,10 +518,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -756,10 +759,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.secureScore'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

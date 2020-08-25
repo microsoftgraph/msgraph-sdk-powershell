@@ -34,7 +34,7 @@
         public System.Management.Automation.SwitchParameter Break { get; set; }
 
         /// <summary>The reference to the client API class.</summary>
-        public GroupsDirectoryObject Client => Microsoft.Graph.PowerShell.Module.Instance.ClientAPI;
+        public Groups Client => Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="GroupId" /> property.</summary>
         private string _groupId;

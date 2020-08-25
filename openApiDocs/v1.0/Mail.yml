@@ -53,11 +53,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
-          links:
-            overrides:
-              operationId: users.InferenceClassification.ListOverrides
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -186,10 +181,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -436,10 +436,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -538,32 +543,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: users.MailFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            multiValueExtendedProperties:
-              operationId: users.MailFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            messages:
-              operationId: users.MailFolders.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            messageRules:
-              operationId: users.MailFolders.ListMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            childFolders:
-              operationId: users.MailFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -732,10 +711,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.mailFolder'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -848,37 +832,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            singleValueExtendedProperties:
-              operationId: users.mailFolders.ChildFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            multiValueExtendedProperties:
-              operationId: users.mailFolders.ChildFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            messages:
-              operationId: users.mailFolders.ChildFolders.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            messageRules:
-              operationId: users.mailFolders.ChildFolders.ListMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            childFolders:
-              operationId: users.mailFolders.ChildFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1060,10 +1013,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.messageRule'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1424,10 +1382,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.message'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1563,31 +1526,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            singleValueExtendedProperties:
-              operationId: users.mailFolders.Messages.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            multiValueExtendedProperties:
-              operationId: users.mailFolders.Messages.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            attachments:
-              operationId: users.mailFolders.Messages.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            extensions:
-              operationId: users.mailFolders.Messages.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1767,10 +1705,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2065,10 +2008,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2361,10 +2309,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2658,10 +2611,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2948,10 +2906,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3210,10 +3173,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3560,10 +3528,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.message'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3685,27 +3658,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            singleValueExtendedProperties:
-              operationId: users.Messages.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            multiValueExtendedProperties:
-              operationId: users.Messages.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            attachments:
-              operationId: users.Messages.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            extensions:
-              operationId: users.Messages.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3864,10 +3816,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.attachment'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4127,10 +4084,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4388,10 +4350,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4650,10 +4617,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

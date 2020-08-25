@@ -50,13 +50,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-          links:
-            signIns:
-              operationId: auditLogs.ListSignIns
-            directoryAudits:
-              operationId: auditLogs.ListDirectoryAudits
-            restrictedSignIns:
-              operationId: auditLogs.ListRestrictedSignIns
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -173,10 +166,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -443,10 +441,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -723,10 +726,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.signIn'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:

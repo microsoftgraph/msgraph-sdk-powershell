@@ -86,10 +86,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.dataPolicyOperation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - dataPolicyOperations.dataPolicyOperation
@@ -258,11 +264,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-          links:
-            policies:
-              operationId: identity.ConditionalAccess.ListPolicies
-            namedLocations:
-              operationId: identity.ConditionalAccess.ListNamedLocations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -372,10 +373,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.namedLocation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -586,10 +592,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -793,10 +804,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.identityProvider'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - identityProviders.identityProvider
@@ -961,9 +978,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
-          links:
-            threatAssessmentRequests:
-              operationId: informationProtection.ListThreatAssessmentRequests
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1070,10 +1084,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1151,11 +1170,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-          links:
-            results:
-              operationId: informationProtection.ThreatAssessmentRequests.ListResults
-              parameters:
-                threatAssessmentRequest-id: $request.path.threatAssessmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1287,10 +1301,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.threatAssessmentResult'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1532,10 +1551,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.invitation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - invitations.invitation
@@ -1613,11 +1638,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.invitation'
-          links:
-            invitedUser:
-              operationId: invitations.GetInvitedUser
-              parameters:
-                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1860,163 +1880,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            appRoleAssignments:
-              operationId: invitations.InvitedUser.ListAppRoleAssignments
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedDevices:
-              operationId: invitations.InvitedUser.ListOwnedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            registeredDevices:
-              operationId: invitations.InvitedUser.ListRegisteredDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            manager:
-              operationId: invitations.InvitedUser.GetManager
-              parameters:
-                invitation-id: $request.path.invitation-id
-            directReports:
-              operationId: invitations.InvitedUser.ListDirectReports
-              parameters:
-                invitation-id: $request.path.invitation-id
-            memberOf:
-              operationId: invitations.InvitedUser.ListMemberOf
-              parameters:
-                invitation-id: $request.path.invitation-id
-            createdObjects:
-              operationId: invitations.InvitedUser.ListCreatedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            oauth2PermissionGrants:
-              operationId: invitations.InvitedUser.ListOauth2PermissionGrants
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedObjects:
-              operationId: invitations.InvitedUser.ListOwnedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            licenseDetails:
-              operationId: invitations.InvitedUser.ListLicenseDetails
-              parameters:
-                invitation-id: $request.path.invitation-id
-            transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberOf
-              parameters:
-                invitation-id: $request.path.invitation-id
-            outlook:
-              operationId: invitations.InvitedUser.GetOutlook
-              parameters:
-                invitation-id: $request.path.invitation-id
-            messages:
-              operationId: invitations.InvitedUser.ListMessages
-              parameters:
-                invitation-id: $request.path.invitation-id
-            mailFolders:
-              operationId: invitations.InvitedUser.ListMailFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendar:
-              operationId: invitations.InvitedUser.GetCalendar
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendars:
-              operationId: invitations.InvitedUser.ListCalendars
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarGroups:
-              operationId: invitations.InvitedUser.ListCalendarGroups
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarView:
-              operationId: invitations.InvitedUser.ListCalendarView
-              parameters:
-                invitation-id: $request.path.invitation-id
-            events:
-              operationId: invitations.InvitedUser.ListEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            people:
-              operationId: invitations.InvitedUser.ListPeople
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contacts:
-              operationId: invitations.InvitedUser.ListContacts
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contactFolders:
-              operationId: invitations.InvitedUser.ListContactFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            inferenceClassification:
-              operationId: invitations.InvitedUser.GetInferenceClassification
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photo:
-              operationId: invitations.InvitedUser.GetPhoto
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photos:
-              operationId: invitations.InvitedUser.ListPhotos
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drive:
-              operationId: invitations.InvitedUser.GetDrive
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drives:
-              operationId: invitations.InvitedUser.ListDrives
-              parameters:
-                invitation-id: $request.path.invitation-id
-            followedSites:
-              operationId: invitations.InvitedUser.ListFollowedSites
-              parameters:
-                invitation-id: $request.path.invitation-id
-            extensions:
-              operationId: invitations.InvitedUser.ListExtensions
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedDevices:
-              operationId: invitations.InvitedUser.ListManagedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedAppRegistrations:
-              operationId: invitations.InvitedUser.ListManagedAppRegistrations
-              parameters:
-                invitation-id: $request.path.invitation-id
-            deviceManagementTroubleshootingEvents:
-              operationId: invitations.InvitedUser.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            planner:
-              operationId: invitations.InvitedUser.GetPlanner
-              parameters:
-                invitation-id: $request.path.invitation-id
-            insights:
-              operationId: invitations.InvitedUser.GetInsights
-              parameters:
-                invitation-id: $request.path.invitation-id
-            settings:
-              operationId: invitations.InvitedUser.GetSettings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onenote:
-              operationId: invitations.InvitedUser.GetOnenote
-              parameters:
-                invitation-id: $request.path.invitation-id
-            activities:
-              operationId: invitations.InvitedUser.ListActivities
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onlineMeetings:
-              operationId: invitations.InvitedUser.ListOnlineMeetings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            joinedTeams:
-              operationId: invitations.InvitedUser.ListJoinedTeams
-              parameters:
-                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2041,163 +1904,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            appRoleAssignments:
-              operationId: invitations.InvitedUser.ListAppRoleAssignments
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedDevices:
-              operationId: invitations.InvitedUser.ListOwnedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            registeredDevices:
-              operationId: invitations.InvitedUser.ListRegisteredDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            manager:
-              operationId: invitations.InvitedUser.GetManager
-              parameters:
-                invitation-id: $request.path.invitation-id
-            directReports:
-              operationId: invitations.InvitedUser.ListDirectReports
-              parameters:
-                invitation-id: $request.path.invitation-id
-            memberOf:
-              operationId: invitations.InvitedUser.ListMemberOf
-              parameters:
-                invitation-id: $request.path.invitation-id
-            createdObjects:
-              operationId: invitations.InvitedUser.ListCreatedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            oauth2PermissionGrants:
-              operationId: invitations.InvitedUser.ListOauth2PermissionGrants
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedObjects:
-              operationId: invitations.InvitedUser.ListOwnedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            licenseDetails:
-              operationId: invitations.InvitedUser.ListLicenseDetails
-              parameters:
-                invitation-id: $request.path.invitation-id
-            transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberOf
-              parameters:
-                invitation-id: $request.path.invitation-id
-            outlook:
-              operationId: invitations.InvitedUser.GetOutlook
-              parameters:
-                invitation-id: $request.path.invitation-id
-            messages:
-              operationId: invitations.InvitedUser.ListMessages
-              parameters:
-                invitation-id: $request.path.invitation-id
-            mailFolders:
-              operationId: invitations.InvitedUser.ListMailFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendar:
-              operationId: invitations.InvitedUser.GetCalendar
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendars:
-              operationId: invitations.InvitedUser.ListCalendars
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarGroups:
-              operationId: invitations.InvitedUser.ListCalendarGroups
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarView:
-              operationId: invitations.InvitedUser.ListCalendarView
-              parameters:
-                invitation-id: $request.path.invitation-id
-            events:
-              operationId: invitations.InvitedUser.ListEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            people:
-              operationId: invitations.InvitedUser.ListPeople
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contacts:
-              operationId: invitations.InvitedUser.ListContacts
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contactFolders:
-              operationId: invitations.InvitedUser.ListContactFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            inferenceClassification:
-              operationId: invitations.InvitedUser.GetInferenceClassification
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photo:
-              operationId: invitations.InvitedUser.GetPhoto
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photos:
-              operationId: invitations.InvitedUser.ListPhotos
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drive:
-              operationId: invitations.InvitedUser.GetDrive
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drives:
-              operationId: invitations.InvitedUser.ListDrives
-              parameters:
-                invitation-id: $request.path.invitation-id
-            followedSites:
-              operationId: invitations.InvitedUser.ListFollowedSites
-              parameters:
-                invitation-id: $request.path.invitation-id
-            extensions:
-              operationId: invitations.InvitedUser.ListExtensions
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedDevices:
-              operationId: invitations.InvitedUser.ListManagedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedAppRegistrations:
-              operationId: invitations.InvitedUser.ListManagedAppRegistrations
-              parameters:
-                invitation-id: $request.path.invitation-id
-            deviceManagementTroubleshootingEvents:
-              operationId: invitations.InvitedUser.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            planner:
-              operationId: invitations.InvitedUser.GetPlanner
-              parameters:
-                invitation-id: $request.path.invitation-id
-            insights:
-              operationId: invitations.InvitedUser.GetInsights
-              parameters:
-                invitation-id: $request.path.invitation-id
-            settings:
-              operationId: invitations.InvitedUser.GetSettings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onenote:
-              operationId: invitations.InvitedUser.GetOnenote
-              parameters:
-                invitation-id: $request.path.invitation-id
-            activities:
-              operationId: invitations.InvitedUser.ListActivities
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onlineMeetings:
-              operationId: invitations.InvitedUser.ListOnlineMeetings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            joinedTeams:
-              operationId: invitations.InvitedUser.ListJoinedTeams
-              parameters:
-                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2330,10 +2036,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
@@ -2549,10 +2261,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}':
     get:
@@ -2657,10 +2374,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2748,21 +2470,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policyRoot'
-          links:
-            activityBasedTimeoutPolicies:
-              operationId: policies.ListActivityBasedTimeoutPolicies
-            claimsMappingPolicies:
-              operationId: policies.ListClaimsMappingPolicies
-            homeRealmDiscoveryPolicies:
-              operationId: policies.ListHomeRealmDiscoveryPolicies
-            tokenIssuancePolicies:
-              operationId: policies.ListTokenIssuancePolicies
-            tokenLifetimePolicies:
-              operationId: policies.ListTokenLifetimePolicies
-            identitySecurityDefaultsEnforcementPolicy:
-              operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
-            conditionalAccessPolicies:
-              operationId: policies.ListConditionalAccessPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2863,10 +2570,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2942,11 +2654,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ActivityBasedTimeoutPolicies.ListAppliesTo
-              parameters:
-                activityBasedTimeoutPolicy-id: $request.path.activityBasedTimeoutPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3079,10 +2786,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3158,11 +2870,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ClaimsMappingPolicies.ListAppliesTo
-              parameters:
-                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3302,10 +3009,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conditionalAccessPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3514,10 +3226,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3593,11 +3310,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          links:
-            appliesTo:
-              operationId: policies.HomeRealmDiscoveryPolicies.ListAppliesTo
-              parameters:
-                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3810,10 +3522,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3889,11 +3606,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenIssuancePolicies.ListAppliesTo
-              parameters:
-                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4026,10 +3738,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4105,11 +3822,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenLifetimePolicies.ListAppliesTo
-              parameters:
-                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6819,9 +6531,11 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the team.
               nullable: true
             description:
               type: string
+              description: An optional description for the team.
               nullable: true
             internalId:
               type: string
@@ -6829,6 +6543,7 @@ components:
               nullable: true
             classification:
               type: string
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
               nullable: true
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
@@ -6860,6 +6575,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: Members and owners of the team.
             channels:
               type: array
               items:
@@ -6876,6 +6592,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+              description: The async operations that ran or are running on this team.
           additionalProperties:
             type: object
     microsoft.graph.certificateAuthority:
@@ -9611,8 +9328,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The roles for that user.
             displayName:
               type: string
+              description: The display name of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -9674,23 +9393,28 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the operation was created.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the async operation was last updated.
               format: date-time
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             targetResourceId:
               type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
               nullable: true
             targetResourceLocation:
               type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.operationError'

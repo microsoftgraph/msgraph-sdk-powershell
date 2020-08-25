@@ -5332,6 +5332,22 @@ components:
         isEncrypted:
           type: boolean
           description: Encryption status of the device
+        batterySerialNumber:
+          type: string
+          description: The serial number of the device???s current battery
+          nullable: true
+        batteryHealthPercentage:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The device???s current battery???s health percentage. Valid values 0 to 100
+          format: int32
+        batteryChargeCycles:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
+          format: int32
         isSharedDevice:
           type: boolean
           description: Shared iPad
@@ -5461,6 +5477,7 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
+        - cloudPC
         - blackberry
         - palm
         - unknown
@@ -8047,9 +8064,11 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the team.
               nullable: true
             description:
               type: string
+              description: An optional description for the team.
               nullable: true
             internalId:
               type: string
@@ -8057,6 +8076,7 @@ components:
               nullable: true
             classification:
               type: string
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
               nullable: true
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
@@ -8099,6 +8119,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: Members and owners of the team.
             channels:
               type: array
               items:
@@ -8115,6 +8136,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+              description: The async operations that ran or are running on this team.
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -8854,8 +8876,6 @@ components:
               nullable: true
             severity:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareSeverity'
-            catetgory:
-              $ref: '#/components/schemas/microsoft.graph.windowsMalwareCategory'
             executionState:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareExecutionState'
             state:
@@ -11416,8 +11436,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The roles for that user.
             displayName:
               type: string
+              description: The display name of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -11788,23 +11810,28 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the operation was created.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the async operation was last updated.
               format: date-time
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             targetResourceId:
               type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
               nullable: true
             targetResourceLocation:
               type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.operationError'
@@ -11947,6 +11974,47 @@ components:
         - high
         - severe
       type: string
+    microsoft.graph.windowsMalwareExecutionState:
+      title: windowsMalwareExecutionState
+      enum:
+        - unknown
+        - blocked
+        - allowed
+        - running
+        - notRunning
+      type: string
+    microsoft.graph.windowsMalwareState:
+      title: windowsMalwareState
+      enum:
+        - unknown
+        - detected
+        - cleaned
+        - quarantined
+        - removed
+        - allowed
+        - blocked
+        - cleanFailed
+        - quarantineFailed
+        - removeFailed
+        - allowFailed
+        - abandoned
+        - blockFailed
+      type: string
+    microsoft.graph.windowsMalwareThreatState:
+      title: windowsMalwareThreatState
+      enum:
+        - active
+        - actionFailed
+        - manualStepsRequired
+        - fullScanRequired
+        - rebootRequired
+        - remediatedWithNonCriticalFailures
+        - quarantined
+        - removed
+        - cleaned
+        - allowed
+        - noStatusCleared
+      type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
       enum:
@@ -12000,47 +12068,6 @@ components:
         - enterpriseUnwantedSoftware
         - ransom
         - hipsRule
-      type: string
-    microsoft.graph.windowsMalwareExecutionState:
-      title: windowsMalwareExecutionState
-      enum:
-        - unknown
-        - blocked
-        - allowed
-        - running
-        - notRunning
-      type: string
-    microsoft.graph.windowsMalwareState:
-      title: windowsMalwareState
-      enum:
-        - unknown
-        - detected
-        - cleaned
-        - quarantined
-        - removed
-        - allowed
-        - blocked
-        - cleanFailed
-        - quarantineFailed
-        - removeFailed
-        - allowFailed
-        - abandoned
-        - blockFailed
-      type: string
-    microsoft.graph.windowsMalwareThreatState:
-      title: windowsMalwareThreatState
-      enum:
-        - active
-        - actionFailed
-        - manualStepsRequired
-        - fullScanRequired
-        - rebootRequired
-        - remediatedWithNonCriticalFailures
-        - quarantined
-        - removed
-        - cleaned
-        - allowed
-        - noStatusCleared
       type: string
     microsoft.graph.automaticRepliesStatus:
       title: automaticRepliesStatus

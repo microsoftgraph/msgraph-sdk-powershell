@@ -79,39 +79,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            schedule:
-              operationId: groups.Team.GetSchedule
-              parameters:
-                group-id: $request.path.group-id
-            group:
-              operationId: groups.Team.GetGroup
-              parameters:
-                group-id: $request.path.group-id
-            template:
-              operationId: groups.Team.GetTemplate
-              parameters:
-                group-id: $request.path.group-id
-            members:
-              operationId: groups.Team.ListMembers
-              parameters:
-                group-id: $request.path.group-id
-            channels:
-              operationId: groups.Team.ListChannels
-              parameters:
-                group-id: $request.path.group-id
-            primaryChannel:
-              operationId: groups.Team.GetPrimaryChannel
-              parameters:
-                group-id: $request.path.group-id
-            installedApps:
-              operationId: groups.Team.ListInstalledApps
-              parameters:
-                group-id: $request.path.group-id
-            operations:
-              operationId: groups.Team.ListOperations
-              parameters:
-                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -279,10 +246,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.team'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - teams.team
@@ -378,39 +351,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            schedule:
-              operationId: teams.GetSchedule
-              parameters:
-                team-id: $request.path.team-id
-            group:
-              operationId: teams.GetGroup
-              parameters:
-                team-id: $request.path.team-id
-            template:
-              operationId: teams.GetTemplate
-              parameters:
-                team-id: $request.path.team-id
-            members:
-              operationId: teams.ListMembers
-              parameters:
-                team-id: $request.path.team-id
-            channels:
-              operationId: teams.ListChannels
-              parameters:
-                team-id: $request.path.team-id
-            primaryChannel:
-              operationId: teams.GetPrimaryChannel
-              parameters:
-                team-id: $request.path.team-id
-            installedApps:
-              operationId: teams.ListInstalledApps
-              parameters:
-                team-id: $request.path.team-id
-            operations:
-              operationId: teams.ListOperations
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -551,10 +491,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.channel'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -648,22 +593,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.channel'
-          links:
-            messages:
-              operationId: teams.Channels.ListMessages
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            tabs:
-              operationId: teams.Channels.ListTabs
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            filesFolder:
-              operationId: teams.Channels.GetFilesFolder
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -834,57 +763,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: teams.channels.FilesFolder.GetCreatedByUser
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            lastModifiedByUser:
-              operationId: teams.channels.FilesFolder.GetLastModifiedByUser
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            workbook:
-              operationId: teams.channels.FilesFolder.GetWorkbook
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            analytics:
-              operationId: teams.channels.FilesFolder.GetAnalytics
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            children:
-              operationId: teams.channels.FilesFolder.ListChildren
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            listItem:
-              operationId: teams.channels.FilesFolder.GetListItem
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            permissions:
-              operationId: teams.channels.FilesFolder.ListPermissions
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            subscriptions:
-              operationId: teams.channels.FilesFolder.ListSubscriptions
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            thumbnails:
-              operationId: teams.channels.FilesFolder.ListThumbnails
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-            versions:
-              operationId: teams.channels.FilesFolder.ListVersions
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1083,10 +961,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1205,19 +1088,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-          links:
-            replies:
-              operationId: teams.channels.Messages.ListReplies
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                chatMessage-id: $request.path.chatMessage-id
-            hostedContents:
-              operationId: teams.channels.Messages.ListHostedContents
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                chatMessage-id: $request.path.chatMessage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1382,10 +1252,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1730,10 +1605,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1866,21 +1746,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-          links:
-            replies:
-              operationId: teams.channels.messages.Replies.ListReplies
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                chatMessage-id: $request.path.chatMessage-id
-                chatMessage-id1: $request.path.chatMessage-id1
-            hostedContents:
-              operationId: teams.channels.messages.Replies.ListHostedContents
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                chatMessage-id: $request.path.chatMessage-id
-                chatMessage-id1: $request.path.chatMessage-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2063,10 +1928,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsTab'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2169,13 +2039,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-          links:
-            teamsApp:
-              operationId: teams.channels.Tabs.GetTeamsApp
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2321,13 +2184,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          links:
-            appDefinitions:
-              operationId: teams.channels.tabs.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2366,13 +2222,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            appDefinitions:
-              operationId: teams.channels.tabs.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                channel-id: $request.path.channel-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2591,111 +2440,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: teams.Group.ListAppRoleAssignments
-              parameters:
-                team-id: $request.path.team-id
-            members:
-              operationId: teams.Group.ListMembers
-              parameters:
-                team-id: $request.path.team-id
-            memberOf:
-              operationId: teams.Group.ListMemberOf
-              parameters:
-                team-id: $request.path.team-id
-            membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
-              parameters:
-                team-id: $request.path.team-id
-            transitiveMembers:
-              operationId: teams.Group.ListTransitiveMembers
-              parameters:
-                team-id: $request.path.team-id
-            transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
-              parameters:
-                team-id: $request.path.team-id
-            createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
-              parameters:
-                team-id: $request.path.team-id
-            owners:
-              operationId: teams.Group.ListOwners
-              parameters:
-                team-id: $request.path.team-id
-            settings:
-              operationId: teams.Group.ListSettings
-              parameters:
-                team-id: $request.path.team-id
-            conversations:
-              operationId: teams.Group.ListConversations
-              parameters:
-                team-id: $request.path.team-id
-            photos:
-              operationId: teams.Group.ListPhotos
-              parameters:
-                team-id: $request.path.team-id
-            acceptedSenders:
-              operationId: teams.Group.ListAcceptedSenders
-              parameters:
-                team-id: $request.path.team-id
-            rejectedSenders:
-              operationId: teams.Group.ListRejectedSenders
-              parameters:
-                team-id: $request.path.team-id
-            threads:
-              operationId: teams.Group.ListThreads
-              parameters:
-                team-id: $request.path.team-id
-            calendar:
-              operationId: teams.Group.GetCalendar
-              parameters:
-                team-id: $request.path.team-id
-            calendarView:
-              operationId: teams.Group.ListCalendarView
-              parameters:
-                team-id: $request.path.team-id
-            events:
-              operationId: teams.Group.ListEvents
-              parameters:
-                team-id: $request.path.team-id
-            photo:
-              operationId: teams.Group.GetPhoto
-              parameters:
-                team-id: $request.path.team-id
-            drive:
-              operationId: teams.Group.GetDrive
-              parameters:
-                team-id: $request.path.team-id
-            drives:
-              operationId: teams.Group.ListDrives
-              parameters:
-                team-id: $request.path.team-id
-            sites:
-              operationId: teams.Group.ListSites
-              parameters:
-                team-id: $request.path.team-id
-            extensions:
-              operationId: teams.Group.ListExtensions
-              parameters:
-                team-id: $request.path.team-id
-            groupLifecyclePolicies:
-              operationId: teams.Group.ListGroupLifecyclePolicies
-              parameters:
-                team-id: $request.path.team-id
-            planner:
-              operationId: teams.Group.GetPlanner
-              parameters:
-                team-id: $request.path.team-id
-            onenote:
-              operationId: teams.Group.GetOnenote
-              parameters:
-                team-id: $request.path.team-id
-            team:
-              operationId: teams.Group.GetTeam
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2720,111 +2464,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            appRoleAssignments:
-              operationId: teams.Group.ListAppRoleAssignments
-              parameters:
-                team-id: $request.path.team-id
-            members:
-              operationId: teams.Group.ListMembers
-              parameters:
-                team-id: $request.path.team-id
-            memberOf:
-              operationId: teams.Group.ListMemberOf
-              parameters:
-                team-id: $request.path.team-id
-            membersWithLicenseErrors:
-              operationId: teams.Group.ListMembersWithLicenseErrors
-              parameters:
-                team-id: $request.path.team-id
-            transitiveMembers:
-              operationId: teams.Group.ListTransitiveMembers
-              parameters:
-                team-id: $request.path.team-id
-            transitiveMemberOf:
-              operationId: teams.Group.ListTransitiveMemberOf
-              parameters:
-                team-id: $request.path.team-id
-            createdOnBehalfOf:
-              operationId: teams.Group.GetCreatedOnBehalfOf
-              parameters:
-                team-id: $request.path.team-id
-            owners:
-              operationId: teams.Group.ListOwners
-              parameters:
-                team-id: $request.path.team-id
-            settings:
-              operationId: teams.Group.ListSettings
-              parameters:
-                team-id: $request.path.team-id
-            conversations:
-              operationId: teams.Group.ListConversations
-              parameters:
-                team-id: $request.path.team-id
-            photos:
-              operationId: teams.Group.ListPhotos
-              parameters:
-                team-id: $request.path.team-id
-            acceptedSenders:
-              operationId: teams.Group.ListAcceptedSenders
-              parameters:
-                team-id: $request.path.team-id
-            rejectedSenders:
-              operationId: teams.Group.ListRejectedSenders
-              parameters:
-                team-id: $request.path.team-id
-            threads:
-              operationId: teams.Group.ListThreads
-              parameters:
-                team-id: $request.path.team-id
-            calendar:
-              operationId: teams.Group.GetCalendar
-              parameters:
-                team-id: $request.path.team-id
-            calendarView:
-              operationId: teams.Group.ListCalendarView
-              parameters:
-                team-id: $request.path.team-id
-            events:
-              operationId: teams.Group.ListEvents
-              parameters:
-                team-id: $request.path.team-id
-            photo:
-              operationId: teams.Group.GetPhoto
-              parameters:
-                team-id: $request.path.team-id
-            drive:
-              operationId: teams.Group.GetDrive
-              parameters:
-                team-id: $request.path.team-id
-            drives:
-              operationId: teams.Group.ListDrives
-              parameters:
-                team-id: $request.path.team-id
-            sites:
-              operationId: teams.Group.ListSites
-              parameters:
-                team-id: $request.path.team-id
-            extensions:
-              operationId: teams.Group.ListExtensions
-              parameters:
-                team-id: $request.path.team-id
-            groupLifecyclePolicies:
-              operationId: teams.Group.ListGroupLifecyclePolicies
-              parameters:
-                team-id: $request.path.team-id
-            planner:
-              operationId: teams.Group.GetPlanner
-              parameters:
-                team-id: $request.path.team-id
-            onenote:
-              operationId: teams.Group.GetOnenote
-              parameters:
-                team-id: $request.path.team-id
-            team:
-              operationId: teams.Group.GetTeam
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2953,10 +2592,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3044,17 +2688,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
-          links:
-            teamsApp:
-              operationId: teams.InstalledApps.GetTeamsApp
-              parameters:
-                team-id: $request.path.team-id
-                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
-            teamsAppDefinition:
-              operationId: teams.InstalledApps.GetTeamsAppDefinition
-              parameters:
-                team-id: $request.path.team-id
-                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3206,12 +2839,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          links:
-            appDefinitions:
-              operationId: teams.installedApps.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3243,12 +2870,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            appDefinitions:
-              operationId: teams.installedApps.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                teamsAppInstallation-id: $request.path.teamsAppInstallation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3548,10 +3169,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.conversationMember'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3897,10 +3523,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4114,19 +3745,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.channel'
-          links:
-            messages:
-              operationId: teams.PrimaryChannel.ListMessages
-              parameters:
-                team-id: $request.path.team-id
-            tabs:
-              operationId: teams.PrimaryChannel.ListTabs
-              parameters:
-                team-id: $request.path.team-id
-            filesFolder:
-              operationId: teams.PrimaryChannel.GetFilesFolder
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4276,47 +3894,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetCreatedByUser
-              parameters:
-                team-id: $request.path.team-id
-            lastModifiedByUser:
-              operationId: teams.primaryChannel.FilesFolder.GetLastModifiedByUser
-              parameters:
-                team-id: $request.path.team-id
-            workbook:
-              operationId: teams.primaryChannel.FilesFolder.GetWorkbook
-              parameters:
-                team-id: $request.path.team-id
-            analytics:
-              operationId: teams.primaryChannel.FilesFolder.GetAnalytics
-              parameters:
-                team-id: $request.path.team-id
-            children:
-              operationId: teams.primaryChannel.FilesFolder.ListChildren
-              parameters:
-                team-id: $request.path.team-id
-            listItem:
-              operationId: teams.primaryChannel.FilesFolder.GetListItem
-              parameters:
-                team-id: $request.path.team-id
-            permissions:
-              operationId: teams.primaryChannel.FilesFolder.ListPermissions
-              parameters:
-                team-id: $request.path.team-id
-            subscriptions:
-              operationId: teams.primaryChannel.FilesFolder.ListSubscriptions
-              parameters:
-                team-id: $request.path.team-id
-            thumbnails:
-              operationId: teams.primaryChannel.FilesFolder.ListThumbnails
-              parameters:
-                team-id: $request.path.team-id
-            versions:
-              operationId: teams.primaryChannel.FilesFolder.ListVersions
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4494,10 +4071,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4602,17 +4184,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-          links:
-            replies:
-              operationId: teams.primaryChannel.Messages.ListReplies
-              parameters:
-                team-id: $request.path.team-id
-                chatMessage-id: $request.path.chatMessage-id
-            hostedContents:
-              operationId: teams.primaryChannel.Messages.ListHostedContents
-              parameters:
-                team-id: $request.path.team-id
-                chatMessage-id: $request.path.chatMessage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4756,10 +4327,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5069,10 +4645,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.chatMessage'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5191,19 +4772,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-          links:
-            replies:
-              operationId: teams.primaryChannel.messages.Replies.ListReplies
-              parameters:
-                team-id: $request.path.team-id
-                chatMessage-id: $request.path.chatMessage-id
-                chatMessage-id1: $request.path.chatMessage-id1
-            hostedContents:
-              operationId: teams.primaryChannel.messages.Replies.ListHostedContents
-              parameters:
-                team-id: $request.path.team-id
-                chatMessage-id: $request.path.chatMessage-id
-                chatMessage-id1: $request.path.chatMessage-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5365,10 +4933,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.teamsTab'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5457,12 +5030,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
-          links:
-            teamsApp:
-              operationId: teams.primaryChannel.Tabs.GetTeamsApp
-              parameters:
-                team-id: $request.path.team-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5587,12 +5154,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          links:
-            appDefinitions:
-              operationId: teams.primaryChannel.tabs.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5624,12 +5185,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            appDefinitions:
-              operationId: teams.primaryChannel.tabs.TeamsApp.ListAppDefinitions
-              parameters:
-                team-id: $request.path.team-id
-                teamsTab-id: $request.path.teamsTab-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5772,43 +5327,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.schedule'
-          links:
-            shifts:
-              operationId: teams.Schedule.ListShifts
-              parameters:
-                team-id: $request.path.team-id
-            openShifts:
-              operationId: teams.Schedule.ListOpenShifts
-              parameters:
-                team-id: $request.path.team-id
-            timesOff:
-              operationId: teams.Schedule.ListTimesOff
-              parameters:
-                team-id: $request.path.team-id
-            timeOffReasons:
-              operationId: teams.Schedule.ListTimeOffReasons
-              parameters:
-                team-id: $request.path.team-id
-            schedulingGroups:
-              operationId: teams.Schedule.ListSchedulingGroups
-              parameters:
-                team-id: $request.path.team-id
-            swapShiftsChangeRequests:
-              operationId: teams.Schedule.ListSwapShiftsChangeRequests
-              parameters:
-                team-id: $request.path.team-id
-            openShiftChangeRequests:
-              operationId: teams.Schedule.ListOpenShiftChangeRequests
-              parameters:
-                team-id: $request.path.team-id
-            offerShiftRequests:
-              operationId: teams.Schedule.ListOfferShiftRequests
-              parameters:
-                team-id: $request.path.team-id
-            timeOffRequests:
-              operationId: teams.Schedule.ListTimeOffRequests
-              parameters:
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6020,10 +5538,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6294,10 +5817,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6547,10 +6075,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.openShift'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6794,10 +6327,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7044,10 +6582,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.shift'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7322,10 +6865,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7579,10 +7127,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -7850,10 +7403,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8105,10 +7663,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.timeOff'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8429,9 +7992,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.teamwork'
-          links:
-            workforceIntegrations:
-              operationId: teamwork.ListWorkforceIntegrations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8542,10 +8102,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8797,10 +8362,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.team'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -8912,47 +8482,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            schedule:
-              operationId: users.JoinedTeams.GetSchedule
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            group:
-              operationId: users.JoinedTeams.GetGroup
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            template:
-              operationId: users.JoinedTeams.GetTemplate
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            members:
-              operationId: users.JoinedTeams.ListMembers
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            channels:
-              operationId: users.JoinedTeams.ListChannels
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            primaryChannel:
-              operationId: users.JoinedTeams.GetPrimaryChannel
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            installedApps:
-              operationId: users.JoinedTeams.ListInstalledApps
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
-            operations:
-              operationId: users.JoinedTeams.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9030,9 +8559,11 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the team.
               nullable: true
             description:
               type: string
+              description: An optional description for the team.
               nullable: true
             internalId:
               type: string
@@ -9040,6 +8571,7 @@ components:
               nullable: true
             classification:
               type: string
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
               nullable: true
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
@@ -9071,6 +8603,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: Members and owners of the team.
             channels:
               type: array
               items:
@@ -9087,6 +8620,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+              description: The async operations that ran or are running on this team.
           additionalProperties:
             type: object
     microsoft.graph.channel:
@@ -9666,8 +9200,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The roles for that user.
             displayName:
               type: string
+              description: The display name of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -9699,23 +9235,28 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the operation was created.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the async operation was last updated.
               format: date-time
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             targetResourceId:
               type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
               nullable: true
             targetResourceLocation:
               type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.operationError'

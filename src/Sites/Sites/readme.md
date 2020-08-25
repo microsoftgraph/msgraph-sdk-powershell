@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: sites\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*
+  - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$
 # Remove cmdlets
   - where:
       verb: Remove
@@ -85,6 +85,12 @@ directive:
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
+# Rename cmdlets that call onenotePatchContent action.
+  - where:
+      verb: Update
+      subject: (^SiteOnenote.*)
+    set:
+      subject: $1Content
   - where:
       parameter-name: SiteId
       verb: Get

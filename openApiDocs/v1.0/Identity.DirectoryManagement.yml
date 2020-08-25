@@ -121,10 +121,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.orgContact'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - contacts.orgContact
@@ -215,23 +221,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-          links:
-            manager:
-              operationId: contacts.GetManager
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            directReports:
-              operationId: contacts.ListDirectReports
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            memberOf:
-              operationId: contacts.ListMemberOf
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            transitiveMemberOf:
-              operationId: contacts.ListTransitiveMemberOf
-              parameters:
-                orgContact-id: $request.path.orgContact-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -357,10 +346,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/directReports/{directoryObject-id}':
     get:
@@ -465,10 +459,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -701,10 +700,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/memberOf/{directoryObject-id}':
     get:
@@ -809,10 +813,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1104,10 +1113,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}':
     get:
@@ -1212,10 +1226,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -1451,10 +1470,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.contract'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - contracts.contract
@@ -2001,10 +2026,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.device'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - devices.device
@@ -2102,27 +2133,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            memberOf:
-              operationId: devices.ListMemberOf
-              parameters:
-                device-id: $request.path.device-id
-            registeredOwners:
-              operationId: devices.ListRegisteredOwners
-              parameters:
-                device-id: $request.path.device-id
-            registeredUsers:
-              operationId: devices.ListRegisteredUsers
-              parameters:
-                device-id: $request.path.device-id
-            transitiveMemberOf:
-              operationId: devices.ListTransitiveMemberOf
-              parameters:
-                device-id: $request.path.device-id
-            extensions:
-              operationId: devices.ListExtensions
-              parameters:
-                device-id: $request.path.device-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2245,10 +2255,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2471,10 +2486,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/memberOf/{directoryObject-id}':
     get:
@@ -2579,10 +2599,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -2874,10 +2899,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredOwners/{directoryObject-id}':
     get:
@@ -2982,10 +3012,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3093,10 +3128,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredUsers/{directoryObject-id}':
     get:
@@ -3201,10 +3241,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3312,10 +3357,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}':
     get:
@@ -3420,10 +3470,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3604,9 +3659,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
-          links:
-            deletedItems:
-              operationId: directory.ListDeletedItems
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3693,10 +3745,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -3895,10 +3952,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryRole'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - directoryRoles.directoryRole
@@ -3972,11 +4035,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRole'
-          links:
-            members:
-              operationId: directoryRoles.ListMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4102,10 +4160,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/directoryRoles/{directoryRole-id}/members/{directoryObject-id}':
     get:
@@ -4210,10 +4273,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -4627,10 +4695,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryRoleTemplate'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
@@ -5150,10 +5224,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.domain'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - domains.domain
@@ -5240,19 +5320,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.domain'
-          links:
-            serviceConfigurationRecords:
-              operationId: domains.ListServiceConfigurationRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            verificationDnsRecords:
-              operationId: domains.ListVerificationDnsRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            domainNameReferences:
-              operationId: domains.ListDomainNameReferences
-              parameters:
-                domain-id: $request.path.domain-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5378,10 +5445,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
   '/domains/{domain-id}/domainNameReferences/{directoryObject-id}':
     get:
@@ -5486,10 +5558,15 @@ paths:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5667,10 +5744,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -5910,10 +5992,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6201,10 +6288,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.organization'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - organization.organization
@@ -6298,15 +6391,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
-          links:
-            certificateBasedAuthConfiguration:
-              operationId: organization.ListCertificateBasedAuthConfiguration
-              parameters:
-                organization-id: $request.path.organization-id
-            extensions:
-              operationId: organization.ListExtensions
-              parameters:
-                organization-id: $request.path.organization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6429,10 +6513,15 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
     post:
       tags:
@@ -6982,10 +7071,16 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.subscribedSku'
+                  '@odata.nextLink':
+                    type: string
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - subscribedSkus.subscribedSku

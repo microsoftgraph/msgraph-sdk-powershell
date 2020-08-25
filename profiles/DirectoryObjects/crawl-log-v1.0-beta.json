@@ -1,11 +1,10 @@
 {
-  "resources": [],
   "operations": {
     "/directoryObjects/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
+    "/directoryObjects/microsoft.graph.getByIds": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
@@ -13,11 +12,19 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
-    "/directoryObjects/microsoft.graph.validateProperties": {
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects": {
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
+    },
+    "/directoryObjects/{directoryObject-id}/microsoft.graph.restore": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
@@ -29,17 +36,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     },
-    "/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
-    },
-    "/directoryObjects/microsoft.graph.getByIds": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
-    },
-    "/directoryObjects/microsoft.graph.getUserOwnedObjects": {
+    "/directoryObjects/microsoft.graph.validateProperties": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DirectoryObjects.yml"
     }
-  }
+  },
+  "resources": []
 }

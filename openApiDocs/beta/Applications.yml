@@ -78,6 +78,8 @@ paths:
                 - tags desc
                 - tokenEncryptionKeyId
                 - tokenEncryptionKeyId desc
+                - uniqueName
+                - uniqueName desc
                 - web
                 - web desc
                 - onPremisesPublishing
@@ -118,6 +120,7 @@ paths:
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - web
                 - onPremisesPublishing
                 - extensionProperties
@@ -243,6 +246,7 @@ paths:
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
+                - uniqueName
                 - web
                 - onPremisesPublishing
                 - extensionProperties
@@ -16796,6 +16800,9 @@ components:
               type: string
               description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             web:
               $ref: '#/components/schemas/microsoft.graph.webApplication'
