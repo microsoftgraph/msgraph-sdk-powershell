@@ -18,7 +18,7 @@ ModuleVersion = '0.9.2'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = 'a177ef07-dfbc-44c4-975a-b88a2e5124af'
+GUID = '2a51d387-59ad-4426-8cbd-fdfccd9994e7'
 
 # Author of this module
 Author = 'Microsoft Corporation'
@@ -69,7 +69,10 @@ FormatsToProcess = './Microsoft.Graph.Reports.format.ps1xml'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicationSign', 
+FunctionsToExport = 'Get-MgAuditLogDirectoryAudit', 
+               'Get-MgAuditLogDirectoryProvisioning', 'Get-MgAuditLogProvisioning', 
+               'Get-MgAuditLogRestrictedSignIn', 'Get-MgAuditLogSignIn', 
+               'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicationSign', 
                'Get-MgReportAzureAdFeatureUsage', 
                'Get-MgReportAzureAdLicenseUsage', 
                'Get-MgReportAzureAdUserFeatureUsage', 
@@ -78,6 +81,8 @@ FunctionsToExport = 'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicati
                'Get-MgReportCredentialUserRegistrationDetail', 
                'Get-MgReportDailyPrintUsageSummaryByPrinter', 
                'Get-MgReportDailyPrintUsageSummaryByUser', 
+               'Get-MgReportDeviceConfigurationDeviceActivity', 
+               'Get-MgReportDeviceConfigurationUserActivity', 
                'Get-MgReportEmailActivityCount', 
                'Get-MgReportEmailActivityUserCount', 
                'Get-MgReportEmailActivityUserDetailDdb2', 
@@ -94,6 +99,12 @@ FunctionsToExport = 'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicati
                'Get-MgReportMailboxUsageMailboxCount', 
                'Get-MgReportMailboxUsageQuotaStatusMailboxCount', 
                'Get-MgReportMailboxUsageStorage', 
+               'Get-MgReportManagedDeviceEnrollmentAbandonmentDetail', 
+               'Get-MgReportManagedDeviceEnrollmentAbandonmentSummary', 
+               'Get-MgReportManagedDeviceEnrollmentFailureDetail027E', 
+               'Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D', 
+               'Get-MgReportManagedDeviceEnrollmentFailureTrend', 
+               'Get-MgReportManagedDeviceEnrollmentTopFailures', 
                'Get-MgReportMonthlyPrintUsageSummaryByPrinter', 
                'Get-MgReportMonthlyPrintUsageSummaryByUser', 
                'Get-MgReportOffice365ActivationCount', 
@@ -118,7 +129,7 @@ FunctionsToExport = 'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicati
                'Get-MgReportOneDriveUsageAccountDetailE827', 
                'Get-MgReportOneDriveUsageFileCount', 
                'Get-MgReportOneDriveUsageStorage', 
-               'Get-MgReportRelyingPartyDetailedSummary', 'Get-MgReportRoot', 
+               'Get-MgReportRelyingPartyDetailedSummary', 
                'Get-MgReportSharePointActivityFileCount', 
                'Get-MgReportSharePointActivityPage', 
                'Get-MgReportSharePointActivityUserCount', 
@@ -150,33 +161,7 @@ FunctionsToExport = 'Get-MgReportApplicationSign', 'Get-MgReportAzureAdApplicati
                'Get-MgReportYammerGroupActivityCount', 
                'Get-MgReportYammerGroupActivityDetail0D7D', 
                'Get-MgReportYammerGroupActivityDetailDa9A', 
-               'Get-MgReportYammerGroupActivityGroupCount', 
-               'Invoke-MgDeviceReportConfigurationDeviceActivity', 
-               'Invoke-MgDeviceReportConfigurationUserActivity', 
-               'Invoke-MgManagedReportDeviceEnrollmentAbandonmentDetail', 
-               'Invoke-MgManagedReportDeviceEnrollmentAbandonmentSummary', 
-               'Invoke-MgManagedReportDeviceEnrollmentFailureDetail027E', 
-               'Invoke-MgManagedReportDeviceEnrollmentFailureDetail2B3D', 
-               'Invoke-MgManagedReportDeviceEnrollmentFailureTrend', 
-               'Invoke-MgTopReport', 'New-MgReportApplicationSign', 
-               'New-MgReportCredentialUserRegistrationDetail', 
-               'New-MgReportDailyPrintUsageSummaryByPrinter', 
-               'New-MgReportDailyPrintUsageSummaryByUser', 
-               'New-MgReportMonthlyPrintUsageSummaryByPrinter', 
-               'New-MgReportMonthlyPrintUsageSummaryByUser', 
-               'New-MgReportUserCredentialUsageDetail', 
-               'Remove-MgReportApplicationSign', 
-               'Remove-MgReportCredentialUserRegistrationDetail', 
-               'Remove-MgReportDailyPrintUsageSummary', 
-               'Remove-MgReportMonthlyPrintUsageSummary', 
-               'Remove-MgReportUserCredentialUsageDetail', 
-               'Update-MgReportApplicationSign', 
-               'Update-MgReportCredentialUserRegistrationDetail', 
-               'Update-MgReportDailyPrintUsageSummaryByPrinter', 
-               'Update-MgReportDailyPrintUsageSummaryByUser', 
-               'Update-MgReportMonthlyPrintUsageSummaryByPrinter', 
-               'Update-MgReportMonthlyPrintUsageSummaryByUser', 
-               'Update-MgReportRoot', 'Update-MgReportUserCredentialUsageDetail'
+               'Get-MgReportYammerGroupActivityGroupCount'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

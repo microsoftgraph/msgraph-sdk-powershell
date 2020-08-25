@@ -39,6 +39,8 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove invalid paths.
+  - remove-path-by-operation: auditLogs\.auditLogRoot.*|reports.reportRoot.*|(auditLogs|reports)_(Create|Delete|Update).*
 # Remove cmdlets
   - where:
       verb: Get
@@ -46,17 +48,35 @@ directive:
     remove: true
 # Rename cmdlets
   - where:
-      verb: New|Update|Get
+      verb: Get
       subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-      variant: ^Create$|^CreateExpanded$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Get$|^GetViaIdentity$|^List$
+      variant: ^Get$|^GetViaIdentity$|^List$
     set:
       subject: $1ByPrinter
   - where:
-      verb: New|Update|Get
+      verb: Get
       subject: (^ReportDailyPrintUsageSummary$|^ReportMonthlyPrintUsageSummary$)
-      variant: ^Create1$|^CreateExpanded1$|^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$|^Get1$|^GetViaIdentity1$|^List1$
+      variant: ^Get1$|^GetViaIdentity1$|^List1$
     set:
       subject: $1ByUser
+  - where:
+      verb: Invoke
+      subject: ^TopReport$
+    set:
+      verb: Get
+      subject: ReportManagedDeviceEnrollmentTopFailures
+  - where:
+      verb: Invoke
+      subject: ^(Device)Report(.*)$
+    set:
+      verb: Get
+      subject: Report$1$2
+  - where:
+      verb: Invoke
+      subject: ^(Managed)Report(.*)$
+    set:
+      verb: Get
+      subject: Report$1$2
 ```
 ### Versioning
 

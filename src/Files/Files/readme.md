@@ -37,7 +37,8 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-  - remove-path-by-operation: (drives|drives.list|drives.list.items|shares.list|shares.listItem)_(Create|Get|Update|Delete)Activities$|(drives|drives.list|drives.list.items|shares.list|shares.listItem).activities\..*$
+directive:
+  - remove-path-by-operation: .*_(Create|Get|Update|Delete)Activities$|.*\.activities.*$
 ```
 ### Versioning
 

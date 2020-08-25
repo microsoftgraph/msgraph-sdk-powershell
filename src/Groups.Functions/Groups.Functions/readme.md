@@ -41,7 +41,7 @@ subject-prefix: ''
 
 directive:
 # Remove paths that have /parent* or /calendarView*.
-  - remove-path-by-operation: groups.onenote\..*.parent.*|groups.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*|groups.calendar.events\..*$|groups.events\..*$
+  - remove-path-by-operation: groups.onenote\..*parent.*|groups.*.calendarView.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*|groups.calendar.events\..*$|groups.events\..*$
 # Rename cmdlets.
   - where:
       verb: Get

@@ -37,25 +37,23 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-# Needs validation
-# directive:
-# # Remove paths that are not valid.
-#   - remove-path-by-operation: .*.onenote..*.parent.*|.*.notebooks.section.*|.*.sectionGroups.section.*|.*.sections.pages.*
-# # Remove Add|Remove-MgSite. They are duplicate of Sites.Site.
-#   - where:
-#       subject: (^Site$)
-#     remove: true
-# # Rename cmdlets that call onenotePatchContent action.
-#   - where:
-#       verb: Update
-#       subject: (^SiteOnenote.*)
-#     set:
-#       subject: $1Content
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections.pages.*|sites\.lists\.activities\..*
+# Remove Add|Remove-MgSite. They are duplicate of Sites.Site.
+  - where:
+      subject: (^Site$)
+    remove: true
+# Rename cmdlets that call onenotePatchContent action.
+  - where:
+      verb: Update
+      subject: (^SiteOnenote.*)
+    set:
+      subject: $1Content
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 0.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
