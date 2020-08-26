@@ -1,20 +1,26 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# Generates a release build artifact (nuget) from HEAD of master for auth module.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger:
-  branches:
-    include:
-    - master
-  paths:
-    include:
-    - src/Authentication/*
-pr: none
-variables:
-  MODULE_NAME: 'Authentication'
-  MODULE_PATH: 'src\Authentication\Authentication\'
-  MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
+parameters:
+  - name: AUTH_MODULE_PATH
+    displayName: 'Authentication Module Path'
+    type: string
+    default: 'src\Authentication\Authentication\'
+  - name: AUTH_MODULE_NAME
+    displayName: 'Authentication Module Name'
+    type: string
+    default: 'Authentication'
+  - name: AUTH_MODULE_DLL_PATTERN
+    displayName: 'Authentication Module DLL Pattern'
+    type: string
+    default: 'Microsoft.Graph.Authentication.dll'
+  - name: Api_Key
+    displayName: 'Api Key'
+    type: string
+  - name: EnableSigning
+    displayName: 'Enable Signing'
+    type: boolean
+    default: false
 
 jobs:
 - job: MSGraphPSSDKGeneration
@@ -23,12 +29,7 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   
-  steps:
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: 'Run CredScan'
-    inputs:
-      debugMode: false
-  
+  steps:  
   - task: NuGetToolInstaller@1
     displayName: 'Install Nuget'
   
@@ -36,15 +37,16 @@ jobs:
     displayName: 'Generate and Build Auth Module'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
+      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -BuildWhenEqual -EnableSigning'
       pwsh: true
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
-      Pattern: $(MODULE_DLL_PATTERN)
+      FolderPath: $(AUTH_MODULE_PATH)
+      Pattern: $(AUTH_MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -67,10 +69,11 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
-      Pattern: $(MODULE_DLL_PATTERN)
+      FolderPath: $(AUTH_MODULE_PATH)
+      Pattern: $(AUTH_MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -117,15 +120,16 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+        & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: '$(Build.ArtifactStagingDirectory)\$(MODULE_NAME)'
-      Pattern: 'Microsoft.Graph.$(MODULE_NAME)*.nupkg'
+      FolderPath: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)'
+      Pattern: 'Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'
       signConfigType: inlineSignParams
       inlineOperation: |
             [
@@ -149,7 +153,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact Microsoft.Graph.Authentication.nupkg'
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(MODULE_NAME)'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(AUTH_MODULE_NAME)'
       ArtifactName: 'drop'
       publishLocation: 'Container'
 

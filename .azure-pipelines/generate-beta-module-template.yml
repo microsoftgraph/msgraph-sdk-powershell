@@ -1,24 +1,34 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# Generates a release build artifact (nuget) from HEAD of master for beta Graph workload modules.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger:
-  branches:
-    include:
-      - master
-  paths:
-    include:
-      - src/*
-      - config/ModulesMapping.jsonc
-    exclude:
-      - src/Authentication/*
-pr: none
-variables:
-  MODULE_PREFIX: 'Microsoft.Graph'
-  WORKLOAD_MODULE_PATH: 'src\'
-  AUTH_MODULE_PATH: 'src\Authentication\Authentication\bin\'
-  AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
+parameters:
+    - name: AUTH_MODULE_PATH
+      displayName: 'Module Path'
+      type: string
+      default: 'src\Authentication\Authentication\bin\'
+    - name: AUTH_MODULE_DLL_PATTERN
+      displayName: 'Module Pattern'
+      type: string
+      default: 'Microsoft.Graph.Authentication.dll'
+    - name: Api_Key
+      displayName: 'Api Key'
+      type: string
+    - name: GRAPH_VERSION
+      displayName: 'Graph Version'
+      type: string
+      default: 'beta'
+    - name: WORKLOAD_MODULE_PATH
+      displayName: 'Workload Module Path'
+      type: string
+      default: 'src\'
+    - name: BETA_MODULE_PREFIX
+      displayName: 'Module Prefix'
+      type: string
+      default: 'Microsoft.Graph'
+    - name: EnableSigning
+      displayName: 'Enable Signing'
+      type: boolean
+      default: false
 
 jobs:
 - job: MSGraphPSSDKGeneration
@@ -29,14 +39,9 @@ jobs:
     demands: 'Agent.Name -equals PS-Build-Agent'
 
   steps:
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: 'Run CredScan'
-    inputs:
-     debugMode: false
-  
   # Install Node
   - task: NodeTool@0
-    displayName: Node install
+    displayName: 'Node install'
     inputs:
       versionSpec: '13.14.0'
   
@@ -58,6 +63,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(AUTH_MODULE_PATH)
@@ -84,6 +90,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(AUTH_MODULE_PATH)
@@ -133,15 +140,16 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -EnableSigning'
+      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -EnableSigning -BuildWhenEqual'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(WORKLOAD_MODULE_PATH)
-      Pattern: '$(MODULE_PREFIX).*.private.dll'
+      Pattern: '$(BETA_MODULE_PREFIX).*.private.dll'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -164,10 +172,11 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Resource Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: $(WORKLOAD_MODULE_PATH)
-      Pattern: '$(MODULE_PREFIX).*.private.dll, $(MODULE_PREFIX).*.psm1, $(MODULE_PREFIX).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
+      Pattern: '$(BETA_MODULE_PREFIX).*.private.dll, $(BETA_MODULE_PREFIX).*.psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -214,7 +223,7 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        $ModuleMappingConfigPath = "$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc"
+        $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
         [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
         $ModuleMapping.Keys | ForEach-Object {
             $ModuleName = $_
@@ -225,6 +234,7 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: '$(Build.ArtifactStagingDirectory)\'

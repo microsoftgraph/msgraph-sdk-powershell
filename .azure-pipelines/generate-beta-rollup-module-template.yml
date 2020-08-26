@@ -1,15 +1,30 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# Generates a release build artifact (nuget) for beta roll-up module.
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
-trigger: none
-pr: none
-variables:
-  MODULE_PREFIX: 'Microsoft.Graph'
-  MODULE_NAME: 'Graph'
-  MODULE_PATH: 'src/Graph/Graph'
-
+parameters:
+  - name: ROLLUP_MODULE_PATH
+    displayName: 'Module Path'
+    type: string
+    default: 'src/Graph/Graph'
+  - name: ROLLUP_MODULE_NAME
+    displayName: 'Module Name'
+    type: string
+    default: 'Graph'
+  - name: Api_Key
+    displayName: 'Api Key'
+    type: string
+  - name: GRAPH_VERSION
+    displayName: 'Graph Version'
+    type: string
+    default: 'beta'
+  - name: BETA_MODULE_PREFIX
+    displayName: 'Module Prefix'
+    type: string
+    default: 'Microsoft.Graph'
+  - name: EnableSigning
+    displayName: 'Enable Signing'
+    type: boolean
+    default: false
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Roll-Up Generation
@@ -17,12 +32,7 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   
-  steps:
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
-    displayName: 'Run CredScan'
-    inputs:
-      debugMode: false
-  
+  steps:  
   - task: NuGetToolInstaller@1
     displayName: 'Install Nuget'
   
@@ -34,10 +44,11 @@ jobs:
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
-      FolderPath: $(MODULE_PATH)
-      Pattern: '$(MODULE_PREFIX).psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
+      FolderPath: $(ROLLUP_MODULE_PATH)
+      Pattern: '$(BETA_MODULE_PREFIX).psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, *.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -78,18 +89,19 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: NuGetCommand@2
     displayName: 'Pack Roll-Up Module'
     inputs:
       command: 'pack'
       Configuration: Release
-      packagesToPack: '$(System.DefaultWorkingDirectory)/$(MODULE_PATH)/$(MODULE_PREFIX).nuspec'
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(BETA_MODULE_PREFIX).nuspec'
       packDestination: '$(Build.ArtifactStagingDirectory)/'
       versioningScheme: 'off'
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
+    enabled: true
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
       FolderPath: '$(Build.ArtifactStagingDirectory)/'
@@ -115,7 +127,7 @@ jobs:
       SessionTimeout: 20
 
   - task: PublishBuildArtifacts@1
-    displayName: Publish Artifact Microsoft.Graph.nupkg'
+    displayName: 'Publish Artifact Microsoft.Graph.nupkg'
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
       ArtifactName: 'drop'
