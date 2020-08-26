@@ -15,11 +15,11 @@ Create new navigation property to tiIndicators for Security
 ### CreateExpanded (Default)
 ```
 New-MgSecurityTiIndicator [-Action <String>] [-ActivityGroupNames <String[]>]
- [-AdditionalInformation <String>] [-AzureTenantId <String>] [-Confidence <Int32>] [-Description <String>]
- [-DiamondModel <String>] [-DomainName <String>] [-EmailEncoding <String>] [-EmailLanguage <String>]
- [-EmailRecipient <String>] [-EmailSenderAddress <String>] [-EmailSenderName <String>]
- [-EmailSourceDomain <String>] [-EmailSourceIPAddress <String>] [-EmailSubject <String>]
- [-EmailXMailer <String>] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
+ [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
+ [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>] [-DomainName <String>]
+ [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>] [-EmailSenderAddress <String>]
+ [-EmailSenderName <String>] [-EmailSourceDomain <String>] [-EmailSourceIPAddress <String>]
+ [-EmailSubject <String>] [-EmailXMailer <String>] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
  [-FileCompileDateTime <DateTime>] [-FileCreatedDateTime <DateTime>] [-FileHashType <String>]
  [-FileHashValue <String>] [-FileMutexName <String>] [-FileName <String>] [-FilePacker <String>]
  [-FilePath <String>] [-FileSize <Int64>] [-FileType <String>] [-Id <String>] [-IngestedDateTime <DateTime>]
@@ -99,6 +99,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1017,6 +1032,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphTiIndicator>: tiIndicator
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Action <String>]`: tiAction
   - `[ActivityGroupNames <String[]>]`: 

@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Update-MgPlanner' {
-    It 'UpdateExpanded' -skip {
+    It 'UpdateExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Update' -skip {
+    It 'Update1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

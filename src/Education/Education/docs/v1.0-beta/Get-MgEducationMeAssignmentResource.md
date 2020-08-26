@@ -15,8 +15,8 @@ Get resources from education
 ### List (Default)
 ```
 Get-MgEducationMeAssignmentResource -EducationAssignmentId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-All] [<CommonParameters>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -57,7 +57,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: educationAssignment-id of educationAssignment
+key: id of educationAssignment
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentResourceId
-key: educationAssignmentResource-id of educationAssignmentResource
+key: id of educationAssignmentResource
 
 ```yaml
 Type: System.String
@@ -163,12 +163,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top, Limit
+Aliases:
 
 Required: False
 Position: Named
@@ -237,6 +237,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -258,18 +273,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
-  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
-  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
-  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
-  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: id of educationCategory
+  - `[EducationClassId <String>]`: key: id of educationClass
+  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
+  - `[EducationRubricId <String>]`: key: id of educationRubric
+  - `[EducationSchoolId <String>]`: key: id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
 

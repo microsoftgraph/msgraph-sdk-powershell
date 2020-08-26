@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgRetireUserManagedDevice' {
-    It 'Retire1' -skip {
+    It 'Retire' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RetireViaIdentity1' -skip {
+    It 'RetireViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

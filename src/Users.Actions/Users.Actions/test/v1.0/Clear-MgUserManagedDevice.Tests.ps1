@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Clear-MgUserManagedDevice' {
-    It 'WipeExpanded1' -skip {
+    It 'WipeExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Wipe1' -skip {
+    It 'Wipe' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'WipeViaIdentityExpanded1' -skip {
+    It 'WipeViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'WipeViaIdentity1' -skip {
+    It 'WipeViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

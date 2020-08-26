@@ -5,8 +5,8 @@ function RandomString([bool]$allChars, [int32]$len) {
         return -join ((48..57) + (97..122) | Get-Random -Count $len | % {[char]$_})
     }
 }
+$env = @{}
 function setupEnv() {
-    $env = @{}
     # Preload subscriptionId and tenant from context, which will be used in test
     # as default. You could change them if needed.
     $env.SubscriptionId = (Get-AzContext).Subscription.Id

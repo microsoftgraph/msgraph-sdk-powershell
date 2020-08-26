@@ -14,7 +14,8 @@ Invoke action query
 
 ### QueryExpanded (Default)
 ```
-Invoke-MgQuerySearch [-Requests <IMicrosoftGraphSearchRequest[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Query
@@ -48,6 +49,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: QueryExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 .
@@ -133,12 +149,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Requests <IMicrosoftGraphSearchRequest[]>]`: 
     - `[ContentSources <String[]>]`: 
     - `[EnableTopResults <Boolean?>]`: 
     - `[EntityTypes <String[]>]`: 
     - `[From <Int32?>]`: 
-    - `[QueryStringQuery <String>]`: 
+    - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[QueryString <IMicrosoftGraphSearchQueryString>]`: searchQueryString
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Query <String>]`: 
     - `[Size <Int32?>]`: 
     - `[StoredFields <String[]>]`: 
 
@@ -147,7 +168,11 @@ REQUESTS <IMicrosoftGraphSearchRequest[]>: .
   - `[EnableTopResults <Boolean?>]`: 
   - `[EntityTypes <String[]>]`: 
   - `[From <Int32?>]`: 
-  - `[QueryStringQuery <String>]`: 
+  - `[Query <IMicrosoftGraphSearchQuery>]`: searchQuery
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[QueryString <IMicrosoftGraphSearchQueryString>]`: searchQueryString
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Query <String>]`: 
   - `[Size <Int32?>]`: 
   - `[StoredFields <String[]>]`: 
 

@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Remove-MgUserDeviceFromManagement' {
-    It 'Remove1' -skip {
+    It 'Remove' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RemoveViaIdentity1' -skip {
+    It 'RemoveViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

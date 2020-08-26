@@ -12,11 +12,11 @@ Get tasks from planner
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgPlannerBucketTask -PlannerBucketId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -56,12 +56,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Count
 Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -91,7 +106,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -118,12 +133,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
-Aliases: Top, Limit
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -133,11 +148,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerBucketId
-key: plannerBucket-id of plannerBucket
+key: id of plannerBucket
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -148,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: plannerTask-id of plannerTask
+key: id of plannerTask
 
 ```yaml
 Type: System.String
@@ -182,7 +197,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -197,7 +212,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -212,8 +227,23 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
 
 Required: False
 Position: Named
@@ -243,9 +273,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
-  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
+  - `[GroupId <String>]`: key: id of group
+  - `[PlannerBucketId <String>]`: key: id of plannerBucket
+  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
+  - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: id of plannerTask
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

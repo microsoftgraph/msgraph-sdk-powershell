@@ -1,0 +1,250 @@
+---
+external help file:
+Module Name: Microsoft.Graph.Files
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mgsharelistitemanalyticbyref
+schema: 2.0.0
+---
+
+# Set-MgShareListItemAnalyticByRef
+
+## SYNOPSIS
+Update the ref of navigation property analytics in shares
+
+## SYNTAX
+
+### UpdateExpanded3 (Default)
+```
+Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update2
+```
+Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update3
+```
+Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateExpanded2
+```
+Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String>
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity2
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity3
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded2
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded3
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Update the ref of navigation property analytics in shares
+
+## EXAMPLES
+
+### Example 1: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ListItemId
+key: id of listItem
+
+```yaml
+Type: System.String
+Parameter Sets: Update2, UpdateExpanded2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SharedDriveItemId
+key: id of sharedDriveItem
+
+```yaml
+Type: System.String
+Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+
+### System.Collections.Hashtable
+
+## OUTPUTS
+
+### System.Boolean
+
+## NOTES
+
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IFilesIdentity>: Identity Parameter
+  - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
+  - `[ColumnLinkId <String>]`: key: id of columnLink
+  - `[ContentTypeId <String>]`: key: id of contentType
+  - `[DriveId <String>]`: key: id of drive
+  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[EndDateTime <String>]`: 
+  - `[GroupId <String>]`: key: id of group
+  - `[Interval <String>]`: 
+  - `[ListItemId <String>]`: key: id of listItem
+  - `[ListItemVersionId <String>]`: key: id of listItemVersion
+  - `[Q <String>]`: 
+  - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
+  - `[StartDateTime <String>]`: 
+  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[UserId <String>]`: key: id of user
+
+## RELATED LINKS
+

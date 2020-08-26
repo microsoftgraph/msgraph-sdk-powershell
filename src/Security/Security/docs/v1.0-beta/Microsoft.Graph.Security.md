@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 85ad1e70-3cd4-406c-be3f-656c3af49d4f
+Module Guid: 54b6b900-b79a-4637-b92b-f6b1a12444ae
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -83,11 +83,47 @@ Create new navigation property to tiIndicators for Security
 ### [New-MgSecurityUserSecurityProfile](New-MgSecurityUserSecurityProfile.md)
 Create new navigation property to userSecurityProfiles for Security
 
+### [Remove-MgSecurityAction](Remove-MgSecurityAction.md)
+Delete navigation property securityActions for Security
+
+### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
+Delete navigation property alerts for Security
+
+### [Remove-MgSecurityCloudAppSecurityProfile](Remove-MgSecurityCloudAppSecurityProfile.md)
+Delete navigation property cloudAppSecurityProfiles for Security
+
+### [Remove-MgSecurityDomainSecurityProfile](Remove-MgSecurityDomainSecurityProfile.md)
+Delete navigation property domainSecurityProfiles for Security
+
+### [Remove-MgSecurityFileSecurityProfile](Remove-MgSecurityFileSecurityProfile.md)
+Delete navigation property fileSecurityProfiles for Security
+
+### [Remove-MgSecurityHostSecurityProfile](Remove-MgSecurityHostSecurityProfile.md)
+Delete navigation property hostSecurityProfiles for Security
+
+### [Remove-MgSecurityIPSecurityProfile](Remove-MgSecurityIPSecurityProfile.md)
+Delete navigation property ipSecurityProfiles for Security
+
+### [Remove-MgSecurityProviderTenantSetting](Remove-MgSecurityProviderTenantSetting.md)
+Delete navigation property providerTenantSettings for Security
+
+### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
+Delete navigation property secureScores for Security
+
+### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
+Delete navigation property secureScoreControlProfiles for Security
+
 ### [Remove-MgSecurityTiIndicator](Remove-MgSecurityTiIndicator.md)
-Invoke action deleteTiIndicators
+Delete navigation property tiIndicators for Security
 
 ### [Remove-MgSecurityTiIndicatorByExternalId](Remove-MgSecurityTiIndicatorByExternalId.md)
 Invoke action deleteTiIndicatorsByExternalId
+
+### [Remove-MgSecurityTiIndicatorMultiple](Remove-MgSecurityTiIndicatorMultiple.md)
+Invoke action deleteTiIndicators
+
+### [Remove-MgSecurityUserSecurityProfile](Remove-MgSecurityUserSecurityProfile.md)
+Delete navigation property userSecurityProfiles for Security
 
 ### [Stop-MgSecurityAction](Stop-MgSecurityAction.md)
 Invoke action cancelSecurityAction

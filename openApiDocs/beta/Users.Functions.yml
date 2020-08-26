@@ -70,6 +70,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/calendar/calendarView/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendar.calendarView.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/calendar/calendarView/{event-id}/instances/microsoft.graph.delta()':
     get:
       tags:
@@ -164,6 +197,39 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/calendar/events/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendar.events.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -309,6 +375,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendarGroups.calendars.calendarView.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: calendarGroup-id
+          in: path
+          description: 'key: id of calendarGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendarGroup
+        - name: calendar-id
+          in: path
+          description: 'key: id of calendar'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendar
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/microsoft.graph.delta()':
     get:
       tags:
@@ -445,6 +558,53 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/calendarGroups/{calendarGroup-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendarGroups.calendars.events.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: calendarGroup-id
+          in: path
+          description: 'key: id of calendarGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendarGroup
+        - name: calendar-id
+          in: path
+          description: 'key: id of calendar'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendar
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -625,6 +785,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendars.calendarView.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: calendar-id
+          in: path
+          description: 'key: id of calendar'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendar
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/calendars/{calendar-id}/calendarView/{event-id}/instances/microsoft.graph.delta()':
     get:
       tags:
@@ -740,6 +940,46 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/calendars/{calendar-id}/events/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendars.events.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: calendar-id
+          in: path
+          description: 'key: id of calendar'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: calendar
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -955,6 +1195,39 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/calendarView/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.calendarView.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -1236,6 +1509,39 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/events/{event-id}/exceptionOccurrences/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: users.events.exceptionOccurrences_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: event-id
+          in: path
+          description: 'key: id of event'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: event
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.event'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2640,9 +2946,21 @@ components:
               type: boolean
               description: 'True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.'
               nullable: true
+            cancelledOccurrences:
+              type: array
+              items:
+                type: string
+                nullable: true
+            occurrenceId:
+              type: string
+              nullable: true
             isDraft:
               type: boolean
               nullable: true
+            exceptionOccurrences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.event'
             attachments:
               type: array
               items:
@@ -5014,6 +5332,22 @@ components:
         isEncrypted:
           type: boolean
           description: Encryption status of the device
+        batterySerialNumber:
+          type: string
+          description: The serial number of the device???s current battery
+          nullable: true
+        batteryHealthPercentage:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The device???s current battery???s health percentage. Valid values 0 to 100
+          format: int32
+        batteryChargeCycles:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of charge cycles the device???s current battery has gone through. Valid values 0 to 2147483647
+          format: int32
         isSharedDevice:
           type: boolean
           description: Shared iPad
@@ -5143,6 +5477,7 @@ components:
         - androidEnterprise
         - windows10x
         - androidnGMS
+        - cloudPC
         - blackberry
         - palm
         - unknown
@@ -7409,6 +7744,9 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              nullable: true
             deviceId:
               type: string
               description: Unique identifier set by Azure Device Registration Service at the time of registration.
@@ -7416,6 +7754,9 @@ components:
             deviceMetadata:
               type: string
               description: For interal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -7428,6 +7769,15 @@ components:
               type: string
               description: The display name for the device. Required.
               nullable: true
+            domainName:
+              type: string
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              nullable: true
+            enrollmentType:
+              type: string
+              nullable: true
             extensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             isCompliant:
@@ -7437,6 +7787,12 @@ components:
             isManaged:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              nullable: true
+            isRooted:
+              type: boolean
+              nullable: true
+            managementType:
+              type: string
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7464,6 +7820,11 @@ components:
             profileType:
               type: string
               description: The profile type of the device. Possible values:RegisteredDevice (default)SecureVMPrinterSharedIoT
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
               nullable: true
             systemLabels:
               type: array
@@ -7703,9 +8064,11 @@ components:
           properties:
             displayName:
               type: string
+              description: The name of the team.
               nullable: true
             description:
               type: string
+              description: An optional description for the team.
               nullable: true
             internalId:
               type: string
@@ -7713,6 +8076,7 @@ components:
               nullable: true
             classification:
               type: string
+              description: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
               nullable: true
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
@@ -7755,6 +8119,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: Members and owners of the team.
             channels:
               type: array
               items:
@@ -7771,6 +8136,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
+              description: The async operations that ran or are running on this team.
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -8510,8 +8876,6 @@ components:
               nullable: true
             severity:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareSeverity'
-            catetgory:
-              $ref: '#/components/schemas/microsoft.graph.windowsMalwareCategory'
             executionState:
               $ref: '#/components/schemas/microsoft.graph.windowsMalwareExecutionState'
             state:
@@ -9772,7 +10136,7 @@ components:
             reviewers:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
             instances:
@@ -11072,8 +11436,10 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The roles for that user.
             displayName:
               type: string
+              description: The display name of the user.
               nullable: true
           additionalProperties:
             type: object
@@ -11444,23 +11810,28 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the operation was created.
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperationStatus'
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time when the async operation was last updated.
               format: date-time
             attemptsCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Number of times the operation was attempted before being marked successful or failed.
               format: int32
             targetResourceId:
               type: string
+              description: 'The ID of the object that''s created or modified as result of this async operation, typically a team.'
               nullable: true
             targetResourceLocation:
               type: string
+              description: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.operationError'
@@ -11603,6 +11974,47 @@ components:
         - high
         - severe
       type: string
+    microsoft.graph.windowsMalwareExecutionState:
+      title: windowsMalwareExecutionState
+      enum:
+        - unknown
+        - blocked
+        - allowed
+        - running
+        - notRunning
+      type: string
+    microsoft.graph.windowsMalwareState:
+      title: windowsMalwareState
+      enum:
+        - unknown
+        - detected
+        - cleaned
+        - quarantined
+        - removed
+        - allowed
+        - blocked
+        - cleanFailed
+        - quarantineFailed
+        - removeFailed
+        - allowFailed
+        - abandoned
+        - blockFailed
+      type: string
+    microsoft.graph.windowsMalwareThreatState:
+      title: windowsMalwareThreatState
+      enum:
+        - active
+        - actionFailed
+        - manualStepsRequired
+        - fullScanRequired
+        - rebootRequired
+        - remediatedWithNonCriticalFailures
+        - quarantined
+        - removed
+        - cleaned
+        - allowed
+        - noStatusCleared
+      type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
       enum:
@@ -11656,47 +12068,6 @@ components:
         - enterpriseUnwantedSoftware
         - ransom
         - hipsRule
-      type: string
-    microsoft.graph.windowsMalwareExecutionState:
-      title: windowsMalwareExecutionState
-      enum:
-        - unknown
-        - blocked
-        - allowed
-        - running
-        - notRunning
-      type: string
-    microsoft.graph.windowsMalwareState:
-      title: windowsMalwareState
-      enum:
-        - unknown
-        - detected
-        - cleaned
-        - quarantined
-        - removed
-        - allowed
-        - blocked
-        - cleanFailed
-        - quarantineFailed
-        - removeFailed
-        - allowFailed
-        - abandoned
-        - blockFailed
-      type: string
-    microsoft.graph.windowsMalwareThreatState:
-      title: windowsMalwareThreatState
-      enum:
-        - active
-        - actionFailed
-        - manualStepsRequired
-        - fullScanRequired
-        - rebootRequired
-        - remediatedWithNonCriticalFailures
-        - quarantined
-        - removed
-        - cleaned
-        - allowed
-        - noStatusCleared
       type: string
     microsoft.graph.automaticRepliesStatus:
       title: automaticRepliesStatus
@@ -13078,6 +13449,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessReviewReviewerScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
+        - title: accessReviewReviewerScope
+          type: object
+          properties:
+            queryRoot:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.accessReviewScheduleSettings:
       title: accessReviewScheduleSettings
       type: object
@@ -13909,6 +14291,14 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: chatMessageHostedContent
           type: object
+          properties:
+            contentBytes:
+              type: string
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsApp:
@@ -13942,7 +14332,7 @@ components:
           properties:
             teamsAppId:
               type: string
-              description: The id from the Teams App manifest.
+              description: The ID from the Teams app manifest.
               nullable: true
             azureADAppId:
               type: string

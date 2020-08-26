@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Restart-MgUserManagedDeviceNow' {
-    It 'Reboot1' -skip {
+    It 'Reboot' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RebootViaIdentity1' -skip {
+    It 'RebootViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

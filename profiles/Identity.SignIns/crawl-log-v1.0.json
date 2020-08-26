@@ -1,0 +1,157 @@
+{
+  "operations": {
+    "/invitations/{invitation-id}/invitedUser": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/activityBasedTimeoutPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProviders/{identityProvider-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/dataPolicyOperations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/informationProtection": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/claimsMappingPolicies/{claimsMappingPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results/{threatAssessmentResult-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/invitations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/claimsMappingPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identityProviders": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/identitySecurityDefaultsEnforcementPolicy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/tokenLifetimePolicies/{tokenLifetimePolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/tokenIssuancePolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess/namedLocations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/dataPolicyOperations/{dataPolicyOperation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess/policies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/conditionalAccessPolicies/{conditionalAccessPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess/namedLocations/{namedLocation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/organization/{organization-id}/certificateBasedAuthConfiguration/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/invitations/{invitation-id}/invitedUser/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/conditionalAccessPolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/tokenLifetimePolicies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/identity/conditionalAccess/policies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/invitations/{invitation-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/policies/tokenIssuancePolicies/{tokenIssuancePolicy-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests/{threatAssessmentRequest-id}/results": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    },
+    "/informationProtection/threatAssessmentRequests": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.SignIns.yml"
+    }
+  },
+  "resources": []
+}

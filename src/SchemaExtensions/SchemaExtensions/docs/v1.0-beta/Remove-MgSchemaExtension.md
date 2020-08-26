@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -SchemaExtensionId
-key: schemaExtension-id of schemaExtension
+key: id of schemaExtension
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISchemaExtensionsIdentity>: Identity Parameter
-  - `[SchemaExtensionId <String>]`: key: schemaExtension-id of schemaExtension
+  - `[SchemaExtensionId <String>]`: key: id of schemaExtension
 
 ## RELATED LINKS
 

@@ -12,13 +12,13 @@ Get assignedToTaskBoardFormat from planner
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgPlannerPlanTaskAssignedToTaskBoardFormat -PlannerPlanId <String> -PlannerTaskId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgPlannerPlanTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -70,7 +70,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -81,11 +81,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: plannerPlan-id of plannerPlan
+key: id of plannerPlan
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -96,11 +96,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: plannerTask-id of plannerTask
+key: id of plannerTask
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -146,9 +146,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
-  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
+  - `[GroupId <String>]`: key: id of group
+  - `[PlannerBucketId <String>]`: key: id of plannerBucket
+  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
+  - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: id of plannerTask
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

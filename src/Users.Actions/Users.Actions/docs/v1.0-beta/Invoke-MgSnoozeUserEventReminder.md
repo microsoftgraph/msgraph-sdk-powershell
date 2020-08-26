@@ -14,8 +14,8 @@ Invoke action snoozeReminder
 
 ### SnoozeExpanded1 (Default)
 ```
-Invoke-MgSnoozeUserEventReminder -EventId <String> -UserId <String> [-NewReminderTimeDateTime <String>]
- [-NewReminderTimeZone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgSnoozeUserEventReminder -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Snooze1
@@ -34,8 +34,8 @@ Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity>
 
 ### SnoozeViaIdentityExpanded1
 ```
-Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity> [-NewReminderTimeDateTime <String>]
- [-NewReminderTimeZone <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +63,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -80,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
-key: event-id of event
+key: id of event
 
 ```yaml
 Type: System.String
@@ -110,27 +125,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NewReminderTimeDateTime
-A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+### -NewReminderTime
+dateTimeTimeZone
+To construct, see NOTES section for NEWREMINDERTIME properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NewReminderTimeZone
-Represents a time zone, for example, 'Pacific Standard Time'.
-See below for more possible values.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -225,32 +225,39 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths10X81JrUsersUserIdEventsEventIdMicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>: .
-  - `[NewReminderTimeDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[NewReminderTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[NewReminderTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+NEWREMINDERTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 ## RELATED LINKS
 

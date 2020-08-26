@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: c66b1095-170f-4b3a-8488-30be79023b5f
+Module Guid: 4a70fc76-e946-4c58-9419-a09c352c8f24
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -58,6 +58,21 @@ Invoke action publish
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
 Delete entity from bookingBusinesses
+
+### [Remove-MgBookingBusinessAppointment](Remove-MgBookingBusinessAppointment.md)
+Delete navigation property appointments for bookingBusinesses
+
+### [Remove-MgBookingBusinessCalendarView](Remove-MgBookingBusinessCalendarView.md)
+Delete navigation property calendarView for bookingBusinesses
+
+### [Remove-MgBookingBusinessCustomer](Remove-MgBookingBusinessCustomer.md)
+Delete navigation property customers for bookingBusinesses
+
+### [Remove-MgBookingBusinessService](Remove-MgBookingBusinessService.md)
+Delete navigation property services for bookingBusinesses
+
+### [Remove-MgBookingBusinessStaffMember](Remove-MgBookingBusinessStaffMember.md)
+Delete navigation property staffMembers for bookingBusinesses
 
 ### [Remove-MgBookingCurrency](Remove-MgBookingCurrency.md)
 Delete entity from bookingCurrencies

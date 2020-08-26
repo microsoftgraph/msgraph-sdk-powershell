@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 9a19614b-830d-4660-a407-fc8f91e19e69
+Module Guid: e3fe89f0-fa1c-41cf-ae9f-caee5a8fa2d9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,21 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
+### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
+Get directoryAudits from auditLogs
+
+### [Get-MgAuditLogRestrictedSignIn](Get-MgAuditLogRestrictedSignIn.md)
+Get restrictedSignIns from auditLogs
+
+### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
+Get signIns from auditLogs
+
+### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
+Invoke function deviceConfigurationDeviceActivity
+
+### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
+Invoke function deviceConfigurationUserActivity
+
 ### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
 
@@ -49,6 +64,15 @@ Invoke function getMailboxUsageQuotaStatusMailboxCounts
 
 ### [Get-MgReportMailboxUsageStorage](Get-MgReportMailboxUsageStorage.md)
 Invoke function getMailboxUsageStorage
+
+### [Get-MgReportManagedDeviceEnrollmentFailureDetail027E](Get-MgReportManagedDeviceEnrollmentFailureDetail027E.md)
+Invoke function managedDeviceEnrollmentFailureDetails
+
+### [Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D](Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D.md)
+Invoke function managedDeviceEnrollmentFailureDetails
+
+### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
+Invoke function managedDeviceEnrollmentTopFailures
 
 ### [Get-MgReportOffice365ActivationCount](Get-MgReportOffice365ActivationCount.md)
 Invoke function getOffice365ActivationCounts
@@ -115,9 +139,6 @@ Invoke function getOneDriveUsageFileCounts
 
 ### [Get-MgReportOneDriveUsageStorage](Get-MgReportOneDriveUsageStorage.md)
 Invoke function getOneDriveUsageStorage
-
-### [Get-MgReportRoot](Get-MgReportRoot.md)
-Get reports
 
 ### [Get-MgReportSharePointActivityFileCount](Get-MgReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts
@@ -214,22 +235,4 @@ Invoke function getYammerGroupsActivityDetail
 
 ### [Get-MgReportYammerGroupActivityGroupCount](Get-MgReportYammerGroupActivityGroupCount.md)
 Invoke function getYammerGroupsActivityGroupCounts
-
-### [Invoke-MgDeviceReportConfigurationDeviceActivity](Invoke-MgDeviceReportConfigurationDeviceActivity.md)
-Invoke function deviceConfigurationDeviceActivity
-
-### [Invoke-MgDeviceReportConfigurationUserActivity](Invoke-MgDeviceReportConfigurationUserActivity.md)
-Invoke function deviceConfigurationUserActivity
-
-### [Invoke-MgManagedReportDeviceEnrollmentFailureDetail027E](Invoke-MgManagedReportDeviceEnrollmentFailureDetail027E.md)
-Invoke function managedDeviceEnrollmentFailureDetails
-
-### [Invoke-MgManagedReportDeviceEnrollmentFailureDetail2B3D](Invoke-MgManagedReportDeviceEnrollmentFailureDetail2B3D.md)
-Invoke function managedDeviceEnrollmentFailureDetails
-
-### [Invoke-MgTopReport](Invoke-MgTopReport.md)
-Invoke function managedDeviceEnrollmentTopFailures
-
-### [Update-MgReportRoot](Update-MgReportRoot.md)
-Update reports
 

@@ -115,6 +115,7 @@ paths:
                 - schema
                 - items
                 - operations
+                - groups
               type: string
         - name: $expand
           in: query
@@ -130,6 +131,7 @@ paths:
                 - schema
                 - items
                 - operations
+                - groups
               type: string
       responses:
         '200':
@@ -207,6 +209,7 @@ paths:
                 - schema
                 - items
                 - operations
+                - groups
               type: string
         - name: $expand
           in: query
@@ -222,6 +225,7 @@ paths:
                 - schema
                 - items
                 - operations
+                - groups
               type: string
       responses:
         '200':
@@ -412,6 +416,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectionOperation'
+            groups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalGroup'
           additionalProperties:
             type: object
     microsoft.graph.search:
@@ -531,6 +539,24 @@ components:
               $ref: '#/components/schemas/microsoft.graph.connectionOperationStatus'
             error:
               $ref: '#/components/schemas/microsoft.graph.errorDetail'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalGroupMember'
           additionalProperties:
             type: object
     microsoft.graph.entityType:
@@ -666,6 +692,18 @@ components:
             $ref: '#/components/schemas/microsoft.graph.innerErrorDetail'
       additionalProperties:
         type: object
+    microsoft.graph.externalGroupMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalGroupMember
+          type: object
+          properties:
+            type:
+              $ref: '#/components/schemas/microsoft.graph.externalGroupMemberType'
+            identitySource:
+              $ref: '#/components/schemas/microsoft.graph.identitySourceType'
+          additionalProperties:
+            type: object
     microsoft.graph.searchQueryString:
       title: searchQueryString
       type: object
@@ -779,6 +817,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.externalGroupMemberType:
+      title: externalGroupMemberType
+      enum:
+        - user
+        - group
+      type: string
+    microsoft.graph.identitySourceType:
+      title: identitySourceType
+      enum:
+        - azureActiveDirectory
+        - external
+      type: string
     odata.error.detail:
       required:
         - code
