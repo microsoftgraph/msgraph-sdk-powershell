@@ -43,35 +43,36 @@
   </Target>
 
   <!-- Build all flavors of the Cmdlets -->
+   <Target Name="GenerateProfiles">
+    <Message Importance="high" Text="Generating Profiles..." />
+    <Message Importance="high" Text="$(GenerateProfiles)"/>
+    <Exec Command="$(GenerateProfiles)" ></Exec>
+  </Target>
   <Target Name="GenerateAuth">
     <Message Importance="high" Text="Generating Auth Module..." />
     <Message Importance="high" Text="$(GenerateAuth)"/>
     <Exec Command="$(GenerateAuth)" ></Exec>
+  </Target>
+    <Target Name="PackAuth">
+    <Message Importance="high" Text="Packing Modules..." />
+    <Message Importance="high" Text="$(PackAuth)"/>
+    <Exec Command="$(PackAuth)"/>
   </Target>
   <Target Name="GenerateModules">
     <Message Importance="high" Text="Generating Modules..." />
     <Message Importance="high" Text="$(GenerateModules)"/>
     <Exec Command="$(GenerateModules)" ></Exec>
   </Target>
+    <Target Name="PackBetaModules">
+    <Message Importance="high" Text="Packing Modules..." />
+    <Message Importance="high" Text="$(PackBetaModules)"/>
+    <Exec Command="$(PackBetaModules)"/>
+  </Target>
   <Target Name="GenerateRollup">
     <Message Importance="high" Text="Generating Roll-Up Module..." />
     <Message Importance="high" Text="$(GenerateRollup)"/>
     <Exec Command="$(GenerateRollup)" ></Exec>
   </Target>
-  <Target Name="GenerateProfiles">
-    <Message Importance="high" Text="Generating Profiles..." />
-    <Message Importance="high" Text="$(GenerateProfiles)"/>
-    <Exec Command="$(GenerateProfiles)" ></Exec>
-  </Target>
-  <Target Name="PackAuth">
-    <Message Importance="high" Text="Packing Modules..." />
-    <Message Importance="high" Text="$(PackAuth)"/>
-    <Exec Command="$(PackAuth)"/>
-  </Target>
-  <Target Name="PackBetaModules">
-    <Message Importance="high" Text="Packing Modules..." />
-    <Message Importance="high" Text="$(PackBetaModules)"/>
-    <Exec Command="$(PackBetaModules)"/>
-  </Target>
+
   <Target Name="Full" DependsOnTargets="GenerateProfiles;GenerateAuth;PackAuth;GenerateModules;GenerateRollup;PackAuth;" />
 </Project>

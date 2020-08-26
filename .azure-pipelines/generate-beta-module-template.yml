@@ -58,7 +58,7 @@ jobs:
     displayName: 'Build Auth Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -BuildWhenEqual -EnableSigning'
+      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
@@ -140,7 +140,7 @@ jobs:
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -EnableSigning -BuildWhenEqual'
+      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -EnableSigning'
       pwsh: true
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
