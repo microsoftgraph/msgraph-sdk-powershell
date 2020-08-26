@@ -18,7 +18,7 @@ ModuleVersion = '0.9.2'
 CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
-GUID = '7fd90cef-f671-4502-8a66-8aa16a3fa885'
+GUID = 'c98c22c6-c6b6-45eb-933c-1bf07aaf050c'
 
 # Author of this module
 Author = 'Microsoft Corporation'
@@ -354,6 +354,7 @@ FunctionsToExport =
                'Set-MgOfficeClientConfiguration', 
                'Sync-MgDeviceAppMgtMicrosoftStore', 
                'Sync-MgDeviceAppMgtVppTokenLicense', 
+               'Sync-MgDeviceAppMgtVppTokenLicenseCount', 
                'Test-MgDeviceAppMgtMobileAppXml', 'Update-MgDeviceAppMgt', 
                'Update-MgDeviceAppMgtAndroidManagedAppProtection', 
                'Update-MgDeviceAppMgtAndroidManagedAppProtectionApp', 
@@ -665,6 +666,7 @@ AliasesToExport =
                'Set-MgDeviceAppManagementRefWindowManagementApp', 
                'Sync-MgDeviceAppManagementMicrosoftStore', 
                'Sync-MgDeviceAppManagementVppTokenLicense', 
+               'Sync-MgDeviceAppManagementVppTokenLicenseCount', 
                'Test-MgDeviceAppManagementMobileAppXml', 
                'Update-MgDeviceAppManagement', 
                'Update-MgDeviceAppManagementAndroidManagedAppProtection', 

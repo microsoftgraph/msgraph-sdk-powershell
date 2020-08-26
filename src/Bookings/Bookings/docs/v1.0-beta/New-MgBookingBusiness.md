@@ -1,0 +1,722 @@
+---
+external help file:
+Module Name: Microsoft.Graph.Bookings
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings/new-mgbookingbusiness
+schema: 2.0.0
+---
+
+# New-MgBookingBusiness
+
+## SYNOPSIS
+Add new entity to bookingBusinesses
+
+## SYNTAX
+
+### CreateExpanded (Default)
+```
+New-MgBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress>]
+ [-Appointments <IMicrosoftGraphBookingAppointment[]>] [-BusinessHours <IMicrosoftGraphBookingWorkHours[]>]
+ [-BusinessType <String>] [-CalendarView <IMicrosoftGraphBookingAppointment[]>]
+ [-Customers <IMicrosoftGraphBookingCustomer[]>] [-DefaultCurrencyIso <String>] [-DisplayName <String>]
+ [-Email <String>] [-Id <String>] [-IsPublished] [-Phone <String>] [-PublicUrl <String>]
+ [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-Services <IMicrosoftGraphBookingService[]>]
+ [-StaffMembers <IMicrosoftGraphBookingStaffMember[]>] [-WebSiteUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### Create
+```
+New-MgBookingBusiness -BodyParameter <IMicrosoftGraphBookingBusiness> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+Add new entity to bookingBusinesses
+
+## EXAMPLES
+
+### Example 1: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Address
+physicalAddress
+To construct, see NOTES section for ADDRESS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Appointments
+All appointments in this business.
+To construct, see NOTES section for APPOINTMENTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+Represents a Microsot Bookings Business.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -BusinessHours
+.
+To construct, see NOTES section for BUSINESSHOURS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BusinessType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CalendarView
+A calendar view of appointments in this business.
+To construct, see NOTES section for CALENDARVIEW properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Customers
+All customers of this business.
+To construct, see NOTES section for CUSTOMERS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultCurrencyIso
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisplayName
+Display name of this entity.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Email
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsPublished
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Phone
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicy
+This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+To construct, see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Services
+All services offered by this business.
+To construct, see NOTES section for SERVICES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StaffMembers
+All staff members that provides services in this business.
+To construct, see NOTES section for STAFFMEMBERS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WebSiteUrl
+The URL of the business web site.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+
+## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingBusiness
+
+## NOTES
+
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+ADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[City <String>]`: The city.
+  - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[PostOfficeBox <String>]`: 
+  - `[PostalCode <String>]`: The postal code.
+  - `[State <String>]`: The state.
+  - `[Street <String>]`: The street.
+  - `[Type <String>]`: physicalAddressType
+
+APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>: All appointments in this business.
+  - `[Id <String>]`: Read-only.
+  - `[CustomerEmailAddress <String>]`: 
+  - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
+  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: The city.
+      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+      - `[PostOfficeBox <String>]`: 
+      - `[PostalCode <String>]`: The postal code.
+      - `[State <String>]`: The state.
+      - `[Street <String>]`: The street.
+      - `[Type <String>]`: physicalAddressType
+    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+      - `[Altitude <Double?>]`: The altitude of the location.
+      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+      - `[Latitude <Double?>]`: The latitude of the location.
+      - `[Longitude <Double?>]`: The longitude of the location.
+    - `[DisplayName <String>]`: The name associated with the location.
+    - `[LocationEmailAddress <String>]`: Optional email address of the location.
+    - `[LocationType <String>]`: locationType
+    - `[LocationUri <String>]`: Optional URI representing the location.
+    - `[UniqueId <String>]`: For internal use only.
+    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerName <String>]`: 
+  - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
+  - `[CustomerPhone <String>]`: 
+  - `[Duration <TimeSpan?>]`: 
+  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[InvoiceAmount <Double?>]`: 
+  - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[InvoiceId <String>]`: 
+  - `[InvoiceStatus <String>]`: bookingInvoiceStatus
+  - `[InvoiceUrl <String>]`: 
+  - `[OptOutOfCustomerEmail <Boolean?>]`: 
+  - `[PostBuffer <TimeSpan?>]`: 
+  - `[PreBuffer <TimeSpan?>]`: 
+  - `[Price <Double?>]`: 
+  - `[PriceType <String>]`: bookingPriceType
+  - `[Reminders <IMicrosoftGraphBookingReminder[]>]`: 
+    - `[Message <String>]`: Message to send.
+    - `[Offset <TimeSpan?>]`: How much time before an appointment the reminder should be sent.
+    - `[Recipients <String>]`: bookingReminderRecipients
+  - `[SelfServiceAppointmentId <String>]`: 
+  - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
+  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+  - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
+  - `[ServiceNotes <String>]`: 
+  - `[StaffMemberIds <String[]>]`: 
+  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+
+BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings Business.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DisplayName <String>]`: Display name of this entity.
+  - `[Id <String>]`: Read-only.
+  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[City <String>]`: The city.
+    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[PostOfficeBox <String>]`: 
+    - `[PostalCode <String>]`: The postal code.
+    - `[State <String>]`: The state.
+    - `[Street <String>]`: The street.
+    - `[Type <String>]`: physicalAddressType
+  - `[Appointments <IMicrosoftGraphBookingAppointment[]>]`: All appointments in this business.
+    - `[Id <String>]`: Read-only.
+    - `[CustomerEmailAddress <String>]`: 
+    - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
+    - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+        - `[Altitude <Double?>]`: The altitude of the location.
+        - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+        - `[Latitude <Double?>]`: The latitude of the location.
+        - `[Longitude <Double?>]`: The longitude of the location.
+      - `[DisplayName <String>]`: The name associated with the location.
+      - `[LocationEmailAddress <String>]`: Optional email address of the location.
+      - `[LocationType <String>]`: locationType
+      - `[LocationUri <String>]`: Optional URI representing the location.
+      - `[UniqueId <String>]`: For internal use only.
+      - `[UniqueIdType <String>]`: locationUniqueIdType
+    - `[CustomerName <String>]`: 
+    - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
+    - `[CustomerPhone <String>]`: 
+    - `[Duration <TimeSpan?>]`: 
+    - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[InvoiceAmount <Double?>]`: 
+    - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[InvoiceId <String>]`: 
+    - `[InvoiceStatus <String>]`: bookingInvoiceStatus
+    - `[InvoiceUrl <String>]`: 
+    - `[OptOutOfCustomerEmail <Boolean?>]`: 
+    - `[PostBuffer <TimeSpan?>]`: 
+    - `[PreBuffer <TimeSpan?>]`: 
+    - `[Price <Double?>]`: 
+    - `[PriceType <String>]`: bookingPriceType
+    - `[Reminders <IMicrosoftGraphBookingReminder[]>]`: 
+      - `[Message <String>]`: Message to send.
+      - `[Offset <TimeSpan?>]`: How much time before an appointment the reminder should be sent.
+      - `[Recipients <String>]`: bookingReminderRecipients
+    - `[SelfServiceAppointmentId <String>]`: 
+    - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
+    - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+    - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
+    - `[ServiceNotes <String>]`: 
+    - `[StaffMemberIds <String[]>]`: 
+    - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[BusinessHours <IMicrosoftGraphBookingWorkHours[]>]`: 
+    - `[Day <String>]`: dayOfWeek
+    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
+      - `[End <String>]`: 
+      - `[Start <String>]`: 
+  - `[BusinessType <String>]`: 
+  - `[CalendarView <IMicrosoftGraphBookingAppointment[]>]`: A calendar view of appointments in this business.
+  - `[Customers <IMicrosoftGraphBookingCustomer[]>]`: All customers of this business.
+    - `[EmailAddress <String>]`: The e-mail address of this person.
+    - `[DisplayName <String>]`: Display name of this entity.
+    - `[Id <String>]`: Read-only.
+  - `[DefaultCurrencyIso <String>]`: 
+  - `[Email <String>]`: 
+  - `[IsPublished <Boolean?>]`: 
+  - `[Phone <String>]`: 
+  - `[PublicUrl <String>]`: 
+  - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+    - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+    - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+    - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+    - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[Services <IMicrosoftGraphBookingService[]>]`: All services offered by this business.
+    - `[DisplayName <String>]`: Display name of this entity.
+    - `[Id <String>]`: Read-only.
+    - `[DefaultDuration <TimeSpan?>]`: 
+    - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
+    - `[DefaultPrice <Double?>]`: 
+    - `[DefaultPriceType <String>]`: bookingPriceType
+    - `[DefaultReminders <IMicrosoftGraphBookingReminder[]>]`: The default reminders set in an appointment of this service.
+    - `[Description <String>]`: 
+    - `[IsHiddenFromCustomers <Boolean?>]`: 
+    - `[Notes <String>]`: 
+    - `[PostBuffer <TimeSpan?>]`: 
+    - `[PreBuffer <TimeSpan?>]`: 
+    - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+    - `[StaffMemberIds <String[]>]`: 
+  - `[StaffMembers <IMicrosoftGraphBookingStaffMember[]>]`: All staff members that provides services in this business.
+    - `[EmailAddress <String>]`: The e-mail address of this person.
+    - `[DisplayName <String>]`: Display name of this entity.
+    - `[Id <String>]`: Read-only.
+    - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: 
+    - `[ColorIndex <Int32?>]`: 
+    - `[Role <String>]`: bookingStaffRole
+    - `[UseBusinessHours <Boolean?>]`: 
+    - `[WorkingHours <IMicrosoftGraphBookingWorkHours[]>]`: 
+  - `[WebSiteUrl <String>]`: The URL of the business web site.
+
+BUSINESSHOURS <IMicrosoftGraphBookingWorkHours[]>: .
+  - `[Day <String>]`: dayOfWeek
+  - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
+    - `[End <String>]`: 
+    - `[Start <String>]`: 
+
+CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>: A calendar view of appointments in this business.
+  - `[Id <String>]`: Read-only.
+  - `[CustomerEmailAddress <String>]`: 
+  - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
+  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: The city.
+      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+      - `[PostOfficeBox <String>]`: 
+      - `[PostalCode <String>]`: The postal code.
+      - `[State <String>]`: The state.
+      - `[Street <String>]`: The street.
+      - `[Type <String>]`: physicalAddressType
+    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+      - `[Altitude <Double?>]`: The altitude of the location.
+      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+      - `[Latitude <Double?>]`: The latitude of the location.
+      - `[Longitude <Double?>]`: The longitude of the location.
+    - `[DisplayName <String>]`: The name associated with the location.
+    - `[LocationEmailAddress <String>]`: Optional email address of the location.
+    - `[LocationType <String>]`: locationType
+    - `[LocationUri <String>]`: Optional URI representing the location.
+    - `[UniqueId <String>]`: For internal use only.
+    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerName <String>]`: 
+  - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
+  - `[CustomerPhone <String>]`: 
+  - `[Duration <TimeSpan?>]`: 
+  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[InvoiceAmount <Double?>]`: 
+  - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[InvoiceId <String>]`: 
+  - `[InvoiceStatus <String>]`: bookingInvoiceStatus
+  - `[InvoiceUrl <String>]`: 
+  - `[OptOutOfCustomerEmail <Boolean?>]`: 
+  - `[PostBuffer <TimeSpan?>]`: 
+  - `[PreBuffer <TimeSpan?>]`: 
+  - `[Price <Double?>]`: 
+  - `[PriceType <String>]`: bookingPriceType
+  - `[Reminders <IMicrosoftGraphBookingReminder[]>]`: 
+    - `[Message <String>]`: Message to send.
+    - `[Offset <TimeSpan?>]`: How much time before an appointment the reminder should be sent.
+    - `[Recipients <String>]`: bookingReminderRecipients
+  - `[SelfServiceAppointmentId <String>]`: 
+  - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
+  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+  - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
+  - `[ServiceNotes <String>]`: 
+  - `[StaffMemberIds <String[]>]`: 
+  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+
+CUSTOMERS <IMicrosoftGraphBookingCustomer[]>: All customers of this business.
+  - `[EmailAddress <String>]`: The e-mail address of this person.
+  - `[DisplayName <String>]`: Display name of this entity.
+  - `[Id <String>]`: Read-only.
+
+SCHEDULINGPOLICY <IMicrosoftGraphBookingSchedulingPolicy>: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+  - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+  - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+  - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+  - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+
+SERVICES <IMicrosoftGraphBookingService[]>: All services offered by this business.
+  - `[DisplayName <String>]`: Display name of this entity.
+  - `[Id <String>]`: Read-only.
+  - `[DefaultDuration <TimeSpan?>]`: 
+  - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: The city.
+      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+      - `[PostOfficeBox <String>]`: 
+      - `[PostalCode <String>]`: The postal code.
+      - `[State <String>]`: The state.
+      - `[Street <String>]`: The street.
+      - `[Type <String>]`: physicalAddressType
+    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+      - `[Altitude <Double?>]`: The altitude of the location.
+      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+      - `[Latitude <Double?>]`: The latitude of the location.
+      - `[Longitude <Double?>]`: The longitude of the location.
+    - `[DisplayName <String>]`: The name associated with the location.
+    - `[LocationEmailAddress <String>]`: Optional email address of the location.
+    - `[LocationType <String>]`: locationType
+    - `[LocationUri <String>]`: Optional URI representing the location.
+    - `[UniqueId <String>]`: For internal use only.
+    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[DefaultPrice <Double?>]`: 
+  - `[DefaultPriceType <String>]`: bookingPriceType
+  - `[DefaultReminders <IMicrosoftGraphBookingReminder[]>]`: The default reminders set in an appointment of this service.
+    - `[Message <String>]`: Message to send.
+    - `[Offset <TimeSpan?>]`: How much time before an appointment the reminder should be sent.
+    - `[Recipients <String>]`: bookingReminderRecipients
+  - `[Description <String>]`: 
+  - `[IsHiddenFromCustomers <Boolean?>]`: 
+  - `[Notes <String>]`: 
+  - `[PostBuffer <TimeSpan?>]`: 
+  - `[PreBuffer <TimeSpan?>]`: 
+  - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+    - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+    - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+    - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+    - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[StaffMemberIds <String[]>]`: 
+
+STAFFMEMBERS <IMicrosoftGraphBookingStaffMember[]>: All staff members that provides services in this business.
+  - `[EmailAddress <String>]`: The e-mail address of this person.
+  - `[DisplayName <String>]`: Display name of this entity.
+  - `[Id <String>]`: Read-only.
+  - `[AvailabilityIsAffectedByPersonalCalendar <Boolean?>]`: 
+  - `[ColorIndex <Int32?>]`: 
+  - `[Role <String>]`: bookingStaffRole
+  - `[UseBusinessHours <Boolean?>]`: 
+  - `[WorkingHours <IMicrosoftGraphBookingWorkHours[]>]`: 
+    - `[Day <String>]`: dayOfWeek
+    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
+      - `[End <String>]`: 
+      - `[Start <String>]`: 
+
+## RELATED LINKS
+
