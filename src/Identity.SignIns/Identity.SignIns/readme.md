@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: auditLogs.auditLogRoot_.*|auditLogs_(Create|Update|Delete).*
+  - remove-path-by-operation: ^identity_(Get|Create|Delete|Update|List)ConditionalAccess$|^policies\.policyRoot_.*PolicyRoot|^policies_(Get|Create|Delete|Update|List)ConditionalAccessPolicies$
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(Oauth2PermissionGrant)(\1)+
