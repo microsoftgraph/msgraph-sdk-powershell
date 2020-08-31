@@ -12,5 +12,3 @@ Get-MgApplication | Select-Object DisplayName, Appid, WebRedirectUris
 ## List service principals in the tenant
 get-MgServicePrincipal | Select-Object id, AppDisplayName | Where-Object { $_.AppDisplayName -like "*powershell*" }
 
-## Create a new Application Registration
-New-MgApplication -displayName "MyTestApp7"

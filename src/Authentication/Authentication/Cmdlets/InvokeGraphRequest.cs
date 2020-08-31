@@ -16,6 +16,8 @@ using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
 
+using Newtonsoft.Json;
+
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
@@ -552,7 +554,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         }
 
         /// <summary>
-        ///     Set the request content
+        ///     Set the request content.
+        ///     Convert Dictionaries to Json
+        ///     Passing a dictionary to the body object should be translated to Json.
+        ///     Almost everything on Microsoft Graph works converts dictionaries and arrays to JSON.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="content"></param>
@@ -568,8 +573,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 throw new ArgumentNullException(nameof(content));
             }
-
-            var body = content.FormatDictionary();
+            // Covert all dictionaries to Json
+            var body = JsonConvert.SerializeObject(content);
             return SetRequestContent(request, body);
         }
 
@@ -668,6 +673,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     content = psBody.BaseObject;
                 }
+                // Passing a dictionary to the body object should be translated to Json.
+                // Almost everything on Microsoft Graph works converts dictionaries and arrays to JSON.
                 if (content is IDictionary dictionary && request.Method != HttpMethod.Get)
                 {
                     SetRequestContent(request, dictionary);
@@ -703,28 +710,30 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
 
             // Add the content headers
-            if (request.Content == null)
+            // Only Set Content Headers when its not a GET Request
+            if (request.Content == null && this.Method != GraphRequestMethod.GET)
             {
                 request.Content = new StringContent(string.Empty);
                 request.Content.Headers.Clear();
             }
 
             foreach (var entry in GraphRequestSession.ContentHeaders.Where(header =>
-                !string.IsNullOrWhiteSpace(header.Value)))
+                    !string.IsNullOrWhiteSpace(header.Value)))
             {
                 if (SkipHeaderValidation)
                 {
-                    request.Content.Headers.TryAddWithoutValidation(entry.Key, entry.Value);
+                    request.Content?.Headers.TryAddWithoutValidation(entry.Key, entry.Value);
                 }
                 else
                 {
                     try
                     {
-                        request.Content.Headers.Add(entry.Key, entry.Value);
+                        request.Content?.Headers.Add(entry.Key, entry.Value);
                     }
                     catch (FormatException ex)
                     {
-                        var outerEx = new ValidationMetadataException(Resources.ContentTypeExceptionErrorMessage, ex);
+                        var outerEx =
+                            new ValidationMetadataException(Resources.ContentTypeExceptionErrorMessage, ex);
                         var er = new ErrorRecord(outerEx, Errors.InvokeGraphContentTypeException,
                             ErrorCategory.InvalidArgument, ContentType);
                         ThrowTerminatingError(er);

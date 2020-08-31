@@ -130,17 +130,21 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
-  - `[ApplicationSignInDetailedSummaryId <String>]`: key: applicationSignInDetailedSummary-id of applicationSignInDetailedSummary
-  - `[CredentialUserRegistrationDetailsId <String>]`: key: credentialUserRegistrationDetails-id of credentialUserRegistrationDetails
+  - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
+  - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
   - `[Date <DateTime?>]`: 
+  - `[DirectoryAuditId <String>]`: key: id of directoryAudit
   - `[Filter <String>]`: 
   - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser
+  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
+  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
+  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
+  - `[SignInId <String>]`: key: id of signIn
   - `[Skip <Int32?>]`: 
   - `[SkipToken <String>]`: 
   - `[Top <Int32?>]`: 
-  - `[UserCredentialUsageDetailsId <String>]`: key: userCredentialUsageDetails-id of userCredentialUsageDetails
+  - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
 
 ## RELATED LINKS
 

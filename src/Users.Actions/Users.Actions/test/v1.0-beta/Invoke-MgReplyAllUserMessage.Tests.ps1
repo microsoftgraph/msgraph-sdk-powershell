@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgReplyAllUserMessage' {
-    It 'ReplyExpanded1' -skip {
+    It 'ReplyExpanded3' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Reply1' -skip {
+    It 'Reply3' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ReplyViaIdentityExpanded1' -skip {
+    It 'ReplyViaIdentityExpanded3' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ReplyViaIdentity1' -skip {
+    It 'ReplyViaIdentity3' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

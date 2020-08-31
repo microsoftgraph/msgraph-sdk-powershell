@@ -15,7 +15,8 @@ Invoke action cancel
 ### CancelExpanded (Default)
 ```
 Stop-MgBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
- [-CancellationMessage <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CancellationMessage <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Cancel
@@ -34,8 +35,8 @@ Stop-MgBookingBusinessAppointment -InputObject <IBookingsIdentity>
 
 ### CancelViaIdentityExpanded
 ```
-Stop-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-CancellationMessage <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Stop-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+ [-CancellationMessage <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +64,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -80,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingAppointmentId
-key: bookingAppointment-id of bookingAppointment
+key: id of bookingAppointment
 
 ```yaml
 Type: System.String
@@ -95,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: bookingBusiness-id of bookingBusiness
+key: id of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -209,15 +225,16 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1K88Cl0BookingbusinessesBookingbusinessIdAppointmentsBookingappointmentIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CancellationMessage <String>]`: 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
 
 ## RELATED LINKS
 

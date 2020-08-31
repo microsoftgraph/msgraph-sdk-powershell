@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser' {
-    It 'Logout1' -skip {
+    It 'Logout' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'LogoutViaIdentity1' -skip {
+    It 'LogoutViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

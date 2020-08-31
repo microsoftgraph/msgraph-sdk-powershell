@@ -14,14 +14,12 @@ Create new navigation property to domainSecurityProfiles for Security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityDomainSecurityProfile [-ActivityGroupNames <String[]>] [-AzureSubscriptionId <String>]
- [-AzureTenantId <String>] [-CountHits <Int32>] [-CountInOrg <Int32>]
+New-MgSecurityDomainSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
+ [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CountHits <Int32>] [-CountInOrg <Int32>]
  [-DomainCategories <IMicrosoftGraphReputationCategory[]>] [-DomainRegisteredDateTime <DateTime>]
  [-FirstSeenDateTime <DateTime>] [-Id <String>] [-LastSeenDateTime <DateTime>] [-Name <String>]
- [-RegistrantCountryOrRegionCode <String>] [-RegistrantOrganization <String>] [-RegistrantUrl <String>]
- [-RegistrantVendor <String>] [-RiskScore <String>] [-Tags <String[]>] [-VendorInformationProvider <String>]
- [-VendorInformationProviderVersion <String>] [-VendorInformationSubProvider <String>]
- [-VendorInformationVendor <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Registrant <IMicrosoftGraphDomainRegistrant>] [-RiskScore <String>] [-Tags <String[]>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -60,6 +58,21 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -237,56 +250,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RegistrantCountryOrRegionCode
-.
+### -Registrant
+domainRegistrant
+To construct, see NOTES section for REGISTRANT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RegistrantOrganization
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RegistrantUrl
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RegistrantVendor
-.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainRegistrant
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -327,58 +296,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformationProvider
-Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+### -VendorInformation
+securityVendorInformation
+To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationProviderVersion
-Version of the provider or subprovider, if it exists, that generated the alert.
-Required
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationSubProvider
-Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationVendor
-Name of the alert vendor (for example, Microsoft, Dell, FireEye).
-Required
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -441,6 +364,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphDomainSecurityProfile>: domainSecurityProfile
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActivityGroupNames <String[]>]`: 
   - `[AzureSubscriptionId <String>]`: 
@@ -455,21 +379,39 @@ BODYPARAMETER <IMicrosoftGraphDomainSecurityProfile>: domainSecurityProfile
   - `[FirstSeenDateTime <DateTime?>]`: 
   - `[LastSeenDateTime <DateTime?>]`: 
   - `[Name <String>]`: 
-  - `[RegistrantCountryOrRegionCode <String>]`: 
-  - `[RegistrantOrganization <String>]`: 
-  - `[RegistrantUrl <String>]`: 
-  - `[RegistrantVendor <String>]`: 
+  - `[Registrant <IMicrosoftGraphDomainRegistrant>]`: domainRegistrant
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CountryOrRegionCode <String>]`: 
+    - `[Organization <String>]`: 
+    - `[Url <String>]`: 
+    - `[Vendor <String>]`: 
   - `[RiskScore <String>]`: 
   - `[Tags <String[]>]`: 
-  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 DOMAINCATEGORIES <IMicrosoftGraphReputationCategory[]>: .
   - `[Description <String>]`: 
   - `[Name <String>]`: 
   - `[Vendor <String>]`: 
+
+REGISTRANT <IMicrosoftGraphDomainRegistrant>: domainRegistrant
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[CountryOrRegionCode <String>]`: 
+  - `[Organization <String>]`: 
+  - `[Url <String>]`: 
+  - `[Vendor <String>]`: 
+
+VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 ## RELATED LINKS
 

@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Move-MgUserMessage' {
-    It 'MoveExpanded1' -skip {
+    It 'MoveExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Move1' -skip {
+    It 'Move' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'MoveViaIdentityExpanded1' -skip {
+    It 'MoveViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'MoveViaIdentity1' -skip {
+    It 'MoveViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

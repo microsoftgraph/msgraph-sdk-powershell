@@ -48,8 +48,10 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication"
-Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+$ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName
+if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
+}
 $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 if ($UpdateAutoRest) {
     # Update AutoRest.
@@ -80,7 +82,7 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
 
     if ($VersionState.Equals([VersionState]::Invalid) -and !$SkipVersionCheck) {
-        Write-Error "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
+        Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"
     }
     elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$SkipVersionCheck) {
         Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
@@ -134,6 +136,15 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
                     }
                 } | Set-Content $ModulePsm1
 
+                # Address AutoREST bug where it looks for exports in the wrong directory.
+                $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$ModulePrefix.$ModuleName.internal.psm1"
+                (Get-Content -Path $InternalModulePsm1) | ForEach-Object{
+                    $_
+                    if ($_ -match '\$exportsPath = \$PSScriptRoot') {
+                        '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
+                    }
+                } | Set-Content $InternalModulePsm1
+                
                 if ($LASTEXITCODE) {
                     Write-Error "Failed to build '$ModuleName' module."
                 }

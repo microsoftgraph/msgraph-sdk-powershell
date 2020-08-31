@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Remove-MgSecurityTiIndicator' {
-    It 'DeleteExpanded' -skip {
+    It 'Delete' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Delete' -skip {
+    It 'DeleteViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -15,9 +15,8 @@ Invoke action createUploadSession
 ### CreateExpanded (Default)
 ```
 New-MgUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -OutlookTaskFolderId <String>
- -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String>
- [-AttachmentItemAttachmentType <String>] [-AttachmentItemContentType <String>] [-AttachmentItemIsInline]
- [-AttachmentItemName <String>] [-AttachmentItemSize <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -38,8 +37,8 @@ New-MgUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -InputObject <IU
 ### CreateViaIdentityExpanded
 ```
 New-MgUserOutlookTaskGroupTaskFolderTaskAttachmentUploadSession -InputObject <IUsersActionsIdentity>
- [-AttachmentItemAttachmentType <String>] [-AttachmentItemContentType <String>] [-AttachmentItemIsInline]
- [-AttachmentItemName <String>] [-AttachmentItemSize <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,11 +66,11 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AttachmentItemAttachmentType
-attachmentType
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -82,61 +81,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AttachmentItemContentType
-The nature of the data in the attachment.
-Optional.
+### -AttachmentItem
+attachmentItem
+To construct, see NOTES section for ATTACHMENTITEM properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AttachmentItemIsInline
-true if the attachment is an inline attachment; otherwise, false.
-Optional.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AttachmentItemName
-The display name of the attachment.
-This can be a descriptive string and does not have to be the actual file name.
-Required.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AttachmentItemSize
-The length of the attachment in bytes.
-Required.
-
-```yaml
-Type: System.Int64
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentItem
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutlookTaskFolderId
-key: outlookTaskFolder-id of outlookTaskFolder
+key: id of outlookTaskFolder
 
 ```yaml
 Type: System.String
@@ -195,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutlookTaskGroupId
-key: outlookTaskGroup-id of outlookTaskGroup
+key: id of outlookTaskGroup
 
 ```yaml
 Type: System.String
@@ -210,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutlookTaskId
-key: outlookTask-id of outlookTask
+key: id of outlookTask
 
 ```yaml
 Type: System.String
@@ -225,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -292,36 +242,46 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+ATTACHMENTITEM <IMicrosoftGraphAttachmentItem>: attachmentItem
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AttachmentType <String>]`: attachmentType
+  - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
+  - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false. Optional.
+  - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+  - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
+
 BODYPARAMETER <IPaths1E6Bxs8UsersUserIdOutlookTaskgroupsOutlooktaskgroupIdTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>: .
-  - `[AttachmentItemAttachmentType <String>]`: attachmentType
-  - `[AttachmentItemContentType <String>]`: The nature of the data in the attachment. Optional.
-  - `[AttachmentItemIsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false. Optional.
-  - `[AttachmentItemName <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-  - `[AttachmentItemSize <Int64?>]`: The length of the attachment in bytes. Required.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AttachmentItem <IMicrosoftGraphAttachmentItem>]`: attachmentItem
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AttachmentType <String>]`: attachmentType
+    - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
+    - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false. Optional.
+    - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+    - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

@@ -15,12 +15,12 @@ Update the navigation property synchronizationProfiles in education
 ### UpdateExpanded (Default)
 ```
 Update-MgEducationSynchronizationProfile -EducationSynchronizationProfileId <String>
- [-DataProvider <IMicrosoftGraphEducationSynchronizationDataProvider>] [-DisplayName <String>]
- [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-HandleSpecialCharacterConstraint] [-Id <String>]
- [-IdentitySynchronizationConfiguration <IMicrosoftGraphEducationIdentitySynchronizationConfiguration>]
- [-LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>] [-ProfileStatusId <String>]
- [-ProfileStatusLastSynchronizationDateTime <DateTime>] [-ProfileStatusStatus <String>] [-State <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DataProvider <Hashtable>] [-DisplayName <String>]
+ [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-ExpirationDate <DateTime>]
+ [-HandleSpecialCharacterConstraint] [-Id <String>] [-IdentitySynchronizationConfiguration <Hashtable>]
+ [-LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>]
+ [-ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>] [-State <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -39,13 +39,13 @@ Update-MgEducationSynchronizationProfile -InputObject <IEducationIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationSynchronizationProfile -InputObject <IEducationIdentity>
- [-DataProvider <IMicrosoftGraphEducationSynchronizationDataProvider>] [-DisplayName <String>]
- [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-HandleSpecialCharacterConstraint] [-Id <String>]
- [-IdentitySynchronizationConfiguration <IMicrosoftGraphEducationIdentitySynchronizationConfiguration>]
- [-LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>] [-ProfileStatusId <String>]
- [-ProfileStatusLastSynchronizationDateTime <DateTime>] [-ProfileStatusStatus <String>] [-State <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+ [-DataProvider <Hashtable>] [-DisplayName <String>]
+ [-Errors <IMicrosoftGraphEducationSynchronizationError[]>] [-ExpirationDate <DateTime>]
+ [-HandleSpecialCharacterConstraint] [-Id <String>] [-IdentitySynchronizationConfiguration <Hashtable>]
+ [-LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>]
+ [-ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>] [-State <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,6 +73,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 educationSynchronizationProfile
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -93,7 +108,7 @@ Accept wildcard characters: False
 educationSynchronizationDataProvider
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationDataProvider
+Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -120,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationSynchronizationProfileId
-key: educationSynchronizationProfile-id of educationSynchronizationProfile
+key: id of educationSynchronizationProfile
 
 ```yaml
 Type: System.String
@@ -140,6 +155,21 @@ To construct, see NOTES section for ERRORS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpirationDate
+.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -184,7 +214,7 @@ Accept wildcard characters: False
 educationIdentitySynchronizationConfiguration
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationIdentitySynchronizationConfiguration
+Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,41 +272,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfileStatusId
-Read-only.
+### -ProfileStatus
+educationSynchronizationProfileStatus
+To construct, see NOTES section for PROFILESTATUS properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProfileStatusLastSynchronizationDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProfileStatusStatus
-educationSynchronizationStatus
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -356,8 +357,10 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchronizationProfile
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[DataProvider <IMicrosoftGraphEducationSynchronizationDataProvider>]`: educationSynchronizationDataProvider
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: 
   - `[Errors <IMicrosoftGraphEducationSynchronizationError[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -367,14 +370,18 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchro
     - `[JoiningValue <String>]`: 
     - `[RecordedDateTime <DateTime?>]`: 
     - `[ReportableIdentifier <String>]`: 
+  - `[ExpirationDate <DateTime?>]`: 
   - `[HandleSpecialCharacterConstraint <Boolean?>]`: 
   - `[IdentitySynchronizationConfiguration <IMicrosoftGraphEducationIdentitySynchronizationConfiguration>]`: educationIdentitySynchronizationConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>]`: 
     - `[AppliesTo <String>]`: 
     - `[SkuIds <String[]>]`: 
-  - `[ProfileStatusId <String>]`: Read-only.
-  - `[ProfileStatusLastSynchronizationDateTime <DateTime?>]`: 
-  - `[ProfileStatusStatus <String>]`: educationSynchronizationStatus
+  - `[ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>]`: educationSynchronizationProfileStatus
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[LastSynchronizationDateTime <DateTime?>]`: 
+    - `[Status <String>]`: educationSynchronizationStatus
   - `[State <String>]`: educationSynchronizationProfileState
 
 ERRORS <IMicrosoftGraphEducationSynchronizationError[]>: .
@@ -387,22 +394,28 @@ ERRORS <IMicrosoftGraphEducationSynchronizationError[]>: .
   - `[ReportableIdentifier <String>]`: 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
-  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
-  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
-  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
-  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: id of educationCategory
+  - `[EducationClassId <String>]`: key: id of educationClass
+  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
+  - `[EducationRubricId <String>]`: key: id of educationRubric
+  - `[EducationSchoolId <String>]`: key: id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: id of educationUser
 
 LICENSESTOASSIGN <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>: .
   - `[AppliesTo <String>]`: 
   - `[SkuIds <String[]>]`: 
+
+PROFILESTATUS <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationSynchronizationProfileStatus
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[LastSynchronizationDateTime <DateTime?>]`: 
+  - `[Status <String>]`: educationSynchronizationStatus
 
 ## RELATED LINKS
 

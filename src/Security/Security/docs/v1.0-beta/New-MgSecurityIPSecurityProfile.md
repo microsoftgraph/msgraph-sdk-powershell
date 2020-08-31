@@ -14,13 +14,12 @@ Create new navigation property to ipSecurityProfiles for Security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityIPSecurityProfile [-ActivityGroupNames <String[]>] [-Address <String>]
- [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CountHits <Int32>] [-CountHosts <Int32>]
- [-FirstSeenDateTime <DateTime>] [-Id <String>] [-IPCategories <IMicrosoftGraphIPCategory[]>]
- [-IPReferenceData <IMicrosoftGraphIPReferenceData[]>] [-LastSeenDateTime <DateTime>] [-RiskScore <String>]
- [-Tags <String[]>] [-VendorInformationProvider <String>] [-VendorInformationProviderVersion <String>]
- [-VendorInformationSubProvider <String>] [-VendorInformationVendor <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgSecurityIPSecurityProfile [-ActivityGroupNames <String[]>] [-AdditionalProperties <Hashtable>]
+ [-Address <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CountHits <Int32>]
+ [-CountHosts <Int32>] [-FirstSeenDateTime <DateTime>] [-Id <String>]
+ [-IPCategories <IMicrosoftGraphIPCategory[]>] [-IPReferenceData <IMicrosoftGraphIPReferenceData[]>]
+ [-LastSeenDateTime <DateTime>] [-RiskScore <String>] [-Tags <String[]>]
+ [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -59,6 +58,21 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -267,58 +281,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformationProvider
-Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+### -VendorInformation
+securityVendorInformation
+To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationProviderVersion
-Version of the provider or subprovider, if it exists, that generated the alert.
-Required
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationSubProvider
-Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VendorInformationVendor
-Name of the alert vendor (for example, Microsoft, Dell, FireEye).
-Required
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -381,6 +349,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActivityGroupNames <String[]>]`: 
   - `[Address <String>]`: 
@@ -403,10 +372,12 @@ BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
   - `[LastSeenDateTime <DateTime?>]`: 
   - `[RiskScore <String>]`: 
   - `[Tags <String[]>]`: 
-  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 IPCATEGORIES <IMicrosoftGraphIPCategory[]>: .
   - `[Description <String>]`: 
@@ -420,6 +391,13 @@ IPREFERENCEDATA <IMicrosoftGraphIPReferenceData[]>: .
   - `[Organization <String>]`: 
   - `[State <String>]`: 
   - `[Vendor <String>]`: 
+
+VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 ## RELATED LINKS
 

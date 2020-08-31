@@ -12,19 +12,20 @@ Get classes from education
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
-Get-MgEducationMeClass [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [<CommonParameters>]
+Get-MgEducationMeClass [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgEducationMeClass -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgEducationMeClass -InputObject <IEducationIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -55,12 +56,27 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -All
+List all pages.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Count
 Include count of items
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -71,11 +87,11 @@ Accept wildcard characters: False
 ```
 
 ### -EducationClassId
-key: educationClass-id of educationClass
+key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -105,7 +121,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -121,7 +137,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -132,12 +148,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
-Aliases: Top, Limit
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -166,7 +182,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -181,7 +197,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -196,8 +212,23 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
 
 Required: False
 Position: Named
@@ -215,7 +246,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass
 
 ## NOTES
 
@@ -227,18 +258,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
-  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
-  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
-  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
-  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: id of educationCategory
+  - `[EducationClassId <String>]`: key: id of educationClass
+  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
+  - `[EducationRubricId <String>]`: key: id of educationRubric
+  - `[EducationSchoolId <String>]`: key: id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
 

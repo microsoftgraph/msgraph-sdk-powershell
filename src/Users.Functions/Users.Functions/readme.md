@@ -32,9 +32,30 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
+
+### Directives
+
+> see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
+
+``` yaml
+directive:
+# Remove invalid paths.
+  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups.section.*|.*\.sections\.pages.*|users\.calendar\.events\..*|users\.calendarGroups\.calendars|users\.calendars\.events\..*|users\.events\.calendar\..*
+# Rename cmdlets.
+  - where:
+      verb: Get
+      subject: ^(UserOnenote)Notebook(RecentNotebook)$
+    set:
+      subject: $1$2
+  - where:
+      verb: Invoke
+      subject: ^(CalendarUserEventCalendar|CalendarUserCalendar)$
+    set:
+      subject: $1AllowedCalendarSharingRoles
+```
 ### Versioning
 
 ``` yaml
-module-version: 0.9.0
+module-version: 0.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

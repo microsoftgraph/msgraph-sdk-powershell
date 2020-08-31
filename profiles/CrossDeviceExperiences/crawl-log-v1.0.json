@@ -1,0 +1,29 @@
+{
+  "operations": {
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}/historyItems": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/activities/{userActivity-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
+    }
+  },
+  "resources": []
+}

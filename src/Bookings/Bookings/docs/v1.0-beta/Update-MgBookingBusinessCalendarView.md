@@ -15,31 +15,16 @@ Update the navigation property calendarView in bookingBusinesses
 ### UpdateExpanded (Default)
 ```
 Update-MgBookingBusinessCalendarView -BookingAppointmentId <String> -BookingBusinessId <String>
- [-CustomerEmailAddress <String>] [-CustomerId <String>] [-CustomerLocationAddressCity <String>]
- [-CustomerLocationAddressCountryOrRegion <String>] [-CustomerLocationAddressPostalCode <String>]
- [-CustomerLocationAddressPostOfficeBox <String>] [-CustomerLocationAddressState <String>]
- [-CustomerLocationAddressStreet <String>] [-CustomerLocationAddressType <String>]
- [-CustomerLocationCoordinatesAccuracy <Double>] [-CustomerLocationCoordinatesAltitude <Double>]
- [-CustomerLocationCoordinatesAltitudeAccuracy <Double>] [-CustomerLocationCoordinatesLatitude <Double>]
- [-CustomerLocationCoordinatesLongitude <Double>] [-CustomerLocationDisplayName <String>]
- [-CustomerLocationEmailAddress <String>] [-CustomerLocationType <String>]
- [-CustomerLocationUniqueId <String>] [-CustomerLocationUniqueIdType <String>] [-CustomerLocationUri <String>]
- [-CustomerName <String>] [-CustomerNotes <String>] [-CustomerPhone <String>] [-Duration <TimeSpan>]
- [-EndDateTime <String>] [-EndTimeZone <String>] [-Id <String>] [-InvoiceAmount <Double>]
- [-InvoiceDateTime <String>] [-InvoiceDateTimeZone <String>] [-InvoiceId <String>] [-InvoiceStatus <String>]
- [-InvoiceUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
- [-Price <Double>] [-PriceType <String>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocationAddressCity <String>]
- [-ServiceLocationAddressCountryOrRegion <String>] [-ServiceLocationAddressPostalCode <String>]
- [-ServiceLocationAddressPostOfficeBox <String>] [-ServiceLocationAddressState <String>]
- [-ServiceLocationAddressStreet <String>] [-ServiceLocationAddressType <String>]
- [-ServiceLocationCoordinatesAccuracy <Double>] [-ServiceLocationCoordinatesAltitude <Double>]
- [-ServiceLocationCoordinatesAltitudeAccuracy <Double>] [-ServiceLocationCoordinatesLatitude <Double>]
- [-ServiceLocationCoordinatesLongitude <Double>] [-ServiceLocationDisplayName <String>]
- [-ServiceLocationEmailAddress <String>] [-ServiceLocationType <String>] [-ServiceLocationUniqueId <String>]
- [-ServiceLocationUniqueIdType <String>] [-ServiceLocationUri <String>] [-ServiceName <String>]
- [-ServiceNotes <String>] [-StaffMemberIds <String[]>] [-StartDateTime <String>] [-StartTimeZone <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-CustomerEmailAddress <String>] [-CustomerId <String>]
+ [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>] [-CustomerNotes <String>]
+ [-CustomerPhone <String>] [-Duration <TimeSpan>] [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>]
+ [-InvoiceAmount <Double>] [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>]
+ [-InvoiceStatus <String>] [-InvoiceUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>]
+ [-PreBuffer <TimeSpan>] [-Price <Double>] [-PriceType <String>]
+ [-Reminders <IMicrosoftGraphBookingReminder[]>] [-SelfServiceAppointmentId <String>] [-ServiceId <String>]
+ [-ServiceLocation <IMicrosoftGraphLocation>] [-ServiceName <String>] [-ServiceNotes <String>]
+ [-StaffMemberIds <String[]>] [-Start <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -56,32 +41,16 @@ Update-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-CustomerEmailAddress <String>]
- [-CustomerId <String>] [-CustomerLocationAddressCity <String>]
- [-CustomerLocationAddressCountryOrRegion <String>] [-CustomerLocationAddressPostalCode <String>]
- [-CustomerLocationAddressPostOfficeBox <String>] [-CustomerLocationAddressState <String>]
- [-CustomerLocationAddressStreet <String>] [-CustomerLocationAddressType <String>]
- [-CustomerLocationCoordinatesAccuracy <Double>] [-CustomerLocationCoordinatesAltitude <Double>]
- [-CustomerLocationCoordinatesAltitudeAccuracy <Double>] [-CustomerLocationCoordinatesLatitude <Double>]
- [-CustomerLocationCoordinatesLongitude <Double>] [-CustomerLocationDisplayName <String>]
- [-CustomerLocationEmailAddress <String>] [-CustomerLocationType <String>]
- [-CustomerLocationUniqueId <String>] [-CustomerLocationUniqueIdType <String>] [-CustomerLocationUri <String>]
+Update-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+ [-CustomerEmailAddress <String>] [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation>]
  [-CustomerName <String>] [-CustomerNotes <String>] [-CustomerPhone <String>] [-Duration <TimeSpan>]
- [-EndDateTime <String>] [-EndTimeZone <String>] [-Id <String>] [-InvoiceAmount <Double>]
- [-InvoiceDateTime <String>] [-InvoiceDateTimeZone <String>] [-InvoiceId <String>] [-InvoiceStatus <String>]
+ [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
+ [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
  [-InvoiceUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
  [-Price <Double>] [-PriceType <String>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocationAddressCity <String>]
- [-ServiceLocationAddressCountryOrRegion <String>] [-ServiceLocationAddressPostalCode <String>]
- [-ServiceLocationAddressPostOfficeBox <String>] [-ServiceLocationAddressState <String>]
- [-ServiceLocationAddressStreet <String>] [-ServiceLocationAddressType <String>]
- [-ServiceLocationCoordinatesAccuracy <Double>] [-ServiceLocationCoordinatesAltitude <Double>]
- [-ServiceLocationCoordinatesAltitudeAccuracy <Double>] [-ServiceLocationCoordinatesLatitude <Double>]
- [-ServiceLocationCoordinatesLongitude <Double>] [-ServiceLocationDisplayName <String>]
- [-ServiceLocationEmailAddress <String>] [-ServiceLocationType <String>] [-ServiceLocationUniqueId <String>]
- [-ServiceLocationUniqueIdType <String>] [-ServiceLocationUri <String>] [-ServiceName <String>]
- [-ServiceNotes <String>] [-StaffMemberIds <String[]>] [-StartDateTime <String>] [-StartTimeZone <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation>]
+ [-ServiceName <String>] [-ServiceNotes <String>] [-StaffMemberIds <String[]>]
+ [-Start <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -109,6 +78,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 Represents a booked appointment of a service by a customer in a business.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -126,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingAppointmentId
-key: bookingAppointment-id of bookingAppointment
+key: id of bookingAppointment
 
 ```yaml
 Type: System.String
@@ -141,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: bookingBusiness-id of bookingBusiness
+key: id of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -185,268 +169,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CustomerLocationAddressCity
-The city.
+### -CustomerLocation
+location
+To construct, see NOTES section for CUSTOMERLOCATION properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressCountryOrRegion
-The country or region.
-It's a free-format string value, for example, 'United States'.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressPostalCode
-The postal code.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressPostOfficeBox
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressState
-The state.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressStreet
-The street.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationAddressType
-physicalAddressType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationCoordinatesAccuracy
-The accuracy of the latitude and longitude.
-As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationCoordinatesAltitude
-The altitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationCoordinatesAltitudeAccuracy
-The accuracy of the altitude.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationCoordinatesLatitude
-The latitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationCoordinatesLongitude
-The longitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationDisplayName
-The name associated with the location.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationEmailAddress
-Optional email address of the location.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationType
-locationType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationUniqueId
-For internal use only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationUniqueIdType
-locationUniqueIdType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomerLocationUri
-Optional URI representing the location.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -517,27 +245,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EndDateTime
-A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+### -End
+dateTimeTimeZone
+To construct, see NOTES section for END properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EndTimeZone
-Represents a time zone, for example, 'Pacific Standard Time'.
-See below for more possible values.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -594,27 +307,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InvoiceDateTime
-A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+### -InvoiceDate
+dateTimeTimeZone
+To construct, see NOTES section for INVOICEDATE properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InvoiceDateTimeZone
-Represents a time zone, for example, 'Pacific Standard Time'.
-See below for more possible values.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -806,268 +504,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ServiceLocationAddressCity
-The city.
+### -ServiceLocation
+location
+To construct, see NOTES section for SERVICELOCATION properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressCountryOrRegion
-The country or region.
-It's a free-format string value, for example, 'United States'.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressPostalCode
-The postal code.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressPostOfficeBox
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressState
-The state.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressStreet
-The street.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationAddressType
-physicalAddressType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationCoordinatesAccuracy
-The accuracy of the latitude and longitude.
-As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationCoordinatesAltitude
-The altitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationCoordinatesAltitudeAccuracy
-The accuracy of the altitude.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationCoordinatesLatitude
-The latitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationCoordinatesLongitude
-The longitude of the location.
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationDisplayName
-The name associated with the location.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationEmailAddress
-Optional email address of the location.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationType
-locationType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationUniqueId
-For internal use only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationUniqueIdType
-locationUniqueIdType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ServiceLocationUri
-Optional URI representing the location.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -1123,27 +565,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartDateTime
-A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+### -Start
+dateTimeTimeZone
+To construct, see NOTES section for START properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StartTimeZone
-Represents a time zone, for example, 'Pacific Standard Time'.
-See below for more possible values.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -1208,36 +635,44 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphBookingAppointment>: Represents a booked appointment of a service by a customer in a business.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[CustomerEmailAddress <String>]`: 
   - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
-  - `[CustomerLocationAddressCity <String>]`: The city.
-  - `[CustomerLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[CustomerLocationAddressPostOfficeBox <String>]`: 
-  - `[CustomerLocationAddressPostalCode <String>]`: The postal code.
-  - `[CustomerLocationAddressState <String>]`: The state.
-  - `[CustomerLocationAddressStreet <String>]`: The street.
-  - `[CustomerLocationAddressType <String>]`: physicalAddressType
-  - `[CustomerLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-  - `[CustomerLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
-  - `[CustomerLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-  - `[CustomerLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
-  - `[CustomerLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
-  - `[CustomerLocationDisplayName <String>]`: The name associated with the location.
-  - `[CustomerLocationEmailAddress <String>]`: Optional email address of the location.
-  - `[CustomerLocationType <String>]`: locationType
-  - `[CustomerLocationUniqueId <String>]`: For internal use only.
-  - `[CustomerLocationUniqueIdType <String>]`: locationUniqueIdType
-  - `[CustomerLocationUri <String>]`: Optional URI representing the location.
+  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: The city.
+      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+      - `[PostOfficeBox <String>]`: 
+      - `[PostalCode <String>]`: The postal code.
+      - `[State <String>]`: The state.
+      - `[Street <String>]`: The street.
+      - `[Type <String>]`: physicalAddressType
+    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+      - `[Altitude <Double?>]`: The altitude of the location.
+      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+      - `[Latitude <Double?>]`: The latitude of the location.
+      - `[Longitude <Double?>]`: The longitude of the location.
+    - `[DisplayName <String>]`: The name associated with the location.
+    - `[LocationEmailAddress <String>]`: Optional email address of the location.
+    - `[LocationType <String>]`: locationType
+    - `[LocationUri <String>]`: Optional URI representing the location.
+    - `[UniqueId <String>]`: For internal use only.
+    - `[UniqueIdType <String>]`: locationUniqueIdType
   - `[CustomerName <String>]`: 
   - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
   - `[CustomerPhone <String>]`: 
   - `[Duration <TimeSpan?>]`: 
-  - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[InvoiceAmount <Double?>]`: 
-  - `[InvoiceDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[InvoiceDateTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[InvoiceId <String>]`: 
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: 
@@ -1252,42 +687,89 @@ BODYPARAMETER <IMicrosoftGraphBookingAppointment>: Represents a booked appointme
     - `[Recipients <String>]`: bookingReminderRecipients
   - `[SelfServiceAppointmentId <String>]`: 
   - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
-  - `[ServiceLocationAddressCity <String>]`: The city.
-  - `[ServiceLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[ServiceLocationAddressPostOfficeBox <String>]`: 
-  - `[ServiceLocationAddressPostalCode <String>]`: The postal code.
-  - `[ServiceLocationAddressState <String>]`: The state.
-  - `[ServiceLocationAddressStreet <String>]`: The street.
-  - `[ServiceLocationAddressType <String>]`: physicalAddressType
-  - `[ServiceLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-  - `[ServiceLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
-  - `[ServiceLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-  - `[ServiceLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
-  - `[ServiceLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
-  - `[ServiceLocationDisplayName <String>]`: The name associated with the location.
-  - `[ServiceLocationEmailAddress <String>]`: Optional email address of the location.
-  - `[ServiceLocationType <String>]`: locationType
-  - `[ServiceLocationUniqueId <String>]`: For internal use only.
-  - `[ServiceLocationUniqueIdType <String>]`: locationUniqueIdType
-  - `[ServiceLocationUri <String>]`: Optional URI representing the location.
+  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
   - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
   - `[ServiceNotes <String>]`: 
   - `[StaffMemberIds <String[]>]`: 
-  - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+
+CUSTOMERLOCATION <IMicrosoftGraphLocation>: location
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[City <String>]`: The city.
+    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[PostOfficeBox <String>]`: 
+    - `[PostalCode <String>]`: The postal code.
+    - `[State <String>]`: The state.
+    - `[Street <String>]`: The street.
+    - `[Type <String>]`: physicalAddressType
+  - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+    - `[Altitude <Double?>]`: The altitude of the location.
+    - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+    - `[Latitude <Double?>]`: The latitude of the location.
+    - `[Longitude <Double?>]`: The longitude of the location.
+  - `[DisplayName <String>]`: The name associated with the location.
+  - `[LocationEmailAddress <String>]`: Optional email address of the location.
+  - `[LocationType <String>]`: locationType
+  - `[LocationUri <String>]`: Optional URI representing the location.
+  - `[UniqueId <String>]`: For internal use only.
+  - `[UniqueIdType <String>]`: locationUniqueIdType
+
+END <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+
+INVOICEDATE <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 REMINDERS <IMicrosoftGraphBookingReminder[]>: .
   - `[Message <String>]`: Message to send.
   - `[Offset <TimeSpan?>]`: How much time before an appointment the reminder should be sent.
   - `[Recipients <String>]`: bookingReminderRecipients
+
+SERVICELOCATION <IMicrosoftGraphLocation>: location
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[City <String>]`: The city.
+    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[PostOfficeBox <String>]`: 
+    - `[PostalCode <String>]`: The postal code.
+    - `[State <String>]`: The state.
+    - `[Street <String>]`: The street.
+    - `[Type <String>]`: physicalAddressType
+  - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+    - `[Altitude <Double?>]`: The altitude of the location.
+    - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+    - `[Latitude <Double?>]`: The latitude of the location.
+    - `[Longitude <Double?>]`: The longitude of the location.
+  - `[DisplayName <String>]`: The name associated with the location.
+  - `[LocationEmailAddress <String>]`: Optional email address of the location.
+  - `[LocationType <String>]`: locationType
+  - `[LocationUri <String>]`: Optional URI representing the location.
+  - `[UniqueId <String>]`: For internal use only.
+  - `[UniqueIdType <String>]`: locationUniqueIdType
+
+START <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 ## RELATED LINKS
 

@@ -8,34 +8,35 @@ schema: 2.0.0
 # Update-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-Update the navigation property categories in education
+Update the navigation property assignmentCategories in education
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
- [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
+```
+Update-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
+ -BodyParameter <IMicrosoftGraphEducationCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update1
 ```
 Update-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationCategoryId <String>
  -EducationClassId <String> -BodyParameter <IMicrosoftGraphEducationCategory> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update1
-```
-Update-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateExpanded
+### UpdateExpanded1
 ```
 Update-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationCategoryId <String>
- -EducationClassId <String> [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -EducationClassId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -52,18 +53,20 @@ Update-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-DisplayName <String>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-DisplayName <String>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property categories in education
+Update the navigation property assignmentCategories in education
 
 ## EXAMPLES
 
@@ -86,6 +89,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 educationCategory
@@ -119,11 +137,11 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: educationAssignment-id of educationAssignment
+key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -134,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationCategoryId
-key: educationCategory-id of educationCategory
+key: id of educationCategory
 
 ```yaml
 Type: System.String
@@ -149,7 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationClassId
-key: educationClass-id of educationClass
+key: id of educationClass
 
 ```yaml
 Type: System.String
@@ -263,22 +281,23 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationCategory>: educationCategory
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
-  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
-  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
-  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
-  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: id of educationCategory
+  - `[EducationClassId <String>]`: key: id of educationClass
+  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
+  - `[EducationRubricId <String>]`: key: id of educationRubric
+  - `[EducationSchoolId <String>]`: key: id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
 

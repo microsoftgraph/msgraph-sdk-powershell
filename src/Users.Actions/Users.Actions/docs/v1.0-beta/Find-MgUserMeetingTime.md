@@ -12,37 +12,36 @@ Invoke action findMeetingTimes
 
 ## SYNTAX
 
-### FindExpanded (Default)
+### FindExpanded1 (Default)
 ```
-Find-MgUserMeetingTime -UserId <String> [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
- [-LocationConstraintIsRequired] [-LocationConstraintLocations <IMicrosoftGraphLocationConstraintItem1[]>]
- [-LocationConstraintSuggestLocation] [-MaxCandidates <Int32>] [-MeetingDuration <TimeSpan>]
- [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons] [-TimeConstraintActivityDomain <String>]
- [-TimeConstraintTimeSlots <IMicrosoftGraphTimeSlot[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Find-MgUserMeetingTime -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
+ [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
+ [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
+ [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Find
+### Find1
 ```
 Find-MgUserMeetingTime -UserId <String>
  -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### FindViaIdentity
+### FindViaIdentity1
 ```
 Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### FindViaIdentityExpanded
+### FindViaIdentityExpanded1
 ```
-Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity> [-Attendees <IMicrosoftGraphAttendeeBase[]>]
- [-IsOrganizerOptional] [-LocationConstraintIsRequired]
- [-LocationConstraintLocations <IMicrosoftGraphLocationConstraintItem1[]>]
- [-LocationConstraintSuggestLocation] [-MaxCandidates <Int32>] [-MeetingDuration <TimeSpan>]
- [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons] [-TimeConstraintActivityDomain <String>]
- [-TimeConstraintTimeSlots <IMicrosoftGraphTimeSlot[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Find-MgUserMeetingTime -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Attendees <IMicrosoftGraphAttendeeBase[]>] [-IsOrganizerOptional]
+ [-LocationConstraint <IMicrosoftGraphLocationConstraint1>] [-MaxCandidates <Int32>]
+ [-MeetingDuration <TimeSpan>] [-MinimumAttendeePercentage <Double>] [-ReturnSuggestionReasons]
+ [-TimeConstraint <IMicrosoftGraphTimeConstraint>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,13 +69,28 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Attendees
 .
 To construct, see NOTES section for ATTENDEES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttendeeBase[]
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -92,7 +106,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Find, FindViaIdentity
+Parameter Sets: Find1, FindViaIdentity1
 Aliases:
 
 Required: True
@@ -108,7 +122,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: FindViaIdentity, FindViaIdentityExpanded
+Parameter Sets: FindViaIdentity1, FindViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -123,7 +137,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -133,45 +147,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LocationConstraintIsRequired
-The client requests the service to include in the response a meeting location for the meeting.
-If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions.
-If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+### -LocationConstraint
+locationConstraint
+To construct, see NOTES section for LOCATIONCONSTRAINT properties and create a hash table.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationConstraintLocations
-Constraint information for one or more locations that the client requests for the meeting.
-To construct, see NOTES section for LOCATIONCONSTRAINTLOCATIONS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocationConstraintItem1[]
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationConstraintSuggestLocation
-The client requests the service to suggest one or more meeting locations.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocationConstraint1
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -186,7 +168,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -201,7 +183,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -216,7 +198,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Double
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -231,7 +213,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -241,28 +223,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TimeConstraintActivityDomain
-activityDomain
+### -TimeConstraint
+timeConstraint
+To construct, see NOTES section for TIMECONSTRAINT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TimeConstraintTimeSlots
-.
-To construct, see NOTES section for TIMECONSTRAINTTIMESLOTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot[]
-Parameter Sets: FindExpanded, FindViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeConstraint
+Parameter Sets: FindExpanded1, FindViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -273,11 +240,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Find, FindExpanded
+Parameter Sets: Find1, FindExpanded1
 Aliases:
 
 Required: True
@@ -342,31 +309,105 @@ To create the parameters described below, construct a hash table containing the 
 
 ATTENDEES <IMicrosoftGraphAttendeeBase[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
   - `[Type <String>]`: attendeeType
 
 BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestbodyContentApplicationJsonSchema1>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Attendees <IMicrosoftGraphAttendeeBase[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
     - `[Type <String>]`: attendeeType
   - `[IsOrganizerOptional <Boolean?>]`: 
-  - `[LocationConstraintIsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
-  - `[LocationConstraintLocations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
-    - `[AddressCity <String>]`: The city.
-    - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[AddressPostOfficeBox <String>]`: 
-    - `[AddressPostalCode <String>]`: The postal code.
-    - `[AddressState <String>]`: The state.
-    - `[AddressStreet <String>]`: The street.
-    - `[AddressType <String>]`: physicalAddressType
-    - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-    - `[CoordinateAltitude <Double?>]`: The altitude of the location.
-    - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-    - `[CoordinateLatitude <Double?>]`: The latitude of the location.
-    - `[CoordinateLongitude <Double?>]`: The longitude of the location.
+  - `[LocationConstraint <IMicrosoftGraphLocationConstraint1>]`: locationConstraint
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+    - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[City <String>]`: The city.
+        - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+        - `[PostOfficeBox <String>]`: 
+        - `[PostalCode <String>]`: The postal code.
+        - `[State <String>]`: The state.
+        - `[Street <String>]`: The street.
+        - `[Type <String>]`: physicalAddressType
+      - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+        - `[Altitude <Double?>]`: The altitude of the location.
+        - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+        - `[Latitude <Double?>]`: The latitude of the location.
+        - `[Longitude <Double?>]`: The longitude of the location.
+      - `[DisplayName <String>]`: The name associated with the location.
+      - `[LocationEmailAddress <String>]`: Optional email address of the location.
+      - `[LocationType <String>]`: locationType
+      - `[LocationUri <String>]`: Optional URI representing the location.
+      - `[UniqueId <String>]`: For internal use only.
+      - `[UniqueIdType <String>]`: locationUniqueIdType
+      - `[ResolveAvailability <Boolean?>]`: If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
+    - `[SuggestLocation <Boolean?>]`: The client requests the service to suggest one or more meeting locations.
+  - `[MaxCandidates <Int32?>]`: 
+  - `[MeetingDuration <TimeSpan?>]`: 
+  - `[MinimumAttendeePercentage <Double?>]`: 
+  - `[ReturnSuggestionReasons <Boolean?>]`: 
+  - `[TimeConstraint <IMicrosoftGraphTimeConstraint>]`: timeConstraint
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ActivityDomain <String>]`: activityDomain
+    - `[TimeSlots <IMicrosoftGraphTimeSlot[]>]`: 
+      - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+      - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+
+INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+LOCATIONCONSTRAINT <IMicrosoftGraphLocationConstraint1>: locationConstraint
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsRequired <Boolean?>]`: The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+  - `[Locations <IMicrosoftGraphLocationConstraintItem1[]>]`: Constraint information for one or more locations that the client requests for the meeting.
+    - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[City <String>]`: The city.
+      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+      - `[PostOfficeBox <String>]`: 
+      - `[PostalCode <String>]`: The postal code.
+      - `[State <String>]`: The state.
+      - `[Street <String>]`: The street.
+      - `[Type <String>]`: physicalAddressType
+    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+      - `[Altitude <Double?>]`: The altitude of the location.
+      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+      - `[Latitude <Double?>]`: The latitude of the location.
+      - `[Longitude <Double?>]`: The longitude of the location.
     - `[DisplayName <String>]`: The name associated with the location.
     - `[LocationEmailAddress <String>]`: Optional email address of the location.
     - `[LocationType <String>]`: locationType
@@ -374,68 +415,17 @@ BODYPARAMETER <IPathsSzpbzfUsersUserIdMicrosoftGraphFindmeetingtimesPostRequestb
     - `[UniqueId <String>]`: For internal use only.
     - `[UniqueIdType <String>]`: locationUniqueIdType
     - `[ResolveAvailability <Boolean?>]`: If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
-  - `[LocationConstraintSuggestLocation <Boolean?>]`: The client requests the service to suggest one or more meeting locations.
-  - `[MaxCandidates <Int32?>]`: 
-  - `[MeetingDuration <TimeSpan?>]`: 
-  - `[MinimumAttendeePercentage <Double?>]`: 
-  - `[ReturnSuggestionReasons <Boolean?>]`: 
-  - `[TimeConstraintActivityDomain <String>]`: activityDomain
-  - `[TimeConstraintTimeSlots <IMicrosoftGraphTimeSlot[]>]`: 
-    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[SuggestLocation <Boolean?>]`: The client requests the service to suggest one or more meeting locations.
 
-INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
-
-LOCATIONCONSTRAINTLOCATIONS <IMicrosoftGraphLocationConstraintItem1[]>: Constraint information for one or more locations that the client requests for the meeting.
-  - `[AddressCity <String>]`: The city.
-  - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[AddressPostOfficeBox <String>]`: 
-  - `[AddressPostalCode <String>]`: The postal code.
-  - `[AddressState <String>]`: The state.
-  - `[AddressStreet <String>]`: The street.
-  - `[AddressType <String>]`: physicalAddressType
-  - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-  - `[CoordinateAltitude <Double?>]`: The altitude of the location.
-  - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-  - `[CoordinateLatitude <Double?>]`: The latitude of the location.
-  - `[CoordinateLongitude <Double?>]`: The longitude of the location.
-  - `[DisplayName <String>]`: The name associated with the location.
-  - `[LocationEmailAddress <String>]`: Optional email address of the location.
-  - `[LocationType <String>]`: locationType
-  - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[UniqueId <String>]`: For internal use only.
-  - `[UniqueIdType <String>]`: locationUniqueIdType
-  - `[ResolveAvailability <Boolean?>]`: If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
-
-TIMECONSTRAINTTIMESLOTS <IMicrosoftGraphTimeSlot[]>: .
-  - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-  - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+TIMECONSTRAINT <IMicrosoftGraphTimeConstraint>: timeConstraint
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ActivityDomain <String>]`: activityDomain
+  - `[TimeSlots <IMicrosoftGraphTimeSlot[]>]`: 
+    - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
 

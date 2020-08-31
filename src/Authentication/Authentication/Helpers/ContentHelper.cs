@@ -135,7 +135,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                          || CheckIsJson(contentType);
 
             // Further content type analysis is available on Windows
-            if (Platform.IsWindows && !isText)
+            if (OperatingSystem.IsWindows() && !isText)
             {
                 // Media types registered with Windows as having a perceived type of text, are text
                 using (var contentTypeKey = Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))

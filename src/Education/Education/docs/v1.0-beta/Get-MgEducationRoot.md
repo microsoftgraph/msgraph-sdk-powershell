@@ -78,7 +78,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRoot1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRoot
 
 ## NOTES
 

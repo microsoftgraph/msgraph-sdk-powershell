@@ -15,8 +15,8 @@ Update the navigation property progressTaskBoardFormat in planner
 ### UpdateExpanded1 (Default)
 ```
 Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat -PlannerBucketId <String> -PlannerPlanId <String>
- -PlannerTaskId <String> [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ -PlannerTaskId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -35,8 +35,9 @@ Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat -InputObject <IPlannerIden
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> [-Id <String>]
- [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +64,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 plannerProgressTaskBoardTaskFormat
@@ -143,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerBucketId
-key: plannerBucket-id of plannerBucket
+key: id of plannerBucket
 
 ```yaml
 Type: System.String
@@ -158,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: plannerPlan-id of plannerPlan
+key: id of plannerPlan
 
 ```yaml
 Type: System.String
@@ -173,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: plannerTask-id of plannerTask
+key: id of plannerTask
 
 ```yaml
 Type: System.String
@@ -241,13 +257,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphPlannerProgressTaskBoardTaskFormat1>: plannerProgressTaskBoardTaskFormat
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[OrderHint <String>]`: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
-  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
+  - `[GroupId <String>]`: key: id of group
+  - `[PlannerBucketId <String>]`: key: id of plannerBucket
+  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
+  - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: id of plannerTask
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 
