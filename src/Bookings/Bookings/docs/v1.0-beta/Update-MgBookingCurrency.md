@@ -14,8 +14,8 @@ Update entity in bookingCurrencies
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBookingCurrency -BookingCurrencyId <String> [-Id <String>] [-Symbol <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgBookingCurrency -BookingCurrencyId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Symbol <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -32,8 +32,8 @@ Update-MgBookingCurrency -InputObject <IBookingsIdentity> -BodyParameter <IMicro
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingCurrency -InputObject <IBookingsIdentity> [-Id <String>] [-Symbol <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBookingCurrency -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-Symbol <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -61,6 +61,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 bookingCurrency
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -78,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingCurrencyId
-key: bookingCurrency-id of bookingCurrency
+key: id of bookingCurrency
 
 ```yaml
 Type: System.String
@@ -207,16 +222,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphBookingCurrency>: bookingCurrency
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Symbol <String>]`: 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
 
 ## RELATED LINKS
 

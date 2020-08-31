@@ -14,7 +14,8 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgUserOwnedObjectByType [-Type <String>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgUserOwnedObjectByType [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
@@ -48,6 +49,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: GetExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 .
@@ -147,6 +163,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPathsSidp1OUsersMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Type <String>]`: 
   - `[UserId <String>]`: 
 

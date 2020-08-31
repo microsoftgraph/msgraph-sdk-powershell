@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityActionId
-key: securityAction-id of securityAction
+key: id of securityAction
 
 ```yaml
 Type: System.String
@@ -145,18 +145,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: alert-id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
-  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
-  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
+  - `[AlertId <String>]`: key: id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: id of secureScore
+  - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[TiIndicatorId <String>]`: key: id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
 ## RELATED LINKS
 

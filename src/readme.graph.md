@@ -355,12 +355,24 @@ directive:
       subject: ^(\w*[a-z])Ref([A-Z]\w*)$
     set:
       subject: $1$2ByRef
-# Remove cmdlets
   - where:
-      verb: Test
-      subject: (Application|ServicePrincipal)SynchronizationJobCredentials
-      variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
-    remove: true
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^List3$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
+    set:
+      subject: GroupMemberOfByRef
+  - where:
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
+    set:
+      subject: GroupMemberWithLicenseErrorByRef
+  - where:
+      verb: Get
+      subject: ^GroupTransitiveMemberByRef$
+      variant: ^List$|^List2$
+    set:
+      subject: GroupTransitiveMemberOfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
@@ -457,19 +469,27 @@ directive:
       {
         return $;
       } else {
-        // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
         let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
+          // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
           $ = $.replace(odataNextLinkRegex, '$1if (result.OdataNextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializePaging(ref this.__invocationInfo, ref this._top); }\n$1');
+          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref this._top, ref this._count); }\n$1');
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
+
+          // Set -Count parameter to private. This will be replaced by -CountVariable
+          let countParameterRegex = /public(\s*global::System\.Management\.Automation\.SwitchParameter\s*Count\s*)/gm
+          $ = $.replace(countParameterRegex, 'private$1');
+
+          // Call OnBeforeWriteObject to deserialize '@odata.count' from the response object.
+          let writeObjectRegex = /^(\s*)(WriteObject\(result\.Value,true\);)$/gm
+          $ = $.replace(writeObjectRegex,'\n$1OnBeforeWriteObject(this.InvocationInformation.BoundParameters, result?.AdditionalProperties);\n$1$2');
         }
         return $;
       }
@@ -488,6 +508,20 @@ directive:
 
         let propertyContainsRegex = /(exclusions|inclusions)(\?.Contains\(property.Name)(\)\))/gm
         $ = $.replace(propertyContainsRegex, '$1$2, System.StringComparer.OrdinalIgnoreCase$3');
+        return $;
+      }
+
+# Serialize all $count parameter to lowercase true or false.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5C\w*.cs/gm))
+      {
+        return $;
+      } else {
+        // Add '.ToLower()' at the end of all 'Count.ToString()'
+        let countRegex = /(Count\.ToString\(\))/gmi
+        $ = $.replace(countRegex, '$1.ToLower()');
         return $;
       }
 ```

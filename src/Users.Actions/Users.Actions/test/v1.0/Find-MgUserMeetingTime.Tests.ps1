@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Find-MgUserMeetingTime' {
-    It 'FindExpanded1' -skip {
+    It 'FindExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Find1' -skip {
+    It 'Find' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'FindViaIdentityExpanded1' -skip {
+    It 'FindViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'FindViaIdentity1' -skip {
+    It 'FindViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Confirm-MgUserMemberObject' {
-    It 'CheckExpanded1' -skip {
+    It 'CheckExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Check1' -skip {
+    It 'Check' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'CheckViaIdentityExpanded1' -skip {
+    It 'CheckViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'CheckViaIdentity1' -skip {
+    It 'CheckViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

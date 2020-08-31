@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-MgUserDefaultCalendarSchedule' {
-    It 'GetExpanded' -skip {
+    It 'GetExpanded2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Get' -skip {
+    It 'Get2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'GetViaIdentityExpanded' -skip {
+    It 'GetViaIdentityExpanded2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'GetViaIdentity' -skip {
+    It 'GetViaIdentity2' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -14,8 +14,9 @@ Get userSecurityProfiles from Security
 
 ### List (Default)
 ```
-Get-MgSecurityUserSecurityProfile [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
+Get-MgSecurityUserSecurityProfile [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -56,7 +57,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,12 +133,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top, Limit
+Aliases:
 
 Required: False
 Position: Named
@@ -206,8 +207,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserSecurityProfileId
-key: userSecurityProfile-id of userSecurityProfile
+key: id of userSecurityProfile
 
 ```yaml
 Type: System.String
@@ -242,18 +258,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: alert-id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
-  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
-  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
+  - `[AlertId <String>]`: key: id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: id of secureScore
+  - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[TiIndicatorId <String>]`: key: id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
 ## RELATED LINKS
 

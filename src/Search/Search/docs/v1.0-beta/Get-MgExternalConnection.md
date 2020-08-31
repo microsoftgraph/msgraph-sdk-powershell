@@ -14,8 +14,9 @@ Get connections from external
 
 ### List (Default)
 ```
-Get-MgExternalConnection [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
+Get-MgExternalConnection [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
@@ -56,7 +57,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalConnectionId
-key: externalConnection-id of externalConnection
+key: id of externalConnection
 
 ```yaml
 Type: System.String
@@ -147,12 +148,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top, Limit
+Aliases:
 
 Required: False
 Position: Named
@@ -221,6 +222,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -242,9 +258,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
-  - `[ConnectionOperationId <String>]`: key: connectionOperation-id of connectionOperation
-  - `[ExternalConnectionId <String>]`: key: externalConnection-id of externalConnection
-  - `[ExternalItemId <String>]`: key: externalItem-id of externalItem
+  - `[ExternalConnectionId <String>]`: key: id of externalConnection
 
 ## RELATED LINKS
 

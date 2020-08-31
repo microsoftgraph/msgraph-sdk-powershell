@@ -14,8 +14,8 @@ Invoke action move
 
 ### MoveExpanded (Default)
 ```
-Move-MgUserMailFolder -MailFolderId <String> -UserId <String> [-DestinationId <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Move-MgUserMailFolder -MailFolderId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Move
@@ -34,8 +34,8 @@ Move-MgUserMailFolder -InputObject <IUsersActionsIdentity>
 
 ### MoveViaIdentityExpanded
 ```
-Move-MgUserMailFolder -InputObject <IUsersActionsIdentity> [-DestinationId <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Move-MgUserMailFolder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,6 +62,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: MoveExpanded, MoveViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 .
@@ -111,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailFolderId
-key: mailFolder-id of mailFolder
+key: id of mailFolder
 
 ```yaml
 Type: System.String
@@ -126,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -194,31 +209,31 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1Adv2SrUsersUserIdMailfoldersMailfolderIdMicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DestinationId <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

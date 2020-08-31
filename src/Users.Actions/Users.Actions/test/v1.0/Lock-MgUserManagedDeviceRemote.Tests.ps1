@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Lock-MgUserManagedDeviceRemote' {
-    It 'Lock1' -skip {
+    It 'Lock' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'LockViaIdentity1' -skip {
+    It 'LockViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

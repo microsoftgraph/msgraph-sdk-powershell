@@ -14,10 +14,10 @@ Invoke action sendActivityNotification
 
 ### SendExpanded (Default)
 ```
-Send-MgUserTeamworkActivityNotification -UserId <String> [-ActivityType <String>] [-ChainId <Int64>]
- [-PreviewTextContent <String>] [-PreviewTextContentType <String>]
- [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-TopicSource <String>] [-TopicValue <String>]
- [-TopicWebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Send-MgUserTeamworkActivityNotification -UserId <String> [-ActivityType <String>]
+ [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
+ [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-Topic <IMicrosoftGraphTeamworkActivityTopic>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Send
@@ -37,9 +37,9 @@ Send-MgUserTeamworkActivityNotification -InputObject <IUsersActionsIdentity>
 ### SendViaIdentityExpanded
 ```
 Send-MgUserTeamworkActivityNotification -InputObject <IUsersActionsIdentity> [-ActivityType <String>]
- [-ChainId <Int64>] [-PreviewTextContent <String>] [-PreviewTextContentType <String>]
- [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-TopicSource <String>] [-TopicValue <String>]
- [-TopicWebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
+ [-TemplateParameters <IMicrosoftGraphKeyValuePair[]>] [-Topic <IMicrosoftGraphTeamworkActivityTopic>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,6 +72,21 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String
+Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -144,26 +159,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PreviewTextContent
-The content of the item.
+### -PreviewText
+itemBody
+To construct, see NOTES section for PREVIEWTEXT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PreviewTextContentType
-bodyType
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -190,41 +191,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TopicSource
-teamworkActivityTopicSource
+### -Topic
+teamworkActivityTopic
+To construct, see NOTES section for TOPIC properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicValue
-.
-
-```yaml
-Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicWebUrl
-.
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
 Parameter Sets: SendExpanded, SendViaIdentityExpanded
 Aliases:
 
@@ -236,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -304,44 +276,59 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths18Aow54UsersUserIdTeamworkMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ActivityType <String>]`: 
   - `[ChainId <Int64?>]`: 
-  - `[PreviewTextContent <String>]`: The content of the item.
-  - `[PreviewTextContentType <String>]`: bodyType
+  - `[PreviewText <IMicrosoftGraphItemBody>]`: itemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: The content of the item.
+    - `[ContentType <String>]`: bodyType
   - `[TemplateParameters <IMicrosoftGraphKeyValuePair[]>]`: 
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
-  - `[TopicSource <String>]`: teamworkActivityTopicSource
-  - `[TopicValue <String>]`: 
-  - `[TopicWebUrl <String>]`: 
+  - `[Topic <IMicrosoftGraphTeamworkActivityTopic>]`: teamworkActivityTopic
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Source <String>]`: teamworkActivityTopicSource
+    - `[Value <String>]`: 
+    - `[WebUrl <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
-  - `[EventId <String>]`: key: event-id of event
-  - `[EventId1 <String>]`: key: event-id of event
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[MessageId <String>]`: key: message-id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
-  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
-  - `[UserId <String>]`: key: user-id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
+  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[EventId <String>]`: key: id of event
+  - `[EventId1 <String>]`: key: id of event
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[MailFolderId1 <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[MessageId <String>]`: key: id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: id of notebook
+  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[UserId <String>]`: key: id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+
+PREVIEWTEXT <IMicrosoftGraphItemBody>: itemBody
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Content <String>]`: The content of the item.
+  - `[ContentType <String>]`: bodyType
 
 TEMPLATEPARAMETERS <IMicrosoftGraphKeyValuePair[]>: .
   - `[Name <String>]`: Name for this key-value pair
   - `[Value <String>]`: Value for this key-value pair
+
+TOPIC <IMicrosoftGraphTeamworkActivityTopic>: teamworkActivityTopic
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Source <String>]`: teamworkActivityTopicSource
+  - `[Value <String>]`: 
+  - `[WebUrl <String>]`: 
 
 ## RELATED LINKS
 

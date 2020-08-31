@@ -14,7 +14,8 @@ Invoke action submitTiIndicators
 
 ### SubmitExpanded (Default)
 ```
-Submit-MgSecurityTiIndicator [-Value <IMicrosoftGraphTiIndicator[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Submit-MgSecurityTiIndicator [-AdditionalProperties <Hashtable>] [-Value <IMicrosoftGraphTiIndicator[]>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Submit
@@ -48,6 +49,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SubmitExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BodyParameter
 .
@@ -133,6 +149,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths1I03ShnSecurityTiindicatorsMicrosoftGraphSubmittiindicatorsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <IMicrosoftGraphTiIndicator[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Action <String>]`: tiAction

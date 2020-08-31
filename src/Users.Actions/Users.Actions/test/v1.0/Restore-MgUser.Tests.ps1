@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Restore-MgUser' {
-    It 'Restore1' -skip {
+    It 'Restore' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RestoreViaIdentity1' -skip {
+    It 'RestoreViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

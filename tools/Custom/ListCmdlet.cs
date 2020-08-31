@@ -34,6 +34,20 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
         [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter All { get => this._all; set => this._all = value; }
 
+        // <summary>Backing field for <see cref="CountVariable" /> property.</summary>
+        private string _countVariable;
+
+        /// <summary>Specifies a count of the total number of items in a collection. </summary>
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.")]
+        [Microsoft.Graph.PowerShell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Specifies a count of the total number of items in a collection. By default, this variable will be set in the global scope.",
+        PossibleTypes = new[] { typeof(string) })]
+        [global::Microsoft.Graph.PowerShell.Category(global::Microsoft.Graph.PowerShell.ParameterCategory.Runtime)]
+        [global::System.Management.Automation.Alias("CV")]
+        public string CountVariable { get => this._countVariable; set => this._countVariable = value; }
+
         /// <summary>
         /// Default number of items per page.
         /// </summary>
@@ -75,7 +89,7 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
         /// </summary>
         /// <param name="invocationInfo">A reference to <see cref="System.Management.Automation.InvocationInfo"/> object.</param>
         /// <param name="top">A reference to top parameter.</param>
-        public void InitializePaging(ref global::System.Management.Automation.InvocationInfo invocationInfo, ref int top)
+        public void InitializeCmdlet(ref global::System.Management.Automation.InvocationInfo invocationInfo, ref int top, ref global::System.Management.Automation.SwitchParameter count)
         {
             if (invocationInfo.BoundParameters.ContainsKey("PageSize") && (PageSize > MaxPageSize || PageSize == default))
             {
@@ -109,6 +123,13 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
             {
                 requiredPages = limit / currentPageSize;
                 overflowItemsCount = limit % currentPageSize;
+            }
+
+            if ((!invocationInfo.BoundParameters.ContainsKey("Count")) && invocationInfo.BoundParameters.ContainsKey("CountVariable"))
+            {
+                // Set Count to true when CountVariable is set.
+                invocationInfo.BoundParameters["Count"] = true;
+                count = true;
             }
         }
 
@@ -149,6 +170,21 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 }
             }
             return nextLinkUri.Uri;
+        }
+
+        internal void OnBeforeWriteObject(global::System.Collections.Generic.Dictionary<string, object> boundParameters, global::System.Collections.Generic.IDictionary<string, object> additionalProperties)
+        {
+            // Get odata.count from the response.
+            if (boundParameters.ContainsKey("CountVariable") &&
+                additionalProperties != null &&
+                additionalProperties.TryGetValue("@odata.count", out var odataCount))
+            {
+                // Save the Count back to the PS environment in a global variable.
+                // We need to store count in a global variable since these cmdlets are exported as functions.
+                // i.e. Functions can't modify parent scope.
+                var psVI = SessionState.PSVariable;
+                psVI.Set(new PSVariable(CountVariable.Contains(":") ? CountVariable : $"global:{CountVariable}", odataCount));
+            }
         }
     }
 }

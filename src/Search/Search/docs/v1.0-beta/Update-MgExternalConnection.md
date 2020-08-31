@@ -14,10 +14,11 @@ Update the navigation property connections in external
 
 ### UpdateExpanded (Default)
 ```
-Update-MgExternalConnection -ExternalConnectionId <String> [-ConfigurationAuthorizedApps <String[]>]
- [-Description <String>] [-Id <String>] [-Items <IMicrosoftGraphExternalItem[]>] [-Name <String>]
- [-Operations <IMicrosoftGraphConnectionOperation[]>] [-SchemaBaseType <String>] [-SchemaId <String>]
- [-SchemaProperties <IMicrosoftGraphProperty[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgExternalConnection -ExternalConnectionId <String> [-AdditionalProperties <Hashtable>]
+ [-Configuration <IMicrosoftGraphConfiguration>] [-Description <String>]
+ [-Groups <IMicrosoftGraphExternalGroup[]>] [-Id <String>] [-Items <IMicrosoftGraphExternalItem[]>]
+ [-Name <String>] [-Operations <IMicrosoftGraphConnectionOperation[]>] [-Schema <IMicrosoftGraphSchema>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -34,10 +35,11 @@ Update-MgExternalConnection -InputObject <ISearchIdentity> -BodyParameter <IMicr
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgExternalConnection -InputObject <ISearchIdentity> [-ConfigurationAuthorizedApps <String[]>]
- [-Description <String>] [-Id <String>] [-Items <IMicrosoftGraphExternalItem[]>] [-Name <String>]
- [-Operations <IMicrosoftGraphConnectionOperation[]>] [-SchemaBaseType <String>] [-SchemaId <String>]
- [-SchemaProperties <IMicrosoftGraphProperty[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgExternalConnection -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
+ [-Configuration <IMicrosoftGraphConfiguration>] [-Description <String>]
+ [-Groups <IMicrosoftGraphExternalGroup[]>] [-Id <String>] [-Items <IMicrosoftGraphExternalItem[]>]
+ [-Name <String>] [-Operations <IMicrosoftGraphConnectionOperation[]>] [-Schema <IMicrosoftGraphSchema>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,6 +67,21 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 externalConnection
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -81,11 +98,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ConfigurationAuthorizedApps
-.
+### -Configuration
+configuration
+To construct, see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: System.String[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConfiguration
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -112,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalConnectionId
-key: externalConnection-id of externalConnection
+key: id of externalConnection
 
 ```yaml
 Type: System.String
@@ -120,6 +138,22 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Groups
+.
+To construct, see NOTES section for GROUPS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalGroup[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -219,42 +253,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SchemaBaseType
-.
+### -Schema
+schema
+To construct, see NOTES section for SCHEMA properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SchemaId
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SchemaProperties
-.
-To construct, see NOTES section for SCHEMAPROPERTIES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProperty[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchema
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -319,9 +323,20 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphExternalConnection>: externalConnection
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ConfigurationAuthorizedApps <String[]>]`: 
+  - `[Configuration <IMicrosoftGraphConfiguration>]`: configuration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AuthorizedApps <String[]>]`: 
   - `[Description <String>]`: 
+  - `[Groups <IMicrosoftGraphExternalGroup[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Members <IMicrosoftGraphExternalGroupMember[]>]`: 
+      - `[Id <String>]`: Read-only.
+      - `[IdentitySource <String>]`: identitySourceType
+      - `[Type <String>]`: externalGroupMemberType
   - `[Items <IMicrosoftGraphExternalItem[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Acl <IMicrosoftGraphAcl[]>]`: 
@@ -329,21 +344,84 @@ BODYPARAMETER <IMicrosoftGraphExternalConnection>: externalConnection
       - `[IdentitySource <String>]`: 
       - `[Type <String>]`: aclType
       - `[Value <String>]`: 
-    - `[ContentType <String>]`: externalItemContentType
-    - `[ContentValue <String>]`: 
+    - `[Content <IMicrosoftGraphExternalItemContent>]`: externalItemContent
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Type <String>]`: externalItemContentType
+      - `[Value <String>]`: 
     - `[Properties <IMicrosoftGraphProperties>]`: properties
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Name <String>]`: 
   - `[Operations <IMicrosoftGraphConnectionOperation[]>]`: 
     - `[Id <String>]`: Read-only.
+    - `[Error <IMicrosoftGraphErrorDetail>]`: errorDetail
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Details <IMicrosoftGraphInnerErrorDetail[]>]`: 
+        - `[Message <String>]`: 
+        - `[Source <String>]`: 
+      - `[ErrorCode <String>]`: 
+      - `[Message <String>]`: 
+    - `[Status <String>]`: connectionOperationStatus
+  - `[Schema <IMicrosoftGraphSchema>]`: schema
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[BaseType <String>]`: 
+    - `[Properties <IMicrosoftGraphProperty[]>]`: 
+      - `[Aliases <String[]>]`: 
+      - `[IsContent <Boolean?>]`: 
+      - `[IsQueryable <Boolean?>]`: 
+      - `[IsRefinable <Boolean?>]`: 
+      - `[IsRetrievable <Boolean?>]`: 
+      - `[IsSearchable <Boolean?>]`: 
+      - `[Labels <String[]>]`: 
+      - `[Name <String>]`: 
+      - `[Type <String>]`: propertyType
+
+CONFIGURATION <IMicrosoftGraphConfiguration>: configuration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AuthorizedApps <String[]>]`: 
+
+GROUPS <IMicrosoftGraphExternalGroup[]>: .
+  - `[Id <String>]`: Read-only.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[Members <IMicrosoftGraphExternalGroupMember[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[IdentitySource <String>]`: identitySourceType
+    - `[Type <String>]`: externalGroupMemberType
+
+INPUTOBJECT <ISearchIdentity>: Identity Parameter
+  - `[ExternalConnectionId <String>]`: key: id of externalConnection
+
+ITEMS <IMicrosoftGraphExternalItem[]>: .
+  - `[Id <String>]`: Read-only.
+  - `[Acl <IMicrosoftGraphAcl[]>]`: 
+    - `[AccessType <String>]`: accessType
+    - `[IdentitySource <String>]`: 
+    - `[Type <String>]`: aclType
+    - `[Value <String>]`: 
+  - `[Content <IMicrosoftGraphExternalItemContent>]`: externalItemContent
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Type <String>]`: externalItemContentType
+    - `[Value <String>]`: 
+  - `[Properties <IMicrosoftGraphProperties>]`: properties
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+
+OPERATIONS <IMicrosoftGraphConnectionOperation[]>: .
+  - `[Id <String>]`: Read-only.
+  - `[Error <IMicrosoftGraphErrorDetail>]`: errorDetail
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Details <IMicrosoftGraphInnerErrorDetail[]>]`: 
       - `[Message <String>]`: 
       - `[Source <String>]`: 
     - `[ErrorCode <String>]`: 
     - `[Message <String>]`: 
-    - `[Status <String>]`: connectionOperationStatus
-  - `[SchemaBaseType <String>]`: 
-  - `[SchemaId <String>]`: Read-only.
-  - `[SchemaProperties <IMicrosoftGraphProperty[]>]`: 
+  - `[Status <String>]`: connectionOperationStatus
+
+SCHEMA <IMicrosoftGraphSchema>: schema
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[BaseType <String>]`: 
+  - `[Properties <IMicrosoftGraphProperty[]>]`: 
     - `[Aliases <String[]>]`: 
     - `[IsContent <Boolean?>]`: 
     - `[IsQueryable <Boolean?>]`: 
@@ -353,42 +431,6 @@ BODYPARAMETER <IMicrosoftGraphExternalConnection>: externalConnection
     - `[Labels <String[]>]`: 
     - `[Name <String>]`: 
     - `[Type <String>]`: propertyType
-
-INPUTOBJECT <ISearchIdentity>: Identity Parameter
-  - `[ConnectionOperationId <String>]`: key: connectionOperation-id of connectionOperation
-  - `[ExternalConnectionId <String>]`: key: externalConnection-id of externalConnection
-  - `[ExternalItemId <String>]`: key: externalItem-id of externalItem
-
-ITEMS <IMicrosoftGraphExternalItem[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[Acl <IMicrosoftGraphAcl[]>]`: 
-    - `[AccessType <String>]`: accessType
-    - `[IdentitySource <String>]`: 
-    - `[Type <String>]`: aclType
-    - `[Value <String>]`: 
-  - `[ContentType <String>]`: externalItemContentType
-  - `[ContentValue <String>]`: 
-  - `[Properties <IMicrosoftGraphProperties>]`: properties
-
-OPERATIONS <IMicrosoftGraphConnectionOperation[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[Details <IMicrosoftGraphInnerErrorDetail[]>]`: 
-    - `[Message <String>]`: 
-    - `[Source <String>]`: 
-  - `[ErrorCode <String>]`: 
-  - `[Message <String>]`: 
-  - `[Status <String>]`: connectionOperationStatus
-
-SCHEMAPROPERTIES <IMicrosoftGraphProperty[]>: .
-  - `[Aliases <String[]>]`: 
-  - `[IsContent <Boolean?>]`: 
-  - `[IsQueryable <Boolean?>]`: 
-  - `[IsRefinable <Boolean?>]`: 
-  - `[IsRetrievable <Boolean?>]`: 
-  - `[IsSearchable <Boolean?>]`: 
-  - `[Labels <String[]>]`: 
-  - `[Name <String>]`: 
-  - `[Type <String>]`: propertyType
 
 ## RELATED LINKS
 

@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Revoke-MgUserSign' {
-    It 'Revoke1' -skip {
+    It 'Revoke' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'RevokeViaIdentity1' -skip {
+    It 'RevokeViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

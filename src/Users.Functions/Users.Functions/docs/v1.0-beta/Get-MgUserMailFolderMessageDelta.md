@@ -64,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailFolderId
-key: mailFolder-id of mailFolder
+key: id of mailFolder
 
 ```yaml
 Type: System.String
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: user-id of user
+key: id of user
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1
 
 ## NOTES
 
@@ -114,26 +114,21 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
-  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
-  - `[CalendarId <String>]`: key: calendar-id of calendar
-  - `[ContactFolderId <String>]`: key: contactFolder-id of contactFolder
+  - `[CalendarId <String>]`: key: id of calendar
+  - `[ContactFolderId <String>]`: key: id of contactFolder
   - `[EndDateTime <String>]`: 
-  - `[EventId <String>]`: key: event-id of event
+  - `[EventId <String>]`: key: id of event
   - `[IncludePersonalNotebooks <Boolean?>]`: 
-  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
-  - `[NotebookId <String>]`: key: notebook-id of notebook
-  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenotePageId1 <String>]`: key: onenotePage-id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
+  - `[MailFolderId <String>]`: key: id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[RoomList <String>]`: 
-  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
   - `[Skip <Int32?>]`: 
   - `[StartDateTime <String>]`: 
   - `[TimeZoneStandard <String>]`: 
   - `[Top <Int32?>]`: 
   - `[User <String>]`: 
-  - `[UserId <String>]`: key: user-id of user
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

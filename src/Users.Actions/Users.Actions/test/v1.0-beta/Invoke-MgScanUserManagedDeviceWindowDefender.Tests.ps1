@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgScanUserManagedDeviceWindowDefender' {
-    It 'ScanExpanded' -skip {
+    It 'ScanExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Scan' -skip {
+    It 'Scan1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ScanViaIdentityExpanded' -skip {
+    It 'ScanViaIdentityExpanded1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ScanViaIdentity' -skip {
+    It 'ScanViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

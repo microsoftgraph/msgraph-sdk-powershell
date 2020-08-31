@@ -15,8 +15,8 @@ Get companyInformation from financials
 ### List (Default)
 ```
 Get-MgFinancialCompanyInformation -CompanyId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-PageSize <Int32>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All]
- [<CommonParameters>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -57,7 +57,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages
+List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyId
-key: company-id of company
+key: id of company
 
 ```yaml
 Type: System.String
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyInformationId
-key: companyInformation-id of companyInformation
+key: id of companyInformation
 
 ```yaml
 Type: System.String
@@ -163,12 +163,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Show only the first n items
+Sets the page size of results.
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases: Top, Limit
+Aliases:
 
 Required: False
 Position: Named
@@ -237,6 +237,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -258,42 +273,42 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
-  - `[AccountId <String>]`: key: account-id of account
-  - `[AgedAccountsPayableId <String>]`: key: agedAccountsPayable-id of agedAccountsPayable
-  - `[AgedAccountsReceivableId <String>]`: key: agedAccountsReceivable-id of agedAccountsReceivable
-  - `[CompanyId <String>]`: key: company-id of company
-  - `[CompanyInformationId <String>]`: key: companyInformation-id of companyInformation
-  - `[CountryRegionId <String>]`: key: countryRegion-id of countryRegion
-  - `[CurrencyId <String>]`: key: currency-id of currency
-  - `[CustomerId <String>]`: key: customer-id of customer
-  - `[CustomerPaymentId <String>]`: key: customerPayment-id of customerPayment
-  - `[CustomerPaymentJournalId <String>]`: key: customerPaymentJournal-id of customerPaymentJournal
-  - `[DimensionId <String>]`: key: dimension-id of dimension
-  - `[DimensionValueId <String>]`: key: dimensionValue-id of dimensionValue
-  - `[EmployeeId <String>]`: key: employee-id of employee
-  - `[GeneralLedgerEntryId <String>]`: key: generalLedgerEntry-id of generalLedgerEntry
-  - `[ItemCategoryId <String>]`: key: itemCategory-id of itemCategory
-  - `[ItemId <String>]`: key: item-id of item
-  - `[JournalId <String>]`: key: journal-id of journal
-  - `[JournalLineId <String>]`: key: journalLine-id of journalLine
-  - `[PaymentMethodId <String>]`: key: paymentMethod-id of paymentMethod
-  - `[PaymentTermId <String>]`: key: paymentTerm-id of paymentTerm
-  - `[PictureId <String>]`: key: picture-id of picture
-  - `[PurchaseInvoiceId <String>]`: key: purchaseInvoice-id of purchaseInvoice
-  - `[PurchaseInvoiceLineId <String>]`: key: purchaseInvoiceLine-id of purchaseInvoiceLine
-  - `[SalesCreditMemoId <String>]`: key: salesCreditMemo-id of salesCreditMemo
-  - `[SalesCreditMemoLineId <String>]`: key: salesCreditMemoLine-id of salesCreditMemoLine
-  - `[SalesInvoiceId <String>]`: key: salesInvoice-id of salesInvoice
-  - `[SalesInvoiceLineId <String>]`: key: salesInvoiceLine-id of salesInvoiceLine
-  - `[SalesOrderId <String>]`: key: salesOrder-id of salesOrder
-  - `[SalesOrderLineId <String>]`: key: salesOrderLine-id of salesOrderLine
-  - `[SalesQuoteId <String>]`: key: salesQuote-id of salesQuote
-  - `[SalesQuoteLineId <String>]`: key: salesQuoteLine-id of salesQuoteLine
-  - `[ShipmentMethodId <String>]`: key: shipmentMethod-id of shipmentMethod
-  - `[TaxAreaId <String>]`: key: taxArea-id of taxArea
-  - `[TaxGroupId <String>]`: key: taxGroup-id of taxGroup
-  - `[UnitOfMeasureId <String>]`: key: unitOfMeasure-id of unitOfMeasure
-  - `[VendorId <String>]`: key: vendor-id of vendor
+  - `[AccountId <String>]`: key: id of account
+  - `[AgedAccountsPayableId <String>]`: key: id of agedAccountsPayable
+  - `[AgedAccountsReceivableId <String>]`: key: id of agedAccountsReceivable
+  - `[CompanyId <String>]`: key: id of company
+  - `[CompanyInformationId <String>]`: key: id of companyInformation
+  - `[CountryRegionId <String>]`: key: id of countryRegion
+  - `[CurrencyId <String>]`: key: id of currency
+  - `[CustomerId <String>]`: key: id of customer
+  - `[CustomerPaymentId <String>]`: key: id of customerPayment
+  - `[CustomerPaymentJournalId <String>]`: key: id of customerPaymentJournal
+  - `[DimensionId <String>]`: key: id of dimension
+  - `[DimensionValueId <String>]`: key: id of dimensionValue
+  - `[EmployeeId <String>]`: key: id of employee
+  - `[GeneralLedgerEntryId <String>]`: key: id of generalLedgerEntry
+  - `[ItemCategoryId <String>]`: key: id of itemCategory
+  - `[ItemId <String>]`: key: id of item
+  - `[JournalId <String>]`: key: id of journal
+  - `[JournalLineId <String>]`: key: id of journalLine
+  - `[PaymentMethodId <String>]`: key: id of paymentMethod
+  - `[PaymentTermId <String>]`: key: id of paymentTerm
+  - `[PictureId <String>]`: key: id of picture
+  - `[PurchaseInvoiceId <String>]`: key: id of purchaseInvoice
+  - `[PurchaseInvoiceLineId <String>]`: key: id of purchaseInvoiceLine
+  - `[SalesCreditMemoId <String>]`: key: id of salesCreditMemo
+  - `[SalesCreditMemoLineId <String>]`: key: id of salesCreditMemoLine
+  - `[SalesInvoiceId <String>]`: key: id of salesInvoice
+  - `[SalesInvoiceLineId <String>]`: key: id of salesInvoiceLine
+  - `[SalesOrderId <String>]`: key: id of salesOrder
+  - `[SalesOrderLineId <String>]`: key: id of salesOrderLine
+  - `[SalesQuoteId <String>]`: key: id of salesQuote
+  - `[SalesQuoteLineId <String>]`: key: id of salesQuoteLine
+  - `[ShipmentMethodId <String>]`: key: id of shipmentMethod
+  - `[TaxAreaId <String>]`: key: id of taxArea
+  - `[TaxGroupId <String>]`: key: id of taxGroup
+  - `[UnitOfMeasureId <String>]`: key: id of unitOfMeasure
+  - `[VendorId <String>]`: key: id of vendor
 
 ## RELATED LINKS
 

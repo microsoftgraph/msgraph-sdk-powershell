@@ -14,19 +14,14 @@ Update the navigation property assignments in education
 
 ### UpdateExpanded (Default)
 ```
-Update-MgEducationMeAssignment -EducationAssignmentId <String> [-AllowLateSubmissions]
- [-AllowStudentsToAddResourcesToSubmission] [-AssignDateTime <DateTime>] [-AssignedDateTime <DateTime>]
- [-AssignTo <IMicrosoftGraphEducationAssignmentRecipient>] [-Categories <IMicrosoftGraphEducationCategory[]>]
+Update-MgEducationMeAssignment -EducationAssignmentId <String> [-AdditionalProperties <Hashtable>]
+ [-AllowLateSubmissions] [-AllowStudentsToAddResourcesToSubmission] [-AssignDateTime <DateTime>]
+ [-AssignedDateTime <DateTime>] [-AssignTo <Hashtable>] [-Categories <IMicrosoftGraphEducationCategory[]>]
  [-ClassId <String>] [-CloseDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-DescriptionContent <String>] [-DescriptionContentType <String>]
- [-DisplayName <String>] [-DueDateTime <DateTime>] [-Grading <IMicrosoftGraphEducationAssignmentGradeType>]
- [-Id <String>] [-InstructionContent <String>] [-InstructionContentType <String>]
+ [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-DueDateTime <DateTime>] [-Grading <Hashtable>]
+ [-Id <String>] [-Instructions <IMicrosoftGraphEducationItemBody>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-RubricCreatedBy <IMicrosoftGraphIdentitySet>]
- [-RubricCreatedDateTime <DateTime>] [-RubricDisplayName <String>]
- [-RubricGrading <IMicrosoftGraphEducationAssignmentGradeType>] [-RubricId <String>]
- [-RubricLastModifiedBy <IMicrosoftGraphIdentitySet>] [-RubricLastModifiedDateTime <DateTime>]
- [-RubricLevels <IMicrosoftGraphRubricLevel[]>] [-RubricQualities <IMicrosoftGraphRubricQuality[]>]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
  [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -45,19 +40,14 @@ Update-MgEducationMeAssignment -InputObject <IEducationIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationMeAssignment -InputObject <IEducationIdentity> [-AllowLateSubmissions]
- [-AllowStudentsToAddResourcesToSubmission] [-AssignDateTime <DateTime>] [-AssignedDateTime <DateTime>]
- [-AssignTo <IMicrosoftGraphEducationAssignmentRecipient>] [-Categories <IMicrosoftGraphEducationCategory[]>]
+Update-MgEducationMeAssignment -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+ [-AllowLateSubmissions] [-AllowStudentsToAddResourcesToSubmission] [-AssignDateTime <DateTime>]
+ [-AssignedDateTime <DateTime>] [-AssignTo <Hashtable>] [-Categories <IMicrosoftGraphEducationCategory[]>]
  [-ClassId <String>] [-CloseDateTime <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-DescriptionContent <String>] [-DescriptionContentType <String>]
- [-DisplayName <String>] [-DueDateTime <DateTime>] [-Grading <IMicrosoftGraphEducationAssignmentGradeType>]
- [-Id <String>] [-InstructionContent <String>] [-InstructionContentType <String>]
+ [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-DueDateTime <DateTime>] [-Grading <Hashtable>]
+ [-Id <String>] [-Instructions <IMicrosoftGraphEducationItemBody>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-RubricCreatedBy <IMicrosoftGraphIdentitySet>]
- [-RubricCreatedDateTime <DateTime>] [-RubricDisplayName <String>]
- [-RubricGrading <IMicrosoftGraphEducationAssignmentGradeType>] [-RubricId <String>]
- [-RubricLastModifiedBy <IMicrosoftGraphIdentitySet>] [-RubricLastModifiedDateTime <DateTime>]
- [-RubricLevels <IMicrosoftGraphRubricLevel[]>] [-RubricQualities <IMicrosoftGraphRubricQuality[]>]
+ [-Resources <IMicrosoftGraphEducationAssignmentResource[]>] [-Rubric <IMicrosoftGraphEducationRubric>]
  [-Status <String>] [-Submissions <IMicrosoftGraphEducationSubmission[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -86,6 +76,21 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllowLateSubmissions
 .
@@ -151,7 +156,7 @@ Accept wildcard characters: False
 educationAssignmentRecipient
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentRecipient
+Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -255,36 +260,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DescriptionContent
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DescriptionContentType
-bodyType
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 .
 
@@ -316,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: educationAssignment-id of educationAssignment
+key: id of educationAssignment
 
 ```yaml
 Type: System.String
@@ -334,7 +309,7 @@ Accept wildcard characters: False
 educationAssignmentGradeType
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentGradeType
+Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -376,26 +351,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InstructionContent
-.
+### -Instructions
+educationItemBody
+To construct, see NOTES section for INSTRUCTIONS properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InstructionContentType
-bodyType
-
-```yaml
-Type: System.String
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationItemBody
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -468,135 +429,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RubricCreatedBy
-identitySet
-To construct, see NOTES section for RUBRICCREATEDBY properties and create a hash table.
+### -Rubric
+educationRubric
+To construct, see NOTES section for RUBRIC properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricCreatedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricDisplayName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricGrading
-educationAssignmentGradeType
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignmentGradeType
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricId
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricLastModifiedBy
-identitySet
-To construct, see NOTES section for RUBRICLASTMODIFIEDBY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricLastModifiedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricLevels
-.
-To construct, see NOTES section for RUBRICLEVELS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricLevel[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RubricQualities
-.
-To construct, see NOTES section for RUBRICQUALITIES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRubricQuality[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationRubric
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -692,11 +530,13 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationAssignment>: educationAssignment
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AllowLateSubmissions <Boolean?>]`: 
   - `[AllowStudentsToAddResourcesToSubmission <Boolean?>]`: 
   - `[AssignDateTime <DateTime?>]`: 
   - `[AssignTo <IMicrosoftGraphEducationAssignmentRecipient>]`: educationAssignmentRecipient
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AssignedDateTime <DateTime?>]`: 
   - `[Categories <IMicrosoftGraphEducationCategory[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -704,51 +544,56 @@ BODYPARAMETER <IMicrosoftGraphEducationAssignment>: educationAssignment
   - `[ClassId <String>]`: 
   - `[CloseDateTime <DateTime?>]`: 
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: 
-  - `[DescriptionContent <String>]`: 
-  - `[DescriptionContentType <String>]`: bodyType
   - `[DisplayName <String>]`: 
   - `[DueDateTime <DateTime?>]`: 
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
-  - `[InstructionContent <String>]`: 
-  - `[InstructionContentType <String>]`: bodyType
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Instructions <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: 
+    - `[ContentType <String>]`: bodyType
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[DistributeForStudentWork <Boolean?>]`: 
-    - `[ResourceCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[ResourceCreatedDateTime <DateTime?>]`: 
-    - `[ResourceDisplayName <String>]`: 
-    - `[ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[ResourceLastModifiedDateTime <DateTime?>]`: 
-  - `[RubricCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[RubricCreatedDateTime <DateTime?>]`: 
-  - `[RubricDisplayName <String>]`: 
-  - `[RubricGrading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
-  - `[RubricId <String>]`: Read-only.
-  - `[RubricLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[RubricLastModifiedDateTime <DateTime?>]`: 
-  - `[RubricLevels <IMicrosoftGraphRubricLevel[]>]`: 
-    - `[DescriptionContent <String>]`: 
-    - `[DescriptionContentType <String>]`: bodyType
+    - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Rubric <IMicrosoftGraphEducationRubric>]`: educationRubric
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
     - `[DisplayName <String>]`: 
     - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
-    - `[LevelId <String>]`: 
-  - `[RubricQualities <IMicrosoftGraphRubricQuality[]>]`: 
-    - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
-      - `[DescriptionContent <String>]`: 
-      - `[DescriptionContentType <String>]`: bodyType
-    - `[DescriptionContent <String>]`: 
-    - `[DescriptionContentType <String>]`: bodyType
-    - `[DisplayName <String>]`: 
-    - `[QualityId <String>]`: 
-    - `[Weight <Single?>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Levels <IMicrosoftGraphRubricLevel[]>]`: 
+      - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+      - `[DisplayName <String>]`: 
+      - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
+      - `[LevelId <String>]`: 
+    - `[Qualities <IMicrosoftGraphRubricQuality[]>]`: 
+      - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
+        - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+      - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+      - `[DisplayName <String>]`: 
+      - `[QualityId <String>]`: 
+      - `[Weight <Single?>]`: 
   - `[Status <String>]`: educationAssignmentStatus
   - `[Submissions <IMicrosoftGraphEducationSubmission[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -757,16 +602,13 @@ BODYPARAMETER <IMicrosoftGraphEducationAssignment>: educationAssignment
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ReleasedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ReleasedDateTime <DateTime?>]`: 
     - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
       - `[Id <String>]`: Read-only.
       - `[AssignmentResourceUrl <String>]`: 
-      - `[ResourceCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[ResourceCreatedDateTime <DateTime?>]`: 
-      - `[ResourceDisplayName <String>]`: 
-      - `[ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[ResourceLastModifiedDateTime <DateTime?>]`: 
+      - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[ResourcesFolderUrl <String>]`: 
     - `[ReturnedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ReturnedDateTime <DateTime?>]`: 
@@ -782,28 +624,37 @@ CATEGORIES <IMicrosoftGraphEducationCategory[]>: .
   - `[DisplayName <String>]`: 
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
-  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
-  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
-  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
-  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: id of educationCategory
+  - `[EducationClassId <String>]`: key: id of educationClass
+  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
+  - `[EducationRubricId <String>]`: key: id of educationRubric
+  - `[EducationSchoolId <String>]`: key: id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: id of educationUser
+
+INSTRUCTIONS <IMicrosoftGraphEducationItemBody>: educationItemBody
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Content <String>]`: 
+  - `[ContentType <String>]`: bodyType
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
@@ -812,70 +663,82 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
 RESOURCES <IMicrosoftGraphEducationAssignmentResource[]>: .
   - `[Id <String>]`: Read-only.
   - `[DistributeForStudentWork <Boolean?>]`: 
-  - `[ResourceCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
+      - `[Device <IMicrosoftGraphIdentity>]`: identity
+      - `[User <IMicrosoftGraphIdentity>]`: identity
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[LastModifiedDateTime <DateTime?>]`: 
+
+RUBRIC <IMicrosoftGraphEducationRubric>: educationRubric
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[ResourceCreatedDateTime <DateTime?>]`: 
-  - `[ResourceDisplayName <String>]`: 
-  - `[ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[ResourceLastModifiedDateTime <DateTime?>]`: 
-
-RUBRICCREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
-  - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
-  - `[Device <IMicrosoftGraphIdentity>]`: identity
-  - `[User <IMicrosoftGraphIdentity>]`: identity
-
-RUBRICLASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
-  - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
-  - `[Device <IMicrosoftGraphIdentity>]`: identity
-  - `[User <IMicrosoftGraphIdentity>]`: identity
-
-RUBRICLEVELS <IMicrosoftGraphRubricLevel[]>: .
-  - `[DescriptionContent <String>]`: 
-  - `[DescriptionContentType <String>]`: bodyType
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: 
+    - `[ContentType <String>]`: bodyType
   - `[DisplayName <String>]`: 
   - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
-  - `[LevelId <String>]`: 
-
-RUBRICQUALITIES <IMicrosoftGraphRubricQuality[]>: .
-  - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
-    - `[DescriptionContent <String>]`: 
-    - `[DescriptionContentType <String>]`: bodyType
-  - `[DescriptionContent <String>]`: 
-  - `[DescriptionContentType <String>]`: bodyType
-  - `[DisplayName <String>]`: 
-  - `[QualityId <String>]`: 
-  - `[Weight <Single?>]`: 
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Levels <IMicrosoftGraphRubricLevel[]>]`: 
+    - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+    - `[DisplayName <String>]`: 
+    - `[Grading <IMicrosoftGraphEducationAssignmentGradeType>]`: educationAssignmentGradeType
+    - `[LevelId <String>]`: 
+  - `[Qualities <IMicrosoftGraphRubricQuality[]>]`: 
+    - `[Criteria <IMicrosoftGraphRubricCriterion[]>]`: 
+      - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+    - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
+    - `[DisplayName <String>]`: 
+    - `[QualityId <String>]`: 
+    - `[Weight <Single?>]`: 
 
 SUBMISSIONS <IMicrosoftGraphEducationSubmission[]>: .
   - `[Id <String>]`: Read-only.
   - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ReleasedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ReleasedDateTime <DateTime?>]`: 
   - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[AssignmentResourceUrl <String>]`: 
-    - `[ResourceCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[ResourceCreatedDateTime <DateTime?>]`: 
-    - `[ResourceDisplayName <String>]`: 
-    - `[ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[ResourceLastModifiedDateTime <DateTime?>]`: 
+    - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[LastModifiedDateTime <DateTime?>]`: 
   - `[ResourcesFolderUrl <String>]`: 
   - `[ReturnedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ReturnedDateTime <DateTime?>]`: 

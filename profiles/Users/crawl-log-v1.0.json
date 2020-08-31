@@ -1,0 +1,165 @@
+{
+  "operations": {
+    "/users/{user-id}/ownedObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/ownedDevices/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/directReports": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/createdObjects/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/registeredDevices": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/memberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/manager/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/registeredDevices/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/outlook": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/manager": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/transitiveMemberOf/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/outlook/masterCategories/{outlookCategory-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/ownedDevices": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/transitiveMemberOf/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/ownedDevices/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/extensions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/photo": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/licenseDetails": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/settings": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/settings/shiftPreferences": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/memberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/oauth2PermissionGrants/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/outlook/masterCategories": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/memberOf/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/licenseDetails/{licenseDetails-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/directReports/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/photos/{profilePhoto-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/createdObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/createdObjects/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/ownedObjects/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/registeredDevices/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/oauth2PermissionGrants": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/photos": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/ownedObjects/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/transitiveMemberOf": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    },
+    "/users/{user-id}/directReports/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.yml"
+    }
+  },
+  "resources": []
+}

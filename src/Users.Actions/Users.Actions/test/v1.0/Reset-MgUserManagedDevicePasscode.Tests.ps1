@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Reset-MgUserManagedDevicePasscode' {
-    It 'Reset1' -skip {
+    It 'Reset' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'ResetViaIdentity1' -skip {
+    It 'ResetViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }
