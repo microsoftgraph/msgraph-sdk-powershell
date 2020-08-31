@@ -15,27 +15,26 @@ Update the navigation property customers in bookingBusinesses
 ### UpdateExpanded (Default)
 ```
 Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
- -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBookingCustomer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity>
+ -BodyParameter <IMicrosoftGraphBookingCustomer> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-DisplayName <String>]
+ [-EmailAddress <String>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,26 +62,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 Represents a customer of the business.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -94,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: id of bookingBusiness
+key: bookingBusiness-id of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -109,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingCustomerId
-key: id of bookingCustomer
+key: bookingCustomer-id of bookingCustomer
 
 ```yaml
 Type: System.String
@@ -237,7 +222,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingCustomer
 
 ## OUTPUTS
 
@@ -252,13 +237,18 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IMicrosoftGraphBookingCustomer>: Represents a customer of the business.
+  - `[EmailAddress <String>]`: The e-mail address of this person.
+  - `[DisplayName <String>]`: Display name of this entity.
+  - `[Id <String>]`: Read-only.
+
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
 
 ## RELATED LINKS
 

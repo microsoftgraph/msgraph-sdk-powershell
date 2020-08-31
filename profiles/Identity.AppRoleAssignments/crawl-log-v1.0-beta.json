@@ -1,0 +1,21 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/appRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml"
+    },
+    "/groups/{group-id}/appRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml"
+    },
+    "/groups/{group-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml"
+    },
+    "/users/{user-id}/appRoleAssignments/{appRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AppRoleAssignments.yml"
+    }
+  }
+}

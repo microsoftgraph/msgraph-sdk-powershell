@@ -14,9 +14,9 @@ Update the navigation property providerTenantSettings in Security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityProviderTenantSetting -ProviderTenantSettingId <String> [-AdditionalProperties <Hashtable>]
- [-AzureTenantId <String>] [-Enabled] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>]
- [-Vendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityProviderTenantSetting -ProviderTenantSettingId <String> [-AzureTenantId <String>] [-Enabled]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -33,9 +33,9 @@ Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
- [-AzureTenantId <String>] [-Enabled] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>]
- [-Vendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityProviderTenantSetting -InputObject <ISecurityIdentity> [-AzureTenantId <String>] [-Enabled]
+ [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Provider <String>] [-Vendor <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,21 +62,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AzureTenantId
 .
@@ -201,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderTenantSettingId
-key: id of providerTenantSetting
+key: providerTenantSetting-id of providerTenantSetting
 
 ```yaml
 Type: System.String
@@ -284,7 +269,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphProviderTenantSetting>: providerTenantSetting
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AzureTenantId <String>]`: 
   - `[Enabled <Boolean?>]`: 
@@ -293,18 +277,18 @@ BODYPARAMETER <IMicrosoftGraphProviderTenantSetting>: providerTenantSetting
   - `[Vendor <String>]`: 
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
+  - `[AlertId <String>]`: key: alert-id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
+  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
+  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
 
 ## RELATED LINKS
 

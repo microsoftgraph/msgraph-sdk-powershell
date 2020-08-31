@@ -1,5 +1,78 @@
 {
+  "resources": [],
   "operations": {
+    "/education/users": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/users/{educationUser-id}/schools/{educationSchool-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/teachers/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/users/{educationUser-id}/classes/{educationClass-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/schools/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}/classes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}/classes/{educationClass-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/schools": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/members": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}/classes/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}/users/{educationUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/members/{educationUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/schools/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/user": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/user/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
     "/education/classes/{educationClass-id}/schools": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
@@ -8,71 +81,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/schools/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/schools/{educationSchool-id}/users/{educationUser-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}/schools/{educationSchool-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}/classes": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/me/classes": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/schools/{educationSchool-id}/users/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/me/classes/{educationClass-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/schools/{educationSchool-id}/classes": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/teachers/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/me/user/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/teachers/{educationUser-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}/classes/{educationClass-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}/schools/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/me/schools/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/group": {
+    "/education/users/{educationUser-id}/user": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -80,39 +89,23 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/schools": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/schools/{educationSchool-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}/user": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/teachers": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/classes/{educationClass-id}/members/{educationUser-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/schools/{educationSchool-id}/classes/{educationClass-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
     "/education/classes/{educationClass-id}/members/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
+    "/education": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
     "/education/classes/{educationClass-id}/schools/{educationSchool-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/teachers/{educationUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/teachers": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -124,19 +117,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/users/{educationUser-id}/classes/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users/{educationUser-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
     "/education/me/classes/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/me/user": {
+    "/education/users/{educationUser-id}/classes": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -144,26 +129,41 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/classes/{educationClass-id}/members": {
+    "/education/classes/{educationClass-id}/group": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/me/schools": {
+    "/education/classes/{educationClass-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/schools/{educationSchool-id}/classes/$ref": {
+    "/education/users/{educationUser-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/schools/{educationSchool-id}/users/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/users/{educationUser-id}/classes/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/users/{educationUser-id}/schools/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/classes/{educationClass-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/classes": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
     "/education/users/{educationUser-id}/user/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
-    },
-    "/education/users": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Education.yml"
     }
-  },
-  "resources": []
+  }
 }

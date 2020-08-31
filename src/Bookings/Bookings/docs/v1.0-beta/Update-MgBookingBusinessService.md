@@ -14,13 +14,19 @@ Update the navigation property services in bookingBusinesses
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String>
- [-AdditionalProperties <Hashtable>] [-DefaultDuration <TimeSpan>]
- [-DefaultLocation <IMicrosoftGraphLocation>] [-DefaultPrice <Double>] [-DefaultPriceType <String>]
- [-DefaultReminders <IMicrosoftGraphBookingReminder[]>] [-Description <String>] [-DisplayName <String>]
- [-Id <String>] [-IsHiddenFromCustomers] [-Notes <String>] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
- [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-StaffMemberIds <String[]>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgBookingBusinessService -BookingBusinessId <String> -BookingServiceId <String> [-AddressCity <String>]
+ [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressPostOfficeBox <String>]
+ [-AddressState <String>] [-AddressStreet <String>] [-AddressType <String>] [-CoordinateAccuracy <Double>]
+ [-CoordinateAltitude <Double>] [-CoordinateAltitudeAccuracy <Double>] [-CoordinateLatitude <Double>]
+ [-CoordinateLongitude <Double>] [-DefaultDuration <TimeSpan>] [-DefaultLocationDisplayName <String>]
+ [-DefaultLocationEmailAddress <String>] [-DefaultLocationType <String>] [-DefaultLocationUniqueId <String>]
+ [-DefaultLocationUniqueIdType <String>] [-DefaultLocationUri <String>] [-DefaultPrice <Double>]
+ [-DefaultPriceType <String>] [-DefaultReminders <IMicrosoftGraphBookingReminder[]>] [-Description <String>]
+ [-DisplayName <String>] [-Id <String>] [-IsHiddenFromCustomers] [-Notes <String>] [-PostBuffer <TimeSpan>]
+ [-PreBuffer <TimeSpan>] [-SchedulingPolicyAllowStaffSelection] [-SchedulingPolicyMaximumAdvance <TimeSpan>]
+ [-SchedulingPolicyMinimumLeadTime <TimeSpan>] [-SchedulingPolicySendConfirmationsToOwner]
+ [-SchedulingPolicyTimeSlotInterval <TimeSpan>] [-StaffMemberIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -37,12 +43,19 @@ Update-MgBookingBusinessService -InputObject <IBookingsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-DefaultDuration <TimeSpan>] [-DefaultLocation <IMicrosoftGraphLocation>] [-DefaultPrice <Double>]
+Update-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AddressCity <String>]
+ [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>] [-AddressPostOfficeBox <String>]
+ [-AddressState <String>] [-AddressStreet <String>] [-AddressType <String>] [-CoordinateAccuracy <Double>]
+ [-CoordinateAltitude <Double>] [-CoordinateAltitudeAccuracy <Double>] [-CoordinateLatitude <Double>]
+ [-CoordinateLongitude <Double>] [-DefaultDuration <TimeSpan>] [-DefaultLocationDisplayName <String>]
+ [-DefaultLocationEmailAddress <String>] [-DefaultLocationType <String>] [-DefaultLocationUniqueId <String>]
+ [-DefaultLocationUniqueIdType <String>] [-DefaultLocationUri <String>] [-DefaultPrice <Double>]
  [-DefaultPriceType <String>] [-DefaultReminders <IMicrosoftGraphBookingReminder[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsHiddenFromCustomers] [-Notes <String>] [-PostBuffer <TimeSpan>]
- [-PreBuffer <TimeSpan>] [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]
- [-StaffMemberIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PreBuffer <TimeSpan>] [-SchedulingPolicyAllowStaffSelection] [-SchedulingPolicyMaximumAdvance <TimeSpan>]
+ [-SchedulingPolicyMinimumLeadTime <TimeSpan>] [-SchedulingPolicySendConfirmationsToOwner]
+ [-SchedulingPolicyTimeSlotInterval <TimeSpan>] [-StaffMemberIds <String[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,11 +83,102 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -AddressCity
+The city.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressCountryOrRegion
+The country or region.
+It's a free-format string value, for example, 'United States'.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressPostalCode
+The postal code.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressPostOfficeBox
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressState
+The state.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressStreet
+The street.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressType
+physicalAddressType
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -102,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: id of bookingBusiness
+key: bookingBusiness-id of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -117,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingServiceId
-key: id of bookingService
+key: bookingService-id of bookingService
 
 ```yaml
 Type: System.String
@@ -125,6 +229,82 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CoordinateAccuracy
+The accuracy of the latitude and longitude.
+As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CoordinateAltitude
+The altitude of the location.
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CoordinateAltitudeAccuracy
+The accuracy of the altitude.
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CoordinateLatitude
+The latitude of the location.
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CoordinateLongitude
+The longitude of the location.
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -146,12 +326,86 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultLocation
-location
-To construct, see NOTES section for DEFAULTLOCATION properties and create a hash table.
+### -DefaultLocationDisplayName
+The name associated with the location.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLocationEmailAddress
+Optional email address of the location.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLocationType
+locationType
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLocationUniqueId
+For internal use only.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLocationUniqueIdType
+locationUniqueIdType
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultLocationUri
+Optional URI representing the location.
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -344,12 +598,71 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SchedulingPolicy
-This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-To construct, see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
+### -SchedulingPolicyAllowStaffSelection
+Allow customers to choose a specific person for the booking.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyMaximumAdvance
+Maximum number of days in advance that a booking can be made.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyMinimumLeadTime
+Minimum lead time for bookings and cancellations.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicySendConfirmationsToOwner
+Notify the business via email when a booking is created or changed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyTimeSlotInterval
+Duration of each time slot.
+
+```yaml
+Type: System.TimeSpan
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -429,34 +742,27 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphBookingService>: Represents a particular service offered by a booking business.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: Display name of this entity.
   - `[Id <String>]`: Read-only.
+  - `[AddressCity <String>]`: The city.
+  - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[AddressPostOfficeBox <String>]`: 
+  - `[AddressPostalCode <String>]`: The postal code.
+  - `[AddressState <String>]`: The state.
+  - `[AddressStreet <String>]`: The street.
+  - `[AddressType <String>]`: physicalAddressType
+  - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[CoordinateAltitude <Double?>]`: The altitude of the location.
+  - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[CoordinateLatitude <Double?>]`: The latitude of the location.
+  - `[CoordinateLongitude <Double?>]`: The longitude of the location.
   - `[DefaultDuration <TimeSpan?>]`: 
-  - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[City <String>]`: The city.
-      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
-      - `[PostalCode <String>]`: The postal code.
-      - `[State <String>]`: The state.
-      - `[Street <String>]`: The street.
-      - `[Type <String>]`: physicalAddressType
-    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-      - `[Altitude <Double?>]`: The altitude of the location.
-      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-      - `[Latitude <Double?>]`: The latitude of the location.
-      - `[Longitude <Double?>]`: The longitude of the location.
-    - `[DisplayName <String>]`: The name associated with the location.
-    - `[LocationEmailAddress <String>]`: Optional email address of the location.
-    - `[LocationType <String>]`: locationType
-    - `[LocationUri <String>]`: Optional URI representing the location.
-    - `[UniqueId <String>]`: For internal use only.
-    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[DefaultLocationDisplayName <String>]`: The name associated with the location.
+  - `[DefaultLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[DefaultLocationType <String>]`: locationType
+  - `[DefaultLocationUniqueId <String>]`: For internal use only.
+  - `[DefaultLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[DefaultLocationUri <String>]`: Optional URI representing the location.
   - `[DefaultPrice <Double?>]`: 
   - `[DefaultPriceType <String>]`: bookingPriceType
   - `[DefaultReminders <IMicrosoftGraphBookingReminder[]>]`: The default reminders set in an appointment of this service.
@@ -468,39 +774,12 @@ BODYPARAMETER <IMicrosoftGraphBookingService>: Represents a particular service o
   - `[Notes <String>]`: 
   - `[PostBuffer <TimeSpan?>]`: 
   - `[PreBuffer <TimeSpan?>]`: 
-  - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
-    - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
-    - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
-    - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
-    - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[SchedulingPolicyAllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+  - `[SchedulingPolicyMaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+  - `[SchedulingPolicyMinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+  - `[SchedulingPolicySendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+  - `[SchedulingPolicyTimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
   - `[StaffMemberIds <String[]>]`: 
-
-DEFAULTLOCATION <IMicrosoftGraphLocation>: location
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[City <String>]`: The city.
-    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
-    - `[PostalCode <String>]`: The postal code.
-    - `[State <String>]`: The state.
-    - `[Street <String>]`: The street.
-    - `[Type <String>]`: physicalAddressType
-  - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-    - `[Altitude <Double?>]`: The altitude of the location.
-    - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-    - `[Latitude <Double?>]`: The latitude of the location.
-    - `[Longitude <Double?>]`: The longitude of the location.
-  - `[DisplayName <String>]`: The name associated with the location.
-  - `[LocationEmailAddress <String>]`: Optional email address of the location.
-  - `[LocationType <String>]`: locationType
-  - `[LocationUri <String>]`: Optional URI representing the location.
-  - `[UniqueId <String>]`: For internal use only.
-  - `[UniqueIdType <String>]`: locationUniqueIdType
 
 DEFAULTREMINDERS <IMicrosoftGraphBookingReminder[]>: The default reminders set in an appointment of this service.
   - `[Message <String>]`: Message to send.
@@ -508,20 +787,12 @@ DEFAULTREMINDERS <IMicrosoftGraphBookingReminder[]>: The default reminders set i
   - `[Recipients <String>]`: bookingReminderRecipients
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
-
-SCHEDULINGPOLICY <IMicrosoftGraphBookingSchedulingPolicy>: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
-  - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
-  - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
-  - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
-  - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
 
 ## RELATED LINKS
 

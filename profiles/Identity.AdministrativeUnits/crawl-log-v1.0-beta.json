@@ -1,0 +1,85 @@
+{
+  "resources": [],
+  "operations": {
+    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/members/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/extensions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/members": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/users/{user-id}/scopedRoleMemberOf": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/users/{user-id}/scopedRoleMemberOf/{scopedRoleMembership-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/scopedRoleMembers/{scopedRoleMembership-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/extensions/{extension-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    },
+    "/administrativeUnits/{administrativeUnit-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.AdministrativeUnits.yml"
+    }
+  }
+}

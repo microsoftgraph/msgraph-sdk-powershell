@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/sites/{site-id}/pages": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml"
+    },
+    "/sites/{site-id}/pages/{sitePage-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.Pages.yml"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "resources": [],
+  "operations": {
+    "/directory/deletedItems": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
+    },
+    "/directory": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
+    },
+    "/directory/deletedItems/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Directory.yml"
+    }
+  }
+}

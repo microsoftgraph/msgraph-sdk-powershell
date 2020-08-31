@@ -1,0 +1,17 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
+    },
+    "/users/{user-id}/presence": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
+    },
+    "/users": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.User.yml"
+    }
+  }
+}

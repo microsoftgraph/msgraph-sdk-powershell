@@ -39,40 +39,34 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-# Remove cmdlets
-  - where:
-      verb: Get|Update
-      subject: ^Security$
-    remove: true
 # Rename cmdlets
   - where:
       verb: Remove
-      subject: ^(SecurityTiIndicator)$
-      variant: Delete2|DeleteExpanded1
+      subject: SecurityTiIndicator
+      variant: Delete1|DeleteExpanded1
     set:
-      subject: $1ByExternalId
-  - where:
-      verb: Remove
-      subject: ^(SecurityTiIndicator)$
-      variant: Delete1|DeleteExpanded
-    set:
-      subject: $1Multiple
+      subject: SecurityTiIndicatorByExternalId
   - where:
       verb: Update
-      subject: ^(SecurityAlert)$
+      subject: SecurityAlert
       variant: Update1|UpdateExpanded1
     set:
-      subject: $1Multiple
+      subject: SecurityAlertMultiple
   - where:
       verb: Update
-      subject: ^(SecurityTiIndicator)$
+      subject: SecurityTiIndicator
       variant: Update1|UpdateExpanded1
     set:
-      subject: $1Multiple
+      subject: SecurityTiIndicatorMultiple
+# Remove cmdlets
+  - where:
+      verb: Get|Update
+      subject: Security
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 0.9.2
+module-version: 0.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

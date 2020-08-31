@@ -12,12 +12,12 @@ Invoke function getYammerActivityCounts
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgReportYammerActivityCount -Period <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgReportYammerActivityCount -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
@@ -53,7 +53,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -99,21 +99,17 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
-  - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
-  - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
+  - `[ApplicationSignInDetailedSummaryId <String>]`: key: applicationSignInDetailedSummary-id of applicationSignInDetailedSummary
+  - `[CredentialUserRegistrationDetailsId <String>]`: key: credentialUserRegistrationDetails-id of credentialUserRegistrationDetails
   - `[Date <DateTime?>]`: 
-  - `[DirectoryAuditId <String>]`: key: id of directoryAudit
   - `[Filter <String>]`: 
   - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
-  - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
-  - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
-  - `[SignInId <String>]`: key: id of signIn
+  - `[PrintUsageSummaryByPrinterId <String>]`: key: PrintUsageSummaryByPrinter-id of PrintUsageSummaryByPrinter
+  - `[PrintUsageSummaryByUserId <String>]`: key: PrintUsageSummaryByUser-id of PrintUsageSummaryByUser
   - `[Skip <Int32?>]`: 
   - `[SkipToken <String>]`: 
   - `[Top <Int32?>]`: 
-  - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserCredentialUsageDetailsId <String>]`: key: userCredentialUsageDetails-id of userCredentialUsageDetails
 
 ## RELATED LINKS
 

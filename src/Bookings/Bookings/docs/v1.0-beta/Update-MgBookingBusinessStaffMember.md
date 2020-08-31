@@ -15,8 +15,8 @@ Update the navigation property staffMembers in bookingBusinesses
 ### UpdateExpanded (Default)
 ```
 Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
- [-AdditionalProperties <Hashtable>] [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>]
- [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-Role <String>] [-UseBusinessHours]
+ [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
+ [-EmailAddress <String>] [-Id <String>] [-Role <String>] [-UseBusinessHours]
  [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -34,7 +34,7 @@ Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
+Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-Role <String>] [-UseBusinessHours]
  [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -64,21 +64,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AvailabilityIsAffectedByPersonalCalendar
 .
@@ -112,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: id of bookingBusiness
+key: bookingBusiness-id of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -127,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingStaffMemberId
-key: id of bookingStaffMember
+key: bookingStaffMember-id of bookingStaffMember
 
 ```yaml
 Type: System.String
@@ -332,7 +317,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphBookingStaffMember>: Represents a staff member who provides services in a business.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EmailAddress <String>]`: The e-mail address of this person.
   - `[DisplayName <String>]`: Display name of this entity.
   - `[Id <String>]`: Read-only.
@@ -347,12 +331,12 @@ BODYPARAMETER <IMicrosoftGraphBookingStaffMember>: Represents a staff member who
       - `[Start <String>]`: 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
 
 WORKINGHOURS <IMicrosoftGraphBookingWorkHours[]>: .
   - `[Day <String>]`: dayOfWeek

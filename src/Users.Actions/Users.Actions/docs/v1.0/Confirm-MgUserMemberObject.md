@@ -12,30 +12,29 @@ Invoke action checkMemberObjects
 
 ## SYNTAX
 
-### CheckExpanded (Default)
+### CheckExpanded1 (Default)
 ```
-Confirm-MgUserMemberObject -UserId <String> [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Confirm-MgUserMemberObject -UserId <String> [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Check
+### Check1
 ```
 Confirm-MgUserMemberObject -UserId <String>
  -BodyParameter <IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentity
+### CheckViaIdentity1
 ```
 Confirm-MgUserMemberObject -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CheckViaIdentityExpanded
+### CheckViaIdentityExpanded1
 ```
-Confirm-MgUserMemberObject -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Ids <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Confirm-MgUserMemberObject -InputObject <IUsersActionsIdentity> [-Ids <String[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,28 +62,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Check, CheckViaIdentity
+Parameter Sets: Check1, CheckViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CheckExpanded, CheckViaIdentityExpanded
+Parameter Sets: CheckExpanded1, CheckViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +99,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CheckViaIdentity, CheckViaIdentityExpanded
+Parameter Sets: CheckViaIdentity1, CheckViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -126,11 +110,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+key: user-id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Check, CheckExpanded
+Parameter Sets: Check1, CheckExpanded1
 Aliases:
 
 Required: True
@@ -194,31 +178,31 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPathsJ9Yxi4UsersUserIdMicrosoftGraphCheckmemberobjectsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Ids <String[]>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
-  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
-  - `[EventId <String>]`: key: id of event
-  - `[EventId1 <String>]`: key: id of event
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[MessageId <String>]`: key: id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
+  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
+  - `[CalendarId <String>]`: key: calendar-id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
+  - `[EventId <String>]`: key: event-id of event
+  - `[EventId1 <String>]`: key: event-id of event
+  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
+  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
+  - `[MessageId <String>]`: key: message-id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: notebook-id of notebook
+  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
+  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
+  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
+  - `[UserId <String>]`: key: user-id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

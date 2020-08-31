@@ -15,14 +15,14 @@ Update the navigation property secureScoreControlProfiles in Security
 ### UpdateExpanded1 (Default)
 ```
 Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId <String> [-ActionType <String>]
- [-ActionUrl <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
+ [-ActionUrl <String>] [-AzureTenantId <String>]
  [-ComplianceInformation <IMicrosoftGraphComplianceInformation[]>] [-ControlCategory <String>]
  [-ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>] [-Deprecated] [-Id <String>]
  [-ImplementationCost <String>] [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-Rank <Int32>]
  [-Remediation <String>] [-RemediationImpact <String>] [-Service <String>] [-Threats <String[]>]
- [-Tier <String>] [-Title <String>] [-UserImpact <String>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Tier <String>] [-Title <String>] [-UserImpact <String>] [-VendorInformationProvider <String>]
+ [-VendorInformationProviderVersion <String>] [-VendorInformationSubProvider <String>]
+ [-VendorInformationVendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -42,14 +42,14 @@ Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity>
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-ActionType <String>]
- [-ActionUrl <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
+ [-ActionUrl <String>] [-AzureTenantId <String>]
  [-ComplianceInformation <IMicrosoftGraphComplianceInformation[]>] [-ControlCategory <String>]
  [-ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>] [-Deprecated] [-Id <String>]
  [-ImplementationCost <String>] [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-Rank <Int32>]
  [-Remediation <String>] [-RemediationImpact <String>] [-Service <String>] [-Threats <String[]>]
- [-Tier <String>] [-Title <String>] [-UserImpact <String>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Tier <String>] [-Title <String>] [-UserImpact <String>] [-VendorInformationProvider <String>]
+ [-VendorInformationProviderVersion <String>] [-VendorInformationSubProvider <String>]
+ [-VendorInformationVendor <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -97,21 +97,6 @@ URL to where the control can be actioned.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -353,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecureScoreControlProfileId
-key: id of secureScoreControlProfile
+key: secureScoreControlProfile-id of secureScoreControlProfile
 
 ```yaml
 Type: System.String
@@ -442,12 +427,58 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformation
-securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+### -VendorInformationProvider
+Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationProviderVersion
+Version of the provider or subprovider, if it exists, that generated the alert.
+Required
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationSubProvider
+Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationVendor
+Name of the alert vendor (for example, Microsoft, Dell, FireEye).
+Required
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -512,7 +543,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProfile
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActionType <String>]`: Control action type (Config, Review, Behavior).
   - `[ActionUrl <String>]`: URL to where the control can be actioned.
@@ -541,12 +571,10 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
   - `[Tier <String>]`: 
   - `[Title <String>]`: Title of the control.
   - `[UserImpact <String>]`: 
-  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 COMPLIANCEINFORMATION <IMicrosoftGraphComplianceInformation[]>: .
   - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: Collection of the certification controls associated with certification
@@ -562,25 +590,18 @@ CONTROLSTATEUPDATES <IMicrosoftGraphSecureScoreControlStateUpdate[]>: .
   - `[UpdatedDateTime <DateTime?>]`: Time at which the control state was updated.
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
-
-VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[AlertId <String>]`: key: alert-id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
+  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
+  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
 
 ## RELATED LINKS
 

@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/groups/{group-id}/permissionGrants": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.Permissions.yml"
+    },
+    "/groups/{group-id}/permissionGrants/{resourceSpecificPermissionGrant-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.Permissions.yml"
+    }
+  }
+}

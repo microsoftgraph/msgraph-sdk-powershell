@@ -14,8 +14,8 @@ Create new navigation property to categories for education
 
 ### CreateExpanded (Default)
 ```
-New-MgEducationMeAssignmentCategory -EducationAssignmentId <String> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationMeAssignmentCategory -EducationAssignmentId <String> [-DisplayName <String>] [-Id <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -32,8 +32,8 @@ New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity>
 
 ### CreateViaIdentityExpanded
 ```
-New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-DisplayName <String>] [-Id <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,21 +60,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -BodyParameter
 educationCategory
@@ -108,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: id of educationAssignment
+key: educationAssignment-id of educationAssignment
 
 ```yaml
 Type: System.String
@@ -207,23 +192,22 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationCategory>: educationCategory
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: id of educationCategory
-  - `[EducationClassId <String>]`: key: id of educationClass
-  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
-  - `[EducationRubricId <String>]`: key: id of educationRubric
-  - `[EducationSchoolId <String>]`: key: id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: id of educationUser
+  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
+  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
+  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
+  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
+  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
 
 ## RELATED LINKS
 

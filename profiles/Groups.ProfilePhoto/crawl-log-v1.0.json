@@ -1,0 +1,17 @@
+{
+  "resources": [],
+  "operations": {
+    "/groups/{group-id}/photo": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml"
+    },
+    "/groups/{group-id}/photos/{profilePhoto-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml"
+    },
+    "/groups/{group-id}/photos": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.ProfilePhoto.yml"
+    }
+  }
+}

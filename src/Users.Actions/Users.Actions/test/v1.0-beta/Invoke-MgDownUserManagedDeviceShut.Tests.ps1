@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgDownUserManagedDeviceShut' {
-    It 'Down1' -skip {
+    It 'Down' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'DownViaIdentity1' -skip {
+    It 'DownViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

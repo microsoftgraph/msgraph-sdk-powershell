@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/places": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Places.yml"
+    },
+    "/places/{place-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Places.yml"
+    }
+  }
+}

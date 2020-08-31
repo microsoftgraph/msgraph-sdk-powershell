@@ -14,9 +14,9 @@ Invoke action getSchedule
 
 ### GetExpanded (Default)
 ```
-Get-MgUserEventCalendarSchedule -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-AvailabilityViewInterval <Int32>] [-EndTime <IMicrosoftGraphDateTimeZone>] [-Schedules <String[]>]
- [-StartTime <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgUserEventCalendarSchedule -EventId <String> -UserId <String> [-AvailabilityViewInterval <Int32>]
+ [-EndTimeDateTime <String>] [-EndTimeZone <String>] [-Schedules <String[]>] [-StartTimeDateTime <String>]
+ [-StartTimeZone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Get
@@ -35,9 +35,9 @@ Get-MgUserEventCalendarSchedule -InputObject <IUsersActionsIdentity>
 
 ### GetViaIdentityExpanded
 ```
-Get-MgUserEventCalendarSchedule -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-AvailabilityViewInterval <Int32>] [-EndTime <IMicrosoftGraphDateTimeZone>] [-Schedules <String[]>]
- [-StartTime <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgUserEventCalendarSchedule -InputObject <IUsersActionsIdentity> [-AvailabilityViewInterval <Int32>]
+ [-EndTimeDateTime <String>] [-EndTimeZone <String>] [-Schedules <String[]>] [-StartTimeDateTime <String>]
+ [-StartTimeZone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,21 +64,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: GetExpanded, GetViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AvailabilityViewInterval
 .
@@ -111,12 +96,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -EndTime
-dateTimeTimeZone
-To construct, see NOTES section for ENDTIME properties and create a hash table.
+### -EndTimeDateTime
+A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: System.String
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndTimeZone
+Represents a time zone, for example, 'Pacific Standard Time'.
+See below for more possible values.
+
+```yaml
+Type: System.String
 Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
-key: id of event
+key: event-id of event
 
 ```yaml
 Type: System.String
@@ -173,12 +173,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartTime
-dateTimeTimeZone
-To construct, see NOTES section for STARTTIME properties and create a hash table.
+### -StartTimeDateTime
+A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: System.String
+Parameter Sets: GetExpanded, GetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartTimeZone
+Represents a time zone, for example, 'Pacific Standard Time'.
+See below for more possible values.
+
+```yaml
+Type: System.String
 Parameter Sets: GetExpanded, GetViaIdentityExpanded
 Aliases:
 
@@ -190,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+key: user-id of user
 
 ```yaml
 Type: System.String
@@ -258,47 +273,36 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPaths11Iq6NwUsersUserIdEventsEventIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AvailabilityViewInterval <Int32?>]`: 
-  - `[EndTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[EndTimeDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[Schedules <String[]>]`: 
-  - `[StartTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-
-ENDTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[StartTimeDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
-  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
-  - `[EventId <String>]`: key: id of event
-  - `[EventId1 <String>]`: key: id of event
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[MessageId <String>]`: key: id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
-
-STARTTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
+  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
+  - `[CalendarId <String>]`: key: calendar-id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
+  - `[EventId <String>]`: key: event-id of event
+  - `[EventId1 <String>]`: key: event-id of event
+  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
+  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
+  - `[MessageId <String>]`: key: message-id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: notebook-id of notebook
+  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
+  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
+  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
+  - `[UserId <String>]`: key: user-id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

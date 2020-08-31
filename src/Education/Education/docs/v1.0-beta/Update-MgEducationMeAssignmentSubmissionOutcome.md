@@ -15,9 +15,8 @@ Update the navigation property outcomes in education
 ### UpdateExpanded (Default)
 ```
 Update-MgEducationMeAssignmentSubmissionOutcome -EducationAssignmentId <String> -EducationOutcomeId <String>
- -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -EducationSubmissionId <String> [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
+ [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -35,9 +34,9 @@ Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity> [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,21 +64,6 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 educationOutcome
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -97,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: id of educationAssignment
+key: educationAssignment-id of educationAssignment
 
 ```yaml
 Type: System.String
@@ -112,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationOutcomeId
-key: id of educationOutcome
+key: educationOutcome-id of educationOutcome
 
 ```yaml
 Type: System.String
@@ -127,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationSubmissionId
-key: id of educationSubmission
+key: educationSubmission-id of educationSubmission
 
 ```yaml
 Type: System.String
@@ -272,12 +256,9 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationOutcome>: educationOutcome
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
@@ -285,23 +266,21 @@ BODYPARAMETER <IMicrosoftGraphEducationOutcome>: educationOutcome
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: id of educationCategory
-  - `[EducationClassId <String>]`: key: id of educationClass
-  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
-  - `[EducationRubricId <String>]`: key: id of educationRubric
-  - `[EducationSchoolId <String>]`: key: id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: id of educationUser
+  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
+  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
+  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
+  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
+  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity

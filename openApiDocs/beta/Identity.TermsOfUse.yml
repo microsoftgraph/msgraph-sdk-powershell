@@ -1,0 +1,1668 @@
+openapi: 3.0.1
+info:
+  title: Identity.TermsOfUse
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /agreements:
+    get:
+      tags:
+        - agreements.agreement
+      summary: Get entities from agreements
+      operationId: agreements.agreement_ListAgreement
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - termsExpiration
+                - termsExpiration desc
+                - userReacceptRequiredFrequency
+                - userReacceptRequiredFrequency desc
+                - isViewingBeforeAcceptanceRequired
+                - isViewingBeforeAcceptanceRequired desc
+                - isPerDeviceAcceptanceRequired
+                - isPerDeviceAcceptanceRequired desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - termsExpiration
+                - userReacceptRequiredFrequency
+                - isViewingBeforeAcceptanceRequired
+                - isPerDeviceAcceptanceRequired
+                - file
+                - files
+                - acceptances
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - file
+                - files
+                - acceptances
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of agreement
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreement'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - agreements.agreement
+      summary: Add new entity to agreements
+      operationId: agreements.agreement_CreateAgreement
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreement'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}':
+    get:
+      tags:
+        - agreements.agreement
+      summary: Get entity from agreements by key
+      operationId: agreements.agreement_GetAgreement
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - termsExpiration
+                - userReacceptRequiredFrequency
+                - isViewingBeforeAcceptanceRequired
+                - isPerDeviceAcceptanceRequired
+                - file
+                - files
+                - acceptances
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - file
+                - files
+                - acceptances
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreement'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - agreements.agreement
+      summary: Update entity in agreements
+      operationId: agreements.agreement_UpdateAgreement
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreement'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - agreements.agreement
+      summary: Delete entity from agreements
+      operationId: agreements.agreement_DeleteAgreement
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/acceptances':
+    get:
+      tags:
+        - agreements.agreementAcceptance
+      summary: Get acceptances from agreements
+      operationId: agreements_ListAcceptances
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - agreementId
+                - agreementId desc
+                - userId
+                - userId desc
+                - deviceId
+                - deviceId desc
+                - deviceDisplayName
+                - deviceDisplayName desc
+                - deviceOSType
+                - deviceOSType desc
+                - deviceOSVersion
+                - deviceOSVersion desc
+                - agreementFileId
+                - agreementFileId desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - userEmail
+                - userEmail desc
+                - recordedDateTime
+                - recordedDateTime desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementId
+                - userId
+                - deviceId
+                - deviceDisplayName
+                - deviceOSType
+                - deviceOSVersion
+                - agreementFileId
+                - userDisplayName
+                - userPrincipalName
+                - userEmail
+                - recordedDateTime
+                - expirationDateTime
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreementAcceptance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - agreements.agreementAcceptance
+      summary: Create new navigation property to acceptances for agreements
+      operationId: agreements_CreateAcceptances
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/acceptances/{agreementAcceptance-id}':
+    get:
+      tags:
+        - agreements.agreementAcceptance
+      summary: Get acceptances from agreements
+      operationId: agreements_GetAcceptances
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementId
+                - userId
+                - deviceId
+                - deviceDisplayName
+                - deviceOSType
+                - deviceOSVersion
+                - agreementFileId
+                - userDisplayName
+                - userPrincipalName
+                - userEmail
+                - recordedDateTime
+                - expirationDateTime
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - agreements.agreementAcceptance
+      summary: Update the navigation property acceptances in agreements
+      operationId: agreements_UpdateAcceptances
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - agreements.agreementAcceptance
+      summary: Delete navigation property acceptances for agreements
+      operationId: agreements_DeleteAcceptances
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/file':
+    get:
+      tags:
+        - agreements.agreementFile
+      summary: Get file from agreements
+      operationId: agreements_GetFile
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - fileName
+                - language
+                - isDefault
+                - fileData
+                - localizations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - localizations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementFile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - agreements.agreementFile
+      summary: Update the navigation property file in agreements
+      operationId: agreements_UpdateFile
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementFile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - agreements.agreementFile
+      summary: Delete navigation property file for agreements
+      operationId: agreements_DeleteFile
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/file/localizations':
+    get:
+      tags:
+        - agreements.agreementFile
+      summary: Get localizations from agreements
+      operationId: agreements.file_ListLocalizations
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - fileName
+                - fileName desc
+                - language
+                - language desc
+                - isDefault
+                - isDefault desc
+                - fileData
+                - fileData desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - fileName
+                - language
+                - isDefault
+                - fileData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreementFileLocalization
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - agreements.agreementFile
+      summary: Create new navigation property to localizations for agreements
+      operationId: agreements.file_CreateLocalizations
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/file/localizations/{agreementFileLocalization-id}':
+    get:
+      tags:
+        - agreements.agreementFile
+      summary: Get localizations from agreements
+      operationId: agreements.file_GetLocalizations
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - fileName
+                - language
+                - isDefault
+                - fileData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - agreements.agreementFile
+      summary: Update the navigation property localizations in agreements
+      operationId: agreements.file_UpdateLocalizations
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - agreements.agreementFile
+      summary: Delete navigation property localizations for agreements
+      operationId: agreements.file_DeleteLocalizations
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/files':
+    get:
+      tags:
+        - agreements.agreementFileLocalization
+      summary: Get files from agreements
+      operationId: agreements_ListFiles
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - fileName
+                - fileName desc
+                - language
+                - language desc
+                - isDefault
+                - isDefault desc
+                - fileData
+                - fileData desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - fileName
+                - language
+                - isDefault
+                - fileData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreementFileLocalization
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - agreements.agreementFileLocalization
+      summary: Create new navigation property to files for agreements
+      operationId: agreements_CreateFiles
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/agreements/{agreement-id}/files/{agreementFileLocalization-id}':
+    get:
+      tags:
+        - agreements.agreementFileLocalization
+      summary: Get files from agreements
+      operationId: agreements_GetFiles
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - fileName
+                - language
+                - isDefault
+                - fileData
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - agreements.agreementFileLocalization
+      summary: Update the navigation property files in agreements
+      operationId: agreements_UpdateFiles
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - agreements.agreementFileLocalization
+      summary: Delete navigation property files for agreements
+      operationId: agreements_DeleteFiles
+      parameters:
+        - name: agreement-id
+          in: path
+          description: 'key: id of agreement'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreement
+        - name: agreementFileLocalization-id
+          in: path
+          description: 'key: id of agreementFileLocalization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementFileLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/agreementAcceptances':
+    get:
+      tags:
+        - users.agreementAcceptance
+      summary: Get agreementAcceptances from users
+      operationId: users_ListAgreementAcceptances
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - agreementId
+                - agreementId desc
+                - userId
+                - userId desc
+                - deviceId
+                - deviceId desc
+                - deviceDisplayName
+                - deviceDisplayName desc
+                - deviceOSType
+                - deviceOSType desc
+                - deviceOSVersion
+                - deviceOSVersion desc
+                - agreementFileId
+                - agreementFileId desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - userEmail
+                - userEmail desc
+                - recordedDateTime
+                - recordedDateTime desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementId
+                - userId
+                - deviceId
+                - deviceDisplayName
+                - deviceOSType
+                - deviceOSVersion
+                - agreementFileId
+                - userDisplayName
+                - userPrincipalName
+                - userEmail
+                - recordedDateTime
+                - expirationDateTime
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of agreementAcceptance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/agreementAcceptances/{agreementAcceptance-id}':
+    get:
+      tags:
+        - users.agreementAcceptance
+      summary: Get agreementAcceptances from users
+      operationId: users_GetAgreementAcceptances
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: agreementAcceptance-id
+          in: path
+          description: 'key: id of agreementAcceptance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: agreementAcceptance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - agreementId
+                - userId
+                - deviceId
+                - deviceDisplayName
+                - deviceOSType
+                - deviceOSVersion
+                - agreementFileId
+                - userDisplayName
+                - userPrincipalName
+                - userEmail
+                - recordedDateTime
+                - expirationDateTime
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/agreementAcceptances/$ref':
+    get:
+      tags:
+        - users.agreementAcceptance
+      summary: Get ref of agreementAcceptances from users
+      operationId: users_ListRefAgreementAcceptances
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - agreementId
+                - agreementId desc
+                - userId
+                - userId desc
+                - deviceId
+                - deviceId desc
+                - deviceDisplayName
+                - deviceDisplayName desc
+                - deviceOSType
+                - deviceOSType desc
+                - deviceOSVersion
+                - deviceOSVersion desc
+                - agreementFileId
+                - agreementFileId desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+                - userEmail
+                - userEmail desc
+                - recordedDateTime
+                - recordedDateTime desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - state
+                - state desc
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property links
+          content:
+            application/json:
+              schema:
+                title: Collection of links of agreementAcceptance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.agreementAcceptance
+      summary: Create new navigation property ref to agreementAcceptances for users
+      operationId: users_CreateRefAgreementAcceptances
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.agreement:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agreement
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            termsExpiration:
+              $ref: '#/components/schemas/microsoft.graph.termsExpiration'
+            userReacceptRequiredFrequency:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+              nullable: true
+            isViewingBeforeAcceptanceRequired:
+              type: boolean
+              nullable: true
+            isPerDeviceAcceptanceRequired:
+              type: boolean
+              nullable: true
+            file:
+              $ref: '#/components/schemas/microsoft.graph.agreementFile'
+            files:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+            acceptances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+          additionalProperties:
+            type: object
+    microsoft.graph.agreementAcceptance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agreementAcceptance
+          type: object
+          properties:
+            agreementId:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+            deviceId:
+              type: string
+              nullable: true
+            deviceDisplayName:
+              type: string
+              nullable: true
+            deviceOSType:
+              type: string
+              nullable: true
+            deviceOSVersion:
+              type: string
+              nullable: true
+            agreementFileId:
+              type: string
+              nullable: true
+            userDisplayName:
+              type: string
+              nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            userEmail:
+              type: string
+              nullable: true
+            recordedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.agreementAcceptanceState'
+          additionalProperties:
+            type: object
+    microsoft.graph.agreementFile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.agreementFileProperties'
+        - title: agreementFile
+          type: object
+          properties:
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+          additionalProperties:
+            type: object
+    microsoft.graph.agreementFileLocalization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.agreementFileProperties'
+        - title: agreementFileLocalization
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.termsExpiration:
+      title: termsExpiration
+      type: object
+      properties:
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        frequency:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.agreementAcceptanceState:
+      title: agreementAcceptanceState
+      enum:
+        - accepted
+        - declined
+        - unknownFutureValue
+      type: string
+    microsoft.graph.agreementFileProperties:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: agreementFileProperties
+          type: object
+          properties:
+            fileName:
+              type: string
+              nullable: true
+            language:
+              type: string
+              nullable: true
+            isDefault:
+              type: boolean
+              nullable: true
+            fileData:
+              $ref: '#/components/schemas/microsoft.graph.agreementFileData'
+          additionalProperties:
+            type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.agreementFileData:
+      title: agreementFileData
+      type: object
+      properties:
+        data:
+          type: string
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

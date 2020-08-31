@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerBucketId
-key: id of plannerBucket
+key: plannerBucket-id of plannerBucket
 
 ```yaml
 Type: System.String
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: id of plannerPlan
+key: plannerPlan-id of plannerPlan
 
 ```yaml
 Type: System.String
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerTaskId
-key: id of plannerTask
+key: plannerTask-id of plannerTask
 
 ```yaml
 Type: System.String
@@ -161,12 +161,9 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[PlannerBucketId <String>]`: key: id of plannerBucket
-  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
-  - `[PlannerPlanId <String>]`: key: id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: id of plannerTask
-  - `[UserId <String>]`: key: id of user
+  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
+  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
 
 ## RELATED LINKS
 

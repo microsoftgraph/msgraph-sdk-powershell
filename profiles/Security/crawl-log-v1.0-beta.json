@@ -1,6 +1,11 @@
 {
+  "resources": [],
   "operations": {
-    "/Security/alerts/{alert-id}": {
+    "/Security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/securityActions/{securityAction-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -12,63 +17,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/tiIndicators/microsoft.graph.deleteTiIndicators": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/securityActions/{securityAction-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/hostSecurityProfiles": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/tiIndicators/{tiIndicator-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/userSecurityProfiles": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/tiIndicators": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/cloudAppSecurityProfiles": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/domainSecurityProfiles/{domainSecurityProfile-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/tiIndicators/microsoft.graph.updateTiIndicators": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
     "/Security/hostSecurityProfiles/{hostSecurityProfile-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/tiIndicators/microsoft.graph.submitTiIndicators": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/secureScores": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -76,7 +25,39 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/ipSecurityProfiles": {
+    "/Security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/hostSecurityProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/fileSecurityProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/alerts/{alert-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/userSecurityProfiles/{userSecurityProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/secureScoreControlProfiles/{secureScoreControlProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/alerts/microsoft.graph.updateAlerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/secureScoreControlProfiles": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -84,7 +65,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/cloudAppSecurityProfiles/{cloudAppSecurityProfile-id}": {
+    "/Security/secureScores": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/ipSecurityProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/ipSecurityProfiles/{ipSecurityProfile-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -96,11 +85,35 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/alerts/microsoft.graph.updateAlerts": {
+    "/Security/cloudAppSecurityProfiles": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/secureScoreControlProfiles": {
+    "/Security/tiIndicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/tiIndicators/{tiIndicator-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/tiIndicators/microsoft.graph.updateTiIndicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/domainSecurityProfiles/{domainSecurityProfile-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/tiIndicators/microsoft.graph.submitTiIndicators": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/userSecurityProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/Security/tiIndicators/microsoft.graph.deleteTiIndicatorsByExternalId": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -108,22 +121,9 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/Security/fileSecurityProfiles": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/securityActions/{securityAction-id}/microsoft.graph.cancelSecurityAction": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/userSecurityProfiles/{userSecurityProfile-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/Security/ipSecurityProfiles/{ipSecurityProfile-id}": {
+    "/Security/tiIndicators/microsoft.graph.deleteTiIndicators": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     }
-  },
-  "resources": []
+  }
 }

@@ -14,12 +14,13 @@ Update the navigation property journalLines in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String>
- [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
- [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
- [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalLineId <String> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-Amount <Decimal>] [-Comment <String>] [-Description <String>] [-DocumentNumber <String>]
+ [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-MicrosoftGraphEntityId <String>]
+ [-Number <String>] [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -37,11 +38,12 @@ Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -Jo
 ### UpdateExpanded1
 ```
 Update-MgFinancialCompanyJournalLine -CompanyId <String> -JournalId <String> -JournalLineId <String>
- [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AccountNumber <String>]
- [-AdditionalProperties <Hashtable>] [-Amount <Decimal>] [-Comment <String>] [-Description <String>]
- [-DocumentNumber <String>] [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
- [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-PostingDate <DateTime>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AccountBlocked] [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-Amount <Decimal>] [-Comment <String>] [-Description <String>] [-DocumentNumber <String>]
+ [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-MicrosoftGraphEntityId <String>]
+ [-Number <String>] [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -58,20 +60,24 @@ Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
- [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
- [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
- [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-Amount <Decimal>] [-Comment <String>] [-Description <String>] [-DocumentNumber <String>]
+ [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-MicrosoftGraphEntityId <String>]
+ [-Number <String>] [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
- [-AccountId <String>] [-AccountNumber <String>] [-AdditionalProperties <Hashtable>] [-Amount <Decimal>]
- [-Comment <String>] [-Description <String>] [-DocumentNumber <String>] [-ExternalDocumentNumber <String>]
- [-Id <String>] [-JournalDisplayName <String>] [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>]
- [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgFinancialCompanyJournalLine -InputObject <IFinancialsIdentity> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-Amount <Decimal>] [-Comment <String>] [-Description <String>] [-DocumentNumber <String>]
+ [-ExternalDocumentNumber <String>] [-Id <String>] [-JournalDisplayName <String>]
+ [-LastModifiedDateTime <DateTime>] [-LineNumber <Int32>] [-MicrosoftGraphEntityId <String>]
+ [-Number <String>] [-PostingDate <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -99,12 +105,41 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Account
-account
-To construct, see NOTES section for ACCOUNT properties and create a hash table.
+### -AccountBlocked
+.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountCategory
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountDisplayName
+.
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -130,6 +165,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AccountLastModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AccountNumber
 .
 
@@ -145,11 +195,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AdditionalProperties
-Additional Parameters
+### -AccountSubCategory
+.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -207,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompanyId
-key: id of company
+key: company-id of company
 
 ```yaml
 Type: System.String
@@ -313,7 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -JournalId
-key: id of journal
+key: journal-id of journal
 
 ```yaml
 Type: System.String
@@ -328,7 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -JournalLineId
-key: id of journalLine
+key: journalLine-id of journalLine
 
 ```yaml
 Type: System.String
@@ -362,6 +412,36 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MicrosoftGraphEntityId
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Number
+.
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateExpanded1, UpdateViaIdentityExpanded, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -455,30 +535,15 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCOUNT <IMicrosoftGraphAccount>: account
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Blocked <Boolean?>]`: 
-  - `[Category <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Number <String>]`: 
-  - `[SubCategory <String>]`: 
-
 BODYPARAMETER <IMicrosoftGraphJournalLine>: journalLine
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Account <IMicrosoftGraphAccount>]`: account
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[Blocked <Boolean?>]`: 
-    - `[Category <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Number <String>]`: 
-    - `[SubCategory <String>]`: 
+  - `[AccountBlocked <Boolean?>]`: 
+  - `[AccountCategory <String>]`: 
+  - `[AccountDisplayName <String>]`: 
   - `[AccountId <String>]`: 
+  - `[AccountLastModifiedDateTime <DateTime?>]`: 
   - `[AccountNumber <String>]`: 
+  - `[AccountSubCategory <String>]`: 
   - `[Amount <Decimal?>]`: 
   - `[Comment <String>]`: 
   - `[Description <String>]`: 
@@ -487,45 +552,47 @@ BODYPARAMETER <IMicrosoftGraphJournalLine>: journalLine
   - `[JournalDisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[LineNumber <Int32?>]`: 
+  - `[MicrosoftGraphEntityId <String>]`: Read-only.
+  - `[Number <String>]`: 
   - `[PostingDate <DateTime?>]`: 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
-  - `[AccountId <String>]`: key: id of account
-  - `[AgedAccountsPayableId <String>]`: key: id of agedAccountsPayable
-  - `[AgedAccountsReceivableId <String>]`: key: id of agedAccountsReceivable
-  - `[CompanyId <String>]`: key: id of company
-  - `[CompanyInformationId <String>]`: key: id of companyInformation
-  - `[CountryRegionId <String>]`: key: id of countryRegion
-  - `[CurrencyId <String>]`: key: id of currency
-  - `[CustomerId <String>]`: key: id of customer
-  - `[CustomerPaymentId <String>]`: key: id of customerPayment
-  - `[CustomerPaymentJournalId <String>]`: key: id of customerPaymentJournal
-  - `[DimensionId <String>]`: key: id of dimension
-  - `[DimensionValueId <String>]`: key: id of dimensionValue
-  - `[EmployeeId <String>]`: key: id of employee
-  - `[GeneralLedgerEntryId <String>]`: key: id of generalLedgerEntry
-  - `[ItemCategoryId <String>]`: key: id of itemCategory
-  - `[ItemId <String>]`: key: id of item
-  - `[JournalId <String>]`: key: id of journal
-  - `[JournalLineId <String>]`: key: id of journalLine
-  - `[PaymentMethodId <String>]`: key: id of paymentMethod
-  - `[PaymentTermId <String>]`: key: id of paymentTerm
-  - `[PictureId <String>]`: key: id of picture
-  - `[PurchaseInvoiceId <String>]`: key: id of purchaseInvoice
-  - `[PurchaseInvoiceLineId <String>]`: key: id of purchaseInvoiceLine
-  - `[SalesCreditMemoId <String>]`: key: id of salesCreditMemo
-  - `[SalesCreditMemoLineId <String>]`: key: id of salesCreditMemoLine
-  - `[SalesInvoiceId <String>]`: key: id of salesInvoice
-  - `[SalesInvoiceLineId <String>]`: key: id of salesInvoiceLine
-  - `[SalesOrderId <String>]`: key: id of salesOrder
-  - `[SalesOrderLineId <String>]`: key: id of salesOrderLine
-  - `[SalesQuoteId <String>]`: key: id of salesQuote
-  - `[SalesQuoteLineId <String>]`: key: id of salesQuoteLine
-  - `[ShipmentMethodId <String>]`: key: id of shipmentMethod
-  - `[TaxAreaId <String>]`: key: id of taxArea
-  - `[TaxGroupId <String>]`: key: id of taxGroup
-  - `[UnitOfMeasureId <String>]`: key: id of unitOfMeasure
-  - `[VendorId <String>]`: key: id of vendor
+  - `[AccountId <String>]`: key: account-id of account
+  - `[AgedAccountsPayableId <String>]`: key: agedAccountsPayable-id of agedAccountsPayable
+  - `[AgedAccountsReceivableId <String>]`: key: agedAccountsReceivable-id of agedAccountsReceivable
+  - `[CompanyId <String>]`: key: company-id of company
+  - `[CompanyInformationId <String>]`: key: companyInformation-id of companyInformation
+  - `[CountryRegionId <String>]`: key: countryRegion-id of countryRegion
+  - `[CurrencyId <String>]`: key: currency-id of currency
+  - `[CustomerId <String>]`: key: customer-id of customer
+  - `[CustomerPaymentId <String>]`: key: customerPayment-id of customerPayment
+  - `[CustomerPaymentJournalId <String>]`: key: customerPaymentJournal-id of customerPaymentJournal
+  - `[DimensionId <String>]`: key: dimension-id of dimension
+  - `[DimensionValueId <String>]`: key: dimensionValue-id of dimensionValue
+  - `[EmployeeId <String>]`: key: employee-id of employee
+  - `[GeneralLedgerEntryId <String>]`: key: generalLedgerEntry-id of generalLedgerEntry
+  - `[ItemCategoryId <String>]`: key: itemCategory-id of itemCategory
+  - `[ItemId <String>]`: key: item-id of item
+  - `[JournalId <String>]`: key: journal-id of journal
+  - `[JournalLineId <String>]`: key: journalLine-id of journalLine
+  - `[PaymentMethodId <String>]`: key: paymentMethod-id of paymentMethod
+  - `[PaymentTermId <String>]`: key: paymentTerm-id of paymentTerm
+  - `[PictureId <String>]`: key: picture-id of picture
+  - `[PurchaseInvoiceId <String>]`: key: purchaseInvoice-id of purchaseInvoice
+  - `[PurchaseInvoiceLineId <String>]`: key: purchaseInvoiceLine-id of purchaseInvoiceLine
+  - `[SalesCreditMemoId <String>]`: key: salesCreditMemo-id of salesCreditMemo
+  - `[SalesCreditMemoLineId <String>]`: key: salesCreditMemoLine-id of salesCreditMemoLine
+  - `[SalesInvoiceId <String>]`: key: salesInvoice-id of salesInvoice
+  - `[SalesInvoiceLineId <String>]`: key: salesInvoiceLine-id of salesInvoiceLine
+  - `[SalesOrderId <String>]`: key: salesOrder-id of salesOrder
+  - `[SalesOrderLineId <String>]`: key: salesOrderLine-id of salesOrderLine
+  - `[SalesQuoteId <String>]`: key: salesQuote-id of salesQuote
+  - `[SalesQuoteLineId <String>]`: key: salesQuoteLine-id of salesQuoteLine
+  - `[ShipmentMethodId <String>]`: key: shipmentMethod-id of shipmentMethod
+  - `[TaxAreaId <String>]`: key: taxArea-id of taxArea
+  - `[TaxGroupId <String>]`: key: taxGroup-id of taxGroup
+  - `[UnitOfMeasureId <String>]`: key: unitOfMeasure-id of unitOfMeasure
+  - `[VendorId <String>]`: key: vendor-id of vendor
 
 ## RELATED LINKS
 

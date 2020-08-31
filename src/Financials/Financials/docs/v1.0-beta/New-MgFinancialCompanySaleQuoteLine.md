@@ -14,11 +14,18 @@ Create new navigation property to salesQuoteLines for financials
 
 ### CreateExpanded (Default)
 ```
-New-MgFinancialCompanySaleQuoteLine -CompanyId <String> [-Account <IMicrosoftGraphAccount>]
- [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>]
- [-AmountIncludingTax <Decimal>] [-Description <String>] [-DiscountAmount <Decimal>]
- [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>] [-Id <String>]
- [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>] [-NetAmount <Decimal>]
+New-MgFinancialCompanySaleQuoteLine -CompanyId <String> [-AccountBlocked] [-AccountCategory <String>]
+ [-AccountDisplayName <String>] [-AccountId <String>] [-AccountId1 <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Code <String>] [-Description <String>]
+ [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
+ [-Id <String>] [-ItemBaseUnitOfMeasureId <String>] [-ItemBlocked] [-ItemCategoryCode <String>]
+ [-ItemCategoryDisplayName <String>] [-ItemCategoryId <String>] [-ItemCategoryLastModifiedDateTime <DateTime>]
+ [-ItemDisplayName <String>] [-ItemGtin <String>] [-ItemId <String>] [-ItemId1 <String>]
+ [-ItemInventory <Decimal>] [-ItemLastModifiedDateTime <DateTime>] [-ItemNumber <String>]
+ [-ItemPicture <IMicrosoftGraphPicture[]>] [-ItemPriceIncludesTax] [-ItemTaxGroupCode <String>]
+ [-ItemTaxGroupId <String>] [-ItemType <String>] [-ItemUnitCost <Decimal>] [-ItemUnitPrice <Decimal>]
+ [-LineType <String>] [-MicrosoftGraphEntityId <String>] [-NetAmount <Decimal>]
  [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>] [-Sequence <Int32>]
  [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
  [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -38,11 +45,18 @@ New-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String>
 
 ### CreateExpanded1
 ```
-New-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String>
- [-Account <IMicrosoftGraphAccount>] [-AccountId <String>] [-AdditionalProperties <Hashtable>]
- [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Description <String>]
+New-MgFinancialCompanySaleQuoteLine -CompanyId <String> -SalesQuoteId <String> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>] [-AccountId1 <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Code <String>] [-Description <String>]
  [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
- [-Id <String>] [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>] [-NetAmount <Decimal>]
+ [-Id <String>] [-ItemBaseUnitOfMeasureId <String>] [-ItemBlocked] [-ItemCategoryCode <String>]
+ [-ItemCategoryDisplayName <String>] [-ItemCategoryId <String>] [-ItemCategoryLastModifiedDateTime <DateTime>]
+ [-ItemDisplayName <String>] [-ItemGtin <String>] [-ItemId <String>] [-ItemId1 <String>]
+ [-ItemInventory <Decimal>] [-ItemLastModifiedDateTime <DateTime>] [-ItemNumber <String>]
+ [-ItemPicture <IMicrosoftGraphPicture[]>] [-ItemPriceIncludesTax] [-ItemTaxGroupCode <String>]
+ [-ItemTaxGroupId <String>] [-ItemType <String>] [-ItemUnitCost <Decimal>] [-ItemUnitPrice <Decimal>]
+ [-LineType <String>] [-MicrosoftGraphEntityId <String>] [-NetAmount <Decimal>]
  [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>] [-Sequence <Int32>]
  [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
  [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -62,11 +76,18 @@ New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity>
 
 ### CreateViaIdentityExpanded
 ```
-New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
- [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>]
- [-AmountIncludingTax <Decimal>] [-Description <String>] [-DiscountAmount <Decimal>]
- [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>] [-Id <String>]
- [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>] [-NetAmount <Decimal>]
+New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>] [-AccountId1 <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Code <String>] [-Description <String>]
+ [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
+ [-Id <String>] [-ItemBaseUnitOfMeasureId <String>] [-ItemBlocked] [-ItemCategoryCode <String>]
+ [-ItemCategoryDisplayName <String>] [-ItemCategoryId <String>] [-ItemCategoryLastModifiedDateTime <DateTime>]
+ [-ItemDisplayName <String>] [-ItemGtin <String>] [-ItemId <String>] [-ItemId1 <String>]
+ [-ItemInventory <Decimal>] [-ItemLastModifiedDateTime <DateTime>] [-ItemNumber <String>]
+ [-ItemPicture <IMicrosoftGraphPicture[]>] [-ItemPriceIncludesTax] [-ItemTaxGroupCode <String>]
+ [-ItemTaxGroupId <String>] [-ItemType <String>] [-ItemUnitCost <Decimal>] [-ItemUnitPrice <Decimal>]
+ [-LineType <String>] [-MicrosoftGraphEntityId <String>] [-NetAmount <Decimal>]
  [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>] [-Sequence <Int32>]
  [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
  [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -74,11 +95,18 @@ New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-Account <IMicrosoftGraphAccount>]
- [-AccountId <String>] [-AdditionalProperties <Hashtable>] [-AmountExcludingTax <Decimal>]
- [-AmountIncludingTax <Decimal>] [-Description <String>] [-DiscountAmount <Decimal>]
- [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>] [-Id <String>]
- [-Item <IMicrosoftGraphItem>] [-ItemId <String>] [-LineType <String>] [-NetAmount <Decimal>]
+New-MgFinancialCompanySaleQuoteLine -InputObject <IFinancialsIdentity> [-AccountBlocked]
+ [-AccountCategory <String>] [-AccountDisplayName <String>] [-AccountId <String>] [-AccountId1 <String>]
+ [-AccountLastModifiedDateTime <DateTime>] [-AccountNumber <String>] [-AccountSubCategory <String>]
+ [-AmountExcludingTax <Decimal>] [-AmountIncludingTax <Decimal>] [-Code <String>] [-Description <String>]
+ [-DiscountAmount <Decimal>] [-DiscountAppliedBeforeTax] [-DiscountPercent <Decimal>] [-DocumentId <String>]
+ [-Id <String>] [-ItemBaseUnitOfMeasureId <String>] [-ItemBlocked] [-ItemCategoryCode <String>]
+ [-ItemCategoryDisplayName <String>] [-ItemCategoryId <String>] [-ItemCategoryLastModifiedDateTime <DateTime>]
+ [-ItemDisplayName <String>] [-ItemGtin <String>] [-ItemId <String>] [-ItemId1 <String>]
+ [-ItemInventory <Decimal>] [-ItemLastModifiedDateTime <DateTime>] [-ItemNumber <String>]
+ [-ItemPicture <IMicrosoftGraphPicture[]>] [-ItemPriceIncludesTax] [-ItemTaxGroupCode <String>]
+ [-ItemTaxGroupId <String>] [-ItemType <String>] [-ItemUnitCost <Decimal>] [-ItemUnitPrice <Decimal>]
+ [-LineType <String>] [-MicrosoftGraphEntityId <String>] [-NetAmount <Decimal>]
  [-NetAmountIncludingTax <Decimal>] [-NetTaxAmount <Decimal>] [-Quantity <Decimal>] [-Sequence <Int32>]
  [-TaxCode <String>] [-TaxPercent <Decimal>] [-TotalTaxAmount <Decimal>] [-UnitOfMeasureId <String>]
  [-UnitPrice <Decimal>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -109,12 +137,41 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Account
-account
-To construct, see NOTES section for ACCOUNT properties and create a hash table.
+### -AccountBlocked
+.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountCategory
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountDisplayName
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -140,11 +197,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AdditionalProperties
-Additional Parameters
+### -AccountId1
+Read-only.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountLastModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountNumber
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AccountSubCategory
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -201,8 +303,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Code
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CompanyId
-key: id of company
+key: company-id of company
 
 ```yaml
 Type: System.String
@@ -322,12 +439,116 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Item
-item
-To construct, see NOTES section for ITEM properties and create a hash table.
+### -ItemBaseUnitOfMeasureId
+.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemBlocked
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemCategoryCode
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemCategoryDisplayName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemCategoryId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemCategoryLastModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemDisplayName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemGtin
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
 Aliases:
 
@@ -353,8 +574,189 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ItemId1
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemInventory
+.
+
+```yaml
+Type: System.Decimal
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemLastModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemNumber
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemPicture
+.
+To construct, see NOTES section for ITEMPICTURE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemPriceIncludesTax
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemTaxGroupCode
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemTaxGroupId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemUnitCost
+.
+
+```yaml
+Type: System.Decimal
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ItemUnitPrice
+.
+
+```yaml
+Type: System.Decimal
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LineType
 .
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateExpanded1, CreateViaIdentityExpanded, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MicrosoftGraphEntityId
+Read-only.
 
 ```yaml
 Type: System.String
@@ -429,7 +831,7 @@ Accept wildcard characters: False
 ```
 
 ### -SalesQuoteId
-key: id of salesQuote
+key: salesQuote-id of salesQuote
 
 ```yaml
 Type: System.String
@@ -586,68 +988,51 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCOUNT <IMicrosoftGraphAccount>: account
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Blocked <Boolean?>]`: 
-  - `[Category <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Number <String>]`: 
-  - `[SubCategory <String>]`: 
-
 BODYPARAMETER <IMicrosoftGraphSalesQuoteLine>: salesQuoteLine
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Account <IMicrosoftGraphAccount>]`: account
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[Blocked <Boolean?>]`: 
-    - `[Category <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Number <String>]`: 
-    - `[SubCategory <String>]`: 
+  - `[AccountBlocked <Boolean?>]`: 
+  - `[AccountCategory <String>]`: 
+  - `[AccountDisplayName <String>]`: 
   - `[AccountId <String>]`: 
+  - `[AccountId1 <String>]`: Read-only.
+  - `[AccountLastModifiedDateTime <DateTime?>]`: 
+  - `[AccountNumber <String>]`: 
+  - `[AccountSubCategory <String>]`: 
   - `[AmountExcludingTax <Decimal?>]`: 
   - `[AmountIncludingTax <Decimal?>]`: 
+  - `[Code <String>]`: 
   - `[Description <String>]`: 
   - `[DiscountAmount <Decimal?>]`: 
   - `[DiscountAppliedBeforeTax <Boolean?>]`: 
   - `[DiscountPercent <Decimal?>]`: 
   - `[DocumentId <String>]`: 
-  - `[Item <IMicrosoftGraphItem>]`: item
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[BaseUnitOfMeasureId <String>]`: 
-    - `[Blocked <Boolean?>]`: 
-    - `[DisplayName <String>]`: 
-    - `[Gtin <String>]`: 
-    - `[Inventory <Decimal?>]`: 
-    - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Read-only.
-      - `[Code <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[ItemCategoryCode <String>]`: 
-    - `[ItemCategoryId <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Number <String>]`: 
-    - `[Picture <IMicrosoftGraphPicture[]>]`: 
-      - `[Id <String>]`: Read-only.
-      - `[Content <Byte[]>]`: 
-      - `[ContentType <String>]`: 
-      - `[Height <Int32?>]`: 
-      - `[Width <Int32?>]`: 
-    - `[PriceIncludesTax <Boolean?>]`: 
-    - `[TaxGroupCode <String>]`: 
-    - `[TaxGroupId <String>]`: 
-    - `[Type <String>]`: 
-    - `[UnitCost <Decimal?>]`: 
-    - `[UnitPrice <Decimal?>]`: 
+  - `[ItemBaseUnitOfMeasureId <String>]`: 
+  - `[ItemBlocked <Boolean?>]`: 
+  - `[ItemCategoryCode <String>]`: 
+  - `[ItemCategoryDisplayName <String>]`: 
+  - `[ItemCategoryId <String>]`: 
+  - `[ItemCategoryLastModifiedDateTime <DateTime?>]`: 
+  - `[ItemDisplayName <String>]`: 
+  - `[ItemGtin <String>]`: 
   - `[ItemId <String>]`: 
+  - `[ItemId1 <String>]`: Read-only.
+  - `[ItemInventory <Decimal?>]`: 
+  - `[ItemLastModifiedDateTime <DateTime?>]`: 
+  - `[ItemNumber <String>]`: 
+  - `[ItemPicture <IMicrosoftGraphPicture[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[Content <Byte[]>]`: 
+    - `[ContentType <String>]`: 
+    - `[Height <Int32?>]`: 
+    - `[Width <Int32?>]`: 
+  - `[ItemPriceIncludesTax <Boolean?>]`: 
+  - `[ItemTaxGroupCode <String>]`: 
+  - `[ItemTaxGroupId <String>]`: 
+  - `[ItemType <String>]`: 
+  - `[ItemUnitCost <Decimal?>]`: 
+  - `[ItemUnitPrice <Decimal?>]`: 
   - `[LineType <String>]`: 
+  - `[MicrosoftGraphEntityId <String>]`: Read-only.
   - `[NetAmount <Decimal?>]`: 
   - `[NetAmountIncludingTax <Decimal?>]`: 
   - `[NetTaxAmount <Decimal?>]`: 
@@ -660,73 +1045,49 @@ BODYPARAMETER <IMicrosoftGraphSalesQuoteLine>: salesQuoteLine
   - `[UnitPrice <Decimal?>]`: 
 
 INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
-  - `[AccountId <String>]`: key: id of account
-  - `[AgedAccountsPayableId <String>]`: key: id of agedAccountsPayable
-  - `[AgedAccountsReceivableId <String>]`: key: id of agedAccountsReceivable
-  - `[CompanyId <String>]`: key: id of company
-  - `[CompanyInformationId <String>]`: key: id of companyInformation
-  - `[CountryRegionId <String>]`: key: id of countryRegion
-  - `[CurrencyId <String>]`: key: id of currency
-  - `[CustomerId <String>]`: key: id of customer
-  - `[CustomerPaymentId <String>]`: key: id of customerPayment
-  - `[CustomerPaymentJournalId <String>]`: key: id of customerPaymentJournal
-  - `[DimensionId <String>]`: key: id of dimension
-  - `[DimensionValueId <String>]`: key: id of dimensionValue
-  - `[EmployeeId <String>]`: key: id of employee
-  - `[GeneralLedgerEntryId <String>]`: key: id of generalLedgerEntry
-  - `[ItemCategoryId <String>]`: key: id of itemCategory
-  - `[ItemId <String>]`: key: id of item
-  - `[JournalId <String>]`: key: id of journal
-  - `[JournalLineId <String>]`: key: id of journalLine
-  - `[PaymentMethodId <String>]`: key: id of paymentMethod
-  - `[PaymentTermId <String>]`: key: id of paymentTerm
-  - `[PictureId <String>]`: key: id of picture
-  - `[PurchaseInvoiceId <String>]`: key: id of purchaseInvoice
-  - `[PurchaseInvoiceLineId <String>]`: key: id of purchaseInvoiceLine
-  - `[SalesCreditMemoId <String>]`: key: id of salesCreditMemo
-  - `[SalesCreditMemoLineId <String>]`: key: id of salesCreditMemoLine
-  - `[SalesInvoiceId <String>]`: key: id of salesInvoice
-  - `[SalesInvoiceLineId <String>]`: key: id of salesInvoiceLine
-  - `[SalesOrderId <String>]`: key: id of salesOrder
-  - `[SalesOrderLineId <String>]`: key: id of salesOrderLine
-  - `[SalesQuoteId <String>]`: key: id of salesQuote
-  - `[SalesQuoteLineId <String>]`: key: id of salesQuoteLine
-  - `[ShipmentMethodId <String>]`: key: id of shipmentMethod
-  - `[TaxAreaId <String>]`: key: id of taxArea
-  - `[TaxGroupId <String>]`: key: id of taxGroup
-  - `[UnitOfMeasureId <String>]`: key: id of unitOfMeasure
-  - `[VendorId <String>]`: key: id of vendor
+  - `[AccountId <String>]`: key: account-id of account
+  - `[AgedAccountsPayableId <String>]`: key: agedAccountsPayable-id of agedAccountsPayable
+  - `[AgedAccountsReceivableId <String>]`: key: agedAccountsReceivable-id of agedAccountsReceivable
+  - `[CompanyId <String>]`: key: company-id of company
+  - `[CompanyInformationId <String>]`: key: companyInformation-id of companyInformation
+  - `[CountryRegionId <String>]`: key: countryRegion-id of countryRegion
+  - `[CurrencyId <String>]`: key: currency-id of currency
+  - `[CustomerId <String>]`: key: customer-id of customer
+  - `[CustomerPaymentId <String>]`: key: customerPayment-id of customerPayment
+  - `[CustomerPaymentJournalId <String>]`: key: customerPaymentJournal-id of customerPaymentJournal
+  - `[DimensionId <String>]`: key: dimension-id of dimension
+  - `[DimensionValueId <String>]`: key: dimensionValue-id of dimensionValue
+  - `[EmployeeId <String>]`: key: employee-id of employee
+  - `[GeneralLedgerEntryId <String>]`: key: generalLedgerEntry-id of generalLedgerEntry
+  - `[ItemCategoryId <String>]`: key: itemCategory-id of itemCategory
+  - `[ItemId <String>]`: key: item-id of item
+  - `[JournalId <String>]`: key: journal-id of journal
+  - `[JournalLineId <String>]`: key: journalLine-id of journalLine
+  - `[PaymentMethodId <String>]`: key: paymentMethod-id of paymentMethod
+  - `[PaymentTermId <String>]`: key: paymentTerm-id of paymentTerm
+  - `[PictureId <String>]`: key: picture-id of picture
+  - `[PurchaseInvoiceId <String>]`: key: purchaseInvoice-id of purchaseInvoice
+  - `[PurchaseInvoiceLineId <String>]`: key: purchaseInvoiceLine-id of purchaseInvoiceLine
+  - `[SalesCreditMemoId <String>]`: key: salesCreditMemo-id of salesCreditMemo
+  - `[SalesCreditMemoLineId <String>]`: key: salesCreditMemoLine-id of salesCreditMemoLine
+  - `[SalesInvoiceId <String>]`: key: salesInvoice-id of salesInvoice
+  - `[SalesInvoiceLineId <String>]`: key: salesInvoiceLine-id of salesInvoiceLine
+  - `[SalesOrderId <String>]`: key: salesOrder-id of salesOrder
+  - `[SalesOrderLineId <String>]`: key: salesOrderLine-id of salesOrderLine
+  - `[SalesQuoteId <String>]`: key: salesQuote-id of salesQuote
+  - `[SalesQuoteLineId <String>]`: key: salesQuoteLine-id of salesQuoteLine
+  - `[ShipmentMethodId <String>]`: key: shipmentMethod-id of shipmentMethod
+  - `[TaxAreaId <String>]`: key: taxArea-id of taxArea
+  - `[TaxGroupId <String>]`: key: taxGroup-id of taxGroup
+  - `[UnitOfMeasureId <String>]`: key: unitOfMeasure-id of unitOfMeasure
+  - `[VendorId <String>]`: key: vendor-id of vendor
 
-ITEM <IMicrosoftGraphItem>: item
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+ITEMPICTURE <IMicrosoftGraphPicture[]>: .
   - `[Id <String>]`: Read-only.
-  - `[BaseUnitOfMeasureId <String>]`: 
-  - `[Blocked <Boolean?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Gtin <String>]`: 
-  - `[Inventory <Decimal?>]`: 
-  - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[Code <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[ItemCategoryCode <String>]`: 
-  - `[ItemCategoryId <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Number <String>]`: 
-  - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Content <Byte[]>]`: 
-    - `[ContentType <String>]`: 
-    - `[Height <Int32?>]`: 
-    - `[Width <Int32?>]`: 
-  - `[PriceIncludesTax <Boolean?>]`: 
-  - `[TaxGroupCode <String>]`: 
-  - `[TaxGroupId <String>]`: 
-  - `[Type <String>]`: 
-  - `[UnitCost <Decimal?>]`: 
-  - `[UnitPrice <Decimal?>]`: 
+  - `[Content <Byte[]>]`: 
+  - `[ContentType <String>]`: 
+  - `[Height <Int32?>]`: 
+  - `[Width <Int32?>]`: 
 
 ## RELATED LINKS
 

@@ -12,12 +12,12 @@ Invoke function delta
 
 ## SYNTAX
 
-### Delta1 (Default)
+### Delta (Default)
 ```
 Get-MgUserContactFolderChildFolderDelta -ContactFolderId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity1
+### DeltaViaIdentity
 ```
 Get-MgUserContactFolderChildFolderDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
@@ -48,11 +48,11 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -ContactFolderId
-key: id of contactFolder
+key: contactFolder-id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity1
+Parameter Sets: DeltaViaIdentity
 Aliases:
 
 Required: True
@@ -79,11 +79,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+key: user-id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -114,21 +114,26 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[ContactFolderId <String>]`: key: id of contactFolder
+  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
+  - `[CalendarId <String>]`: key: calendar-id of calendar
+  - `[ContactFolderId <String>]`: key: contactFolder-id of contactFolder
   - `[EndDateTime <String>]`: 
-  - `[EventId <String>]`: key: id of event
+  - `[EventId <String>]`: key: event-id of event
   - `[IncludePersonalNotebooks <Boolean?>]`: 
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
+  - `[NotebookId <String>]`: key: notebook-id of notebook
+  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenotePageId1 <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
   - `[RoomList <String>]`: 
+  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
   - `[Skip <Int32?>]`: 
   - `[StartDateTime <String>]`: 
   - `[TimeZoneStandard <String>]`: 
   - `[Top <Int32?>]`: 
   - `[User <String>]`: 
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: key: user-id of user
 
 ## RELATED LINKS
 

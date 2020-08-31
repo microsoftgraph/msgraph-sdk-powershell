@@ -12,30 +12,36 @@ Update the navigation property details in planner
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
-Update-MgPlannerPlanDetail -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanDetail -PlannerPlanId <String> [-CategoryDescriptionCategory1 <String>]
+ [-CategoryDescriptionCategory2 <String>] [-CategoryDescriptionCategory3 <String>]
+ [-CategoryDescriptionCategory4 <String>] [-CategoryDescriptionCategory5 <String>]
+ [-CategoryDescriptionCategory6 <String>]
+ [-ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>] [-Id <String>]
+ [-SharedWith <IMicrosoftGraphPlannerUserIds>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgPlannerPlanDetail -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlanDetails1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlanDetails1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
-Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
- [-CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>] [-ContextDetails <Hashtable>]
- [-Id <String>] [-SharedWith <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPlannerPlanDetail -InputObject <IPlannerIdentity> [-CategoryDescriptionCategory1 <String>]
+ [-CategoryDescriptionCategory2 <String>] [-CategoryDescriptionCategory3 <String>]
+ [-CategoryDescriptionCategory4 <String>] [-CategoryDescriptionCategory5 <String>]
+ [-CategoryDescriptionCategory6 <String>]
+ [-ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>] [-Id <String>]
+ [-SharedWith <IMicrosoftGraphPlannerUserIds>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,28 +69,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 plannerPlanDetails
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -94,13 +85,87 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -CategoryDescriptions
-plannerCategoryDescriptions
-To construct, see NOTES section for CATEGORYDESCRIPTIONS properties and create a hash table.
+### -CategoryDescriptionCategory1
+The label associated with Category 1
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerCategoryDescriptions
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CategoryDescriptionCategory2
+The label associated with Category 2
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CategoryDescriptionCategory3
+The label associated with Category 3
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CategoryDescriptionCategory4
+The label associated with Category 4
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CategoryDescriptionCategory5
+The label associated with Category 5
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CategoryDescriptionCategory6
+The label associated with Category 6
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -114,8 +179,8 @@ Accept wildcard characters: False
 plannerPlanContextDetailsCollection
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanContextDetailsCollection
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -130,7 +195,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -146,7 +211,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -172,11 +237,11 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: id of plannerPlan
+key: plannerPlan-id of plannerPlan
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -190,8 +255,8 @@ Accept wildcard characters: False
 plannerUserIds
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUserIds
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -255,37 +320,20 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphPlannerPlanDetails1>: plannerPlanDetails
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CategoryDescriptions <IMicrosoftGraphPlannerCategoryDescriptions>]`: plannerCategoryDescriptions
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Category1 <String>]`: The label associated with Category 1
-    - `[Category2 <String>]`: The label associated with Category 2
-    - `[Category3 <String>]`: The label associated with Category 3
-    - `[Category4 <String>]`: The label associated with Category 4
-    - `[Category5 <String>]`: The label associated with Category 5
-    - `[Category6 <String>]`: The label associated with Category 6
+  - `[CategoryDescriptionCategory1 <String>]`: The label associated with Category 1
+  - `[CategoryDescriptionCategory2 <String>]`: The label associated with Category 2
+  - `[CategoryDescriptionCategory3 <String>]`: The label associated with Category 3
+  - `[CategoryDescriptionCategory4 <String>]`: The label associated with Category 4
+  - `[CategoryDescriptionCategory5 <String>]`: The label associated with Category 5
+  - `[CategoryDescriptionCategory6 <String>]`: The label associated with Category 6
   - `[ContextDetails <IMicrosoftGraphPlannerPlanContextDetailsCollection>]`: plannerPlanContextDetailsCollection
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-
-CATEGORYDESCRIPTIONS <IMicrosoftGraphPlannerCategoryDescriptions>: plannerCategoryDescriptions
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Category1 <String>]`: The label associated with Category 1
-  - `[Category2 <String>]`: The label associated with Category 2
-  - `[Category3 <String>]`: The label associated with Category 3
-  - `[Category4 <String>]`: The label associated with Category 4
-  - `[Category5 <String>]`: The label associated with Category 5
-  - `[Category6 <String>]`: The label associated with Category 6
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[PlannerBucketId <String>]`: key: id of plannerBucket
-  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
-  - `[PlannerPlanId <String>]`: key: id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: id of plannerTask
-  - `[UserId <String>]`: key: id of user
+  - `[PlannerBucketId <String>]`: key: plannerBucket-id of plannerBucket
+  - `[PlannerPlanId <String>]`: key: plannerPlan-id of plannerPlan
+  - `[PlannerTaskId <String>]`: key: plannerTask-id of plannerTask
 
 ## RELATED LINKS
 

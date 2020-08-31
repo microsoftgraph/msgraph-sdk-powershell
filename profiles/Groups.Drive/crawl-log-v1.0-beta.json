@@ -1,0 +1,17 @@
+{
+  "resources": [],
+  "operations": {
+    "/groups/{group-id}/drives/{drive-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.Drive.yml"
+    },
+    "/groups/{group-id}/drives": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.Drive.yml"
+    },
+    "/groups/{group-id}/drive": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.Drive.yml"
+    }
+  }
+}

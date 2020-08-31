@@ -12,19 +12,19 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Set-MgUserLicense' {
-    It 'AssignExpanded1' -skip {
+    It 'AssignExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Assign1' -skip {
+    It 'Assign' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'AssignViaIdentityExpanded1' -skip {
+    It 'AssignViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'AssignViaIdentity1' -skip {
+    It 'AssignViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

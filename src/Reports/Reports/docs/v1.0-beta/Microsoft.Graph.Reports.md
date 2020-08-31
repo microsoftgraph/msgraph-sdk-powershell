@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: e3fe89f0-fa1c-41cf-ae9f-caee5a8fa2d9
+Module Guid: 9a19614b-830d-4660-a407-fc8f91e19e69
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,21 +11,6 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
-### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
-Get directoryAudits from auditLogs
-
-### [Get-MgAuditLogDirectoryProvisioning](Get-MgAuditLogDirectoryProvisioning.md)
-Get directoryProvisioning from auditLogs
-
-### [Get-MgAuditLogProvisioning](Get-MgAuditLogProvisioning.md)
-Get provisioning from auditLogs
-
-### [Get-MgAuditLogRestrictedSignIn](Get-MgAuditLogRestrictedSignIn.md)
-Get restrictedSignIns from auditLogs
-
-### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
-Get signIns from auditLogs
-
 ### [Get-MgReportApplicationSign](Get-MgReportApplicationSign.md)
 Get applicationSignInDetailedSummary from reports
 
@@ -56,12 +41,6 @@ Get dailyPrintUsageSummariesByPrinter from reports
 ### [Get-MgReportDailyPrintUsageSummaryByUser](Get-MgReportDailyPrintUsageSummaryByUser.md)
 Get dailyPrintUsageSummariesByUser from reports
 
-### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
-Invoke function deviceConfigurationDeviceActivity
-
-### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
-Invoke function deviceConfigurationUserActivity
-
 ### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
 
@@ -89,18 +68,6 @@ Invoke function getEmailAppUsageUserDetail
 ### [Get-MgReportEmailAppUsageVersionUserCount](Get-MgReportEmailAppUsageVersionUserCount.md)
 Invoke function getEmailAppUsageVersionsUserCounts
 
-### [Get-MgReportM365AppPlatformUserCount](Get-MgReportM365AppPlatformUserCount.md)
-Invoke function getM365AppPlatformUserCounts
-
-### [Get-MgReportM365AppUserCount](Get-MgReportM365AppUserCount.md)
-Invoke function getM365AppUserCounts
-
-### [Get-MgReportM365AppUserDetail2B20](Get-MgReportM365AppUserDetail2B20.md)
-Invoke function getM365AppUserDetail
-
-### [Get-MgReportM365AppUserDetailC8Df](Get-MgReportM365AppUserDetailC8Df.md)
-Invoke function getM365AppUserDetail
-
 ### [Get-MgReportMailboxUsageDetail](Get-MgReportMailboxUsageDetail.md)
 Invoke function getMailboxUsageDetail
 
@@ -112,24 +79,6 @@ Invoke function getMailboxUsageQuotaStatusMailboxCounts
 
 ### [Get-MgReportMailboxUsageStorage](Get-MgReportMailboxUsageStorage.md)
 Invoke function getMailboxUsageStorage
-
-### [Get-MgReportManagedDeviceEnrollmentAbandonmentDetail](Get-MgReportManagedDeviceEnrollmentAbandonmentDetail.md)
-Invoke function managedDeviceEnrollmentAbandonmentDetails
-
-### [Get-MgReportManagedDeviceEnrollmentAbandonmentSummary](Get-MgReportManagedDeviceEnrollmentAbandonmentSummary.md)
-Invoke function managedDeviceEnrollmentAbandonmentSummary
-
-### [Get-MgReportManagedDeviceEnrollmentFailureDetail027E](Get-MgReportManagedDeviceEnrollmentFailureDetail027E.md)
-Invoke function managedDeviceEnrollmentFailureDetails
-
-### [Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D](Get-MgReportManagedDeviceEnrollmentFailureDetail2B3D.md)
-Invoke function managedDeviceEnrollmentFailureDetails
-
-### [Get-MgReportManagedDeviceEnrollmentFailureTrend](Get-MgReportManagedDeviceEnrollmentFailureTrend.md)
-Invoke function managedDeviceEnrollmentFailureTrends
-
-### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
-Invoke function managedDeviceEnrollmentTopFailures
 
 ### [Get-MgReportMonthlyPrintUsageSummaryByPrinter](Get-MgReportMonthlyPrintUsageSummaryByPrinter.md)
 Get monthlyPrintUsageSummariesByPrinter from reports
@@ -205,6 +154,9 @@ Invoke function getOneDriveUsageStorage
 
 ### [Get-MgReportRelyingPartyDetailedSummary](Get-MgReportRelyingPartyDetailedSummary.md)
 Invoke function getRelyingPartyDetailedSummary
+
+### [Get-MgReportRoot](Get-MgReportRoot.md)
+Get reports
 
 ### [Get-MgReportSharePointActivityFileCount](Get-MgReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts
@@ -304,4 +256,73 @@ Invoke function getYammerGroupsActivityDetail
 
 ### [Get-MgReportYammerGroupActivityGroupCount](Get-MgReportYammerGroupActivityGroupCount.md)
 Invoke function getYammerGroupsActivityGroupCounts
+
+### [Invoke-MgDeviceReportConfigurationDeviceActivity](Invoke-MgDeviceReportConfigurationDeviceActivity.md)
+Invoke function deviceConfigurationDeviceActivity
+
+### [Invoke-MgDeviceReportConfigurationUserActivity](Invoke-MgDeviceReportConfigurationUserActivity.md)
+Invoke function deviceConfigurationUserActivity
+
+### [Invoke-MgManagedReportDeviceEnrollmentAbandonmentDetail](Invoke-MgManagedReportDeviceEnrollmentAbandonmentDetail.md)
+Invoke function managedDeviceEnrollmentAbandonmentDetails
+
+### [Invoke-MgManagedReportDeviceEnrollmentAbandonmentSummary](Invoke-MgManagedReportDeviceEnrollmentAbandonmentSummary.md)
+Invoke function managedDeviceEnrollmentAbandonmentSummary
+
+### [Invoke-MgManagedReportDeviceEnrollmentFailureDetail027E](Invoke-MgManagedReportDeviceEnrollmentFailureDetail027E.md)
+Invoke function managedDeviceEnrollmentFailureDetails
+
+### [Invoke-MgManagedReportDeviceEnrollmentFailureDetail2B3D](Invoke-MgManagedReportDeviceEnrollmentFailureDetail2B3D.md)
+Invoke function managedDeviceEnrollmentFailureDetails
+
+### [Invoke-MgManagedReportDeviceEnrollmentFailureTrend](Invoke-MgManagedReportDeviceEnrollmentFailureTrend.md)
+Invoke function managedDeviceEnrollmentFailureTrends
+
+### [Invoke-MgTopReport](Invoke-MgTopReport.md)
+Invoke function managedDeviceEnrollmentTopFailures
+
+### [New-MgReportApplicationSign](New-MgReportApplicationSign.md)
+Create new navigation property to applicationSignInDetailedSummary for reports
+
+### [New-MgReportCredentialUserRegistrationDetail](New-MgReportCredentialUserRegistrationDetail.md)
+Create new navigation property to credentialUserRegistrationDetails for reports
+
+### [New-MgReportDailyPrintUsageSummaryByPrinter](New-MgReportDailyPrintUsageSummaryByPrinter.md)
+Create new navigation property to dailyPrintUsageSummariesByPrinter for reports
+
+### [New-MgReportDailyPrintUsageSummaryByUser](New-MgReportDailyPrintUsageSummaryByUser.md)
+Create new navigation property to dailyPrintUsageSummariesByUser for reports
+
+### [New-MgReportMonthlyPrintUsageSummaryByPrinter](New-MgReportMonthlyPrintUsageSummaryByPrinter.md)
+Create new navigation property to monthlyPrintUsageSummariesByPrinter for reports
+
+### [New-MgReportMonthlyPrintUsageSummaryByUser](New-MgReportMonthlyPrintUsageSummaryByUser.md)
+Create new navigation property to monthlyPrintUsageSummariesByUser for reports
+
+### [New-MgReportUserCredentialUsageDetail](New-MgReportUserCredentialUsageDetail.md)
+Create new navigation property to userCredentialUsageDetails for reports
+
+### [Update-MgReportApplicationSign](Update-MgReportApplicationSign.md)
+Update the navigation property applicationSignInDetailedSummary in reports
+
+### [Update-MgReportCredentialUserRegistrationDetail](Update-MgReportCredentialUserRegistrationDetail.md)
+Update the navigation property credentialUserRegistrationDetails in reports
+
+### [Update-MgReportDailyPrintUsageSummaryByPrinter](Update-MgReportDailyPrintUsageSummaryByPrinter.md)
+Update the navigation property dailyPrintUsageSummariesByPrinter in reports
+
+### [Update-MgReportDailyPrintUsageSummaryByUser](Update-MgReportDailyPrintUsageSummaryByUser.md)
+Update the navigation property dailyPrintUsageSummariesByUser in reports
+
+### [Update-MgReportMonthlyPrintUsageSummaryByPrinter](Update-MgReportMonthlyPrintUsageSummaryByPrinter.md)
+Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
+
+### [Update-MgReportMonthlyPrintUsageSummaryByUser](Update-MgReportMonthlyPrintUsageSummaryByUser.md)
+Update the navigation property monthlyPrintUsageSummariesByUser in reports
+
+### [Update-MgReportRoot](Update-MgReportRoot.md)
+Update reports
+
+### [Update-MgReportUserCredentialUsageDetail](Update-MgReportUserCredentialUsageDetail.md)
+Update the navigation property userCredentialUsageDetails in reports
 

@@ -12,31 +12,30 @@ Invoke action translateExchangeIds
 
 ## SYNTAX
 
-### TranslateExpanded (Default)
+### TranslateExpanded1 (Default)
 ```
-Invoke-MgTranslateUserExchangeId -UserId <String> [-AdditionalProperties <Hashtable>] [-InputIds <String[]>]
- [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgTranslateUserExchangeId -UserId <String> [-InputIds <String[]>] [-SourceIdType <String>]
+ [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Translate
+### Translate1
 ```
 Invoke-MgTranslateUserExchangeId -UserId <String>
  -BodyParameter <IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### TranslateViaIdentity
+### TranslateViaIdentity1
 ```
 Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### TranslateViaIdentityExpanded
+### TranslateViaIdentityExpanded1
 ```
-Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-InputIds <String[]>] [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-InputIds <String[]>]
+ [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,28 +63,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 .
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Translate, TranslateViaIdentity
+Parameter Sets: Translate1, TranslateViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +84,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
+Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -116,7 +100,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: TranslateViaIdentity, TranslateViaIdentityExpanded
+Parameter Sets: TranslateViaIdentity1, TranslateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -131,7 +115,7 @@ exchangeIdFormat
 
 ```yaml
 Type: System.String
-Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
+Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -146,7 +130,7 @@ exchangeIdFormat
 
 ```yaml
 Type: System.String
-Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
+Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -157,11 +141,11 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+key: user-id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Translate, TranslateExpanded
+Parameter Sets: Translate1, TranslateExpanded1
 Aliases:
 
 Required: True
@@ -225,33 +209,33 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[InputIds <String[]>]`: 
   - `[SourceIdType <String>]`: exchangeIdFormat
   - `[TargetIdType <String>]`: exchangeIdFormat
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
-  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
-  - `[EventId <String>]`: key: id of event
-  - `[EventId1 <String>]`: key: id of event
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[MessageId <String>]`: key: id of message
-  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
-  - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
-  - `[OutlookTaskId <String>]`: key: id of outlookTask
-  - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+  - `[AppLogCollectionRequestId <String>]`: key: appLogCollectionRequest-id of appLogCollectionRequest
+  - `[AuthenticationMethodId <String>]`: key: authenticationMethod-id of authenticationMethod
+  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
+  - `[CalendarId <String>]`: key: calendar-id of calendar
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: deviceEnrollmentConfiguration-id of deviceEnrollmentConfiguration
+  - `[EventId <String>]`: key: event-id of event
+  - `[EventId1 <String>]`: key: event-id of event
+  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
+  - `[MailFolderId1 <String>]`: key: mailFolder-id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
+  - `[MessageId <String>]`: key: message-id of message
+  - `[MobileAppTroubleshootingEventId <String>]`: key: mobileAppTroubleshootingEvent-id of mobileAppTroubleshootingEvent
+  - `[NotebookId <String>]`: key: notebook-id of notebook
+  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
+  - `[OutlookTaskFolderId <String>]`: key: outlookTaskFolder-id of outlookTaskFolder
+  - `[OutlookTaskGroupId <String>]`: key: outlookTaskGroup-id of outlookTaskGroup
+  - `[OutlookTaskId <String>]`: key: outlookTask-id of outlookTask
+  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
+  - `[TeamsAppInstallationId <String>]`: key: teamsAppInstallation-id of teamsAppInstallation
+  - `[UserId <String>]`: key: user-id of user
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: windowsInformationProtectionDeviceRegistration-id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

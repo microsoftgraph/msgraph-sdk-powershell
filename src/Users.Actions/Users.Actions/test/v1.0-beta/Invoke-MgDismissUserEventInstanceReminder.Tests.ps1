@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Invoke-MgDismissUserEventInstanceReminder' {
-    It 'Dismiss' -skip {
+    It 'Dismiss1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'DismissViaIdentity' -skip {
+    It 'DismissViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

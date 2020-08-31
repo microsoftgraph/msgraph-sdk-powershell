@@ -1,0 +1,9 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/informationProtection": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.InformationProtection.yml"
+    }
+  }
+}

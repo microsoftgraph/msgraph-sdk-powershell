@@ -15,8 +15,10 @@ Create new navigation property to resources for education
 ### CreateExpanded (Default)
 ```
 New-MgEducationMeAssignmentSubmissionResource -EducationAssignmentId <String> -EducationSubmissionId <String>
- [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AssignmentResourceUrl <String>] [-Id <String>] [-ResourceCreatedBy <IMicrosoftGraphIdentitySet>]
+ [-ResourceCreatedDateTime <DateTime>] [-ResourceDisplayName <String>]
+ [-ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResourceLastModifiedDateTime <DateTime>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -34,8 +36,10 @@ New-MgEducationMeAssignmentSubmissionResource -InputObject <IEducationIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgEducationMeAssignmentSubmissionResource -InputObject <IEducationIdentity>
- [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AssignmentResourceUrl <String>] [-Id <String>] [-ResourceCreatedBy <IMicrosoftGraphIdentitySet>]
+ [-ResourceCreatedDateTime <DateTime>] [-ResourceDisplayName <String>]
+ [-ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>] [-ResourceLastModifiedDateTime <DateTime>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,21 +66,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AssignmentResourceUrl
 .
@@ -110,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: id of educationAssignment
+key: educationAssignment-id of educationAssignment
 
 ```yaml
 Type: System.String
@@ -125,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationSubmissionId
-key: id of educationSubmission
+key: educationSubmission-id of educationSubmission
 
 ```yaml
 Type: System.String
@@ -170,12 +159,73 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Resource
-educationResource
-To construct, see NOTES section for RESOURCE properties and create a hash table.
+### -ResourceCreatedBy
+identitySet
+To construct, see NOTES section for RESOURCECREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceCreatedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceDisplayName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceLastModifiedBy
+identitySet
+To construct, see NOTES section for RESOURCELASTMODIFIEDBY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceLastModifiedDateTime
+.
+
+```yaml
+Type: System.DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -240,52 +290,46 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionResource
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AssignmentResourceUrl <String>]`: 
-  - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: 
-
-INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: id of educationCategory
-  - `[EducationClassId <String>]`: key: id of educationClass
-  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
-  - `[EducationRubricId <String>]`: key: id of educationRubric
-  - `[EducationSchoolId <String>]`: key: id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: id of educationUser
-
-RESOURCE <IMicrosoftGraphEducationResource>: educationResource
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ResourceCreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[ResourceCreatedDateTime <DateTime?>]`: 
+  - `[ResourceDisplayName <String>]`: 
+  - `[ResourceLastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[ResourceLastModifiedDateTime <DateTime?>]`: 
+
+INPUTOBJECT <IEducationIdentity>: Identity Parameter
+  - `[EducationAssignmentId <String>]`: key: educationAssignment-id of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: key: educationAssignmentResource-id of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: key: educationCategory-id of educationCategory
+  - `[EducationClassId <String>]`: key: educationClass-id of educationClass
+  - `[EducationOutcomeId <String>]`: key: educationOutcome-id of educationOutcome
+  - `[EducationRubricId <String>]`: key: educationRubric-id of educationRubric
+  - `[EducationSchoolId <String>]`: key: educationSchool-id of educationSchool
+  - `[EducationSubmissionId <String>]`: key: educationSubmission-id of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: key: educationSubmissionResource-id of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: key: educationSynchronizationError-id of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: key: educationSynchronizationProfile-id of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: key: educationUser-id of educationUser
+
+RESOURCECREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
+  - `[Application <IMicrosoftGraphIdentity>]`: identity
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
+  - `[Device <IMicrosoftGraphIdentity>]`: identity
+  - `[User <IMicrosoftGraphIdentity>]`: identity
+
+RESOURCELASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
+  - `[Application <IMicrosoftGraphIdentity>]`: identity
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
+  - `[Device <IMicrosoftGraphIdentity>]`: identity
+  - `[User <IMicrosoftGraphIdentity>]`: identity
 
 ## RELATED LINKS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 54b6b900-b79a-4637-b92b-f6b1a12444ae
+Module Guid: 85ad1e70-3cd4-406c-be3f-656c3af49d4f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -28,15 +28,6 @@ Create new navigation property to secureScores for Security
 
 ### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for Security
-
-### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
-Delete navigation property alerts for Security
-
-### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
-Delete navigation property secureScores for Security
-
-### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
-Delete navigation property secureScoreControlProfiles for Security
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
 Update the navigation property alerts in Security

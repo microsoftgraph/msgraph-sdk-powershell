@@ -1,0 +1,33 @@
+{
+  "resources": [],
+  "operations": {
+    "/auditLogs/signIns/{signIn-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/directoryAudits": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/restrictedSignIns/{restrictedSignIn-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/restrictedSignIns": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/directoryAudits/{directoryAudit-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    },
+    "/auditLogs/signIns": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.AuditLogs.yml"
+    }
+  }
+}

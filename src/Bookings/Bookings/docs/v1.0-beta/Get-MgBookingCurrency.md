@@ -14,9 +14,8 @@ Get entity from bookingCurrencies by key
 
 ### List (Default)
 ```
-Get-MgBookingCurrency [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgBookingCurrency [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-PageSize <Int32>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
 ### Get
@@ -57,7 +56,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -All
-List all pages.
+List all pages
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -72,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingCurrencyId
-key: id of bookingCurrency
+key: bookingCurrency-id of bookingCurrency
 
 ```yaml
 Type: System.String
@@ -148,12 +147,12 @@ Accept wildcard characters: False
 ```
 
 ### -PageSize
-Sets the page size of results.
+Show only the first n items
 
 ```yaml
 Type: System.Int32
 Parameter Sets: List
-Aliases:
+Aliases: Top, Limit
 
 Required: False
 Position: Named
@@ -222,21 +221,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases: Limit
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
@@ -258,12 +242,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
 
 ## RELATED LINKS
 

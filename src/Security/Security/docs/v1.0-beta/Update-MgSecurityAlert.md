@@ -14,22 +14,22 @@ Update the navigation property alerts in Security
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-AdditionalProperties <Hashtable>]
- [-AssignedTo <String>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>]
- [-ClosedDateTime <DateTime>] [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>]
- [-Comments <String[]>] [-Confidence <Int32>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DetectionIds <String[]>] [-EventDateTime <DateTime>] [-Feedback <String>]
- [-FileStates <IMicrosoftGraphFileSecurityState[]>] [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>]
- [-HostStates <IMicrosoftGraphHostSecurityState[]>] [-Id <String>] [-IncidentIds <String[]>]
- [-LastModifiedDateTime <DateTime>] [-MalwareStates <IMicrosoftGraphMalwareState[]>]
- [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>] [-Processes <IMicrosoftGraphProcess[]>]
- [-RecommendedActions <String[]>] [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
+Update-MgSecurityAlert -AlertId <String> [-ActivityGroupName <String>] [-AssignedTo <String>]
+ [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
+ [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>] [-Comments <String[]>] [-Confidence <Int32>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionIds <String[]>] [-EventDateTime <DateTime>]
+ [-Feedback <String>] [-FileStates <IMicrosoftGraphFileSecurityState[]>]
+ [-HistoryStates <IMicrosoftGraphAlertHistoryState[]>] [-HostStates <IMicrosoftGraphHostSecurityState[]>]
+ [-Id <String>] [-IncidentIds <String[]>] [-LastModifiedDateTime <DateTime>]
+ [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-NetworkConnections <IMicrosoftGraphNetworkConnection[]>]
+ [-Processes <IMicrosoftGraphProcess[]>] [-RecommendedActions <String[]>]
+ [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
  [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
  [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
- [-UserStates <IMicrosoftGraphUserSecurityState[]>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserStates <IMicrosoftGraphUserSecurityState[]>] [-VendorInformationProvider <String>]
+ [-VendorInformationProviderVersion <String>] [-VendorInformationSubProvider <String>]
+ [-VendorInformationVendor <String>] [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -46,9 +46,8 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> -BodyParameter <IMicroso
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <String>]
- [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-AzureSubscriptionId <String>]
- [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
+Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <String>] [-AssignedTo <String>]
+ [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-Category <String>] [-ClosedDateTime <DateTime>]
  [-CloudAppStates <IMicrosoftGraphCloudAppSecurityState[]>] [-Comments <String[]>] [-Confidence <Int32>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionIds <String[]>] [-EventDateTime <DateTime>]
  [-Feedback <String>] [-FileStates <IMicrosoftGraphFileSecurityState[]>]
@@ -59,10 +58,10 @@ Update-MgSecurityAlert -InputObject <ISecurityIdentity> [-ActivityGroupName <Str
  [-RegistryKeyStates <IMicrosoftGraphRegistryKeyState[]>]
  [-SecurityResources <IMicrosoftGraphSecurityResource[]>] [-Severity <String>] [-SourceMaterials <String[]>]
  [-Status <String>] [-Tags <String[]>] [-Title <String>] [-Triggers <IMicrosoftGraphAlertTrigger[]>]
- [-UserStates <IMicrosoftGraphUserSecurityState[]>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
- [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-UserStates <IMicrosoftGraphUserSecurityState[]>] [-VendorInformationProvider <String>]
+ [-VendorInformationProviderVersion <String>] [-VendorInformationSubProvider <String>]
+ [-VendorInformationVendor <String>] [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,23 +104,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AlertId
-key: id of alert
+key: alert-id of alert
 
 ```yaml
 Type: System.String
@@ -688,12 +672,58 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformation
-securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+### -VendorInformationProvider
+Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationProviderVersion
+Version of the provider or subprovider, if it exists, that generated the alert.
+Required
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationSubProvider
+Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationVendor
+Name of the alert vendor (for example, Microsoft, Dell, FireEye).
+Required
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -774,7 +804,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphAlert>: alert
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActivityGroupName <String>]`: Name or alias of the activity group (attacker) this alert is attributed to.
   - `[AssignedTo <String>]`: Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).
@@ -794,10 +823,8 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
   - `[EventDateTime <DateTime?>]`: Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Required.
   - `[Feedback <String>]`: alertFeedback
   - `[FileStates <IMicrosoftGraphFileSecurityState[]>]`: Security-related stateful information generated by the provider about the file(s) related to this alert.
-    - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[HashType <String>]`: fileHashType
-      - `[HashValue <String>]`: Value of the file hash.
+    - `[FileHashType <String>]`: fileHashType
+    - `[FileHashValue <String>]`: Value of the file hash.
     - `[Name <String>]`: File name (without path).
     - `[Path <String>]`: Full file path of the file/imageFile.
     - `[RiskScore <String>]`: Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
@@ -852,7 +879,8 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[AccountName <String>]`: User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
     - `[CommandLine <String>]`: The full process invocation commandline including all parameters.
     - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-    - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
+    - `[FileHashType <String>]`: fileHashType
+    - `[FileHashValue <String>]`: Value of the file hash.
     - `[IntegrityLevel <String>]`: processIntegrityLevel
     - `[IsElevated <Boolean?>]`: True if the process is elevated.
     - `[Name <String>]`: The name of the process' Image file.
@@ -900,12 +928,10 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[RiskScore <String>]`: Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
     - `[UserAccountType <String>]`: userAccountSecurityType
     - `[UserPrincipalName <String>]`: User sign-in name - internet format: (user account name)@(user account DNS domain name).
-  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
   - `[VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>]`: Threat intelligence pertaining to one or more vulnerabilities related to this alert.
     - `[Cve <String>]`: Common Vulnerabilities and Exposures (CVE) for the vulnerability.
     - `[Severity <String>]`: Base Common Vulnerability Scoring System (CVSS) severity score for this vulnerability.
@@ -917,10 +943,8 @@ CLOUDAPPSTATES <IMicrosoftGraphCloudAppSecurityState[]>: Security-related statef
   - `[RiskScore <String>]`: Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
 
 FILESTATES <IMicrosoftGraphFileSecurityState[]>: Security-related stateful information generated by the provider about the file(s) related to this alert.
-  - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[HashType <String>]`: fileHashType
-    - `[HashValue <String>]`: Value of the file hash.
+  - `[FileHashType <String>]`: fileHashType
+  - `[FileHashValue <String>]`: Value of the file hash.
   - `[Name <String>]`: File name (without path).
   - `[Path <String>]`: Full file path of the file/imageFile.
   - `[RiskScore <String>]`: Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
@@ -946,18 +970,18 @@ HOSTSTATES <IMicrosoftGraphHostSecurityState[]>: Security-related stateful infor
   - `[RiskScore <String>]`: Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
+  - `[AlertId <String>]`: key: alert-id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
+  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
+  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
 
 MALWARESTATES <IMicrosoftGraphMalwareState[]>: Threat Intelligence pertaining to malware related to this alert.
   - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
@@ -992,10 +1016,8 @@ PROCESSES <IMicrosoftGraphProcess[]>: Security-related stateful information gene
   - `[AccountName <String>]`: User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
   - `[CommandLine <String>]`: The full process invocation commandline including all parameters.
   - `[CreatedDateTime <DateTime?>]`: Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
-  - `[FileHash <IMicrosoftGraphFileHash>]`: fileHash
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[HashType <String>]`: fileHashType
-    - `[HashValue <String>]`: Value of the file hash.
+  - `[FileHashType <String>]`: fileHashType
+  - `[FileHashValue <String>]`: Value of the file hash.
   - `[IntegrityLevel <String>]`: processIntegrityLevel
   - `[IsElevated <Boolean?>]`: True if the process is elevated.
   - `[Name <String>]`: The name of the process' Image file.
@@ -1041,13 +1063,6 @@ USERSTATES <IMicrosoftGraphUserSecurityState[]>: Security-related stateful infor
   - `[RiskScore <String>]`: Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
   - `[UserAccountType <String>]`: userAccountSecurityType
   - `[UserPrincipalName <String>]`: User sign-in name - internet format: (user account name)@(user account DNS domain name).
-
-VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 VULNERABILITYSTATES <IMicrosoftGraphVulnerabilityState[]>: Threat intelligence pertaining to one or more vulnerabilities related to this alert.
   - `[Cve <String>]`: Common Vulnerabilities and Exposures (CVE) for the vulnerability.

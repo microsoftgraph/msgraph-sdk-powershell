@@ -14,7 +14,7 @@ Invoke function exportDeviceAndAppManagementData
 
 ### Export (Default)
 ```
-Export-MgUserDeviceAndAppManagementData623C -Skip <Int32> -Top <Int32> -UserId <String> -OutFile <String>
+Export-MgUserDeviceAndAppManagementData623C -PageSize <Int32> -Skip <Int32> -UserId <String> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
@@ -80,6 +80,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PageSize
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: Export
+Aliases: Top, Limit
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 Returns true when the command succeeds
 
@@ -110,23 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Top
-.
-
-```yaml
-Type: System.Int32
-Parameter Sets: Export
-Aliases: Limit
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
-key: id of user
+key: user-id of user
 
 ```yaml
 Type: System.String
@@ -161,21 +161,26 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[ContactFolderId <String>]`: key: id of contactFolder
+  - `[CalendarGroupId <String>]`: key: calendarGroup-id of calendarGroup
+  - `[CalendarId <String>]`: key: calendar-id of calendar
+  - `[ContactFolderId <String>]`: key: contactFolder-id of contactFolder
   - `[EndDateTime <String>]`: 
-  - `[EventId <String>]`: key: id of event
+  - `[EventId <String>]`: key: event-id of event
   - `[IncludePersonalNotebooks <Boolean?>]`: 
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[MailFolderId <String>]`: key: mailFolder-id of mailFolder
+  - `[ManagedDeviceId <String>]`: key: managedDevice-id of managedDevice
+  - `[NotebookId <String>]`: key: notebook-id of notebook
+  - `[OnenotePageId <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenotePageId1 <String>]`: key: onenotePage-id of onenotePage
+  - `[OnenoteSectionId <String>]`: key: onenoteSection-id of onenoteSection
   - `[RoomList <String>]`: 
+  - `[SectionGroupId <String>]`: key: sectionGroup-id of sectionGroup
   - `[Skip <Int32?>]`: 
   - `[StartDateTime <String>]`: 
   - `[TimeZoneStandard <String>]`: 
   - `[Top <Int32?>]`: 
   - `[User <String>]`: 
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: key: user-id of user
 
 ## RELATED LINKS
 

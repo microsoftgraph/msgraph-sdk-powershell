@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: f54feaaa-5bc6-4ff3-82af-4e5309253203
+Module Guid: 6aaa4f7b-a314-4589-935f-2fd79feada20
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,10 +26,31 @@ Invoke function findRooms
 ### [Find-MgUserRoomList](Find-MgUserRoomList.md)
 Invoke function findRoomLists
 
-### [Get-MgUsefectiveDeviceEnrollmentConfigurationByRef](Get-MgUsefectiveDeviceEnrollmentConfigurationByRef.md)
-Invoke function getEffectiveDeviceEnrollmentConfigurations
-
 ### [Get-MgUserCalendarEventDelta](Get-MgUserCalendarEventDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarEventInstanceDelta](Get-MgUserCalendarEventInstanceDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarGroupCalendarEventDelta](Get-MgUserCalendarGroupCalendarEventDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarGroupCalendarEventInstanceDelta](Get-MgUserCalendarGroupCalendarEventInstanceDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarGroupCalendarViewDelta](Get-MgUserCalendarGroupCalendarViewDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarGroupCalendarViewInstanceDelta](Get-MgUserCalendarGroupCalendarViewInstanceDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarViewCalendarEventDelta](Get-MgUserCalendarViewCalendarEventDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarViewDelta](Get-MgUserCalendarViewDelta.md)
+Invoke function delta
+
+### [Get-MgUserCalendarViewInstanceDelta](Get-MgUserCalendarViewInstanceDelta.md)
 Invoke function delta
 
 ### [Get-MgUserContactDelta](Get-MgUserContactDelta.md)
@@ -45,6 +66,15 @@ Invoke function delta
 Invoke function delta
 
 ### [Get-MgUserDelta](Get-MgUserDelta.md)
+Invoke function delta
+
+### [Get-MgUserEffectiveDeviceEnrollmentConfiguration](Get-MgUserEffectiveDeviceEnrollmentConfiguration.md)
+Invoke function getEffectiveDeviceEnrollmentConfigurations
+
+### [Get-MgUserEventCalendarEventDelta](Get-MgUserEventCalendarEventDelta.md)
+Invoke function delta
+
+### [Get-MgUserEventCalendarViewDelta](Get-MgUserEventCalendarViewDelta.md)
 Invoke function delta
 
 ### [Get-MgUserEventDelta](Get-MgUserEventDelta.md)
@@ -83,28 +113,64 @@ Invoke function getManagedDevicesWithAppFailures
 ### [Get-MgUserManagedDeviceFileVaultKey](Get-MgUserManagedDeviceFileVaultKey.md)
 Invoke function getFileVaultKey
 
-### [Get-MgUserManagedDeviceNonCompliantSetting](Get-MgUserManagedDeviceNonCompliantSetting.md)
-Invoke function getNonCompliantSettings
-
 ### [Get-MgUserMessageDelta](Get-MgUserMessageDelta.md)
 Invoke function delta
 
-### [Get-MgUserOnenoteRecentNotebook](Get-MgUserOnenoteRecentNotebook.md)
+### [Get-MgUserOnenoteNotebookRecentNotebook](Get-MgUserOnenoteNotebookRecentNotebook.md)
 Invoke function getRecentNotebooks
 
 ### [Get-MgUserPlannerAllDelta](Get-MgUserPlannerAllDelta.md)
 Invoke function delta
 
-### [Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles.md)
+### [Invoke-MgCalendarUserCalendar](Invoke-MgCalendarUserCalendar.md)
 Invoke function allowedCalendarSharingRoles
 
-### [Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserEventCalendarAllowedCalendarSharingRoles.md)
+### [Invoke-MgCalendarUserCalendarEventCalendar](Invoke-MgCalendarUserCalendarEventCalendar.md)
+Invoke function allowedCalendarSharingRoles
+
+### [Invoke-MgCalendarUserCalendarGroupCalendar](Invoke-MgCalendarUserCalendarGroupCalendar.md)
+Invoke function allowedCalendarSharingRoles
+
+### [Invoke-MgCalendarUserCalendarGroupCalendarEventCalendar](Invoke-MgCalendarUserCalendarGroupCalendarEventCalendar.md)
+Invoke function allowedCalendarSharingRoles
+
+### [Invoke-MgCalendarUserCalendarGroupCalendarViewCalendar](Invoke-MgCalendarUserCalendarGroupCalendarViewCalendar.md)
+Invoke function allowedCalendarSharingRoles
+
+### [Invoke-MgCalendarUserCalendarViewCalendar](Invoke-MgCalendarUserCalendarViewCalendar.md)
+Invoke function allowedCalendarSharingRoles
+
+### [Invoke-MgCalendarUserEventCalendar](Invoke-MgCalendarUserEventCalendar.md)
 Invoke function allowedCalendarSharingRoles
 
 ### [Invoke-MgPendingUserApp](Invoke-MgPendingUserApp.md)
 Invoke function getManagedDevicesWithFailedOrPendingApps
 
+### [Invoke-MgPreviewUserOnenoteNotebookSectionGroupSectionPage](Invoke-MgPreviewUserOnenoteNotebookSectionGroupSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenoteNotebookSectionPage](Invoke-MgPreviewUserOnenoteNotebookSectionPage.md)
+Invoke function preview
+
 ### [Invoke-MgPreviewUserOnenotePage](Invoke-MgPreviewUserOnenotePage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenotePageParentNotebookSectionGroupSectionPage](Invoke-MgPreviewUserOnenotePageParentNotebookSectionGroupSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenotePageParentNotebookSectionPage](Invoke-MgPreviewUserOnenotePageParentNotebookSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenotePageParentSectionPage](Invoke-MgPreviewUserOnenotePageParentSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenoteSectionGroupParentNotebookSectionPage](Invoke-MgPreviewUserOnenoteSectionGroupParentNotebookSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenoteSectionGroupSectionPage](Invoke-MgPreviewUserOnenoteSectionGroupSectionPage.md)
+Invoke function preview
+
+### [Invoke-MgPreviewUserOnenoteSectionPage](Invoke-MgPreviewUserOnenoteSectionPage.md)
 Invoke function preview
 
 ### [Invoke-MgRecentUserActivity](Invoke-MgRecentUserActivity.md)

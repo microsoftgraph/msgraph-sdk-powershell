@@ -15,11 +15,11 @@ Update the navigation property tiIndicators in Security
 ### UpdateExpanded (Default)
 ```
 Update-MgSecurityTiIndicator -TiIndicatorId <String> [-Action <String>] [-ActivityGroupNames <String[]>]
- [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
- [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>] [-DomainName <String>]
- [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>] [-EmailSenderAddress <String>]
- [-EmailSenderName <String>] [-EmailSourceDomain <String>] [-EmailSourceIPAddress <String>]
- [-EmailSubject <String>] [-EmailXMailer <String>] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
+ [-AdditionalInformation <String>] [-AzureTenantId <String>] [-Confidence <Int32>] [-Description <String>]
+ [-DiamondModel <String>] [-DomainName <String>] [-EmailEncoding <String>] [-EmailLanguage <String>]
+ [-EmailRecipient <String>] [-EmailSenderAddress <String>] [-EmailSenderName <String>]
+ [-EmailSourceDomain <String>] [-EmailSourceIPAddress <String>] [-EmailSubject <String>]
+ [-EmailXMailer <String>] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
  [-FileCompileDateTime <DateTime>] [-FileCreatedDateTime <DateTime>] [-FileHashType <String>]
  [-FileHashValue <String>] [-FileMutexName <String>] [-FileName <String>] [-FilePacker <String>]
  [-FilePath <String>] [-FileSize <Int64>] [-FileType <String>] [-Id <String>] [-IngestedDateTime <DateTime>]
@@ -48,16 +48,15 @@ Update-MgSecurityTiIndicator -InputObject <ISecurityIdentity> -BodyParameter <IM
 ### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityTiIndicator -InputObject <ISecurityIdentity> [-Action <String>]
- [-ActivityGroupNames <String[]>] [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>]
- [-AzureTenantId <String>] [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>]
- [-DomainName <String>] [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>]
- [-EmailSenderAddress <String>] [-EmailSenderName <String>] [-EmailSourceDomain <String>]
- [-EmailSourceIPAddress <String>] [-EmailSubject <String>] [-EmailXMailer <String>]
- [-ExpirationDateTime <DateTime>] [-ExternalId <String>] [-FileCompileDateTime <DateTime>]
- [-FileCreatedDateTime <DateTime>] [-FileHashType <String>] [-FileHashValue <String>]
- [-FileMutexName <String>] [-FileName <String>] [-FilePacker <String>] [-FilePath <String>]
- [-FileSize <Int64>] [-FileType <String>] [-Id <String>] [-IngestedDateTime <DateTime>] [-IsActive]
- [-KillChain <String[]>] [-KnownFalsePositives <String>] [-LastReportedDateTime <DateTime>]
+ [-ActivityGroupNames <String[]>] [-AdditionalInformation <String>] [-AzureTenantId <String>]
+ [-Confidence <Int32>] [-Description <String>] [-DiamondModel <String>] [-DomainName <String>]
+ [-EmailEncoding <String>] [-EmailLanguage <String>] [-EmailRecipient <String>] [-EmailSenderAddress <String>]
+ [-EmailSenderName <String>] [-EmailSourceDomain <String>] [-EmailSourceIPAddress <String>]
+ [-EmailSubject <String>] [-EmailXMailer <String>] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
+ [-FileCompileDateTime <DateTime>] [-FileCreatedDateTime <DateTime>] [-FileHashType <String>]
+ [-FileHashValue <String>] [-FileMutexName <String>] [-FileName <String>] [-FilePacker <String>]
+ [-FilePath <String>] [-FileSize <Int64>] [-FileType <String>] [-Id <String>] [-IngestedDateTime <DateTime>]
+ [-IsActive] [-KillChain <String[]>] [-KnownFalsePositives <String>] [-LastReportedDateTime <DateTime>]
  [-MalwareFamilyNames <String[]>] [-NetworkCidrBlock <String>] [-NetworkDestinationAsn <Int32>]
  [-NetworkDestinationCidrBlock <String>] [-NetworkDestinationIPv4 <String>] [-NetworkDestinationIPv6 <String>]
  [-NetworkDestinationPort <Int32>] [-NetworkIPv4 <String>] [-NetworkIPv6 <String>] [-NetworkPort <Int32>]
@@ -127,21 +126,6 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -995,7 +979,7 @@ Accept wildcard characters: False
 ```
 
 ### -TiIndicatorId
-key: id of tiIndicator
+key: tiIndicator-id of tiIndicator
 
 ```yaml
 Type: System.String
@@ -1108,7 +1092,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphTiIndicator>: tiIndicator
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Action <String>]`: tiAction
   - `[ActivityGroupNames <String[]>]`: 
@@ -1170,18 +1153,18 @@ BODYPARAMETER <IMicrosoftGraphTiIndicator>: tiIndicator
   - `[UserAgent <String>]`: 
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
+  - `[AlertId <String>]`: key: alert-id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
+  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
+  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
 
 ## RELATED LINKS
 

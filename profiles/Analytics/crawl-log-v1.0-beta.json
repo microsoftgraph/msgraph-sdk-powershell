@@ -1,0 +1,17 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Analytics.yml"
+    },
+    "/users/{user-id}/analytics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Analytics.yml"
+    },
+    "/users/{user-id}/analytics/activityStatistics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Analytics.yml"
+    }
+  }
+}

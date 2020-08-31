@@ -14,8 +14,8 @@ Invoke action updateTiIndicators
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgSecurityTiIndicatorMultiple [-AdditionalProperties <Hashtable>]
- [-Value <IMicrosoftGraphTiIndicator[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityTiIndicatorMultiple [-Value <IMicrosoftGraphTiIndicator[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
@@ -49,21 +49,6 @@ PS C:\> {{ Add code here }}
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -BodyParameter
 .
@@ -149,7 +134,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IPathsS86SndSecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <IMicrosoftGraphTiIndicator[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Action <String>]`: tiAction

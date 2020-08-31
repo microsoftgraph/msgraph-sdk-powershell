@@ -50,7 +50,7 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -BookingCurrencyId
-key: id of bookingCurrency
+key: bookingCurrency-id of bookingCurrency
 
 ```yaml
 Type: System.String
@@ -162,12 +162,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BookingAppointmentId <String>]`: key: bookingAppointment-id of bookingAppointment
+  - `[BookingBusinessId <String>]`: key: bookingBusiness-id of bookingBusiness
+  - `[BookingCurrencyId <String>]`: key: bookingCurrency-id of bookingCurrency
+  - `[BookingCustomerId <String>]`: key: bookingCustomer-id of bookingCustomer
+  - `[BookingServiceId <String>]`: key: bookingService-id of bookingService
+  - `[BookingStaffMemberId <String>]`: key: bookingStaffMember-id of bookingStaffMember
 
 ## RELATED LINKS
 

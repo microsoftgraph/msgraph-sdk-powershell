@@ -14,12 +14,15 @@ Add new entity to bookingBusinesses
 
 ### CreateExpanded (Default)
 ```
-New-MgBookingBusiness [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress>]
+New-MgBookingBusiness [-AddressCity <String>] [-AddressCountryOrRegion <String>] [-AddressPostalCode <String>]
+ [-AddressPostOfficeBox <String>] [-AddressState <String>] [-AddressStreet <String>] [-AddressType <String>]
  [-Appointments <IMicrosoftGraphBookingAppointment[]>] [-BusinessHours <IMicrosoftGraphBookingWorkHours[]>]
  [-BusinessType <String>] [-CalendarView <IMicrosoftGraphBookingAppointment[]>]
  [-Customers <IMicrosoftGraphBookingCustomer[]>] [-DefaultCurrencyIso <String>] [-DisplayName <String>]
  [-Email <String>] [-Id <String>] [-IsPublished] [-Phone <String>] [-PublicUrl <String>]
- [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-Services <IMicrosoftGraphBookingService[]>]
+ [-SchedulingPolicyAllowStaffSelection] [-SchedulingPolicyMaximumAdvance <TimeSpan>]
+ [-SchedulingPolicyMinimumLeadTime <TimeSpan>] [-SchedulingPolicySendConfirmationsToOwner]
+ [-SchedulingPolicyTimeSlotInterval <TimeSpan>] [-Services <IMicrosoftGraphBookingService[]>]
  [-StaffMembers <IMicrosoftGraphBookingStaffMember[]>] [-WebSiteUrl <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -55,11 +58,11 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -AddressCity
+The city.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -70,12 +73,87 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Address
-physicalAddress
-To construct, see NOTES section for ADDRESS properties and create a hash table.
+### -AddressCountryOrRegion
+The country or region.
+It's a free-format string value, for example, 'United States'.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressPostalCode
+The postal code.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressPostOfficeBox
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressState
+The state.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressStreet
+The street.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AddressType
+physicalAddressType
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -286,12 +364,71 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SchedulingPolicy
-This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-To construct, see NOTES section for SCHEDULINGPOLICY properties and create a hash table.
+### -SchedulingPolicyAllowStaffSelection
+Allow customers to choose a specific person for the booking.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingSchedulingPolicy
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyMaximumAdvance
+Maximum number of days in advance that a booking can be made.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyMinimumLeadTime
+Minimum lead time for bookings and cancellations.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicySendConfirmationsToOwner
+Notify the business via email when a booking is created or changed.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SchedulingPolicyTimeSlotInterval
+Duration of each time slot.
+
+```yaml
+Type: System.TimeSpan
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -400,54 +537,37 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[City <String>]`: The city.
-  - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[PostOfficeBox <String>]`: 
-  - `[PostalCode <String>]`: The postal code.
-  - `[State <String>]`: The state.
-  - `[Street <String>]`: The street.
-  - `[Type <String>]`: physicalAddressType
-
 APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>: All appointments in this business.
   - `[Id <String>]`: Read-only.
   - `[CustomerEmailAddress <String>]`: 
   - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
-  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[City <String>]`: The city.
-      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
-      - `[PostalCode <String>]`: The postal code.
-      - `[State <String>]`: The state.
-      - `[Street <String>]`: The street.
-      - `[Type <String>]`: physicalAddressType
-    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-      - `[Altitude <Double?>]`: The altitude of the location.
-      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-      - `[Latitude <Double?>]`: The latitude of the location.
-      - `[Longitude <Double?>]`: The longitude of the location.
-    - `[DisplayName <String>]`: The name associated with the location.
-    - `[LocationEmailAddress <String>]`: Optional email address of the location.
-    - `[LocationType <String>]`: locationType
-    - `[LocationUri <String>]`: Optional URI representing the location.
-    - `[UniqueId <String>]`: For internal use only.
-    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerLocationAddressCity <String>]`: The city.
+  - `[CustomerLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[CustomerLocationAddressPostOfficeBox <String>]`: 
+  - `[CustomerLocationAddressPostalCode <String>]`: The postal code.
+  - `[CustomerLocationAddressState <String>]`: The state.
+  - `[CustomerLocationAddressStreet <String>]`: The street.
+  - `[CustomerLocationAddressType <String>]`: physicalAddressType
+  - `[CustomerLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[CustomerLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+  - `[CustomerLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[CustomerLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+  - `[CustomerLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+  - `[CustomerLocationDisplayName <String>]`: The name associated with the location.
+  - `[CustomerLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[CustomerLocationType <String>]`: locationType
+  - `[CustomerLocationUniqueId <String>]`: For internal use only.
+  - `[CustomerLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerLocationUri <String>]`: Optional URI representing the location.
   - `[CustomerName <String>]`: 
   - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
   - `[CustomerPhone <String>]`: 
   - `[Duration <TimeSpan?>]`: 
-  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[InvoiceAmount <Double?>]`: 
-  - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[InvoiceDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[InvoiceDateTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[InvoiceId <String>]`: 
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: 
@@ -462,55 +582,71 @@ APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>: All appointments in this bus
     - `[Recipients <String>]`: bookingReminderRecipients
   - `[SelfServiceAppointmentId <String>]`: 
   - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
-  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+  - `[ServiceLocationAddressCity <String>]`: The city.
+  - `[ServiceLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[ServiceLocationAddressPostOfficeBox <String>]`: 
+  - `[ServiceLocationAddressPostalCode <String>]`: The postal code.
+  - `[ServiceLocationAddressState <String>]`: The state.
+  - `[ServiceLocationAddressStreet <String>]`: The street.
+  - `[ServiceLocationAddressType <String>]`: physicalAddressType
+  - `[ServiceLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[ServiceLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+  - `[ServiceLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[ServiceLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+  - `[ServiceLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+  - `[ServiceLocationDisplayName <String>]`: The name associated with the location.
+  - `[ServiceLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[ServiceLocationType <String>]`: locationType
+  - `[ServiceLocationUniqueId <String>]`: For internal use only.
+  - `[ServiceLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[ServiceLocationUri <String>]`: Optional URI representing the location.
   - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
   - `[ServiceNotes <String>]`: 
   - `[StaffMemberIds <String[]>]`: 
-  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings Business.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: Display name of this entity.
   - `[Id <String>]`: Read-only.
-  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[City <String>]`: The city.
-    - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
-    - `[PostalCode <String>]`: The postal code.
-    - `[State <String>]`: The state.
-    - `[Street <String>]`: The street.
-    - `[Type <String>]`: physicalAddressType
+  - `[AddressCity <String>]`: The city.
+  - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[AddressPostOfficeBox <String>]`: 
+  - `[AddressPostalCode <String>]`: The postal code.
+  - `[AddressState <String>]`: The state.
+  - `[AddressStreet <String>]`: The street.
+  - `[AddressType <String>]`: physicalAddressType
   - `[Appointments <IMicrosoftGraphBookingAppointment[]>]`: All appointments in this business.
     - `[Id <String>]`: Read-only.
     - `[CustomerEmailAddress <String>]`: 
     - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
-    - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-      - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-        - `[Altitude <Double?>]`: The altitude of the location.
-        - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-        - `[Latitude <Double?>]`: The latitude of the location.
-        - `[Longitude <Double?>]`: The longitude of the location.
-      - `[DisplayName <String>]`: The name associated with the location.
-      - `[LocationEmailAddress <String>]`: Optional email address of the location.
-      - `[LocationType <String>]`: locationType
-      - `[LocationUri <String>]`: Optional URI representing the location.
-      - `[UniqueId <String>]`: For internal use only.
-      - `[UniqueIdType <String>]`: locationUniqueIdType
+    - `[CustomerLocationAddressCity <String>]`: The city.
+    - `[CustomerLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[CustomerLocationAddressPostOfficeBox <String>]`: 
+    - `[CustomerLocationAddressPostalCode <String>]`: The postal code.
+    - `[CustomerLocationAddressState <String>]`: The state.
+    - `[CustomerLocationAddressStreet <String>]`: The street.
+    - `[CustomerLocationAddressType <String>]`: physicalAddressType
+    - `[CustomerLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+    - `[CustomerLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+    - `[CustomerLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+    - `[CustomerLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+    - `[CustomerLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+    - `[CustomerLocationDisplayName <String>]`: The name associated with the location.
+    - `[CustomerLocationEmailAddress <String>]`: Optional email address of the location.
+    - `[CustomerLocationType <String>]`: locationType
+    - `[CustomerLocationUniqueId <String>]`: For internal use only.
+    - `[CustomerLocationUniqueIdType <String>]`: locationUniqueIdType
+    - `[CustomerLocationUri <String>]`: Optional URI representing the location.
     - `[CustomerName <String>]`: 
     - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
     - `[CustomerPhone <String>]`: 
     - `[Duration <TimeSpan?>]`: 
-    - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[InvoiceAmount <Double?>]`: 
-    - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[InvoiceDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[InvoiceDateTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
     - `[InvoiceId <String>]`: 
     - `[InvoiceStatus <String>]`: bookingInvoiceStatus
     - `[InvoiceUrl <String>]`: 
@@ -525,11 +661,29 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
       - `[Recipients <String>]`: bookingReminderRecipients
     - `[SelfServiceAppointmentId <String>]`: 
     - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
-    - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+    - `[ServiceLocationAddressCity <String>]`: The city.
+    - `[ServiceLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[ServiceLocationAddressPostOfficeBox <String>]`: 
+    - `[ServiceLocationAddressPostalCode <String>]`: The postal code.
+    - `[ServiceLocationAddressState <String>]`: The state.
+    - `[ServiceLocationAddressStreet <String>]`: The street.
+    - `[ServiceLocationAddressType <String>]`: physicalAddressType
+    - `[ServiceLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+    - `[ServiceLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+    - `[ServiceLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+    - `[ServiceLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+    - `[ServiceLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+    - `[ServiceLocationDisplayName <String>]`: The name associated with the location.
+    - `[ServiceLocationEmailAddress <String>]`: Optional email address of the location.
+    - `[ServiceLocationType <String>]`: locationType
+    - `[ServiceLocationUniqueId <String>]`: For internal use only.
+    - `[ServiceLocationUniqueIdType <String>]`: locationUniqueIdType
+    - `[ServiceLocationUri <String>]`: Optional URI representing the location.
     - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
     - `[ServiceNotes <String>]`: 
     - `[StaffMemberIds <String[]>]`: 
-    - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+    - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[BusinessHours <IMicrosoftGraphBookingWorkHours[]>]`: 
     - `[Day <String>]`: dayOfWeek
     - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
@@ -546,18 +700,33 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
   - `[IsPublished <Boolean?>]`: 
   - `[Phone <String>]`: 
   - `[PublicUrl <String>]`: 
-  - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
-    - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
-    - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
-    - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
-    - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[SchedulingPolicyAllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+  - `[SchedulingPolicyMaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+  - `[SchedulingPolicyMinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+  - `[SchedulingPolicySendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+  - `[SchedulingPolicyTimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
   - `[Services <IMicrosoftGraphBookingService[]>]`: All services offered by this business.
     - `[DisplayName <String>]`: Display name of this entity.
     - `[Id <String>]`: Read-only.
+    - `[AddressCity <String>]`: The city.
+    - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+    - `[AddressPostOfficeBox <String>]`: 
+    - `[AddressPostalCode <String>]`: The postal code.
+    - `[AddressState <String>]`: The state.
+    - `[AddressStreet <String>]`: The street.
+    - `[AddressType <String>]`: physicalAddressType
+    - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+    - `[CoordinateAltitude <Double?>]`: The altitude of the location.
+    - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+    - `[CoordinateLatitude <Double?>]`: The latitude of the location.
+    - `[CoordinateLongitude <Double?>]`: The longitude of the location.
     - `[DefaultDuration <TimeSpan?>]`: 
-    - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
+    - `[DefaultLocationDisplayName <String>]`: The name associated with the location.
+    - `[DefaultLocationEmailAddress <String>]`: Optional email address of the location.
+    - `[DefaultLocationType <String>]`: locationType
+    - `[DefaultLocationUniqueId <String>]`: For internal use only.
+    - `[DefaultLocationUniqueIdType <String>]`: locationUniqueIdType
+    - `[DefaultLocationUri <String>]`: Optional URI representing the location.
     - `[DefaultPrice <Double?>]`: 
     - `[DefaultPriceType <String>]`: bookingPriceType
     - `[DefaultReminders <IMicrosoftGraphBookingReminder[]>]`: The default reminders set in an appointment of this service.
@@ -566,7 +735,11 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[Notes <String>]`: 
     - `[PostBuffer <TimeSpan?>]`: 
     - `[PreBuffer <TimeSpan?>]`: 
-    - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+    - `[SchedulingPolicyAllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+    - `[SchedulingPolicyMaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+    - `[SchedulingPolicyMinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+    - `[SchedulingPolicySendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+    - `[SchedulingPolicyTimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
     - `[StaffMemberIds <String[]>]`: 
   - `[StaffMembers <IMicrosoftGraphBookingStaffMember[]>]`: All staff members that provides services in this business.
     - `[EmailAddress <String>]`: The e-mail address of this person.
@@ -589,40 +762,33 @@ CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>: A calendar view of appointme
   - `[Id <String>]`: Read-only.
   - `[CustomerEmailAddress <String>]`: 
   - `[CustomerId <String>]`: The id of the booking customer associated with this appointment.
-  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[City <String>]`: The city.
-      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
-      - `[PostalCode <String>]`: The postal code.
-      - `[State <String>]`: The state.
-      - `[Street <String>]`: The street.
-      - `[Type <String>]`: physicalAddressType
-    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-      - `[Altitude <Double?>]`: The altitude of the location.
-      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-      - `[Latitude <Double?>]`: The latitude of the location.
-      - `[Longitude <Double?>]`: The longitude of the location.
-    - `[DisplayName <String>]`: The name associated with the location.
-    - `[LocationEmailAddress <String>]`: Optional email address of the location.
-    - `[LocationType <String>]`: locationType
-    - `[LocationUri <String>]`: Optional URI representing the location.
-    - `[UniqueId <String>]`: For internal use only.
-    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerLocationAddressCity <String>]`: The city.
+  - `[CustomerLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[CustomerLocationAddressPostOfficeBox <String>]`: 
+  - `[CustomerLocationAddressPostalCode <String>]`: The postal code.
+  - `[CustomerLocationAddressState <String>]`: The state.
+  - `[CustomerLocationAddressStreet <String>]`: The street.
+  - `[CustomerLocationAddressType <String>]`: physicalAddressType
+  - `[CustomerLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[CustomerLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+  - `[CustomerLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[CustomerLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+  - `[CustomerLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+  - `[CustomerLocationDisplayName <String>]`: The name associated with the location.
+  - `[CustomerLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[CustomerLocationType <String>]`: locationType
+  - `[CustomerLocationUniqueId <String>]`: For internal use only.
+  - `[CustomerLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[CustomerLocationUri <String>]`: Optional URI representing the location.
   - `[CustomerName <String>]`: 
   - `[CustomerNotes <String>]`: Notes from the customer associated with this appointment.
   - `[CustomerPhone <String>]`: 
   - `[Duration <TimeSpan?>]`: 
-  - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[EndDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[EndTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[InvoiceAmount <Double?>]`: 
-  - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[InvoiceDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[InvoiceDateTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[InvoiceId <String>]`: 
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: 
@@ -637,53 +803,57 @@ CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>: A calendar view of appointme
     - `[Recipients <String>]`: bookingReminderRecipients
   - `[SelfServiceAppointmentId <String>]`: 
   - `[ServiceId <String>]`: The id of the booking service associated with this appointment.
-  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+  - `[ServiceLocationAddressCity <String>]`: The city.
+  - `[ServiceLocationAddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[ServiceLocationAddressPostOfficeBox <String>]`: 
+  - `[ServiceLocationAddressPostalCode <String>]`: The postal code.
+  - `[ServiceLocationAddressState <String>]`: The state.
+  - `[ServiceLocationAddressStreet <String>]`: The street.
+  - `[ServiceLocationAddressType <String>]`: physicalAddressType
+  - `[ServiceLocationCoordinatesAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[ServiceLocationCoordinatesAltitude <Double?>]`: The altitude of the location.
+  - `[ServiceLocationCoordinatesAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[ServiceLocationCoordinatesLatitude <Double?>]`: The latitude of the location.
+  - `[ServiceLocationCoordinatesLongitude <Double?>]`: The longitude of the location.
+  - `[ServiceLocationDisplayName <String>]`: The name associated with the location.
+  - `[ServiceLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[ServiceLocationType <String>]`: locationType
+  - `[ServiceLocationUniqueId <String>]`: For internal use only.
+  - `[ServiceLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[ServiceLocationUri <String>]`: Optional URI representing the location.
   - `[ServiceName <String>]`: The name of the booking service associated with this appointment.
   - `[ServiceNotes <String>]`: 
   - `[StaffMemberIds <String[]>]`: 
-  - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+  - `[StartDateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[StartTimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 CUSTOMERS <IMicrosoftGraphBookingCustomer[]>: All customers of this business.
   - `[EmailAddress <String>]`: The e-mail address of this person.
   - `[DisplayName <String>]`: Display name of this entity.
   - `[Id <String>]`: Read-only.
 
-SCHEDULINGPOLICY <IMicrosoftGraphBookingSchedulingPolicy>: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
-  - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
-  - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
-  - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
-  - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
-
 SERVICES <IMicrosoftGraphBookingService[]>: All services offered by this business.
   - `[DisplayName <String>]`: Display name of this entity.
   - `[Id <String>]`: Read-only.
+  - `[AddressCity <String>]`: The city.
+  - `[AddressCountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+  - `[AddressPostOfficeBox <String>]`: 
+  - `[AddressPostalCode <String>]`: The postal code.
+  - `[AddressState <String>]`: The state.
+  - `[AddressStreet <String>]`: The street.
+  - `[AddressType <String>]`: physicalAddressType
+  - `[CoordinateAccuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+  - `[CoordinateAltitude <Double?>]`: The altitude of the location.
+  - `[CoordinateAltitudeAccuracy <Double?>]`: The accuracy of the altitude.
+  - `[CoordinateLatitude <Double?>]`: The latitude of the location.
+  - `[CoordinateLongitude <Double?>]`: The longitude of the location.
   - `[DefaultDuration <TimeSpan?>]`: 
-  - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[City <String>]`: The city.
-      - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
-      - `[PostalCode <String>]`: The postal code.
-      - `[State <String>]`: The state.
-      - `[Street <String>]`: The street.
-      - `[Type <String>]`: physicalAddressType
-    - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
-      - `[Altitude <Double?>]`: The altitude of the location.
-      - `[AltitudeAccuracy <Double?>]`: The accuracy of the altitude.
-      - `[Latitude <Double?>]`: The latitude of the location.
-      - `[Longitude <Double?>]`: The longitude of the location.
-    - `[DisplayName <String>]`: The name associated with the location.
-    - `[LocationEmailAddress <String>]`: Optional email address of the location.
-    - `[LocationType <String>]`: locationType
-    - `[LocationUri <String>]`: Optional URI representing the location.
-    - `[UniqueId <String>]`: For internal use only.
-    - `[UniqueIdType <String>]`: locationUniqueIdType
+  - `[DefaultLocationDisplayName <String>]`: The name associated with the location.
+  - `[DefaultLocationEmailAddress <String>]`: Optional email address of the location.
+  - `[DefaultLocationType <String>]`: locationType
+  - `[DefaultLocationUniqueId <String>]`: For internal use only.
+  - `[DefaultLocationUniqueIdType <String>]`: locationUniqueIdType
+  - `[DefaultLocationUri <String>]`: Optional URI representing the location.
   - `[DefaultPrice <Double?>]`: 
   - `[DefaultPriceType <String>]`: bookingPriceType
   - `[DefaultReminders <IMicrosoftGraphBookingReminder[]>]`: The default reminders set in an appointment of this service.
@@ -695,13 +865,11 @@ SERVICES <IMicrosoftGraphBookingService[]>: All services offered by this busines
   - `[Notes <String>]`: 
   - `[PostBuffer <TimeSpan?>]`: 
   - `[PreBuffer <TimeSpan?>]`: 
-  - `[SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>]`: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
-    - `[MaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
-    - `[MinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
-    - `[SendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
-    - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
+  - `[SchedulingPolicyAllowStaffSelection <Boolean?>]`: Allow customers to choose a specific person for the booking.
+  - `[SchedulingPolicyMaximumAdvance <TimeSpan?>]`: Maximum number of days in advance that a booking can be made.
+  - `[SchedulingPolicyMinimumLeadTime <TimeSpan?>]`: Minimum lead time for bookings and cancellations.
+  - `[SchedulingPolicySendConfirmationsToOwner <Boolean?>]`: Notify the business via email when a booking is created or changed.
+  - `[SchedulingPolicyTimeSlotInterval <TimeSpan?>]`: Duration of each time slot.
   - `[StaffMemberIds <String[]>]`: 
 
 STAFFMEMBERS <IMicrosoftGraphBookingStaffMember[]>: All staff members that provides services in this business.

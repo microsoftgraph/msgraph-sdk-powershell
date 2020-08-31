@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/subscribedSkus": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SubscribedSkus.yml"
+    },
+    "/subscribedSkus/{subscribedSku-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SubscribedSkus.yml"
+    }
+  }
+}

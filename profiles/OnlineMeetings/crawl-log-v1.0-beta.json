@@ -1,0 +1,13 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/onlineMeetings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/OnlineMeetings.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/OnlineMeetings.yml"
+    }
+  }
+}

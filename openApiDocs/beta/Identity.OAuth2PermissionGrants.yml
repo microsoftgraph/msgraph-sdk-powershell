@@ -1,0 +1,390 @@
+openapi: 3.0.1
+info:
+  title: Identity.OAuth2PermissionGrants
+  version: v1.0-beta
+servers:
+  - url: https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /oauth2PermissionGrants:
+    get:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Get entities from oauth2PermissionGrants
+      operationId: oauth2PermissionGrants.oAuth2PermissionGrant_ListOAuth2PermissionGrant
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientId
+                - clientId desc
+                - consentType
+                - consentType desc
+                - expiryTime
+                - expiryTime desc
+                - principalId
+                - principalId desc
+                - resourceId
+                - resourceId desc
+                - scope
+                - scope desc
+                - startTime
+                - startTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - consentType
+                - expiryTime
+                - principalId
+                - resourceId
+                - scope
+                - startTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of oAuth2PermissionGrant
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Add new entity to oauth2PermissionGrants
+      operationId: oauth2PermissionGrants.oAuth2PermissionGrant_CreateOAuth2PermissionGrant
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/oauth2PermissionGrants/{oAuth2PermissionGrant-id}':
+    get:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Get entity from oauth2PermissionGrants by key
+      operationId: oauth2PermissionGrants.oAuth2PermissionGrant_GetOAuth2PermissionGrant
+      parameters:
+        - name: oAuth2PermissionGrant-id
+          in: path
+          description: 'key: id of oAuth2PermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oAuth2PermissionGrant
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientId
+                - consentType
+                - expiryTime
+                - principalId
+                - resourceId
+                - scope
+                - startTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Update entity in oauth2PermissionGrants
+      operationId: oauth2PermissionGrants.oAuth2PermissionGrant_UpdateOAuth2PermissionGrant
+      parameters:
+        - name: oAuth2PermissionGrant-id
+          in: path
+          description: 'key: id of oAuth2PermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oAuth2PermissionGrant
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - oauth2PermissionGrants.oAuth2PermissionGrant
+      summary: Delete entity from oauth2PermissionGrants
+      operationId: oauth2PermissionGrants.oAuth2PermissionGrant_DeleteOAuth2PermissionGrant
+      parameters:
+        - name: oAuth2PermissionGrant-id
+          in: path
+          description: 'key: id of oAuth2PermissionGrant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oAuth2PermissionGrant
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /oauth2PermissionGrants/microsoft.graph.delta():
+    get:
+      tags:
+        - oauth2PermissionGrants.Functions
+      summary: Invoke function delta
+      operationId: oauth2PermissionGrants_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+components:
+  schemas:
+    microsoft.graph.oAuth2PermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: oAuth2PermissionGrant
+          type: object
+          properties:
+            clientId:
+              type: string
+              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+            consentType:
+              type: string
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              nullable: true
+            expiryTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            principalId:
+              type: string
+              description: 'The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.'
+              nullable: true
+            resourceId:
+              type: string
+              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+            scope:
+              type: string
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              nullable: true
+            startTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

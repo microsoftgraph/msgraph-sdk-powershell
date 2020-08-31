@@ -1,0 +1,21 @@
+{
+  "resources": [],
+  "operations": {
+    "/users/{user-id}/joinedGroups": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Groups.yml"
+    },
+    "/users/{user-id}/joinedGroups/{group-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Groups.yml"
+    },
+    "/users/{user-id}/joinedTeams": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Groups.yml"
+    },
+    "/users/{user-id}/joinedTeams/{team-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Groups.yml"
+    }
+  }
+}

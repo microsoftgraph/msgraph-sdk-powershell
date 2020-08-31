@@ -15,12 +15,12 @@ Update the navigation property fileSecurityProfiles in Security
 ### UpdateExpanded (Default)
 ```
 Update-MgSecurityFileSecurityProfile -FileSecurityProfileId <String> [-ActivityGroupNames <String[]>]
- [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
- [-CertificateThumbprint <String>] [-Extensions <String[]>] [-FileType <String>]
- [-FirstSeenDateTime <DateTime>] [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>]
- [-LastSeenDateTime <DateTime>] [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-Names <String[]>]
- [-RiskScore <String>] [-Size <Int64>] [-Tags <String[]>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
+ [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CertificateThumbprint <String>]
+ [-Extensions <String[]>] [-FileType <String>] [-FirstSeenDateTime <DateTime>]
+ [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>] [-LastSeenDateTime <DateTime>]
+ [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-Names <String[]>] [-RiskScore <String>] [-Size <Int64>]
+ [-Tags <String[]>] [-VendorInformationProvider <String>] [-VendorInformationProviderVersion <String>]
+ [-VendorInformationSubProvider <String>] [-VendorInformationVendor <String>]
  [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -40,12 +40,12 @@ Update-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGroupNames <String[]>]
- [-AdditionalProperties <Hashtable>] [-AzureSubscriptionId <String>] [-AzureTenantId <String>]
- [-CertificateThumbprint <String>] [-Extensions <String[]>] [-FileType <String>]
- [-FirstSeenDateTime <DateTime>] [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>]
- [-LastSeenDateTime <DateTime>] [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-Names <String[]>]
- [-RiskScore <String>] [-Size <Int64>] [-Tags <String[]>]
- [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>]
+ [-AzureSubscriptionId <String>] [-AzureTenantId <String>] [-CertificateThumbprint <String>]
+ [-Extensions <String[]>] [-FileType <String>] [-FirstSeenDateTime <DateTime>]
+ [-Hashes <IMicrosoftGraphFileHash[]>] [-Id <String>] [-LastSeenDateTime <DateTime>]
+ [-MalwareStates <IMicrosoftGraphMalwareState[]>] [-Names <String[]>] [-RiskScore <String>] [-Size <Int64>]
+ [-Tags <String[]>] [-VendorInformationProvider <String>] [-VendorInformationProviderVersion <String>]
+ [-VendorInformationSubProvider <String>] [-VendorInformationVendor <String>]
  [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -80,21 +80,6 @@ PS C:\> {{ Add code here }}
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -182,7 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -FileSecurityProfileId
-key: id of fileSecurityProfile
+key: fileSecurityProfile-id of fileSecurityProfile
 
 ```yaml
 Type: System.String
@@ -379,12 +364,58 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VendorInformation
-securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+### -VendorInformationProvider
+Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationProviderVersion
+Version of the provider or subprovider, if it exists, that generated the alert.
+Required
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationSubProvider
+Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VendorInformationVendor
+Name of the alert vendor (for example, Microsoft, Dell, FireEye).
+Required
+
+```yaml
+Type: System.String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -465,7 +496,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODYPARAMETER <IMicrosoftGraphFileSecurityProfile>: fileSecurityProfile
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ActivityGroupNames <String[]>]`: 
   - `[AzureSubscriptionId <String>]`: 
@@ -488,12 +518,10 @@ BODYPARAMETER <IMicrosoftGraphFileSecurityProfile>: fileSecurityProfile
   - `[RiskScore <String>]`: 
   - `[Size <Int64?>]`: 
   - `[Tags <String[]>]`: 
-  - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-    - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-    - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-    - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
+  - `[VendorInformationProvider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
+  - `[VendorInformationProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
+  - `[VendorInformationSubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
+  - `[VendorInformationVendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
   - `[VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>]`: 
     - `[Cve <String>]`: Common Vulnerabilities and Exposures (CVE) for the vulnerability.
     - `[Severity <String>]`: Base Common Vulnerability Scoring System (CVSS) severity score for this vulnerability.
@@ -504,18 +532,18 @@ HASHES <IMicrosoftGraphFileHash[]>: .
   - `[HashValue <String>]`: Value of the file hash.
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
-  - `[AlertId <String>]`: key: id of alert
-  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
-  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
-  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
-  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
-  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
-  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
-  - `[SecureScoreId <String>]`: key: id of secureScore
-  - `[SecurityActionId <String>]`: key: id of securityAction
-  - `[TiIndicatorId <String>]`: key: id of tiIndicator
-  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
+  - `[AlertId <String>]`: key: alert-id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: cloudAppSecurityProfile-id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: domainSecurityProfile-id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: fileSecurityProfile-id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: hostSecurityProfile-id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: ipSecurityProfile-id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: providerTenantSetting-id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: secureScoreControlProfile-id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: secureScore-id of secureScore
+  - `[SecurityActionId <String>]`: key: securityAction-id of securityAction
+  - `[TiIndicatorId <String>]`: key: tiIndicator-id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: userSecurityProfile-id of userSecurityProfile
 
 MALWARESTATES <IMicrosoftGraphMalwareState[]>: .
   - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
@@ -523,13 +551,6 @@ MALWARESTATES <IMicrosoftGraphMalwareState[]>: .
   - `[Name <String>]`: Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).
   - `[Severity <String>]`: Provider-determined severity of this malware.
   - `[WasRunning <Boolean?>]`: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
-
-VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Provider <String>]`: Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.
-  - `[ProviderVersion <String>]`: Version of the provider or subprovider, if it exists, that generated the alert. Required
-  - `[SubProvider <String>]`: Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-  - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 VULNERABILITYSTATES <IMicrosoftGraphVulnerabilityState[]>: .
   - `[Cve <String>]`: Common Vulnerabilities and Exposures (CVE) for the vulnerability.
