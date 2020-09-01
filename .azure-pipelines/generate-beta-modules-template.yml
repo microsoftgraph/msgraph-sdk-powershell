@@ -35,8 +35,7 @@ jobs:
   displayName: MS Graph PS SDK Beta Generation
   timeoutInMinutes: 800
   pool:
-    name: Microsoft Graph
-    demands: 'Agent.Name -equals PS-Build-Agent'
+    vmImage: 'windows-latest'
 
   steps:
   # Install Node
