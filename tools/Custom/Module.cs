@@ -90,6 +90,7 @@ namespace Microsoft.Graph.PowerShell
                 var eventData = EventDataConverter.ConvertFrom(getEventData());
                 using (var responseFormatter = new HttpMessageFormatter(eventData.ResponseMessage as HttpResponseMessage))
                 {
+                    await responseFormatter.LoadIntoBufferAsync();
                     var responseString = await responseFormatter.ReadAsStringAsync();
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent(responseString));
                 }

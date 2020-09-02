@@ -50,14 +50,7 @@ namespace Microsoft.Graph.PowerShell
         // Set of header fields that should not get serialized
         private static readonly HashSet<string> _neverSerializedHeaderFields = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "SdkVersion",
-            "FeatureFlag",
-            "Authorization",
-            "Cache-Control",
-            "Transfer-Encoding",
-            "Duration",
-            "Strict-Transport-Security",
-            "Date"
+            "Authorization"
         };
 
         private bool _contentConsumed;
