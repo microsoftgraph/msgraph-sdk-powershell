@@ -1,0 +1,31 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 2.x'
+      inputs:
+        debugMode: false
+        version: 2.x
+
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core SDK 3.x'
+      inputs:
+        debugMode: false
+        version: 3.x
+
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.5' 
+        checkLatest: false # Optional
+
+    - task: NuGetToolInstaller@1
+      inputs:
+         versionSpec: 5.7.0
+         checkLatest: false # Optional
+
+    - task: PowerShell@2
+      inputs:
+        targetType: inline
+        script: |
+          dotnet install --global PowerShell

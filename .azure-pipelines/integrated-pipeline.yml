@@ -49,6 +49,13 @@ resources:
   - repo: self
 
 stages:
+- stage: InstallTools
+  displayName: 'Install Required Tools'
+  jobs:
+  - job: InstallTools
+    steps:
+    - template: ./install-tools-template.yml
+
 - stage: CredentialScanning
   displayName: 'Scan for Credentials in CodeBase'
   jobs:
