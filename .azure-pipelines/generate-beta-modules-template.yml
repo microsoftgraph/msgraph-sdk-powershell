@@ -64,7 +64,7 @@ jobs:
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
       Pattern: '$(AUTH_MODULE_DLL_PATTERN)'
       signConfigType: inlineSignParams
@@ -91,7 +91,7 @@ jobs:
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
       Pattern: $(AUTH_MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
@@ -146,7 +146,7 @@ jobs:
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(WORKLOAD_MODULE_PATH)
       Pattern: '$(BETA_MODULE_PREFIX).*.private.dll'
       signConfigType: inlineSignParams
@@ -173,7 +173,7 @@ jobs:
     displayName: 'ESRP DLL CodeSigning (Graph Resource Module)'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(WORKLOAD_MODULE_PATH)
       Pattern: '$(BETA_MODULE_PREFIX).*.private.dll, $(BETA_MODULE_PREFIX).*.psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
       signConfigType: inlineSignParams
@@ -235,7 +235,7 @@ jobs:
     displayName: 'ESRP NuGet CodeSigning'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: '$(Build.ArtifactStagingDirectory)\'
       Pattern: '*.nupkg'
       signConfigType: inlineSignParams
