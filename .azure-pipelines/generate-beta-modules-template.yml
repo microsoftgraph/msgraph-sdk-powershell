@@ -34,8 +34,7 @@ jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation
   timeoutInMinutes: 800
-  pool:
-    vmImage: 'windows-latest'
+  pool: MsGraphDevXAzureAgents
 
   steps:
   # Install Node
