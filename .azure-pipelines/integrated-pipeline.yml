@@ -34,8 +34,7 @@ variables:
 - name: EnableSigning
   value: ${{false}}
   
-pool:
-    vmImage: 'windows-latest'
+pool: MsGraphDevXAzureAgents
 trigger:
     branches:
       include:
