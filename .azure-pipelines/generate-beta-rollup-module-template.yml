@@ -29,8 +29,7 @@ jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Roll-Up Generation
   timeoutInMinutes: 300
-  pool:
-    vmImage: 'windows-latest'
+  pool: MsGraphDevXAzureAgents
   
   steps:  
   - task: NuGetToolInstaller@1
