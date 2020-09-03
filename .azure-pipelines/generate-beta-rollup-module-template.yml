@@ -46,7 +46,7 @@ jobs:
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(ROLLUP_MODULE_PATH)
       Pattern: '$(BETA_MODULE_PREFIX).psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, *.ps1'
       signConfigType: inlineSignParams
@@ -103,7 +103,7 @@ jobs:
     displayName: 'ESRP NuGet CodeSigning'
     enabled: true
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: '$(Build.ArtifactStagingDirectory)/'
       Pattern: 'Microsoft.Graph*.nupkg'
       signConfigType: inlineSignParams
