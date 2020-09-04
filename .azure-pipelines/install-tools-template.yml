@@ -15,10 +15,16 @@ steps:
         version: 3.x
 
     - task: NodeTool@0
-      displayName: 'Install NodeJs 10.5'
+      displayName: 'Install NodeJs 13.14.0'
       inputs:
-        versionSpec: '10.5' 
+        versionSpec: '13.14.0' 
         checkLatest: false # Optional
+
+    - task: Npm@1
+      displayName: 'Install AutoRest'
+      inputs:
+        command: 'custom'
+        customCommand: 'install -g autorest'
 
     - task: NuGetToolInstaller@1
       displayName: 'Install Nuget 5.7'

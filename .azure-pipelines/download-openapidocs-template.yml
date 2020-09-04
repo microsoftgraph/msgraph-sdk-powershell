@@ -44,6 +44,7 @@ steps:
     displayName: Download v1.0 OpenApiDocs
     continueOnError: false
     inputs:
+      targetType: 'filePath'
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       pwsh: true
 
@@ -51,6 +52,7 @@ steps:
     displayName: Download beta OpenApiDocs
     continueOnError: false
     inputs:
+      targetType: 'filePath'
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       arguments: '-BetaGraphVersion'
       pwsh: true

@@ -32,12 +32,10 @@ jobs:
   pool: MsGraphDevXAzureAgents
   
   steps:  
-  - task: NuGetToolInstaller@1
-    displayName: 'Install Nuget'
-  
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
+      targetType: 'inline'
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
       pwsh: true
   
