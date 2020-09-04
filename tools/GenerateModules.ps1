@@ -59,15 +59,16 @@ if ($UpdateAutoRest) {
 }
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $RequestCount = 0
-$ModuleMapping.Keys | ForEach-Object -ThrottleLimit 8 -Parallel {
+$ModuleMapping.Keys | ForEach-Object -ThrottleLimit 24 -Parallel {
     enum VersionState {
         Invalid
         Valid
         EqualToFeed
         NotOnFeed
     }
-    Write-Host $Using:ModulesOutputDir
+    
     $ModuleName = $_
+    Write-Warning "Generating $ModuleName"
     $ModuleProjectDir = Join-Path $Using:ModulesOutputDir "$ModuleName\$ModuleName"
 
     # Copy AutoRest readme.md config is none exists.
@@ -166,6 +167,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit 8 -Parallel {
             Write-Error $_.Exception
         }
         #$Using:RequestCount=$Using:RequestCount+1
+        Write-Warning "Generating $ModuleName Completed"
     }
 }
 
