@@ -24,7 +24,7 @@ variables:
 - name: Api_Key
   value: 'Api_Key'
 - name: EnableSigning
-  value: ${{false}}
+  value: true
   
 pool: MsGraphDevXAzureAgents
 trigger:
@@ -71,7 +71,7 @@ stages:
       AUTH_MODULE_NAME: $(AUTH_MODULE)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
-      EnableSigning: false
+      EnableSigning: true
 
     
 - stage: GenerateBetaModules
@@ -85,7 +85,7 @@ stages:
       GRAPH_VERSION: $(GRAPH_VERSION)
       AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
       AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
-      EnableSigning: false
+      EnableSigning: true
 
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'
@@ -97,4 +97,4 @@ stages:
       ROLLUP_MODULE_NAME: $(ROLLUP_MODULE_NAME)
       GRAPH_VERSION: $(GRAPH_VERSION)
       BETA_MODULE_PREFIX: $(BETA_MODULE_PREFIX)
-      EnableSigning: false
+      EnableSigning: true

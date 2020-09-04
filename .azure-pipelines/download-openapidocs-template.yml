@@ -5,7 +5,7 @@ steps:
   - template: ./install-tools-template.yml
   - task: PowerShell@2
     displayName: 'Download v1.0 OpenApiDocs'
-    continueOnError: false
+    continueOnError: true
     inputs:
       targetType: 'filePath'
       pwsh: true
