@@ -47,7 +47,7 @@ steps:
       targetType: 'inline'
       pwsh: true
       script: |
-        & $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
+        pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
       
 
   - task: PowerShell@2
@@ -57,7 +57,7 @@ steps:
       targetType: 'inline'
       pwsh: true
       script: |
-        & $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
+        pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
 
   - task: Bash@3
     displayName : "Create PR $(BRANCH)"

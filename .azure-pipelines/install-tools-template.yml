@@ -47,5 +47,16 @@ steps:
         pwsh: true
         script: |
           pwsh
-          pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
-          Write-Host $pid
+          Write-Host $PSVersionTable.PSVersion
+          Write-Host $host.Version
+          Write-Host (Get-Host).Version
+
+    - task: PowerShell@2
+      displayName: 'Version Check'
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          Write-Host $PSVersionTable.PSVersion
+          Write-Host $host.Version
+          Write-Host (Get-Host).Version

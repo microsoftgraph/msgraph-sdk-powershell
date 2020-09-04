@@ -35,10 +35,10 @@ jobs:
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
     inputs:
-      targetType: 'filePath'
-      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
-      arguments: '-ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -BuildWhenEqual'
+      targetType: 'inline'
       pwsh: true
+      script: |
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -BuildWhenEqual
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
@@ -119,9 +119,9 @@ jobs:
     displayName: 'Pack Auth Module'
     inputs:
       targetType: 'inline'
-      script: |
-        & $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
       pwsh: true
+      script: |
+        pwsh $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'

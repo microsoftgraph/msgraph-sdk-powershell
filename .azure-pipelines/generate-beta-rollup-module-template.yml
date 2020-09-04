@@ -38,7 +38,7 @@ jobs:
       targetType: 'inline'
       pwsh: true
       script: |
-         & $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'

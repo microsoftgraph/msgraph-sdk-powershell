@@ -9,4 +9,4 @@ steps:
       targetType: 'inline'
       pwsh: true
       script: |
-        & $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
