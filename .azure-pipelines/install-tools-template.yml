@@ -31,7 +31,7 @@ steps:
       inputs:
         targetType: inline
         script: |
-          dotnet tool install --global PowerShell
+          dotnet tool update --global PowerShell
           pwsh
 
     - task: PowerShell@2
