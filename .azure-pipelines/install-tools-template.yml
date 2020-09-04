@@ -37,8 +37,7 @@ steps:
     - task: PowerShell@2
       displayName: 'Test For Powershell'
       inputs:
-       pwsh:true
-       script: |
-        pwsh
-        Write-Host $pid
-      
+        pwsh:true
+        script: |
+          pwsh
+          Write-Host $pid
