@@ -34,6 +34,7 @@ jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Beta Generation
   pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
 
   steps:
   - template: ./install-tools-template.yml
