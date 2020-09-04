@@ -63,7 +63,7 @@ steps:
       script: |
         pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
 
-  - task: Bash@3
+  - task: PowerShell@2
     displayName : "Create PR $(BRANCH)"
     inputs:
       targetType: 'inline'
@@ -74,7 +74,7 @@ steps:
           git checkout $(BRANCH)
           git status
 
-  - task: Bash@3
+  - task: PowerShell@2
     displayName : "Commit Downloaded Files"
     env: 
       GITHUB_TOKEN: $(GITHUB_TOKEN)
