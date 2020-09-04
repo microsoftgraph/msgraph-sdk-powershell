@@ -31,7 +31,8 @@ jobs:
   timeoutInMinutes: 300
   pool: MsGraphDevXAzureAgents
   
-  steps:  
+  steps:
+  - template: ./install-tools-template.yml
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
     inputs:

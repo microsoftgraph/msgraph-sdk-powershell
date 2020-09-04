@@ -16,6 +16,7 @@ parameters:
     default: 'dev'
 
 steps:
+  - template: ./install-tools-template.yml
   - task: PowerShell@2
     displayName: "Compute Branch"
     inputs:

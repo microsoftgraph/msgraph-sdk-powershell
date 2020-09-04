@@ -36,7 +36,8 @@ jobs:
   timeoutInMinutes: 800
   pool: MsGraphDevXAzureAgents
 
-  steps:  
+  steps:
+  - template: ./install-tools-template.yml
   - task: PowerShell@2
     displayName: 'Build Auth Modules'
     inputs:

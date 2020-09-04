@@ -28,7 +28,8 @@ jobs:
   timeoutInMinutes: 300
   pool: MsGraphDevXAzureAgents
   
-  steps:  
+  steps:
+  - template: ./install-tools-template.yml
   - task: NuGetToolInstaller@1
     displayName: 'Install Nuget'
   
