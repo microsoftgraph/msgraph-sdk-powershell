@@ -20,6 +20,7 @@ steps:
     displayName: "Compute Branch"
     inputs:
       targetType: inline
+      pwsh: true
       script: |
         $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
         Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
@@ -28,6 +29,7 @@ steps:
     displayName: "Configure User"
     inputs:
       targetType: 'inline'
+      pwsh: true
       script: |
         git config --global user.email '$(GitUserEmail)'
         git config --global user.name '$(GitUserName)'
@@ -36,6 +38,7 @@ steps:
     displayName: "Show Directory"
     inputs:
       targetType: 'inline'
+      pwsh: true
       script: |
         ls  $(System.DefaultWorkingDirectory)
         ls  $(System.DefaultWorkingDirectory)/tools
