@@ -62,33 +62,3 @@ steps:
       pwsh: true
       script: |
         pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
-
-  - task: PowerShell@2
-    displayName : "Create PR $(BRANCH)"
-    inputs:
-      targetType: 'inline'
-      script: |
-          git status
-          git checkout $(BaseBranch)
-          git branch $(BRANCH)
-          git checkout $(BRANCH)
-          git status
-
-  - task: PowerShell@2
-    displayName : "Commit Downloaded Files"
-    env: 
-      GITHUB_TOKEN: $(GITHUB_TOKEN)
-    inputs:
-      targetType: 'inline'
-      script: |
-        git status
-        git add .
-        git commit -m 'Weekly OpenApiDocs Download'
-        git status
-        git push --set-upstream origin $(BRANCH)
-        git status
-
-# References
-# [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
-# [1] https://hub.github.com/hub-pull-request.1.html
-# https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token
