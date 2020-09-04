@@ -18,4 +18,6 @@ steps:
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion'
+      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
+      arguments: > 
+         -BetaGraphVersion
