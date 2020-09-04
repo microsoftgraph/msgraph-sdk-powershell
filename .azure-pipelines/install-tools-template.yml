@@ -32,3 +32,13 @@ steps:
         targetType: inline
         script: |
           dotnet tool install --global PowerShell
+          pwsh
+
+    - task: PowerShell@2
+      displayName: 'Test For Powershell'
+      inputs:
+       pwsh:true
+       script: |
+        pwsh
+        Write-Host $pid
+      
