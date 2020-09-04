@@ -37,7 +37,8 @@ steps:
     - task: PowerShell@2
       displayName: 'Test For Powershell'
       inputs:
-        pwsh:true
+        targetType: inline
+        pwsh: true
         script: |
           pwsh
           Write-Host $pid
