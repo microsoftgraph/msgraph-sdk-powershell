@@ -15,17 +15,20 @@ steps:
         version: 3.x
 
     - task: NodeTool@0
+      displayName: 'Install NodeJs 10.5'
       inputs:
         versionSpec: '10.5' 
         checkLatest: false # Optional
 
     - task: NuGetToolInstaller@1
+      displayName: 'Install Nuget 5.7'
       inputs:
          versionSpec: 5.7.0
          checkLatest: false # Optional
 
     - task: PowerShell@2
+      displayName: 'Install Powershell Core'
       inputs:
         targetType: inline
         script: |
-          dotnet install --global PowerShell
+          dotnet tool install --global PowerShell
