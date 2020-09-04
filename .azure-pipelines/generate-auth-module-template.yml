@@ -35,7 +35,7 @@ jobs:
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)'
+      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1'
       arguments: > 
         -ArtifactsLocation $(Build.ArtifactStagingDirectory)
         -Build 
