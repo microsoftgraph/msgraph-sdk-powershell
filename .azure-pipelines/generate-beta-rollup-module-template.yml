@@ -36,9 +36,10 @@ jobs:
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
       targetType: 'inline'
-      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
       pwsh: true
-  
+      script: |
+         & $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
     enabled: true

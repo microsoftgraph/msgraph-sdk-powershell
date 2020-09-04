@@ -47,4 +47,5 @@ steps:
         pwsh: true
         script: |
           pwsh
+          pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
           Write-Host $pid

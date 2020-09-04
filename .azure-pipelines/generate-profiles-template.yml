@@ -7,5 +7,6 @@ steps:
     continueOnError: false
     inputs:
       targetType: 'inline'
-      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1'
       pwsh: true
+      script: |
+        & $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1

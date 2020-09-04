@@ -44,18 +44,20 @@ steps:
     displayName: Download v1.0 OpenApiDocs
     continueOnError: false
     inputs:
-      targetType: 'filePath'
-      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
+      targetType: 'inline'
       pwsh: true
+      script: |
+        & $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
+      
 
   - task: PowerShell@2
     displayName: Download beta OpenApiDocs
     continueOnError: false
     inputs:
-      targetType: 'filePath'
-      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
-      arguments: '-BetaGraphVersion'
+      targetType: 'inline'
       pwsh: true
+      script: |
+        & $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
 
   - task: Bash@3
     displayName : "Create PR $(BRANCH)"
