@@ -132,10 +132,10 @@ jobs:
       pwsh: true
       filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1'
       arguments: > 
-        -ArtifactsLocation $(Build.ArtifactStagingDirectory)
-        -Build 
-        -EnableSigning 
-        -SkipVersionCheck
+         -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+         -Build 
+         -EnableSigning 
+         -SkipVersionCheck
   
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
