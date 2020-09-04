@@ -1,64 +1,21 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-parameters:
-  - name: GitUserEmail
-    displayName: 'Git User Email'
-    type: string
-    default: 'GraphTooling@service.microsoft.com'
-  - name: GitUserName
-    displayName: 'Git User Name'
-    type: string
-    default: 'Microsoft Graph DevX Tooling'
-  - name: BaseBranch
-    displayName: 'Base Branch'
-    type: string
-    default: 'dev'
-
 steps:
   - template: ./install-tools-template.yml
   - task: PowerShell@2
-    displayName: "Compute Branch"
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        $branch = "{0}.{1}" -f "weeklyOpenApiDocsDownload", (Get-Date -Format yyyyMMdd)
-        Write-Host "##vso[task.setvariable variable=BRANCH;]$branch"
-
-  - task: PowerShell@2
-    displayName: "Configure User"
-    inputs:
-      targetType: 'inline'
-      pwsh: true
-      script: |
-        git config --global user.email '$(GitUserEmail)'
-        git config --global user.name '$(GitUserName)'
-
-  - task: PowerShell@2
-    displayName: "Show Directory"
-    inputs:
-      targetType: 'inline'
-      pwsh: true
-      script: |
-        ls  $(System.DefaultWorkingDirectory)
-        ls  $(System.DefaultWorkingDirectory)/tools
-
-  - task: PowerShell@2
-    displayName: Download v1.0 OpenApiDocs
+    displayName: 'Download v1.0 OpenApiDocs'
     continueOnError: false
     inputs:
-      targetType: 'inline'
+      targetType: 'filePath'
       pwsh: true
-      script: |
-        pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1
+      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       
 
   - task: PowerShell@2
-    displayName: Download beta OpenApiDocs
+    displayName: 'Download beta OpenApiDocs'
     continueOnError: false
     inputs:
-      targetType: 'inline'
+      targetType: 'filePath'
       pwsh: true
-      script: |
-        pwsh $(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion
+      filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1 -BetaGraphVersion'

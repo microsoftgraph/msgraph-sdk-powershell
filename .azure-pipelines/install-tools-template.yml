@@ -14,18 +14,6 @@ steps:
         debugMode: false
         version: 3.x
 
-    - task: NodeTool@0
-      displayName: 'Install NodeJs 13.14.0'
-      inputs:
-        versionSpec: '13.14.0' 
-        checkLatest: false # Optional
-
-    - task: Npm@1
-      displayName: 'Install AutoRest'
-      inputs:
-        command: 'custom'
-        customCommand: 'install -g autorest'
-
     - task: NuGetToolInstaller@1
       displayName: 'Install Nuget 5.7'
       inputs:
@@ -41,17 +29,6 @@ steps:
           pwsh
 
     - task: PowerShell@2
-      displayName: 'Test For Powershell'
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-          pwsh
-          Write-Host $PSVersionTable.PSVersion
-          Write-Host $host.Version
-          Write-Host (Get-Host).Version
-
-    - task: PowerShell@2
       displayName: 'Version Check'
       inputs:
         targetType: inline
@@ -60,3 +37,24 @@ steps:
           Write-Host $PSVersionTable.PSVersion
           Write-Host $host.Version
           Write-Host (Get-Host).Version
+
+    - task: NodeTool@0
+      displayName: 'Install NodeJs 13.14.0'
+      inputs:
+        versionSpec: '13.14.0' 
+        checkLatest: false # Optional
+
+    - task: Npm@1
+      displayName: 'Install AutoRest'
+      inputs:
+        command: 'custom'
+        customCommand: 'install -g autorest'
+
+    - task: PowerShell@2
+      displayName: 'Set Environment Variables'
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+           npm config set node-options:max-old-space-size=16384
+           $Env:NODE_OPTIONS="--max_old_space_size=16384"

@@ -28,18 +28,17 @@ parameters:
 jobs:
 - job: MSGraphPSSDKGeneration
   displayName: MS Graph PS SDK Roll-Up Generation
-  timeoutInMinutes: 300
   pool: MsGraphDevXAzureAgents
   
   steps:
   - template: ./install-tools-template.yml
+
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
-      targetType: 'inline'
+      targetType: 'filePath'
       pwsh: true
-      script: |
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+      filePath: '$(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1'
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'

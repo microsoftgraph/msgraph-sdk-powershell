@@ -3,14 +3,6 @@
 
 name: 'Integrated Pipeline'
 variables:
-- name: BRANCH
-  value: 'weeklyOpenApiDocsDownload'
-- name: GitUserEmail
-  value: 'GraphTooling@service.microsoft.com'
-- name: GitUserName
-  value: 'Microsoft Graph DevX Tooling'
-- name: BaseBranch
-  value : 'dev'
 - name: AUTH_MODULE_NAME
   value: 'Authentication'
 - name: AUTH_MODULE_PATH
@@ -62,10 +54,6 @@ stages:
   - job: DownloadOpenAPiDocs
     steps:
     - template: ./download-openapidocs-template.yml
-      parameters:
-        GitUserEmail: $(GitUserEmail)
-        GitUserName: $(GitUserName)
-        BaseBranch: $(BaseBranch)
 
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'
