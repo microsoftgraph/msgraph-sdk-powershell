@@ -19,6 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         [Parameter(Mandatory = true)]
         [Alias("ProfileName")]
+        [ValidateSet("v1.0", "beta")]
         [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
@@ -32,11 +33,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 if (this.IsParameterBound(c => c.Name))
                 {
-                    PSModuleInfo[] modules = GetModules(InvokeCommand).Where(m => GetProfiles(m).Contains(Name)).ToArray();
+                    string profileName = Name.ContainsValue("beta", StringComparison.OrdinalIgnoreCase) ? "v1.0-beta" : Name;
+                    PSModuleInfo[] modules = GetModules(InvokeCommand).Where(m => GetProfiles(m).Contains(profileName)).ToArray();
                     string moduleList = string.Join(", ", modules.Select(m => m.Name));
                     if (ShouldProcess($"Modules {moduleList}", $"Load modules with profile {Name}"))
                     {
-                        GraphSession.Instance.SelectedProfile = Name;
+                        GraphSession.Instance.SelectedProfile = profileName;
                         ReloadModules(InvokeCommand, modules);
                         if (PassThru.IsPresent && PassThru.ToBool())
                         {
