@@ -25,28 +25,24 @@ variables:
   value: 'Api_Key'
 - name: EnableSigning
   value: true
+- name: BRANCH_PREFIX
+  value: 'releaseOpenApiDocs'
+- name: GitUserEmail
+  value: 'GraphTooling@service.microsoft.com'
+- name: GitUserName
+  value: 'Microsoft Graph DevX Tooling'
   
 pool: MsGraphDevXAzureAgents
 trigger:
     branches:
       include:
       - master
-    paths:
-      include:
-        - src/*
-        - config/ModulesMapping.jsonc
-      exclude:
-        - src/Authentication/*
-resources:
-  - repo: self
+      - dev
+      - releases/*
+      - bugfixes/*
 
 stages:
-- stage: CredentialScanning
-  displayName: 'Scan for Credentials in CodeBase'
-  jobs:
-  - job: CredentialScanning
-    steps:
-    - template: ./credential-scanning-template.yml
+
 
 - stage: DownloadOpenApiDocs
   displayName: 'Download Open Api Docs from DevX API'
@@ -54,6 +50,12 @@ stages:
   - job: DownloadOpenAPiDocs
     steps:
     - template: ./download-openapidocs-template.yml
+      parameters: 
+        BaseBranch: $(System.PullRequest.TargetBranch)
+        BRANCH_PREFIX: $(BRANCH_PREFIX)
+        GitUserEmail: $(GitUserEmail)
+        GitUserName: $(GitUserName)
+        
 
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'

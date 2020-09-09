@@ -30,7 +30,7 @@ jobs:
   displayName: MS Graph PS SDK Roll-Up Generation
   pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
-  
+    
   steps:
   - template: ./install-tools-template.yml
 
