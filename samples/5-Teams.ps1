@@ -1,3 +1,22 @@
+# Add team owner.
+New-MgTeamMember -TeamId $InternsTeam.Id -Roles "owner" `
+    -AdditionalProperties @{ 
+        "@odata.type" = "#microsoft.graph.aadUserConversationMember"; 
+        "user@odata.bind" = "https://graph.microsoft.com/beta/users/" + $teamOwnwerId
+    }
+
+# Add team members.
+foreach ($teamMember in $TeamMembers) {
+    New-MgTeamMember -TeamId $InternsTeam.Id -Roles "member" `
+        -AdditionalProperties @{
+            "@odata.type" = "#microsoft.graph.aadUserConversationMember";
+            "user@odata.bind" = "https://graph.microsoft.com/beta/users/" + $teamMember.Id
+        }
+}
+
+# Delete team.
+Remove-MgGroup -GroupId $InternsTeam.Id
+
 # Teams Chat snippets
 
 # Get list of 1:1 chats
