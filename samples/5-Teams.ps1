@@ -1,3 +1,14 @@
+# Create team.
+$TeamName = "2020 Interns"
+New-MgTeam -DisplayName $TeamName -Description $TeamName `
+    -AdditionalProperties @{
+        "template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
+    }
+
+# Get created team.
+$InternsTeam = Get-MgGroup -Filter "StartsWith(DisplayName, '$TeamName')" `
+               | Where-Object { $_.ResourceProvisioningOptions -Contains "Team" }
+
 # Add team owner.
 New-MgTeamMember -TeamId $InternsTeam.Id -Roles "owner" `
     -AdditionalProperties @{ 
