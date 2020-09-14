@@ -44,6 +44,6 @@ steps:
       script: |
         git status
         git add .
-        git commit -m 'Rease OpenApiDocs Download'
-        git push origin
+        git commit -a 'Rease OpenApiDocs Download'
+        git push HEAD:$(Build.SourceBranchName)
         git status
