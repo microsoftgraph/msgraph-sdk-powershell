@@ -58,3 +58,11 @@ steps:
         script: |
            npm config set node-options:max-old-space-size=16384
            $Env:NODE_OPTIONS="--max_old_space_size=16384"
+
+    - task: PowerShell@2
+      displayName: 'Set Nuget Key'
+      inputs:
+        targetType: 'inline'
+        pwsh: true
+        script: | 
+            nuget setapikey $env:NUGETFEEDKEY
