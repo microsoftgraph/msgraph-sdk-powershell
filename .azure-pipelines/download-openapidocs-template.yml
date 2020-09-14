@@ -45,5 +45,5 @@ steps:
         git status
         git add .
         git commit -m 'Rease OpenApiDocs Download'
-        git push HEAD:$(Build.SourceBranchName) HEAD:$(Build.SourceBranchName)
+        git push --set-upstream origin $(Build.SourceBranchName)        
         git status
