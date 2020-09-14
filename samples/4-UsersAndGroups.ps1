@@ -12,6 +12,9 @@ Update-MgUser -UserId $UserId -OfficeLocation $NewLocation
 # Get all Groups
 Get-MgGroup -top 999 | Select-Object id, DisplayName, GroupTypes
 
+# Get all unified (Microsoft 365 Groups) Groups
+Get-MgGroup -Filter "groupTypes/any(c:c eq 'Unified')"
+
 # Get-Details of a single Group
 Get-MgGroup -GroupId $groupId | Format-List | more
 
