@@ -245,7 +245,15 @@ jobs:
                 }
             ]
       SessionTimeout: 20
-  
+
+  - task: NuGetCommand@2
+    displayName: 'NuGet Publish To Local Feed'
+    inputs:
+      command: push
+      packagesToPush: '$(Build.ArtifactStagingDirectory)\*.nupkg'
+      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/3999f5fa-de65-4ced-aa1a-a7a2ba683dc1'
+      allowPackageConflicts: true
+
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifact Beta Modules
     inputs:

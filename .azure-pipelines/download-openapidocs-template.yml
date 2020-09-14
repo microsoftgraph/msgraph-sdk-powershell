@@ -2,7 +2,12 @@
 # Licensed under the MIT License.
 
 steps:
+
+  - checkout: self
+    persistCredentials: true
+
   - template: ./install-tools-template.yml
+
   - task: PowerShell@2
     displayName: 'Download v1.0 OpenApiDocs'
     continueOnError: true
@@ -21,3 +26,24 @@ steps:
       filePath: '$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1'
       arguments: > 
          -BetaGraphVersion
+
+  - task: PowerShell@2
+    displayName: "Configure User"
+    inputs:
+      targetType: 'inline'
+      pwsh: true
+      script: |
+        git config --global user.email 'GraphTooling@service.microsoft.com'
+        git config --global user.name 'Microsoft Graph DevX Tooling'
+
+  - task: Bash@3
+    env: 
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      targetType: 'inline'
+      script: |
+        git status
+        git add .
+        git commit -m 'Rease OpenApiDocs Download'
+        git push origin
+        git status

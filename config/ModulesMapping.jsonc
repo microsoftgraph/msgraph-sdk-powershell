@@ -9,7 +9,7 @@
     //"Devices.CloudPrint": "^print\\.",
     //"Devices.CorporateManagement": "^deviceAppManagement\\.|^officeConfiguration\\.|^users.mobileAppIntentAndState$|^users.mobileAppTroubleshootingEvent$|^users.windowsInformationProtectionDeviceRegistration$|^users.managedAppRegistration$|^users.managedDevice$|^users.deviceManagementTroubleshootingEvent$|^users.deviceEnrollmentConfiguration$",
     //"DirectoryObjects": "^directoryObjects\\.",
-    //"Education": "^education\\.",
+    "Education": "^education\\.",
     //"Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
     //"Financials": "^financials\\.",
     //"Groups": "^groups.group$|^groups.directoryObject$|^groups.conversation$|^groups.endpoint$|^groups.extension$|^groups.resourceSpecificPermissionGrant$|^groups.profilePhoto$|^groups.conversationThread$|^groupLifecyclePolicies\\.|^users.group$|^groups.directorySetting$|^groups.Actions$|^groups.Functions$",
@@ -27,7 +27,7 @@
     //"Security": "^Security\\.",
     //"Sites": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^users.site$|^groups.site$|^sites.Functions$|^sites.Actions$",
     //"Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs$|^users.userTeamwork$|^teamwork\\.|^users.team$|^users.userTeamwork$|^groups.team$",
-    "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$",
+    //"Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$",
     //"Users.Actions": "^users.Actions$",
     //"Users.Functions": "^users.Functions$"
 
