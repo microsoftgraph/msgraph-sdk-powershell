@@ -59,10 +59,4 @@ steps:
            npm config set node-options:max-old-space-size=16384
            $Env:NODE_OPTIONS="--max_old_space_size=16384"
 
-    - task: PowerShell@2
-      displayName: 'Set Nuget Key'
-      inputs:
-        targetType: 'inline'
-        pwsh: true
-        script: | 
-            nuget setApiKey $env:NUGETFEEDKEY -Source "https://pkgs.dev.azure.com/microsoftgraph/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/PowerShell/nuget/v3/index.json"
+    - task: NuGetAuthenticate@0
