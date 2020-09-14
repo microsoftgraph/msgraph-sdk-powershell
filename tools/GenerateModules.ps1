@@ -59,7 +59,8 @@ if ($UpdateAutoRest) {
 }
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
 $RequestCount = 0
-$ModuleMapping.Keys | ForEach-Object -ThrottleLimit 24 -Parallel {
+
+$ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -Parallel {
     enum VersionState {
         Invalid
         Valid
