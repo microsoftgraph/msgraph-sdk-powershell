@@ -386,24 +386,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /directoryObjects/microsoft.graph.administrativeUnit/microsoft.graph.delta():
-    get:
-      tags:
-        - directoryObjects.Functions
-      summary: Invoke function delta
-      operationId: directoryObjects.microsoft.graph.administrativeUnit_delta
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /directoryObjects/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -522,14 +504,6 @@ components:
               type: string
               format: date-time
               nullable: true
-          additionalProperties:
-            type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-    microsoft.graph.administrativeUnit:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: administrativeUnit
-          type: object
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.

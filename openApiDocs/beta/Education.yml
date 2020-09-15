@@ -7745,7 +7745,10 @@ paths:
                 - department
                 - deviceKeys
                 - displayName
+                - employeeHireDate
                 - employeeId
+                - employeeOrgData
+                - employeeType
                 - externalUserState
                 - externalUserStateChangeDateTime
                 - faxNumber
@@ -13923,7 +13926,10 @@ paths:
                 - department
                 - deviceKeys
                 - displayName
+                - employeeHireDate
                 - employeeId
+                - employeeOrgData
+                - employeeType
                 - externalUserState
                 - externalUserStateChangeDateTime
                 - faxNumber
@@ -15594,9 +15600,19 @@ components:
               type: string
               description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.'
               nullable: true
+            employeeHireDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             employeeId:
               type: string
               description: The employee identifier assigned to the user by the organization. Supports $filter.
+              nullable: true
+            employeeOrgData:
+              $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
+            employeeType:
+              type: string
               nullable: true
             externalUserState:
               type: string
@@ -16973,6 +16989,8 @@ components:
         - title: site
           type: object
           properties:
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             displayName:
               type: string
               description: The full title for the site. Read-only.
@@ -17424,6 +17442,18 @@ components:
           format: base64url
           nullable: true
         keyType:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.employeeOrgData:
+      title: employeeOrgData
+      type: object
+      properties:
+        costCenter:
+          type: string
+          nullable: true
+        division:
           type: string
           nullable: true
       additionalProperties:
@@ -18264,6 +18294,8 @@ components:
               type: string
               format: date-time
               nullable: true
+            scope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19309,6 +19341,8 @@ components:
           properties:
             accessLevel:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             canceledDateTime:
@@ -20252,6 +20286,16 @@ components:
               description: The set of subscriptions on the list.
           additionalProperties:
             type: object
+    microsoft.graph.deleted:
+      title: deleted
+      type: object
+      properties:
+        state:
+          type: string
+          description: Represents the state of the deleted item.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.root:
       title: root
       type: object
@@ -21662,6 +21706,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewScope:
+      title: accessReviewScope
+      type: object
+      properties:
+        query:
+          type: string
+          nullable: true
+        queryType:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21722,6 +21778,8 @@ components:
             displayName:
               type: string
               nullable: true
+            instanceEnumerationScope:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -23649,6 +23707,15 @@ components:
         - sameEnterprise
         - sameEnterpriseAndFederated
       type: string
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -24362,16 +24429,6 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.deleted:
-      title: deleted
-      type: object
-      properties:
-        state:
-          type: string
-          description: Represents the state of the deleted item.
           nullable: true
       additionalProperties:
         type: object
@@ -26172,18 +26229,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.accessReviewScope:
-      title: accessReviewScope
-      type: object
-      properties:
-        query:
-          type: string
-          nullable: true
-        queryType:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.accessReviewScheduleSettings:
       title: accessReviewScheduleSettings
       type: object
@@ -27101,6 +27146,8 @@ components:
       properties:
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
         upn:
           type: string
           description: User principal name of the participant.
@@ -28450,6 +28497,13 @@ components:
         - sponsor
         - emergencyContact
         - other
+        - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
         - unknownFutureValue
       type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:

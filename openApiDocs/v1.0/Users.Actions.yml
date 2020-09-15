@@ -15262,6 +15262,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable.
+            scopedRoleMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
             transitiveMemberOf:
               type: array
               items:
@@ -16344,6 +16348,20 @@ components:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.scopedRoleMembership:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: scopedRoleMembership
+          type: object
+          properties:
+            administrativeUnitId:
+              type: string
+            roleId:
+              type: string
+            roleMemberInfo:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.calendar:
@@ -18073,6 +18091,20 @@ components:
         servicePlanName:
           type: string
           description: The name of the service plan.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -20288,20 +20320,6 @@ components:
         - Completed
         - Failed
       type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.externalLink:
       title: externalLink
       type: object

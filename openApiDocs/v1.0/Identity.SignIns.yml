@@ -1811,6 +1811,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -1862,6 +1863,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -1938,6 +1940,10 @@ paths:
                 invitation-id: $request.path.invitation-id
             registeredDevices:
               operationId: invitations.InvitedUser.ListRegisteredDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            scopedRoleMemberOf:
+              operationId: invitations.InvitedUser.ListScopedRoleMemberOf
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveMemberOf:
@@ -2119,6 +2125,10 @@ paths:
                 invitation-id: $request.path.invitation-id
             registeredDevices:
               operationId: invitations.InvitedUser.ListRegisteredDevices
+              parameters:
+                invitation-id: $request.path.invitation-id
+            scopedRoleMemberOf:
+              operationId: invitations.InvitedUser.ListScopedRoleMemberOf
               parameters:
                 invitation-id: $request.path.invitation-id
             transitiveMemberOf:
@@ -2716,6 +2726,7 @@ paths:
                 - activityBasedTimeoutPolicies
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
+                - permissionGrantPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - conditionalAccessPolicies
@@ -2735,6 +2746,7 @@ paths:
                 - activityBasedTimeoutPolicies
                 - claimsMappingPolicies
                 - homeRealmDiscoveryPolicies
+                - permissionGrantPolicies
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - conditionalAccessPolicies
@@ -2754,6 +2766,8 @@ paths:
               operationId: policies.ListClaimsMappingPolicies
             homeRealmDiscoveryPolicies:
               operationId: policies.ListHomeRealmDiscoveryPolicies
+            permissionGrantPolicies:
+              operationId: policies.ListPermissionGrantPolicies
             tokenIssuancePolicies:
               operationId: policies.ListTokenIssuancePolicies
             tokenLifetimePolicies:
@@ -3739,6 +3753,747 @@ paths:
       summary: Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
       operationId: policies_DeleteIdentitySecurityDefaultsEnforcementPolicy
       parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /policies/permissionGrantPolicies:
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get permissionGrantPolicies from policies
+      operationId: policies_ListPermissionGrantPolicies
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - excludes
+                - includes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - excludes
+                - includes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantPolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to permissionGrantPolicies for policies
+      operationId: policies_CreatePermissionGrantPolicies
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get permissionGrantPolicies from policies
+      operationId: policies_GetPermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - excludes
+                - includes
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - excludes
+                - includes
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+          links:
+            excludes:
+              operationId: policies.PermissionGrantPolicies.ListExcludes
+              parameters:
+                permissionGrantPolicy-id: $request.path.permissionGrantPolicy-id
+            includes:
+              operationId: policies.PermissionGrantPolicies.ListIncludes
+              parameters:
+                permissionGrantPolicy-id: $request.path.permissionGrantPolicy-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property permissionGrantPolicies in policies
+      operationId: policies_UpdatePermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property permissionGrantPolicies for policies
+      operationId: policies_DeletePermissionGrantPolicies
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get excludes from policies
+      operationId: policies.permissionGrantPolicies_ListExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientApplicationIds
+                - clientApplicationIds desc
+                - clientApplicationPublisherIds
+                - clientApplicationPublisherIds desc
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationsFromVerifiedPublisherOnly desc
+                - clientApplicationTenantIds
+                - clientApplicationTenantIds desc
+                - permissionClassification
+                - permissionClassification desc
+                - permissions
+                - permissions desc
+                - permissionType
+                - permissionType desc
+                - resourceApplication
+                - resourceApplication desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientApplicationIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationTenantIds
+                - permissionClassification
+                - permissions
+                - permissionType
+                - resourceApplication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantConditionSet
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to excludes for policies
+      operationId: policies.permissionGrantPolicies_CreateExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/excludes/{permissionGrantConditionSet-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get excludes from policies
+      operationId: policies.permissionGrantPolicies_GetExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientApplicationIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationTenantIds
+                - permissionClassification
+                - permissions
+                - permissionType
+                - resourceApplication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property excludes in policies
+      operationId: policies.permissionGrantPolicies_UpdateExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property excludes for policies
+      operationId: policies.permissionGrantPolicies_DeleteExcludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get includes from policies
+      operationId: policies.permissionGrantPolicies_ListIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - clientApplicationIds
+                - clientApplicationIds desc
+                - clientApplicationPublisherIds
+                - clientApplicationPublisherIds desc
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationsFromVerifiedPublisherOnly desc
+                - clientApplicationTenantIds
+                - clientApplicationTenantIds desc
+                - permissionClassification
+                - permissionClassification desc
+                - permissions
+                - permissions desc
+                - permissionType
+                - permissionType desc
+                - resourceApplication
+                - resourceApplication desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientApplicationIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationTenantIds
+                - permissionClassification
+                - permissions
+                - permissionType
+                - resourceApplication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of permissionGrantConditionSet
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Create new navigation property to includes for policies
+      operationId: policies.permissionGrantPolicies_CreateIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/policies/permissionGrantPolicies/{permissionGrantPolicy-id}/includes/{permissionGrantConditionSet-id}':
+    get:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Get includes from policies
+      operationId: policies.permissionGrantPolicies_GetIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - clientApplicationIds
+                - clientApplicationPublisherIds
+                - clientApplicationsFromVerifiedPublisherOnly
+                - clientApplicationTenantIds
+                - permissionClassification
+                - permissions
+                - permissionType
+                - resourceApplication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Update the navigation property includes in policies
+      operationId: policies.permissionGrantPolicies_UpdateIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - policies.permissionGrantPolicy
+      summary: Delete navigation property includes for policies
+      operationId: policies.permissionGrantPolicies_DeleteIncludes
+      parameters:
+        - name: permissionGrantPolicy-id
+          in: path
+          description: 'key: id of permissionGrantPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantPolicy
+        - name: permissionGrantConditionSet-id
+          in: path
+          description: 'key: id of permissionGrantConditionSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: permissionGrantConditionSet
         - name: If-Match
           in: header
           description: ETag
@@ -4764,6 +5519,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable.
+            scopedRoleMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
             transitiveMemberOf:
               type: array
               items:
@@ -4937,6 +5696,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
+            permissionGrantPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
             tokenIssuancePolicies:
               type: array
               items:
@@ -4989,6 +5752,62 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.permissionGrantPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.policyBase'
+        - title: permissionGrantPolicy
+          type: object
+          properties:
+            excludes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+            includes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.permissionGrantConditionSet'
+          additionalProperties:
+            type: object
+          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.permissionGrantConditionSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: permissionGrantConditionSet
+          type: object
+          properties:
+            clientApplicationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationPublisherIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            clientApplicationsFromVerifiedPublisherOnly:
+              type: boolean
+              nullable: true
+            clientApplicationTenantIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            permissionClassification:
+              type: string
+              nullable: true
+            permissions:
+              type: array
+              items:
+                type: string
+                nullable: true
+            permissionType:
+              $ref: '#/components/schemas/microsoft.graph.permissionType'
+            resourceApplication:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.tokenIssuancePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
@@ -5490,6 +6309,20 @@ components:
               type: string
               description: 'Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: ''AAD_Premium''. Read-only'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.scopedRoleMembership:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: scopedRoleMembership
+          type: object
+          properties:
+            administrativeUnitId:
+              type: string
+            roleId:
+              type: string
+            roleMemberInfo:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.calendar:
@@ -6987,6 +7820,13 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.permissionType:
+      title: permissionType
+      enum:
+        - application
+        - delegated
+        - delegatedUserConsentable
+      type: string
     odata.error:
       required:
         - error

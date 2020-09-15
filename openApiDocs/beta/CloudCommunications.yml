@@ -39,6 +39,8 @@ paths:
                 - id desc
                 - accessLevel
                 - accessLevel desc
+                - allowedPresenters
+                - allowedPresenters desc
                 - audioConferencing
                 - audioConferencing desc
                 - canceledDateTime
@@ -90,6 +92,7 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowedPresenters
                 - audioConferencing
                 - canceledDateTime
                 - capabilities
@@ -208,6 +211,7 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowedPresenters
                 - audioConferencing
                 - canceledDateTime
                 - capabilities
@@ -424,6 +428,8 @@ components:
           properties:
             accessLevel:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             canceledDateTime:
@@ -525,6 +531,15 @@ components:
         - locked
         - sameEnterprise
         - sameEnterpriseAndFederated
+      type: string
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
       type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
@@ -644,6 +659,8 @@ components:
       properties:
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
         upn:
           type: string
           description: User principal name of the participant.
@@ -685,6 +702,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+      type: string
     odata.error.detail:
       required:
         - code

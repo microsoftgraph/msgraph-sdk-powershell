@@ -4798,6 +4798,7 @@ paths:
             items:
               enum:
                 - id
+                - administrativeUnits
                 - deletedItems
                 - featureRolloutPolicies
               type: string
@@ -4812,6 +4813,7 @@ paths:
             items:
               enum:
                 - '*'
+                - administrativeUnits
                 - deletedItems
                 - featureRolloutPolicies
               type: string
@@ -4823,6 +4825,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
           links:
+            administrativeUnits:
+              operationId: directory.ListAdministrativeUnits
             deletedItems:
               operationId: directory.ListDeletedItems
             featureRolloutPolicies:
@@ -4842,6 +4846,239 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.directory'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/administrativeUnits:
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get administrativeUnits from directory
+      operationId: directory_ListAdministrativeUnits
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - visibility
+                - visibility desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of administrativeUnit
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.administrativeUnit
+      summary: Create new navigation property to administrativeUnits for directory
+      operationId: directory_CreateAdministrativeUnits
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/administrativeUnits/{administrativeUnit-id}':
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get administrativeUnits from directory
+      operationId: directory_GetAdministrativeUnits
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - visibility
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - scopedRoleMembers
+                - extensions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+          links:
+            members:
+              operationId: directory.AdministrativeUnits.ListMembers
+              parameters:
+                administrativeUnit-id: $request.path.administrativeUnit-id
+            scopedRoleMembers:
+              operationId: directory.AdministrativeUnits.ListScopedRoleMembers
+              parameters:
+                administrativeUnit-id: $request.path.administrativeUnit-id
+            extensions:
+              operationId: directory.AdministrativeUnits.ListExtensions
+              parameters:
+                administrativeUnit-id: $request.path.administrativeUnit-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.administrativeUnit
+      summary: Update the navigation property administrativeUnits in directory
+      operationId: directory_UpdateAdministrativeUnits
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.administrativeUnit
+      summary: Delete navigation property administrativeUnits for directory
+      operationId: directory_DeleteAdministrativeUnits
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -10580,6 +10817,10 @@ components:
         - title: directory
           type: object
           properties:
+            administrativeUnits:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
             deletedItems:
               type: array
               items:
