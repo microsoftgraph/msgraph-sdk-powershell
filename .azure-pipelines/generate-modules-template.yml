@@ -21,7 +21,7 @@ parameters:
       displayName: 'Workload Module Path'
       type: string
       default: 'src\'
-    - name: BETA_MODULE_PREFIX
+    - name: MODULE_PREFIX
       displayName: 'Module Prefix'
       type: string
       default: 'Microsoft.Graph'
@@ -163,7 +163,7 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(WORKLOAD_MODULE_PATH)
-      Pattern: '$(BETA_MODULE_PREFIX).*.private.dll, $(BETA_MODULE_PREFIX).*.psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
+      Pattern: '$(MODULE_PREFIX).*.private.dll, $(MODULE_PREFIX).*.psm1, $(MODULE_PREFIX).*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [

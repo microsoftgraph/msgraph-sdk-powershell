@@ -17,7 +17,7 @@ parameters:
     displayName: 'Graph Version'
     type: string
     default: 'beta'
-  - name: BETA_MODULE_PREFIX
+  - name: MODULE_PREFIX
     displayName: 'Module Prefix'
     type: string
     default: 'Microsoft.Graph'
@@ -41,7 +41,6 @@ jobs:
       pwsh: true
       script: |
         Get-PSRepository
-        dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity Verbose -Uri '$(NUGETFEED)'
         $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
@@ -59,7 +58,6 @@ jobs:
       pwsh: true
       script: |
          Get-PSRepository
-         Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed'
          $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed'
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
@@ -68,7 +66,7 @@ jobs:
     inputs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(ROLLUP_MODULE_PATH)
-      Pattern: '$(BETA_MODULE_PREFIX).psm1, $(BETA_MODULE_PREFIX).*.format.ps1xml, *.ps1'
+      Pattern: '$(MODULE_PREFIX).psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -115,7 +113,7 @@ jobs:
     inputs:
       command: 'pack'
       Configuration: Release
-      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(BETA_MODULE_PREFIX).nuspec'
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(MODULE_PREFIX).nuspec'
       packDestination: '$(Build.ArtifactStagingDirectory)/'
       versioningScheme: 'off'
   
