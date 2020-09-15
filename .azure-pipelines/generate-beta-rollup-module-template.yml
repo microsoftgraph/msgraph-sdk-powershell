@@ -46,7 +46,7 @@ jobs:
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
         $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        Register-PSRepository -Name 'RollupRepo' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
+        Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
         Get-PSRepository
 
   - task: PowerShell@2
@@ -55,7 +55,7 @@ jobs:
       targetType: 'inline'
       pwsh: true
       script: |
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1
+         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed'
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
