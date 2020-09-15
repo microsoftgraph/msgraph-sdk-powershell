@@ -182,7 +182,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 var readStream = await _streamTask.Value;
                 ValidateStreamForReading(readStream);
-                await Content.CopyToAsync(stream);
+                if (!_contentConsumed)
+                {
+                    await Content.CopyToAsync(stream);
+                }
             }
         }
 
