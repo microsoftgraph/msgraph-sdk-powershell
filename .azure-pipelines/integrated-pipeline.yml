@@ -19,6 +19,7 @@ variables:
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILD_NUMBER: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
 
+
 pool: MsGraphDevXAzureAgents
 
 trigger:
@@ -30,6 +31,23 @@ trigger:
       - bugfixes/*
 
 stages:
+- stage: ComputeVersion
+  displayName: 'Compute Version'
+  jobs:
+  - job: ComputeVersion
+    steps:
+    - task: PowerShell@2
+      displayName: 'Compute Version'
+      inputs:
+        targetType: 'inline'
+        pwsh: true
+        script: |
+            printenv
+            if ($Env:BUILD_SOURCEBRANCHNAME -eq "master"){
+                Write-Host "##vso[task.setvariable variable=BUILD_NUMBER;isOutput=true]-1"
+            }
+            printenv
+
 - stage: DownloadOpenApiDocs
   displayName: 'Download Open Api Docs from DevX API'
   jobs:
