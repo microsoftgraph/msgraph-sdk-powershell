@@ -31,8 +31,8 @@ parameters:
     default: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
 
 jobs:
-- job: MSGraphPSSDKGeneration
-  displayName: MS Graph PS SDK Roll-Up Generation
+- job: MsGraphPSSDKRollUpModuleGeneration
+  displayName: Microsoft Graph PowerShell SDK Roll-Up Module Generation
   pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
     
@@ -154,7 +154,7 @@ jobs:
     inputs:
       command: push
       packagesToPush: '$(Build.ArtifactStagingDirectory)/Microsoft.Graph*.nupkg'
-      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/45497536-f6d8-4bb6-b5d1-fac8bc2c2df1'
+      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
       allowPackageConflicts: true
 
   - task: PublishBuildArtifacts@1

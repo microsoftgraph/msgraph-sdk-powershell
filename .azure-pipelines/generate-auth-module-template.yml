@@ -27,8 +27,8 @@ parameters:
     default: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
 
 jobs:
-- job: MSGraphPSSDKGeneration
-  displayName: MS Graph PS SDK Auth Generation
+- job: MsGraphPSSDKAuthModuleGeneration
+  displayName: Microsoft Graph PowerShell SDK Auth Module Generation
   pool: MsGraphDevXAzureAgents
   
   steps:
@@ -157,7 +157,7 @@ jobs:
     inputs:
       command: push
       packagesToPush: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)\Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'
-      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/45497536-f6d8-4bb6-b5d1-fac8bc2c2df1'
+      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
       allowPackageConflicts: true
 
   - task: PublishBuildArtifacts@1
