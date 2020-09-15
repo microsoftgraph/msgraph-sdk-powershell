@@ -34,9 +34,9 @@ paths:
                 - providerTenantSettings
                 - secureScoreControlProfiles
                 - secureScores
+                - securityActions
                 - tiIndicators
                 - userSecurityProfiles
-                - securityActions
               type: string
         - name: $expand
           in: query
@@ -58,9 +58,9 @@ paths:
                 - providerTenantSettings
                 - secureScoreControlProfiles
                 - secureScores
+                - securityActions
                 - tiIndicators
                 - userSecurityProfiles
-                - securityActions
               type: string
       responses:
         '200':
@@ -69,6 +69,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
+          links:
+            alerts:
+              operationId: Security.ListAlerts
+            cloudAppSecurityProfiles:
+              operationId: Security.ListCloudAppSecurityProfiles
+            domainSecurityProfiles:
+              operationId: Security.ListDomainSecurityProfiles
+            fileSecurityProfiles:
+              operationId: Security.ListFileSecurityProfiles
+            hostSecurityProfiles:
+              operationId: Security.ListHostSecurityProfiles
+            ipSecurityProfiles:
+              operationId: Security.ListIpSecurityProfiles
+            providerTenantSettings:
+              operationId: Security.ListProviderTenantSettings
+            secureScoreControlProfiles:
+              operationId: Security.ListSecureScoreControlProfiles
+            secureScores:
+              operationId: Security.ListSecureScores
+            securityActions:
+              operationId: Security.ListSecurityActions
+            tiIndicators:
+              operationId: Security.ListTiIndicators
+            userSecurityProfiles:
+              operationId: Security.ListUserSecurityProfiles
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3537,6 +3562,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
+            securityActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityAction'
             tiIndicators:
               type: array
               items:
@@ -3545,10 +3574,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userSecurityProfile'
-            securityActions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.securityAction'
           additionalProperties:
             type: object
     microsoft.graph.alert:
@@ -4502,14 +4527,14 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
+        message:
+          type: string
+          nullable: true
         subcode:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
-        message:
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.userSecurityProfile:
@@ -5419,6 +5444,7 @@ components:
       enum:
         - ip
         - icmp
+        - unknown
         - igmp
         - ggp
         - ipv4
@@ -5440,7 +5466,6 @@ components:
         - spx
         - spxII
         - unknownFutureValue
-        - unknown
       type: string
     microsoft.graph.connectionStatus:
       title: connectionStatus

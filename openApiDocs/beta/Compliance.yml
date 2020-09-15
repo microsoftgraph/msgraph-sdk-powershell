@@ -46,6 +46,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.compliance'
+          links:
+            ediscovery:
+              operationId: compliance.GetEdiscovery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -107,6 +110,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery'
+          links:
+            cases:
+              operationId: compliance.Ediscovery.ListCases
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -169,24 +175,24 @@ paths:
               enum:
                 - id
                 - id desc
+                - closedBy
+                - closedBy desc
+                - closedDateTime
+                - closedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
                 - description
                 - description desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - status
                 - status desc
-                - closedBy
-                - closedBy desc
-                - closedDateTime
-                - closedDateTime desc
-                - externalId
-                - externalId desc
-                - displayName
-                - displayName desc
-                - createdDateTime
-                - createdDateTime desc
               type: string
         - name: $select
           in: query
@@ -199,15 +205,15 @@ paths:
             items:
               enum:
                 - id
+                - closedBy
+                - closedDateTime
+                - createdDateTime
                 - description
+                - displayName
+                - externalId
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - status
-                - closedBy
-                - closedDateTime
-                - externalId
-                - displayName
-                - createdDateTime
                 - reviewSets
               type: string
         - name: $expand
@@ -293,15 +299,15 @@ paths:
             items:
               enum:
                 - id
+                - closedBy
+                - closedDateTime
+                - createdDateTime
                 - description
+                - displayName
+                - externalId
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - status
-                - closedBy
-                - closedDateTime
-                - externalId
-                - displayName
-                - createdDateTime
                 - reviewSets
               type: string
         - name: $expand
@@ -324,6 +330,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ediscoveryCase'
+          links:
+            reviewSets:
+              operationId: compliance.ediscovery.Cases.ListReviewSets
+              parameters:
+                ediscoveryCase-id: $request.path.ediscoveryCase-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -450,10 +461,10 @@ paths:
                 - id desc
                 - createdBy
                 - createdBy desc
-                - displayName
-                - displayName desc
                 - createdDateTime
                 - createdDateTime desc
+                - displayName
+                - displayName desc
               type: string
         - name: $select
           in: query
@@ -467,8 +478,8 @@ paths:
               enum:
                 - id
                 - createdBy
-                - displayName
                 - createdDateTime
+                - displayName
                 - queries
               type: string
         - name: $expand
@@ -570,8 +581,8 @@ paths:
               enum:
                 - id
                 - createdBy
-                - displayName
                 - createdDateTime
+                - displayName
                 - queries
               type: string
         - name: $expand
@@ -594,6 +605,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reviewSet'
+          links:
+            queries:
+              operationId: compliance.ediscovery.cases.ReviewSets.ListQueries
+              parameters:
+                ediscoveryCase-id: $request.path.ediscoveryCase-id
+                reviewSet-id: $request.path.reviewSet-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -699,18 +716,18 @@ paths:
               enum:
                 - id
                 - id desc
-                - query
-                - query desc
-                - lastModifiedBy
-                - lastModifiedBy desc
                 - createdBy
                 - createdBy desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - displayName
-                - displayName desc
                 - createdDateTime
                 - createdDateTime desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - query
+                - query desc
               type: string
         - name: $select
           in: query
@@ -723,12 +740,12 @@ paths:
             items:
               enum:
                 - id
-                - query
-                - lastModifiedBy
                 - createdBy
-                - lastModifiedDateTime
-                - displayName
                 - createdDateTime
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - query
               type: string
         - name: $expand
           in: query
@@ -841,12 +858,12 @@ paths:
             items:
               enum:
                 - id
-                - query
-                - lastModifiedBy
                 - createdBy
-                - lastModifiedDateTime
-                - displayName
                 - createdDateTime
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - query
               type: string
         - name: $expand
           in: query
@@ -978,7 +995,26 @@ components:
         - title: ediscoveryCase
           type: object
           properties:
+            closedBy:
+              type: string
+              nullable: true
+            closedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            externalId:
               type: string
               nullable: true
             lastModifiedBy:
@@ -991,25 +1027,6 @@ components:
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.caseStatus'
-            closedBy:
-              type: string
-              nullable: true
-            closedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            externalId:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
             reviewSets:
               type: array
               items:
@@ -1025,13 +1042,13 @@ components:
             createdBy:
               type: string
               nullable: true
-            displayName:
-              type: string
-              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
+              nullable: true
+            displayName:
+              type: string
               nullable: true
             queries:
               type: array
@@ -1045,16 +1062,10 @@ components:
         - title: reviewSetQuery
           type: object
           properties:
-            query:
-              type: string
-              nullable: true
-            lastModifiedBy:
-              type: string
-              nullable: true
             createdBy:
               type: string
               nullable: true
-            lastModifiedDateTime:
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
@@ -1062,10 +1073,16 @@ components:
             displayName:
               type: string
               nullable: true
-            createdDateTime:
+            lastModifiedBy:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
+              nullable: true
+            query:
+              type: string
               nullable: true
           additionalProperties:
             type: object
