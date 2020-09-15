@@ -60,7 +60,7 @@ jobs:
          Get-PSRepository
          Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed'
          pwsh
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed'
+         $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed'
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
