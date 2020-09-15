@@ -6502,6 +6502,14 @@ components:
               type: integer
               format: int64
               nullable: true
+            outlook2019:
+              type: integer
+              format: int64
+              nullable: true
+            outlookM365:
+              type: integer
+              format: int64
+              nullable: true
             reportPeriod:
               type: string
               nullable: true

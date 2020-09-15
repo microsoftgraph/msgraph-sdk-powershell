@@ -253,6 +253,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -304,6 +305,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -481,6 +483,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -532,6 +535,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -608,6 +612,10 @@ paths:
                 user-id: $request.path.user-id
             registeredDevices:
               operationId: users.ListRegisteredDevices
+              parameters:
+                user-id: $request.path.user-id
+            scopedRoleMemberOf:
+              operationId: users.ListScopedRoleMemberOf
               parameters:
                 user-id: $request.path.user-id
             transitiveMemberOf:
@@ -4008,6 +4016,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable.
+            scopedRoleMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
             transitiveMemberOf:
               type: array
               items:
@@ -4559,6 +4571,20 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+    microsoft.graph.scopedRoleMembership:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: scopedRoleMembership
+          type: object
+          properties:
+            administrativeUnitId:
+              type: string
+            roleId:
+              type: string
+            roleMemberInfo:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
     microsoft.graph.calendar:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6109,6 +6135,20 @@ components:
           nullable: true
         timeZone:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
+      additionalProperties:
+        type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.onlineMeetingProviderType:
@@ -9083,20 +9123,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.sharepointIds'
         siteId:
           type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

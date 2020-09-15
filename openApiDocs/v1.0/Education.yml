@@ -2279,6 +2279,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -2330,6 +2331,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -2388,6 +2390,8 @@ paths:
               operationId: education.me.User.ListOwnedObjects
             registeredDevices:
               operationId: education.me.User.ListRegisteredDevices
+            scopedRoleMemberOf:
+              operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
             calendar:
@@ -2483,6 +2487,8 @@ paths:
               operationId: education.me.User.ListOwnedObjects
             registeredDevices:
               operationId: education.me.User.ListRegisteredDevices
+            scopedRoleMemberOf:
+              operationId: education.me.User.ListScopedRoleMemberOf
             transitiveMemberOf:
               operationId: education.me.User.ListTransitiveMemberOf
             calendar:
@@ -4284,6 +4290,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -4335,6 +4342,7 @@ paths:
                 - ownedDevices
                 - ownedObjects
                 - registeredDevices
+                - scopedRoleMemberOf
                 - transitiveMemberOf
                 - calendar
                 - calendarGroups
@@ -4411,6 +4419,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             registeredDevices:
               operationId: education.users.User.ListRegisteredDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            scopedRoleMemberOf:
+              operationId: education.users.User.ListScopedRoleMemberOf
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
@@ -4592,6 +4604,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             registeredDevices:
               operationId: education.users.User.ListRegisteredDevices
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            scopedRoleMemberOf:
+              operationId: education.users.User.ListScopedRoleMemberOf
               parameters:
                 educationUser-id: $request.path.educationUser-id
             transitiveMemberOf:
@@ -5645,6 +5661,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Devices that are registered for the user. Read-only. Nullable.
+            scopedRoleMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
             transitiveMemberOf:
               type: array
               items:
@@ -6874,6 +6894,20 @@ components:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.scopedRoleMembership:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: scopedRoleMembership
+          type: object
+          properties:
+            administrativeUnitId:
+              type: string
+            roleId:
+              type: string
+            roleMemberInfo:
+              $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
             type: object
     microsoft.graph.calendarGroup:
