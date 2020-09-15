@@ -8,7 +8,8 @@ Param(
   [switch] $Pack,
   [switch] $Publish,
   [switch] $EnableSigning,
-  [switch] $BuildWhenEqual
+  [switch] $BuildWhenEqual,
+  [int] $ModulePreviewNumber = -1
 )
 enum VersionState {
   Invalid
@@ -52,10 +53,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
     }
     else {
-      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
+      & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes
     }
   }
 

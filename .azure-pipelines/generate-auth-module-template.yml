@@ -21,6 +21,10 @@ parameters:
     displayName: 'Enable Signing'
     type: boolean
     default: false
+  - name: BUILD_NUMBER
+    displayName: 'Build Number'
+    type: string
+    default: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
 
 jobs:
 - job: MSGraphPSSDKGeneration
