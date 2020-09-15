@@ -149,7 +149,7 @@ jobs:
       SessionTimeout: 20
 
   - task: NuGetCommand@2
-    displayName: 'NuGet Publish To Local Feed'
+    displayName: 'NuGet Publish To Local Build Feed'
     inputs:
       command: push
       packagesToPush: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)\Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'

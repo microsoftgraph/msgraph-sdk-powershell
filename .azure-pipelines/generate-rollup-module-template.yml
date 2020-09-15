@@ -144,6 +144,14 @@ jobs:
             ]
       SessionTimeout: 20
 
+  - task: NuGetCommand@2
+    displayName: 'NuGet Publish To Local Build Feed'
+    inputs:
+      command: push
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/Microsoft.Graph*.nupkg'
+      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/45497536-f6d8-4bb6-b5d1-fac8bc2c2df1'
+      allowPackageConflicts: true
+
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact Microsoft.Graph.nupkg'
     inputs:

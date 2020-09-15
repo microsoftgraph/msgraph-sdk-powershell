@@ -92,7 +92,7 @@ stages:
 - stage: GenerateRollUpModule
   displayName: 'Generate Roll-Up Module'
   jobs:
-  - template: ./generate-rollup-module-template.yml.yml
+  - template: ./generate-rollup-module-template.yml
     parameters:
       Api_Key: $(Api_Key)
       ROLLUP_MODULE_PATH: $(ROLLUP_MODULE_PATH)
