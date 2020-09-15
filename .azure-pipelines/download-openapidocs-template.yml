@@ -45,6 +45,6 @@ steps:
         git status
         git checkout $(Build.SourceBranchName)
         git add .
-        git commit -m 'Rease OpenApiDocs Download'
+        git commit -m 'Rease OpenApiDocs Download [skip ci]'
         git push --set-upstream origin $(Build.SourceBranchName)
         git status
