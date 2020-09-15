@@ -41,8 +41,7 @@ jobs:
       pwsh: true
       script: |
         Get-PSRepository
-        $result = dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity Verbose -Uri '$(NUGETFEED)'
-        Write-Host $result
+        dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity Verbose -Uri '$(NUGETFEED)'
         $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
