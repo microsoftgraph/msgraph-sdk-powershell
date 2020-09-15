@@ -47,8 +47,8 @@ jobs:
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
         $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        #Register-PSRepository -Name '$(NUGETFEEDNAME)' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
-
+        Register-PSRepository -Name 'RollupRepo' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
+        Get-PSRepository
 
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
