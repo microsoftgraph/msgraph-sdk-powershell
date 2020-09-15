@@ -239,12 +239,23 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private void DecodeJWT(string token, IAccount account, ref IAuthContext authContext)
         {
             JwtPayload jwtPayload = JwtHelpers.DecodeToObject<JwtPayload>(token);
-            if (jwtPayload == null && authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
             {
-                throw new Exception(string.Format(
-                        CultureInfo.CurrentCulture,
-                        ErrorConstants.Message.InvalidUserProvidedToken,
-                        nameof(AccessToken)));
+                if (jwtPayload == null)
+                {
+                    throw new Exception(string.Format(
+                            CultureInfo.CurrentCulture,
+                            ErrorConstants.Message.InvalidUserProvidedToken,
+                            nameof(AccessToken)));
+                }
+
+                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
+                {
+                    throw new Exception(string.Format(
+                            CultureInfo.CurrentCulture,
+                            ErrorConstants.Message.ExpiredUserProvidedToken,
+                            nameof(AccessToken)));
+                }
             }
 
             authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
