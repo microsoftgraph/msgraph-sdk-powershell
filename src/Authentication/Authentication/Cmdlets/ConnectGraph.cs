@@ -192,19 +192,39 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private void ValidateParameters()
         {
-            if (ParameterSetName == Constants.AppParameterSet)
+            switch (ParameterSetName)
             {
-                // Client Id
-                if (string.IsNullOrEmpty(ClientId))
-                    ThrowParameterError(nameof(ClientId));
+                case Constants.AppParameterSet:
+                    {
+                        // Client Id
+                        if (string.IsNullOrEmpty(ClientId))
+                        {
+                            ThrowParameterError(nameof(ClientId));
+                        }
 
-                // Certificate Thumbprint or name
-                if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
-                    ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
+                        // Certificate Thumbprint or name
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName))
+                        {
+                            ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)}");
+                        }
 
-                // Tenant Id
-                if (string.IsNullOrEmpty(TenantId))
-                    ThrowParameterError(nameof(TenantId));
+                        // Tenant Id
+                        if (string.IsNullOrEmpty(TenantId))
+                        {
+                            ThrowParameterError(nameof(TenantId));
+                        }
+
+                    }
+                    break;
+                case Constants.AccessTokenParameterSet:
+                    {
+                        // AccessToken
+                        if (string.IsNullOrEmpty(AccessToken))
+                        {
+                            ThrowParameterError(nameof(AccessToken));
+                        }
+                    }
+                    break;
             }
         }
 
