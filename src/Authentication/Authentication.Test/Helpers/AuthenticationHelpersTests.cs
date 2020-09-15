@@ -97,11 +97,19 @@
             CertificateRequest certificateRequest = new CertificateRequest(certName, ecdsaKey, HashAlgorithmName.SHA256);
             // We have to export cert to dummy cert since `CreateSelfSigned` creates a cert without a private key.
             X509Certificate2 cert = certificateRequest.CreateSelfSigned(DateTimeOffset.Now, DateTimeOffset.Now.AddYears(5));
-            X509Certificate2 dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
+
+            X509Certificate2 dummyCert = null;
+            if (PowerShell.Authentication.Helpers.OperatingSystem.IsMacOS())
+            {
+                dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.Exportable);
+            }
+            else
+            {
+                dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
+            }
             using (X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
                 store.Open(OpenFlags.ReadWrite);
-
                 store.Add(dummyCert);
             }
         }
