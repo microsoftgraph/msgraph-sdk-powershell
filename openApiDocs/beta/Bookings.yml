@@ -32,26 +32,26 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
-                - businessType
-                - businessType desc
                 - address
                 - address desc
-                - phone
-                - phone desc
-                - email
-                - email desc
-                - webSiteUrl
-                - webSiteUrl desc
-                - defaultCurrencyIso
-                - defaultCurrencyIso desc
                 - businessHours
                 - businessHours desc
-                - schedulingPolicy
-                - schedulingPolicy desc
+                - businessType
+                - businessType desc
+                - defaultCurrencyIso
+                - defaultCurrencyIso desc
+                - email
+                - email desc
                 - isPublished
                 - isPublished desc
+                - phone
+                - phone desc
                 - publicUrl
                 - publicUrl desc
+                - schedulingPolicy
+                - schedulingPolicy desc
+                - webSiteUrl
+                - webSiteUrl desc
               type: string
         - name: $select
           in: query
@@ -65,16 +65,16 @@ paths:
               enum:
                 - id
                 - displayName
-                - businessType
                 - address
-                - phone
-                - email
-                - webSiteUrl
-                - defaultCurrencyIso
                 - businessHours
-                - schedulingPolicy
+                - businessType
+                - defaultCurrencyIso
+                - email
                 - isPublished
+                - phone
                 - publicUrl
+                - schedulingPolicy
+                - webSiteUrl
                 - appointments
                 - calendarView
                 - customers
@@ -169,16 +169,16 @@ paths:
               enum:
                 - id
                 - displayName
-                - businessType
                 - address
-                - phone
-                - email
-                - webSiteUrl
-                - defaultCurrencyIso
                 - businessHours
-                - schedulingPolicy
+                - businessType
+                - defaultCurrencyIso
+                - email
                 - isPublished
+                - phone
                 - publicUrl
+                - schedulingPolicy
+                - webSiteUrl
                 - appointments
                 - calendarView
                 - customers
@@ -209,6 +209,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+          links:
+            appointments:
+              operationId: bookingBusinesses.ListAppointments
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+            calendarView:
+              operationId: bookingBusinesses.ListCalendarView
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+            customers:
+              operationId: bookingBusinesses.ListCustomers
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+            services:
+              operationId: bookingBusinesses.ListServices
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+            staffMembers:
+              operationId: bookingBusinesses.ListStaffMembers
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -293,48 +314,22 @@ paths:
               enum:
                 - id
                 - id desc
-                - selfServiceAppointmentId
-                - selfServiceAppointmentId desc
-                - customerId
-                - customerId desc
-                - customerName
-                - customerName desc
                 - customerEmailAddress
                 - customerEmailAddress desc
-                - customerPhone
-                - customerPhone desc
+                - customerId
+                - customerId desc
                 - customerLocation
                 - customerLocation desc
+                - customerName
+                - customerName desc
                 - customerNotes
                 - customerNotes desc
-                - serviceId
-                - serviceId desc
-                - serviceName
-                - serviceName desc
-                - start
-                - start desc
-                - end
-                - end desc
+                - customerPhone
+                - customerPhone desc
                 - duration
                 - duration desc
-                - preBuffer
-                - preBuffer desc
-                - postBuffer
-                - postBuffer desc
-                - serviceLocation
-                - serviceLocation desc
-                - priceType
-                - priceType desc
-                - price
-                - price desc
-                - serviceNotes
-                - serviceNotes desc
-                - reminders
-                - reminders desc
-                - optOutOfCustomerEmail
-                - optOutOfCustomerEmail desc
-                - staffMemberIds
-                - staffMemberIds desc
+                - end
+                - end desc
                 - invoiceAmount
                 - invoiceAmount desc
                 - invoiceDate
@@ -345,6 +340,32 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - optOutOfCustomerEmail
+                - optOutOfCustomerEmail desc
+                - postBuffer
+                - postBuffer desc
+                - preBuffer
+                - preBuffer desc
+                - price
+                - price desc
+                - priceType
+                - priceType desc
+                - reminders
+                - reminders desc
+                - selfServiceAppointmentId
+                - selfServiceAppointmentId desc
+                - serviceId
+                - serviceId desc
+                - serviceLocation
+                - serviceLocation desc
+                - serviceName
+                - serviceName desc
+                - serviceNotes
+                - serviceNotes desc
+                - staffMemberIds
+                - staffMemberIds desc
+                - start
+                - start desc
               type: string
         - name: $select
           in: query
@@ -357,32 +378,32 @@ paths:
             items:
               enum:
                 - id
-                - selfServiceAppointmentId
-                - customerId
-                - customerName
                 - customerEmailAddress
-                - customerPhone
+                - customerId
                 - customerLocation
+                - customerName
                 - customerNotes
-                - serviceId
-                - serviceName
-                - start
-                - end
+                - customerPhone
                 - duration
-                - preBuffer
-                - postBuffer
-                - serviceLocation
-                - priceType
-                - price
-                - serviceNotes
-                - reminders
-                - optOutOfCustomerEmail
-                - staffMemberIds
+                - end
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - optOutOfCustomerEmail
+                - postBuffer
+                - preBuffer
+                - price
+                - priceType
+                - reminders
+                - selfServiceAppointmentId
+                - serviceId
+                - serviceLocation
+                - serviceName
+                - serviceNotes
+                - staffMemberIds
+                - start
               type: string
         - name: $expand
           in: query
@@ -481,32 +502,32 @@ paths:
             items:
               enum:
                 - id
-                - selfServiceAppointmentId
-                - customerId
-                - customerName
                 - customerEmailAddress
-                - customerPhone
+                - customerId
                 - customerLocation
+                - customerName
                 - customerNotes
-                - serviceId
-                - serviceName
-                - start
-                - end
+                - customerPhone
                 - duration
-                - preBuffer
-                - postBuffer
-                - serviceLocation
-                - priceType
-                - price
-                - serviceNotes
-                - reminders
-                - optOutOfCustomerEmail
-                - staffMemberIds
+                - end
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - optOutOfCustomerEmail
+                - postBuffer
+                - preBuffer
+                - price
+                - priceType
+                - reminders
+                - selfServiceAppointmentId
+                - serviceId
+                - serviceLocation
+                - serviceName
+                - serviceNotes
+                - staffMemberIds
+                - start
               type: string
         - name: $expand
           in: query
@@ -677,48 +698,22 @@ paths:
               enum:
                 - id
                 - id desc
-                - selfServiceAppointmentId
-                - selfServiceAppointmentId desc
-                - customerId
-                - customerId desc
-                - customerName
-                - customerName desc
                 - customerEmailAddress
                 - customerEmailAddress desc
-                - customerPhone
-                - customerPhone desc
+                - customerId
+                - customerId desc
                 - customerLocation
                 - customerLocation desc
+                - customerName
+                - customerName desc
                 - customerNotes
                 - customerNotes desc
-                - serviceId
-                - serviceId desc
-                - serviceName
-                - serviceName desc
-                - start
-                - start desc
-                - end
-                - end desc
+                - customerPhone
+                - customerPhone desc
                 - duration
                 - duration desc
-                - preBuffer
-                - preBuffer desc
-                - postBuffer
-                - postBuffer desc
-                - serviceLocation
-                - serviceLocation desc
-                - priceType
-                - priceType desc
-                - price
-                - price desc
-                - serviceNotes
-                - serviceNotes desc
-                - reminders
-                - reminders desc
-                - optOutOfCustomerEmail
-                - optOutOfCustomerEmail desc
-                - staffMemberIds
-                - staffMemberIds desc
+                - end
+                - end desc
                 - invoiceAmount
                 - invoiceAmount desc
                 - invoiceDate
@@ -729,6 +724,32 @@ paths:
                 - invoiceStatus desc
                 - invoiceUrl
                 - invoiceUrl desc
+                - optOutOfCustomerEmail
+                - optOutOfCustomerEmail desc
+                - postBuffer
+                - postBuffer desc
+                - preBuffer
+                - preBuffer desc
+                - price
+                - price desc
+                - priceType
+                - priceType desc
+                - reminders
+                - reminders desc
+                - selfServiceAppointmentId
+                - selfServiceAppointmentId desc
+                - serviceId
+                - serviceId desc
+                - serviceLocation
+                - serviceLocation desc
+                - serviceName
+                - serviceName desc
+                - serviceNotes
+                - serviceNotes desc
+                - staffMemberIds
+                - staffMemberIds desc
+                - start
+                - start desc
               type: string
         - name: $select
           in: query
@@ -741,32 +762,32 @@ paths:
             items:
               enum:
                 - id
-                - selfServiceAppointmentId
-                - customerId
-                - customerName
                 - customerEmailAddress
-                - customerPhone
+                - customerId
                 - customerLocation
+                - customerName
                 - customerNotes
-                - serviceId
-                - serviceName
-                - start
-                - end
+                - customerPhone
                 - duration
-                - preBuffer
-                - postBuffer
-                - serviceLocation
-                - priceType
-                - price
-                - serviceNotes
-                - reminders
-                - optOutOfCustomerEmail
-                - staffMemberIds
+                - end
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - optOutOfCustomerEmail
+                - postBuffer
+                - preBuffer
+                - price
+                - priceType
+                - reminders
+                - selfServiceAppointmentId
+                - serviceId
+                - serviceLocation
+                - serviceName
+                - serviceNotes
+                - staffMemberIds
+                - start
               type: string
         - name: $expand
           in: query
@@ -877,32 +898,32 @@ paths:
             items:
               enum:
                 - id
-                - selfServiceAppointmentId
-                - customerId
-                - customerName
                 - customerEmailAddress
-                - customerPhone
+                - customerId
                 - customerLocation
+                - customerName
                 - customerNotes
-                - serviceId
-                - serviceName
-                - start
-                - end
+                - customerPhone
                 - duration
-                - preBuffer
-                - postBuffer
-                - serviceLocation
-                - priceType
-                - price
-                - serviceNotes
-                - reminders
-                - optOutOfCustomerEmail
-                - staffMemberIds
+                - end
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
                 - invoiceStatus
                 - invoiceUrl
+                - optOutOfCustomerEmail
+                - postBuffer
+                - preBuffer
+                - price
+                - priceType
+                - reminders
+                - selfServiceAppointmentId
+                - serviceId
+                - serviceLocation
+                - serviceName
+                - serviceNotes
+                - staffMemberIds
+                - start
               type: string
         - name: $expand
           in: query
@@ -1355,10 +1376,10 @@ paths:
                 - isHiddenFromCustomers desc
                 - notes
                 - notes desc
-                - preBuffer
-                - preBuffer desc
                 - postBuffer
                 - postBuffer desc
+                - preBuffer
+                - preBuffer desc
                 - schedulingPolicy
                 - schedulingPolicy desc
                 - staffMemberIds
@@ -1384,8 +1405,8 @@ paths:
                 - description
                 - isHiddenFromCustomers
                 - notes
-                - preBuffer
                 - postBuffer
+                - preBuffer
                 - schedulingPolicy
                 - staffMemberIds
               type: string
@@ -1495,8 +1516,8 @@ paths:
                 - description
                 - isHiddenFromCustomers
                 - notes
-                - preBuffer
                 - postBuffer
+                - preBuffer
                 - schedulingPolicy
                 - staffMemberIds
               type: string
@@ -2046,35 +2067,35 @@ components:
         - title: bookingBusiness
           type: object
           properties:
+            address:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            businessHours:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
             businessType:
               type: string
               nullable: true
-            address:
-              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-            phone:
+            defaultCurrencyIso:
               type: string
               nullable: true
             email:
               type: string
               nullable: true
-            webSiteUrl:
-              type: string
-              description: The URL of the business web site.
-              nullable: true
-            defaultCurrencyIso:
-              type: string
-              nullable: true
-            businessHours:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingWorkHours'
-            schedulingPolicy:
-              $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
             isPublished:
               type: boolean
               nullable: true
+            phone:
+              type: string
+              nullable: true
             publicUrl:
               type: string
+              nullable: true
+            schedulingPolicy:
+              $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
+            webSiteUrl:
+              type: string
+              description: The URL of the business web site.
               nullable: true
             appointments:
               type: array
@@ -2110,72 +2131,31 @@ components:
         - title: bookingAppointment
           type: object
           properties:
-            selfServiceAppointmentId:
+            customerEmailAddress:
               type: string
               nullable: true
             customerId:
               type: string
               description: The id of the booking customer associated with this appointment.
               nullable: true
+            customerLocation:
+              $ref: '#/components/schemas/microsoft.graph.location'
             customerName:
               type: string
               nullable: true
-            customerEmailAddress:
-              type: string
-              nullable: true
-            customerPhone:
-              type: string
-              nullable: true
-            customerLocation:
-              $ref: '#/components/schemas/microsoft.graph.location'
             customerNotes:
               type: string
               description: Notes from the customer associated with this appointment.
               nullable: true
-            serviceId:
+            customerPhone:
               type: string
-              description: The id of the booking service associated with this appointment.
               nullable: true
-            serviceName:
-              type: string
-              description: The name of the booking service associated with this appointment.
-            start:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            end:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
               format: duration
-            preBuffer:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              format: duration
-            postBuffer:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              format: duration
-            serviceLocation:
-              $ref: '#/components/schemas/microsoft.graph.location'
-            priceType:
-              $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
-            price:
-              type: number
-              format: double
-            serviceNotes:
-              type: string
-              nullable: true
-            reminders:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.bookingReminder'
-            optOutOfCustomerEmail:
-              type: boolean
-            staffMemberIds:
-              type: array
-              items:
-                type: string
-                nullable: true
+            end:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             invoiceAmount:
               type: number
               format: double
@@ -2189,6 +2169,47 @@ components:
             invoiceUrl:
               type: string
               nullable: true
+            optOutOfCustomerEmail:
+              type: boolean
+            postBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            preBuffer:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              format: duration
+            price:
+              type: number
+              format: double
+            priceType:
+              $ref: '#/components/schemas/microsoft.graph.bookingPriceType'
+            reminders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingReminder'
+            selfServiceAppointmentId:
+              type: string
+              nullable: true
+            serviceId:
+              type: string
+              description: The id of the booking service associated with this appointment.
+              nullable: true
+            serviceLocation:
+              $ref: '#/components/schemas/microsoft.graph.location'
+            serviceName:
+              type: string
+              description: The name of the booking service associated with this appointment.
+            serviceNotes:
+              type: string
+              nullable: true
+            staffMemberIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            start:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
           additionalProperties:
             type: object
           description: Represents a booked appointment of a service by a customer in a business.
@@ -2230,11 +2251,11 @@ components:
             notes:
               type: string
               nullable: true
-            preBuffer:
+            postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
               format: duration
-            postBuffer:
+            preBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
               format: duration
@@ -2299,22 +2320,9 @@ components:
       title: physicalAddress
       type: object
       properties:
-        type:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddressType'
-        postOfficeBox:
-          type: string
-          nullable: true
-        street:
-          type: string
-          description: The street.
-          nullable: true
         city:
           type: string
           description: The city.
-          nullable: true
-        state:
-          type: string
-          description: The state.
           nullable: true
         countryOrRegion:
           type: string
@@ -2324,6 +2332,19 @@ components:
           type: string
           description: The postal code.
           nullable: true
+        postOfficeBox:
+          type: string
+          nullable: true
+        state:
+          type: string
+          description: The state.
+          nullable: true
+        street:
+          type: string
+          description: The street.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddressType'
       additionalProperties:
         type: object
     microsoft.graph.bookingWorkHours:
@@ -2344,27 +2365,27 @@ components:
       title: bookingSchedulingPolicy
       type: object
       properties:
-        timeSlotInterval:
+        allowStaffSelection:
+          type: boolean
+          description: Allow customers to choose a specific person for the booking.
+        maximumAdvance:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: Duration of each time slot.
+          description: Maximum number of days in advance that a booking can be made.
           format: duration
         minimumLeadTime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
           description: Minimum lead time for bookings and cancellations.
           format: duration
-        maximumAdvance:
-          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-          type: string
-          description: Maximum number of days in advance that a booking can be made.
-          format: duration
         sendConfirmationsToOwner:
           type: boolean
           description: Notify the business via email when a booking is created or changed.
-        allowStaffSelection:
-          type: boolean
-          description: Allow customers to choose a specific person for the booking.
+        timeSlotInterval:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Duration of each time slot.
+          format: duration
       additionalProperties:
         type: object
       description: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
@@ -2381,6 +2402,10 @@ components:
       title: location
       type: object
       properties:
+        address:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        coordinates:
+          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
         displayName:
           type: string
           description: The name associated with the location.
@@ -2389,16 +2414,12 @@ components:
           type: string
           description: Optional email address of the location.
           nullable: true
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        coordinates:
-          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+        locationType:
+          $ref: '#/components/schemas/microsoft.graph.locationType'
         locationUri:
           type: string
           description: Optional URI representing the location.
           nullable: true
-        locationType:
-          $ref: '#/components/schemas/microsoft.graph.locationType'
         uniqueId:
           type: string
           description: For internal use only.
@@ -2420,6 +2441,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bookingInvoiceStatus:
+      title: bookingInvoiceStatus
+      enum:
+        - draft
+        - reviewing
+        - open
+        - canceled
+        - paid
+        - corrective
+      type: string
     microsoft.graph.bookingPriceType:
       title: bookingPriceType
       enum:
@@ -2436,6 +2467,9 @@ components:
       title: bookingReminder
       type: object
       properties:
+        message:
+          type: string
+          description: Message to send.
         offset:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -2443,22 +2477,9 @@ components:
           format: duration
         recipients:
           $ref: '#/components/schemas/microsoft.graph.bookingReminderRecipients'
-        message:
-          type: string
-          description: Message to send.
       additionalProperties:
         type: object
       description: This type represents when and to whom to send an e-mail reminder.
-    microsoft.graph.bookingInvoiceStatus:
-      title: bookingInvoiceStatus
-      enum:
-        - draft
-        - reviewing
-        - open
-        - canceled
-        - paid
-        - corrective
-      type: string
     microsoft.graph.bookingPerson:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
@@ -2512,11 +2533,11 @@ components:
       title: bookingWorkTimeSlot
       type: object
       properties:
-        start:
+        end:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
           format: time
-        end:
+        start:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
           format: time
@@ -2526,9 +2547,19 @@ components:
       title: outlookGeoCoordinates
       type: object
       properties:
+        accuracy:
+          type: number
+          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
+          format: double
+          nullable: true
         altitude:
           type: number
           description: The altitude of the location.
+          format: double
+          nullable: true
+        altitudeAccuracy:
+          type: number
+          description: The accuracy of the altitude.
           format: double
           nullable: true
         latitude:
@@ -2539,16 +2570,6 @@ components:
         longitude:
           type: number
           description: The longitude of the location.
-          format: double
-          nullable: true
-        accuracy:
-          type: number
-          description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
-          format: double
-          nullable: true
-        altitudeAccuracy:
-          type: number
-          description: The accuracy of the altitude.
           format: double
           nullable: true
       additionalProperties:

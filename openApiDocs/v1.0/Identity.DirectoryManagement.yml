@@ -48,12 +48,12 @@ paths:
                 - mail desc
                 - mailNickname
                 - mailNickname desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
                 - onPremisesLastSyncDateTime
                 - onPremisesLastSyncDateTime desc
                 - onPremisesProvisioningErrors
                 - onPremisesProvisioningErrors desc
+                - onPremisesSyncEnabled
+                - onPremisesSyncEnabled desc
                 - phones
                 - phones desc
                 - proxyAddresses
@@ -81,14 +81,14 @@ paths:
                 - jobTitle
                 - mail
                 - mailNickname
-                - onPremisesSyncEnabled
                 - onPremisesLastSyncDateTime
                 - onPremisesProvisioningErrors
+                - onPremisesSyncEnabled
                 - phones
                 - proxyAddresses
                 - surname
-                - manager
                 - directReports
+                - manager
                 - memberOf
                 - transitiveMemberOf
               type: string
@@ -103,8 +103,8 @@ paths:
             items:
               enum:
                 - '*'
-                - manager
                 - directReports
+                - manager
                 - memberOf
                 - transitiveMemberOf
               type: string
@@ -187,14 +187,14 @@ paths:
                 - jobTitle
                 - mail
                 - mailNickname
-                - onPremisesSyncEnabled
                 - onPremisesLastSyncDateTime
                 - onPremisesProvisioningErrors
+                - onPremisesSyncEnabled
                 - phones
                 - proxyAddresses
                 - surname
-                - manager
                 - directReports
+                - manager
                 - memberOf
                 - transitiveMemberOf
               type: string
@@ -209,8 +209,8 @@ paths:
             items:
               enum:
                 - '*'
-                - manager
                 - directReports
+                - manager
                 - memberOf
                 - transitiveMemberOf
               type: string
@@ -221,6 +221,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
+          links:
+            directReports:
+              operationId: contacts.ListDirectReports
+              parameters:
+                orgContact-id: $request.path.orgContact-id
+            manager:
+              operationId: contacts.GetManager
+              parameters:
+                orgContact-id: $request.path.orgContact-id
+            memberOf:
+              operationId: contacts.ListMemberOf
+              parameters:
+                orgContact-id: $request.path.orgContact-id
+            transitiveMemberOf:
+              operationId: contacts.ListTransitiveMemberOf
+              parameters:
+                orgContact-id: $request.path.orgContact-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -355,62 +372,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/directReports/{directoryObject-id}':
-    get:
-      tags:
-        - contacts.directoryObject
-      summary: Get directReports from contacts
-      operationId: contacts_GetDirectReports
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/directReports/$ref':
     get:
@@ -709,62 +670,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/memberOf/{directoryObject-id}':
-    get:
-      tags:
-        - contacts.directoryObject
-      summary: Get memberOf from contacts
-      operationId: contacts_GetMemberOf
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/memberOf/$ref':
     get:
@@ -1122,62 +1027,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/contacts/{orgContact-id}/transitiveMemberOf/{directoryObject-id}':
-    get:
-      tags:
-        - contacts.directoryObject
-      summary: Get transitiveMemberOf from contacts
-      operationId: contacts_GetTransitiveMemberOf
-      parameters:
-        - name: orgContact-id
-          in: path
-          description: 'key: id of orgContact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: orgContact
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/contacts/{orgContact-id}/transitiveMemberOf/$ref':
     get:
@@ -2133,6 +1982,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
+          links:
+            memberOf:
+              operationId: devices.ListMemberOf
+              parameters:
+                device-id: $request.path.device-id
+            registeredOwners:
+              operationId: devices.ListRegisteredOwners
+              parameters:
+                device-id: $request.path.device-id
+            registeredUsers:
+              operationId: devices.ListRegisteredUsers
+              parameters:
+                device-id: $request.path.device-id
+            transitiveMemberOf:
+              operationId: devices.ListTransitiveMemberOf
+              parameters:
+                device-id: $request.path.device-id
+            extensions:
+              operationId: devices.ListExtensions
+              parameters:
+                device-id: $request.path.device-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2496,62 +2366,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/memberOf/{directoryObject-id}':
-    get:
-      tags:
-        - devices.directoryObject
-      summary: Get memberOf from devices
-      operationId: devices_GetMemberOf
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/devices/{device-id}/memberOf/$ref':
     get:
       tags:
@@ -2909,62 +2723,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/registeredOwners/{directoryObject-id}':
-    get:
-      tags:
-        - devices.directoryObject
-      summary: Get registeredOwners from devices
-      operationId: devices_GetRegisteredOwners
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredOwners/$ref':
     get:
       tags:
@@ -3138,62 +2896,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/registeredUsers/{directoryObject-id}':
-    get:
-      tags:
-        - devices.directoryObject
-      summary: Get registeredUsers from devices
-      operationId: devices_GetRegisteredUsers
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/devices/{device-id}/registeredUsers/$ref':
     get:
       tags:
@@ -3366,62 +3068,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/devices/{device-id}/transitiveMemberOf/{directoryObject-id}':
-    get:
-      tags:
-        - devices.directoryObject
-      summary: Get transitiveMemberOf from devices
-      operationId: devices_GetTransitiveMemberOf
-      parameters:
-        - name: device-id
-          in: path
-          description: 'key: id of device'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: device
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/devices/{device-id}/transitiveMemberOf/$ref':
     get:
@@ -3659,6 +3305,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
+          links:
+            deletedItems:
+              operationId: directory.ListDeletedItems
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4035,6 +3684,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRole'
+          links:
+            members:
+              operationId: directoryRoles.ListMembers
+              parameters:
+                directoryRole-id: $request.path.directoryRole-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4169,62 +3823,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/directoryRoles/{directoryRole-id}/members/{directoryObject-id}':
-    get:
-      tags:
-        - directoryRoles.directoryObject
-      summary: Get members from directoryRoles
-      operationId: directoryRoles_GetMembers
-      parameters:
-        - name: directoryRole-id
-          in: path
-          description: 'key: id of directoryRole'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryRole
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/directoryRoles/{directoryRole-id}/members/$ref':
     get:
@@ -5163,10 +4761,10 @@ paths:
                 - passwordNotificationWindowInDays desc
                 - passwordValidityPeriodInDays
                 - passwordValidityPeriodInDays desc
-                - supportedServices
-                - supportedServices desc
                 - state
                 - state desc
+                - supportedServices
+                - supportedServices desc
               type: string
         - name: $select
           in: query
@@ -5190,11 +4788,11 @@ paths:
                 - model
                 - passwordNotificationWindowInDays
                 - passwordValidityPeriodInDays
-                - supportedServices
                 - state
+                - supportedServices
+                - domainNameReferences
                 - serviceConfigurationRecords
                 - verificationDnsRecords
-                - domainNameReferences
               type: string
         - name: $expand
           in: query
@@ -5207,9 +4805,9 @@ paths:
             items:
               enum:
                 - '*'
+                - domainNameReferences
                 - serviceConfigurationRecords
                 - verificationDnsRecords
-                - domainNameReferences
               type: string
       responses:
         '200':
@@ -5292,11 +4890,11 @@ paths:
                 - model
                 - passwordNotificationWindowInDays
                 - passwordValidityPeriodInDays
-                - supportedServices
                 - state
+                - supportedServices
+                - domainNameReferences
                 - serviceConfigurationRecords
                 - verificationDnsRecords
-                - domainNameReferences
               type: string
         - name: $expand
           in: query
@@ -5309,9 +4907,9 @@ paths:
             items:
               enum:
                 - '*'
+                - domainNameReferences
                 - serviceConfigurationRecords
                 - verificationDnsRecords
-                - domainNameReferences
               type: string
       responses:
         '200':
@@ -5320,6 +4918,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.domain'
+          links:
+            domainNameReferences:
+              operationId: domains.ListDomainNameReferences
+              parameters:
+                domain-id: $request.path.domain-id
+            serviceConfigurationRecords:
+              operationId: domains.ListServiceConfigurationRecords
+              parameters:
+                domain-id: $request.path.domain-id
+            verificationDnsRecords:
+              operationId: domains.ListVerificationDnsRecords
+              parameters:
+                domain-id: $request.path.domain-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5454,62 +5065,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/domains/{domain-id}/domainNameReferences/{directoryObject-id}':
-    get:
-      tags:
-        - domains.directoryObject
-      summary: Get domainNameReferences from domains
-      operationId: domains_GetDomainNameReferences
-      parameters:
-        - name: domain-id
-          in: path
-          description: 'key: id of domain'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: domain
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/domains/{domain-id}/domainNameReferences/$ref':
     get:
@@ -6220,6 +5775,8 @@ paths:
                 - street desc
                 - technicalNotificationMails
                 - technicalNotificationMails desc
+                - tenantType
+                - tenantType desc
                 - verifiedDomains
                 - verifiedDomains desc
                 - mobileDeviceManagementAuthority
@@ -6256,6 +5813,7 @@ paths:
                 - state
                 - street
                 - technicalNotificationMails
+                - tenantType
                 - verifiedDomains
                 - mobileDeviceManagementAuthority
                 - certificateBasedAuthConfiguration
@@ -6365,6 +5923,7 @@ paths:
                 - state
                 - street
                 - technicalNotificationMails
+                - tenantType
                 - verifiedDomains
                 - mobileDeviceManagementAuthority
                 - certificateBasedAuthConfiguration
@@ -6391,6 +5950,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
+          links:
+            certificateBasedAuthConfiguration:
+              operationId: organization.ListCertificateBasedAuthConfiguration
+              parameters:
+                organization-id: $request.path.organization-id
+            extensions:
+              operationId: organization.ListExtensions
+              parameters:
+                organization-id: $request.path.organization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7012,6 +6580,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - appliesTo
+                - appliesTo desc
                 - capabilityStatus
                 - capabilityStatus desc
                 - consumedUnits
@@ -7024,8 +6594,6 @@ paths:
                 - skuId desc
                 - skuPartNumber
                 - skuPartNumber desc
-                - appliesTo
-                - appliesTo desc
               type: string
         - name: $select
           in: query
@@ -7038,13 +6606,13 @@ paths:
             items:
               enum:
                 - id
+                - appliesTo
                 - capabilityStatus
                 - consumedUnits
                 - prepaidUnits
                 - servicePlans
                 - skuId
                 - skuPartNumber
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -7128,13 +6696,13 @@ paths:
             items:
               enum:
                 - id
+                - appliesTo
                 - capabilityStatus
                 - consumedUnits
                 - prepaidUnits
                 - servicePlans
                 - skuId
                 - skuPartNumber
-                - appliesTo
               type: string
         - name: $expand
           in: query
@@ -7241,9 +6809,6 @@ components:
             mailNickname:
               type: string
               nullable: true
-            onPremisesSyncEnabled:
-              type: boolean
-              nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -7253,6 +6818,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
+            onPremisesSyncEnabled:
+              type: boolean
+              nullable: true
             phones:
               type: array
               items:
@@ -7264,12 +6832,12 @@ components:
             surname:
               type: string
               nullable: true
-            manager:
-              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            manager:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
               type: array
               items:
@@ -7305,9 +6873,6 @@ components:
               type: string
               description: Display name of the application object on which this extension property is defined. Read-only.
               nullable: true
-            name:
-              type: string
-              description: Name of the extension property. Not nullable.
             dataType:
               type: string
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
@@ -7315,6 +6880,9 @@ components:
               type: boolean
               description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
               nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
             targetObjects:
               type: array
               items:
@@ -7582,13 +7150,18 @@ components:
               description: 'Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.'
               format: int32
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.domainState'
             supportedServices:
               type: array
               items:
                 type: string
               description: 'The capabilities assigned to the domain.Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, YammerNot nullable'
-            state:
-              $ref: '#/components/schemas/microsoft.graph.domainState'
+            domainNameReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Read-only, Nullable'
             serviceConfigurationRecords:
               type: array
               items:
@@ -7599,11 +7172,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
               description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.Read-only, Nullable'
-            domainNameReferences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Read-only, Nullable'
           additionalProperties:
             type: object
     microsoft.graph.domainDnsRecord:
@@ -7722,6 +7290,9 @@ components:
               items:
                 type: string
               description: Not nullable.
+            tenantType:
+              type: string
+              nullable: true
             verifiedDomains:
               type: array
               items:
@@ -7748,6 +7319,10 @@ components:
         - title: subscribedSku
           type: object
           properties:
+            appliesTo:
+              type: string
+              description: 'For example, ''User'' or ''Company''.'
+              nullable: true
             capabilityStatus:
               type: string
               description: 'Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.'
@@ -7775,10 +7350,6 @@ components:
             skuPartNumber:
               type: string
               description: 'The SKU part number; for example: ''AAD_PREMIUM'' or ''RMSBASIC''. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.'
-              nullable: true
-            appliesTo:
-              type: string
-              description: 'For example, ''User'' or ''Company''.'
               nullable: true
           additionalProperties:
             type: object
@@ -7816,17 +7387,9 @@ components:
       title: onPremisesProvisioningError
       type: object
       properties:
-        value:
-          type: string
-          description: Value of the property causing the error.
-          nullable: true
         category:
           type: string
           description: 'Category of the provisioning error. Note: Currently, there is only one possible value. Possible value: PropertyConflict - indicates a property value is not unique. Other objects contain the same value for the property.'
-          nullable: true
-        propertyCausingError:
-          type: string
-          description: 'Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress'
           nullable: true
         occurredDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7834,14 +7397,23 @@ components:
           description: The date and time at which the error occurred.
           format: date-time
           nullable: true
+        propertyCausingError:
+          type: string
+          description: 'Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress'
+          nullable: true
+        value:
+          type: string
+          description: Value of the property causing the error.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.phone:
       title: phone
       type: object
       properties:
-        type:
-          $ref: '#/components/schemas/microsoft.graph.phoneType'
+        language:
+          type: string
+          nullable: true
         number:
           type: string
           description: The phone number.
@@ -7849,9 +7421,8 @@ components:
         region:
           type: string
           nullable: true
-        language:
-          type: string
-          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.phoneType'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -7867,13 +7438,6 @@ components:
       title: alternativeSecurityId
       type: object
       properties:
-        type:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: For internal use only
-          format: int32
-          nullable: true
         identityProvider:
           type: string
           description: For internal use only
@@ -7883,25 +7447,32 @@ components:
           description: For internal use only
           format: base64url
           nullable: true
+        type:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: For internal use only
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.domainState:
       title: domainState
       type: object
       properties:
-        status:
-          type: string
-          description: Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
-          nullable: true
-        operation:
-          type: string
-          description: Type of asynchronous operation. The values can be ForceDelete or Verification
-          nullable: true
         lastActionDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           description: 'Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.'
           format: date-time
+          nullable: true
+        operation:
+          type: string
+          description: Type of asynchronous operation. The values can be ForceDelete or Verification
+          nullable: true
+        status:
+          type: string
+          description: Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
           nullable: true
       additionalProperties:
         type: object
@@ -8041,6 +7612,14 @@ components:
       title: servicePlanInfo
       type: object
       properties:
+        appliesTo:
+          type: string
+          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          nullable: true
+        provisioningStatus:
+          type: string
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
@@ -8050,14 +7629,6 @@ components:
         servicePlanName:
           type: string
           description: The name of the service plan.
-          nullable: true
-        provisioningStatus:
-          type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
-          nullable: true
-        appliesTo:
-          type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -8088,9 +7659,10 @@ components:
       title: certificateAuthority
       type: object
       properties:
-        isRootAuthority:
-          type: boolean
-          description: 'Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.'
+        certificate:
+          type: string
+          description: Required. The base64 encoded string representing the public certificate.
+          format: base64url
         certificateRevocationListUrl:
           type: string
           description: The URL of the certificate revocation list.
@@ -8099,10 +7671,9 @@ components:
           type: string
           description: The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
           nullable: true
-        certificate:
-          type: string
-          description: Required. The base64 encoded string representing the public certificate.
-          format: base64url
+        isRootAuthority:
+          type: boolean
+          description: 'Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.'
         issuer:
           type: string
           description: 'The issuer of the certificate, calculated from the certificate value. Read-only.'

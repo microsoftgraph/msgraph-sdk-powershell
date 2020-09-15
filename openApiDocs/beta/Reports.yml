@@ -24,11 +24,11 @@ paths:
             items:
               enum:
                 - id
-                - signIns
                 - directoryAudits
-                - restrictedSignIns
                 - directoryProvisioning
                 - provisioning
+                - restrictedSignIns
+                - signIns
               type: string
         - name: $expand
           in: query
@@ -41,11 +41,11 @@ paths:
             items:
               enum:
                 - '*'
-                - signIns
                 - directoryAudits
-                - restrictedSignIns
                 - directoryProvisioning
                 - provisioning
+                - restrictedSignIns
+                - signIns
               type: string
       responses:
         '200':
@@ -54,6 +54,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
+          links:
+            directoryAudits:
+              operationId: auditLogs.ListDirectoryAudits
+            directoryProvisioning:
+              operationId: auditLogs.ListDirectoryProvisioning
+            provisioning:
+              operationId: auditLogs.ListProvisioning
+            restrictedSignIns:
+              operationId: auditLogs.ListRestrictedSignIns
+            signIns:
+              operationId: auditLogs.ListSignIns
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -99,28 +110,28 @@ paths:
               enum:
                 - id
                 - id desc
+                - activityDateTime
+                - activityDateTime desc
+                - activityDisplayName
+                - activityDisplayName desc
+                - additionalDetails
+                - additionalDetails desc
                 - category
                 - category desc
                 - correlationId
                 - correlationId desc
-                - result
-                - result desc
-                - resultReason
-                - resultReason desc
-                - activityDisplayName
-                - activityDisplayName desc
-                - activityDateTime
-                - activityDateTime desc
+                - initiatedBy
+                - initiatedBy desc
                 - loggedByService
                 - loggedByService desc
                 - operationType
                 - operationType desc
-                - initiatedBy
-                - initiatedBy desc
+                - result
+                - result desc
+                - resultReason
+                - resultReason desc
                 - targetResources
                 - targetResources desc
-                - additionalDetails
-                - additionalDetails desc
               type: string
         - name: $select
           in: query
@@ -133,17 +144,17 @@ paths:
             items:
               enum:
                 - id
+                - activityDateTime
+                - activityDisplayName
+                - additionalDetails
                 - category
                 - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
+                - initiatedBy
                 - loggedByService
                 - operationType
-                - initiatedBy
+                - result
+                - resultReason
                 - targetResources
-                - additionalDetails
               type: string
         - name: $expand
           in: query
@@ -227,17 +238,17 @@ paths:
             items:
               enum:
                 - id
+                - activityDateTime
+                - activityDisplayName
+                - additionalDetails
                 - category
                 - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
+                - initiatedBy
                 - loggedByService
                 - operationType
-                - initiatedBy
+                - result
+                - resultReason
                 - targetResources
-                - additionalDetails
               type: string
         - name: $expand
           in: query
@@ -335,38 +346,38 @@ paths:
               enum:
                 - id
                 - id desc
-                - activityDateTime
-                - activityDateTime desc
-                - tenantId
-                - tenantId desc
-                - jobId
-                - jobId desc
-                - cycleId
-                - cycleId desc
-                - changeId
-                - changeId desc
                 - action
                 - action desc
+                - activityDateTime
+                - activityDateTime desc
+                - changeId
+                - changeId desc
+                - cycleId
+                - cycleId desc
                 - durationInMilliseconds
                 - durationInMilliseconds desc
-                - servicePrincipal
-                - servicePrincipal desc
                 - initiatedBy
                 - initiatedBy desc
-                - sourceSystem
-                - sourceSystem desc
-                - targetSystem
-                - targetSystem desc
-                - sourceIdentity
-                - sourceIdentity desc
-                - targetIdentity
-                - targetIdentity desc
-                - statusInfo
-                - statusInfo desc
-                - provisioningSteps
-                - provisioningSteps desc
+                - jobId
+                - jobId desc
                 - modifiedProperties
                 - modifiedProperties desc
+                - provisioningSteps
+                - provisioningSteps desc
+                - servicePrincipal
+                - servicePrincipal desc
+                - sourceIdentity
+                - sourceIdentity desc
+                - sourceSystem
+                - sourceSystem desc
+                - statusInfo
+                - statusInfo desc
+                - targetIdentity
+                - targetIdentity desc
+                - targetSystem
+                - targetSystem desc
+                - tenantId
+                - tenantId desc
               type: string
         - name: $select
           in: query
@@ -379,22 +390,22 @@ paths:
             items:
               enum:
                 - id
-                - activityDateTime
-                - tenantId
-                - jobId
-                - cycleId
-                - changeId
                 - action
+                - activityDateTime
+                - changeId
+                - cycleId
                 - durationInMilliseconds
-                - servicePrincipal
                 - initiatedBy
-                - sourceSystem
-                - targetSystem
-                - sourceIdentity
-                - targetIdentity
-                - statusInfo
-                - provisioningSteps
+                - jobId
                 - modifiedProperties
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - statusInfo
+                - targetIdentity
+                - targetSystem
+                - tenantId
               type: string
         - name: $expand
           in: query
@@ -478,22 +489,22 @@ paths:
             items:
               enum:
                 - id
-                - activityDateTime
-                - tenantId
-                - jobId
-                - cycleId
-                - changeId
                 - action
+                - activityDateTime
+                - changeId
+                - cycleId
                 - durationInMilliseconds
-                - servicePrincipal
                 - initiatedBy
-                - sourceSystem
-                - targetSystem
-                - sourceIdentity
-                - targetIdentity
-                - statusInfo
-                - provisioningSteps
+                - jobId
                 - modifiedProperties
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - statusInfo
+                - targetIdentity
+                - targetSystem
+                - tenantId
               type: string
         - name: $expand
           in: query
@@ -591,38 +602,38 @@ paths:
               enum:
                 - id
                 - id desc
-                - activityDateTime
-                - activityDateTime desc
-                - tenantId
-                - tenantId desc
-                - jobId
-                - jobId desc
-                - cycleId
-                - cycleId desc
-                - changeId
-                - changeId desc
                 - action
                 - action desc
+                - activityDateTime
+                - activityDateTime desc
+                - changeId
+                - changeId desc
+                - cycleId
+                - cycleId desc
                 - durationInMilliseconds
                 - durationInMilliseconds desc
-                - servicePrincipal
-                - servicePrincipal desc
                 - initiatedBy
                 - initiatedBy desc
-                - sourceSystem
-                - sourceSystem desc
-                - targetSystem
-                - targetSystem desc
-                - sourceIdentity
-                - sourceIdentity desc
-                - targetIdentity
-                - targetIdentity desc
-                - statusInfo
-                - statusInfo desc
-                - provisioningSteps
-                - provisioningSteps desc
+                - jobId
+                - jobId desc
                 - modifiedProperties
                 - modifiedProperties desc
+                - provisioningSteps
+                - provisioningSteps desc
+                - servicePrincipal
+                - servicePrincipal desc
+                - sourceIdentity
+                - sourceIdentity desc
+                - sourceSystem
+                - sourceSystem desc
+                - statusInfo
+                - statusInfo desc
+                - targetIdentity
+                - targetIdentity desc
+                - targetSystem
+                - targetSystem desc
+                - tenantId
+                - tenantId desc
               type: string
         - name: $select
           in: query
@@ -635,22 +646,22 @@ paths:
             items:
               enum:
                 - id
-                - activityDateTime
-                - tenantId
-                - jobId
-                - cycleId
-                - changeId
                 - action
+                - activityDateTime
+                - changeId
+                - cycleId
                 - durationInMilliseconds
-                - servicePrincipal
                 - initiatedBy
-                - sourceSystem
-                - targetSystem
-                - sourceIdentity
-                - targetIdentity
-                - statusInfo
-                - provisioningSteps
+                - jobId
                 - modifiedProperties
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - statusInfo
+                - targetIdentity
+                - targetSystem
+                - tenantId
               type: string
         - name: $expand
           in: query
@@ -734,22 +745,22 @@ paths:
             items:
               enum:
                 - id
-                - activityDateTime
-                - tenantId
-                - jobId
-                - cycleId
-                - changeId
                 - action
+                - activityDateTime
+                - changeId
+                - cycleId
                 - durationInMilliseconds
-                - servicePrincipal
                 - initiatedBy
-                - sourceSystem
-                - targetSystem
-                - sourceIdentity
-                - targetIdentity
-                - statusInfo
-                - provisioningSteps
+                - jobId
                 - modifiedProperties
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - statusInfo
+                - targetIdentity
+                - targetSystem
+                - tenantId
               type: string
         - name: $expand
           in: query
@@ -875,10 +886,10 @@ paths:
                 - createdDateTime desc
                 - deviceDetail
                 - deviceDetail desc
-                - isInteractive
-                - isInteractive desc
                 - ipAddress
                 - ipAddress desc
+                - isInteractive
+                - isInteractive desc
                 - location
                 - location desc
                 - mfaDetail
@@ -889,6 +900,12 @@ paths:
                 - originalRequestId desc
                 - processingTimeInMilliseconds
                 - processingTimeInMilliseconds desc
+                - resourceDisplayName
+                - resourceDisplayName desc
+                - resourceId
+                - resourceId desc
+                - resourceTenantId
+                - resourceTenantId desc
                 - riskDetail
                 - riskDetail desc
                 - riskEventTypes
@@ -901,12 +918,6 @@ paths:
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-                - resourceTenantId
-                - resourceTenantId desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
@@ -955,22 +966,22 @@ paths:
                 - correlationId
                 - createdDateTime
                 - deviceDetail
-                - isInteractive
                 - ipAddress
+                - isInteractive
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
                 - processingTimeInMilliseconds
+                - resourceDisplayName
+                - resourceId
+                - resourceTenantId
                 - riskDetail
                 - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - resourceDisplayName
-                - resourceId
-                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1079,22 +1090,22 @@ paths:
                 - correlationId
                 - createdDateTime
                 - deviceDetail
-                - isInteractive
                 - ipAddress
+                - isInteractive
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
                 - processingTimeInMilliseconds
+                - resourceDisplayName
+                - resourceId
+                - resourceTenantId
                 - riskDetail
                 - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - resourceDisplayName
-                - resourceId
-                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1231,10 +1242,10 @@ paths:
                 - createdDateTime desc
                 - deviceDetail
                 - deviceDetail desc
-                - isInteractive
-                - isInteractive desc
                 - ipAddress
                 - ipAddress desc
+                - isInteractive
+                - isInteractive desc
                 - location
                 - location desc
                 - mfaDetail
@@ -1245,6 +1256,12 @@ paths:
                 - originalRequestId desc
                 - processingTimeInMilliseconds
                 - processingTimeInMilliseconds desc
+                - resourceDisplayName
+                - resourceDisplayName desc
+                - resourceId
+                - resourceId desc
+                - resourceTenantId
+                - resourceTenantId desc
                 - riskDetail
                 - riskDetail desc
                 - riskEventTypes
@@ -1257,12 +1274,6 @@ paths:
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
-                - resourceTenantId
-                - resourceTenantId desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
@@ -1309,22 +1320,22 @@ paths:
                 - correlationId
                 - createdDateTime
                 - deviceDetail
-                - isInteractive
                 - ipAddress
+                - isInteractive
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
                 - processingTimeInMilliseconds
+                - resourceDisplayName
+                - resourceId
+                - resourceTenantId
                 - riskDetail
                 - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - resourceDisplayName
-                - resourceId
-                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1432,22 +1443,22 @@ paths:
                 - correlationId
                 - createdDateTime
                 - deviceDetail
-                - isInteractive
                 - ipAddress
+                - isInteractive
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
                 - processingTimeInMilliseconds
+                - resourceDisplayName
+                - resourceId
+                - resourceTenantId
                 - riskDetail
                 - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - resourceDisplayName
-                - resourceId
-                - resourceTenantId
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1552,10 +1563,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
         - name: $expand
           in: query
@@ -1571,10 +1582,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
       responses:
         '200':
@@ -1583,6 +1594,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
+          links:
+            applicationSignInDetailedSummary:
+              operationId: reports.ListApplicationSignInDetailedSummary
+            credentialUserRegistrationDetails:
+              operationId: reports.ListCredentialUserRegistrationDetails
+            userCredentialUsageDetails:
+              operationId: reports.ListUserCredentialUsageDetails
+            dailyPrintUsageSummariesByPrinter:
+              operationId: reports.ListDailyPrintUsageSummariesByPrinter
+            dailyPrintUsageSummariesByUser:
+              operationId: reports.ListDailyPrintUsageSummariesByUser
+            monthlyPrintUsageSummariesByPrinter:
+              operationId: reports.ListMonthlyPrintUsageSummariesByPrinter
+            monthlyPrintUsageSummariesByUser:
+              operationId: reports.ListMonthlyPrintUsageSummariesByUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1628,16 +1654,16 @@ paths:
               enum:
                 - id
                 - id desc
-                - appId
-                - appId desc
-                - appDisplayName
-                - appDisplayName desc
-                - status
-                - status desc
-                - signInCount
-                - signInCount desc
                 - aggregatedEventDateTime
                 - aggregatedEventDateTime desc
+                - appDisplayName
+                - appDisplayName desc
+                - appId
+                - appId desc
+                - signInCount
+                - signInCount desc
+                - status
+                - status desc
               type: string
         - name: $select
           in: query
@@ -1650,11 +1676,11 @@ paths:
             items:
               enum:
                 - id
-                - appId
-                - appDisplayName
-                - status
-                - signInCount
                 - aggregatedEventDateTime
+                - appDisplayName
+                - appId
+                - signInCount
+                - status
               type: string
         - name: $expand
           in: query
@@ -1738,11 +1764,11 @@ paths:
             items:
               enum:
                 - id
-                - appId
-                - appDisplayName
-                - status
-                - signInCount
                 - aggregatedEventDateTime
+                - appDisplayName
+                - appId
+                - signInCount
+                - status
               type: string
         - name: $expand
           in: query
@@ -1840,20 +1866,20 @@ paths:
               enum:
                 - id
                 - id desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userDisplayName
-                - userDisplayName desc
                 - authMethods
                 - authMethods desc
-                - isRegistered
-                - isRegistered desc
-                - isEnabled
-                - isEnabled desc
                 - isCapable
                 - isCapable desc
+                - isEnabled
+                - isEnabled desc
                 - isMfaRegistered
                 - isMfaRegistered desc
+                - isRegistered
+                - isRegistered desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -1866,13 +1892,13 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - userDisplayName
                 - authMethods
-                - isRegistered
-                - isEnabled
                 - isCapable
+                - isEnabled
                 - isMfaRegistered
+                - isRegistered
+                - userDisplayName
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -1956,13 +1982,13 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - userDisplayName
                 - authMethods
-                - isRegistered
-                - isEnabled
                 - isCapable
+                - isEnabled
                 - isMfaRegistered
+                - isRegistered
+                - userDisplayName
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -2060,16 +2086,16 @@ paths:
               enum:
                 - id
                 - id desc
-                - printerId
-                - printerId desc
-                - usageDate
-                - usageDate desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - printerId
+                - printerId desc
+                - usageDate
+                - usageDate desc
               type: string
         - name: $select
           in: query
@@ -2082,11 +2108,11 @@ paths:
             items:
               enum:
                 - id
-                - printerId
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - printerId
+                - usageDate
               type: string
         - name: $expand
           in: query
@@ -2170,11 +2196,11 @@ paths:
             items:
               enum:
                 - id
-                - printerId
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - printerId
+                - usageDate
               type: string
         - name: $expand
           in: query
@@ -2272,16 +2298,16 @@ paths:
               enum:
                 - id
                 - id desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - usageDate
-                - usageDate desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -2294,11 +2320,11 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - usageDate
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -2382,11 +2408,11 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - usageDate
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5003,16 +5029,16 @@ paths:
               enum:
                 - id
                 - id desc
-                - printerId
-                - printerId desc
-                - usageDate
-                - usageDate desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - printerId
+                - printerId desc
+                - usageDate
+                - usageDate desc
               type: string
         - name: $select
           in: query
@@ -5025,11 +5051,11 @@ paths:
             items:
               enum:
                 - id
-                - printerId
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - printerId
+                - usageDate
               type: string
         - name: $expand
           in: query
@@ -5113,11 +5139,11 @@ paths:
             items:
               enum:
                 - id
-                - printerId
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - printerId
+                - usageDate
               type: string
         - name: $expand
           in: query
@@ -5215,16 +5241,16 @@ paths:
               enum:
                 - id
                 - id desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - usageDate
-                - usageDate desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5237,11 +5263,11 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - usageDate
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5325,11 +5351,11 @@ paths:
             items:
               enum:
                 - id
-                - userPrincipalName
-                - usageDate
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
                 - incompleteJobCount
+                - usageDate
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5427,20 +5453,20 @@ paths:
               enum:
                 - id
                 - id desc
-                - feature
-                - feature desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userDisplayName
-                - userDisplayName desc
-                - isSuccess
-                - isSuccess desc
                 - authMethod
                 - authMethod desc
-                - failureReason
-                - failureReason desc
                 - eventDateTime
                 - eventDateTime desc
+                - failureReason
+                - failureReason desc
+                - feature
+                - feature desc
+                - isSuccess
+                - isSuccess desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -5453,13 +5479,13 @@ paths:
             items:
               enum:
                 - id
-                - feature
-                - userPrincipalName
-                - userDisplayName
-                - isSuccess
                 - authMethod
-                - failureReason
                 - eventDateTime
+                - failureReason
+                - feature
+                - isSuccess
+                - userDisplayName
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5543,13 +5569,13 @@ paths:
             items:
               enum:
                 - id
-                - feature
-                - userPrincipalName
-                - userDisplayName
-                - isSuccess
                 - authMethod
-                - failureReason
                 - eventDateTime
+                - failureReason
+                - feature
+                - isSuccess
+                - userDisplayName
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -5631,20 +5657,11 @@ components:
         - title: auditLogRoot
           type: object
           properties:
-            signIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-              description: Read-only. Nullable.
             directoryAudits:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
               description: Read-only. Nullable.
-            restrictedSignIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
             directoryProvisioning:
               type: array
               items:
@@ -5653,6 +5670,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+            restrictedSignIns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+            signIns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.signIn'
+              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.directoryAudit:
@@ -5661,6 +5687,19 @@ components:
         - title: directoryAudit
           type: object
           properties:
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            activityDisplayName:
+              type: string
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+            additionalDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Indicates additional details on the activity.
             category:
               type: string
               description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
@@ -5668,20 +5707,8 @@ components:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
               nullable: true
-            result:
-              $ref: '#/components/schemas/microsoft.graph.operationResult'
-            resultReason:
-              type: string
-              description: Describes cause of 'failure' or 'timeout' results.
-              nullable: true
-            activityDisplayName:
-              type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
-            activityDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
-              format: date-time
+            initiatedBy:
+              $ref: '#/components/schemas/microsoft.graph.auditActivityInitiator'
             loggedByService:
               type: string
               description: 'Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.'
@@ -5689,18 +5716,17 @@ components:
             operationType:
               type: string
               nullable: true
-            initiatedBy:
-              $ref: '#/components/schemas/microsoft.graph.auditActivityInitiator'
+            result:
+              $ref: '#/components/schemas/microsoft.graph.operationResult'
+            resultReason:
+              type: string
+              description: Describes cause of 'failure' or 'timeout' results.
+              nullable: true
             targetResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
               description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
-            additionalDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Indicates additional details on the activity.
           additionalProperties:
             type: object
     microsoft.graph.provisioningObjectSummary:
@@ -5709,23 +5735,17 @@ components:
         - title: provisioningObjectSummary
           type: object
           properties:
+            action:
+              type: string
+              nullable: true
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
-            tenantId:
-              type: string
-              nullable: true
-            jobId:
-              type: string
-              nullable: true
-            cycleId:
-              type: string
-              nullable: true
             changeId:
               type: string
               nullable: true
-            action:
+            cycleId:
               type: string
               nullable: true
             durationInMilliseconds:
@@ -5734,28 +5754,34 @@ components:
               type: integer
               format: int32
               nullable: true
-            servicePrincipal:
-              $ref: '#/components/schemas/microsoft.graph.provisioningServicePrincipal'
             initiatedBy:
               $ref: '#/components/schemas/microsoft.graph.initiator'
-            sourceSystem:
-              $ref: '#/components/schemas/microsoft.graph.provisioningSystemDetails'
-            targetSystem:
-              $ref: '#/components/schemas/microsoft.graph.provisioningSystemDetails'
-            sourceIdentity:
-              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
-            targetIdentity:
-              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
-            statusInfo:
-              $ref: '#/components/schemas/microsoft.graph.statusBase'
-            provisioningSteps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.provisioningStep'
+            jobId:
+              type: string
+              nullable: true
             modifiedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+            provisioningSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.provisioningStep'
+            servicePrincipal:
+              $ref: '#/components/schemas/microsoft.graph.provisioningServicePrincipal'
+            sourceIdentity:
+              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
+            sourceSystem:
+              $ref: '#/components/schemas/microsoft.graph.provisioningSystemDetails'
+            statusInfo:
+              $ref: '#/components/schemas/microsoft.graph.statusBase'
+            targetIdentity:
+              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
+            targetSystem:
+              $ref: '#/components/schemas/microsoft.graph.provisioningSystemDetails'
+            tenantId:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.restrictedSignIn:
@@ -5829,13 +5855,13 @@ components:
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
-            isInteractive:
-              type: boolean
-              description: Indicates if a sign-in is interactive or not.
-              nullable: true
             ipAddress:
               type: string
               description: IP address of the client used to sign in.
+              nullable: true
+            isInteractive:
+              type: boolean
+              description: Indicates if a sign-in is interactive or not.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
@@ -5853,6 +5879,17 @@ components:
               minimum: -2147483648
               type: integer
               format: int32
+              nullable: true
+            resourceDisplayName:
+              type: string
+              description: Name of the resource the user signed into.
+              nullable: true
+            resourceId:
+              type: string
+              description: ID of the resource that the user signed into.
+              nullable: true
+            resourceTenantId:
+              type: string
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -5873,17 +5910,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskState:
               $ref: '#/components/schemas/microsoft.graph.riskState'
-            resourceDisplayName:
-              type: string
-              description: Name of the resource the user signed into.
-              nullable: true
-            resourceId:
-              type: string
-              description: ID of the resource that the user signed into.
-              nullable: true
-            resourceTenantId:
-              type: string
-              nullable: true
             servicePrincipalId:
               type: string
             servicePrincipalName:
@@ -5935,22 +5961,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-            dailyPrintUsageSummariesByUser:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
-            monthlyPrintUsageSummariesByUser:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
             dailyPrintUsageSummariesByPrinter:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+            dailyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
             monthlyPrintUsageSummariesByPrinter:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+            monthlyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
           additionalProperties:
             type: object
           description: The resource that represents an instance of History Reports.
@@ -5960,21 +5986,21 @@ components:
         - title: applicationSignInDetailedSummary
           type: object
           properties:
-            appId:
-              type: string
-            appDisplayName:
-              type: string
-            status:
-              $ref: '#/components/schemas/microsoft.graph.signInStatus'
-            signInCount:
-              type: integer
-              format: int64
-              nullable: true
             aggregatedEventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
+            appDisplayName:
+              type: string
+            appId:
+              type: string
+            signInCount:
+              type: integer
+              format: int64
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.signInStatus'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationDetails:
@@ -5983,22 +6009,22 @@ components:
         - title: credentialUserRegistrationDetails
           type: object
           properties:
-            userPrincipalName:
-              type: string
-            userDisplayName:
-              type: string
             authMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.registrationAuthMethod'
-            isRegistered:
+            isCapable:
               type: boolean
             isEnabled:
               type: boolean
-            isCapable:
-              type: boolean
             isMfaRegistered:
               type: boolean
+            isRegistered:
+              type: boolean
+            userDisplayName:
+              type: string
+            userPrincipalName:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.PrintUsageSummaryByPrinter:
@@ -6007,13 +6033,6 @@ components:
         - title: PrintUsageSummaryByPrinter
           type: object
           properties:
-            printerId:
-              type: string
-              nullable: true
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
             completedBlackAndWhiteJobCount:
               type: integer
               format: int64
@@ -6023,6 +6042,13 @@ components:
             incompleteJobCount:
               type: integer
               format: int64
+            printerId:
+              type: string
+              nullable: true
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
           additionalProperties:
             type: object
     microsoft.graph.PrintUsageSummaryByUser:
@@ -6031,13 +6057,6 @@ components:
         - title: PrintUsageSummaryByUser
           type: object
           properties:
-            userPrincipalName:
-              type: string
-              nullable: true
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
             completedBlackAndWhiteJobCount:
               type: integer
               format: int64
@@ -6047,6 +6066,13 @@ components:
             incompleteJobCount:
               type: integer
               format: int64
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+            userPrincipalName:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.report:
@@ -6069,11 +6095,11 @@ components:
           properties:
             appDisplayName:
               type: string
-            successfulSignInCount:
+            failedSignInCount:
               type: integer
               format: int64
               nullable: true
-            failedSignInCount:
+            successfulSignInCount:
               type: integer
               format: int64
               nullable: true
@@ -6089,12 +6115,12 @@ components:
         - title: azureADFeatureUsage
           type: object
           properties:
+            featureName:
+              type: string
             snapshotDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
-            featureName:
-              type: string
             usage:
               maximum: 2147483647
               minimum: -2147483648
@@ -6109,14 +6135,14 @@ components:
         - title: azureADLicenseUsage
           type: object
           properties:
-            snapshotDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
             licenseInfoDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseInfoDetail'
+            snapshotDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
           additionalProperties:
             type: object
     microsoft.graph.azureADUserFeatureUsage:
@@ -6125,26 +6151,26 @@ components:
         - title: azureADUserFeatureUsage
           type: object
           properties:
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            userId:
-              type: string
-            userDisplayName:
-              type: string
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            licenseRecommended:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-            licenseAssigned:
-              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
             featureUsageDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureUsageDetail'
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            licenseAssigned:
+              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
+            licenseRecommended:
+              $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
+            userDisplayName:
+              type: string
+              nullable: true
+            userId:
+              type: string
+            userPrincipalName:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.credentialUsageSummary:
@@ -6153,16 +6179,16 @@ components:
         - title: credentialUsageSummary
           type: object
           properties:
+            authMethod:
+              $ref: '#/components/schemas/microsoft.graph.usageAuthMethod'
+            failureActivityCount:
+              type: integer
+              format: int64
             feature:
               $ref: '#/components/schemas/microsoft.graph.featureType'
             successfulActivityCount:
               type: integer
               format: int64
-            failureActivityCount:
-              type: integer
-              format: int64
-            authMethod:
-              $ref: '#/components/schemas/microsoft.graph.usageAuthMethod'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationCount:
@@ -6186,20 +6212,11 @@ components:
         - title: emailActivitySummary
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            send:
+            read:
               type: integer
               format: int64
               nullable: true
             receive:
-              type: integer
-              format: int64
-              nullable: true
-            read:
               type: integer
               format: int64
               nullable: true
@@ -6211,6 +6228,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            send:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.emailActivityUserDetail:
@@ -6219,13 +6245,15 @@ components:
         - title: emailActivityUserDetail
           type: object
           properties:
-            reportRefreshDate:
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
+            deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
-              nullable: true
-            userPrincipalName:
-              type: string
               nullable: true
             displayName:
               type: string
@@ -6233,12 +6261,23 @@ components:
             isDeleted:
               type: boolean
               nullable: true
-            deletedDate:
+            lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            lastActivityDate:
+            readCount:
+              type: integer
+              format: int64
+              nullable: true
+            receiveCount:
+              type: integer
+              format: int64
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -6247,20 +6286,7 @@ components:
               type: integer
               format: int64
               nullable: true
-            receiveCount:
-              type: integer
-              format: int64
-              nullable: true
-            readCount:
-              type: integer
-              format: int64
-              nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            reportPeriod:
+            userPrincipalName:
               type: string
               nullable: true
           additionalProperties:
@@ -6271,24 +6297,11 @@ components:
         - title: emailAppUsageAppsUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            imap4App:
+              type: integer
+              format: int64
               nullable: true
             mailForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWindows:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMobile:
               type: integer
               format: int64
               nullable: true
@@ -6296,7 +6309,19 @@ components:
               type: integer
               format: int64
               nullable: true
+            outlookForMac:
+              type: integer
+              format: int64
+              nullable: true
+            outlookForMobile:
+              type: integer
+              format: int64
+              nullable: true
             outlookForWeb:
+              type: integer
+              format: int64
+              nullable: true
+            outlookForWindows:
               type: integer
               format: int64
               nullable: true
@@ -6304,16 +6329,17 @@ components:
               type: integer
               format: int64
               nullable: true
-            imap4App:
-              type: integer
-              format: int64
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             smtpApp:
               type: integer
               format: int64
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -6323,24 +6349,11 @@ components:
         - title: emailAppUsageUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            imap4App:
+              type: integer
+              format: int64
               nullable: true
             mailForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWindows:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMobile:
               type: integer
               format: int64
               nullable: true
@@ -6348,19 +6361,23 @@ components:
               type: integer
               format: int64
               nullable: true
+            outlookForMac:
+              type: integer
+              format: int64
+              nullable: true
+            outlookForMobile:
+              type: integer
+              format: int64
+              nullable: true
             outlookForWeb:
               type: integer
               format: int64
               nullable: true
+            outlookForWindows:
+              type: integer
+              format: int64
+              nullable: true
             pop3App:
-              type: integer
-              format: int64
-              nullable: true
-            imap4App:
-              type: integer
-              format: int64
-              nullable: true
-            smtpApp:
               type: integer
               format: int64
               nullable: true
@@ -6372,6 +6389,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            smtpApp:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.emailAppUsageUserDetail:
@@ -6380,24 +6406,21 @@ components:
         - title: emailAppUsageUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
             deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            imap4App:
+              type: array
+              items:
+                type: string
+                nullable: true
+            isDeleted:
+              type: boolean
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -6409,12 +6432,12 @@ components:
               items:
                 type: string
                 nullable: true
-            outlookForMac:
+            otherForMobile:
               type: array
               items:
                 type: string
                 nullable: true
-            outlookForWindows:
+            outlookForMac:
               type: array
               items:
                 type: string
@@ -6424,12 +6447,12 @@ components:
               items:
                 type: string
                 nullable: true
-            otherForMobile:
+            outlookForWeb:
               type: array
               items:
                 type: string
                 nullable: true
-            outlookForWeb:
+            outlookForWindows:
               type: array
               items:
                 type: string
@@ -6439,17 +6462,20 @@ components:
               items:
                 type: string
                 nullable: true
-            imap4App:
-              type: array
-              items:
-                type: string
-                nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             smtpApp:
               type: array
               items:
                 type: string
                 nullable: true
-            reportPeriod:
+            userPrincipalName:
               type: string
               nullable: true
           additionalProperties:
@@ -6460,16 +6486,7 @@ components:
         - title: emailAppUsageVersionsUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            outlook2016:
-              type: integer
-              format: int64
-              nullable: true
-            outlook2013:
+            outlook2007:
               type: integer
               format: int64
               nullable: true
@@ -6477,16 +6494,25 @@ components:
               type: integer
               format: int64
               nullable: true
-            outlook2007:
+            outlook2013:
               type: integer
               format: int64
               nullable: true
-            undetermined:
+            outlook2016:
               type: integer
               format: int64
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            undetermined:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -6496,42 +6522,15 @@ components:
         - title: mailboxUsageDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             createdDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            lastActivityDate:
+            deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
-              nullable: true
-            itemCount:
-              type: integer
-              format: int64
-              nullable: true
-            storageUsedInBytes:
-              type: integer
-              format: int64
               nullable: true
             deletedItemCount:
               type: integer
@@ -6541,9 +6540,24 @@ components:
               type: integer
               format: int64
               nullable: true
+            displayName:
+              type: string
+              nullable: true
+            isDeleted:
+              type: boolean
+              nullable: true
             issueWarningQuotaInBytes:
               type: integer
               format: int64
+              nullable: true
+            itemCount:
+              type: integer
+              format: int64
+              nullable: true
+            lastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             prohibitSendQuotaInBytes:
               type: integer
@@ -6556,6 +6570,18 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            storageUsedInBytes:
+              type: integer
+              format: int64
+              nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.mailboxUsageMailboxCounts:
@@ -6564,15 +6590,6 @@ components:
         - title: mailboxUsageMailboxCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -6585,6 +6602,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.mailboxUsageQuotaStatusMailboxCounts:
@@ -6593,27 +6619,6 @@ components:
         - title: mailboxUsageQuotaStatusMailboxCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            underLimit:
-              type: integer
-              format: int64
-              nullable: true
-            warningIssued:
-              type: integer
-              format: int64
-              nullable: true
-            sendProhibited:
-              type: integer
-              format: int64
-              nullable: true
-            sendReceiveProhibited:
-              type: integer
-              format: int64
-              nullable: true
             indeterminate:
               type: integer
               format: int64
@@ -6626,6 +6631,27 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sendProhibited:
+              type: integer
+              format: int64
+              nullable: true
+            sendReceiveProhibited:
+              type: integer
+              format: int64
+              nullable: true
+            underLimit:
+              type: integer
+              format: int64
+              nullable: true
+            warningIssued:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.mailboxUsageStorage:
@@ -6634,6 +6660,14 @@ components:
         - title: mailboxUsageStorage
           type: object
           properties:
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -6643,14 +6677,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365ActivationCounts:
@@ -6659,15 +6685,11 @@ components:
         - title: office365ActivationCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            android:
+              type: integer
+              format: int64
               nullable: true
-            productType:
-              type: string
-              nullable: true
-            windows:
+            ios:
               type: integer
               format: int64
               nullable: true
@@ -6675,11 +6697,15 @@ components:
               type: integer
               format: int64
               nullable: true
-            android:
-              type: integer
-              format: int64
+            productType:
+              type: string
               nullable: true
-            ios:
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            windows:
               type: integer
               format: int64
               nullable: true
@@ -6695,21 +6721,21 @@ components:
         - title: office365ActivationsUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            productType:
-              type: string
+            activated:
+              type: integer
+              format: int64
               nullable: true
             assigned:
               type: integer
               format: int64
               nullable: true
-            activated:
-              type: integer
-              format: int64
+            productType:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             sharedComputerActivation:
               type: integer
@@ -6723,21 +6749,21 @@ components:
         - title: office365ActivationsUserDetail
           type: object
           properties:
+            displayName:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
             userActivationCounts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivationCounts'
+            userPrincipalName:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365ActiveUserCounts:
@@ -6746,36 +6772,15 @@ components:
         - title: office365ActiveUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            exchange:
+              type: integer
+              format: int64
               nullable: true
             office365:
               type: integer
               format: int64
               nullable: true
-            exchange:
-              type: integer
-              format: int64
-              nullable: true
             oneDrive:
-              type: integer
-              format: int64
-              nullable: true
-            sharePoint:
-              type: integer
-              format: int64
-              nullable: true
-            skypeForBusiness:
-              type: integer
-              format: int64
-              nullable: true
-            yammer:
-              type: integer
-              format: int64
-              nullable: true
-            teams:
               type: integer
               format: int64
               nullable: true
@@ -6787,6 +6792,27 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharePoint:
+              type: integer
+              format: int64
+              nullable: true
+            skypeForBusiness:
+              type: integer
+              format: int64
+              nullable: true
+            teams:
+              type: integer
+              format: int64
+              nullable: true
+            yammer:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365ActiveUserDetail:
@@ -6795,21 +6821,25 @@ components:
         - title: office365ActiveUserDetail
           type: object
           properties:
-            reportRefreshDate:
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
+            deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
             displayName:
               type: string
               nullable: true
-            isDeleted:
-              type: boolean
+            exchangeLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
-            deletedDate:
+            exchangeLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -6826,43 +6856,16 @@ components:
             hasSkypeForBusinessLicense:
               type: boolean
               nullable: true
-            hasYammerLicense:
-              type: boolean
-              nullable: true
             hasTeamsLicense:
               type: boolean
               nullable: true
-            exchangeLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            hasYammerLicense:
+              type: boolean
+              nullable: true
+            isDeleted:
+              type: boolean
               nullable: true
             oneDriveLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            sharePointLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            skypeForBusinessLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            yammerLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            teamsLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            exchangeLicenseAssignDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -6872,7 +6875,22 @@ components:
               type: string
               format: date
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharePointLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             sharePointLicenseAssignDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            skypeForBusinessLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -6882,7 +6900,7 @@ components:
               type: string
               format: date
               nullable: true
-            yammerLicenseAssignDate:
+            teamsLastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -6892,11 +6910,19 @@ components:
               type: string
               format: date
               nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            yammerLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            yammerLicenseAssignDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365GroupsActivityCounts:
@@ -6905,12 +6931,24 @@ components:
         - title: office365GroupsActivityCounts
           type: object
           properties:
+            exchangeEmailsReceived:
+              type: integer
+              format: int64
+              nullable: true
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            exchangeEmailsReceived:
+            yammerMessagesLiked:
               type: integer
               format: int64
               nullable: true
@@ -6922,18 +6960,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            yammerMessagesLiked:
-              type: integer
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365GroupsActivityDetail:
@@ -6942,36 +6968,11 @@ components:
         - title: office365GroupsActivityDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            groupId:
-              type: string
-              nullable: true
-            groupDisplayName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            ownerPrincipalName:
-              type: string
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            groupType:
-              type: string
-              nullable: true
-            memberCount:
+            exchangeMailboxStorageUsedInBytes:
               type: integer
               format: int64
               nullable: true
-            externalMemberCount:
+            exchangeMailboxTotalItemCount:
               type: integer
               format: int64
               nullable: true
@@ -6979,7 +6980,55 @@ components:
               type: integer
               format: int64
               nullable: true
+            externalMemberCount:
+              type: integer
+              format: int64
+              nullable: true
+            groupDisplayName:
+              type: string
+              nullable: true
+            groupId:
+              type: string
+              nullable: true
+            groupType:
+              type: string
+              nullable: true
+            isDeleted:
+              type: boolean
+              nullable: true
+            lastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            memberCount:
+              type: integer
+              format: int64
+              nullable: true
+            ownerPrincipalName:
+              type: string
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             sharePointActiveFileCount:
+              type: integer
+              format: int64
+              nullable: true
+            sharePointSiteStorageUsedInBytes:
+              type: integer
+              format: int64
+              nullable: true
+            sharePointTotalFileCount:
+              type: integer
+              format: int64
+              nullable: true
+            yammerLikedMessageCount:
               type: integer
               format: int64
               nullable: true
@@ -6991,29 +7040,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            yammerLikedMessageCount:
-              type: integer
-              format: int64
-              nullable: true
-            exchangeMailboxTotalItemCount:
-              type: integer
-              format: int64
-              nullable: true
-            exchangeMailboxStorageUsedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            sharePointTotalFileCount:
-              type: integer
-              format: int64
-              nullable: true
-            sharePointSiteStorageUsedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365GroupsActivityFileCounts:
@@ -7022,15 +7048,6 @@ components:
         - title: office365GroupsActivityFileCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7042,6 +7059,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            total:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7051,15 +7077,6 @@ components:
         - title: office365GroupsActivityGroupCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7072,6 +7089,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365GroupsActivityStorage:
@@ -7080,16 +7106,7 @@ components:
         - title: office365GroupsActivityStorage
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             mailboxStorageUsedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            siteStorageUsedInBytes:
               type: integer
               format: int64
               nullable: true
@@ -7101,6 +7118,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteStorageUsedInBytes:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.office365ServicesUserCounts:
@@ -7109,16 +7135,19 @@ components:
         - title: office365ServicesUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             exchangeActive:
               type: integer
               format: int64
               nullable: true
             exchangeInactive:
+              type: integer
+              format: int64
+              nullable: true
+            office365Active:
+              type: integer
+              format: int64
+              nullable: true
+            office365Inactive:
               type: integer
               format: int64
               nullable: true
@@ -7129,6 +7158,14 @@ components:
             oneDriveInactive:
               type: integer
               format: int64
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             sharePointActive:
               type: integer
@@ -7146,14 +7183,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            yammerActive:
-              type: integer
-              format: int64
-              nullable: true
-            yammerInactive:
-              type: integer
-              format: int64
-              nullable: true
             teamsActive:
               type: integer
               format: int64
@@ -7162,16 +7191,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            office365Active:
+            yammerActive:
               type: integer
               format: int64
               nullable: true
-            office365Inactive:
+            yammerInactive:
               type: integer
               format: int64
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7181,27 +7207,6 @@ components:
         - title: siteActivitySummary
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            viewedOrEdited:
-              type: integer
-              format: int64
-              nullable: true
-            synced:
-              type: integer
-              format: int64
-              nullable: true
-            sharedInternally:
-              type: integer
-              format: int64
-              nullable: true
-            sharedExternally:
-              type: integer
-              format: int64
-              nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7209,6 +7214,27 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharedExternally:
+              type: integer
+              format: int64
+              nullable: true
+            sharedInternally:
+              type: integer
+              format: int64
+              nullable: true
+            synced:
+              type: integer
+              format: int64
+              nullable: true
+            viewedOrEdited:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7218,32 +7244,33 @@ components:
         - title: oneDriveActivityUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
             deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
+              nullable: true
+            isDeleted:
+              type: boolean
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            viewedOrEditedFileCount:
-              type: integer
-              format: int64
+            reportPeriod:
+              type: string
               nullable: true
-            syncedFileCount:
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharedExternallyFileCount:
               type: integer
               format: int64
               nullable: true
@@ -7251,17 +7278,16 @@ components:
               type: integer
               format: int64
               nullable: true
-            sharedExternallyFileCount:
+            syncedFileCount:
               type: integer
               format: int64
               nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            reportPeriod:
+            userPrincipalName:
               type: string
+              nullable: true
+            viewedOrEditedFileCount:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7271,18 +7297,6 @@ components:
         - title: oneDriveUsageAccountCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            siteType:
-              type: string
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7294,6 +7308,18 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteType:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7303,19 +7329,13 @@ components:
         - title: oneDriveUsageAccountDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            activeFileCount:
+              type: integer
+              format: int64
               nullable: true
-            siteUrl:
-              type: string
-              nullable: true
-            ownerDisplayName:
-              type: string
-              nullable: true
-            ownerPrincipalName:
-              type: string
+            fileCount:
+              type: integer
+              format: int64
               nullable: true
             isDeleted:
               type: boolean
@@ -7325,24 +7345,30 @@ components:
               type: string
               format: date
               nullable: true
-            fileCount:
-              type: integer
-              format: int64
+            ownerDisplayName:
+              type: string
               nullable: true
-            activeFileCount:
+            ownerPrincipalName:
+              type: string
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteUrl:
+              type: string
+              nullable: true
+            storageAllocatedInBytes:
               type: integer
               format: int64
               nullable: true
             storageUsedInBytes:
               type: integer
               format: int64
-              nullable: true
-            storageAllocatedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7352,18 +7378,6 @@ components:
         - title: oneDriveUsageFileCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            siteType:
-              type: string
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7375,6 +7389,18 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteType:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7384,6 +7410,14 @@ components:
         - title: siteUsageStorage
           type: object
           properties:
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7395,14 +7429,6 @@ components:
             storageUsedInBytes:
               type: integer
               format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7412,25 +7438,7 @@ components:
         - title: relyingPartyDetailedSummary
           type: object
           properties:
-            relyingPartyId:
-              type: string
-            serviceId:
-              type: string
-            relyingPartyName:
-              type: string
-            successfulSignInCount:
-              type: integer
-              format: int64
             failedSignInCount:
-              type: integer
-              format: int64
-            totalSignInCount:
-              type: integer
-              format: int64
-            signInSuccessRate:
-              type: number
-              format: double
-            uniqueUserCount:
               type: integer
               format: int64
             migrationStatus:
@@ -7439,10 +7447,28 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+            relyingPartyId:
+              type: string
+            relyingPartyName:
+              type: string
             replyUrls:
               type: array
               items:
                 type: string
+            serviceId:
+              type: string
+            signInSuccessRate:
+              type: number
+              format: double
+            successfulSignInCount:
+              type: integer
+              format: int64
+            totalSignInCount:
+              type: integer
+              format: int64
+            uniqueUserCount:
+              type: integer
+              format: int64
           additionalProperties:
             type: object
     microsoft.graph.sharePointActivityPages:
@@ -7451,6 +7477,14 @@ components:
         - title: sharePointActivityPages
           type: object
           properties:
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7459,14 +7493,6 @@ components:
             visitedPageCount:
               type: integer
               format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7476,31 +7502,6 @@ components:
         - title: sharePointActivityUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            visitedPage:
-              type: integer
-              format: int64
-              nullable: true
-            viewedOrEdited:
-              type: integer
-              format: int64
-              nullable: true
-            synced:
-              type: integer
-              format: int64
-              nullable: true
-            sharedInternally:
-              type: integer
-              format: int64
-              nullable: true
-            sharedExternally:
-              type: integer
-              format: int64
-              nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7508,6 +7509,31 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharedExternally:
+              type: integer
+              format: int64
+              nullable: true
+            sharedInternally:
+              type: integer
+              format: int64
+              nullable: true
+            synced:
+              type: integer
+              format: int64
+              nullable: true
+            viewedOrEdited:
+              type: integer
+              format: int64
+              nullable: true
+            visitedPage:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -7517,32 +7543,33 @@ components:
         - title: sharePointActivityUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
             deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
+              nullable: true
+            isDeleted:
+              type: boolean
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            viewedOrEditedFileCount:
-              type: integer
-              format: int64
+            reportPeriod:
+              type: string
               nullable: true
-            syncedFileCount:
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            sharedExternallyFileCount:
               type: integer
               format: int64
               nullable: true
@@ -7550,21 +7577,20 @@ components:
               type: integer
               format: int64
               nullable: true
-            sharedExternallyFileCount:
+            syncedFileCount:
+              type: integer
+              format: int64
+              nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            viewedOrEditedFileCount:
               type: integer
               format: int64
               nullable: true
             visitedPageCount:
               type: integer
               format: int64
-              nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7574,24 +7600,13 @@ components:
         - title: sharePointSiteUsageDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            activeFileCount:
+              type: integer
+              format: int64
               nullable: true
-            siteId:
-              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
-              type: string
-              format: uuid
-              nullable: true
-            siteUrl:
-              type: string
-              nullable: true
-            ownerDisplayName:
-              type: string
-              nullable: true
-            ownerPrincipalName:
-              type: string
+            fileCount:
+              type: integer
+              format: int64
               nullable: true
             isDeleted:
               type: boolean
@@ -7601,19 +7616,36 @@ components:
               type: string
               format: date
               nullable: true
-            fileCount:
-              type: integer
-              format: int64
+            ownerDisplayName:
+              type: string
               nullable: true
-            activeFileCount:
-              type: integer
-              format: int64
+            ownerPrincipalName:
+              type: string
               nullable: true
             pageViewCount:
               type: integer
               format: int64
               nullable: true
-            visitedPageCount:
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            rootWebTemplate:
+              type: string
+              nullable: true
+            siteId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              format: uuid
+              nullable: true
+            siteUrl:
+              type: string
+              nullable: true
+            storageAllocatedInBytes:
               type: integer
               format: int64
               nullable: true
@@ -7621,15 +7653,9 @@ components:
               type: integer
               format: int64
               nullable: true
-            storageAllocatedInBytes:
+            visitedPageCount:
               type: integer
               format: int64
-              nullable: true
-            rootWebTemplate:
-              type: string
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7639,18 +7665,6 @@ components:
         - title: sharePointSiteUsageFileCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            siteType:
-              type: string
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7663,14 +7677,6 @@ components:
             reportPeriod:
               type: string
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.sharePointSiteUsagePages:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: sharePointSiteUsagePages
-          type: object
-          properties:
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7679,6 +7685,18 @@ components:
             siteType:
               type: string
               nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.sharePointSiteUsagePages:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharePointSiteUsagePages
+          type: object
+          properties:
             pageViewCount:
               type: integer
               format: int64
@@ -7689,6 +7707,14 @@ components:
               format: date
               nullable: true
             reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteType:
               type: string
               nullable: true
           additionalProperties:
@@ -7699,18 +7725,6 @@ components:
         - title: sharePointSiteUsageSiteCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            siteType:
-              type: string
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -7723,6 +7737,18 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            siteType:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.skypeForBusinessActivityCounts:
@@ -7731,10 +7757,6 @@ components:
         - title: skypeForBusinessActivityCounts
           type: object
           properties:
-            peerToPeer:
-              type: integer
-              format: int64
-              nullable: true
             organized:
               type: integer
               format: int64
@@ -7743,10 +7765,9 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            peerToPeer:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -7755,6 +7776,11 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
           additionalProperties:
             type: object
@@ -7764,10 +7790,6 @@ components:
         - title: skypeForBusinessActivityUserCounts
           type: object
           properties:
-            peerToPeer:
-              type: integer
-              format: int64
-              nullable: true
             organized:
               type: integer
               format: int64
@@ -7776,10 +7798,9 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            peerToPeer:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -7789,6 +7810,11 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.skypeForBusinessActivityUserDetail:
@@ -7797,62 +7823,25 @@ components:
         - title: skypeForBusinessActivityUserDetail
           type: object
           properties:
-            totalPeerToPeerSessionCount:
-              type: integer
-              format: int64
-              nullable: true
-            totalOrganizedConferenceCount:
-              type: integer
-              format: int64
-              nullable: true
-            totalParticipatedConferenceCount:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerLastActivityDate:
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
+            deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            organizedConferenceLastActivityDate:
+            isDeleted:
+              type: boolean
+              nullable: true
+            lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            participatedConferenceLastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            peerToPeerIMCount:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerAudioCount:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerAudioMinutes:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerVideoCount:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerVideoMinutes:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerAppSharingCount:
-              type: integer
-              format: int64
-              nullable: true
-            peerToPeerFileTransferCount:
-              type: integer
-              format: int64
-              nullable: true
-            organizedConferenceIMCount:
+            organizedConferenceAppSharingCount:
               type: integer
               format: int64
               nullable: true
@@ -7864,15 +7853,7 @@ components:
               type: integer
               format: int64
               nullable: true
-            organizedConferenceAppSharingCount:
-              type: integer
-              format: int64
-              nullable: true
-            organizedConferenceWebCount:
-              type: integer
-              format: int64
-              nullable: true
-            organizedConferenceDialInOut3rdPartyCount:
+            organizedConferenceCloudDialInMicrosoftMinutes:
               type: integer
               format: int64
               nullable: true
@@ -7880,15 +7861,28 @@ components:
               type: integer
               format: int64
               nullable: true
-            organizedConferenceCloudDialInMicrosoftMinutes:
-              type: integer
-              format: int64
-              nullable: true
             organizedConferenceCloudDialOutMicrosoftMinutes:
               type: integer
               format: int64
               nullable: true
-            participatedConferenceIMCount:
+            organizedConferenceDialInOut3rdPartyCount:
+              type: integer
+              format: int64
+              nullable: true
+            organizedConferenceIMCount:
+              type: integer
+              format: int64
+              nullable: true
+            organizedConferenceLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            organizedConferenceWebCount:
+              type: integer
+              format: int64
+              nullable: true
+            participatedConferenceAppSharingCount:
               type: integer
               format: int64
               nullable: true
@@ -7900,45 +7894,77 @@ components:
               type: integer
               format: int64
               nullable: true
-            participatedConferenceAppSharingCount:
+            participatedConferenceDialInOut3rdPartyCount:
               type: integer
               format: int64
+              nullable: true
+            participatedConferenceIMCount:
+              type: integer
+              format: int64
+              nullable: true
+            participatedConferenceLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
             participatedConferenceWebCount:
               type: integer
               format: int64
               nullable: true
-            participatedConferenceDialInOut3rdPartyCount:
+            peerToPeerAppSharingCount:
               type: integer
               format: int64
+              nullable: true
+            peerToPeerAudioCount:
+              type: integer
+              format: int64
+              nullable: true
+            peerToPeerAudioMinutes:
+              type: integer
+              format: int64
+              nullable: true
+            peerToPeerFileTransferCount:
+              type: integer
+              format: int64
+              nullable: true
+            peerToPeerIMCount:
+              type: integer
+              format: int64
+              nullable: true
+            peerToPeerLastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            peerToPeerVideoCount:
+              type: integer
+              format: int64
+              nullable: true
+            peerToPeerVideoMinutes:
+              type: integer
+              format: int64
+              nullable: true
+            reportPeriod:
+              type: string
               nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
+            totalOrganizedConferenceCount:
+              type: integer
+              format: int64
+              nullable: true
+            totalParticipatedConferenceCount:
+              type: integer
+              format: int64
+              nullable: true
+            totalPeerToPeerSessionCount:
+              type: integer
+              format: int64
+              nullable: true
             userPrincipalName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            reportPeriod:
               type: string
               nullable: true
           additionalProperties:
@@ -7949,6 +7975,27 @@ components:
         - title: skypeForBusinessDeviceUsageDistributionUserCounts
           type: object
           properties:
+            androidPhone:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            iPad:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            iPhone:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -7965,27 +8012,6 @@ components:
               minimum: -2147483648
               type: integer
               format: int32
-              nullable: true
-            androidPhone:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            iPhone:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            iPad:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            reportPeriod:
-              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -7995,36 +8021,19 @@ components:
         - title: skypeForBusinessDeviceUsageUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            windows:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            windowsPhone:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
             androidPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPhone:
+            iPad:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPad:
+            iPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
@@ -8038,6 +8047,23 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            windows:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            windowsPhone:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.skypeForBusinessDeviceUsageUserDetail:
@@ -8046,18 +8072,27 @@ components:
         - title: skypeForBusinessDeviceUsageUserDetail
           type: object
           properties:
+            lastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            userPrincipalName:
-              type: string
+            usedAndroidPhone:
+              type: boolean
               nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            usediPad:
+              type: boolean
+              nullable: true
+            usediPhone:
+              type: boolean
               nullable: true
             usedWindows:
               type: boolean
@@ -8065,16 +8100,7 @@ components:
             usedWindowsPhone:
               type: boolean
               nullable: true
-            usedAndroidPhone:
-              type: boolean
-              nullable: true
-            usediPhone:
-              type: boolean
-              nullable: true
-            usediPad:
-              type: boolean
-              nullable: true
-            reportPeriod:
+            userPrincipalName:
               type: string
               nullable: true
           additionalProperties:
@@ -8085,19 +8111,11 @@ components:
         - title: skypeForBusinessOrganizerActivityCounts
           type: object
           properties:
-            im:
-              type: integer
-              format: int64
-              nullable: true
-            audioVideo:
-              type: integer
-              format: int64
-              nullable: true
             appSharing:
               type: integer
               format: int64
               nullable: true
-            web:
+            audioVideo:
               type: integer
               format: int64
               nullable: true
@@ -8109,10 +8127,9 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8121,6 +8138,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8142,11 +8168,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -8154,6 +8175,11 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
           additionalProperties:
             type: object
@@ -8163,19 +8189,11 @@ components:
         - title: skypeForBusinessOrganizerActivityUserCounts
           type: object
           properties:
-            im:
-              type: integer
-              format: int64
-              nullable: true
-            audioVideo:
-              type: integer
-              format: int64
-              nullable: true
             appSharing:
               type: integer
               format: int64
               nullable: true
-            web:
+            audioVideo:
               type: integer
               format: int64
               nullable: true
@@ -8187,10 +8205,9 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8199,6 +8216,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8208,7 +8234,7 @@ components:
         - title: skypeForBusinessParticipantActivityCounts
           type: object
           properties:
-            im:
+            appSharing:
               type: integer
               format: int64
               nullable: true
@@ -8216,22 +8242,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            appSharing:
-              type: integer
-              format: int64
-              nullable: true
-            web:
-              type: integer
-              format: int64
-              nullable: true
             dialInOut3rdParty:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8240,6 +8257,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8253,11 +8279,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -8265,6 +8286,11 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
           additionalProperties:
             type: object
@@ -8274,7 +8300,7 @@ components:
         - title: skypeForBusinessParticipantActivityUserCounts
           type: object
           properties:
-            im:
+            appSharing:
               type: integer
               format: int64
               nullable: true
@@ -8282,22 +8308,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            appSharing:
-              type: integer
-              format: int64
-              nullable: true
-            web:
-              type: integer
-              format: int64
-              nullable: true
             dialInOut3rdParty:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8306,6 +8323,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8315,7 +8341,7 @@ components:
         - title: skypeForBusinessPeerToPeerActivityCounts
           type: object
           properties:
-            im:
+            appSharing:
               type: integer
               format: int64
               nullable: true
@@ -8323,22 +8349,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            video:
-              type: integer
-              format: int64
-              nullable: true
-            appSharing:
-              type: integer
-              format: int64
-              nullable: true
             fileTransfer:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8347,6 +8364,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            video:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8360,15 +8386,6 @@ components:
               type: integer
               format: int64
               nullable: true
-            video:
-              type: integer
-              format: int64
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -8376,6 +8393,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            video:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8385,7 +8411,7 @@ components:
         - title: skypeForBusinessPeerToPeerActivityUserCounts
           type: object
           properties:
-            im:
+            appSharing:
               type: integer
               format: int64
               nullable: true
@@ -8393,22 +8419,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            video:
-              type: integer
-              format: int64
-              nullable: true
-            appSharing:
-              type: integer
-              format: int64
-              nullable: true
             fileTransfer:
               type: integer
               format: int64
               nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            im:
+              type: integer
+              format: int64
               nullable: true
             reportDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -8417,6 +8434,15 @@ components:
               nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            video:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8426,19 +8452,6 @@ components:
         - title: teamsDeviceUsageDistributionUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            web:
-              type: integer
-              format: int64
-              nullable: true
-            windowsPhone:
-              type: integer
-              format: int64
-              nullable: true
             androidPhone:
               type: integer
               format: int64
@@ -8451,12 +8464,25 @@ components:
               type: integer
               format: int64
               nullable: true
+            reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
+              nullable: true
             windows:
               type: integer
               format: int64
               nullable: true
-            reportPeriod:
-              type: string
+            windowsPhone:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8466,19 +8492,6 @@ components:
         - title: teamsDeviceUsageUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            web:
-              type: integer
-              format: int64
-              nullable: true
-            windowsPhone:
-              type: integer
-              format: int64
-              nullable: true
             androidPhone:
               type: integer
               format: int64
@@ -8488,10 +8501,6 @@ components:
               format: int64
               nullable: true
             mac:
-              type: integer
-              format: int64
-              nullable: true
-            windows:
               type: integer
               format: int64
               nullable: true
@@ -8503,6 +8512,23 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              type: integer
+              format: int64
+              nullable: true
+            windows:
+              type: integer
+              format: int64
+              nullable: true
+            windowsPhone:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.teamsDeviceUsageUserDetail:
@@ -8511,15 +8537,7 @@ components:
         - title: teamsDeviceUsageUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            lastActivityDate:
+            deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
@@ -8527,15 +8545,20 @@ components:
             isDeleted:
               type: boolean
               nullable: true
-            deletedDate:
+            lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            usedWeb:
-              type: boolean
+            reportPeriod:
+              type: string
               nullable: true
-            usedWindowsPhone:
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            usedAndroidPhone:
               type: boolean
               nullable: true
             usediOS:
@@ -8544,13 +8567,16 @@ components:
             usedMac:
               type: boolean
               nullable: true
-            usedAndroidPhone:
+            usedWeb:
               type: boolean
               nullable: true
             usedWindows:
               type: boolean
               nullable: true
-            reportPeriod:
+            usedWindowsPhone:
+              type: boolean
+              nullable: true
+            userPrincipalName:
               type: string
               nullable: true
           additionalProperties:
@@ -8561,24 +8587,6 @@ components:
         - title: teamsUserActivityCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            teamChatMessages:
-              type: integer
-              format: int64
-              nullable: true
-            privateChatMessages:
-              type: integer
-              format: int64
-              nullable: true
             calls:
               type: integer
               format: int64
@@ -8587,8 +8595,26 @@ components:
               type: integer
               format: int64
               nullable: true
+            privateChatMessages:
+              type: integer
+              format: int64
+              nullable: true
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            teamChatMessages:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8598,24 +8624,6 @@ components:
         - title: teamsUserActivityUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            teamChatMessages:
-              type: integer
-              format: int64
-              nullable: true
-            privateChatMessages:
-              type: integer
-              format: int64
-              nullable: true
             calls:
               type: integer
               format: int64
@@ -8628,8 +8636,26 @@ components:
               type: integer
               format: int64
               nullable: true
+            privateChatMessages:
+              type: integer
+              format: int64
+              nullable: true
+            reportDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            teamChatMessages:
+              type: integer
+              format: int64
               nullable: true
           additionalProperties:
             type: object
@@ -8639,33 +8665,32 @@ components:
         - title: teamsUserActivityUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            isDeleted:
-              type: boolean
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
+            callCount:
+              type: integer
+              format: int64
               nullable: true
             deletedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            teamChatMessageCount:
+            hasOtherAction:
+              type: boolean
+              nullable: true
+            isDeleted:
+              type: boolean
+              nullable: true
+            lastActivityDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            meetingCount:
               type: integer
               format: int64
               nullable: true
@@ -8673,18 +8698,19 @@ components:
               type: integer
               format: int64
               nullable: true
-            callCount:
-              type: integer
-              format: int64
-              nullable: true
-            meetingCount:
-              type: integer
-              format: int64
-              nullable: true
-            hasOtherAction:
-              type: boolean
-              nullable: true
             reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            teamChatMessageCount:
+              type: integer
+              format: int64
+              nullable: true
+            userPrincipalName:
               type: string
               nullable: true
           additionalProperties:
@@ -8695,11 +8721,6 @@ components:
         - title: yammerActivitySummary
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             liked:
               type: integer
               format: int64
@@ -8720,6 +8741,11 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.yammerActivityUserDetail:
@@ -8728,29 +8754,22 @@ components:
         - title: yammerActivityUserDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
+            assignedProducts:
+              type: array
+              items:
+                type: string
+                nullable: true
             displayName:
               type: string
-              nullable: true
-            userState:
-              type: string
-              nullable: true
-            stateChangeDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
+              nullable: true
+            likedCount:
+              type: integer
+              format: int64
               nullable: true
             postedCount:
               type: integer
@@ -8760,16 +8779,23 @@ components:
               type: integer
               format: int64
               nullable: true
-            likedCount:
-              type: integer
-              format: int64
-              nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
             reportPeriod:
+              type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            stateChangeDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            userPrincipalName:
+              type: string
+              nullable: true
+            userState:
               type: string
               nullable: true
           additionalProperties:
@@ -8780,36 +8806,19 @@ components:
         - title: yammerDeviceUsageDistributionUserCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            web:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
-            windowsPhone:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              format: int32
-              nullable: true
             androidPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPhone:
+            iPad:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPad:
+            iPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
@@ -8824,14 +8833,6 @@ components:
             reportPeriod:
               type: string
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.yammerDeviceUsageUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: yammerDeviceUsageUserCounts
-          type: object
-          properties:
             reportRefreshDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
@@ -8849,19 +8850,27 @@ components:
               type: integer
               format: int32
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.yammerDeviceUsageUserCounts:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: yammerDeviceUsageUserCounts
+          type: object
+          properties:
             androidPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPhone:
+            iPad:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               format: int32
               nullable: true
-            iPad:
+            iPhone:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
@@ -8881,6 +8890,23 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            web:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            windowsPhone:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.yammerDeviceUsageUserDetail:
@@ -8889,29 +8915,38 @@ components:
         - title: yammerDeviceUsageUserDetail
           type: object
           properties:
-            reportRefreshDate:
+            displayName:
+              type: string
+              nullable: true
+            lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            userPrincipalName:
+            reportPeriod:
               type: string
               nullable: true
-            displayName:
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              nullable: true
-            userState:
-              type: string
+              format: date
               nullable: true
             stateChangeDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
+            usedAndroidPhone:
+              type: boolean
+              nullable: true
+            usediPad:
+              type: boolean
+              nullable: true
+            usediPhone:
+              type: boolean
+              nullable: true
+            usedOthers:
+              type: boolean
               nullable: true
             usedWeb:
               type: boolean
@@ -8919,19 +8954,10 @@ components:
             usedWindowsPhone:
               type: boolean
               nullable: true
-            usedAndroidPhone:
-              type: boolean
+            userPrincipalName:
+              type: string
               nullable: true
-            usediPhone:
-              type: boolean
-              nullable: true
-            usediPad:
-              type: boolean
-              nullable: true
-            usedOthers:
-              type: boolean
-              nullable: true
-            reportPeriod:
+            userState:
               type: string
               nullable: true
           additionalProperties:
@@ -8942,11 +8968,6 @@ components:
         - title: yammerGroupsActivityCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             liked:
               type: integer
               format: int64
@@ -8967,6 +8988,11 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.yammerGroupsActivityDetail:
@@ -8975,34 +9001,36 @@ components:
         - title: yammerGroupsActivityDetail
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
             groupDisplayName:
+              type: string
+              nullable: true
+            groupType:
               type: string
               nullable: true
             isDeleted:
               type: boolean
-              nullable: true
-            ownerPrincipalName:
-              type: string
               nullable: true
             lastActivityDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
               format: date
               nullable: true
-            groupType:
+            likedCount:
+              type: integer
+              format: int64
+              nullable: true
+            memberCount:
+              type: integer
+              format: int64
+              nullable: true
+            networkDisplayName:
               type: string
               nullable: true
             office365Connected:
               type: boolean
               nullable: true
-            memberCount:
-              type: integer
-              format: int64
+            ownerPrincipalName:
+              type: string
               nullable: true
             postedCount:
               type: integer
@@ -9012,15 +9040,13 @@ components:
               type: integer
               format: int64
               nullable: true
-            likedCount:
-              type: integer
-              format: int64
-              nullable: true
-            networkDisplayName:
-              type: string
-              nullable: true
             reportPeriod:
               type: string
+              nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
               nullable: true
           additionalProperties:
             type: object
@@ -9030,15 +9056,6 @@ components:
         - title: yammerGroupsActivityGroupCounts
           type: object
           properties:
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
             active:
               type: integer
               format: int64
@@ -9051,6 +9068,15 @@ components:
             reportPeriod:
               type: string
               nullable: true
+            reportRefreshDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            total:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.userCredentialUsageDetails:
@@ -9059,22 +9085,22 @@ components:
         - title: userCredentialUsageDetails
           type: object
           properties:
-            feature:
-              $ref: '#/components/schemas/microsoft.graph.featureType'
-            userPrincipalName:
-              type: string
-            userDisplayName:
-              type: string
-            isSuccess:
-              type: boolean
             authMethod:
               $ref: '#/components/schemas/microsoft.graph.usageAuthMethod'
-            failureReason:
-              type: string
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
+            failureReason:
+              type: string
+            feature:
+              $ref: '#/components/schemas/microsoft.graph.featureType'
+            isSuccess:
+              type: boolean
+            userDisplayName:
+              type: string
+            userPrincipalName:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -9084,53 +9110,6 @@ components:
         id:
           type: string
           description: Read-only.
-      additionalProperties:
-        type: object
-    microsoft.graph.operationResult:
-      title: operationResult
-      enum:
-        - success
-        - failure
-        - timeout
-        - unknownFutureValue
-      type: string
-    microsoft.graph.auditActivityInitiator:
-      title: auditActivityInitiator
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/microsoft.graph.userIdentity'
-        app:
-          $ref: '#/components/schemas/microsoft.graph.appIdentity'
-      additionalProperties:
-        type: object
-    microsoft.graph.targetResource:
-      title: targetResource
-      type: object
-      properties:
-        id:
-          type: string
-          description: Indicates the unique ID of the resource.
-          nullable: true
-        displayName:
-          type: string
-          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
-          nullable: true
-        type:
-          type: string
-          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
-          nullable: true
-        groupType:
-          $ref: '#/components/schemas/microsoft.graph.groupType'
-        modifiedProperties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
-          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
       additionalProperties:
         type: object
     microsoft.graph.keyValue:
@@ -9147,82 +9126,65 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.provisioningServicePrincipal:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: provisioningServicePrincipal
-          type: object
-          additionalProperties:
-            type: object
+    microsoft.graph.auditActivityInitiator:
+      title: auditActivityInitiator
+      type: object
+      properties:
+        app:
+          $ref: '#/components/schemas/microsoft.graph.appIdentity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.userIdentity'
+      additionalProperties:
+        type: object
+    microsoft.graph.operationResult:
+      title: operationResult
+      enum:
+        - success
+        - failure
+        - timeout
+        - unknownFutureValue
+      type: string
+    microsoft.graph.targetResource:
+      title: targetResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
+          nullable: true
+        groupType:
+          $ref: '#/components/schemas/microsoft.graph.groupType'
+        id:
+          type: string
+          description: Indicates the unique ID of the resource.
+          nullable: true
+        modifiedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
+        type:
+          type: string
+          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.initiator:
       title: initiator
       type: object
       properties:
-        id:
+        displayName:
           type: string
           nullable: true
-        displayName:
+        id:
           type: string
           nullable: true
         initiatorType:
           $ref: '#/components/schemas/microsoft.graph.initiatorType'
-      additionalProperties:
-        type: object
-    microsoft.graph.provisioningSystemDetails:
-      title: provisioningSystemDetails
-      type: object
-      properties:
-        id:
-          type: string
-          nullable: true
-        displayName:
-          type: string
-          nullable: true
-        details:
-          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
-      additionalProperties:
-        type: object
-    microsoft.graph.provisionedIdentity:
-      title: provisionedIdentity
-      type: object
-      properties:
-        id:
-          type: string
-          nullable: true
-        displayName:
-          type: string
-          nullable: true
-        identityType:
-          type: string
-          nullable: true
-        details:
-          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
-      additionalProperties:
-        type: object
-    microsoft.graph.statusBase:
-      title: statusBase
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
-      additionalProperties:
-        type: object
-    microsoft.graph.provisioningStep:
-      title: provisioningStep
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-        status:
-          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
-        description:
-          type: string
-          nullable: true
-        details:
-          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
-        provisioningStepType:
-          $ref: '#/components/schemas/microsoft.graph.provisioningStepType'
       additionalProperties:
         type: object
     microsoft.graph.modifiedProperty:
@@ -9233,24 +9195,88 @@ components:
           type: string
           description: Indicates the property name of the target attribute that was changed.
           nullable: true
-        oldValue:
-          type: string
-          description: Indicates the previous value (before the update) for the property.
-          nullable: true
         newValue:
           type: string
           description: Indicates the updated value for the propery.
           nullable: true
+        oldValue:
+          type: string
+          description: Indicates the previous value (before the update) for the property.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningStep:
+      title: provisioningStep
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        details:
+          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+        name:
+          type: string
+          nullable: true
+        provisioningStepType:
+          $ref: '#/components/schemas/microsoft.graph.provisioningStepType'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningServicePrincipal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: provisioningServicePrincipal
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.provisionedIdentity:
+      title: provisionedIdentity
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        identityType:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningSystemDetails:
+      title: provisioningSystemDetails
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.statusBase:
+      title: statusBase
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
       additionalProperties:
         type: object
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
       type: object
       properties:
-        id:
-          type: string
-          description: Unique GUID of the conditional access policy.
-          nullable: true
+        conditionsNotSatisfied:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
+        conditionsSatisfied:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         displayName:
           type: string
           description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
@@ -9267,10 +9293,10 @@ components:
             type: string
             nullable: true
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
-        conditionsSatisfied:
-          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
-        conditionsNotSatisfied:
-          $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
+        id:
+          type: string
+          description: Unique GUID of the conditional access policy.
+          nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
       additionalProperties:
@@ -9279,25 +9305,25 @@ components:
       title: authenticationDetail
       type: object
       properties:
-        authenticationStepDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
         authenticationMethod:
           type: string
           nullable: true
         authenticationMethodDetail:
           type: string
           nullable: true
-        succeeded:
-          type: boolean
+        authenticationStepDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        authenticationStepRequirement:
+          type: string
           nullable: true
         authenticationStepResultDetail:
           type: string
           nullable: true
-        authenticationStepRequirement:
-          type: string
+        succeeded:
+          type: boolean
           nullable: true
       additionalProperties:
         type: object
@@ -9305,11 +9331,11 @@ components:
       title: authenticationRequirementPolicy
       type: object
       properties:
-        requirementProvider:
-          $ref: '#/components/schemas/microsoft.graph.requirementProvider'
         detail:
           type: string
           nullable: true
+        requirementProvider:
+          $ref: '#/components/schemas/microsoft.graph.requirementProvider'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessStatus:
@@ -9324,6 +9350,13 @@ components:
       title: deviceDetail
       type: object
       properties:
+        browser:
+          type: string
+          description: Indicates the browser information of the used for signing in.
+          nullable: true
+        browserId:
+          type: string
+          nullable: true
         deviceId:
           type: string
           description: Refers to the UniqueID of the device used for signing in.
@@ -9332,17 +9365,6 @@ components:
           type: string
           description: Refers to the name of the device used for signing in.
           nullable: true
-        operatingSystem:
-          type: string
-          description: Indicates the operating system name and version used for signing in.
-          nullable: true
-        browser:
-          type: string
-          description: Indicates the browser information of the used for signing in.
-          nullable: true
-        browserId:
-          type: string
-          nullable: true
         isCompliant:
           type: boolean
           description: Indicates whether the device is compliant.
@@ -9350,6 +9372,10 @@ components:
         isManaged:
           type: boolean
           description: Indicates whether the device is managed.
+          nullable: true
+        operatingSystem:
+          type: string
+          description: Indicates the operating system name and version used for signing in.
           nullable: true
         trustType:
           type: string
@@ -9365,26 +9391,26 @@ components:
           type: string
           description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
-        state:
-          type: string
-          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
         countryOrRegion:
           type: string
           description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         geoCoordinates:
           $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+        state:
+          type: string
+          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mfaDetail:
       title: mfaDetail
       type: object
       properties:
-        authMethod:
+        authDetail:
           type: string
           nullable: true
-        authDetail:
+        authMethod:
           type: string
           nullable: true
       additionalProperties:
@@ -9393,13 +9419,13 @@ components:
       title: networkLocationDetail
       type: object
       properties:
-        networkType:
-          $ref: '#/components/schemas/microsoft.graph.networkType'
         networkNames:
           type: array
           items:
             type: string
             nullable: true
+        networkType:
+          $ref: '#/components/schemas/microsoft.graph.networkType'
       additionalProperties:
         type: object
     microsoft.graph.riskDetail:
@@ -9462,6 +9488,10 @@ components:
       title: signInStatus
       type: object
       properties:
+        additionalDetails:
+          type: string
+          description: Provides additional details on the sign-in activity
+          nullable: true
         errorCode:
           maximum: 2147483647
           minimum: -2147483648
@@ -9472,10 +9502,6 @@ components:
         failureReason:
           type: string
           description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-          nullable: true
-        additionalDetails:
-          type: string
-          description: Provides additional details on the sign-in activity
           nullable: true
       additionalProperties:
         type: object
@@ -9506,13 +9532,13 @@ components:
       properties:
         licenseType:
           $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        totalLicenseCount:
+        totalAssignedCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        totalAssignedCount:
+        totalLicenseCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
@@ -9526,6 +9552,29 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.featureUsageDetail:
+      title: featureUsageDetail
+      type: object
+      properties:
+        featureName:
+          type: string
+          nullable: true
+        lastConfiguredDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        licenseAssigned:
+          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
+        licenseRequired:
+          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
+      additionalProperties:
+        type: object
     microsoft.graph.azureADLicenseType:
       title: azureADLicenseType
       enum:
@@ -9534,36 +9583,6 @@ components:
         - basic
         - premiumP1
         - premiumP2
-        - unknownFutureValue
-      type: string
-    microsoft.graph.featureUsageDetail:
-      title: featureUsageDetail
-      type: object
-      properties:
-        featureName:
-          type: string
-          nullable: true
-        licenseRequired:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        licenseAssigned:
-          $ref: '#/components/schemas/microsoft.graph.azureADLicenseType'
-        lastUsedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        lastConfiguredDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.featureType:
-      title: featureType
-      enum:
-        - registration
-        - reset
         - unknownFutureValue
       type: string
     microsoft.graph.usageAuthMethod:
@@ -9581,38 +9600,32 @@ components:
         - appPassword
         - unknownFutureValue
       type: string
+    microsoft.graph.featureType:
+      title: featureType
+      enum:
+        - registration
+        - reset
+        - unknownFutureValue
+      type: string
     microsoft.graph.userRegistrationCount:
       title: userRegistrationCount
       type: object
       properties:
-        registrationStatus:
-          $ref: '#/components/schemas/microsoft.graph.registrationStatusType'
         registrationCount:
           type: integer
           format: int64
+        registrationStatus:
+          $ref: '#/components/schemas/microsoft.graph.registrationStatusType'
       additionalProperties:
         type: object
     microsoft.graph.userActivationCounts:
       title: userActivationCounts
       type: object
       properties:
-        productType:
-          type: string
+        activatedOnSharedComputer:
+          type: boolean
           nullable: true
-        lastActivatedDate:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-          type: string
-          format: date
-          nullable: true
-        windows:
-          type: integer
-          format: int64
-          nullable: true
-        mac:
-          type: integer
-          format: int64
-          nullable: true
-        windows10Mobile:
+        android:
           type: integer
           format: int64
           nullable: true
@@ -9620,12 +9633,25 @@ components:
           type: integer
           format: int64
           nullable: true
-        android:
+        lastActivatedDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          format: date
+          nullable: true
+        mac:
           type: integer
           format: int64
           nullable: true
-        activatedOnSharedComputer:
-          type: boolean
+        productType:
+          type: string
+          nullable: true
+        windows:
+          type: integer
+          format: int64
+          nullable: true
+        windows10Mobile:
+          type: integer
+          format: int64
           nullable: true
       additionalProperties:
         type: object
@@ -9659,22 +9685,6 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
-    microsoft.graph.userIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
-          type: object
-          properties:
-            ipAddress:
-              type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName attribute of the user.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.appIdentity:
       title: appIdentity
       type: object
@@ -9697,6 +9707,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupType:
       title: groupType
       enum:
@@ -9704,20 +9730,6 @@ components:
         - azureAD
         - unknownFutureValue
       type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.initiatorType:
       title: initiatorType
       enum:
@@ -9731,14 +9743,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.provisioningResult:
-      title: provisioningResult
-      enum:
-        - success
-        - failure
-        - skipped
-        - unknownFutureValue
-      type: string
     microsoft.graph.provisioningStepType:
       title: provisioningStepType
       enum:
@@ -9750,6 +9754,28 @@ components:
         - export
         - unknownFutureValue
       type: string
+    microsoft.graph.provisioningResult:
+      title: provisioningResult
+      enum:
+        - success
+        - failure
+        - skipped
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessConditions:
       title: conditionalAccessConditions
       enum:
