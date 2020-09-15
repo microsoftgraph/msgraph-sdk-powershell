@@ -40,14 +40,14 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
-        dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity Verbose -Uri '$(NUGETFEED)'
+        Get-PSRepository
+        $result = dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity Verbose -Uri '$(NUGETFEED)'
+        Write-Host $result
         $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
         $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        Register-PSRepository -Name '$(NUGETFEEDNAME)' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
-        Get-PSRepository
-        Find-Module -Repository Microsoft.Graph.Authentication
+        #Register-PSRepository -Name '$(NUGETFEEDNAME)' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
 
 
   - task: PowerShell@2
