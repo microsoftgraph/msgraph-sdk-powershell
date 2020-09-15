@@ -7,7 +7,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
     public enum AuthenticationType
     {
         Delegated,
-        AppOnly
+        AppOnly,
+        UserProvidedAccessToken
     }
 
     public enum ContextScope
