@@ -40,7 +40,7 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
-        dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll --Verbosity detailed --Uri $(NUGETFEED)
+        dotnet C:\Users\AzDevOps\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll -Verbosity detailed -Uri $(NUGETFEED)
         $patToken = $(NUGETFEEDKEY) | ConvertTo-SecureString -AsPlainText -Force
         $nugetFeed = $(NUGETFEED)
         $user = $(NUGETBUILDUSER)
