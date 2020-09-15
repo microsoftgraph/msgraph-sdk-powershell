@@ -72,14 +72,14 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
 
     # Add auth module as a dependency.
     $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber 
     $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
         $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName
-        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force
+        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber
         $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
     }
 
