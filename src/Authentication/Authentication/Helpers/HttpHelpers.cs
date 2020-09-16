@@ -30,15 +30,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <summary>
         /// Creates a pre-configured Microsoft Graph <see cref="HttpClient"/>.
         /// </summary>
-        /// <param name="authConfig"></param>
+        /// <param name="authContext"></param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthContext authConfig = null)
+        public static HttpClient GetGraphHttpClient(IAuthContext authContext = null)
         {
-            authConfig = authConfig ?? GraphSession.Instance.AuthContext;
-            if (authConfig is null)
+            authContext = authContext ?? GraphSession.Instance.AuthContext;
+            if (authContext is null)
+            {
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            }
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authConfig);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
             // Register ODataQueryOptionsHandler after AuthHandler.
