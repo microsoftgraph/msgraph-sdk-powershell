@@ -53,7 +53,7 @@ jobs:
         Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget'
         Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
         Get-PSRepository
-        Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed'
+        Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed' -AllowPreRelease -AllVersions -Credential $credsAzureDevopsServices
         pwsh
 
   - task: PowerShell@2
