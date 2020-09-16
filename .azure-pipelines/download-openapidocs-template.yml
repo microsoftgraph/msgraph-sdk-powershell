@@ -1,11 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-parameters:
- - name: isMain
-   displayName: 'Is Main Branch'
-   type: boolean
-   default: false
-
 steps:
 
   - checkout: self
@@ -16,7 +10,7 @@ steps:
   - task: PowerShell@2
     displayName: 'Download v1.0 OpenApiDocs'
     continueOnError: true
-    condition: and(succeeded(), eq(variables.isMain, false))
+    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     inputs:
       targetType: 'filePath'
       pwsh: true
@@ -26,7 +20,7 @@ steps:
   - task: PowerShell@2
     displayName: 'Download beta OpenApiDocs'
     continueOnError: false
-    condition: and(succeeded(), eq(variables.isMain, false))
+    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     inputs:
       targetType: 'filePath'
       pwsh: true
@@ -36,7 +30,7 @@ steps:
 
   - task: PowerShell@2
     displayName: "Configure User"
-    condition: and(succeeded(), eq(variables.isMain, false))
+    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     inputs:
       targetType: 'inline'
       pwsh: true
@@ -45,7 +39,7 @@ steps:
         git config --global user.name 'Microsoft Graph DevX Tooling'
 
   - task: Bash@3
-    condition: and(succeeded(), eq(variables.isMain, false))
+    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     env: 
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
