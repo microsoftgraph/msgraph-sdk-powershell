@@ -4,7 +4,7 @@ parameters:
  - name: isMain
    displayName: 'Is Main Branch'
    type: boolean
-   default: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+   default: false
 
 steps:
 
