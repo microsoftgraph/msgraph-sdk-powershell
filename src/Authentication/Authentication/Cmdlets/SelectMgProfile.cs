@@ -17,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     [OutputType(typeof(bool))]
     public class SelectMgProfile: PSCmdlet
     {
-        [Parameter(Mandatory = true)]
+        [Parameter(Mandatory = true, Position = 1)]
         [Alias("ProfileName")]
         [ValidateSet("v1.0", "beta")]
         [ValidateNotNullOrEmpty]
@@ -33,10 +33,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 if (this.IsParameterBound(c => c.Name))
                 {
-                    string profileName = Name.ContainsValue("beta", StringComparison.OrdinalIgnoreCase) ? "v1.0-beta" : Name;
+                    string profileName = Name.ToLower();
+                    // Internally treat beta profile as v1.0-beta. 
+                    // This is an AutoREST limitation.
+                    profileName = profileName.ContainsValue("beta") ? "v1.0-beta" : profileName;
                     PSModuleInfo[] modules = GetModules(InvokeCommand).Where(m => GetProfiles(m).Contains(profileName)).ToArray();
                     string moduleList = string.Join(", ", modules.Select(m => m.Name));
-                    if (ShouldProcess($"Modules {moduleList}", $"Load modules with profile {Name}"))
+                    if (ShouldProcess($"Modules {moduleList}", $"Load modules with profile {profileName}"))
                     {
                         GraphSession.Instance.SelectedProfile = profileName;
                         ReloadModules(InvokeCommand, modules);
