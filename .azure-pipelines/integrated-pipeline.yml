@@ -19,7 +19,6 @@ variables:
   GitUserName: 'Microsoft Graph DevX Tooling'
   BUILD_NUMBER: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
 
-
 pool: MsGraphDevXAzureAgents
 
 trigger:
@@ -59,6 +58,7 @@ stages:
         BRANCH_PREFIX: $(BRANCH_PREFIX)
         GitUserEmail: $(GitUserEmail)
         GitUserName: $(GitUserName)
+        isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
         
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'

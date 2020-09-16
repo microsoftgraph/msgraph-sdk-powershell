@@ -1,7 +1,10 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-variables:
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+parameters:
+ - name: isMain
+   displayName: 'Is Main Branch'
+   type: boolean
+   default: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 steps:
 
