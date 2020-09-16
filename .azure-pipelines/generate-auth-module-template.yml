@@ -40,7 +40,7 @@ jobs:
       targetType: 'inline'
       pwsh: true
       script: |
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -ModulePreviewNumber $(BUILD_NUMBER)
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
