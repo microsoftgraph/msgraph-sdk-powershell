@@ -8,6 +8,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
     using Newtonsoft.Json;
     internal partial class JwtPayload
     {
+        [JsonProperty("exp")]
+        public long Exp { get; set; }
+
         [JsonProperty("aud")]
         public Uri Aud { get; set; }
 
