@@ -76,7 +76,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
 
     # Add auth module as a dependency.
     $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -MinimumVersion
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber
     $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
