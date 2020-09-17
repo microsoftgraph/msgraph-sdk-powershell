@@ -2,10 +2,10 @@
 # Licensed under the MIT License.
 
 parameters:
-  - name: BUILD_NUMBER
-    displayName: 'Build Number'
-    type: string
-    default: $[format('{0:yyyyMMdd}', pipeline.startTime)]
+- name: BUILD_NUMBER
+  displayName: 'Build Number'
+  type: string
+  default: $[format('{0:yyyyMMdd}', pipeline.startTime)]
 
 jobs:
 - job: MsGraphDownloadOpenApiDocs
