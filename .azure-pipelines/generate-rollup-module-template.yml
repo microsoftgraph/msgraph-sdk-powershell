@@ -25,7 +25,7 @@ parameters:
     displayName: 'Enable Signing'
     type: boolean
     default: false
-  - name: BUILD_NUMBER
+  - name: BUILDNUMBER
     displayName: 'Build Number'
     type: string
     default: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
@@ -64,7 +64,8 @@ jobs:
       pwsh: true
       script: |
          Get-PSRepository
-         $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed' -ModulePreviewNumber $(BUILD_NUMBER)
+         Write-Host $(BUILDNUMBER)
+         $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed' -ModulePreviewNumber $(BUILDNUMBER)
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'

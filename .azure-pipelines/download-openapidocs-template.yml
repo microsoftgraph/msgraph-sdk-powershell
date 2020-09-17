@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 parameters:
-- name: BUILD_NUMBER
+- name: BUILDNUMBER
   displayName: 'Build Number'
   type: string
   default: $[format('{0:yyyyMMdd}', pipeline.startTime)]
@@ -61,6 +61,6 @@ jobs:
         git checkout $(Build.SourceBranchName)
         git pull
         git add .
-        git commit -m '$(BUILD_NUMBER):  Release OpenApiDocs Download for $(BUILD_NUMBER)[skip ci]'
+        git commit -m '$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILD_NUMBER)[skip ci]'
         git push --set-upstream origin $(Build.SourceBranchName)
         git status
