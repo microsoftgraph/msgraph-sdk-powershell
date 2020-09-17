@@ -50,4 +50,4 @@ steps:
       displayName: 'Install AutoRest'
       inputs:
         command: 'custom'
-        customCommand: 'install -g autorest'
+        customCommand: 'install -g autorest@beta'
