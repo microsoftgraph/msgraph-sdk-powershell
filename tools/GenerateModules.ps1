@@ -127,22 +127,37 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
                 [HashTable]$PrivateData = @{ Profiles = $Profiles }
                 Update-ModuleManifest -Path $ModuleManifestPath -PrivateData $PrivateData
 
-                # Update module psm1 with Graph session profile name.
+                # Update main module psm1.
                 $ModulePsm1 = Join-Path $ModuleProjectDir "/$ModulePrefix.$ModuleName.psm1"
                 (Get-Content -Path $ModulePsm1) | ForEach-Object{
-                    $_
                     if ($_ -match '\$instance = \[Microsoft.Graph.PowerShell.Module\]::Instance') {
+                        # Update main psm1 with Graph session profile name and module name.
+                        $_
                         '  $instance.ProfileName = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.SelectedProfile'
+                    } else {
+                        # Rename all Azure instances in psm1 to `Microsoft Graph`.
+                        $updatedLine = $_ -replace 'Azure', 'Microsoft Graph'
+                        # Replace all 'instance.Name' declarations with fully qualified module name.
+                        $updatedLine = $updatedLine -replace '\$\(\$instance.Name\)', "$ModulePrefix.$ModuleName"
+                        $updatedLine
                     }
                 } | Set-Content $ModulePsm1
 
-                # Address AutoREST bug where it looks for exports in the wrong directory.
+                # Update internal module psm1.
                 $InternalModulePsm1 = Join-Path $ModuleProjectDir "/internal/$ModulePrefix.$ModuleName.internal.psm1"
                 (Get-Content -Path $InternalModulePsm1) | ForEach-Object{
-                    $_
+                    $updatedLine = $_
+                    # Address AutoREST bug where it looks for exports in the wrong directory.
                     if ($_ -match '\$exportsPath = \$PSScriptRoot') {
-                        '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
+                        $updatedLine = '  $exportsPath = Join-Path $PSScriptRoot "../exports"'
                     }
+                    
+                    # Remove duplicate instance.Name declarations in internal.psm1
+                    # Main .psm1 already handles this.
+                    if ($_ -match '\$\(\$instance.Name\)') {
+                        $updatedLine = ""
+                    }
+                    $updatedLine
                 } | Set-Content $InternalModulePsm1
                 
                 if ($LASTEXITCODE) {
