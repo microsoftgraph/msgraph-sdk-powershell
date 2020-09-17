@@ -5,7 +5,7 @@ parameters:
 - name: BUILDNUMBER
   displayName: 'Build Number'
   type: string
-  default: $[format('{0:yyyyMMdd}', pipeline.startTime)]
+  default: '0.0.0.1'
 
 jobs:
 - job: MsGraphDownloadOpenApiDocs
