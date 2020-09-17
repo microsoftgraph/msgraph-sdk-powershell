@@ -77,6 +77,7 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     # Add auth module as a dependency.
     Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
     $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
+    Write-Warning "Installing $ExistingAuthModule.Name $ExistingAuthModule.Version"
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPreRelease:$AllowPreRelease
     $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
 
@@ -87,7 +88,15 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         Write-Warning "Installing $ModulePrefix.$RequiredModule Version: $ExistingWorkloadModule.Version"
         Write-Warning $ExistingWorkloadModule
         Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPreRelease:$AllowPreRelease
-        $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+        #Remove "-preview" from Version Name if present
+        if($ExistingWorkloadModule.Version -like '*preview*' ) {
+            $version = $ExistingWorkloadModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
+            Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $version }
+        }
+        else {
+            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+        }
     }
 
     [HashTable]$ModuleManifestSettings = @{

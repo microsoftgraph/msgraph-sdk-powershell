@@ -1,7 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-name: 'Integrated Pipeline'
 variables:
   AUTH_MODULE_NAME: 'Authentication'
   AUTH_MODULE_PATH: 'src\Authentication\Authentication'
@@ -17,7 +16,7 @@ variables:
   BRANCH_PREFIX: 'releaseOpenApiDocs'
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
-  BUILD_NUMBER: '$(Build.BuildNumber)'
+  BUILD_NUMBER: $[format('{0:yyyyMMddHHmm}', pipeline.startTime)]
 
 pool: MsGraphDevXAzureAgents
 
