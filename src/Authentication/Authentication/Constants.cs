@@ -17,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal static readonly string TokenCacheDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".graph");
         internal const string ProfileDescription = "A snapshot of the Microsoft Graph {0} API for {1} cloud.";
         internal const string TokenCacheServiceName = "com.microsoft.graph.powershell.sdkcache";
-        internal const string DefaultProfile = "v1.0-beta";
+        internal const string DefaultProfile = "v1.0";
         internal const int TokenExpirationBufferInMinutes = 5;
     }
 }
