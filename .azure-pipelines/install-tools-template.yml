@@ -51,3 +51,18 @@ steps:
       inputs:
         command: 'custom'
         customCommand: 'install -g autorest@beta'
+
+    - task: PowerShell@2
+      displayName: 'Register PS Repository'
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          Get-PSRepository
+          $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
+          $nugetFeed = '$(NUGETFEED)'
+          $user = '$(NUGETBUILDUSER)'
+          $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
+          Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget'
+          Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
+          Get-PSRepository

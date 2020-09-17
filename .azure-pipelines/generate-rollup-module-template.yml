@@ -50,8 +50,6 @@ jobs:
         $nugetFeed = '$(NUGETFEED)'
         $user = '$(NUGETBUILDUSER)'
         $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget'
-        Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
         Get-PSRepository
         Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed' -AllowPreRelease -AllVersions -Credential $credsAzureDevopsServices
         Find-Module "Microsoft.Graph.Authentication" -Repository 'LocalNugetFeed' -AllowPreRelease

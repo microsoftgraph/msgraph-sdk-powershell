@@ -38,9 +38,13 @@ if ($null -eq $ManifestContent.ModuleVersion) {
   # Module version not set in module manifest (psd1).
   Write-Error "Version number is not set on $ModulePrefix.$ModuleName module. Please set 'ModuleVersion' in $AuthModulePath\$AuthModuleManifest."
 }
-
+$AllowPreRelease = $true
+if($ModulePreviewNumber -eq -1) {
+    $AllowPreRelease = $false
+    $RepositoryName = "PSGallery"
+}
 # Validate module version with the one on PSGallery.
-[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion
+[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -$PSRepository $RepositoryName
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
   Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."

@@ -69,9 +69,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     if (-not (Test-Path $GraphModuleLocation)) {
         New-Item -Path $GraphModuleLocation -Type Directory
     }
-    $AllowPreRelease = $false
-    if($ModulePreviewNumber -ge 0) {
-        $AllowPreRelease = $true
+    $AllowPreRelease = $true
+    if($ModulePreviewNumber -eq -1) {
+        $AllowPreRelease = $false
+        $RepositoryName= "PSGallery"
     }
 
     # Add auth module as a dependency.
