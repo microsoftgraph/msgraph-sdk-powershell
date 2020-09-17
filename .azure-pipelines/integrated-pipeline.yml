@@ -63,11 +63,7 @@ stages:
   displayName: 'Download Open Api Docs from DevX API'
   jobs:
   - template: ./download-openapidocs-template.yml
-    parameters: 
-      BaseBranch: $(System.PullRequest.TargetBranch)
-      BRANCH_PREFIX: $(BRANCH_PREFIX)
-      GitUserEmail: $(GitUserEmail)
-      GitUserName: $(GitUserName)
+    parameters:
       BUILD_NUMBER: $(BUILD_NUMBER)
         
 - stage: GenerateProfiles
