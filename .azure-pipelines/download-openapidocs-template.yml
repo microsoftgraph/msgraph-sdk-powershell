@@ -59,6 +59,7 @@ jobs:
       script: |
         git status
         git checkout $(Build.SourceBranchName)
+        git pull
         git add .
         git commit -m 'Release OpenApiDocs Download [skip ci]'
         git push --set-upstream origin $(Build.SourceBranchName)
