@@ -51,13 +51,3 @@ steps:
       inputs:
         command: 'custom'
         customCommand: 'install -g autorest'
-
-    - task: PowerShell@2
-      displayName: 'Set Environment Variables'
-      inputs:
-        targetType: inline
-        pwsh: true
-        script: |
-           npm config set node-options:max-old-space-size=16384
-           $Env:NODE_OPTIONS="--max_old_space_size=16384"
-           export NODE_OPTIONS="--max-old-space-size=16384"
