@@ -41,10 +41,10 @@ steps:
           Write-Host (Get-Host).Version
 
     - task: NodeTool@0
-      displayName: 'Install NodeJs 13.14.0'
+      displayName: 'Install NodeJs 14.11.0'
       inputs:
-        versionSpec: '13.14.0' 
-        checkLatest: false # Optional
+        versionSpec: '14.11.0' 
+        checkLatest: true # Optional
 
     - task: Npm@1
       displayName: 'Install AutoRest'
@@ -60,3 +60,4 @@ steps:
         script: |
            npm config set node-options:max-old-space-size=16384
            $Env:NODE_OPTIONS="--max_old_space_size=16384"
+           export NODE_OPTIONS="--max-old-space-size=16384"
