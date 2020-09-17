@@ -62,8 +62,7 @@ stages:
 - stage: DownloadOpenApiDocs
   displayName: 'Download Open Api Docs from DevX API'
   jobs:
-  - job: DownloadOpenAPiDocs
-    template: ./download-openapidocs-template.yml
+  - template: ./download-openapidocs-template.yml
     parameters: 
        BaseBranch: $(System.PullRequest.TargetBranch)
        BRANCH_PREFIX: $(BRANCH_PREFIX)
