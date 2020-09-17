@@ -7,7 +7,7 @@ jobs:
   pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
 
-steps:
+  steps:
     - task: CredScan@2
       displayName: 'Run CredScan'
       inputs:
