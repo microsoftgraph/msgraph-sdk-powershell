@@ -49,8 +49,9 @@ stages:
                 $revision = $buildNumber.Substring($buildNumber.LastIndexOf('.') + 1)
                 $date =  Get-Date -Format yyyyMMdd
                 $buildAndRevision = "{0}{1}" -f $date, $revision
-                Write-Host "##vso[task.setvariable variable=BUILD_NUMBER;isOutput=true]$buildAndRevision"
+                Write-Host "##vso[task.setvariable variable=BUILD_NUMBER;isOutput=true]$buildAndRevision"                
             }
+            Write-Host $(BUILD_NUMBER)
             printenv
 
 - stage: SecurityPreChecks
@@ -69,6 +70,7 @@ stages:
         BRANCH_PREFIX: $(BRANCH_PREFIX)
         GitUserEmail: $(GitUserEmail)
         GitUserName: $(GitUserName)
+        BUILD_NUMBER: $(BUILD_NUMBER)
         
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'

@@ -1,7 +1,19 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-steps:
 
+parameters:
+  - name: BUILD_NUMBER
+    displayName: 'Build Number'
+    type: string
+    default: $[format('{0:yyyyMMdd}', pipeline.startTime)]
+
+jobs:
+- job: MsGraphDownloadOpenApiDocs
+  displayName: Microsoft Graph PowerShell SDK Download OpenApiDocs Module Generation
+  pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
+
+  steps:
   - checkout: self
     persistCredentials: true
 
@@ -48,6 +60,6 @@ steps:
         git status
         git checkout $(Build.SourceBranchName)
         git add .
-        git commit -m 'Rease OpenApiDocs Download [skip ci]'
+        git commit -m 'Release OpenApiDocs Download [skip ci]'
         git push --set-upstream origin $(Build.SourceBranchName)
         git status
