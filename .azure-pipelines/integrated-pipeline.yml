@@ -17,7 +17,7 @@ variables:
   BRANCH_PREFIX: 'releaseOpenApiDocs'
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
-  BUILD_NUMBER: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
+  BUILD_NUMBER: '$(Build.BuildNumber)'
 
 pool: MsGraphDevXAzureAgents
 
@@ -46,6 +46,13 @@ stages:
                 Write-Host "##vso[task.setvariable variable=BUILD_NUMBER;isOutput=true]-1"
             }
             printenv
+
+- stage: SecurityPreChecks
+  displayName: 'Security Checks'
+  jobs:
+  - job: SecurityPrechecks
+    steps:
+    - template: ./security-prechecks-template.yml
 
 - stage: DownloadOpenApiDocs
   displayName: 'Download Open Api Docs from DevX API'
@@ -104,3 +111,10 @@ stages:
       MODULE_PREFIX: $(MODULE_PREFIX)
       EnableSigning: true
       BUILD_NUMBER: $(BUILD_NUMBER)
+
+- stage: SecurityPreChecks
+  displayName: 'Security Checks'
+  jobs:
+  - job: SecurityPrechecks
+    steps:
+    - template: ./security-postchecks-template.yml

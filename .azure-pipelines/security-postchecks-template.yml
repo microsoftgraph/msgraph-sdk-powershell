@@ -1,0 +1,88 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+jobs:
+- job: MsGraphPSSDKSecurityChecks
+  displayName: Microsoft Graph PowerShell SDK Security Checks
+  pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
+
+steps:
+- task: AntiMalware@3
+  displayName: 'Anti-Malware Scanning'
+  inputs:
+    InputType: 'Basic'
+    ScanType: 'CustomScan'
+    FileDirPath: '$(Build.ArtifactStagingDirectory)'
+    EnableServices: true
+    SupportLogOnError: false
+    TreatSignatureUpdateFailureAs: 'Warning'
+    SignatureFreshness: 'UpToDate'
+    TreatStaleSignatureAs: 'Error'
+
+- task: BinSkim@3
+  displayName: 'BinSkim Vulnerability Scanning'
+  inputs:
+    InputType: 'Basic'
+    Function: 'analyze'
+    AnalyzeTarget: '$(Build.ArtifactStagingDirectory)\*Microsoft.Graph*.dll;$(Build.ArtifactStagingDirectory)\*Microsoft.Graph*.exe'
+    AnalyzeVerbose: true
+    AnalyzeHashes: true
+    AnalyzeStatistics: true
+    AnalyzeRecurse: true
+    AnalyzeConfigPath: default
+
+- task: CodesignValidation@0
+  inputs:
+
+- task: CodeIntegrity@0
+  inputs:
+
+- task: SdtReport@1
+  displayName: "Security Analysis Report"
+  continueOnError: true
+  condition: succeededOrFailed()
+  inputs:
+    AllTools: false
+    APIScan: false
+    BinSkim: true
+    BinSkimBreakOn: 'WarningAbove'
+    CodesignValidation: true
+    CodesignValidationBreakOn: 'WarningAbove'
+    CredScan: true
+    FortifySCA: false
+    FxCop: false
+    ModernCop: false
+    MSRD: false
+    PoliCheck: true
+    PoliCheckBreakOn: 'Severity1'
+    RoslynAnalyzers: true
+    RoslynAnalyzersBreakOn: 'WarningAbove'
+    SDLNativeRules: false
+    Semmle: false
+    TSLint: false
+    TSLintBreakOn: 'WarningAbove'
+    ToolLogsNotFoundAction: 'Standard'
+
+- task: PublishSecurityAnalysisLogs@3
+  displayName: 'Publish Security Analysis Logs'
+  inputs:
+    ArtifactName: 'CodeAnalysisLogs'
+    ArtifactType: 'Container'
+    AllTools: false
+    AntiMalware: true
+    APIScan: false
+    BinSkim: true
+    CodesignValidation: true
+    CredScan: true
+    FortifySCA: false
+    FxCop: false
+    ModernCop: true
+    MSRD: false
+    PoliCheck: true
+    RoslynAnalyzers: true
+    SDLNativeRules: false
+    Semmle: false
+    TSLint: false
+    WebScout: false
+    ToolLogsNotFoundAction: 'Standard'
