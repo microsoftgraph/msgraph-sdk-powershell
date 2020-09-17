@@ -48,11 +48,9 @@ stages:
             printenv
 
 - stage: SecurityPreChecks
-  displayName: 'Security Checks'
+  displayName: 'Security Pre Checks'
   jobs:
-  - job: SecurityPrechecks
-    steps:
-    - template: ./security-prechecks-template.yml
+  - template: ./security-prechecks-template.yml
 
 - stage: DownloadOpenApiDocs
   displayName: 'Download Open Api Docs from DevX API'
@@ -112,9 +110,7 @@ stages:
       EnableSigning: true
       BUILD_NUMBER: $(BUILD_NUMBER)
 
-- stage: SecurityPreChecks
-  displayName: 'Security Checks'
+- stage: SecurityPostChecks
+  displayName: 'Security Post Checks'
   jobs:
-  - job: SecurityPrechecks
-    steps:
-    - template: ./security-postchecks-template.yml
+  - template: ./security-postchecks-template.yml
