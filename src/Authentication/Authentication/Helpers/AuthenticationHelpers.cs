@@ -3,13 +3,17 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
+    using Microsoft.Graph.Auth;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
     using System;
     using System.Linq;
-    using System.Security.Authentication;
+    using System.Net;
+    using System.Net.Http.Headers;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
+    using System.Threading.Tasks;
+    using AuthenticationException = System.Security.Authentication.AuthenticationException;
 
     internal static class AuthenticationHelpers
     {
@@ -22,29 +26,45 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             }
 
-            if (authContext.AuthType == AuthenticationType.Delegated)
+            IAuthenticationProvider authProvider = null;
+            switch (authContext.AuthType)
             {
-                IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
-                   .Create(authContext.ClientId)
-                   .WithTenantId(authContext.TenantId)
-                   .Build();
+                case AuthenticationType.Delegated:
+                    {
+                        IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
+                        .Create(authContext.ClientId)
+                        .WithTenantId(authContext.TenantId)
+                        .Build();
 
-                ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                return new Microsoft.Graph.Auth.DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) => {
-                    await Console.Out.WriteLineAsync(result.Message);
-                });
-            }
-            else
-            {
-                IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
-                .Create(authContext.ClientId)
-                .WithTenantId(authContext.TenantId)
-                .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
-                .Build();
+                        ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
+                        authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes, async (result) => {
+                            await Console.Out.WriteLineAsync(result.Message);
+                        });
+                        break;
+                    }
+                case AuthenticationType.AppOnly:
+                    {
+                        IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
+                        .Create(authContext.ClientId)
+                        .WithTenantId(authContext.TenantId)
+                        .WithCertificate(string.IsNullOrEmpty(authContext.CertificateThumbprint) ? GetCertificateByName(authContext.CertificateName) : GetCertificateByThumbprint(authContext.CertificateThumbprint))
+                        .Build();
 
-                ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
-                return new Microsoft.Graph.Auth.ClientCredentialProvider(confidentialClientApp);
+                        ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
+                        authProvider = new ClientCredentialProvider(confidentialClientApp);
+                        break;
+                    }
+                case AuthenticationType.UserProvidedAccessToken:
+                    {
+                        authProvider = new DelegateAuthenticationProvider((requestMessage) => {
+                            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
+                                new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
+                            return Task.CompletedTask;
+                        });
+                        break;
+                    }
             }
+            return authProvider;
         }
 
         internal static void Logout(IAuthContext authConfig)
@@ -52,7 +72,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             try
             {
                 _cacheLock.EnterWriteLock();
-                TokenCacheStorage.DeleteToken(authConfig);
+                if (authConfig.AuthType == AuthenticationType.UserProvidedAccessToken)
+                {
+                    GraphSession.Instance.UserProvidedToken = null;
+                }
+                else
+                {
+                    TokenCacheStorage.DeleteToken(authConfig);
+                }
             }
             finally
             {

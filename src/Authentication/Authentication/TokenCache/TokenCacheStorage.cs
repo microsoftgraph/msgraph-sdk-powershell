@@ -29,7 +29,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 
             if (authContext.ContextScope == ContextScope.Process)
             {
-                return GraphSession.Instance.Token;
+                return GraphSession.Instance.MSALToken;
             }
             else
             {
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 
             if (authContext.ContextScope == ContextScope.Process)
             {
-                GraphSession.Instance.Token = accessToken;
+                GraphSession.Instance.MSALToken = accessToken;
             }
             else if (authContext.ContextScope == ContextScope.CurrentUser)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 
             if (authContext.ContextScope == ContextScope.Process)
             {
-                GraphSession.Instance.Token = null;
+                GraphSession.Instance.MSALToken = null;
             }
             else
             {
