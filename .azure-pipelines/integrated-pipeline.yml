@@ -64,11 +64,11 @@ stages:
   jobs:
   - template: ./download-openapidocs-template.yml
     parameters: 
-       BaseBranch: $(System.PullRequest.TargetBranch)
-       BRANCH_PREFIX: $(BRANCH_PREFIX)
-       GitUserEmail: $(GitUserEmail)
-       GitUserName: $(GitUserName)
-       BUILD_NUMBER: $(BUILD_NUMBER)
+      BaseBranch: $(System.PullRequest.TargetBranch)
+      BRANCH_PREFIX: $(BRANCH_PREFIX)
+      GitUserEmail: $(GitUserEmail)
+      GitUserName: $(GitUserName)
+      BUILD_NUMBER: $(BUILD_NUMBER)
         
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'
