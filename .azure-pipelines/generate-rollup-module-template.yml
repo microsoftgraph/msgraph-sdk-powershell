@@ -28,7 +28,7 @@ parameters:
   - name: BUILDNUMBER
     displayName: 'Build Number'
     type: string
-    default: '0.0.0.1'
+    default: $[format('{0:yyMMddHH}', pipeline.startTime)]
 
 jobs:
 - job: MsGraphPSSDKRollUpModuleGeneration
