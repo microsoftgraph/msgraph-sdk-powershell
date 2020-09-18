@@ -27,7 +27,7 @@
     "Security": "^Security\\.",
     "Sites": "^sites.site$|^sites.itemAnalytics$|^sites.columnDefinition$|^sites.contentType$|^sites.drive$|^sites.list$|^sites.sitePage$|^users.site$|^groups.site$|^sites.Functions$|^sites.Actions$",
     "Teams": "^teams\\.|^chats\\.|^users.chat$|^appCatalogs$|^users.userTeamwork$|^teamwork\\.|^users.team$|^users.userTeamwork$|^groups.team$",
-    "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$",
+    "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
     "Users.Actions": "^users.Actions$",
     "Users.Functions": "^users.Functions$"
 
