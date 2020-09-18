@@ -109,7 +109,7 @@ directive:
       alias: Expand
   # Format cmdlet response.
   - where:
-      model-name: MicrosoftGraphUser
+      model-name: ^MicrosoftGraphUser\d*$
     set:
       format-table:
         properties:
@@ -119,7 +119,7 @@ directive:
           - UserPrincipalName
           - UserType
   - where:
-      model-name: MicrosoftGraphPerson
+      model-name: ^MicrosoftGraphPerson\d*$
     set:
       format-table:
         properties:
@@ -129,7 +129,7 @@ directive:
           - PersonType
           - IsFavorite
   - where:
-      model-name: MicrosoftGraphContact
+      model-name: ^MicrosoftGraphContact\d*$
     set:
       format-table:
         properties:
@@ -139,7 +139,7 @@ directive:
           - Phones
           - CreatedDateTime
   - where:
-      model-name: MicrosoftGraphCalendar
+      model-name: ^MicrosoftGraphCalendar\d*$
     set:
       format-table:
         properties:
@@ -148,7 +148,7 @@ directive:
           - OwnerName
           - OwnerAddress
   - where:
-      model-name: MicrosoftGraphEvent
+      model-name: ^MicrosoftGraphEvent\d*$
     set:
       format-table:
         properties:
@@ -159,7 +159,7 @@ directive:
           - EndDateTime
           - EndTimeZone
   - where:
-      model-name: MicrosoftGraphDrive
+      model-name: ^MicrosoftGraphDrive\d*$
     set:
       format-table:
         properties:
@@ -168,7 +168,7 @@ directive:
           - DriveType
           - CreatedDateTime
   - where:
-      model-name: MicrosoftGraphDriveItem
+      model-name: ^MicrosoftGraphDriveItem\d*$
     set:
       format-table:
         properties:
@@ -179,7 +179,7 @@ directive:
           - Size
           - CreatedDateTime
   - where:
-      model-name: MicrosoftGraphList
+      model-name: ^MicrosoftGraphList\d*$
     set:
       format-table:
         properties:
@@ -189,7 +189,7 @@ directive:
           - WebUrl
           - CreatedDateTime
   - where:
-      model-name: MicrosoftGraphSite
+      model-name: ^MicrosoftGraphSite\d*$
     set:
       format-table:
         properties:
@@ -199,7 +199,7 @@ directive:
           - SiteCollectionHostname
           - WebUrl
   - where:
-      model-name: MicrosoftGraphGroup
+      model-name: ^MicrosoftGraphGroup\d*$
     set:
       format-table:
         properties:
@@ -209,7 +209,7 @@ directive:
           - GroupTypes
           - AccessType
   - where:
-      model-name: MicrosoftGraphTeam
+      model-name: ^MicrosoftGraphTeam\d*$
     set:
       format-table:
         properties:
@@ -218,7 +218,7 @@ directive:
           - Description
           - IsArchived
   - where:
-      model-name: MicrosoftGraphMessage
+      model-name: ^MicrosoftGraphMessage\d*$
     set:
       format-table:
         properties:
@@ -229,7 +229,7 @@ directive:
           - BodyContentType
           - hasAttachments
   - where:
-      model-name: MicrosoftGraphNotebook
+      model-name: ^MicrosoftGraphNotebook\d*$
     set:
       format-table:
         properties:
@@ -239,7 +239,7 @@ directive:
           - IsShared
           - IsDefault
   - where:
-      model-name: MicrosoftGraphSectionGroup
+      model-name: ^MicrosoftGraphSectionGroup\d*$
     set:
       format-table:
         properties:
@@ -249,7 +249,7 @@ directive:
           - ParentNotebookDisplayName
           - IsDefault
   - where:
-      model-name: MicrosoftGraphConversation
+      model-name: ^MicrosoftGraphConversation\d*$
     set:
       format-table:
         properties:
@@ -260,7 +260,7 @@ directive:
           - Threads
           - LastDeliveredDateTime
   - where:
-      model-name: MicrosoftGraphConversationThread
+      model-name: ^MicrosoftGraphConversationThread\d*$
     set:
       format-table:
         properties:
@@ -271,7 +271,7 @@ directive:
           - Posts
           - LastDeliveredDateTime
   - where:
-      model-name: MicrosoftGraphPost
+      model-name: ^MicrosoftGraphPost\d*$
     set:
       format-table:
         properties:
@@ -281,14 +281,14 @@ directive:
           - HasAttachments
           - ReceivedDateTime
   - where:
-      model-name: MicrosoftGraphDirectoryObject
+      model-name: ^MicrosoftGraphDirectoryObject\d*$
     set:
       format-table:
         properties:
           - Id
           - DeletedDateTime
   - where:
-      model-name: MicrosoftGraphPlace
+      model-name: ^MicrosoftGraphPlace\d*$
     set:
       format-table:
         properties:
@@ -297,7 +297,7 @@ directive:
           - AddressCity
           - Phone
   - where:
-      model-name: MicrosoftGraphPlannerTask
+      model-name: ^MicrosoftGraphPlannerTask\d*$
     set:
       format-table:
         properties:
@@ -310,7 +310,7 @@ directive:
           - CompletedDateTime
           - PercentComplete
   - where:
-      model-name: MicrosoftGraphPlannerPlan
+      model-name: ^MicrosoftGraphPlannerPlan\d*$
     set:
       format-table:
         properties:
@@ -319,7 +319,7 @@ directive:
           - Owner
           - CreatedDateTime
   - where:
-      model-name: MicrosoftGraphPlannerPlanDetails
+      model-name: ^MicrosoftGraphPlannerPlanDetails\d*$
     set:
       format-table:
         properties:
@@ -328,7 +328,7 @@ directive:
           - SharedWith
           - ContextDetails
   - where:
-      model-name: MicrosoftGraphSchemaExtension
+      model-name: ^MicrosoftGraphSchemaExtension\d*$
     set:
       format-table:
         properties:
@@ -338,6 +338,55 @@ directive:
           - TargetTypes
           - Status
           - Owner
+  - where:
+      model-name: ^MicrosoftGraphContact\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - emailAddresses
+  - where:
+      model-name: ^MicrosoftGraphApplication\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - AppId
+          - SignInAudience
+          - PublisherDomain
+  - where:
+      model-name: ^MicrosoftGraphServicePrincipal\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - AppId
+          - SignInAudience
+          - PublisherName
+  - where:
+      model-name: ^MicrosoftGraphTodoTaskList\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - DisplayName
+          - IsOwner
+          - IsShared
+          - WellknownListName
+  - where:
+      model-name: ^MicrosoftGraphTodoTask\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - Title
+          - Status
+          - Body
+          - DueDateTime
+          - Importance
 # Rename cmdlets
   - where:
       verb: Invoke

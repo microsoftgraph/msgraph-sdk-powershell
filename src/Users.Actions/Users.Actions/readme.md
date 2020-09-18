@@ -108,6 +108,18 @@ directive:
       variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
     set:
       subject: $1$2All
+  # https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-devicelogcollectionresponse?view=graph-rest-beta
+  - where:
+      verb: New
+      subject: ^(UserManagedDeviceLogCollection)Request(DownloadUrl)$
+    set:
+      subject: $1Response$2
+  - where:
+      verb: Update
+      subject: ^(UserManagedDevice)$
+    set:
+      verb: New
+      subject: $1WindowsDefenderUpdateSignature
 ```
 ### Versioning
 
