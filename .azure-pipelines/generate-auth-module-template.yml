@@ -72,7 +72,7 @@ jobs:
       pwsh: true
       script: |
         Write-Host $(BUILDNUMBER)
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName 'LocalNuget'
+        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed"
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'

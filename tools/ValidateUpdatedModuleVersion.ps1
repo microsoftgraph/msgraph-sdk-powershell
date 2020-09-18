@@ -16,7 +16,7 @@ enum VersionState {
 
 [VersionState]$ValidationState = [VersionState]::Invalid
 # Get current published version from PS Gallery.
-$PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -ErrorAction Ignore -AllowPrerelease
+$PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -AllowPrerelease
 if ($null -ne $PSGalleryModule ) {
     $PSGalleryVersion = [version]($PSGalleryModule.Version)
     $LocalVersion = [version]$NextVersion

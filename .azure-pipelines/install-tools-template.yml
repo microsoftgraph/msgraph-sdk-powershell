@@ -66,3 +66,5 @@ steps:
           Register-PackageSource -Name 'LocalNugetPackageSource' -Location $nugetFeed -SkipValidate -Trusted -Verbose -ProviderName 'Nuget'
           Register-PSRepository -Name 'LocalNugetFeed' -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices -PackageManagementProvider 'Nuget'
           Get-PSRepository
+          Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Credential $credsAzureDevopsServices -AllVersions -Repository 'LocalNugetFeed'
+          Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Repository 'LocalNugetFeed'
