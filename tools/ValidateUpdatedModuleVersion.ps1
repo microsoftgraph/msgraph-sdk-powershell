@@ -21,7 +21,7 @@ if($ModulePreviewNumber -eq -1) {
     $PSRepository = "PSGallery"
 }
 # Get current published version from PS Gallery.
-$PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -ErrorAction Ignore -AllowPreRelease:$AllowPreRelease
+$PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -ErrorAction Ignore -AllowPrerelease:$AllowPreRelease
 if ($null -ne $PSGalleryModule ) {
     $PSGalleryVersion = [version]($PSGalleryModule.Version)
     $LocalVersion = [version]$NextVersion
