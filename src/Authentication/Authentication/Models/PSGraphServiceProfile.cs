@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
             {
                 throw new ArgumentNullException(nameof(name));
             }
-            return new PSGraphServiceProfile { Name = name, Description = GetProfileDescription(name) };
+            return new PSGraphServiceProfile { Name = GetProfileVersion(name), Description = GetProfileDescription(name) };
         }
 
         /// <summary>
