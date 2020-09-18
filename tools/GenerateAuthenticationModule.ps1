@@ -54,6 +54,9 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual)
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $ManifestContent.ModuleVersion
+  Write-Warning $VersionState
+  Write-Warning $ModuleVersion
+  Write-Warning $ManifestContent.ModuleVersion
   # Build and pack generated module.
   if ($Build) {
     if ($EnableSigning) {
