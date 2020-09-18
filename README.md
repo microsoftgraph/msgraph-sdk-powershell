@@ -1,7 +1,16 @@
 # Microsoft Graph PowerShell SDK Preview
 The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain commands for calling Microsoft Graph service.
 
-## Installing the Microsoft.Graph Module
+# Modules
+The table below contains our Microsoft Graph rollup module. This module installs all the service modules as its dependencies.
+Description       | Module Name       | PowerShell Gallery Link
+----------------- | ----------------- | ------------------------
+Microsoft Graph   | `Microsoft.Graph` | [![Mg]][MgGallery]
+
+For a list of modules found in this repository, see the [Microsoft Graph Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) document.
+
+## Installation
+### PowerShell Gallery
 
 All the modules are published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
@@ -12,11 +21,6 @@ Install-Module Microsoft.Graph
 If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameter to avoid command name conflicts:
 ```ps
  Install-Module Microsoft.Graph -AllowClobber -Force
-```
-
-Given the large size of the API surface area, one can also install only the service module(s) they are interested in:
-```ps
-Install-Module Microsoft.Graph.Users
 ```
 There are a set of samples in the `samples` folder to help in getting started with the library. If you have an older version of these modules installed, there are extra uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
@@ -89,3 +93,20 @@ If permission related errors occur and the user you authenticated with in the po
 
 - You can try running `Disconnect-Graph`, then `Connect-Graph`.  Then, run the code that encountered the permission issues to see if it works.
 - You can try running `Connect-Graph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`.  Then, run the code that encountered the permission issues to see if it works.
+
+## Issues
+If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue in our GitHub issues page.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## License
+
+Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT [license](LICENSE.txt).
+
+<!-- References -->
+
+<!-- Shields -->
+[Mg]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph
+
+<!-- PS Gallery -->
+[MgGallery]: https://www.powershellgallery.com/packages/Microsoft.Graph/
