@@ -94,7 +94,7 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
     }
 
     # Validate module version with the one on PSGallery.
-    [VersionState] $VersionState = & $Using:ValidateUpdatedModuleVersionPS1 -ModuleName "$Using:ModulePrefix.$ModuleName" -NextVersion $ModuleVersion
+    [VersionState] $VersionState = & $Using:ValidateUpdatedModuleVersionPS1 -ModuleName "$Using:ModulePrefix.$ModuleName" -NextVersion $ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
     if ($VersionState.Equals([VersionState]::Invalid) -and !$Using:SkipVersionCheck) {
         Write-Warning "The specified version in $Using:ModulePrefix.$ModuleName module is either higher or lower than what's on $Using:RepositoryName. Update the 'module-version' in $ModuleLevelReadMePath"

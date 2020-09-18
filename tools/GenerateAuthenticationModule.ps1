@@ -44,7 +44,7 @@ if($ModulePreviewNumber -eq -1) {
     $RepositoryName = "PSGallery"
 }
 # Validate module version with the one on PSGallery.
-[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository RepositoryName
+[VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
 if ($VersionState.Equals([VersionState]::Invalid)) {
   Write-Warning "The specified version in $ModulePrefix.$ModuleName module is either higher or lower than what's on $RepositoryName. Update 'ModuleVersion' in $AuthModulePath$AuthModuleManifest."
