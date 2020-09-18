@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell
         /// <summary>
         /// The selected Microsoft Graph profile.
         /// </summary>
-        public string ProfileName { get; set; } = "v1.0-beta";
+        public string ProfileName { get; set; } = "v1.0";
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
             // Call Init to trigger any custom initialization needed after
