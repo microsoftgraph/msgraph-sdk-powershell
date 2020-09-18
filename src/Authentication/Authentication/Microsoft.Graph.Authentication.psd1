@@ -73,13 +73,13 @@ FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Connect-MgGraph', 'Disconnect-MgGraph', 'Get-MgContext', 'Get-MgProfile', 
-               'Select-MgProfile', 'Invoke-GraphRequest'
+               'Select-MgProfile', 'Invoke-MgGraphRequest'
 
 # Variables to export from this module
 # VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = @('Connect-Graph', 'Disconnect-Graph')
+AliasesToExport = @('Connect-Graph', 'Disconnect-Graph', 'Invoke-GraphRequest')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()

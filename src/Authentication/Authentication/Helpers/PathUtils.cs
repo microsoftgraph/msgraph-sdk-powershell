@@ -13,7 +13,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     /// </summary>
     internal static class PathUtils
     {
-        public static string ResolveFilePath(string filePath, InvokeGraphRequest command, bool isLiteralPath)
+        public static string ResolveFilePath(string filePath, InvokeMgGraphRequest command, bool isLiteralPath)
         {
             string path = null;
             try
