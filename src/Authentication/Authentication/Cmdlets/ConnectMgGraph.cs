@@ -30,11 +30,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 1,
             Mandatory = true,
             HelpMessage = "The client id of your application.")]
+        [Alias("AppId")]
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
             HelpMessage = "The name of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
+        [Alias("CertificateSubject")]
         public string CertificateName { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
