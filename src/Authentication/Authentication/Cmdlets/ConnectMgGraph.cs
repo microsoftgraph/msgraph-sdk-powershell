@@ -17,8 +17,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Net;
     using System.Globalization;
 
-    [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
-    public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
+    [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Alias("Connect-Graph")]
+    public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
@@ -29,11 +30,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 1,
             Mandatory = true,
             HelpMessage = "The client id of your application.")]
+        [Alias("AppId")]
         public string ClientId { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
             HelpMessage = "The name of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
+        [Alias("CertificateSubject")]
         public string CertificateName { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
@@ -85,7 +88,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         TimeSpan authTimeout = new TimeSpan(0, 0, Constants.MaxDeviceCodeTimeOut);
                         cancellationTokenSource = new CancellationTokenSource(authTimeout);
                         authContext.AuthType = AuthenticationType.Delegated;
-                        authContext.Scopes = Scopes ?? new string[] { "User.Read" };
+                        string[] processedScopes = ProcessScopes(Scopes);
+                        authContext.Scopes = processedScopes.Length == 0 ? new string[] { "User.Read" } : processedScopes;
                         // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                         authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                     }
@@ -188,6 +192,31 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             cancellationTokenSource.Cancel();
             base.StopProcessing();
+        }
+
+        /// <summary>
+        /// Processes user provided scopes by removing whitespace and splitting comma separated scopes.
+        /// </summary>
+        /// <param name="scopes">An array of scopes.</param>
+        /// <returns>A formated array of scopes.</returns>
+        private string[] ProcessScopes(string[] scopes)
+        {
+            if (scopes == null)
+            {
+                return new string[0];
+            }
+
+            List<string> formatedScopes = new List<string>();
+            foreach (string scope in scopes)
+            {
+                string[] cleanScopes = scope.Split(',')
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .ToArray();
+
+                formatedScopes.AddRange(cleanScopes);
+            }
+            return formatedScopes.ToArray();
         }
 
         private void ValidateParameters()

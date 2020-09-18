@@ -79,7 +79,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         internal static void SaveStreamToFile(this Stream baseResponseStream, string filePath,
-            InvokeGraphRequest invokeGraphRequest, CancellationToken token)
+            InvokeMgGraphRequest invokeGraphRequest, CancellationToken token)
         {
             // If the web cmdlet should resume, append the file instead of overwriting.
             const FileMode fileMode = FileMode.Create;
