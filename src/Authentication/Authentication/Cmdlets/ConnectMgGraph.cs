@@ -17,8 +17,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Net;
     using System.Globalization;
 
-    [Cmdlet(VerbsCommunications.Connect, "Graph", DefaultParameterSetName = Constants.UserParameterSet)]
-    public class ConnectGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
+    [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Alias("Connect-Graph")]
+    public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
