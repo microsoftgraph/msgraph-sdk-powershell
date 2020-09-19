@@ -560,6 +560,20 @@ directive:
         return $;
       }
 
+# Modify generated runtime IJsonSerializable class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CCustomizations%5CIJsonSerializable.cs/gm))
+      {
+        return $;
+      } else {
+        // Changes excludes hashset to a case-insensitive hashset.
+        let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
+        $ = $.replace(fromJsonRegex, '$1$2$1\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+        return $;
+      }
+
 # Serialize all $count parameter to lowercase true or false.
   - from: source-file-csharp
     where: $
