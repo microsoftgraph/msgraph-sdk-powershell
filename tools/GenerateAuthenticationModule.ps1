@@ -43,6 +43,7 @@ if($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
     $RepositoryName = "PSGallery"
 }
+Write-Warning $ManifestContent
 # Validate module version with the one on PSGallery.
 [VersionState]$VersionState = & $ValidateUpdatedModuleVersionPS1 -ModuleName "$ModulePrefix.$ModuleName" -NextVersion $ManifestContent.ModuleVersion -PSRepository $RepositoryName -ModulePreviewNumber $ModulePreviewNumber
 
