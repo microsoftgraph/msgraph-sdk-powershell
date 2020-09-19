@@ -53,7 +53,7 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual)
   Write-Warning "$ModulePrefix.$ModuleName module skipped. Version has not changed and is equal to what's on $RepositoryName."
 }
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
-  $ModuleVersion = $VersionState.Equals([VersionState]::NotOnFeed) ? "0.1.1" : $ManifestContent.ModuleVersion
+  $ModuleVersion = $ManifestContent.ModuleVersion
   Write-Warning $VersionState
   Write-Warning $ModuleVersion
   Write-Warning $ManifestContent.ModuleVersion
