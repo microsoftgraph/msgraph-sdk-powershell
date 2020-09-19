@@ -76,10 +76,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     }
 
     # Add auth module as a dependency.
-    Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
-    $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
+    Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+    $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
     Write-Warning "Installing $ExistingAuthModule.Name $ExistingAuthModule.Version"
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPreRelease:$AllowPreRelease
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
     
     if($ExistingAuthModule.Version -like '*preview*' ) {
         $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
@@ -93,10 +93,10 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
+        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
         Write-Warning "Installing $ModulePrefix.$RequiredModule Version: $ExistingWorkloadModule.Version"
         Write-Warning $ExistingWorkloadModule
-        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPreRelease:$AllowPreRelease
+        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
         #Remove "-preview" from Version Name if present
         if($ExistingWorkloadModule.Version -like '*preview*' ) {
             $version = $ExistingWorkloadModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
