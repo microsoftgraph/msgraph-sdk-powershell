@@ -22,9 +22,10 @@ if($ModulePreviewNumber -eq -1) {
 # Get current published version from PS Gallery.
 $PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -ErrorAction Ignore -AllowPrerelease:$AllowPreRelease
 if ($null -ne $PSGalleryModule ) {
+    Write-Warning $PSGalleryModule.Version
     $PSGalleryVersion = $PSGalleryModule.Version
     if($PSGalleryModule.Version -like '*preview*'){
-        $PSGalleryVersion = $PSGalleryModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
+        $PSGalleryVersion = $PSGalleryModule.Version.Remove($PSGalleryModule.Version.IndexOf('-'))
     }
     $PSGalleryVersion = [version]$PSGalleryVersion
     $LocalVersion = [version]$NextVersion
