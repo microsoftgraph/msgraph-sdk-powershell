@@ -80,7 +80,15 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPreRelease:$AllowPreRelease
     Write-Warning "Installing $ExistingAuthModule.Name $ExistingAuthModule.Version"
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPreRelease:$AllowPreRelease
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    
+    if($ExistingAuthModule.Version -like '*preview*' ) {
+        $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
+        Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+    }
+    else {
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.

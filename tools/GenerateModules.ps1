@@ -56,10 +56,19 @@ if($ModulePreviewNumber -eq -1) {
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
 Write-Warning 'Auth Module: $ExistingAuthModule.Name'
+Write-Warning 'Auth Module: $ExistingAuthModule.Version'
 if (!(Get-Module -Name $ExistingAuthModule.Name -ListAvailable)) {
     Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
 }
-$RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+if($ExistingAuthModule.Version -like '*preview*' ) {
+    $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
+    Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+}
+else {
+    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+}
+
 if ($UpdateAutoRest) {
     # Update AutoRest.
     & autorest --reset
