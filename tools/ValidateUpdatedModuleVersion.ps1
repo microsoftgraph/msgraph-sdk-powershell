@@ -23,9 +23,9 @@ if($ModulePreviewNumber -eq -1) {
 $PSGalleryModule = Find-Module -Name $ModuleName -Repository $PSRepository -ErrorAction Ignore -AllowPrerelease:$AllowPreRelease
 if ($null -ne $PSGalleryModule ) {
     Write-Warning $PSGalleryModule.Version
-    $PSGalleryVersion = $PSGalleryModule.Version
     if($PSGalleryModule.Version -like '*preview*'){
-        $PSGalleryVersion = $PSGalleryModule.Version.Remove($PSGalleryModule.Version.IndexOf('-'))
+        $ValidationState = [VersionState]::Valid
+        return $ValidationState
     }
     $PSGalleryVersion = [version]$PSGalleryVersion
     $LocalVersion = [version]$NextVersion
