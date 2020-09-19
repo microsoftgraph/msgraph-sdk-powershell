@@ -9,18 +9,6 @@ jobs:
   timeoutInMinutes: 600
 
   steps:
-  - task: BinSkim@3
-    displayName: 'BinSkim Vulnerability Scanning'
-    inputs:
-      InputType: 'Basic'
-      Function: 'analyze'
-      AnalyzeTarget: '$(Build.ArtifactStagingDirectory)\*Microsoft.Graph*.dll;$(Build.ArtifactStagingDirectory)\*Microsoft.Graph*.exe'
-      AnalyzeVerbose: true
-      AnalyzeHashes: true
-      AnalyzeStatistics: true
-      AnalyzeRecurse: true
-      AnalyzeConfigPath: default
-
   - task: CodesignValidation@0
 
   - task: CodeIntegrity@0
@@ -32,7 +20,7 @@ jobs:
     inputs:
       AllTools: false
       APIScan: false
-      BinSkim: true
+      BinSkim: false
       BinSkimBreakOn: 'WarningAbove'
       CodesignValidation: true
       CodesignValidationBreakOn: 'WarningAbove'
@@ -59,7 +47,7 @@ jobs:
       AllTools: false
       AntiMalware: false
       APIScan: false
-      BinSkim: true
+      BinSkim: false
       CodesignValidation: true
       CredScan: true
       FortifySCA: false
