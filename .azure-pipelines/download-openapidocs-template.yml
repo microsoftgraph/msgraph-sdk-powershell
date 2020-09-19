@@ -50,17 +50,29 @@ jobs:
         git config --global user.email 'GraphTooling@service.microsoft.com'
         git config --global user.name 'Microsoft Graph DevX Tooling'
 
-  - task: Bash@3
+  - task: CmdLine@2
     condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     env: 
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
       targetType: 'inline'
       script: |
+        @echo off
+        ECHO SOURCE BRANCH IS %BUILD_SOURCEBRANCH%
+        IF %BUILD_SOURCEBRANCH% == refs/heads/master (
+            ECHO Building master branch so no merge is needed.
+        EXIT
+        )
+        SET sourceBranch=origin/%BUILD_SOURCEBRANCH:refs/heads/=%
+        ECHO GIT CHECKOUT %sourceBranch%
+        git checkout %sourceBranch%
+        ECHO GIT STATUS
         git status
-        git checkout $(Build.SourceBranchName)
-
-        git add .
-        git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
-        git push --set-upstream origin $(Build.SourceBranchName)
+        ECHO GIT MERGE
+        git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
+        ECHO GIT STATUS
+        git status
+        ECHO GIT PUSH
+        git push origin
+        ECHO GIT STATUS
         git status
