@@ -72,7 +72,6 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     $AllowPreRelease = $true
     if($ModulePreviewNumber -eq -1) {
         $AllowPreRelease = $false
-        $RepositoryName= "PSGallery"
     }
 
     # Add auth module as a dependency.

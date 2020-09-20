@@ -16,7 +16,6 @@ enum VersionState {
 $AllowPreRelease = $true
 if($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
-    $PSRepository = "PSGallery"
 }
 [VersionState]$ValidationState = [VersionState]::Invalid
 # Get current published version from PS Gallery.

@@ -41,7 +41,6 @@ if ($null -eq $ManifestContent.ModuleVersion) {
 $AllowPreRelease = $true
 if($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
-    $RepositoryName = "PSGallery"
 }
 Write-Warning $ManifestContent
 # Validate module version with the one on PSGallery.

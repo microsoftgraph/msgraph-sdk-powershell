@@ -40,22 +40,6 @@ jobs:
   - template: ./install-tools-template.yml
 
   - task: PowerShell@2
-    displayName: 'Register PS Repository'
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        Get-PSRepository
-        $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
-        $nugetFeed = '$(NUGETFEED)'
-        $user = '$(NUGETBUILDUSER)'
-        $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        Get-PSRepository
-        Find-Module Microsoft.Graph.Authentication -Repository 'LocalNugetFeed' -AllowPreRelease -AllVersions -Credential $credsAzureDevopsServices
-        Find-Module "Microsoft.Graph.Authentication" -Repository 'LocalNugetFeed' -AllowPreRelease
-        pwsh
-
-  - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'
     inputs:
       targetType: 'inline'
