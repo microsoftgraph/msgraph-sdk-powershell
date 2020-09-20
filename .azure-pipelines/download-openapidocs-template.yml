@@ -69,6 +69,7 @@ jobs:
         ECHO GIT STATUS
         git status
         ECHO GIT MERGE
+        git add .
         git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
         ECHO GIT STATUS
         git status
