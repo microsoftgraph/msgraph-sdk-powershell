@@ -426,7 +426,7 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%5Capi%5CModels%5CMicrosoftGraph\w*\d*.json.cs/gm))
+      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*MicrosoftGraph\w*\d*.json.cs/gm))
       {
         return $;
       } else {
@@ -439,6 +439,18 @@ directive:
         // Pass exclusion properties to base classes during serialization.
         let baseClassInitializerRegex = /(new\s*Microsoft.Graph.PowerShell.Models.MicrosoftGraph\w*\(\s*json\s*,\s*new\s*global::System.Collections.Generic.HashSet<string>\()(\){\W.*}\);)/gm
         $ = $.replace(baseClassInitializerRegex, '$1(exclusions ?? new System.Collections.Generic.HashSet<string>())$2');
+
+        // Fix additional properties deserialization in Complex Types.
+        let complexTypeHintRegex = /(\s*)(Microsoft\.Graph\.PowerShell\.Runtime\.JsonSerializable\.FromJson)/gm
+        if($.match(complexTypeHintRegex)) {
+          let classNameRegex = /partial\s*class\s*(\w*)\s*{/gm
+          let match = classNameRegex.exec($);
+          let interfaceName = "I" + match[1] + "Internal";
+
+          let getExclusionsDynamically = '\n$1if (exclusions == null) { exclusions = new System.Collections.Generic.HashSet<string>(global::System.StringComparer.OrdinalIgnoreCase); var properties = typeof('+interfaceName+').GetProperties(); foreach (var property in properties) { exclusions.Add(property.Name);}}'
+          $ = $.replace(complexTypeHintRegex, getExclusionsDynamically + '\n$1$2');
+        }
+
         return $;
       }
 # Modify generated .cs model classes.
@@ -570,7 +582,7 @@ directive:
       } else {
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
-        $ = $.replace(fromJsonRegex, '$1$2$1\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+        $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
         return $;
       }
 
