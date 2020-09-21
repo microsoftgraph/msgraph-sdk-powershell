@@ -1,0 +1,149 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: ROLLUP_MODULE_PATH
+    displayName: 'Module Path'
+    type: string
+    default: 'src/Graph/Graph'
+  - name: ROLLUP_MODULE_NAME
+    displayName: 'Module Name'
+    type: string
+    default: 'Graph'
+  - name: Api_Key
+    displayName: 'Api Key'
+    type: string
+  - name: GRAPH_VERSION
+    displayName: 'Graph Version'
+    type: string
+    default: 'beta'
+  - name: MODULE_PREFIX
+    displayName: 'Module Prefix'
+    type: string
+    default: 'Microsoft.Graph'
+  - name: EnableSigning
+    displayName: 'Enable Signing'
+    type: boolean
+    default: false
+  - name: BUILDNUMBER
+    displayName: 'Build Number'
+    type: string
+    default: $[format('{0:yyMMddHH}', pipeline.startTime)]
+
+jobs:
+- job: MsGraphPSSDKRollUpModuleGeneration
+  displayName: Microsoft Graph PowerShell SDK Roll-Up Module Generation
+  pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
+    
+  steps:
+  - template: ./install-tools-template.yml
+
+  - task: PowerShell@2
+    displayName: 'Generate and Build Roll-Up Module'
+    inputs:
+      targetType: 'inline'
+      pwsh: true
+      script: |
+         Get-PSRepository
+         Write-Host $(BUILDNUMBER)
+         $(System.DefaultWorkingDirectory)/tools/GenerateRollUpModule.ps1 -RepositoryName 'LocalNugetFeed' -ModulePreviewNumber $(BUILDNUMBER)
+
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+    displayName: 'ESRP CodeSigning (Graph Roll-Up Module)'
+    enabled: true
+    inputs:
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+      FolderPath: $(ROLLUP_MODULE_PATH)
+      Pattern: '$(MODULE_PREFIX).psm1, $(MODULE_PREFIX).*.format.ps1xml, *.ps1'
+      signConfigType: inlineSignParams
+      inlineOperation: |
+       [
+           {
+               "keyCode": "CP-230012",
+               "operationSetCode": "SigntoolSign",
+               "parameters": [
+                   {
+                       "parameterName": "OpusName",
+                       "parameterValue": "Microsoft"
+                   },
+                   {
+                       "parameterName": "OpusInfo",
+                       "parameterValue": "http://www.microsoft.com"
+                   },
+                   {
+                       "parameterName": "FileDigest",
+                       "parameterValue": "/fd \"SHA256\""
+                   },
+                   {
+                       "parameterName": "PageHash",
+                       "parameterValue": "/NPH"
+                   },
+                   {
+                       "parameterName": "TimeStamp",
+                       "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
+                   }
+               ],
+               "toolName": "sign",
+               "toolVersion": "1.0"
+           },
+           {
+               "keyCode": "CP-230012",
+               "operationSetCode": "SigntoolVerify",
+               "parameters": [],
+               "toolName": "sign",
+               "toolVersion": "1.0"
+           }
+       ]
+      SessionTimeout: 20
+
+  - task: NuGetCommand@2
+    displayName: 'Pack Roll-Up Module'
+    inputs:
+      command: 'pack'
+      Configuration: Release
+      packagesToPack: '$(System.DefaultWorkingDirectory)/$(ROLLUP_MODULE_PATH)/$(MODULE_PREFIX).nuspec'
+      packDestination: '$(Build.ArtifactStagingDirectory)/'
+      versioningScheme: 'off'
+  
+  - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
+    displayName: 'ESRP NuGet CodeSigning'
+    enabled: true
+    inputs:
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
+      FolderPath: '$(Build.ArtifactStagingDirectory)/'
+      Pattern: 'Microsoft.Graph*.nupkg'
+      signConfigType: inlineSignParams
+      inlineOperation: |
+            [
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetSign",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                },
+                {
+                    "keyCode": "CP-401405",
+                    "operationSetCode": "NuGetVerify",
+                    "parameters": [ ],
+                    "toolName": "sign",
+                    "toolVersion": "1.0"
+                }
+            ]
+      SessionTimeout: 20
+
+  - task: NuGetCommand@2
+    displayName: 'NuGet Publish To Local Build Feed'
+    inputs:
+      command: push
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/Microsoft.Graph*.nupkg'
+      publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
+      allowPackageConflicts: true
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact Microsoft.Graph.nupkg'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'

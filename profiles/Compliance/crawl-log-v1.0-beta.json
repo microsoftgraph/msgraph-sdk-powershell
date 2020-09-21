@@ -1,44 +1,44 @@
 {
   "operations": {
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}/queries": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
-    "/compliance/ediscovery": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
-    "/compliance/ediscovery/cases": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}/microsoft.graph.reopen": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}/microsoft.graph.close": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/compliance": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
     },
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+    "/compliance/ediscovery/cases": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
     },
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}/queries/{reviewSetQuery-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
-    },
-    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+    "/compliance/ediscovery": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
     },
     "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Compliance.yml"
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}/microsoft.graph.close": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}/queries": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}/microsoft.graph.reopen": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}/reviewSets/{reviewSet-id}/queries/{reviewSetQuery-id}": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
+    },
+    "/compliance/ediscovery/cases/{ediscoveryCase-id}": {
+      "originalLocation": "/openApiDocs/beta/Compliance.yml",
+      "apiVersion": "v1.0-beta"
     }
   },
   "resources": []

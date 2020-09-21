@@ -31,8 +31,8 @@ paths:
             items:
               enum:
                 - id
-                - trending
                 - shared
+                - trending
                 - used
               type: string
         - name: $expand
@@ -46,8 +46,8 @@ paths:
             items:
               enum:
                 - '*'
-                - trending
                 - shared
+                - trending
                 - used
               type: string
       responses:
@@ -57,6 +57,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
+          links:
+            shared:
+              operationId: users.Insights.ListShared
+              parameters:
+                user-id: $request.path.user-id
+            trending:
+              operationId: users.Insights.ListTrending
+              parameters:
+                user-id: $request.path.user-id
+            used:
+              operationId: users.Insights.ListUsed
+              parameters:
+                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -143,12 +156,12 @@ paths:
                 - id desc
                 - lastShared
                 - lastShared desc
-                - sharingHistory
-                - sharingHistory desc
-                - resourceVisualization
-                - resourceVisualization desc
                 - resourceReference
                 - resourceReference desc
+                - resourceVisualization
+                - resourceVisualization desc
+                - sharingHistory
+                - sharingHistory desc
               type: string
         - name: $select
           in: query
@@ -162,9 +175,9 @@ paths:
               enum:
                 - id
                 - lastShared
-                - sharingHistory
-                - resourceVisualization
                 - resourceReference
+                - resourceVisualization
+                - sharingHistory
                 - lastSharedMethod
                 - resource
               type: string
@@ -268,9 +281,9 @@ paths:
               enum:
                 - id
                 - lastShared
-                - sharingHistory
-                - resourceVisualization
                 - resourceReference
+                - resourceVisualization
+                - sharingHistory
                 - lastSharedMethod
                 - resource
               type: string
@@ -295,6 +308,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+          links:
+            lastSharedMethod:
+              operationId: users.insights.Shared.GetLastSharedMethod
+              parameters:
+                user-id: $request.path.user-id
+                sharedInsight-id: $request.path.sharedInsight-id
+            resource:
+              operationId: users.insights.Shared.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                sharedInsight-id: $request.path.sharedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -697,14 +721,14 @@ paths:
               enum:
                 - id
                 - id desc
-                - weight
-                - weight desc
-                - resourceVisualization
-                - resourceVisualization desc
-                - resourceReference
-                - resourceReference desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - resourceReference
+                - resourceReference desc
+                - resourceVisualization
+                - resourceVisualization desc
+                - weight
+                - weight desc
               type: string
         - name: $select
           in: query
@@ -717,10 +741,10 @@ paths:
             items:
               enum:
                 - id
-                - weight
-                - resourceVisualization
-                - resourceReference
                 - lastModifiedDateTime
+                - resourceReference
+                - resourceVisualization
+                - weight
                 - resource
               type: string
         - name: $expand
@@ -821,10 +845,10 @@ paths:
             items:
               enum:
                 - id
-                - weight
-                - resourceVisualization
-                - resourceReference
                 - lastModifiedDateTime
+                - resourceReference
+                - resourceVisualization
+                - weight
                 - resource
               type: string
         - name: $expand
@@ -847,6 +871,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trending'
+          links:
+            resource:
+              operationId: users.insights.Trending.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                trending-id: $request.path.trending-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1099,10 +1129,10 @@ paths:
                 - id desc
                 - lastUsed
                 - lastUsed desc
-                - resourceVisualization
-                - resourceVisualization desc
                 - resourceReference
                 - resourceReference desc
+                - resourceVisualization
+                - resourceVisualization desc
               type: string
         - name: $select
           in: query
@@ -1116,8 +1146,8 @@ paths:
               enum:
                 - id
                 - lastUsed
-                - resourceVisualization
                 - resourceReference
+                - resourceVisualization
                 - resource
               type: string
         - name: $expand
@@ -1219,8 +1249,8 @@ paths:
               enum:
                 - id
                 - lastUsed
-                - resourceVisualization
                 - resourceReference
+                - resourceVisualization
                 - resource
               type: string
         - name: $expand
@@ -1243,6 +1273,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
+          links:
+            resource:
+              operationId: users.insights.Used.GetResource
+              parameters:
+                user-id: $request.path.user-id
+                usedInsight-id: $request.path.usedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1493,44 +1529,44 @@ paths:
               enum:
                 - id
                 - id desc
+                - birthday
+                - birthday desc
+                - companyName
+                - companyName desc
+                - department
+                - department desc
                 - displayName
                 - displayName desc
                 - givenName
                 - givenName desc
-                - surname
-                - surname desc
-                - birthday
-                - birthday desc
-                - personNotes
-                - personNotes desc
+                - imAddress
+                - imAddress desc
                 - isFavorite
                 - isFavorite desc
-                - scoredEmailAddresses
-                - scoredEmailAddresses desc
+                - jobTitle
+                - jobTitle desc
+                - officeLocation
+                - officeLocation desc
+                - personNotes
+                - personNotes desc
+                - personType
+                - personType desc
                 - phones
                 - phones desc
                 - postalAddresses
                 - postalAddresses desc
-                - websites
-                - websites desc
-                - jobTitle
-                - jobTitle desc
-                - companyName
-                - companyName desc
-                - yomiCompany
-                - yomiCompany desc
-                - department
-                - department desc
-                - officeLocation
-                - officeLocation desc
                 - profession
                 - profession desc
-                - personType
-                - personType desc
+                - scoredEmailAddresses
+                - scoredEmailAddresses desc
+                - surname
+                - surname desc
                 - userPrincipalName
                 - userPrincipalName desc
-                - imAddress
-                - imAddress desc
+                - websites
+                - websites desc
+                - yomiCompany
+                - yomiCompany desc
               type: string
         - name: $select
           in: query
@@ -1543,25 +1579,25 @@ paths:
             items:
               enum:
                 - id
+                - birthday
+                - companyName
+                - department
                 - displayName
                 - givenName
-                - surname
-                - birthday
-                - personNotes
+                - imAddress
                 - isFavorite
-                - scoredEmailAddresses
+                - jobTitle
+                - officeLocation
+                - personNotes
+                - personType
                 - phones
                 - postalAddresses
-                - websites
-                - jobTitle
-                - companyName
-                - yomiCompany
-                - department
-                - officeLocation
                 - profession
-                - personType
+                - scoredEmailAddresses
+                - surname
                 - userPrincipalName
-                - imAddress
+                - websites
+                - yomiCompany
               type: string
         - name: $expand
           in: query
@@ -1660,25 +1696,25 @@ paths:
             items:
               enum:
                 - id
+                - birthday
+                - companyName
+                - department
                 - displayName
                 - givenName
-                - surname
-                - birthday
-                - personNotes
+                - imAddress
                 - isFavorite
-                - scoredEmailAddresses
+                - jobTitle
+                - officeLocation
+                - personNotes
+                - personType
                 - phones
                 - postalAddresses
-                - websites
-                - jobTitle
-                - companyName
-                - yomiCompany
-                - department
-                - officeLocation
                 - profession
-                - personType
+                - scoredEmailAddresses
+                - surname
                 - userPrincipalName
-                - imAddress
+                - websites
+                - yomiCompany
               type: string
         - name: $expand
           in: query
@@ -1774,16 +1810,16 @@ components:
         - title: officeGraphInsights
           type: object
           properties:
-            trending:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             shared:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
               description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+            trending:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.trending'
+              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
             used:
               type: array
               items:
@@ -1799,14 +1835,14 @@ components:
           properties:
             lastShared:
               $ref: '#/components/schemas/microsoft.graph.sharingDetail'
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
             sharingHistory:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharingDetail'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
             lastSharedMethod:
               $ref: '#/components/schemas/microsoft.graph.entity'
             resource:
@@ -1828,19 +1864,19 @@ components:
         - title: trending
           type: object
           properties:
-            weight:
-              type: number
-              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
-              format: double
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
-            resourceReference:
-              $ref: '#/components/schemas/microsoft.graph.resourceReference'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
+            resourceReference:
+              $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
+            weight:
+              type: number
+              description: 'Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.'
+              format: double
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -1853,10 +1889,10 @@ components:
           properties:
             lastUsed:
               $ref: '#/components/schemas/microsoft.graph.usageDetails'
-            resourceVisualization:
-              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
             resourceReference:
               $ref: '#/components/schemas/microsoft.graph.resourceReference'
+            resourceVisualization:
+              $ref: '#/components/schemas/microsoft.graph.resourceVisualization'
             resource:
               $ref: '#/components/schemas/microsoft.graph.entity'
           additionalProperties:
@@ -1867,6 +1903,18 @@ components:
         - title: person
           type: object
           properties:
+            birthday:
+              type: string
+              description: The person's birthday.
+              nullable: true
+            companyName:
+              type: string
+              description: The name of the person's company.
+              nullable: true
+            department:
+              type: string
+              description: The person's department.
+              nullable: true
             displayName:
               type: string
               description: The person's display name.
@@ -1875,27 +1923,28 @@ components:
               type: string
               description: The person's given name.
               nullable: true
-            surname:
+            imAddress:
               type: string
-              description: The person's surname.
-              nullable: true
-            birthday:
-              type: string
-              description: The person's birthday.
-              nullable: true
-            personNotes:
-              type: string
-              description: Free-form notes that the user has taken about this person.
+              description: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
               nullable: true
             isFavorite:
               type: boolean
               description: true if the user has flagged this person as a favorite.
               nullable: true
-            scoredEmailAddresses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.scoredEmailAddress'
-              description: The person's email addresses.
+            jobTitle:
+              type: string
+              description: The person's job title.
+              nullable: true
+            officeLocation:
+              type: string
+              description: The location of the person's office.
+              nullable: true
+            personNotes:
+              type: string
+              description: Free-form notes that the user has taken about this person.
+              nullable: true
+            personType:
+              $ref: '#/components/schemas/microsoft.graph.personType'
             phones:
               type: array
               items:
@@ -1906,44 +1955,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.location'
               description: The person's addresses.
+            profession:
+              type: string
+              description: The person's profession.
+              nullable: true
+            scoredEmailAddresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scoredEmailAddress'
+              description: The person's email addresses.
+            surname:
+              type: string
+              description: The person's surname.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: 'The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person''s email name. The general format is alias@domain.'
+              nullable: true
             websites:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.website'
               description: The person's websites.
-            jobTitle:
-              type: string
-              description: The person's job title.
-              nullable: true
-            companyName:
-              type: string
-              description: The name of the person's company.
-              nullable: true
             yomiCompany:
               type: string
               description: The phonetic Japanese name of the person's company.
-              nullable: true
-            department:
-              type: string
-              description: The person's department.
-              nullable: true
-            officeLocation:
-              type: string
-              description: The location of the person's office.
-              nullable: true
-            profession:
-              type: string
-              description: The person's profession.
-              nullable: true
-            personType:
-              $ref: '#/components/schemas/microsoft.graph.personType'
-            userPrincipalName:
-              type: string
-              description: 'The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person''s email name. The general format is alias@domain.'
-              nullable: true
-            imAddress:
-              type: string
-              description: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -1959,6 +1995,8 @@ components:
           description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
+        sharingReference:
+          $ref: '#/components/schemas/microsoft.graph.resourceReference'
         sharingSubject:
           type: string
           description: The subject with which the document was shared.
@@ -1967,21 +2005,41 @@ components:
           type: string
           description: 'Determines the way the document was shared, can be by a ''Link'', ''Attachment'', ''Group'', ''Site''.'
           nullable: true
-        sharingReference:
-          $ref: '#/components/schemas/microsoft.graph.resourceReference'
+      additionalProperties:
+        type: object
+    microsoft.graph.resourceReference:
+      title: resourceReference
+      type: object
+      properties:
+        id:
+          type: string
+          description: The item's unique identifier.
+          nullable: true
+        type:
+          type: string
+          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
+          nullable: true
+        webUrl:
+          type: string
+          description: A URL leading to the referenced item.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.resourceVisualization:
       title: resourceVisualization
       type: object
       properties:
-        title:
+        containerDisplayName:
           type: string
-          description: The item's title text.
+          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
           nullable: true
-        type:
+        containerType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
+          nullable: true
+        containerWebUrl:
+          type: string
+          description: A path leading to the folder in which the item is stored.
           nullable: true
         mediaType:
           type: string
@@ -1995,35 +2053,13 @@ components:
           type: string
           description: A preview text for the item.
           nullable: true
-        containerWebUrl:
+        title:
           type: string
-          description: A path leading to the folder in which the item is stored.
-          nullable: true
-        containerDisplayName:
-          type: string
-          description: 'A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.'
-          nullable: true
-        containerType:
-          type: string
-          description: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resourceReference:
-      title: resourceReference
-      type: object
-      properties:
-        webUrl:
-          type: string
-          description: A URL leading to the referenced item.
-          nullable: true
-        id:
-          type: string
-          description: The item's unique identifier.
+          description: The item's title text.
           nullable: true
         type:
           type: string
-          description: 'A string value that can be used to classify the item, such as ''microsoft.graph.driveItem'''
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
           nullable: true
       additionalProperties:
         type: object
@@ -2045,90 +2081,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.scoredEmailAddress:
-      title: scoredEmailAddress
-      type: object
-      properties:
-        address:
-          type: string
-          description: The email address.
-          nullable: true
-        relevanceScore:
-          type: number
-          description: 'The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.'
-          format: double
-          nullable: true
-        selectionLikelihood:
-          $ref: '#/components/schemas/microsoft.graph.selectionLikelihoodInfo'
-        itemId:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.phone:
-      title: phone
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/microsoft.graph.phoneType'
-        number:
-          type: string
-          description: The phone number.
-          nullable: true
-        region:
-          type: string
-          nullable: true
-        language:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.location:
-      title: location
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The name associated with the location.
-          nullable: true
-        locationEmailAddress:
-          type: string
-          description: Optional email address of the location.
-          nullable: true
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        locationUri:
-          type: string
-          description: Optional URI representing the location.
-          nullable: true
-        coordinates:
-          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
-        locationType:
-          $ref: '#/components/schemas/microsoft.graph.locationType'
-        uniqueId:
-          type: string
-          description: For internal use only.
-          nullable: true
-        uniqueIdType:
-          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
-      additionalProperties:
-        type: object
-    microsoft.graph.website:
-      title: website
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/microsoft.graph.websiteType'
-        address:
-          type: string
-          description: The URL of the website.
-          nullable: true
-        displayName:
-          type: string
-          description: The display name of the web site.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.personType:
       title: personType
       type: object
@@ -2141,6 +2093,90 @@ components:
           type: string
           description: 'The secondary type of data source, such as OrganizationUser.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.phone:
+      title: phone
+      type: object
+      properties:
+        language:
+          type: string
+          nullable: true
+        number:
+          type: string
+          description: The phone number.
+          nullable: true
+        region:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.phoneType'
+      additionalProperties:
+        type: object
+    microsoft.graph.location:
+      title: location
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        coordinates:
+          $ref: '#/components/schemas/microsoft.graph.outlookGeoCoordinates'
+        displayName:
+          type: string
+          description: The name associated with the location.
+          nullable: true
+        locationEmailAddress:
+          type: string
+          description: Optional email address of the location.
+          nullable: true
+        locationType:
+          $ref: '#/components/schemas/microsoft.graph.locationType'
+        locationUri:
+          type: string
+          description: Optional URI representing the location.
+          nullable: true
+        uniqueId:
+          type: string
+          description: For internal use only.
+          nullable: true
+        uniqueIdType:
+          $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
+      additionalProperties:
+        type: object
+    microsoft.graph.scoredEmailAddress:
+      title: scoredEmailAddress
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address.
+          nullable: true
+        itemId:
+          type: string
+          nullable: true
+        relevanceScore:
+          type: number
+          description: 'The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.'
+          format: double
+          nullable: true
+        selectionLikelihood:
+          $ref: '#/components/schemas/microsoft.graph.selectionLikelihoodInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.website:
+      title: website
+      type: object
+      properties:
+        address:
+          type: string
+          description: The URL of the website.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name of the web site.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
     odata.error:
@@ -2156,6 +2192,10 @@ components:
       title: insightIdentity
       type: object
       properties:
+        address:
+          type: string
+          description: The email address of the user who shared the item.
+          nullable: true
         displayName:
           type: string
           description: The display name of the user who shared the item.
@@ -2164,18 +2204,8 @@ components:
           type: string
           description: The id of the user who shared the item.
           nullable: true
-        address:
-          type: string
-          description: The email address of the user who shared the item.
-          nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.selectionLikelihoodInfo:
-      title: selectionLikelihoodInfo
-      enum:
-        - notSpecified
-        - high
-      type: string
     microsoft.graph.phoneType:
       title: phoneType
       enum:
@@ -2194,17 +2224,9 @@ components:
       title: physicalAddress
       type: object
       properties:
-        street:
-          type: string
-          description: The street.
-          nullable: true
         city:
           type: string
           description: The city.
-          nullable: true
-        state:
-          type: string
-          description: The state.
           nullable: true
         countryOrRegion:
           type: string
@@ -2214,22 +2236,20 @@ components:
           type: string
           description: The postal code.
           nullable: true
+        state:
+          type: string
+          description: The state.
+          nullable: true
+        street:
+          type: string
+          description: The street.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.outlookGeoCoordinates:
       title: outlookGeoCoordinates
       type: object
       properties:
-        latitude:
-          type: number
-          description: The latitude of the location.
-          format: double
-          nullable: true
-        longitude:
-          type: number
-          description: The longitude of the location.
-          format: double
-          nullable: true
         accuracy:
           type: number
           description: 'The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.'
@@ -2243,6 +2263,16 @@ components:
         altitudeAccuracy:
           type: number
           description: The accuracy of the altitude.
+          format: double
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude of the location.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude of the location.
           format: double
           nullable: true
       additionalProperties:
@@ -2269,6 +2299,12 @@ components:
         - directory
         - private
         - bing
+      type: string
+    microsoft.graph.selectionLikelihoodInfo:
+      title: selectionLikelihoodInfo
+      enum:
+        - notSpecified
+        - high
       type: string
     microsoft.graph.websiteType:
       title: websiteType

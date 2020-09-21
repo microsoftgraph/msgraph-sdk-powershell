@@ -42,24 +42,22 @@ paths:
                 - applicationTemplateId desc
                 - appRoles
                 - appRoles desc
-                - isFallbackPublicClient
-                - isFallbackPublicClient desc
-                - identifierUris
-                - identifierUris desc
                 - createdDateTime
                 - createdDateTime desc
                 - description
                 - description desc
-                - publicClient
-                - publicClient desc
                 - displayName
                 - displayName desc
                 - groupMembershipClaims
                 - groupMembershipClaims desc
+                - identifierUris
+                - identifierUris desc
                 - info
                 - info desc
                 - isDeviceOnlyAuthSupported
                 - isDeviceOnlyAuthSupported desc
+                - isFallbackPublicClient
+                - isFallbackPublicClient desc
                 - keyCredentials
                 - keyCredentials desc
                 - logo
@@ -74,6 +72,8 @@ paths:
                 - parentalControlSettings desc
                 - passwordCredentials
                 - passwordCredentials desc
+                - publicClient
+                - publicClient desc
                 - publisherDomain
                 - publisherDomain desc
                 - requiredResourceAccess
@@ -104,15 +104,14 @@ paths:
                 - appId
                 - applicationTemplateId
                 - appRoles
-                - isFallbackPublicClient
-                - identifierUris
                 - createdDateTime
                 - description
-                - publicClient
                 - displayName
                 - groupMembershipClaims
+                - identifierUris
                 - info
                 - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
                 - keyCredentials
                 - logo
                 - notes
@@ -120,18 +119,19 @@ paths:
                 - optionalClaims
                 - parentalControlSettings
                 - passwordCredentials
+                - publicClient
                 - publisherDomain
                 - requiredResourceAccess
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - web
-                - extensionProperties
                 - createdOnBehalfOf
+                - extensionProperties
                 - homeRealmDiscoveryPolicies
                 - owners
-                - tokenLifetimePolicies
                 - tokenIssuancePolicies
+                - tokenLifetimePolicies
               type: string
         - name: $expand
           in: query
@@ -144,12 +144,12 @@ paths:
             items:
               enum:
                 - '*'
-                - extensionProperties
                 - createdOnBehalfOf
+                - extensionProperties
                 - homeRealmDiscoveryPolicies
                 - owners
-                - tokenLifetimePolicies
                 - tokenIssuancePolicies
+                - tokenLifetimePolicies
               type: string
       responses:
         '200':
@@ -227,15 +227,14 @@ paths:
                 - appId
                 - applicationTemplateId
                 - appRoles
-                - isFallbackPublicClient
-                - identifierUris
                 - createdDateTime
                 - description
-                - publicClient
                 - displayName
                 - groupMembershipClaims
+                - identifierUris
                 - info
                 - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
                 - keyCredentials
                 - logo
                 - notes
@@ -243,18 +242,19 @@ paths:
                 - optionalClaims
                 - parentalControlSettings
                 - passwordCredentials
+                - publicClient
                 - publisherDomain
                 - requiredResourceAccess
                 - signInAudience
                 - tags
                 - tokenEncryptionKeyId
                 - web
-                - extensionProperties
                 - createdOnBehalfOf
+                - extensionProperties
                 - homeRealmDiscoveryPolicies
                 - owners
-                - tokenLifetimePolicies
                 - tokenIssuancePolicies
+                - tokenLifetimePolicies
               type: string
         - name: $expand
           in: query
@@ -267,12 +267,12 @@ paths:
             items:
               enum:
                 - '*'
-                - extensionProperties
                 - createdOnBehalfOf
+                - extensionProperties
                 - homeRealmDiscoveryPolicies
                 - owners
-                - tokenLifetimePolicies
                 - tokenIssuancePolicies
+                - tokenLifetimePolicies
               type: string
       responses:
         '200':
@@ -281,6 +281,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.application'
+          links:
+            createdOnBehalfOf:
+              operationId: applications.GetCreatedOnBehalfOf
+              parameters:
+                application-id: $request.path.application-id
+            extensionProperties:
+              operationId: applications.ListExtensionProperties
+              parameters:
+                application-id: $request.path.application-id
+            homeRealmDiscoveryPolicies:
+              operationId: applications.ListHomeRealmDiscoveryPolicies
+              parameters:
+                application-id: $request.path.application-id
+            owners:
+              operationId: applications.ListOwners
+              parameters:
+                application-id: $request.path.application-id
+            tokenIssuancePolicies:
+              operationId: applications.ListTokenIssuancePolicies
+              parameters:
+                application-id: $request.path.application-id
+            tokenLifetimePolicies:
+              operationId: applications.ListTokenLifetimePolicies
+              parameters:
+                application-id: $request.path.application-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -494,12 +519,12 @@ paths:
                 - deletedDateTime desc
                 - appDisplayName
                 - appDisplayName desc
-                - name
-                - name desc
                 - dataType
                 - dataType desc
                 - isSyncedFromOnPremises
                 - isSyncedFromOnPremises desc
+                - name
+                - name desc
                 - targetObjects
                 - targetObjects desc
               type: string
@@ -516,9 +541,9 @@ paths:
                 - id
                 - deletedDateTime
                 - appDisplayName
-                - name
                 - dataType
                 - isSyncedFromOnPremises
+                - name
                 - targetObjects
               type: string
         - name: $expand
@@ -620,9 +645,9 @@ paths:
                 - id
                 - deletedDateTime
                 - appDisplayName
-                - name
                 - dataType
                 - isSyncedFromOnPremises
+                - name
                 - targetObjects
               type: string
         - name: $expand
@@ -806,68 +831,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/applications/{application-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
-    get:
-      tags:
-        - applications.homeRealmDiscoveryPolicy
-      summary: Get homeRealmDiscoveryPolicies from applications
-      operationId: applications_GetHomeRealmDiscoveryPolicies
-      parameters:
-        - name: application-id
-          in: path
-          description: 'key: id of application'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: application
-        - name: homeRealmDiscoveryPolicy-id
-          in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: homeRealmDiscoveryPolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/homeRealmDiscoveryPolicies/$ref':
     get:
@@ -1432,62 +1395,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/applications/{application-id}/owners/{directoryObject-id}':
-    get:
-      tags:
-        - applications.directoryObject
-      summary: Get owners from applications
-      operationId: applications_GetOwners
-      parameters:
-        - name: application-id
-          in: path
-          description: 'key: id of application'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: application
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/applications/{application-id}/owners/$ref':
     get:
       tags:
@@ -1674,68 +1581,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
-    get:
-      tags:
-        - applications.tokenIssuancePolicy
-      summary: Get tokenIssuancePolicies from applications
-      operationId: applications_GetTokenIssuancePolicies
-      parameters:
-        - name: application-id
-          in: path
-          description: 'key: id of application'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: application
-        - name: tokenIssuancePolicy-id
-          in: path
-          description: 'key: id of tokenIssuancePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: tokenIssuancePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/tokenIssuancePolicies/$ref':
     get:
@@ -1931,68 +1776,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
-    get:
-      tags:
-        - applications.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from applications
-      operationId: applications_GetTokenLifetimePolicies
-      parameters:
-        - name: application-id
-          in: path
-          description: 'key: id of application'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: application
-        - name: tokenLifetimePolicy-id
-          in: path
-          description: 'key: id of tokenLifetimePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: tokenLifetimePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/tokenLifetimePolicies/$ref':
     get:
@@ -2508,10 +2291,10 @@ paths:
                 - addIns desc
                 - alternativeNames
                 - alternativeNames desc
-                - appDisplayName
-                - appDisplayName desc
                 - appDescription
                 - appDescription desc
+                - appDisplayName
+                - appDisplayName desc
                 - appId
                 - appId desc
                 - applicationTemplateId
@@ -2544,16 +2327,16 @@ paths:
                 - oauth2PermissionScopes desc
                 - passwordCredentials
                 - passwordCredentials desc
-                - preferredTokenSigningKeyThumbprint
-                - preferredTokenSigningKeyThumbprint desc
                 - preferredSingleSignOnMode
                 - preferredSingleSignOnMode desc
+                - preferredTokenSigningKeyThumbprint
+                - preferredTokenSigningKeyThumbprint desc
                 - replyUrls
                 - replyUrls desc
-                - servicePrincipalNames
-                - servicePrincipalNames desc
                 - samlSingleSignOnSettings
                 - samlSingleSignOnSettings desc
+                - servicePrincipalNames
+                - servicePrincipalNames desc
                 - servicePrincipalType
                 - servicePrincipalType desc
                 - tags
@@ -2576,8 +2359,8 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
-                - appDisplayName
                 - appDescription
+                - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
@@ -2594,27 +2377,27 @@ paths:
                 - notificationEmailAddresses
                 - oauth2PermissionScopes
                 - passwordCredentials
-                - preferredTokenSigningKeyThumbprint
                 - preferredSingleSignOnMode
+                - preferredTokenSigningKeyThumbprint
                 - replyUrls
-                - servicePrincipalNames
                 - samlSingleSignOnSettings
+                - servicePrincipalNames
                 - servicePrincipalType
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
+                - createdObjects
                 - endpoints
                 - homeRealmDiscoveryPolicies
-                - oauth2PermissionGrants
                 - memberOf
-                - transitiveMemberOf
-                - createdObjects
-                - owners
+                - oauth2PermissionGrants
                 - ownedObjects
+                - owners
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -2630,16 +2413,16 @@ paths:
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
+                - createdObjects
                 - endpoints
                 - homeRealmDiscoveryPolicies
-                - oauth2PermissionGrants
                 - memberOf
-                - transitiveMemberOf
-                - createdObjects
-                - owners
+                - oauth2PermissionGrants
                 - ownedObjects
+                - owners
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - transitiveMemberOf
               type: string
       responses:
         '200':
@@ -2715,8 +2498,8 @@ paths:
                 - accountEnabled
                 - addIns
                 - alternativeNames
-                - appDisplayName
                 - appDescription
+                - appDisplayName
                 - appId
                 - applicationTemplateId
                 - appOwnerOrganizationId
@@ -2733,27 +2516,27 @@ paths:
                 - notificationEmailAddresses
                 - oauth2PermissionScopes
                 - passwordCredentials
-                - preferredTokenSigningKeyThumbprint
                 - preferredSingleSignOnMode
+                - preferredTokenSigningKeyThumbprint
                 - replyUrls
-                - servicePrincipalNames
                 - samlSingleSignOnSettings
+                - servicePrincipalNames
                 - servicePrincipalType
                 - tags
                 - tokenEncryptionKeyId
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
+                - createdObjects
                 - endpoints
                 - homeRealmDiscoveryPolicies
-                - oauth2PermissionGrants
                 - memberOf
-                - transitiveMemberOf
-                - createdObjects
-                - owners
+                - oauth2PermissionGrants
                 - ownedObjects
+                - owners
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - transitiveMemberOf
               type: string
         - name: $expand
           in: query
@@ -2769,16 +2552,16 @@ paths:
                 - appRoleAssignedTo
                 - appRoleAssignments
                 - claimsMappingPolicies
+                - createdObjects
                 - endpoints
                 - homeRealmDiscoveryPolicies
-                - oauth2PermissionGrants
                 - memberOf
-                - transitiveMemberOf
-                - createdObjects
-                - owners
+                - oauth2PermissionGrants
                 - ownedObjects
+                - owners
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
+                - transitiveMemberOf
               type: string
       responses:
         '200':
@@ -2787,6 +2570,59 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+          links:
+            appRoleAssignedTo:
+              operationId: servicePrincipals.ListAppRoleAssignedTo
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            appRoleAssignments:
+              operationId: servicePrincipals.ListAppRoleAssignments
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            claimsMappingPolicies:
+              operationId: servicePrincipals.ListClaimsMappingPolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            createdObjects:
+              operationId: servicePrincipals.ListCreatedObjects
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            endpoints:
+              operationId: servicePrincipals.ListEndpoints
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            homeRealmDiscoveryPolicies:
+              operationId: servicePrincipals.ListHomeRealmDiscoveryPolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            memberOf:
+              operationId: servicePrincipals.ListMemberOf
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            oauth2PermissionGrants:
+              operationId: servicePrincipals.ListOauth2PermissionGrants
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            ownedObjects:
+              operationId: servicePrincipals.ListOwnedObjects
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            owners:
+              operationId: servicePrincipals.ListOwners
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            tokenIssuancePolicies:
+              operationId: servicePrincipals.ListTokenIssuancePolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            tokenLifetimePolicies:
+              operationId: servicePrincipals.ListTokenLifetimePolicies
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
+            transitiveMemberOf:
+              operationId: servicePrincipals.ListTransitiveMemberOf
+              parameters:
+                servicePrincipal-id: $request.path.servicePrincipal-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3456,68 +3292,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}':
-    get:
-      tags:
-        - servicePrincipals.claimsMappingPolicy
-      summary: Get claimsMappingPolicies from servicePrincipals
-      operationId: servicePrincipals_GetClaimsMappingPolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: claimsMappingPolicy-id
-          in: path
-          description: 'key: id of claimsMappingPolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: claimsMappingPolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref':
     get:
       tags:
@@ -3699,62 +3473,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/createdObjects/{directoryObject-id}':
-    get:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Get createdObjects from servicePrincipals
-      operationId: servicePrincipals_GetCreatedObjects
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/createdObjects/$ref':
     get:
       tags:
@@ -3885,10 +3603,10 @@ paths:
                 - providerId desc
                 - providerName
                 - providerName desc
-                - uri
-                - uri desc
                 - providerResourceId
                 - providerResourceId desc
+                - uri
+                - uri desc
               type: string
         - name: $select
           in: query
@@ -3905,8 +3623,8 @@ paths:
                 - capability
                 - providerId
                 - providerName
-                - uri
                 - providerResourceId
+                - uri
               type: string
         - name: $expand
           in: query
@@ -4009,8 +3727,8 @@ paths:
                 - capability
                 - providerId
                 - providerName
-                - uri
                 - providerResourceId
+                - uri
               type: string
         - name: $expand
           in: query
@@ -4194,68 +3912,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
-    get:
-      tags:
-        - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Get homeRealmDiscoveryPolicies from servicePrincipals
-      operationId: servicePrincipals_GetHomeRealmDiscoveryPolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: homeRealmDiscoveryPolicy-id
-          in: path
-          description: 'key: id of homeRealmDiscoveryPolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: homeRealmDiscoveryPolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref':
     get:
       tags:
@@ -4436,62 +4092,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}':
-    get:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Get memberOf from servicePrincipals
-      operationId: servicePrincipals_GetMemberOf
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/memberOf/$ref':
     get:
@@ -5008,66 +4608,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}':
-    get:
-      tags:
-        - servicePrincipals.oAuth2PermissionGrant
-      summary: Get oauth2PermissionGrants from servicePrincipals
-      operationId: servicePrincipals_GetOauth2PermissionGrants
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: oAuth2PermissionGrant-id
-          in: path
-          description: 'key: id of oAuth2PermissionGrant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: oAuth2PermissionGrant
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - clientId
-                - consentType
-                - principalId
-                - resourceId
-                - scope
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/oauth2PermissionGrants/$ref':
     get:
       tags:
@@ -5249,62 +4789,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/ownedObjects/{directoryObject-id}':
-    get:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Get ownedObjects from servicePrincipals
-      operationId: servicePrincipals_GetOwnedObjects
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/ownedObjects/$ref':
     get:
       tags:
@@ -5477,62 +4961,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}':
-    get:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Get owners from servicePrincipals
-      operationId: servicePrincipals_GetOwners
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/owners/$ref':
     get:
@@ -5720,68 +5148,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
-    get:
-      tags:
-        - servicePrincipals.tokenIssuancePolicy
-      summary: Get tokenIssuancePolicies from servicePrincipals
-      operationId: servicePrincipals_GetTokenIssuancePolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: tokenIssuancePolicy-id
-          in: path
-          description: 'key: id of tokenIssuancePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: tokenIssuancePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenIssuancePolicies/$ref':
     get:
@@ -5978,68 +5344,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
-    get:
-      tags:
-        - servicePrincipals.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from servicePrincipals
-      operationId: servicePrincipals_GetTokenLifetimePolicies
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: tokenLifetimePolicy-id
-          in: path
-          description: 'key: id of tokenLifetimePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: tokenLifetimePolicy
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-                - description
-                - displayName
-                - definition
-                - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/tokenLifetimePolicies/$ref':
     get:
       tags:
@@ -6220,62 +5524,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}':
-    get:
-      tags:
-        - servicePrincipals.directoryObject
-      summary: Get transitiveMemberOf from servicePrincipals
-      operationId: servicePrincipals_GetTransitiveMemberOf
-      parameters:
-        - name: servicePrincipal-id
-          in: path
-          description: 'key: id of servicePrincipal'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: servicePrincipal
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/$ref':
     get:
@@ -6778,15 +6026,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications'' service principals. Not nullable.'
-            isFallbackPublicClient:
-              type: boolean
-              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
-              nullable: true
-            identifierUris:
-              type: array
-              items:
-                type: string
-              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -6796,8 +6035,6 @@ components:
             description:
               type: string
               nullable: true
-            publicClient:
-              $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
             displayName:
               type: string
               description: The display name for the application.
@@ -6806,10 +6043,19 @@ components:
               type: string
               description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of'
               nullable: true
+            identifierUris:
+              type: array
+              items:
+                type: string
+              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
               type: boolean
+              nullable: true
+            isFallbackPublicClient:
+              type: boolean
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.'
               nullable: true
             keyCredentials:
               type: array
@@ -6834,6 +6080,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordCredential'
               description: The collection of password credentials associated with the application. Not nullable.
+            publicClient:
+              $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
             publisherDomain:
               type: string
               description: The verified publisher domain for the application. Read-only.
@@ -6860,13 +6108,13 @@ components:
               nullable: true
             web:
               $ref: '#/components/schemas/microsoft.graph.webApplication'
+            createdOnBehalfOf:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             extensionProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
               description: Read-only. Nullable.
-            createdOnBehalfOf:
-              $ref: '#/components/schemas/microsoft.graph.directoryObject'
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -6876,14 +6124,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
-            tokenLifetimePolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
+            tokenLifetimePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -6911,9 +6159,6 @@ components:
               type: string
               description: Display name of the application object on which this extension property is defined. Read-only.
               nullable: true
-            name:
-              type: string
-              description: Name of the extension property. Not nullable.
             dataType:
               type: string
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
@@ -6921,6 +6166,9 @@ components:
               type: boolean
               description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
               nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
             targetObjects:
               type: array
               items:
@@ -6956,6 +6204,11 @@ components:
           description: 'The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
           format: date-time
           nullable: true
+        key:
+          type: string
+          description: Value for the key credential. Should be a base 64 encoded value.
+          format: base64url
+          nullable: true
         keyId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
@@ -6975,11 +6228,6 @@ components:
         usage:
           type: string
           description: 'A string that describes the purpose for which the key can be used; for example, ''Verify''.'
-          nullable: true
-        key:
-          type: string
-          description: Value for the key credential. Should be a base 64 encoded value.
-          format: base64url
           nullable: true
       additionalProperties:
         type: object
@@ -7002,25 +6250,25 @@ components:
           description: 'The date and time at which the password expires represented using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Optional.'
           format: date-time
           nullable: true
+        hint:
+          type: string
+          description: Contains the first three characters of the password. Read-only.
+          nullable: true
         keyId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
           description: The unique identifier for the password.
           format: uuid
           nullable: true
+        secretText:
+          type: string
+          description: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+          nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           description: 'The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Optional.'
           format: date-time
-          nullable: true
-        secretText:
-          type: string
-          description: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
-          nullable: true
-        hint:
-          type: string
-          description: Contains the first three characters of the password. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -7103,12 +6351,12 @@ components:
               items:
                 type: string
               description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.'
+            appDescription:
+              type: string
+              nullable: true
             appDisplayName:
               type: string
               description: The display name exposed by the associated application.
-              nullable: true
-            appDescription:
-              type: string
               nullable: true
             appId:
               type: string
@@ -7176,25 +6424,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordCredential'
               description: The collection of password credentials associated with the service principal. Not nullable.
-            preferredTokenSigningKeyThumbprint:
-              type: string
-              nullable: true
             preferredSingleSignOnMode:
               type: string
               description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.'
+              nullable: true
+            preferredTokenSigningKeyThumbprint:
+              type: string
               nullable: true
             replyUrls:
               type: array
               items:
                 type: string
               description: 'The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.'
+            samlSingleSignOnSettings:
+              $ref: '#/components/schemas/microsoft.graph.samlSingleSignOnSettings'
             servicePrincipalNames:
               type: array
               items:
                 type: string
               description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.'
-            samlSingleSignOnSettings:
-              $ref: '#/components/schemas/microsoft.graph.samlSingleSignOnSettings'
             servicePrincipalType:
               type: string
               description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
@@ -7225,6 +6473,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
               description: The claimsMappingPolicies assigned to this service principal.
+            createdObjects:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects created by this service principal. Read-only. Nullable.
             endpoints:
               type: array
               items:
@@ -7235,35 +6488,26 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
               description: The homeRealmDiscoveryPolicies assigned to this service principal.
-            oauth2PermissionGrants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-              description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
-            transitiveMemberOf:
+            oauth2PermissionGrants:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-            createdObjects:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects created by this service principal. Read-only. Nullable.
-            owners:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+              description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Directory objects that are owned by this service principal. Read-only. Nullable.
+            owners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
             tokenIssuancePolicies:
               type: array
               items:
@@ -7274,6 +6518,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               description: The tokenLifetimePolicies assigned to this service principal.
+            transitiveMemberOf:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -7302,13 +6550,13 @@ components:
               type: string
               description: Name of the publishing underlying service. Read-only.
               nullable: true
-            uri:
-              type: string
-              description: URL of the published resource. Not nullable. Read-only.
             providerResourceId:
               type: string
               description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
+            uri:
+              type: string
+              description: URL of the published resource. Not nullable. Read-only.
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
@@ -7347,12 +6595,12 @@ components:
           type: string
           format: uuid
           nullable: true
-        type:
-          type: string
         properties:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+        type:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.apiApplication:
@@ -7371,6 +6619,11 @@ components:
             format: uuid
             nullable: true
           description: 'Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Azure AD knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.'
+        oauth2PermissionScopes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.permissionScope'
+          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
         preAuthorizedApplications:
           type: array
           items:
@@ -7383,11 +6636,6 @@ components:
           description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
           format: int32
           nullable: true
-        oauth2PermissionScopes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.permissionScope'
-          description: 'The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes.'
       additionalProperties:
         type: object
     microsoft.graph.appRole:
@@ -7425,17 +6673,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.publicClientApplication:
-      title: publicClientApplication
-      type: object
-      properties:
-        redirectUris:
-          type: array
-          items:
-            type: string
-          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
-      additionalProperties:
-        type: object
     microsoft.graph.informationalUrl:
       title: informationalUrl
       type: object
@@ -7466,16 +6703,16 @@ components:
       title: optionalClaims
       type: object
       properties:
-        idToken:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.optionalClaim'
-          description: The optional claims returned in the JWT ID token.
         accessToken:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.optionalClaim'
           description: The optional claims returned in the JWT access token.
+        idToken:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.optionalClaim'
+          description: The optional claims returned in the JWT ID token.
         saml2Token:
           type: array
           items:
@@ -7499,18 +6736,29 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.publicClientApplication:
+      title: publicClientApplication
+      type: object
+      properties:
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
+      additionalProperties:
+        type: object
     microsoft.graph.requiredResourceAccess:
       title: requiredResourceAccess
       type: object
       properties:
-        resourceAppId:
-          type: string
-          description: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
         resourceAccess:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.resourceAccess'
           description: The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
+        resourceAppId:
+          type: string
+          description: The unique identifier for the resource that the application requires access to.  This should be equal to the appId declared on the target resource application.
       additionalProperties:
         type: object
     microsoft.graph.webApplication:
@@ -7521,17 +6769,17 @@ components:
           type: string
           description: Home page or landing page of the application.
           nullable: true
+        implicitGrantSettings:
+          $ref: '#/components/schemas/microsoft.graph.implicitGrantSettings'
+        logoutUrl:
+          type: string
+          description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.'
+          nullable: true
         redirectUris:
           type: array
           items:
             type: string
           description: 'Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.'
-        logoutUrl:
-          type: string
-          description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.'
-          nullable: true
-        implicitGrantSettings:
-          $ref: '#/components/schemas/microsoft.graph.implicitGrantSettings'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -7658,6 +6906,15 @@ components:
       title: optionalClaim
       type: object
       properties:
+        additionalProperties:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.'
+        essential:
+          type: boolean
+          description: 'If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.'
         name:
           type: string
           description: The name of the optional claim.
@@ -7665,15 +6922,6 @@ components:
           type: string
           description: 'The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.'
           nullable: true
-        essential:
-          type: boolean
-          description: 'If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.'
-        additionalProperties:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.'
       additionalProperties:
         type: object
     microsoft.graph.resourceAccess:
@@ -7695,13 +6943,13 @@ components:
       title: implicitGrantSettings
       type: object
       properties:
-        enableIdTokenIssuance:
-          type: boolean
-          description: Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
-          nullable: true
         enableAccessTokenIssuance:
           type: boolean
           description: Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
+          nullable: true
+        enableIdTokenIssuance:
+          type: boolean
+          description: Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
           nullable: true
       additionalProperties:
         type: object
