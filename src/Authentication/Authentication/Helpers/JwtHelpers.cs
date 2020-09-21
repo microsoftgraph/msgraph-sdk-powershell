@@ -59,5 +59,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         }, ex);
             }
         }
+
+        /// <summary>
+        /// Converts a DateTime to Unix timestamp in seconds past epoch.
+        /// </summary>
+        /// <param name="time">A <see cref="DateTime"/> to convert.</param>
+        /// <returns>Unix timestamp.</returns>
+        internal static long ConvertToUnixTimestamp(DateTime time)
+        {
+            DateTime epochTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            TimeSpan timeDiff = time - epochTime;
+            return (long)timeDiff.TotalSeconds;
+        }
     }
 }

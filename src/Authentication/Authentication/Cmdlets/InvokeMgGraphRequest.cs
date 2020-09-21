@@ -22,14 +22,15 @@ using DriveNotFoundException = System.Management.Automation.DriveNotFoundExcepti
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsLifecycle.Invoke, "GraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
-    public class InvokeGraphRequest : PSCmdlet
+    [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Alias("Invoke-GraphRequest")]
+    public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource;
         private readonly InvokeGraphRequestUserAgent _graphRequestUserAgent;
         private string _originalFilePath;
 
-        public InvokeGraphRequest()
+        public InvokeMgGraphRequest()
         {
             _cancellationTokenSource = new CancellationTokenSource();
             _graphRequestUserAgent = new InvokeGraphRequestUserAgent(this);

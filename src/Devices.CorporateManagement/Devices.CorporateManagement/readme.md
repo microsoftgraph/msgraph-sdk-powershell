@@ -52,6 +52,11 @@ directive:
       variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
     set:
       subject: $1Multiple$2
+  # https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-devicelogcollectionresponse?view=graph-rest-beta
+  - where:
+      subject: ^(UserManagedDeviceLogCollection)(Request)$
+    set:
+      subject: $1Response
   - where:
       verb: Update
       subject: ^(DeviceAppManagement)(PolicySet)$
