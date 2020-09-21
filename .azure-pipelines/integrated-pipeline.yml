@@ -16,7 +16,7 @@ variables:
   BRANCH_PREFIX: 'releaseOpenApiDocs'
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
-  BUILDNUMBER: -1
+  BUILDNUMBER: $[format('{0:yyMMddHH}', pipeline.startTime)]
 
 pool: MsGraphDevXAzureAgents
 

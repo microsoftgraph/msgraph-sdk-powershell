@@ -58,6 +58,7 @@ steps:
         targetType: inline
         pwsh: true
         script: |
+          $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue
           Get-PSRepository
           $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
           $nugetFeed = '$(NUGETFEED)'
