@@ -94,7 +94,6 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
         $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
         Write-Warning "Installing $ModulePrefix.$RequiredModule Version: $ExistingWorkloadModule.Version"
-        Write-Warning $ExistingWorkloadModule
         Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
         #Remove "-preview" from Version Name if present
         if($ExistingWorkloadModule.Version -like '*preview*' ) {

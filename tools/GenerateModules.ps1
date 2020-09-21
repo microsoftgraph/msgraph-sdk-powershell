@@ -73,7 +73,6 @@ if ($UpdateAutoRest) {
     & autorest --reset
 }
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$RequestCount = 0
 
 $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -Parallel {
     enum VersionState {
@@ -182,7 +181,6 @@ $ModuleMapping.Keys | ForEach-Object -ThrottleLimit $ModuleMapping.Keys.Count -P
         catch {
             Write-Error $_.Exception
         }
-        #$Using:RequestCount=$Using:RequestCount+1
         Write-Warning "Generating $ModuleName Completed"
     }
 }
