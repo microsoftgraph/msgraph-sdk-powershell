@@ -63,19 +63,12 @@ jobs:
             ECHO Building master branch so no merge is needed.
         EXIT
         )
-        SET sourceBranch=origin/%BUILD_SOURCEBRANCH:refs/heads/=%
-        ECHO GIT CHECKOUT %sourceBranch%
-        git checkout %sourceBranch%
-        ECHO GIT STATUS
         git status
-        ECHO GIT MERGE
+        git checkout %sourceBranch%
+        git pull
         git add .
         git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
+        git push --set-upstream origin %sourceBranch%
         git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
         git push origin HEAD:%sourceBranch%
-        ECHO GIT STATUS
-        git status
-        ECHO GIT PUSH
-        git push origin
-        ECHO GIT STATUS
         git status
