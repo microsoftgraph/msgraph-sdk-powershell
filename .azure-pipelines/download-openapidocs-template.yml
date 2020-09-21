@@ -66,9 +66,10 @@ jobs:
         SET sourceBranch=origin/%BUILD_SOURCEBRANCH:refs/heads/=%
         git status
         git checkout %sourceBranch%
-        git pull
+        git pull origin %sourceBranch%
         git add -A
         git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
+        git pull origin %sourceBranch%
         git push --set-upstream origin %sourceBranch%
         git push origin HEAD:%sourceBranch%
         git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
