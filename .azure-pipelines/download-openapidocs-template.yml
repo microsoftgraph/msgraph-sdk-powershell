@@ -70,7 +70,9 @@ jobs:
         git status
         ECHO GIT MERGE
         git add .
+        git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
         git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
+        git push origin HEAD:%sourceBranch%
         ECHO GIT STATUS
         git status
         ECHO GIT PUSH
