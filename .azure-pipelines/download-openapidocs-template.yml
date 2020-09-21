@@ -70,5 +70,5 @@ jobs:
         git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
         git push --set-upstream origin %sourceBranch%
         git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
-        git push origin HEAD:%sourceBranch%
+        git push origin %sourceBranch%
         git status
