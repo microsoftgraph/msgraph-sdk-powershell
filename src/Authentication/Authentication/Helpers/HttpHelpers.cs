@@ -17,7 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     public static class HttpHelpers
     {
         /// The version for current assembly.
-        private static AssemblyName AssemblyInfo = typeof(ConnectGraph).GetTypeInfo().Assembly.GetName();
+        private static AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
 
         /// The value for the Auth module version header.
         private static string AuthModuleVersionHeaderValue =

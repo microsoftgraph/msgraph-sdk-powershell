@@ -37,7 +37,9 @@ subject-prefix: ''
 > see https://github.com/Azure/autorest/blob/master/docs/powershell/directives.md
 
 ``` yaml
-
+directive:
+# Remove invalid root paths e.g. users{id}/todo
+  - remove-path-by-operation: users_(Get|Create|Update|Delete|Set)(Todo|outlook)
 ```
 ### Versioning
 
