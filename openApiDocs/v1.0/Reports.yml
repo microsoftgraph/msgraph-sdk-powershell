@@ -24,9 +24,9 @@ paths:
             items:
               enum:
                 - id
-                - signIns
                 - directoryAudits
                 - restrictedSignIns
+                - signIns
               type: string
         - name: $expand
           in: query
@@ -39,9 +39,9 @@ paths:
             items:
               enum:
                 - '*'
-                - signIns
                 - directoryAudits
                 - restrictedSignIns
+                - signIns
               type: string
       responses:
         '200':
@@ -50,6 +50,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
+          links:
+            directoryAudits:
+              operationId: auditLogs.ListDirectoryAudits
+            restrictedSignIns:
+              operationId: auditLogs.ListRestrictedSignIns
+            signIns:
+              operationId: auditLogs.ListSignIns
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -95,28 +102,28 @@ paths:
               enum:
                 - id
                 - id desc
+                - activityDateTime
+                - activityDateTime desc
+                - activityDisplayName
+                - activityDisplayName desc
+                - additionalDetails
+                - additionalDetails desc
                 - category
                 - category desc
                 - correlationId
                 - correlationId desc
-                - result
-                - result desc
-                - resultReason
-                - resultReason desc
-                - activityDisplayName
-                - activityDisplayName desc
-                - activityDateTime
-                - activityDateTime desc
+                - initiatedBy
+                - initiatedBy desc
                 - loggedByService
                 - loggedByService desc
                 - operationType
                 - operationType desc
-                - initiatedBy
-                - initiatedBy desc
+                - result
+                - result desc
+                - resultReason
+                - resultReason desc
                 - targetResources
                 - targetResources desc
-                - additionalDetails
-                - additionalDetails desc
               type: string
         - name: $select
           in: query
@@ -129,17 +136,17 @@ paths:
             items:
               enum:
                 - id
+                - activityDateTime
+                - activityDisplayName
+                - additionalDetails
                 - category
                 - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
+                - initiatedBy
                 - loggedByService
                 - operationType
-                - initiatedBy
+                - result
+                - resultReason
                 - targetResources
-                - additionalDetails
               type: string
         - name: $expand
           in: query
@@ -223,17 +230,17 @@ paths:
             items:
               enum:
                 - id
+                - activityDateTime
+                - activityDisplayName
+                - additionalDetails
                 - category
                 - correlationId
-                - result
-                - resultReason
-                - activityDisplayName
-                - activityDateTime
+                - initiatedBy
                 - loggedByService
                 - operationType
-                - initiatedBy
+                - result
+                - resultReason
                 - targetResources
-                - additionalDetails
               type: string
         - name: $expand
           in: query
@@ -331,52 +338,52 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userId
-                - userId desc
-                - appId
-                - appId desc
                 - appDisplayName
                 - appDisplayName desc
-                - ipAddress
-                - ipAddress desc
-                - status
-                - status desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - deviceDetail
-                - deviceDetail desc
-                - location
-                - location desc
-                - correlationId
-                - correlationId desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
+                - appId
+                - appId desc
                 - appliedConditionalAccessPolicies
                 - appliedConditionalAccessPolicies desc
+                - clientAppUsed
+                - clientAppUsed desc
+                - conditionalAccessStatus
+                - conditionalAccessStatus desc
+                - correlationId
+                - correlationId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deviceDetail
+                - deviceDetail desc
+                - ipAddress
+                - ipAddress desc
                 - isInteractive
                 - isInteractive desc
+                - location
+                - location desc
+                - resourceDisplayName
+                - resourceDisplayName desc
+                - resourceId
+                - resourceId desc
                 - riskDetail
                 - riskDetail desc
+                - riskEventTypes
+                - riskEventTypes desc
+                - riskEventTypes_v2
+                - riskEventTypes_v2 desc
                 - riskLevelAggregated
                 - riskLevelAggregated desc
                 - riskLevelDuringSignIn
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
-                - riskEventTypes
-                - riskEventTypes desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
+                - status
+                - status desc
+                - userDisplayName
+                - userDisplayName desc
+                - userId
+                - userId desc
+                - userPrincipalName
+                - userPrincipalName desc
                 - targetTenantId
                 - targetTenantId desc
               type: string
@@ -391,29 +398,29 @@ paths:
             items:
               enum:
                 - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
                 - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
+                - appId
                 - appliedConditionalAccessPolicies
+                - clientAppUsed
+                - conditionalAccessStatus
+                - correlationId
+                - createdDateTime
+                - deviceDetail
+                - ipAddress
                 - isInteractive
+                - location
+                - resourceDisplayName
+                - resourceId
                 - riskDetail
+                - riskEventTypes
+                - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
+                - status
+                - userDisplayName
+                - userId
+                - userPrincipalName
                 - targetTenantId
               type: string
         - name: $expand
@@ -498,29 +505,29 @@ paths:
             items:
               enum:
                 - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
                 - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
+                - appId
                 - appliedConditionalAccessPolicies
+                - clientAppUsed
+                - conditionalAccessStatus
+                - correlationId
+                - createdDateTime
+                - deviceDetail
+                - ipAddress
                 - isInteractive
+                - location
+                - resourceDisplayName
+                - resourceId
                 - riskDetail
+                - riskEventTypes
+                - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
+                - status
+                - userDisplayName
+                - userId
+                - userPrincipalName
                 - targetTenantId
               type: string
         - name: $expand
@@ -619,52 +626,52 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - userDisplayName
-                - userDisplayName desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userId
-                - userId desc
-                - appId
-                - appId desc
                 - appDisplayName
                 - appDisplayName desc
-                - ipAddress
-                - ipAddress desc
-                - status
-                - status desc
-                - clientAppUsed
-                - clientAppUsed desc
-                - deviceDetail
-                - deviceDetail desc
-                - location
-                - location desc
-                - correlationId
-                - correlationId desc
-                - conditionalAccessStatus
-                - conditionalAccessStatus desc
+                - appId
+                - appId desc
                 - appliedConditionalAccessPolicies
                 - appliedConditionalAccessPolicies desc
+                - clientAppUsed
+                - clientAppUsed desc
+                - conditionalAccessStatus
+                - conditionalAccessStatus desc
+                - correlationId
+                - correlationId desc
+                - createdDateTime
+                - createdDateTime desc
+                - deviceDetail
+                - deviceDetail desc
+                - ipAddress
+                - ipAddress desc
                 - isInteractive
                 - isInteractive desc
+                - location
+                - location desc
+                - resourceDisplayName
+                - resourceDisplayName desc
+                - resourceId
+                - resourceId desc
                 - riskDetail
                 - riskDetail desc
+                - riskEventTypes
+                - riskEventTypes desc
+                - riskEventTypes_v2
+                - riskEventTypes_v2 desc
                 - riskLevelAggregated
                 - riskLevelAggregated desc
                 - riskLevelDuringSignIn
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
-                - riskEventTypes
-                - riskEventTypes desc
-                - riskEventTypes_v2
-                - riskEventTypes_v2 desc
-                - resourceDisplayName
-                - resourceDisplayName desc
-                - resourceId
-                - resourceId desc
+                - status
+                - status desc
+                - userDisplayName
+                - userDisplayName desc
+                - userId
+                - userId desc
+                - userPrincipalName
+                - userPrincipalName desc
               type: string
         - name: $select
           in: query
@@ -677,29 +684,29 @@ paths:
             items:
               enum:
                 - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
                 - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
+                - appId
                 - appliedConditionalAccessPolicies
+                - clientAppUsed
+                - conditionalAccessStatus
+                - correlationId
+                - createdDateTime
+                - deviceDetail
+                - ipAddress
                 - isInteractive
+                - location
+                - resourceDisplayName
+                - resourceId
                 - riskDetail
+                - riskEventTypes
+                - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
+                - status
+                - userDisplayName
+                - userId
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -783,29 +790,29 @@ paths:
             items:
               enum:
                 - id
-                - createdDateTime
-                - userDisplayName
-                - userPrincipalName
-                - userId
-                - appId
                 - appDisplayName
-                - ipAddress
-                - status
-                - clientAppUsed
-                - deviceDetail
-                - location
-                - correlationId
-                - conditionalAccessStatus
+                - appId
                 - appliedConditionalAccessPolicies
+                - clientAppUsed
+                - conditionalAccessStatus
+                - correlationId
+                - createdDateTime
+                - deviceDetail
+                - ipAddress
                 - isInteractive
+                - location
+                - resourceDisplayName
+                - resourceId
                 - riskDetail
+                - riskEventTypes
+                - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
-                - riskEventTypes
-                - riskEventTypes_v2
-                - resourceDisplayName
-                - resourceId
+                - status
+                - userDisplayName
+                - userId
+                - userPrincipalName
               type: string
         - name: $expand
           in: query
@@ -2918,11 +2925,6 @@ components:
         - title: auditLogRoot
           type: object
           properties:
-            signIns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.signIn'
-              description: Read-only. Nullable.
             directoryAudits:
               type: array
               items:
@@ -2932,6 +2934,11 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+            signIns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.signIn'
+              description: Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.directoryAudit:
@@ -2940,6 +2947,19 @@ components:
         - title: directoryAudit
           type: object
           properties:
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
+            activityDisplayName:
+              type: string
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+            additionalDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Indicates additional details on the activity.
             category:
               type: string
               description: 'Indicates which resource category that''s targeted by the activity. (For example: User Management, Group Management etc..)'
@@ -2947,20 +2967,8 @@ components:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
               nullable: true
-            result:
-              $ref: '#/components/schemas/microsoft.graph.operationResult'
-            resultReason:
-              type: string
-              description: Describes cause of 'failure' or 'timeout' results.
-              nullable: true
-            activityDisplayName:
-              type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
-            activityDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
-              format: date-time
+            initiatedBy:
+              $ref: '#/components/schemas/microsoft.graph.auditActivityInitiator'
             loggedByService:
               type: string
               description: 'Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.'
@@ -2968,18 +2976,17 @@ components:
             operationType:
               type: string
               nullable: true
-            initiatedBy:
-              $ref: '#/components/schemas/microsoft.graph.auditActivityInitiator'
+            result:
+              $ref: '#/components/schemas/microsoft.graph.operationResult'
+            resultReason:
+              type: string
+              description: Describes cause of 'failure' or 'timeout' results.
+              nullable: true
             targetResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
               description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
-            additionalDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Indicates additional details on the activity.
           additionalProperties:
             type: object
     microsoft.graph.restrictedSignIn:
@@ -3001,66 +3008,55 @@ components:
         - title: signIn
           type: object
           properties:
+            appDisplayName:
+              type: string
+              description: App name displayed in the Azure Portal.
+              nullable: true
+            appId:
+              type: string
+              description: Unique GUID representing the app ID in the Azure Active Directory.
+              nullable: true
+            appliedConditionalAccessPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
+            clientAppUsed:
+              type: string
+              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
+              nullable: true
+            conditionalAccessStatus:
+              $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
+            correlationId:
+              type: string
+              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
               format: date-time
-            userDisplayName:
-              type: string
-              description: Display name of the user that initiated the sign-in.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: User principal name of the user that initiated the sign-in.
-              nullable: true
-            userId:
-              type: string
-              description: ID of the user that initiated the sign-in.
-            appId:
-              type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory.
-              nullable: true
-            appDisplayName:
-              type: string
-              description: App name displayed in the Azure Portal.
-              nullable: true
+            deviceDetail:
+              $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
               description: IP address of the client used to sign in.
               nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.signInStatus'
-            clientAppUsed:
-              type: string
-              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
-              nullable: true
-            deviceDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceDetail'
-            location:
-              $ref: '#/components/schemas/microsoft.graph.signInLocation'
-            correlationId:
-              type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
-              nullable: true
-            conditionalAccessStatus:
-              $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
-            appliedConditionalAccessPolicies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
             isInteractive:
               type: boolean
               description: Indicates if a sign-in is interactive or not.
               nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.signInLocation'
+            resourceDisplayName:
+              type: string
+              description: Name of the resource the user signed into.
+              nullable: true
+            resourceId:
+              type: string
+              description: ID of the resource that the user signed into.
+              nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
-            riskLevelAggregated:
-              $ref: '#/components/schemas/microsoft.graph.riskLevel'
-            riskLevelDuringSignIn:
-              $ref: '#/components/schemas/microsoft.graph.riskLevel'
-            riskState:
-              $ref: '#/components/schemas/microsoft.graph.riskState'
             riskEventTypes:
               type: array
               items:
@@ -3072,13 +3068,24 @@ components:
                 type: string
                 nullable: true
               description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
-            resourceDisplayName:
+            riskLevelAggregated:
+              $ref: '#/components/schemas/microsoft.graph.riskLevel'
+            riskLevelDuringSignIn:
+              $ref: '#/components/schemas/microsoft.graph.riskLevel'
+            riskState:
+              $ref: '#/components/schemas/microsoft.graph.riskState'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.signInStatus'
+            userDisplayName:
               type: string
-              description: Name of the resource the user signed into.
+              description: Display name of the user that initiated the sign-in.
               nullable: true
-            resourceId:
+            userId:
               type: string
-              description: ID of the resource that the user signed into.
+              description: ID of the user that initiated the sign-in.
+            userPrincipalName:
+              type: string
+              description: User principal name of the user that initiated the sign-in.
               nullable: true
           additionalProperties:
             type: object
@@ -3111,53 +3118,6 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.operationResult:
-      title: operationResult
-      enum:
-        - success
-        - failure
-        - timeout
-        - unknownFutureValue
-      type: string
-    microsoft.graph.auditActivityInitiator:
-      title: auditActivityInitiator
-      type: object
-      properties:
-        user:
-          $ref: '#/components/schemas/microsoft.graph.userIdentity'
-        app:
-          $ref: '#/components/schemas/microsoft.graph.appIdentity'
-      additionalProperties:
-        type: object
-    microsoft.graph.targetResource:
-      title: targetResource
-      type: object
-      properties:
-        id:
-          type: string
-          description: Indicates the unique ID of the resource.
-          nullable: true
-        displayName:
-          type: string
-          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
-          nullable: true
-        type:
-          type: string
-          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
-          nullable: true
-        groupType:
-          $ref: '#/components/schemas/microsoft.graph.groupType'
-        modifiedProperties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
-          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
-      additionalProperties:
-        type: object
     microsoft.graph.keyValue:
       title: keyValue
       type: object
@@ -3172,97 +3132,57 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.signInStatus:
-      title: signInStatus
+    microsoft.graph.auditActivityInitiator:
+      title: auditActivityInitiator
       type: object
       properties:
-        errorCode:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
-          format: int32
-          nullable: true
-        failureReason:
-          type: string
-          description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-          nullable: true
-        additionalDetails:
-          type: string
-          description: Provides additional details on the sign-in activity
-          nullable: true
+        app:
+          $ref: '#/components/schemas/microsoft.graph.appIdentity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.userIdentity'
       additionalProperties:
         type: object
-    microsoft.graph.deviceDetail:
-      title: deviceDetail
-      type: object
-      properties:
-        deviceId:
-          type: string
-          description: Refers to the UniqueID of the device used for signing in.
-          nullable: true
-        displayName:
-          type: string
-          description: Refers to the name of the device used for signing in.
-          nullable: true
-        operatingSystem:
-          type: string
-          description: Indicates the operating system name and version used for signing in.
-          nullable: true
-        browser:
-          type: string
-          description: Indicates the browser information of the used for signing in.
-          nullable: true
-        isCompliant:
-          type: boolean
-          description: Indicates whether the device is compliant.
-          nullable: true
-        isManaged:
-          type: boolean
-          description: Indicates whether the device is managed.
-          nullable: true
-        trustType:
-          type: string
-          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.signInLocation:
-      title: signInLocation
-      type: object
-      properties:
-        city:
-          type: string
-          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        state:
-          type: string
-          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        countryOrRegion:
-          type: string
-          description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-          nullable: true
-        geoCoordinates:
-          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
-      additionalProperties:
-        type: object
-    microsoft.graph.conditionalAccessStatus:
-      title: conditionalAccessStatus
+    microsoft.graph.operationResult:
+      title: operationResult
       enum:
         - success
         - failure
-        - notApplied
+        - timeout
         - unknownFutureValue
       type: string
+    microsoft.graph.targetResource:
+      title: targetResource
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Indicates the visible name defined for the resource. Typically specified when the resource is created.
+          nullable: true
+        groupType:
+          $ref: '#/components/schemas/microsoft.graph.groupType'
+        id:
+          type: string
+          description: Indicates the unique ID of the resource.
+          nullable: true
+        modifiedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+          description: 'Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.'
+        type:
+          type: string
+          description: 'Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.'
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: 'When type is set to User, this includes the user name that initiated the action; null for other types.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
       type: object
       properties:
-        id:
-          type: string
-          description: Unique GUID of the conditional access policy.
-          nullable: true
         displayName:
           type: string
           description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
@@ -3279,8 +3199,74 @@ components:
             type: string
             nullable: true
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
+        id:
+          type: string
+          description: Unique GUID of the conditional access policy.
+          nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.conditionalAccessStatus:
+      title: conditionalAccessStatus
+      enum:
+        - success
+        - failure
+        - notApplied
+        - unknownFutureValue
+      type: string
+    microsoft.graph.deviceDetail:
+      title: deviceDetail
+      type: object
+      properties:
+        browser:
+          type: string
+          description: Indicates the browser information of the used for signing in.
+          nullable: true
+        deviceId:
+          type: string
+          description: Refers to the UniqueID of the device used for signing in.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the name of the device used for signing in.
+          nullable: true
+        isCompliant:
+          type: boolean
+          description: Indicates whether the device is compliant.
+          nullable: true
+        isManaged:
+          type: boolean
+          description: Indicates whether the device is managed.
+          nullable: true
+        operatingSystem:
+          type: string
+          description: Indicates the operating system name and version used for signing in.
+          nullable: true
+        trustType:
+          type: string
+          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.signInLocation:
+      title: signInLocation
+      type: object
+      properties:
+        city:
+          type: string
+          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
+        geoCoordinates:
+          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+        state:
+          type: string
+          description: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.riskDetail:
@@ -3297,6 +3283,25 @@ components:
         - adminConfirmedSigninCompromised
         - hidden
         - adminConfirmedUserCompromised
+        - unknownFutureValue
+      type: string
+    microsoft.graph.riskEventType:
+      title: riskEventType
+      enum:
+        - unlikelyTravel
+        - anonymizedIPAddress
+        - maliciousIPAddress
+        - unfamiliarFeatures
+        - malwareInfectedIPAddress
+        - suspiciousIPAddress
+        - leakedCredentials
+        - investigationsThreatIntelligence
+        - generic
+        - adminConfirmedUserCompromised
+        - mcasImpossibleTravel
+        - mcasSuspiciousInboxManipulationRules
+        - investigationsThreatIntelligenceSigninLinked
+        - maliciousIPAddressValidCredentialsBlockedIP
         - unknownFutureValue
       type: string
     microsoft.graph.riskLevel:
@@ -3320,25 +3325,27 @@ components:
         - confirmedCompromised
         - unknownFutureValue
       type: string
-    microsoft.graph.riskEventType:
-      title: riskEventType
-      enum:
-        - unlikelyTravel
-        - anonymizedIPAddress
-        - maliciousIPAddress
-        - unfamiliarFeatures
-        - malwareInfectedIPAddress
-        - suspiciousIPAddress
-        - leakedCredentials
-        - investigationsThreatIntelligence
-        - generic
-        - adminConfirmedUserCompromised
-        - mcasImpossibleTravel
-        - mcasSuspiciousInboxManipulationRules
-        - investigationsThreatIntelligenceSigninLinked
-        - maliciousIPAddressValidCredentialsBlockedIP
-        - unknownFutureValue
-      type: string
+    microsoft.graph.signInStatus:
+      title: signInStatus
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          description: Provides additional details on the sign-in activity
+          nullable: true
+        errorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Provides the 5-6digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
+          format: int32
+          nullable: true
+        failureReason:
+          type: string
+          description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -3346,28 +3353,6 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/odata.error.main'
-      additionalProperties:
-        type: object
-    microsoft.graph.userIdentity:
-      title: userIdentity
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        displayName:
-          type: string
-          description: The identity's display name. Note that this may not always be available or up-to-date.
-          nullable: true
-        ipAddress:
-          type: string
-          description: Indicates the client IP address used by user performing the activity (audit log only).
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: The userPrincipalName attribute of the user.
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.appIdentity:
@@ -3392,6 +3377,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userIdentity:
+      title: userIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The identity's display name. Note that this may not always be available or up-to-date.
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+        ipAddress:
+          type: string
+          description: Indicates the client IP address used by user performing the activity (audit log only).
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: The userPrincipalName attribute of the user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.groupType:
       title: groupType
       enum:
@@ -3407,16 +3414,26 @@ components:
           type: string
           description: Indicates the property name of the target attribute that was changed.
           nullable: true
-        oldValue:
-          type: string
-          description: Indicates the previous value (before the update) for the property.
-          nullable: true
         newValue:
           type: string
           description: Indicates the updated value for the propery.
           nullable: true
+        oldValue:
+          type: string
+          description: Indicates the previous value (before the update) for the property.
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appliedConditionalAccessPolicyResult:
+      title: appliedConditionalAccessPolicyResult
+      enum:
+        - success
+        - failure
+        - notApplied
+        - notEnabled
+        - unknown
+        - unknownFutureValue
+      type: string
     microsoft.graph.geoCoordinates:
       title: geoCoordinates
       type: object
@@ -3438,16 +3455,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.appliedConditionalAccessPolicyResult:
-      title: appliedConditionalAccessPolicyResult
-      enum:
-        - success
-        - failure
-        - notApplied
-        - notEnabled
-        - unknown
-        - unknownFutureValue
-      type: string
     odata.error.main:
       required:
         - code

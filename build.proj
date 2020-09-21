@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  # Targets
+  /t:Clean
+    Removes temporary build outputs.
+  /t:Build
+    Builds assemblies.
+  /t:Test
+    Runs tests
+  /t:Publish
+    Creates local nuget packages and MSI
+
+  # Properties
+  /p:Scope
+    'Subfolder under src': An individual cmdlet module
+    By default, it builds everything
+  /p:BuildWhenEqual='$False'
+    Execute Build when Microsoft.Graph.Authentication in PSGallery and local version are the same
+  /p:EnableSigning='$False'
+    Enable Delayed Code Signing
+  /p:SkipVersionCheck='$False'
+    Skip Version Checks for Beta modules
+  /p:UpdateAutoRest=='$True'
+-->
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildThisFileDirectory)Repo.props" />
+  <PropertyGroup>
+    <SkipVersionCheck Condition ="'$(SkipVersionCheck)' == ''">$False</SkipVersionCheck>
+    <BuildWhenEqual Condition ="'$(BuildWhenEqual)' == ''">$False</BuildWhenEqual>
+    <EnableSigning Condition ="'$(EnableSigning)' == ''">$False</EnableSigning>
+    <UpdateAutoRest Condition ="'$(UpdateAutoRest)' == ''">$True</UpdateAutoRest>
+    <!-- PS command related -->
+    <PowerShellCoreCommandPrefix>pwsh -NonInteractive -NoLogo -NoProfile -Command</PowerShellCoreCommandPrefix>
+    <GenerateModules> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateModules.ps1 -Build -SkipVersionCheck:$(SkipVersionCheck) -EnableSigning:$(EnableSigning) -UpdateAutoRest:$(UpdateAutoRest) &quot; </GenerateModules>
+    <GenerateRollup> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateRollUpModule.ps1 &quot; </GenerateRollup>
+    <GenerateAuth> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateAuthenticationModule.ps1 -Build -BuildWhenEqual:$(BuildWhenEqual) -EnableSigning:$(EnableSigning) &quot; </GenerateAuth>
+    <GenerateProfiles> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/GenerateProfiles.ps1 &quot; </GenerateProfiles>
+    <PackAuth> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/PackModule.ps1 -Module 'Authentication' -ArtifactsLocation '.\tools\artifacts' &quot; </PackAuth>
+    <PackBetaModules> $(PowerShellCoreCommandPrefix) &quot; $(RepoTools)/PackBetaModules.ps1 -WorkingDirectory '$(RepoArtifacts)' -ArtifactsLocation '$(ArtifactsLocation)' &quot; </PackBetaModules>
+  </PropertyGroup>
+  <Target Name="Clean">
+    
+  </Target>
+
+  <!-- Build all flavors of the Cmdlets -->
+   <Target Name="GenerateProfiles">
+    <Message Importance="high" Text="Generating Profiles..." />
+    <Message Importance="high" Text="$(GenerateProfiles)"/>
+    <Exec Command="$(GenerateProfiles)" ></Exec>
+  </Target>
+  <Target Name="GenerateAuth">
+    <Message Importance="high" Text="Generating Auth Module..." />
+    <Message Importance="high" Text="$(GenerateAuth)"/>
+    <Exec Command="$(GenerateAuth)" ></Exec>
+  </Target>
+    <Target Name="PackAuth">
+    <Message Importance="high" Text="Packing Modules..." />
+    <Message Importance="high" Text="$(PackAuth)"/>
+    <Exec Command="$(PackAuth)"/>
+  </Target>
+  <Target Name="GenerateModules">
+    <Message Importance="high" Text="Generating Modules..." />
+    <Message Importance="high" Text="$(GenerateModules)"/>
+    <Exec Command="$(GenerateModules)" ></Exec>
+  </Target>
+    <Target Name="PackBetaModules">
+    <Message Importance="high" Text="Packing Modules..." />
+    <Message Importance="high" Text="$(PackBetaModules)"/>
+    <Exec Command="$(PackBetaModules)"/>
+  </Target>
+  <Target Name="GenerateRollup">
+    <Message Importance="high" Text="Generating Roll-Up Module..." />
+    <Message Importance="high" Text="$(GenerateRollup)"/>
+    <Exec Command="$(GenerateRollup)" ></Exec>
+  </Target>
+
+  <Target Name="Full" DependsOnTargets="GenerateProfiles;GenerateAuth;PackAuth;GenerateModules;GenerateRollup;PackAuth;" />
+</Project>

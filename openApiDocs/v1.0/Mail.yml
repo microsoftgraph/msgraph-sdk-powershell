@@ -53,6 +53,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
+          links:
+            overrides:
+              operationId: users.InferenceClassification.ListOverrides
+              parameters:
+                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -373,16 +378,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - childFolderCount
+                - childFolderCount desc
                 - displayName
                 - displayName desc
                 - parentFolderId
                 - parentFolderId desc
-                - childFolderCount
-                - childFolderCount desc
-                - unreadItemCount
-                - unreadItemCount desc
                 - totalItemCount
                 - totalItemCount desc
+                - unreadItemCount
+                - unreadItemCount desc
               type: string
         - name: $select
           in: query
@@ -395,16 +400,16 @@ paths:
             items:
               enum:
                 - id
+                - childFolderCount
                 - displayName
                 - parentFolderId
-                - childFolderCount
-                - unreadItemCount
                 - totalItemCount
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
+                - unreadItemCount
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -417,11 +422,11 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -508,16 +513,16 @@ paths:
             items:
               enum:
                 - id
+                - childFolderCount
                 - displayName
                 - parentFolderId
-                - childFolderCount
-                - unreadItemCount
                 - totalItemCount
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
+                - unreadItemCount
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -530,11 +535,11 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -543,6 +548,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+          links:
+            childFolders:
+              operationId: users.MailFolders.ListChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+            messageRules:
+              operationId: users.MailFolders.ListMessageRules
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+            messages:
+              operationId: users.MailFolders.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+            multiValueExtendedProperties:
+              operationId: users.MailFolders.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+            singleValueExtendedProperties:
+              operationId: users.MailFolders.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -648,16 +679,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - childFolderCount
+                - childFolderCount desc
                 - displayName
                 - displayName desc
                 - parentFolderId
                 - parentFolderId desc
-                - childFolderCount
-                - childFolderCount desc
-                - unreadItemCount
-                - unreadItemCount desc
                 - totalItemCount
                 - totalItemCount desc
+                - unreadItemCount
+                - unreadItemCount desc
               type: string
         - name: $select
           in: query
@@ -670,16 +701,16 @@ paths:
             items:
               enum:
                 - id
+                - childFolderCount
                 - displayName
                 - parentFolderId
-                - childFolderCount
-                - unreadItemCount
                 - totalItemCount
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
+                - unreadItemCount
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -692,11 +723,11 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -797,16 +828,16 @@ paths:
             items:
               enum:
                 - id
+                - childFolderCount
                 - displayName
                 - parentFolderId
-                - childFolderCount
-                - unreadItemCount
                 - totalItemCount
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
+                - unreadItemCount
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -819,11 +850,11 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - messages
-                - messageRules
                 - childFolders
+                - messageRules
+                - messages
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -832,6 +863,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+          links:
+            childFolders:
+              operationId: users.mailFolders.ChildFolders.ListChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+            messageRules:
+              operationId: users.mailFolders.ChildFolders.ListMessageRules
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+            messages:
+              operationId: users.mailFolders.ChildFolders.ListMessages
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+            multiValueExtendedProperties:
+              operationId: users.mailFolders.ChildFolders.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+            singleValueExtendedProperties:
+              operationId: users.mailFolders.ChildFolders.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -951,22 +1013,22 @@ paths:
               enum:
                 - id
                 - id desc
-                - displayName
-                - displayName desc
-                - sequence
-                - sequence desc
-                - conditions
-                - conditions desc
                 - actions
                 - actions desc
+                - conditions
+                - conditions desc
+                - displayName
+                - displayName desc
                 - exceptions
                 - exceptions desc
-                - isEnabled
-                - isEnabled desc
                 - hasError
                 - hasError desc
+                - isEnabled
+                - isEnabled desc
                 - isReadOnly
                 - isReadOnly desc
+                - sequence
+                - sequence desc
               type: string
         - name: $select
           in: query
@@ -979,14 +1041,14 @@ paths:
             items:
               enum:
                 - id
-                - displayName
-                - sequence
-                - conditions
                 - actions
+                - conditions
+                - displayName
                 - exceptions
-                - isEnabled
                 - hasError
+                - isEnabled
                 - isReadOnly
+                - sequence
               type: string
         - name: $expand
           in: query
@@ -1099,14 +1161,14 @@ paths:
             items:
               enum:
                 - id
-                - displayName
-                - sequence
-                - conditions
                 - actions
+                - conditions
+                - displayName
                 - exceptions
-                - isEnabled
                 - hasError
+                - isEnabled
                 - isReadOnly
+                - sequence
               type: string
         - name: $expand
           in: query
@@ -1246,66 +1308,66 @@ paths:
               enum:
                 - id
                 - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
-                - changeKey
-                - changeKey desc
-                - categories
-                - categories desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - sentDateTime
-                - sentDateTime desc
-                - hasAttachments
-                - hasAttachments desc
-                - internetMessageId
-                - internetMessageId desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - subject
-                - subject desc
+                - bccRecipients
+                - bccRecipients desc
                 - body
                 - body desc
                 - bodyPreview
                 - bodyPreview desc
-                - importance
-                - importance desc
-                - parentFolderId
-                - parentFolderId desc
-                - sender
-                - sender desc
-                - from
-                - from desc
-                - toRecipients
-                - toRecipients desc
                 - ccRecipients
                 - ccRecipients desc
-                - bccRecipients
-                - bccRecipients desc
-                - replyTo
-                - replyTo desc
                 - conversationId
                 - conversationId desc
                 - conversationIndex
                 - conversationIndex desc
-                - uniqueBody
-                - uniqueBody desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - isRead
-                - isRead desc
-                - isDraft
-                - isDraft desc
-                - webLink
-                - webLink desc
-                - inferenceClassification
-                - inferenceClassification desc
                 - flag
                 - flag desc
+                - from
+                - from desc
+                - hasAttachments
+                - hasAttachments desc
+                - importance
+                - importance desc
+                - inferenceClassification
+                - inferenceClassification desc
+                - internetMessageHeaders
+                - internetMessageHeaders desc
+                - internetMessageId
+                - internetMessageId desc
+                - isDeliveryReceiptRequested
+                - isDeliveryReceiptRequested desc
+                - isDraft
+                - isDraft desc
+                - isRead
+                - isRead desc
+                - isReadReceiptRequested
+                - isReadReceiptRequested desc
+                - parentFolderId
+                - parentFolderId desc
+                - receivedDateTime
+                - receivedDateTime desc
+                - replyTo
+                - replyTo desc
+                - sender
+                - sender desc
+                - sentDateTime
+                - sentDateTime desc
+                - subject
+                - subject desc
+                - toRecipients
+                - toRecipients desc
+                - uniqueBody
+                - uniqueBody desc
+                - webLink
+                - webLink desc
               type: string
         - name: $select
           in: query
@@ -1318,40 +1380,40 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - receivedDateTime
-                - sentDateTime
-                - hasAttachments
-                - internetMessageId
-                - internetMessageHeaders
-                - subject
+                - bccRecipients
                 - body
                 - bodyPreview
-                - importance
-                - parentFolderId
-                - sender
-                - from
-                - toRecipients
                 - ccRecipients
-                - bccRecipients
-                - replyTo
                 - conversationId
                 - conversationIndex
-                - uniqueBody
-                - isDeliveryReceiptRequested
-                - isReadReceiptRequested
-                - isRead
-                - isDraft
-                - webLink
-                - inferenceClassification
                 - flag
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1364,10 +1426,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -1468,40 +1530,40 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - receivedDateTime
-                - sentDateTime
-                - hasAttachments
-                - internetMessageId
-                - internetMessageHeaders
-                - subject
+                - bccRecipients
                 - body
                 - bodyPreview
-                - importance
-                - parentFolderId
-                - sender
-                - from
-                - toRecipients
                 - ccRecipients
-                - bccRecipients
-                - replyTo
                 - conversationId
                 - conversationIndex
-                - uniqueBody
-                - isDeliveryReceiptRequested
-                - isReadReceiptRequested
-                - isRead
-                - isDraft
-                - webLink
-                - inferenceClassification
                 - flag
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -1514,10 +1576,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -1526,6 +1588,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
+          links:
+            attachments:
+              operationId: users.mailFolders.Messages.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                message-id: $request.path.message-id
+            extensions:
+              operationId: users.mailFolders.Messages.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                message-id: $request.path.message-id
+            multiValueExtendedProperties:
+              operationId: users.mailFolders.Messages.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                message-id: $request.path.message-id
+            singleValueExtendedProperties:
+              operationId: users.mailFolders.Messages.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                message-id: $request.path.message-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1652,16 +1739,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - contentType
+                - contentType desc
+                - isInline
+                - isInline desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - name
                 - name desc
-                - contentType
-                - contentType desc
                 - size
                 - size desc
-                - isInline
-                - isInline desc
               type: string
         - name: $select
           in: query
@@ -1674,11 +1761,11 @@ paths:
             items:
               enum:
                 - id
+                - contentType
+                - isInline
                 - lastModifiedDateTime
                 - name
-                - contentType
                 - size
-                - isInline
               type: string
         - name: $expand
           in: query
@@ -1805,11 +1892,11 @@ paths:
             items:
               enum:
                 - id
+                - contentType
+                - isInline
                 - lastModifiedDateTime
                 - name
-                - contentType
                 - size
-                - isInline
               type: string
         - name: $expand
           in: query
@@ -3392,66 +3479,66 @@ paths:
               enum:
                 - id
                 - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
-                - changeKey
-                - changeKey desc
-                - categories
-                - categories desc
-                - receivedDateTime
-                - receivedDateTime desc
-                - sentDateTime
-                - sentDateTime desc
-                - hasAttachments
-                - hasAttachments desc
-                - internetMessageId
-                - internetMessageId desc
-                - internetMessageHeaders
-                - internetMessageHeaders desc
-                - subject
-                - subject desc
+                - bccRecipients
+                - bccRecipients desc
                 - body
                 - body desc
                 - bodyPreview
                 - bodyPreview desc
-                - importance
-                - importance desc
-                - parentFolderId
-                - parentFolderId desc
-                - sender
-                - sender desc
-                - from
-                - from desc
-                - toRecipients
-                - toRecipients desc
                 - ccRecipients
                 - ccRecipients desc
-                - bccRecipients
-                - bccRecipients desc
-                - replyTo
-                - replyTo desc
                 - conversationId
                 - conversationId desc
                 - conversationIndex
                 - conversationIndex desc
-                - uniqueBody
-                - uniqueBody desc
-                - isDeliveryReceiptRequested
-                - isDeliveryReceiptRequested desc
-                - isReadReceiptRequested
-                - isReadReceiptRequested desc
-                - isRead
-                - isRead desc
-                - isDraft
-                - isDraft desc
-                - webLink
-                - webLink desc
-                - inferenceClassification
-                - inferenceClassification desc
                 - flag
                 - flag desc
+                - from
+                - from desc
+                - hasAttachments
+                - hasAttachments desc
+                - importance
+                - importance desc
+                - inferenceClassification
+                - inferenceClassification desc
+                - internetMessageHeaders
+                - internetMessageHeaders desc
+                - internetMessageId
+                - internetMessageId desc
+                - isDeliveryReceiptRequested
+                - isDeliveryReceiptRequested desc
+                - isDraft
+                - isDraft desc
+                - isRead
+                - isRead desc
+                - isReadReceiptRequested
+                - isReadReceiptRequested desc
+                - parentFolderId
+                - parentFolderId desc
+                - receivedDateTime
+                - receivedDateTime desc
+                - replyTo
+                - replyTo desc
+                - sender
+                - sender desc
+                - sentDateTime
+                - sentDateTime desc
+                - subject
+                - subject desc
+                - toRecipients
+                - toRecipients desc
+                - uniqueBody
+                - uniqueBody desc
+                - webLink
+                - webLink desc
               type: string
         - name: $select
           in: query
@@ -3464,40 +3551,40 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - receivedDateTime
-                - sentDateTime
-                - hasAttachments
-                - internetMessageId
-                - internetMessageHeaders
-                - subject
+                - bccRecipients
                 - body
                 - bodyPreview
-                - importance
-                - parentFolderId
-                - sender
-                - from
-                - toRecipients
                 - ccRecipients
-                - bccRecipients
-                - replyTo
                 - conversationId
                 - conversationIndex
-                - uniqueBody
-                - isDeliveryReceiptRequested
-                - isReadReceiptRequested
-                - isRead
-                - isDraft
-                - webLink
-                - inferenceClassification
                 - flag
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3510,10 +3597,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -3600,40 +3687,40 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - receivedDateTime
-                - sentDateTime
-                - hasAttachments
-                - internetMessageId
-                - internetMessageHeaders
-                - subject
+                - bccRecipients
                 - body
                 - bodyPreview
-                - importance
-                - parentFolderId
-                - sender
-                - from
-                - toRecipients
                 - ccRecipients
-                - bccRecipients
-                - replyTo
                 - conversationId
                 - conversationIndex
-                - uniqueBody
-                - isDeliveryReceiptRequested
-                - isReadReceiptRequested
-                - isRead
-                - isDraft
-                - webLink
-                - inferenceClassification
                 - flag
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -3646,10 +3733,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
                 - attachments
                 - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -3658,6 +3745,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
+          links:
+            attachments:
+              operationId: users.Messages.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                message-id: $request.path.message-id
+            extensions:
+              operationId: users.Messages.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                message-id: $request.path.message-id
+            multiValueExtendedProperties:
+              operationId: users.Messages.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                message-id: $request.path.message-id
+            singleValueExtendedProperties:
+              operationId: users.Messages.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                message-id: $request.path.message-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3763,16 +3871,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - contentType
+                - contentType desc
+                - isInline
+                - isInline desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - name
                 - name desc
-                - contentType
-                - contentType desc
                 - size
                 - size desc
-                - isInline
-                - isInline desc
               type: string
         - name: $select
           in: query
@@ -3785,11 +3893,11 @@ paths:
             items:
               enum:
                 - id
+                - contentType
+                - isInline
                 - lastModifiedDateTime
                 - name
-                - contentType
                 - size
-                - isInline
               type: string
         - name: $expand
           in: query
@@ -3902,11 +4010,11 @@ paths:
             items:
               enum:
                 - id
+                - contentType
+                - isInline
                 - lastModifiedDateTime
                 - name
-                - contentType
                 - size
-                - isInline
               type: string
         - name: $expand
           in: query
@@ -4838,6 +4946,13 @@ components:
         - title: mailFolder
           type: object
           properties:
+            childFolderCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of immediate child mailFolders in the current mailFolder.
+              format: int32
+              nullable: true
             displayName:
               type: string
               description: The mailFolder's display name.
@@ -4846,11 +4961,11 @@ components:
               type: string
               description: The unique identifier for the mailFolder's parent mailFolder.
               nullable: true
-            childFolderCount:
+            totalItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The number of immediate child mailFolders in the current mailFolder.
+              description: The number of items in the mailFolder.
               format: int32
               nullable: true
             unreadItemCount:
@@ -4860,38 +4975,31 @@ components:
               description: The number of items in the mailFolder marked as unread.
               format: int32
               nullable: true
-            totalItemCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The number of items in the mailFolder.
-              format: int32
-              nullable: true
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-            multiValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-              description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-            messages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.message'
-              description: The collection of messages in the mailFolder.
-            messageRules:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.messageRule'
-              description: The collection of rules that apply to the user's Inbox folder.
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
+            messageRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.messageRule'
+              description: The collection of rules that apply to the user's Inbox folder.
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.message'
+              description: The collection of messages in the mailFolder.
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.messageRule:
@@ -4900,9 +5008,27 @@ components:
         - title: messageRule
           type: object
           properties:
+            actions:
+              $ref: '#/components/schemas/microsoft.graph.messageRuleActions'
+            conditions:
+              $ref: '#/components/schemas/microsoft.graph.messageRulePredicates'
             displayName:
               type: string
               description: The display name of the rule.
+              nullable: true
+            exceptions:
+              $ref: '#/components/schemas/microsoft.graph.messageRulePredicates'
+            hasError:
+              type: boolean
+              description: Indicates whether the rule is in an error condition. Read-only.
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Indicates whether the rule is enabled to be applied to messages.
+              nullable: true
+            isReadOnly:
+              type: boolean
+              description: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
               nullable: true
             sequence:
               maximum: 2147483647
@@ -4910,24 +5036,6 @@ components:
               type: integer
               description: 'Indicates the order in which the rule is executed, among other rules.'
               format: int32
-              nullable: true
-            conditions:
-              $ref: '#/components/schemas/microsoft.graph.messageRulePredicates'
-            actions:
-              $ref: '#/components/schemas/microsoft.graph.messageRuleActions'
-            exceptions:
-              $ref: '#/components/schemas/microsoft.graph.messageRulePredicates'
-            isEnabled:
-              type: boolean
-              description: Indicates whether the rule is enabled to be applied to messages.
-              nullable: true
-            hasError:
-              type: boolean
-              description: Indicates whether the rule is in an error condition. Read-only.
-              nullable: true
-            isReadOnly:
-              type: boolean
-              description: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
               nullable: true
           additionalProperties:
             type: object
@@ -4937,71 +5045,22 @@ components:
         - title: message
           type: object
           properties:
-            receivedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the message was received.
-              format: date-time
-              nullable: true
-            sentDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time the message was sent.
-              format: date-time
-              nullable: true
-            hasAttachments:
-              type: boolean
-              description: 'Indicates whether the message has attachments. This property doesn''t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src=''cid:image001.jpg@01D26CD8.6C05F070''>.'
-              nullable: true
-            internetMessageId:
-              type: string
-              description: The message ID in the format specified by RFC2822.
-              nullable: true
-            internetMessageHeaders:
+            bccRecipients:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
-              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
-            subject:
-              type: string
-              description: The subject of the message.
-              nullable: true
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The Bcc: recipients for the message.'
             body:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
               description: The first 255 characters of the message body. It is in text format.
               nullable: true
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.importance'
-            parentFolderId:
-              type: string
-              description: The unique identifier for the message's parent mailFolder.
-              nullable: true
-            sender:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            from:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            toRecipients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: 'The To: recipients for the message.'
             ccRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
               description: 'The Cc: recipients for the message.'
-            bccRecipients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: 'The Bcc: recipients for the message.'
-            replyTo:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: The email addresses to use when replying.
             conversationId:
               type: string
               description: The ID of the conversation the email belongs to.
@@ -5011,42 +5070,81 @@ components:
               description: Indicates the position of the message within the conversation.
               format: base64url
               nullable: true
-            uniqueBody:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            flag:
+              $ref: '#/components/schemas/microsoft.graph.followupFlag'
+            from:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            hasAttachments:
+              type: boolean
+              description: 'Indicates whether the message has attachments. This property doesn''t include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src=''cid:image001.jpg@01D26CD8.6C05F070''>.'
+              nullable: true
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            inferenceClassification:
+              $ref: '#/components/schemas/microsoft.graph.inferenceClassificationType'
+            internetMessageHeaders:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
+              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
+            internetMessageId:
+              type: string
+              description: The message ID in the format specified by RFC2822.
+              nullable: true
             isDeliveryReceiptRequested:
               type: boolean
               description: Indicates whether a read receipt is requested for the message.
-              nullable: true
-            isReadReceiptRequested:
-              type: boolean
-              description: Indicates whether a read receipt is requested for the message.
-              nullable: true
-            isRead:
-              type: boolean
-              description: Indicates whether the message has been read.
               nullable: true
             isDraft:
               type: boolean
               description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
+            isRead:
+              type: boolean
+              description: Indicates whether the message has been read.
+              nullable: true
+            isReadReceiptRequested:
+              type: boolean
+              description: Indicates whether a read receipt is requested for the message.
+              nullable: true
+            parentFolderId:
+              type: string
+              description: The unique identifier for the message's parent mailFolder.
+              nullable: true
+            receivedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the message was received.
+              format: date-time
+              nullable: true
+            replyTo:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: The email addresses to use when replying.
+            sender:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            sentDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the message was sent.
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              description: The subject of the message.
+              nullable: true
+            toRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: 'The To: recipients for the message.'
+            uniqueBody:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
               description: 'The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.'
               nullable: true
-            inferenceClassification:
-              $ref: '#/components/schemas/microsoft.graph.inferenceClassificationType'
-            flag:
-              $ref: '#/components/schemas/microsoft.graph.followupFlag'
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the message. Nullable.
-            multiValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-              description: The collection of multi-value extended properties defined for the message. Nullable.
             attachments:
               type: array
               items:
@@ -5057,6 +5155,16 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the message. Nullable.
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the message. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.attachment:
@@ -5065,6 +5173,13 @@ components:
         - title: attachment
           type: object
           properties:
+            contentType:
+              type: string
+              description: The MIME type.
+              nullable: true
+            isInline:
+              type: boolean
+              description: 'true if the attachment is an inline attachment; otherwise, false.'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5075,19 +5190,12 @@ components:
               type: string
               description: The attachment's file name.
               nullable: true
-            contentType:
-              type: string
-              description: The MIME type.
-              nullable: true
             size:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
               description: The length of the attachment in bytes.
               format: int32
-            isInline:
-              type: boolean
-              description: 'true if the attachment is an inline attachment; otherwise, false.'
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -5142,13 +5250,66 @@ components:
       title: emailAddress
       type: object
       properties:
+        address:
+          type: string
+          description: The email address of the person or entity.
+          nullable: true
         name:
           type: string
           description: The display name of the person or entity.
           nullable: true
-        address:
+      additionalProperties:
+        type: object
+    microsoft.graph.messageRuleActions:
+      title: messageRuleActions
+      type: object
+      properties:
+        assignCategories:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of categories to be assigned to a message.
+        copyToFolder:
           type: string
-          description: The email address of the person or entity.
+          description: The ID of a folder that a message is to be copied to.
+          nullable: true
+        delete:
+          type: boolean
+          description: Indicates whether a message should be moved to the Deleted Items folder.
+          nullable: true
+        forwardAsAttachmentTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses of the recipients to which a message should be forwarded as an attachment.
+        forwardTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses of the recipients to which a message should be forwarded.
+        markAsRead:
+          type: boolean
+          description: Indicates whether a message should be marked as read.
+          nullable: true
+        markImportance:
+          $ref: '#/components/schemas/microsoft.graph.importance'
+        moveToFolder:
+          type: string
+          description: The ID of the folder that a message will be moved to.
+          nullable: true
+        permanentDelete:
+          type: boolean
+          description: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
+          nullable: true
+        redirectTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: The email addresses to which a message should be redirected.
+        stopProcessingRules:
+          type: boolean
+          description: Indicates whether subsequent rules should be evaluated.
           nullable: true
       additionalProperties:
         type: object
@@ -5156,18 +5317,6 @@ components:
       title: messageRulePredicates
       type: object
       properties:
-        categories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
-        subjectContains:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
         bodyContains:
           type: array
           items:
@@ -5180,64 +5329,29 @@ components:
             type: string
             nullable: true
           description: Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-        senderContains:
+        categories:
           type: array
           items:
             type: string
             nullable: true
-          description: Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-        recipientContains:
+          description: Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
+        fromAddresses:
           type: array
           items:
-            type: string
-            nullable: true
-          description: Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
+        hasAttachments:
+          type: boolean
+          description: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
+          nullable: true
         headerContains:
           type: array
           items:
             type: string
             nullable: true
           description: Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-        messageActionFlag:
-          $ref: '#/components/schemas/microsoft.graph.messageActionFlag'
         importance:
           $ref: '#/components/schemas/microsoft.graph.importance'
-        sensitivity:
-          $ref: '#/components/schemas/microsoft.graph.sensitivity'
-        fromAddresses:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-        sentToAddresses:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-        sentToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentOnlyToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentCcMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        sentToOrCcMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        notSentToMe:
-          type: boolean
-          description: Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-          nullable: true
-        hasAttachments:
-          type: boolean
-          description: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-          nullable: true
         isApprovalRequest:
           type: boolean
           description: Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
@@ -5282,61 +5396,55 @@ components:
           type: boolean
           description: Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
           nullable: true
-        withinSizeRange:
-          $ref: '#/components/schemas/microsoft.graph.sizeRange'
-      additionalProperties:
-        type: object
-    microsoft.graph.messageRuleActions:
-      title: messageRuleActions
-      type: object
-      properties:
-        moveToFolder:
-          type: string
-          description: The ID of the folder that a message will be moved to.
-          nullable: true
-        copyToFolder:
-          type: string
-          description: The ID of a folder that a message is to be copied to.
-          nullable: true
-        delete:
+        messageActionFlag:
+          $ref: '#/components/schemas/microsoft.graph.messageActionFlag'
+        notSentToMe:
           type: boolean
-          description: Indicates whether a message should be moved to the Deleted Items folder.
+          description: Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
           nullable: true
-        permanentDelete:
-          type: boolean
-          description: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-          nullable: true
-        markAsRead:
-          type: boolean
-          description: Indicates whether a message should be marked as read.
-          nullable: true
-        markImportance:
-          $ref: '#/components/schemas/microsoft.graph.importance'
-        forwardTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses of the recipients to which a message should be forwarded.
-        forwardAsAttachmentTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses of the recipients to which a message should be forwarded as an attachment.
-        redirectTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email addresses to which a message should be redirected.
-        assignCategories:
+        recipientContains:
           type: array
           items:
             type: string
             nullable: true
-          description: A list of categories to be assigned to a message.
-        stopProcessingRules:
+          description: Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
+        senderContains:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
+        sensitivity:
+          $ref: '#/components/schemas/microsoft.graph.sensitivity'
+        sentCcMe:
           type: boolean
-          description: Indicates whether subsequent rules should be evaluated.
+          description: Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
           nullable: true
+        sentOnlyToMe:
+          type: boolean
+          description: Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
+          nullable: true
+        sentToAddresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.recipient'
+          description: Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
+        sentToMe:
+          type: boolean
+          description: Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
+          nullable: true
+        sentToOrCcMe:
+          type: boolean
+          description: Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
+          nullable: true
+        subjectContains:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
+        withinSizeRange:
+          $ref: '#/components/schemas/microsoft.graph.sizeRange'
       additionalProperties:
         type: object
     microsoft.graph.outlookItem:
@@ -5345,6 +5453,16 @@ components:
         - title: outlookItem
           type: object
           properties:
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The categories associated with the item
+            changeKey:
+              type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5357,18 +5475,49 @@ components:
               description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
-            changeKey:
-              type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
-              nullable: true
-            categories:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The categories associated with the item
           additionalProperties:
             type: object
+    microsoft.graph.recipient:
+      title: recipient
+      type: object
+      properties:
+        emailAddress:
+          $ref: '#/components/schemas/microsoft.graph.emailAddress'
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.followupFlag:
+      title: followupFlag
+      type: object
+      properties:
+        completedDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        dueDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        flagStatus:
+          $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
+        startDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.importance:
+      title: importance
+      enum:
+        - low
+        - normal
+        - high
+      type: string
     microsoft.graph.internetMessageHeader:
       title: internetMessageHeader
       type: object
@@ -5381,47 +5530,6 @@ components:
           type: string
           description: The value in a key-value pair.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.importance:
-      title: importance
-      enum:
-        - low
-        - normal
-        - high
-      type: string
-    microsoft.graph.recipient:
-      title: recipient
-      type: object
-      properties:
-        emailAddress:
-          $ref: '#/components/schemas/microsoft.graph.emailAddress'
-      additionalProperties:
-        type: object
-    microsoft.graph.followupFlag:
-      title: followupFlag
-      type: object
-      properties:
-        completedDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        dueDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        startDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-        flagStatus:
-          $ref: '#/components/schemas/microsoft.graph.followupFlagStatus'
       additionalProperties:
         type: object
     odata.error:
@@ -5460,18 +5568,18 @@ components:
       title: sizeRange
       type: object
       properties:
-        minimumSize:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
-          format: int32
-          nullable: true
         maximumSize:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           description: The maximum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
+          format: int32
+          nullable: true
+        minimumSize:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The minimum size (in kilobytes) that an incoming message must have in order for a condition or exception to apply.
           format: int32
           nullable: true
       additionalProperties:

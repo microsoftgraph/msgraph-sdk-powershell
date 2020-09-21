@@ -25,13 +25,13 @@ paths:
               enum:
                 - id
                 - settings
-                - services
-                - printers
                 - connectors
-                - shares
+                - operations
+                - printers
                 - printerShares
                 - reports
-                - operations
+                - services
+                - shares
                 - taskDefinitions
               type: string
         - name: $expand
@@ -45,13 +45,13 @@ paths:
             items:
               enum:
                 - '*'
-                - services
-                - printers
                 - connectors
-                - shares
+                - operations
+                - printers
                 - printerShares
                 - reports
-                - operations
+                - services
+                - shares
                 - taskDefinitions
               type: string
       responses:
@@ -61,6 +61,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.print'
+          links:
+            connectors:
+              operationId: print.ListConnectors
+            operations:
+              operationId: print.ListOperations
+            printers:
+              operationId: print.ListPrinters
+            printerShares:
+              operationId: print.ListPrinterShares
+            reports:
+              operationId: print.ListReports
+            services:
+              operationId: print.ListServices
+            shares:
+              operationId: print.ListShares
+            taskDefinitions:
+              operationId: print.ListTaskDefinitions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -106,18 +123,18 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - operatingSystem
-                - operatingSystem desc
                 - appVersion
                 - appVersion desc
                 - deviceHealth
                 - deviceHealth desc
+                - fullyQualifiedDomainName
+                - fullyQualifiedDomainName desc
                 - location
                 - location desc
+                - name
+                - name desc
+                - operatingSystem
+                - operatingSystem desc
                 - registeredDateTime
                 - registeredDateTime desc
               type: string
@@ -132,12 +149,12 @@ paths:
             items:
               enum:
                 - id
-                - name
-                - fullyQualifiedDomainName
-                - operatingSystem
                 - appVersion
                 - deviceHealth
+                - fullyQualifiedDomainName
                 - location
+                - name
+                - operatingSystem
                 - registeredDateTime
               type: string
         - name: $expand
@@ -222,12 +239,12 @@ paths:
             items:
               enum:
                 - id
-                - name
-                - fullyQualifiedDomainName
-                - operatingSystem
                 - appVersion
                 - deviceHealth
+                - fullyQualifiedDomainName
                 - location
+                - name
+                - operatingSystem
                 - registeredDateTime
               type: string
         - name: $expand
@@ -326,10 +343,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - status
-                - status desc
                 - createdDateTime
                 - createdDateTime desc
+                - status
+                - status desc
               type: string
         - name: $select
           in: query
@@ -342,8 +359,8 @@ paths:
             items:
               enum:
                 - id
-                - status
                 - createdDateTime
+                - status
               type: string
         - name: $expand
           in: query
@@ -427,8 +444,8 @@ paths:
             items:
               enum:
                 - id
-                - status
                 - createdDateTime
+                - status
               type: string
         - name: $expand
           in: query
@@ -526,28 +543,28 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
+                - capabilities
+                - capabilities desc
+                - defaults
+                - defaults desc
+                - isAcceptingJobs
+                - isAcceptingJobs desc
+                - location
+                - location desc
                 - manufacturer
                 - manufacturer desc
                 - model
                 - model desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - defaults
-                - defaults desc
-                - location
-                - location desc
-                - capabilities
-                - capabilities desc
+                - name
+                - name desc
                 - status
                 - status desc
-                - registeredDateTime
-                - registeredDateTime desc
-                - isShared
-                - isShared desc
                 - acceptingJobs
                 - acceptingJobs desc
+                - isShared
+                - isShared desc
+                - registeredDateTime
+                - registeredDateTime desc
               type: string
         - name: $select
           in: query
@@ -560,22 +577,22 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
-                - registeredDateTime
-                - isShared
                 - acceptingJobs
+                - isShared
+                - registeredDateTime
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
         - name: $expand
@@ -590,10 +607,10 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
       responses:
@@ -666,22 +683,22 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
-                - registeredDateTime
-                - isShared
                 - acceptingJobs
+                - isShared
+                - registeredDateTime
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
         - name: $expand
@@ -696,10 +713,10 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
       responses:
@@ -709,6 +726,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
+          links:
+            jobs:
+              operationId: print.Printers.ListJobs
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedGroups:
+              operationId: print.Printers.ListAllowedGroups
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedUsers:
+              operationId: print.Printers.ListAllowedUsers
+              parameters:
+                printer-id: $request.path.printer-id
+            connectors:
+              operationId: print.Printers.ListConnectors
+              parameters:
+                printer-id: $request.path.printer-id
+            share:
+              operationId: print.Printers.GetShare
+              parameters:
+                printer-id: $request.path.printer-id
+            taskTriggers:
+              operationId: print.Printers.ListTaskTriggers
+              parameters:
+                printer-id: $request.path.printer-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1265,18 +1307,18 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - operatingSystem
-                - operatingSystem desc
                 - appVersion
                 - appVersion desc
                 - deviceHealth
                 - deviceHealth desc
+                - fullyQualifiedDomainName
+                - fullyQualifiedDomainName desc
                 - location
                 - location desc
+                - name
+                - name desc
+                - operatingSystem
+                - operatingSystem desc
                 - registeredDateTime
                 - registeredDateTime desc
               type: string
@@ -1291,12 +1333,12 @@ paths:
             items:
               enum:
                 - id
-                - name
-                - fullyQualifiedDomainName
-                - operatingSystem
                 - appVersion
                 - deviceHealth
+                - fullyQualifiedDomainName
                 - location
+                - name
+                - operatingSystem
                 - registeredDateTime
               type: string
         - name: $expand
@@ -1334,68 +1376,6 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/print/printers/{printer-id}/connectors/{printConnector-id}':
-    get:
-      tags:
-        - print.printer
-      summary: Get connectors from print
-      operationId: print.printers_GetConnectors
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printConnector-id
-          in: path
-          description: 'key: id of printConnector'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printConnector
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - name
-                - fullyQualifiedDomainName
-                - operatingSystem
-                - appVersion
-                - deviceHealth
-                - location
-                - registeredDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.printConnector'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/connectors/$ref':
     get:
       tags:
@@ -1427,18 +1407,18 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
-                - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
-                - operatingSystem
-                - operatingSystem desc
                 - appVersion
                 - appVersion desc
                 - deviceHealth
                 - deviceHealth desc
+                - fullyQualifiedDomainName
+                - fullyQualifiedDomainName desc
                 - location
                 - location desc
+                - name
+                - name desc
+                - operatingSystem
+                - operatingSystem desc
                 - registeredDateTime
                 - registeredDateTime desc
               type: string
@@ -1568,20 +1548,20 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
                 - allowAllUsers
                 - createdDateTime
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
         - name: $expand
           in: query
@@ -1595,9 +1575,9 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
@@ -1606,6 +1586,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
+          links:
+            jobs:
+              operationId: print.printers.Share.ListJobs
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedGroups:
+              operationId: print.printers.Share.ListAllowedGroups
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedUsers:
+              operationId: print.printers.Share.ListAllowedUsers
+              parameters:
+                printer-id: $request.path.printer-id
+            printer:
+              operationId: print.printers.Share.GetPrinter
+              parameters:
+                printer-id: $request.path.printer-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1630,6 +1627,23 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            jobs:
+              operationId: print.printers.Share.ListJobs
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedGroups:
+              operationId: print.printers.Share.ListAllowedGroups
+              parameters:
+                printer-id: $request.path.printer-id
+            allowedUsers:
+              operationId: print.printers.Share.ListAllowedUsers
+              parameters:
+                printer-id: $request.path.printer-id
+            printer:
+              operationId: print.printers.Share.GetPrinter
+              parameters:
+                printer-id: $request.path.printer-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1854,6 +1868,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          links:
+            definition:
+              operationId: print.printers.TaskTriggers.GetDefinition
+              parameters:
+                printer-id: $request.path.printer-id
+                printTaskTrigger-id: $request.path.printTaskTrigger-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1953,8 +1973,8 @@ paths:
             items:
               enum:
                 - id
-                - displayName
                 - createdBy
+                - displayName
                 - tasks
               type: string
         - name: $expand
@@ -1977,6 +1997,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          links:
+            tasks:
+              operationId: print.printers.taskTriggers.Definition.ListTasks
+              parameters:
+                printer-id: $request.path.printer-id
+                printTaskTrigger-id: $request.path.printTaskTrigger-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2008,6 +2034,12 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            tasks:
+              operationId: print.printers.taskTriggers.Definition.ListTasks
+              parameters:
+                printer-id: $request.path.printer-id
+                printTaskTrigger-id: $request.path.printTaskTrigger-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2141,20 +2173,20 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
+                - capabilities
+                - capabilities desc
+                - defaults
+                - defaults desc
+                - isAcceptingJobs
+                - isAcceptingJobs desc
+                - location
+                - location desc
                 - manufacturer
                 - manufacturer desc
                 - model
                 - model desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - defaults
-                - defaults desc
-                - location
-                - location desc
-                - capabilities
-                - capabilities desc
+                - name
+                - name desc
                 - status
                 - status desc
                 - allowAllUsers
@@ -2173,20 +2205,20 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
                 - allowAllUsers
                 - createdDateTime
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
         - name: $expand
           in: query
@@ -2200,9 +2232,9 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
@@ -2274,20 +2306,20 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
                 - allowAllUsers
                 - createdDateTime
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
         - name: $expand
           in: query
@@ -2301,9 +2333,9 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
@@ -2312,6 +2344,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
+          links:
+            jobs:
+              operationId: print.PrinterShares.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.PrinterShares.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.PrinterShares.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            printer:
+              operationId: print.PrinterShares.GetPrinter
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2862,22 +2911,22 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
-                - registeredDateTime
-                - isShared
                 - acceptingJobs
+                - isShared
+                - registeredDateTime
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
         - name: $expand
@@ -2892,10 +2941,10 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
       responses:
@@ -2905,6 +2954,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
+          links:
+            jobs:
+              operationId: print.printerShares.Printer.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.printerShares.Printer.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.printerShares.Printer.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            connectors:
+              operationId: print.printerShares.Printer.ListConnectors
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            share:
+              operationId: print.printerShares.Printer.GetShare
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            taskTriggers:
+              operationId: print.printerShares.Printer.ListTaskTriggers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2929,6 +3003,31 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            jobs:
+              operationId: print.printerShares.Printer.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.printerShares.Printer.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.printerShares.Printer.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            connectors:
+              operationId: print.printerShares.Printer.ListConnectors
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            share:
+              operationId: print.printerShares.Printer.GetShare
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            taskTriggers:
+              operationId: print.printerShares.Printer.ListTaskTriggers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3067,10 +3166,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
         - name: $expand
           in: query
@@ -3086,10 +3185,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
       responses:
         '200':
@@ -3164,10 +3263,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
         - name: $expand
           in: query
@@ -3183,10 +3282,10 @@ paths:
                 - applicationSignInDetailedSummary
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
-                - dailyPrintUsageSummariesByUser
-                - monthlyPrintUsageSummariesByUser
                 - dailyPrintUsageSummariesByPrinter
+                - dailyPrintUsageSummariesByUser
                 - monthlyPrintUsageSummariesByPrinter
+                - monthlyPrintUsageSummariesByUser
               type: string
       responses:
         '200':
@@ -3195,6 +3294,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
+          links:
+            applicationSignInDetailedSummary:
+              operationId: print.Reports.ListApplicationSignInDetailedSummary
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            credentialUserRegistrationDetails:
+              operationId: print.Reports.ListCredentialUserRegistrationDetails
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            userCredentialUsageDetails:
+              operationId: print.Reports.ListUserCredentialUsageDetails
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            dailyPrintUsageSummariesByPrinter:
+              operationId: print.Reports.ListDailyPrintUsageSummariesByPrinter
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            dailyPrintUsageSummariesByUser:
+              operationId: print.Reports.ListDailyPrintUsageSummariesByUser
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            monthlyPrintUsageSummariesByPrinter:
+              operationId: print.Reports.ListMonthlyPrintUsageSummariesByPrinter
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
+            monthlyPrintUsageSummariesByUser:
+              operationId: print.Reports.ListMonthlyPrintUsageSummariesByUser
+              parameters:
+                reportRoot-id: $request.path.reportRoot-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3806,6 +3934,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printService'
+          links:
+            endpoints:
+              operationId: print.Services.ListEndpoints
+              parameters:
+                printService-id: $request.path.printService-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4119,20 +4252,20 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
+                - capabilities
+                - capabilities desc
+                - defaults
+                - defaults desc
+                - isAcceptingJobs
+                - isAcceptingJobs desc
+                - location
+                - location desc
                 - manufacturer
                 - manufacturer desc
                 - model
                 - model desc
-                - isAcceptingJobs
-                - isAcceptingJobs desc
-                - defaults
-                - defaults desc
-                - location
-                - location desc
-                - capabilities
-                - capabilities desc
+                - name
+                - name desc
                 - status
                 - status desc
                 - allowAllUsers
@@ -4151,20 +4284,20 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
                 - allowAllUsers
                 - createdDateTime
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
         - name: $expand
           in: query
@@ -4178,9 +4311,9 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
@@ -4252,20 +4385,20 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
                 - allowAllUsers
                 - createdDateTime
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
         - name: $expand
           in: query
@@ -4279,9 +4412,9 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - printer
-                - allowedUsers
                 - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
@@ -4290,6 +4423,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
+          links:
+            jobs:
+              operationId: print.Shares.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.Shares.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.Shares.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            printer:
+              operationId: print.Shares.GetPrinter
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4840,22 +4990,22 @@ paths:
             items:
               enum:
                 - id
-                - name
+                - capabilities
+                - defaults
+                - isAcceptingJobs
+                - location
                 - manufacturer
                 - model
-                - isAcceptingJobs
-                - defaults
-                - location
-                - capabilities
+                - name
                 - status
-                - registeredDateTime
-                - isShared
                 - acceptingJobs
+                - isShared
+                - registeredDateTime
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
         - name: $expand
@@ -4870,10 +5020,10 @@ paths:
               enum:
                 - '*'
                 - jobs
-                - allowedUsers
                 - allowedGroups
-                - share
+                - allowedUsers
                 - connectors
+                - share
                 - taskTriggers
               type: string
       responses:
@@ -4883,6 +5033,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
+          links:
+            jobs:
+              operationId: print.shares.Printer.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.shares.Printer.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.shares.Printer.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            connectors:
+              operationId: print.shares.Printer.ListConnectors
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            share:
+              operationId: print.shares.Printer.GetShare
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            taskTriggers:
+              operationId: print.shares.Printer.ListTaskTriggers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4907,6 +5082,31 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            jobs:
+              operationId: print.shares.Printer.ListJobs
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedGroups:
+              operationId: print.shares.Printer.ListAllowedGroups
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            allowedUsers:
+              operationId: print.shares.Printer.ListAllowedUsers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            connectors:
+              operationId: print.shares.Printer.ListConnectors
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            share:
+              operationId: print.shares.Printer.GetShare
+              parameters:
+                printerShare-id: $request.path.printerShare-id
+            taskTriggers:
+              operationId: print.shares.Printer.ListTaskTriggers
+              parameters:
+                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5030,10 +5230,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - displayName
-                - displayName desc
                 - createdBy
                 - createdBy desc
+                - displayName
+                - displayName desc
               type: string
         - name: $select
           in: query
@@ -5046,8 +5246,8 @@ paths:
             items:
               enum:
                 - id
-                - displayName
                 - createdBy
+                - displayName
                 - tasks
               type: string
         - name: $expand
@@ -5133,8 +5333,8 @@ paths:
             items:
               enum:
                 - id
-                - displayName
                 - createdBy
+                - displayName
                 - tasks
               type: string
         - name: $expand
@@ -5157,6 +5357,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          links:
+            tasks:
+              operationId: print.TaskDefinitions.ListTasks
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5241,10 +5446,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - status
-                - status desc
                 - parentUrl
                 - parentUrl desc
+                - status
+                - status desc
               type: string
         - name: $select
           in: query
@@ -5257,8 +5462,8 @@ paths:
             items:
               enum:
                 - id
-                - status
                 - parentUrl
+                - status
                 - definition
                 - trigger
               type: string
@@ -5361,8 +5566,8 @@ paths:
             items:
               enum:
                 - id
-                - status
                 - parentUrl
+                - status
                 - definition
                 - trigger
               type: string
@@ -5387,6 +5592,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
+          links:
+            definition:
+              operationId: print.taskDefinitions.Tasks.GetDefinition
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
+            trigger:
+              operationId: print.taskDefinitions.Tasks.GetTrigger
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5486,8 +5702,8 @@ paths:
             items:
               enum:
                 - id
-                - displayName
                 - createdBy
+                - displayName
                 - tasks
               type: string
         - name: $expand
@@ -5510,6 +5726,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          links:
+            tasks:
+              operationId: print.taskDefinitions.tasks.Definition.ListTasks
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5541,6 +5763,12 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            tasks:
+              operationId: print.taskDefinitions.tasks.Definition.ListTasks
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5665,6 +5893,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          links:
+            definition:
+              operationId: print.taskDefinitions.tasks.Trigger.GetDefinition
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5696,6 +5930,12 @@ paths:
             application/json:
               schema:
                 type: string
+          links:
+            definition:
+              operationId: print.taskDefinitions.tasks.Trigger.GetDefinition
+              parameters:
+                printTaskDefinition-id: $request.path.printTaskDefinition-id
+                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5775,22 +6015,18 @@ components:
           properties:
             settings:
               $ref: '#/components/schemas/microsoft.graph.printSettings'
-            services:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printService'
-            printers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printer'
             connectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printConnector'
-            shares:
+            operations:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.printerShare'
+                $ref: '#/components/schemas/microsoft.graph.printOperation'
+            printers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printer'
             printerShares:
               type: array
               items:
@@ -5799,10 +6035,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
-            operations:
+            services:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.printOperation'
+                $ref: '#/components/schemas/microsoft.graph.printService'
+            shares:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
             taskDefinitions:
               type: array
               items:
@@ -5815,22 +6055,22 @@ components:
         - title: printConnector
           type: object
           properties:
-            name:
-              type: string
-              nullable: true
-            fullyQualifiedDomainName:
-              type: string
-              nullable: true
-            operatingSystem:
-              type: string
-              nullable: true
             appVersion:
               type: string
               nullable: true
             deviceHealth:
               $ref: '#/components/schemas/microsoft.graph.deviceHealth'
+            fullyQualifiedDomainName:
+              type: string
+              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            name:
+              type: string
+              nullable: true
+            operatingSystem:
+              type: string
+              nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5843,12 +6083,12 @@ components:
         - title: printOperation
           type: object
           properties:
-            status:
-              $ref: '#/components/schemas/microsoft.graph.printOperationStatus'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printOperationStatus'
           additionalProperties:
             type: object
     microsoft.graph.printer:
@@ -5857,29 +6097,29 @@ components:
         - title: printer
           type: object
           properties:
+            acceptingJobs:
+              type: boolean
+              nullable: true
+            isShared:
+              type: boolean
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
-            isShared:
-              type: boolean
-            acceptingJobs:
-              type: boolean
-              nullable: true
-            allowedUsers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printUserIdentity'
             allowedGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printIdentity'
-            share:
-              $ref: '#/components/schemas/microsoft.graph.printerShare'
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUserIdentity'
             connectors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printConnector'
+            share:
+              $ref: '#/components/schemas/microsoft.graph.printerShare'
             taskTriggers:
               type: array
               items:
@@ -5918,25 +6158,28 @@ components:
       title: printerCapabilities
       type: object
       properties:
+        bottomMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+        collation:
+          type: boolean
+          nullable: true
+        colorModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorMode'
         contentTypes:
           type: array
           items:
             type: string
             nullable: true
-        isColorPrintingSupported:
-          type: boolean
-          nullable: true
-        feedDirections:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printerFeedDirection'
-        isPageRangeSupported:
-          type: boolean
-          nullable: true
-        qualities:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printQuality'
+        copiesPerJob:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
         dpis:
           type: array
           items:
@@ -5949,13 +6192,39 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
-        copiesPerJob:
-          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        feedDirections:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerFeedDirection'
         finishings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printFinishing'
+        inputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+        isColorPrintingSupported:
+          type: boolean
+          nullable: true
+        isPageRangeSupported:
+          type: boolean
+          nullable: true
+        leftMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
         mediaColors:
+          type: array
+          items:
+            type: string
+            nullable: true
+        mediaSizes:
           type: array
           items:
             type: string
@@ -5965,7 +6234,15 @@ components:
           items:
             type: string
             nullable: true
-        mediaSizes:
+        multipageLayouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBins:
           type: array
           items:
             type: string
@@ -5978,47 +6255,10 @@ components:
             type: integer
             format: int32
             nullable: true
-        orientations:
+        qualities:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.printOrientation'
-        outputBins:
-          type: array
-          items:
-            type: string
-            nullable: true
-        supportsFitPdfToPage:
-          type: boolean
-          nullable: true
-        multipageLayouts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
-        colorModes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printColorMode'
-        inputBins:
-          type: array
-          items:
-            type: string
-            nullable: true
-        topMargins:
-          type: array
-          items:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-            nullable: true
-        bottomMargins:
-          type: array
-          items:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-            nullable: true
+            $ref: '#/components/schemas/microsoft.graph.printQuality'
         rightMargins:
           type: array
           items:
@@ -6027,21 +6267,14 @@ components:
             type: integer
             format: int32
             nullable: true
-        leftMargins:
-          type: array
-          items:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-            nullable: true
-        collation:
-          type: boolean
-          nullable: true
         scalings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printScaling'
+        supportedColorConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorConfiguration'
         supportedCopiesPerJob:
           $ref: '#/components/schemas/microsoft.graph.integerRange'
         supportedDocumentMimeTypes:
@@ -6049,6 +6282,10 @@ components:
           items:
             type: string
             nullable: true
+        supportedDuplexConfigurations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDuplexConfiguration'
         supportedFinishings:
           type: array
           items:
@@ -6058,21 +6295,15 @@ components:
           items:
             type: string
             nullable: true
-        supportedMediaTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printMediaType'
-        supportedDuplexConfigurations:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printDuplexConfiguration'
         supportedMediaSizes:
           type: array
           items:
             type: string
             nullable: true
-        supportedPagesPerSheet:
-          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        supportedMediaTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMediaType'
         supportedOrientations:
           type: array
           items:
@@ -6082,18 +6313,27 @@ components:
           items:
             type: string
             nullable: true
+        supportedPagesPerSheet:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
         supportedPresentationDirections:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printPresentationDirection'
-        supportedColorConfigurations:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printColorConfiguration'
         supportedPrintQualities:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printQuality'
+        supportsFitPdfToPage:
+          type: boolean
+          nullable: true
+        topMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printerShare:
@@ -6108,16 +6348,16 @@ components:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
-            printer:
-              $ref: '#/components/schemas/microsoft.graph.printer'
-            allowedUsers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printUserIdentity'
             allowedGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printIdentity'
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUserIdentity'
+            printer:
+              $ref: '#/components/schemas/microsoft.graph.printer'
           additionalProperties:
             type: object
     microsoft.graph.printTaskTrigger:
@@ -6138,10 +6378,10 @@ components:
         - title: printTaskDefinition
           type: object
           properties:
-            displayName:
-              type: string
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
             tasks:
               type: array
               items:
@@ -6176,22 +6416,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-            dailyPrintUsageSummariesByUser:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
-            monthlyPrintUsageSummariesByUser:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
             dailyPrintUsageSummariesByPrinter:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+            dailyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
             monthlyPrintUsageSummariesByPrinter:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByPrinter'
+            monthlyPrintUsageSummariesByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.PrintUsageSummaryByUser'
           additionalProperties:
             type: object
           description: The resource that represents an instance of History Reports.
@@ -6199,39 +6439,13 @@ components:
       title: archivedPrintJob
       type: object
       properties:
-        id:
-          type: string
-        printerId:
-          type: string
-          nullable: true
-        processingState:
-          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
+        acquiredByPrinter:
+          type: boolean
         acquiredDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
           format: date-time
           nullable: true
-        completionDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-          nullable: true
-        acquiredByPrinter:
-          type: boolean
-        copiesPrinted:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        pageCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
         blackAndWhitePageCount:
           maximum: 2147483647
           minimum: -2147483648
@@ -6242,57 +6456,75 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-        simplexPageCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        duplexPageCount:
+        completionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        copiesPrinted:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
         createdBy:
           $ref: '#/components/schemas/microsoft.graph.userIdentity'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        duplexPageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        id:
+          type: string
+        pageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        printerId:
+          type: string
+          nullable: true
+        processingState:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+        simplexPageCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
       additionalProperties:
         type: object
     microsoft.graph.groupPrintUsageSummary:
       title: groupPrintUsageSummary
       type: object
       properties:
-        groupMail:
-          type: string
-          nullable: true
-        groupDisplayName:
-          type: string
-          nullable: true
         completedJobCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        incompleteJobCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
         group:
           $ref: '#/components/schemas/microsoft.graph.identity'
+        groupDisplayName:
+          type: string
+          nullable: true
+        groupMail:
+          type: string
+          nullable: true
+        incompleteJobCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
       additionalProperties:
         type: object
     microsoft.graph.overallPrintUsageSummary:
       title: overallPrintUsageSummary
       type: object
       properties:
-        topUsers:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.userPrintUsageSummary'
-        topPrinters:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printerUsageSummary'
-        daysInPeriod:
+        activePrintersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
@@ -6302,17 +6534,25 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-        activePrintersCount:
+        daysInPeriod:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        topPrinters:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerUsageSummary'
+        topUsers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userPrintUsageSummary'
+        totalIncompleteJobs:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
         totalJobsProcessed:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-        totalIncompleteJobs:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
@@ -6323,18 +6563,6 @@ components:
       title: printerUsageSummary
       type: object
       properties:
-        printerId:
-          type: string
-          nullable: true
-        printerDisplayName:
-          type: string
-          nullable: true
-        printerManufacturer:
-          type: string
-          nullable: true
-        printerModel:
-          type: string
-          nullable: true
         completedJobCount:
           maximum: 2147483647
           minimum: -2147483648
@@ -6345,6 +6573,18 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
+        printerDisplayName:
+          type: string
+          nullable: true
+        printerId:
+          type: string
+          nullable: true
+        printerManufacturer:
+          type: string
+          nullable: true
+        printerModel:
+          type: string
+          nullable: true
         printer:
           $ref: '#/components/schemas/microsoft.graph.directoryObject'
       additionalProperties:
@@ -6369,12 +6609,6 @@ components:
       title: userPrintUsageSummary
       type: object
       properties:
-        userPrincipalName:
-          type: string
-          nullable: true
-        userDisplayName:
-          type: string
-          nullable: true
         completedJobCount:
           maximum: 2147483647
           minimum: -2147483648
@@ -6387,6 +6621,12 @@ components:
           format: int32
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
+        userDisplayName:
+          type: string
+          nullable: true
+        userPrincipalName:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printService:
@@ -6421,10 +6661,10 @@ components:
         - title: printTask
           type: object
           properties:
-            status:
-              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
             parentUrl:
               type: string
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
             definition:
               $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
             trigger:
@@ -6462,41 +6702,22 @@ components:
       title: printerLocation
       type: object
       properties:
-        latitude:
-          type: number
-          format: float
-          nullable: true
-        longitude:
-          type: number
-          format: float
-          nullable: true
         altitudeInMeters:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        streetAddress:
+        building:
           type: string
           nullable: true
-        subunit:
-          type: array
-          items:
-            type: string
-            nullable: true
         city:
-          type: string
-          nullable: true
-        postalCode:
           type: string
           nullable: true
         countryOrRegion:
           type: string
           nullable: true
-        site:
-          type: string
-          nullable: true
-        building:
+        floorDescription:
           type: string
           nullable: true
         floorNumber:
@@ -6505,7 +6726,23 @@ components:
           type: integer
           format: int32
           nullable: true
-        floorDescription:
+        latitude:
+          type: number
+          format: float
+          nullable: true
+        longitude:
+          type: number
+          format: float
+          nullable: true
+        organization:
+          type: array
+          items:
+            type: string
+            nullable: true
+        postalCode:
+          type: string
+          nullable: true
+        roomDescription:
           type: string
           nullable: true
         roomNumber:
@@ -6514,32 +6751,35 @@ components:
           type: integer
           format: int32
           nullable: true
-        roomDescription:
+        site:
           type: string
           nullable: true
-        organization:
-          type: array
-          items:
-            type: string
-            nullable: true
+        stateOrProvince:
+          type: string
+          nullable: true
+        streetAddress:
+          type: string
+          nullable: true
         subdivision:
           type: array
           items:
             type: string
             nullable: true
-        stateOrProvince:
-          type: string
-          nullable: true
+        subunit:
+          type: array
+          items:
+            type: string
+            nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printOperationStatus:
       title: printOperationStatus
       type: object
       properties:
-        state:
-          $ref: '#/components/schemas/microsoft.graph.printOperationProcessingState'
         description:
           type: string
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printOperationProcessingState'
       additionalProperties:
         type: object
     microsoft.graph.printerBase:
@@ -6548,24 +6788,24 @@ components:
         - title: printerBase
           type: object
           properties:
-            name:
-              type: string
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
+            defaults:
+              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
+            isAcceptingJobs:
+              type: boolean
               nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
             manufacturer:
               type: string
               nullable: true
             model:
               type: string
               nullable: true
-            isAcceptingJobs:
-              type: boolean
+            name:
+              type: string
               nullable: true
-            defaults:
-              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
-            location:
-              $ref: '#/components/schemas/microsoft.graph.printerLocation'
-            capabilities:
-              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
             status:
               $ref: '#/components/schemas/microsoft.graph.printerStatus'
             jobs:
@@ -6574,40 +6814,19 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
           additionalProperties:
             type: object
-    microsoft.graph.printerFeedDirection:
-      title: printerFeedDirection
+    microsoft.graph.printColorMode:
+      title: printColorMode
       enum:
-        - longEdgeFirst
-        - shortEdgeFirst
-      type: string
-    microsoft.graph.printQuality:
-      title: printQuality
-      enum:
-        - low
-        - medium
-        - high
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printDuplexMode:
-      title: printDuplexMode
-      enum:
-        - flipOnLongEdge
-        - flipOnShortEdge
-        - oneSided
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
       type: string
     microsoft.graph.integerRange:
       title: integerRange
       type: object
       properties:
-        start:
-          type: integer
-          format: int64
-          nullable: true
         end:
-          type: integer
-          format: int64
-          nullable: true
-        minimum:
           type: integer
           format: int64
           nullable: true
@@ -6615,8 +6834,29 @@ components:
           type: integer
           format: int64
           nullable: true
+        minimum:
+          type: integer
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          format: int64
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+      type: string
+    microsoft.graph.printerFeedDirection:
+      title: printerFeedDirection
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+      type: string
     microsoft.graph.printFinishing:
       title: printFinishing
       enum:
@@ -6641,14 +6881,6 @@ components:
         - stapleDualBottom
         - unknownFutureValue
       type: string
-    microsoft.graph.printOrientation:
-      title: printOrientation
-      enum:
-        - portrait
-        - landscape
-        - reverseLandscape
-        - reversePortrait
-      type: string
     microsoft.graph.printMultipageLayout:
       title: printMultipageLayout
       enum:
@@ -6661,13 +6893,21 @@ components:
         - counterclockwiseFromBottomRight
         - clockwiseFromBottomRight
       type: string
-    microsoft.graph.printColorMode:
-      title: printColorMode
+    microsoft.graph.printOrientation:
+      title: printOrientation
       enum:
-        - blackAndWhite
-        - grayscale
-        - color
-        - auto
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+      type: string
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
       type: string
     microsoft.graph.printScaling:
       title: printScaling
@@ -6678,6 +6918,21 @@ components:
         - fit
         - none
         - unknownFutureValue
+      type: string
+    microsoft.graph.printColorConfiguration:
+      title: printColorConfiguration
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+      type: string
+    microsoft.graph.printDuplexConfiguration:
+      title: printDuplexConfiguration
+      enum:
+        - twoSidedLongEdge
+        - twoSidedShortEdge
+        - oneSided
       type: string
     microsoft.graph.printMediaType:
       title: printMediaType
@@ -6696,13 +6951,6 @@ components:
         - multiLayer
         - labels
       type: string
-    microsoft.graph.printDuplexConfiguration:
-      title: printDuplexConfiguration
-      enum:
-        - twoSidedLongEdge
-        - twoSidedShortEdge
-        - oneSided
-      type: string
     microsoft.graph.printPresentationDirection:
       title: printPresentationDirection
       enum:
@@ -6714,14 +6962,6 @@ components:
         - clockwiseFromBottomLeft
         - counterClockwiseFromBottomRight
         - clockwiseFromBottomRight
-      type: string
-    microsoft.graph.printColorConfiguration:
-      title: printColorConfiguration
-      enum:
-        - blackAndWhite
-        - grayscale
-        - color
-        - auto
       type: string
     microsoft.graph.printEvent:
       title: printEvent
@@ -6757,21 +6997,21 @@ components:
         - title: applicationSignInDetailedSummary
           type: object
           properties:
-            appId:
-              type: string
-            appDisplayName:
-              type: string
-            status:
-              $ref: '#/components/schemas/microsoft.graph.signInStatus'
-            signInCount:
-              type: integer
-              format: int64
-              nullable: true
             aggregatedEventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
+            appDisplayName:
+              type: string
+            appId:
+              type: string
+            signInCount:
+              type: integer
+              format: int64
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.signInStatus'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationDetails:
@@ -6780,22 +7020,22 @@ components:
         - title: credentialUserRegistrationDetails
           type: object
           properties:
-            userPrincipalName:
-              type: string
-            userDisplayName:
-              type: string
             authMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.registrationAuthMethod'
-            isRegistered:
+            isCapable:
               type: boolean
             isEnabled:
               type: boolean
-            isCapable:
-              type: boolean
             isMfaRegistered:
               type: boolean
+            isRegistered:
+              type: boolean
+            userDisplayName:
+              type: string
+            userPrincipalName:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.userCredentialUsageDetails:
@@ -6804,46 +7044,22 @@ components:
         - title: userCredentialUsageDetails
           type: object
           properties:
-            feature:
-              $ref: '#/components/schemas/microsoft.graph.featureType'
-            userPrincipalName:
-              type: string
-            userDisplayName:
-              type: string
-            isSuccess:
-              type: boolean
             authMethod:
               $ref: '#/components/schemas/microsoft.graph.usageAuthMethod'
-            failureReason:
-              type: string
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
-          additionalProperties:
-            type: object
-    microsoft.graph.PrintUsageSummaryByUser:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: PrintUsageSummaryByUser
-          type: object
-          properties:
+            failureReason:
+              type: string
+            feature:
+              $ref: '#/components/schemas/microsoft.graph.featureType'
+            isSuccess:
+              type: boolean
+            userDisplayName:
+              type: string
             userPrincipalName:
               type: string
-              nullable: true
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-            completedBlackAndWhiteJobCount:
-              type: integer
-              format: int64
-            completedColorJobCount:
-              type: integer
-              format: int64
-            incompleteJobCount:
-              type: integer
-              format: int64
           additionalProperties:
             type: object
     microsoft.graph.PrintUsageSummaryByPrinter:
@@ -6852,13 +7068,6 @@ components:
         - title: PrintUsageSummaryByPrinter
           type: object
           properties:
-            printerId:
-              type: string
-              nullable: true
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
             completedBlackAndWhiteJobCount:
               type: integer
               format: int64
@@ -6868,21 +7077,39 @@ components:
             incompleteJobCount:
               type: integer
               format: int64
+            printerId:
+              type: string
+              nullable: true
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
           additionalProperties:
             type: object
-    microsoft.graph.printJobProcessingState:
-      title: printJobProcessingState
-      enum:
-        - unknown
-        - pending
-        - pendingHeld
-        - processing
-        - paused
-        - stopped
-        - completed
-        - canceled
-        - aborted
-      type: string
+    microsoft.graph.PrintUsageSummaryByUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: PrintUsageSummaryByUser
+          type: object
+          properties:
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            incompleteJobCount:
+              type: integer
+              format: int64
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+            userPrincipalName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -6899,17 +7126,30 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - pendingHeld
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+      type: string
     microsoft.graph.identity:
       title: identity
       type: object
       properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
         displayName:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -6931,10 +7171,10 @@ components:
       title: printTaskStatus
       type: object
       properties:
-        state:
-          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
         description:
           type: string
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
       additionalProperties:
         type: object
     odata.error:
@@ -6959,26 +7199,51 @@ components:
       title: printerDefaults
       type: object
       properties:
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        contentType:
+          type: string
+          nullable: true
         copiesPerJob:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        contentType:
+        documentMimeType:
           type: string
           nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        duplexConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexConfiguration'
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
         finishings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printFinishing'
+        fitPdfToPage:
+          type: boolean
+          nullable: true
         mediaColor:
+          type: string
+          nullable: true
+        mediaSize:
           type: string
           nullable: true
         mediaType:
           type: string
           nullable: true
-        mediaSize:
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
           type: string
           nullable: true
         pagesPerSheet:
@@ -6986,33 +7251,6 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
-          nullable: true
-        orientation:
-          $ref: '#/components/schemas/microsoft.graph.printOrientation'
-        outputBin:
-          type: string
-          nullable: true
-        fitPdfToPage:
-          type: boolean
-          nullable: true
-        multipageLayout:
-          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
-        colorMode:
-          $ref: '#/components/schemas/microsoft.graph.printColorMode'
-        quality:
-          $ref: '#/components/schemas/microsoft.graph.printQuality'
-        duplexMode:
-          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
-        dpi:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        scaling:
-          $ref: '#/components/schemas/microsoft.graph.printScaling'
-        documentMimeType:
-          type: string
           nullable: true
         pdfFitToPage:
           type: boolean
@@ -7023,8 +7261,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printColorConfiguration'
         printQuality:
           $ref: '#/components/schemas/microsoft.graph.printQuality'
-        duplexConfiguration:
-          $ref: '#/components/schemas/microsoft.graph.printDuplexConfiguration'
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
       additionalProperties:
         type: object
     microsoft.graph.printerStatus:
@@ -7033,13 +7273,13 @@ components:
       properties:
         processingState:
           $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
+        processingStateDescription:
+          type: string
+          nullable: true
         processingStateReasons:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printerProcessingStateReason'
-        processingStateDescription:
-          type: string
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printJob:
@@ -7048,14 +7288,14 @@ components:
         - title: printJob
           type: object
           properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
             status:
               $ref: '#/components/schemas/microsoft.graph.printJobStatus'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
             documents:
               type: array
               items:
@@ -7070,6 +7310,10 @@ components:
       title: signInStatus
       type: object
       properties:
+        additionalDetails:
+          type: string
+          description: Provides additional details on the sign-in activity
+          nullable: true
         errorCode:
           maximum: 2147483647
           minimum: -2147483648
@@ -7080,10 +7324,6 @@ components:
         failureReason:
           type: string
           description: Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-          nullable: true
-        additionalDetails:
-          type: string
-          description: Provides additional details on the sign-in activity
           nullable: true
       additionalProperties:
         type: object
@@ -7101,13 +7341,6 @@ components:
         - appPassword
         - unknownFutureValue
       type: string
-    microsoft.graph.featureType:
-      title: featureType
-      enum:
-        - registration
-        - reset
-        - unknownFutureValue
-      type: string
     microsoft.graph.usageAuthMethod:
       title: usageAuthMethod
       enum:
@@ -7121,6 +7354,13 @@ components:
         - alternateMobileCall
         - fido
         - appPassword
+        - unknownFutureValue
+      type: string
+    microsoft.graph.featureType:
+      title: featureType
+      enum:
+        - registration
+        - reset
         - unknownFutureValue
       type: string
     microsoft.graph.printTaskProcessingState:
@@ -7193,13 +7433,13 @@ components:
       title: printJobStatus
       type: object
       properties:
+        acquiredByPrinter:
+          type: boolean
         processingState:
           $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
         processingStateDescription:
           type: string
           nullable: true
-        acquiredByPrinter:
-          type: boolean
       additionalProperties:
         type: object
     microsoft.graph.printDocument:
@@ -7208,15 +7448,15 @@ components:
         - title: printDocument
           type: object
           properties:
-            displayName:
-              type: string
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printerDocumentConfiguration'
             contentType:
+              type: string
+            displayName:
               type: string
             size:
               type: integer
               format: int64
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.printerDocumentConfiguration'
           additionalProperties:
             type: object
     odata.error.detail:
@@ -7237,79 +7477,79 @@ components:
       title: printerDocumentConfiguration
       type: object
       properties:
-        pageRanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.integerRange'
-        quality:
-          $ref: '#/components/schemas/microsoft.graph.printQuality'
-        dpi:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
+        collate:
+          type: boolean
           nullable: true
-        feedDirection:
-          $ref: '#/components/schemas/microsoft.graph.printerFeedDirection'
-        orientation:
-          $ref: '#/components/schemas/microsoft.graph.printOrientation'
-        duplexMode:
-          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
         copies:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        colorMode:
-          $ref: '#/components/schemas/microsoft.graph.printColorMode'
-        inputBin:
-          type: string
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
           nullable: true
-        outputBin:
-          type: string
-          nullable: true
-        mediaSize:
-          type: string
-          nullable: true
-        margin:
-          $ref: '#/components/schemas/microsoft.graph.printMargin'
-        mediaType:
-          type: string
-          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedDirection:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedDirection'
         finishings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printFinishing'
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
         pagesPerSheet:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        multipageLayout:
-          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
-        collate:
-          type: boolean
-          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
         scaling:
           $ref: '#/components/schemas/microsoft.graph.printScaling'
-        fitPdfToPage:
-          type: boolean
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printMargin:
       title: printMargin
       type: object
       properties:
-        top:
+        bottom:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
           nullable: true
-        bottom:
+        left:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
@@ -7321,7 +7561,7 @@ components:
           type: integer
           format: int32
           nullable: true
-        left:
+        top:
           maximum: 2147483647
           minimum: -2147483648
           type: integer

@@ -42,7 +42,7 @@ jobs:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(MODULE_PATH)
       Pattern: $(MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
@@ -68,7 +68,7 @@ jobs:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(MODULE_PATH)
       Pattern: $(MODULE_DLL_PATTERN)
       signConfigType: inlineSignParams
@@ -123,7 +123,7 @@ jobs:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
     inputs:
-      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet'
+      ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: '$(Build.ArtifactStagingDirectory)\$(MODULE_NAME)'
       Pattern: 'Microsoft.Graph.$(MODULE_NAME)*.nupkg'
       signConfigType: inlineSignParams

@@ -46,6 +46,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.external'
+          links:
+            connections:
+              operationId: external.ListConnections
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -91,12 +94,12 @@ paths:
               enum:
                 - id
                 - id desc
-                - name
-                - name desc
-                - description
-                - description desc
                 - configuration
                 - configuration desc
+                - description
+                - description desc
+                - name
+                - name desc
               type: string
         - name: $select
           in: query
@@ -109,13 +112,13 @@ paths:
             items:
               enum:
                 - id
-                - name
-                - description
                 - configuration
-                - schema
+                - description
+                - name
+                - groups
                 - items
                 - operations
-                - groups
+                - schema
               type: string
         - name: $expand
           in: query
@@ -128,10 +131,10 @@ paths:
             items:
               enum:
                 - '*'
-                - schema
+                - groups
                 - items
                 - operations
-                - groups
+                - schema
               type: string
       responses:
         '200':
@@ -203,13 +206,13 @@ paths:
             items:
               enum:
                 - id
-                - name
-                - description
                 - configuration
-                - schema
+                - description
+                - name
+                - groups
                 - items
                 - operations
-                - groups
+                - schema
               type: string
         - name: $expand
           in: query
@@ -222,10 +225,10 @@ paths:
             items:
               enum:
                 - '*'
-                - schema
+                - groups
                 - items
                 - operations
-                - groups
+                - schema
               type: string
       responses:
         '200':
@@ -234,6 +237,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnection'
+          links:
+            groups:
+              operationId: external.Connections.ListGroups
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+            items:
+              operationId: external.Connections.ListItems
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+            operations:
+              operationId: external.Connections.ListOperations
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+            schema:
+              operationId: external.Connections.GetSchema
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -290,9 +310,9 @@ paths:
   /search:
     get:
       tags:
-        - search.search
+        - search.searchEntity
       summary: Get search
-      operationId: search.search_GetSearch
+      operationId: search.searchEntity_GetSearchEntity
       parameters:
         - name: $select
           in: query
@@ -324,21 +344,21 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.search'
+                $ref: '#/components/schemas/microsoft.graph.searchEntity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - search.search
+        - search.searchEntity
       summary: Update search
-      operationId: search.search_UpdateSearch
+      operationId: search.searchEntity_UpdateSearchEntity
       requestBody:
         description: New property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.search'
+              $ref: '#/components/schemas/microsoft.graph.searchEntity'
         required: true
       responses:
         '204':
@@ -398,16 +418,18 @@ components:
         - title: externalConnection
           type: object
           properties:
-            name:
-              type: string
-              nullable: true
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.configuration'
             description:
               type: string
               nullable: true
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.configuration'
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.schema'
+            name:
+              type: string
+              nullable: true
+            groups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalGroup'
             items:
               type: array
               items:
@@ -416,16 +438,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectionOperation'
-            groups:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalGroup'
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.schema'
           additionalProperties:
             type: object
-    microsoft.graph.search:
+    microsoft.graph.searchEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: search
+        - title: searchEntity
           type: object
           additionalProperties:
             type: object
@@ -433,22 +453,25 @@ components:
       title: searchRequest
       type: object
       properties:
-        entityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.entityType'
         contentSources:
           type: array
           items:
             type: string
             nullable: true
-        query:
-          $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        enableTopResults:
+          type: boolean
+          nullable: true
+        entityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.entityType'
         from:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
+        query:
+          $ref: '#/components/schemas/microsoft.graph.searchQuery'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -459,24 +482,21 @@ components:
           items:
             type: string
             nullable: true
-        enableTopResults:
-          type: boolean
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.searchResponse:
       title: searchResponse
       type: object
       properties:
+        hitsContainers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
         searchTerms:
           type: array
           items:
             type: string
             nullable: true
-        hitsContainers:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -499,6 +519,52 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.externalGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalGroup
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalGroupMember'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalItem
+          type: object
+          properties:
+            acl:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.acl'
+            content:
+              $ref: '#/components/schemas/microsoft.graph.externalItemContent'
+            properties:
+              $ref: '#/components/schemas/microsoft.graph.properties'
+          additionalProperties:
+            type: object
+    microsoft.graph.connectionOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: connectionOperation
+          type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/microsoft.graph.errorDetail'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.connectionOperationStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.schema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -511,52 +577,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.property'
-          additionalProperties:
-            type: object
-    microsoft.graph.externalItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalItem
-          type: object
-          properties:
-            properties:
-              $ref: '#/components/schemas/microsoft.graph.properties'
-            content:
-              $ref: '#/components/schemas/microsoft.graph.externalItemContent'
-            acl:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.acl'
-          additionalProperties:
-            type: object
-    microsoft.graph.connectionOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: connectionOperation
-          type: object
-          properties:
-            status:
-              $ref: '#/components/schemas/microsoft.graph.connectionOperationStatus'
-            error:
-              $ref: '#/components/schemas/microsoft.graph.errorDetail'
-          additionalProperties:
-            type: object
-    microsoft.graph.externalGroup:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalGroup
-          type: object
-          properties:
-            displayName:
-              type: string
-              nullable: true
-            description:
-              type: string
-              nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalGroupMember'
           additionalProperties:
             type: object
     microsoft.graph.entityType:
@@ -584,14 +604,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHit'
+        moreResultsAvailable:
+          type: boolean
+          nullable: true
         total:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
           format: int32
-          nullable: true
-        moreResultsAvailable:
-          type: boolean
           nullable: true
       additionalProperties:
         type: object
@@ -604,38 +624,41 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
-    microsoft.graph.property:
-      title: property
+    microsoft.graph.externalGroupMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalGroupMember
+          type: object
+          properties:
+            identitySource:
+              $ref: '#/components/schemas/microsoft.graph.identitySourceType'
+            type:
+              $ref: '#/components/schemas/microsoft.graph.externalGroupMemberType'
+          additionalProperties:
+            type: object
+    microsoft.graph.acl:
+      title: acl
       type: object
       properties:
-        name:
+        accessType:
+          $ref: '#/components/schemas/microsoft.graph.accessType'
+        identitySource:
           type: string
         type:
-          $ref: '#/components/schemas/microsoft.graph.propertyType'
-        isSearchable:
-          type: boolean
+          $ref: '#/components/schemas/microsoft.graph.aclType'
+        value:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.externalItemContent:
+      title: externalItemContent
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/microsoft.graph.externalItemContentType'
+        value:
+          type: string
           nullable: true
-        isRetrievable:
-          type: boolean
-          nullable: true
-        isQueryable:
-          type: boolean
-          nullable: true
-        isContent:
-          type: boolean
-          nullable: true
-        isRefinable:
-          type: boolean
-          nullable: true
-        aliases:
-          type: array
-          items:
-            type: string
-            nullable: true
-        labels:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.label'
       additionalProperties:
         type: object
     microsoft.graph.properties:
@@ -643,29 +666,20 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.externalItemContent:
-      title: externalItemContent
+    microsoft.graph.errorDetail:
+      title: errorDetail
       type: object
       properties:
-        value:
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.innerErrorDetail'
+        errorCode:
           type: string
           nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.externalItemContentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.acl:
-      title: acl
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/microsoft.graph.aclType'
-        value:
+        message:
           type: string
-        accessType:
-          $ref: '#/components/schemas/microsoft.graph.accessType'
-        identitySource:
-          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.connectionOperationStatus:
@@ -676,34 +690,40 @@ components:
         - completed
         - failed
       type: string
-    microsoft.graph.errorDetail:
-      title: errorDetail
+    microsoft.graph.property:
+      title: property
       type: object
       properties:
-        errorCode:
-          type: string
-          nullable: true
-        message:
-          type: string
-          nullable: true
-        details:
+        aliases:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.innerErrorDetail'
+            type: string
+            nullable: true
+        isContent:
+          type: boolean
+          nullable: true
+        isQueryable:
+          type: boolean
+          nullable: true
+        isRefinable:
+          type: boolean
+          nullable: true
+        isRetrievable:
+          type: boolean
+          nullable: true
+        isSearchable:
+          type: boolean
+          nullable: true
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.label'
+        name:
+          type: string
+        type:
+          $ref: '#/components/schemas/microsoft.graph.propertyType'
       additionalProperties:
         type: object
-    microsoft.graph.externalGroupMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalGroupMember
-          type: object
-          properties:
-            type:
-              $ref: '#/components/schemas/microsoft.graph.externalGroupMemberType'
-            identitySource:
-              $ref: '#/components/schemas/microsoft.graph.identitySourceType'
-          additionalProperties:
-            type: object
     microsoft.graph.searchQueryString:
       title: searchQueryString
       type: object
@@ -758,19 +778,51 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
-    microsoft.graph.propertyType:
-      title: propertyType
+    microsoft.graph.identitySourceType:
+      title: identitySourceType
       enum:
-        - String
-        - Int64
-        - Double
-        - DateTime
-        - Boolean
-        - StringCollection
-        - Int64Collection
-        - DoubleCollection
-        - DateTimeCollection
+        - azureActiveDirectory
+        - external
       type: string
+    microsoft.graph.externalGroupMemberType:
+      title: externalGroupMemberType
+      enum:
+        - user
+        - group
+      type: string
+    microsoft.graph.accessType:
+      title: accessType
+      enum:
+        - grant
+        - deny
+      type: string
+    microsoft.graph.aclType:
+      title: aclType
+      enum:
+        - user
+        - group
+        - everyone
+        - everyoneExceptGuests
+      type: string
+    microsoft.graph.externalItemContentType:
+      title: externalItemContentType
+      enum:
+        - text
+        - html
+        - unknownFutureValue
+      type: string
+    microsoft.graph.innerErrorDetail:
+      title: innerErrorDetail
+      type: object
+      properties:
+        message:
+          type: string
+          nullable: true
+        source:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.label:
       title: label
       enum:
@@ -784,50 +836,18 @@ components:
         - fileName
         - fileExtension
       type: string
-    microsoft.graph.externalItemContentType:
-      title: externalItemContentType
+    microsoft.graph.propertyType:
+      title: propertyType
       enum:
-        - text
-        - html
-        - unknownFutureValue
-      type: string
-    microsoft.graph.aclType:
-      title: aclType
-      enum:
-        - user
-        - group
-        - everyone
-        - everyoneExceptGuests
-      type: string
-    microsoft.graph.accessType:
-      title: accessType
-      enum:
-        - grant
-        - deny
-      type: string
-    microsoft.graph.innerErrorDetail:
-      title: innerErrorDetail
-      type: object
-      properties:
-        source:
-          type: string
-          nullable: true
-        message:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.externalGroupMemberType:
-      title: externalGroupMemberType
-      enum:
-        - user
-        - group
-      type: string
-    microsoft.graph.identitySourceType:
-      title: identitySourceType
-      enum:
-        - azureActiveDirectory
-        - external
+        - String
+        - Int64
+        - Double
+        - DateTime
+        - Boolean
+        - StringCollection
+        - Int64Collection
+        - DoubleCollection
+        - DateTimeCollection
       type: string
     odata.error.detail:
       required:

@@ -386,24 +386,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /directoryObjects/microsoft.graph.administrativeUnit/microsoft.graph.delta():
-    get:
-      tags:
-        - directoryObjects.Functions
-      summary: Invoke function delta
-      operationId: directoryObjects.microsoft.graph.administrativeUnit_delta
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /directoryObjects/microsoft.graph.getAvailableExtensionProperties:
     post:
       tags:
@@ -525,14 +507,6 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-    microsoft.graph.administrativeUnit:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: administrativeUnit
-          type: object
-          additionalProperties:
-            type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -543,9 +517,6 @@ components:
               type: string
               description: Display name of the application object on which this extension property is defined. Read-only.
               nullable: true
-            name:
-              type: string
-              description: Name of the extension property. Not nullable.
             dataType:
               type: string
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
@@ -553,6 +524,9 @@ components:
               type: boolean
               description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
               nullable: true
+            name:
+              type: string
+              description: Name of the extension property. Not nullable.
             targetObjects:
               type: array
               items:

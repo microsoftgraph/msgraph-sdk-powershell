@@ -37,42 +37,48 @@ paths:
               enum:
                 - id
                 - id desc
-                - creationDateTime
-                - creationDateTime desc
-                - startDateTime
-                - startDateTime desc
-                - endDateTime
-                - endDateTime desc
-                - canceledDateTime
-                - canceledDateTime desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - entryExitAnnouncement
-                - entryExitAnnouncement desc
-                - joinUrl
-                - joinUrl desc
-                - subject
-                - subject desc
-                - isCancelled
-                - isCancelled desc
-                - participants
-                - participants desc
-                - isBroadcast
-                - isBroadcast desc
                 - accessLevel
                 - accessLevel desc
-                - capabilities
-                - capabilities desc
+                - allowedPresenters
+                - allowedPresenters desc
                 - audioConferencing
                 - audioConferencing desc
+                - canceledDateTime
+                - canceledDateTime desc
+                - capabilities
+                - capabilities desc
                 - chatInfo
                 - chatInfo desc
-                - videoTeleconferenceId
-                - videoTeleconferenceId desc
+                - creationDateTime
+                - creationDateTime desc
+                - endDateTime
+                - endDateTime desc
+                - entryExitAnnouncement
+                - entryExitAnnouncement desc
+                - expirationDateTime
+                - expirationDateTime desc
                 - externalId
                 - externalId desc
+                - isBroadcast
+                - isBroadcast desc
+                - isCancelled
+                - isCancelled desc
+                - isEntryExitAnnounced
+                - isEntryExitAnnounced desc
                 - joinInformation
                 - joinInformation desc
+                - joinUrl
+                - joinUrl desc
+                - lobbyBypassSettings
+                - lobbyBypassSettings desc
+                - participants
+                - participants desc
+                - startDateTime
+                - startDateTime desc
+                - subject
+                - subject desc
+                - videoTeleconferenceId
+                - videoTeleconferenceId desc
               type: string
         - name: $select
           in: query
@@ -85,24 +91,27 @@ paths:
             items:
               enum:
                 - id
-                - creationDateTime
-                - startDateTime
-                - endDateTime
-                - canceledDateTime
-                - expirationDateTime
-                - entryExitAnnouncement
-                - joinUrl
-                - subject
-                - isCancelled
-                - participants
-                - isBroadcast
                 - accessLevel
-                - capabilities
+                - allowedPresenters
                 - audioConferencing
+                - canceledDateTime
+                - capabilities
                 - chatInfo
-                - videoTeleconferenceId
+                - creationDateTime
+                - endDateTime
+                - entryExitAnnouncement
+                - expirationDateTime
                 - externalId
+                - isBroadcast
+                - isCancelled
+                - isEntryExitAnnounced
                 - joinInformation
+                - joinUrl
+                - lobbyBypassSettings
+                - participants
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
               type: string
         - name: $expand
           in: query
@@ -201,24 +210,27 @@ paths:
             items:
               enum:
                 - id
-                - creationDateTime
-                - startDateTime
-                - endDateTime
-                - canceledDateTime
-                - expirationDateTime
-                - entryExitAnnouncement
-                - joinUrl
-                - subject
-                - isCancelled
-                - participants
-                - isBroadcast
                 - accessLevel
-                - capabilities
+                - allowedPresenters
                 - audioConferencing
+                - canceledDateTime
+                - capabilities
                 - chatInfo
-                - videoTeleconferenceId
+                - creationDateTime
+                - endDateTime
+                - entryExitAnnouncement
+                - expirationDateTime
                 - externalId
+                - isBroadcast
+                - isCancelled
+                - isEntryExitAnnounced
                 - joinInformation
+                - joinUrl
+                - lobbyBypassSettings
+                - participants
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
               type: string
         - name: $expand
           in: query
@@ -331,8 +343,8 @@ paths:
             items:
               enum:
                 - id
-                - availability
                 - activity
+                - availability
               type: string
         - name: $expand
           in: query
@@ -414,16 +426,27 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            accessLevel:
+              $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            audioConferencing:
+              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            canceledDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            capabilities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
+            chatInfo:
+              $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The meeting creation time in UTC. Read-only.
-              format: date-time
-              nullable: true
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The meeting start time in UTC.
               format: date-time
               nullable: true
             endDateTime:
@@ -432,53 +455,49 @@ components:
               description: The meeting end time in UTC.
               format: date-time
               nullable: true
-            canceledDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
+            entryExitAnnouncement:
+              type: boolean
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
-            entryExitAnnouncement:
+            externalId:
+              type: string
+              nullable: true
+            isBroadcast:
               type: boolean
               nullable: true
+            isCancelled:
+              type: boolean
+              nullable: true
+            isEntryExitAnnounced:
+              type: boolean
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
             joinUrl:
               type: string
+              nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            participants:
+              $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The meeting start time in UTC.
+              format: date-time
               nullable: true
             subject:
               type: string
               description: The subject of the online meeting.
               nullable: true
-            isCancelled:
-              type: boolean
-              nullable: true
-            participants:
-              $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
-            isBroadcast:
-              type: boolean
-              nullable: true
-            accessLevel:
-              $ref: '#/components/schemas/microsoft.graph.accessLevel'
-            capabilities:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-            audioConferencing:
-              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
-            chatInfo:
-              $ref: '#/components/schemas/microsoft.graph.chatInfo'
             videoTeleconferenceId:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
-            externalId:
-              type: string
-              nullable: true
-            joinInformation:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -487,10 +506,10 @@ components:
         - title: presence
           type: object
           properties:
-            availability:
+            activity:
               type: string
               nullable: true
-            activity:
+            availability:
               type: string
               nullable: true
           additionalProperties:
@@ -504,26 +523,6 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
-    microsoft.graph.meetingParticipants:
-      title: meetingParticipants
-      type: object
-      properties:
-        organizer:
-          $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-        attendees:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-        producers:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-        contributors:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-      additionalProperties:
-        type: object
     microsoft.graph.accessLevel:
       title: accessLevel
       enum:
@@ -533,10 +532,13 @@ components:
         - sameEnterprise
         - sameEnterpriseAndFederated
       type: string
-    microsoft.graph.meetingCapabilities:
-      title: meetingCapabilities
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
       enum:
-        - questionAndAnswer
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
         - unknownFutureValue
       type: string
     microsoft.graph.audioConferencing:
@@ -546,28 +548,30 @@ components:
         conferenceId:
           type: string
           nullable: true
-        tollNumber:
+        dialinUrl:
           type: string
-          description: The toll number that connects to the Audio Conference Provider.
+          description: A URL to the externally-accessible web page that contains dial-in information.
           nullable: true
         tollFreeNumber:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
-        dialinUrl:
+        tollNumber:
           type: string
-          description: A URL to the externally-accessible web page that contains dial-in information.
+          description: The toll number that connects to the Audio Conference Provider.
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.meetingCapabilities:
+      title: meetingCapabilities
+      enum:
+        - questionAndAnswer
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatInfo:
       title: chatInfo
       type: object
       properties:
-        threadId:
-          type: string
-          description: The unique identifier for a thread in Microsoft Teams.
-          nullable: true
         messageId:
           type: string
           description: The unique identifier of a message in a Microsoft Teams channel.
@@ -576,18 +580,53 @@ components:
           type: string
           description: The ID of the reply message.
           nullable: true
+        threadId:
+          type: string
+          description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.itemBody:
       title: itemBody
       type: object
       properties:
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
         content:
           type: string
           description: The content of the item.
           nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingParticipants:
+      title: meetingParticipants
+      type: object
+      properties:
+        attendees:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+        contributors:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+        organizer:
+          $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+        producers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
     odata.error:
@@ -599,24 +638,35 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
-    microsoft.graph.meetingParticipantInfo:
-      title: meetingParticipantInfo
-      type: object
-      properties:
-        identity:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        upn:
-          type: string
-          description: User principal name of the participant.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
         - text
         - html
       type: string
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingParticipantInfo:
+      title: meetingParticipantInfo
+      type: object
+      properties:
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+        upn:
+          type: string
+          description: User principal name of the participant.
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error.main:
       required:
         - code
@@ -652,6 +702,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingRole:
+      title: onlineMeetingRole
+      enum:
+        - attendee
+        - presenter
+        - unknownFutureValue
+      type: string
     odata.error.detail:
       required:
         - code
@@ -670,13 +727,13 @@ components:
       title: identity
       type: object
       properties:
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
         displayName:
           type: string
           description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
