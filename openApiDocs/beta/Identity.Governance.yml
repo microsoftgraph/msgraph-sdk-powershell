@@ -3079,6 +3079,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -3106,6 +3108,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -3206,6 +3209,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -3411,7 +3415,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -3879,6 +3883,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -4621,6 +4626,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -4781,6 +4787,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -4809,6 +4817,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -4920,6 +4929,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -5360,6 +5370,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -5828,6 +5839,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -6253,6 +6265,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -6693,6 +6706,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -7472,6 +7486,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -7499,6 +7515,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -7628,6 +7645,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -7897,7 +7915,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -8453,6 +8471,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -9290,6 +9309,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -9628,6 +9648,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -10127,6 +10148,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -10656,6 +10678,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - answers
+                - answers desc
                 - completedDate
                 - completedDate desc
                 - createdDateTime
@@ -10686,6 +10710,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -10784,6 +10809,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -11002,7 +11028,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -11367,6 +11393,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -11394,6 +11422,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -11509,6 +11538,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -11750,7 +11780,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -12300,6 +12330,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -13137,6 +13168,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -13320,6 +13352,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -13348,6 +13382,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -13473,6 +13508,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -13972,6 +14008,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -14499,6 +14536,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -14983,6 +15021,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -15482,6 +15521,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -16451,7 +16491,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -16927,6 +16967,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -17669,6 +17710,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -17962,6 +18004,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -18402,6 +18445,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -18865,6 +18909,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -19070,7 +19115,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -19538,6 +19583,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -20280,6 +20326,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -20440,6 +20487,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -20468,6 +20517,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -20579,6 +20629,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -21019,6 +21070,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -21487,6 +21539,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -21912,6 +21965,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -22352,6 +22406,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -23131,6 +23186,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -23158,6 +23215,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -23287,6 +23345,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -23556,7 +23615,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -24112,6 +24171,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -24949,6 +25009,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -25287,6 +25348,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -25786,6 +25848,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -26322,6 +26385,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - answers
+                - answers desc
                 - completedDate
                 - completedDate desc
                 - createdDateTime
@@ -26352,6 +26417,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -26465,6 +26531,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -27461,6 +27528,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -28203,6 +28271,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -28496,6 +28565,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -28936,6 +29006,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -29537,6 +29608,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -29621,7 +29693,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -29854,6 +29926,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -29927,7 +30000,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -30140,6 +30213,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -30213,7 +30287,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -31036,6 +31110,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -31063,6 +31139,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -31192,6 +31269,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -31469,7 +31547,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -32101,6 +32179,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -33033,6 +33112,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -33239,6 +33319,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -33267,6 +33349,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -33406,6 +33489,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -33964,6 +34048,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -34550,6 +34635,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -35093,6 +35179,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -35651,6 +35738,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -36739,7 +36827,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -37295,6 +37383,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -38132,6 +38221,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -38470,6 +38560,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -38969,6 +39060,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -39491,6 +39583,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -39732,7 +39825,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -40282,6 +40375,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -41119,6 +41213,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -41302,6 +41397,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -41330,6 +41427,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -41455,6 +41553,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -41954,6 +42053,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -42481,6 +42581,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -42965,6 +43066,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -43464,6 +43566,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -44340,6 +44443,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -44367,6 +44472,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -44510,6 +44616,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -44817,7 +44924,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -45453,6 +45560,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -46385,6 +46493,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -46768,6 +46877,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -47326,6 +47436,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -47928,6 +48039,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - answers
+                - answers desc
                 - completedDate
                 - completedDate desc
                 - createdDateTime
@@ -47958,6 +48071,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -48085,6 +48199,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -48377,7 +48492,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -48880,6 +48995,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -48975,7 +49091,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -49607,6 +49723,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -49691,7 +49808,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -49915,6 +50032,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -50562,6 +50680,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -50810,6 +50929,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -51191,6 +51311,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -51711,6 +51832,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -51784,7 +51906,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -52298,6 +52420,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -52325,6 +52449,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -52440,6 +52565,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -52681,7 +52807,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -53231,6 +53357,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -54068,6 +54195,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -54251,6 +54379,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -54279,6 +54409,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -54404,6 +54535,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -54903,6 +55035,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -55430,6 +55563,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -55914,6 +56048,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -56413,6 +56548,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -57382,7 +57518,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -57858,6 +57994,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -58600,6 +58737,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -58893,6 +59031,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -59333,6 +59472,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -59796,6 +59936,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -60001,7 +60142,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -60469,6 +60610,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -61211,6 +61353,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -61371,6 +61514,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -61399,6 +61544,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -61510,6 +61656,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -61950,6 +62097,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -62418,6 +62566,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -62843,6 +62992,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -63283,6 +63433,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -64062,6 +64213,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -64089,6 +64242,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -64218,6 +64372,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -64487,7 +64642,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -65043,6 +65198,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -65880,6 +66036,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -66218,6 +66375,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -66717,6 +66875,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -67253,6 +67412,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - answers
+                - answers desc
                 - completedDate
                 - completedDate desc
                 - createdDateTime
@@ -67283,6 +67444,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -67396,6 +67558,7 @@ paths:
             items:
               enum:
                 - id
+                - answers
                 - completedDate
                 - createdDateTime
                 - expirationDateTime
@@ -67651,7 +67814,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -68078,6 +68241,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -68162,7 +68326,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -69075,6 +69239,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -69817,6 +69982,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -70110,6 +70276,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -70550,6 +70717,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -71151,6 +71319,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -71235,7 +71404,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -71468,6 +71637,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -71541,7 +71711,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -72156,6 +72326,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -72898,6 +73069,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -73058,6 +73230,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -73086,6 +73260,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -73197,6 +73372,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -73637,6 +73813,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -74105,6 +74282,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -74530,6 +74708,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -74970,6 +75149,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -75749,6 +75929,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -75776,6 +75958,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -75905,6 +76088,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -76182,7 +76366,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -76589,7 +76773,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -77145,6 +77329,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -77982,6 +78167,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -78320,6 +78506,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -78819,6 +79006,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -79610,6 +79798,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -79690,7 +79879,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageResource in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests_UpdateRefAccessPackageResource
+      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests_SetRefAccessPackageResource
       parameters:
         - name: accessPackageResourceRequest-id
           in: path
@@ -79883,6 +80072,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -79956,7 +80146,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageResourceRequest-id
           in: path
@@ -80365,6 +80555,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -81012,6 +81203,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -81260,6 +81452,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -81641,6 +81834,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -82044,6 +82238,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -82072,6 +82268,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -82168,6 +82365,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -82549,6 +82747,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -82958,6 +83157,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -83373,6 +83573,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - questions
+                - questions desc
                 - requestApprovalSettings
                 - requestApprovalSettings desc
                 - requestorSettings
@@ -83400,6 +83602,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -83515,6 +83718,7 @@ paths:
                 - expirationDateTime
                 - modifiedBy
                 - modifiedDateTime
+                - questions
                 - requestApprovalSettings
                 - requestorSettings
                 - accessPackage
@@ -83756,7 +83960,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackage-id
           in: path
@@ -84306,6 +84510,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -85143,6 +85348,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -85326,6 +85532,8 @@ paths:
                 - addedBy desc
                 - addedOn
                 - addedOn desc
+                - attributes
+                - attributes desc
                 - description
                 - description desc
                 - displayName
@@ -85354,6 +85562,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -85479,6 +85688,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -85978,6 +86188,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -86505,6 +86716,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -86989,6 +87201,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -87488,6 +87701,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -88457,7 +88671,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackage-id
           in: path
@@ -88933,6 +89147,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -89675,6 +89890,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -89968,6 +90184,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -90408,6 +90625,7 @@ paths:
                 - id
                 - addedBy
                 - addedOn
+                - attributes
                 - description
                 - displayName
                 - isPendingOnboarding
@@ -90891,6 +91109,8 @@ paths:
                 - modifiedBy desc
                 - modifiedDateTime
                 - modifiedDateTime desc
+                - state
+                - state desc
               type: string
         - name: $select
           in: query
@@ -90910,6 +91130,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -91004,6 +91225,7 @@ paths:
                 - identitySources
                 - modifiedBy
                 - modifiedDateTime
+                - state
                 - externalSponsors
                 - internalSponsors
               type: string
@@ -93658,7 +93880,7 @@ paths:
       tags:
         - privilegedApproval.privilegedRoleAssignmentRequest
       summary: Update the ref of navigation property request in privilegedApproval
-      operationId: privilegedApproval_UpdateRefRequest
+      operationId: privilegedApproval_SetRefRequest
       parameters:
         - name: privilegedApproval-id
           in: path
@@ -97183,6 +97405,10 @@ components:
               type: string
               format: date-time
               nullable: true
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
             requestApprovalSettings:
               $ref: '#/components/schemas/microsoft.graph.approvalSettings'
             requestorSettings:
@@ -97333,6 +97559,10 @@ components:
               type: string
               format: date-time
               nullable: true
+            attributes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageResourceAttribute'
             description:
               type: string
               nullable: true
@@ -97429,6 +97659,10 @@ components:
         - title: accessPackageAssignmentRequest
           type: object
           properties:
+            answers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAnswer'
             completedDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -97612,6 +97846,8 @@ components:
               type: string
               format: date-time
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.connectedOrganizationState'
             externalSponsors:
               type: array
               items:
@@ -98387,6 +98623,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessPackageQuestion:
+      title: accessPackageQuestion
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        isRequired:
+          type: boolean
+          nullable: true
+        sequence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        text:
+          $ref: '#/components/schemas/microsoft.graph.accessPackageLocalizedContent'
+      additionalProperties:
+        type: object
     microsoft.graph.approvalSettings:
       title: approvalSettings
       type: object
@@ -98425,6 +98681,33 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessPackageResourceAttribute:
+      title: accessPackageResourceAttribute
+      type: object
+      properties:
+        attributeDestination:
+          $ref: '#/components/schemas/microsoft.graph.accessPackageResourceAttributeDestination'
+        attributeName:
+          type: string
+          nullable: true
+        attributeSource:
+          $ref: '#/components/schemas/microsoft.graph.accessPackageResourceAttributeSource'
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageAnswer:
+      title: accessPackageAnswer
+      type: object
+      properties:
+        answeredQuestion:
+          $ref: '#/components/schemas/microsoft.graph.accessPackageQuestion'
+        displayValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.requestSchedule:
       title: requestSchedule
       type: object
@@ -98445,6 +98728,13 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.connectedOrganizationState:
+      title: connectedOrganizationState
+      enum:
+        - configured
+        - proposed
+        - unknownFutureValue
+      type: string
     microsoft.graph.governanceSchedule:
       title: governanceSchedule
       type: object
@@ -98602,6 +98892,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.accessPackageLocalizedContent:
+      title: accessPackageLocalizedContent
+      type: object
+      properties:
+        defaultText:
+          type: string
+          nullable: true
+        localizedTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageLocalizedText'
+      additionalProperties:
+        type: object
     microsoft.graph.approvalStage:
       title: approvalStage
       type: object
@@ -98632,6 +98935,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userSet'
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageResourceAttributeDestination:
+      title: accessPackageResourceAttributeDestination
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageResourceAttributeSource:
+      title: accessPackageResourceAttributeSource
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.expirationPattern:
@@ -98697,6 +99010,18 @@ components:
           additionalProperties:
             type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageLocalizedText:
+      title: accessPackageLocalizedText
+      type: object
+      properties:
+        languageCode:
+          type: string
+          nullable: true
+        text:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.expirationPatternType:

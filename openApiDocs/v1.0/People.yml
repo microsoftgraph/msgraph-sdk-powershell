@@ -476,7 +476,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property lastSharedMethod in users
-      operationId: users.insights.shared_UpdateRefLastSharedMethod
+      operationId: users.insights.shared_SetRefLastSharedMethod
       parameters:
         - name: user-id
           in: path
@@ -628,7 +628,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.shared_UpdateRefResource
+      operationId: users.insights.shared_SetRefResource
       parameters:
         - name: user-id
           in: path
@@ -1034,7 +1034,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.trending_UpdateRefResource
+      operationId: users.insights.trending_SetRefResource
       parameters:
         - name: user-id
           in: path
@@ -1436,7 +1436,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.used_UpdateRefResource
+      operationId: users.insights.used_SetRefResource
       parameters:
         - name: user-id
           in: path

@@ -1651,7 +1651,7 @@ paths:
       tags:
         - print.printer
       summary: Update the ref of navigation property share in print
-      operationId: print.printers_UpdateRefShare
+      operationId: print.printers_SetRefShare
       parameters:
         - name: printer-id
           in: path
@@ -2047,7 +2047,7 @@ paths:
       tags:
         - print.printer
       summary: Update the ref of navigation property definition in print
-      operationId: print.printers.taskTriggers_UpdateRefDefinition
+      operationId: print.printers.taskTriggers_SetRefDefinition
       parameters:
         - name: printer-id
           in: path
@@ -3035,7 +3035,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the ref of navigation property printer in print
-      operationId: print.printerShares_UpdateRefPrinter
+      operationId: print.printerShares_SetRefPrinter
       parameters:
         - name: printerShare-id
           in: path
@@ -5114,7 +5114,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update the ref of navigation property printer in print
-      operationId: print.shares_UpdateRefPrinter
+      operationId: print.shares_SetRefPrinter
       parameters:
         - name: printerShare-id
           in: path
@@ -5776,7 +5776,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the ref of navigation property definition in print
-      operationId: print.taskDefinitions.tasks_UpdateRefDefinition
+      operationId: print.taskDefinitions.tasks_SetRefDefinition
       parameters:
         - name: printTaskDefinition-id
           in: path
@@ -5943,7 +5943,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update the ref of navigation property trigger in print
-      operationId: print.taskDefinitions.tasks_UpdateRefTrigger
+      operationId: print.taskDefinitions.tasks_SetRefTrigger
       parameters:
         - name: printTaskDefinition-id
           in: path

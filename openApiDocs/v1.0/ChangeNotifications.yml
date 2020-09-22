@@ -38,10 +38,18 @@ paths:
                 - clientState desc
                 - creatorId
                 - creatorId desc
+                - encryptionCertificate
+                - encryptionCertificate desc
+                - encryptionCertificateId
+                - encryptionCertificateId desc
                 - expirationDateTime
                 - expirationDateTime desc
+                - includeResourceData
+                - includeResourceData desc
                 - latestSupportedTlsVersion
                 - latestSupportedTlsVersion desc
+                - lifecycleNotificationUrl
+                - lifecycleNotificationUrl desc
                 - notificationUrl
                 - notificationUrl desc
                 - resource
@@ -62,8 +70,12 @@ paths:
                 - changeType
                 - clientState
                 - creatorId
+                - encryptionCertificate
+                - encryptionCertificateId
                 - expirationDateTime
+                - includeResourceData
                 - latestSupportedTlsVersion
+                - lifecycleNotificationUrl
                 - notificationUrl
                 - resource
               type: string
@@ -153,8 +165,12 @@ paths:
                 - changeType
                 - clientState
                 - creatorId
+                - encryptionCertificate
+                - encryptionCertificateId
                 - expirationDateTime
+                - includeResourceData
                 - latestSupportedTlsVersion
+                - lifecycleNotificationUrl
                 - notificationUrl
                 - resource
               type: string
@@ -253,14 +269,28 @@ components:
               type: string
               description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
               nullable: true
+            encryptionCertificate:
+              type: string
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+              nullable: true
+            encryptionCertificateId:
+              type: string
+              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+              nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
               format: date-time
+            includeResourceData:
+              type: boolean
+              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
+              nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              nullable: true
+            lifecycleNotificationUrl:
+              type: string
               nullable: true
             notificationUrl:
               type: string
