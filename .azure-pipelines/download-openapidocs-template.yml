@@ -6,10 +6,6 @@ parameters:
   displayName: 'Build Number'
   type: string
   default: $[format('{0:yyMMddHH}', pipeline.startTime)]
-- name: DocsBranch
-  displayName: 'Docs Branch'
-  type: string
-  default: $[format('buildOpenApiDocsDownload{0:yyMMddHH}', pipeline.startTime)]
 
 jobs:
 - job: MsGraphDownloadOpenApiDocs
@@ -61,13 +57,15 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
+          $date = Get-Date -Format yyyyMMddHH
+          $docsBranch = "{0}{1}" -f $date, "buildDocsDownload"
           git status
           git checkout '$(Build.SourceBranchName)'
-          git branch '$(DocsBranch)'
-          git checkout '$(DocsBranch)'
+          git branch $docsBranch
+          git checkout $docsBranch
           git status
           git add .
           git commit -m '$(BUILDNUMBER): Build OpenApiDocs Download [skip ci]'
           git status
-          git push --set-upstream origin '$(DocsBranch)'
+          git push --set-upstream origin $docsBranch
           git status
