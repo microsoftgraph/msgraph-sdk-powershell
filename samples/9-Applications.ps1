@@ -2,23 +2,32 @@
 Connect-Graph -Scopes "Application.ReadWrite.All"
 
 # Create an application for use with DeviceCodeFlow
-$app1 = new-mgApplication   -displayName "DeviceCodeFlowApp" `
+$app1 = New-MgApplication   -displayName "DeviceCodeFlowApp" `
                             -IsFallbackPublicClient `
-                            -PublicClientRedirectUris "https://login.microsoftonline.com/common/oauth2/nativeclient"
+                            -PublicClient @{ `
+                                RedirectUris = "https://login.microsoftonline.com/common/oauth2/nativeclient" `
+                            }
 
 # Create an application for use with Native Client an interactive sign in
-$app2 = new-mgApplication   -displayName "NativeAppInteractiveFlowApp" `
+$app2 = New-MgApplication   -displayName "NativeAppInteractiveFlowApp" `
                             -IsFallbackPublicClient `
-                            -PublicClientRedirectUris "http://localhost"
+                            -PublicClient @{ `
+                                RedirectUris = "http://localhost" `
+                            }
 
 # Create an web app with implicit auth
-$app3 = new-mgApplication -displayName "ImplicitWebApp" `
-         -ImplicitGrantSettingEnableAccessTokenIssuance `
-         -ImplicitGrantSettingEnableIdTokenIssuance `
-         -WebRedirectUris "https://localhost:3000/"                            
+$app3 = New-MgApplication -displayName "ImplicitWebApp" `
+         -Web @{ `
+            RedirectUris = "https://localhost:3000/"; `
+            ImplicitGrantSettings = @{ `
+                EnableAccessTokenIssuance = $true; `
+                EnableIdTokenIssuance = $true; `
+             } `
+        }  
 
+# Create an application for use with Confidential Client flow using a certificate.
 # Get certificate from current user store.
-$CertificateThumbprint = "THUMBPRINT"
+$CertificateThumbprint = "YOUR_THUMBPRINT"
 $Certificate = Get-ChildItem -Path "Cert:\CurrentUser\My\$CertificateThumbprint"
 
 # Graph resource Id
