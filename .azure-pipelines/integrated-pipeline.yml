@@ -40,7 +40,7 @@ stages:
         targetType: 'inline'
         script: |
             printenv
-            if ($Env:BUILD_SOURCEBRANCHNAME -eq "releaseCadencev2"){
+            if ($Env:BUILD_SOURCEBRANCHNAME -eq "master"){
                 Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
             }
             Write-Host $(BUILDNUMBER)
