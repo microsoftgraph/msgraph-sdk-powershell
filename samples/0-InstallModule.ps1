@@ -1,7 +1,13 @@
 # Installing the Module
 
-# Installing the Graph PowerShell module for the Beta API with no previous versions installed
+# Installing the Graph PowerShell module with no previous versions installed
 Install-module Microsoft.Graph
+
+# If upgrading from our preview modules, run install-module with AllowClobber and Force parameter to avoid command name conflicts
+Install-Module Microsoft.Graph -AllowClobber -Force
+
+# Updating from an earlier version of MS Graph PowerShell installed from PS Gallery
+Update-module Microsoft.Graph
 
 # Uninstalling the old preview version, before installing the new
 
