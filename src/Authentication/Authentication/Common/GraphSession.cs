@@ -5,6 +5,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     using System;
+    using System.Security;
     using System.Threading;
     /// <summary>
     /// Contains methods to create, modify or obtain a thread safe static instance of <see cref="GraphSession"/>.
@@ -24,18 +25,22 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public IAuthContext AuthContext { get; set; }
 
-        private byte[] token;
+        private byte[] msalToken;
 
         /// <summary>
         /// Gets or Sets a session based token.
         /// This returns an empty byte[] when token is not present.
         /// </summary>
-        public byte[] Token
+        public byte[] MSALToken
         {
-            get { return token ?? new byte[0]; }
-            set { token = value; }
+            get { return msalToken ?? new byte[0]; }
+            set { msalToken = value; }
         }
 
+        /// <summary>
+        /// Gets or Sets a user provided access token for calling Microsoft Graph service.
+        /// </summary>
+        public SecureString UserProvidedToken { get; set; }
 
         /// <summary>
         /// The name of the selected Microsoft Graph profile.

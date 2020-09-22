@@ -6,8 +6,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
     using System.Management.Automation;
-    [Cmdlet(VerbsCommunications.Disconnect, "Graph")]
-    public class DisconnectGraph : PSCmdlet
+    [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
+    [Alias("Disconnect-Graph")]
+    public class DisconnectMgGraph : PSCmdlet
     {
         protected override void BeginProcessing()
         {

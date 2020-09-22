@@ -1,0 +1,29 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+
+jobs:
+- job: MsGraphPSSDKSecurityPreChecks
+  displayName: Microsoft Graph PowerShell SDK Security Pre Checks
+  pool: MsGraphDevXAzureAgents
+  timeoutInMinutes: 600
+
+  steps:
+  - task: CredScan@2
+    displayName: 'Run CredScan'
+    inputs:
+      debugMode: false
+      batchSize: 20
+      toolMajorVersion: 'V2'
+      searchersFileType: 'Skype'
+
+  - task: PoliCheck@1
+    displayName: 'Run PoliCheck'
+    condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
+    inputs:
+      targetType: F
+      SOMEnabled: true
+      optionsFC: 0
+      optionsXS: 0
+      optionsHMENABLE: 0
+      continueOnError: true

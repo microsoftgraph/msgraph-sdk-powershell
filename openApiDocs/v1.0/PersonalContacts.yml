@@ -37,10 +37,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - parentFolderId
-                - parentFolderId desc
                 - displayName
                 - displayName desc
+                - parentFolderId
+                - parentFolderId desc
               type: string
         - name: $select
           in: query
@@ -53,12 +53,12 @@ paths:
             items:
               enum:
                 - id
-                - parentFolderId
                 - displayName
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
+                - parentFolderId
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -71,10 +71,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -161,12 +161,12 @@ paths:
             items:
               enum:
                 - id
-                - parentFolderId
                 - displayName
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
+                - parentFolderId
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -179,10 +179,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -191,6 +191,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+          links:
+            childFolders:
+              operationId: users.ContactFolders.ListChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+            contacts:
+              operationId: users.ContactFolders.ListContacts
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+            multiValueExtendedProperties:
+              operationId: users.ContactFolders.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+            singleValueExtendedProperties:
+              operationId: users.ContactFolders.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -296,10 +317,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - parentFolderId
-                - parentFolderId desc
                 - displayName
                 - displayName desc
+                - parentFolderId
+                - parentFolderId desc
               type: string
         - name: $select
           in: query
@@ -312,12 +333,12 @@ paths:
             items:
               enum:
                 - id
-                - parentFolderId
                 - displayName
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
+                - parentFolderId
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -330,10 +351,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -434,12 +455,12 @@ paths:
             items:
               enum:
                 - id
-                - parentFolderId
                 - displayName
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
+                - parentFolderId
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -452,10 +473,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
-                - multiValueExtendedProperties
-                - contacts
                 - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -464,6 +485,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
+          links:
+            childFolders:
+              operationId: users.contactFolders.ChildFolders.ListChildFolders
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+            contacts:
+              operationId: users.contactFolders.ChildFolders.ListContacts
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+            multiValueExtendedProperties:
+              operationId: users.contactFolders.ChildFolders.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
+            singleValueExtendedProperties:
+              operationId: users.contactFolders.ChildFolders.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contactFolder-id1: $request.path.contactFolder-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -583,80 +629,80 @@ paths:
               enum:
                 - id
                 - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
-                - changeKey
-                - changeKey desc
-                - categories
-                - categories desc
-                - parentFolderId
-                - parentFolderId desc
+                - assistantName
+                - assistantName desc
                 - birthday
                 - birthday desc
-                - fileAs
-                - fileAs desc
-                - displayName
-                - displayName desc
-                - givenName
-                - givenName desc
-                - initials
-                - initials desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - generation
-                - generation desc
-                - emailAddresses
-                - emailAddresses desc
-                - imAddresses
-                - imAddresses desc
-                - jobTitle
-                - jobTitle desc
+                - businessAddress
+                - businessAddress desc
+                - businessHomePage
+                - businessHomePage desc
+                - businessPhones
+                - businessPhones desc
+                - children
+                - children desc
                 - companyName
                 - companyName desc
                 - department
                 - department desc
-                - officeLocation
-                - officeLocation desc
-                - profession
-                - profession desc
-                - businessHomePage
-                - businessHomePage desc
-                - assistantName
-                - assistantName desc
-                - manager
-                - manager desc
-                - homePhones
-                - homePhones desc
-                - mobilePhone
-                - mobilePhone desc
-                - businessPhones
-                - businessPhones desc
+                - displayName
+                - displayName desc
+                - emailAddresses
+                - emailAddresses desc
+                - fileAs
+                - fileAs desc
+                - generation
+                - generation desc
+                - givenName
+                - givenName desc
                 - homeAddress
                 - homeAddress desc
-                - businessAddress
-                - businessAddress desc
+                - homePhones
+                - homePhones desc
+                - imAddresses
+                - imAddresses desc
+                - initials
+                - initials desc
+                - jobTitle
+                - jobTitle desc
+                - manager
+                - manager desc
+                - middleName
+                - middleName desc
+                - mobilePhone
+                - mobilePhone desc
+                - nickName
+                - nickName desc
+                - officeLocation
+                - officeLocation desc
                 - otherAddress
                 - otherAddress desc
-                - spouseName
-                - spouseName desc
+                - parentFolderId
+                - parentFolderId desc
                 - personalNotes
                 - personalNotes desc
-                - children
-                - children desc
+                - profession
+                - profession desc
+                - spouseName
+                - spouseName desc
+                - surname
+                - surname desc
+                - title
+                - title desc
+                - yomiCompanyName
+                - yomiCompanyName desc
+                - yomiGivenName
+                - yomiGivenName desc
+                - yomiSurname
+                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -669,47 +715,47 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - parentFolderId
+                - assistantName
                 - birthday
-                - fileAs
-                - displayName
-                - givenName
-                - initials
-                - middleName
-                - nickName
-                - surname
-                - title
-                - yomiGivenName
-                - yomiSurname
-                - yomiCompanyName
-                - generation
-                - emailAddresses
-                - imAddresses
-                - jobTitle
+                - businessAddress
+                - businessHomePage
+                - businessPhones
+                - children
                 - companyName
                 - department
-                - officeLocation
-                - profession
-                - businessHomePage
-                - assistantName
-                - manager
-                - homePhones
-                - mobilePhone
-                - businessPhones
+                - displayName
+                - emailAddresses
+                - fileAs
+                - generation
+                - givenName
                 - homeAddress
-                - businessAddress
+                - homePhones
+                - imAddresses
+                - initials
+                - jobTitle
+                - manager
+                - middleName
+                - mobilePhone
+                - nickName
+                - officeLocation
                 - otherAddress
-                - spouseName
+                - parentFolderId
                 - personalNotes
-                - children
-                - singleValueExtendedProperties
+                - profession
+                - spouseName
+                - surname
+                - title
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -722,10 +768,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -826,47 +872,47 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - parentFolderId
+                - assistantName
                 - birthday
-                - fileAs
-                - displayName
-                - givenName
-                - initials
-                - middleName
-                - nickName
-                - surname
-                - title
-                - yomiGivenName
-                - yomiSurname
-                - yomiCompanyName
-                - generation
-                - emailAddresses
-                - imAddresses
-                - jobTitle
+                - businessAddress
+                - businessHomePage
+                - businessPhones
+                - children
                 - companyName
                 - department
-                - officeLocation
-                - profession
-                - businessHomePage
-                - assistantName
-                - manager
-                - homePhones
-                - mobilePhone
-                - businessPhones
+                - displayName
+                - emailAddresses
+                - fileAs
+                - generation
+                - givenName
                 - homeAddress
-                - businessAddress
+                - homePhones
+                - imAddresses
+                - initials
+                - jobTitle
+                - manager
+                - middleName
+                - mobilePhone
+                - nickName
+                - officeLocation
                 - otherAddress
-                - spouseName
+                - parentFolderId
                 - personalNotes
-                - children
-                - singleValueExtendedProperties
+                - profession
+                - spouseName
+                - surname
+                - title
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -879,10 +925,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -891,6 +937,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+          links:
+            extensions:
+              operationId: users.contactFolders.Contacts.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+            multiValueExtendedProperties:
+              operationId: users.contactFolders.Contacts.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+            photo:
+              operationId: users.contactFolders.Contacts.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
+            singleValueExtendedProperties:
+              operationId: users.contactFolders.Contacts.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contactFolder-id: $request.path.contactFolder-id
+                contact-id: $request.path.contact-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2581,80 +2652,80 @@ paths:
               enum:
                 - id
                 - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
                 - createdDateTime
                 - createdDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
-                - changeKey
-                - changeKey desc
-                - categories
-                - categories desc
-                - parentFolderId
-                - parentFolderId desc
+                - assistantName
+                - assistantName desc
                 - birthday
                 - birthday desc
-                - fileAs
-                - fileAs desc
-                - displayName
-                - displayName desc
-                - givenName
-                - givenName desc
-                - initials
-                - initials desc
-                - middleName
-                - middleName desc
-                - nickName
-                - nickName desc
-                - surname
-                - surname desc
-                - title
-                - title desc
-                - yomiGivenName
-                - yomiGivenName desc
-                - yomiSurname
-                - yomiSurname desc
-                - yomiCompanyName
-                - yomiCompanyName desc
-                - generation
-                - generation desc
-                - emailAddresses
-                - emailAddresses desc
-                - imAddresses
-                - imAddresses desc
-                - jobTitle
-                - jobTitle desc
+                - businessAddress
+                - businessAddress desc
+                - businessHomePage
+                - businessHomePage desc
+                - businessPhones
+                - businessPhones desc
+                - children
+                - children desc
                 - companyName
                 - companyName desc
                 - department
                 - department desc
-                - officeLocation
-                - officeLocation desc
-                - profession
-                - profession desc
-                - businessHomePage
-                - businessHomePage desc
-                - assistantName
-                - assistantName desc
-                - manager
-                - manager desc
-                - homePhones
-                - homePhones desc
-                - mobilePhone
-                - mobilePhone desc
-                - businessPhones
-                - businessPhones desc
+                - displayName
+                - displayName desc
+                - emailAddresses
+                - emailAddresses desc
+                - fileAs
+                - fileAs desc
+                - generation
+                - generation desc
+                - givenName
+                - givenName desc
                 - homeAddress
                 - homeAddress desc
-                - businessAddress
-                - businessAddress desc
+                - homePhones
+                - homePhones desc
+                - imAddresses
+                - imAddresses desc
+                - initials
+                - initials desc
+                - jobTitle
+                - jobTitle desc
+                - manager
+                - manager desc
+                - middleName
+                - middleName desc
+                - mobilePhone
+                - mobilePhone desc
+                - nickName
+                - nickName desc
+                - officeLocation
+                - officeLocation desc
                 - otherAddress
                 - otherAddress desc
-                - spouseName
-                - spouseName desc
+                - parentFolderId
+                - parentFolderId desc
                 - personalNotes
                 - personalNotes desc
-                - children
-                - children desc
+                - profession
+                - profession desc
+                - spouseName
+                - spouseName desc
+                - surname
+                - surname desc
+                - title
+                - title desc
+                - yomiCompanyName
+                - yomiCompanyName desc
+                - yomiGivenName
+                - yomiGivenName desc
+                - yomiSurname
+                - yomiSurname desc
               type: string
         - name: $select
           in: query
@@ -2667,47 +2738,47 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - parentFolderId
+                - assistantName
                 - birthday
-                - fileAs
-                - displayName
-                - givenName
-                - initials
-                - middleName
-                - nickName
-                - surname
-                - title
-                - yomiGivenName
-                - yomiSurname
-                - yomiCompanyName
-                - generation
-                - emailAddresses
-                - imAddresses
-                - jobTitle
+                - businessAddress
+                - businessHomePage
+                - businessPhones
+                - children
                 - companyName
                 - department
-                - officeLocation
-                - profession
-                - businessHomePage
-                - assistantName
-                - manager
-                - homePhones
-                - mobilePhone
-                - businessPhones
+                - displayName
+                - emailAddresses
+                - fileAs
+                - generation
+                - givenName
                 - homeAddress
-                - businessAddress
+                - homePhones
+                - imAddresses
+                - initials
+                - jobTitle
+                - manager
+                - middleName
+                - mobilePhone
+                - nickName
+                - officeLocation
                 - otherAddress
-                - spouseName
+                - parentFolderId
                 - personalNotes
-                - children
-                - singleValueExtendedProperties
+                - profession
+                - spouseName
+                - surname
+                - title
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2720,10 +2791,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -2810,47 +2881,47 @@ paths:
             items:
               enum:
                 - id
+                - categories
+                - changeKey
                 - createdDateTime
                 - lastModifiedDateTime
-                - changeKey
-                - categories
-                - parentFolderId
+                - assistantName
                 - birthday
-                - fileAs
-                - displayName
-                - givenName
-                - initials
-                - middleName
-                - nickName
-                - surname
-                - title
-                - yomiGivenName
-                - yomiSurname
-                - yomiCompanyName
-                - generation
-                - emailAddresses
-                - imAddresses
-                - jobTitle
+                - businessAddress
+                - businessHomePage
+                - businessPhones
+                - children
                 - companyName
                 - department
-                - officeLocation
-                - profession
-                - businessHomePage
-                - assistantName
-                - manager
-                - homePhones
-                - mobilePhone
-                - businessPhones
+                - displayName
+                - emailAddresses
+                - fileAs
+                - generation
+                - givenName
                 - homeAddress
-                - businessAddress
+                - homePhones
+                - imAddresses
+                - initials
+                - jobTitle
+                - manager
+                - middleName
+                - mobilePhone
+                - nickName
+                - officeLocation
                 - otherAddress
-                - spouseName
+                - parentFolderId
                 - personalNotes
-                - children
-                - singleValueExtendedProperties
+                - profession
+                - spouseName
+                - surname
+                - title
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
         - name: $expand
           in: query
@@ -2863,10 +2934,10 @@ paths:
             items:
               enum:
                 - '*'
-                - singleValueExtendedProperties
+                - extensions
                 - multiValueExtendedProperties
                 - photo
-                - extensions
+                - singleValueExtendedProperties
               type: string
       responses:
         '200':
@@ -2875,6 +2946,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
+          links:
+            extensions:
+              operationId: users.Contacts.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+            multiValueExtendedProperties:
+              operationId: users.Contacts.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+            photo:
+              operationId: users.Contacts.GetPhoto
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
+            singleValueExtendedProperties:
+              operationId: users.Contacts.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                contact-id: $request.path.contact-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3868,34 +3960,34 @@ components:
         - title: contactFolder
           type: object
           properties:
-            parentFolderId:
-              type: string
-              description: The ID of the folder's parent folder.
-              nullable: true
             displayName:
               type: string
               description: The folder's display name.
               nullable: true
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-            multiValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-              description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-            contacts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.contact'
-              description: The contacts in the folder. Navigation property. Read-only. Nullable.
+            parentFolderId:
+              type: string
+              description: The ID of the folder's parent folder.
+              nullable: true
             childFolders:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+            contacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contact'
+              description: The contacts in the folder. Navigation property. Read-only. Nullable.
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -3904,9 +3996,9 @@ components:
         - title: contact
           type: object
           properties:
-            parentFolderId:
+            assistantName:
               type: string
-              description: The ID of the contact's parent folder.
+              description: The name of the contact's assistant.
               nullable: true
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -3914,29 +4006,112 @@ components:
               description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
-            fileAs:
+            businessAddress:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            businessHomePage:
               type: string
-              description: The name the contact is filed under.
+              description: The business home page of the contact.
+              nullable: true
+            businessPhones:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The contact's business phone numbers.
+            children:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The names of the contact's children.
+            companyName:
+              type: string
+              description: The name of the contact's company.
+              nullable: true
+            department:
+              type: string
+              description: The contact's department.
               nullable: true
             displayName:
               type: string
               description: 'The contact''s display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.'
               nullable: true
+            emailAddresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.emailAddress'
+              description: The contact's email addresses.
+            fileAs:
+              type: string
+              description: The name the contact is filed under.
+              nullable: true
+            generation:
+              type: string
+              description: The contact's generation.
+              nullable: true
             givenName:
               type: string
               description: The contact's given name.
               nullable: true
+            homeAddress:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            homePhones:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The contact's home phone numbers.
+            imAddresses:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
               description: The contact's initials.
+              nullable: true
+            jobTitle:
+              type: string
+              description: The contact’s job title.
+              nullable: true
+            manager:
+              type: string
+              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
               description: The contact's middle name.
               nullable: true
+            mobilePhone:
+              type: string
+              description: The contact's mobile phone number.
+              nullable: true
             nickName:
               type: string
               description: The contact's nickname.
+              nullable: true
+            officeLocation:
+              type: string
+              description: The location of the contact's office.
+              nullable: true
+            otherAddress:
+              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+            parentFolderId:
+              type: string
+              description: The ID of the contact's parent folder.
+              nullable: true
+            personalNotes:
+              type: string
+              description: The user's notes about the contact.
+              nullable: true
+            profession:
+              type: string
+              description: The contact's profession.
+              nullable: true
+            spouseName:
+              type: string
+              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
@@ -3946,6 +4121,10 @@ components:
               type: string
               description: The contact's title.
               nullable: true
+            yomiCompanyName:
+              type: string
+              description: The phonetic Japanese company name of the contact.
+              nullable: true
             yomiGivenName:
               type: string
               description: The phonetic Japanese given name (first name) of the contact.
@@ -3954,98 +4133,11 @@ components:
               type: string
               description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
-            yomiCompanyName:
-              type: string
-              description: The phonetic Japanese company name of the contact.
-              nullable: true
-            generation:
-              type: string
-              description: The contact's generation.
-              nullable: true
-            emailAddresses:
+            extensions:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.emailAddress'
-              description: The contact's email addresses.
-            imAddresses:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The contact's instant messaging (IM) addresses.
-            jobTitle:
-              type: string
-              description: The contact’s job title.
-              nullable: true
-            companyName:
-              type: string
-              description: The name of the contact's company.
-              nullable: true
-            department:
-              type: string
-              description: The contact's department.
-              nullable: true
-            officeLocation:
-              type: string
-              description: The location of the contact's office.
-              nullable: true
-            profession:
-              type: string
-              description: The contact's profession.
-              nullable: true
-            businessHomePage:
-              type: string
-              description: The business home page of the contact.
-              nullable: true
-            assistantName:
-              type: string
-              description: The name of the contact's assistant.
-              nullable: true
-            manager:
-              type: string
-              description: The name of the contact's manager.
-              nullable: true
-            homePhones:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The contact's home phone numbers.
-            mobilePhone:
-              type: string
-              description: The contact's mobile phone number.
-              nullable: true
-            businessPhones:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The contact's business phone numbers.
-            homeAddress:
-              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-            businessAddress:
-              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-            otherAddress:
-              $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-            spouseName:
-              type: string
-              description: The name of the contact's spouse/partner.
-              nullable: true
-            personalNotes:
-              type: string
-              description: The user's notes about the contact.
-              nullable: true
-            children:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The names of the contact's children.
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -4053,11 +4145,11 @@ components:
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-            extensions:
+            singleValueExtendedProperties:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Read-only. Nullable.
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -4130,6 +4222,16 @@ components:
         - title: outlookItem
           type: object
           properties:
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The categories associated with the item
+            changeKey:
+              type: string
+              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -4142,47 +4244,15 @@ components:
               description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
-            changeKey:
-              type: string
-              description: 'Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.'
-              nullable: true
-            categories:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The categories associated with the item
           additionalProperties:
             type: object
-    microsoft.graph.emailAddress:
-      title: emailAddress
-      type: object
-      properties:
-        name:
-          type: string
-          description: The display name of the person or entity.
-          nullable: true
-        address:
-          type: string
-          description: The email address of the person or entity.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.physicalAddress:
       title: physicalAddress
       type: object
       properties:
-        street:
-          type: string
-          description: The street.
-          nullable: true
         city:
           type: string
           description: The city.
-          nullable: true
-        state:
-          type: string
-          description: The state.
           nullable: true
         countryOrRegion:
           type: string
@@ -4191,6 +4261,28 @@ components:
         postalCode:
           type: string
           description: The postal code.
+          nullable: true
+        state:
+          type: string
+          description: The state.
+          nullable: true
+        street:
+          type: string
+          description: The street.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.emailAddress:
+      title: emailAddress
+      type: object
+      properties:
+        address:
+          type: string
+          description: The email address of the person or entity.
+          nullable: true
+        name:
+          type: string
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object

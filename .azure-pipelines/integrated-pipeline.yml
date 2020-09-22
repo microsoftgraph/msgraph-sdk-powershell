@@ -1,0 +1,110 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+variables:
+  AUTH_MODULE_NAME: 'Authentication'
+  AUTH_MODULE_PATH: 'src\Authentication\Authentication'
+  AUTH_MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
+  MODULE_DLL_PATTERN: 'Microsoft.Graph.Authentication.dll'
+  MODULE_PREFIX: 'Microsoft.Graph'
+  ROLLUP_MODULE_NAME: 'Graph'
+  ROLLUP_MODULE_PATH: 'src/Graph/Graph'
+  WORKLOAD_MODULE_PATH: 'src'
+  GRAPH_VERSION: 'beta'
+  Api_Key: 'Api_Key'
+  EnableSigning: true
+  BRANCH_PREFIX: 'releaseOpenApiDocs'
+  GitUserEmail: 'GraphTooling@service.microsoft.com'
+  GitUserName: 'Microsoft Graph DevX Tooling'
+  BUILDNUMBER: $[format('{0:yyMMddHH}', pipeline.startTime)]
+
+pool: MsGraphDevXAzureAgents
+
+trigger:
+    branches:
+      include:
+      - master
+      - dev
+      - releases/*
+      - bugfixes/*
+
+stages:
+- stage: ComputeVersion
+  displayName: 'Compute Version'
+  jobs:
+  - job: ComputeVersion
+    steps:
+    - task: PowerShell@2
+      displayName: 'Compute Version'
+      inputs:
+        targetType: 'inline'
+        script: |
+            printenv
+            if ($Env:BUILD_SOURCEBRANCHNAME -eq "master"){
+                Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
+            }
+            Write-Host $(BUILDNUMBER)
+            printenv
+
+- stage: SecurityPreChecks
+  displayName: 'Security Pre Checks'
+  jobs:
+  - template: ./security-prechecks-template.yml
+
+- stage: DownloadOpenApiDocs
+  displayName: 'Download Open Api Docs from DevX API'
+  jobs:
+  - template: ./download-openapidocs-template.yml
+    parameters:
+      BUILDNUMBER: $(BUILDNUMBER)
+        
+- stage: GenerateProfiles
+  displayName: 'Generate Profiles'
+  jobs:
+  - job: GenerateProfiles
+    steps:
+    - template: ./generate-profiles-template.yml
+
+- stage: GenerateAuthModule
+  displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'
+  jobs:
+  - template: ./generate-auth-module-template.yml
+    parameters:
+      Api_Key: $(Api_Key)
+      AUTH_MODULE_NAME: $(AUTH_MODULE)
+      AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
+      AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
+      EnableSigning: true
+      BUILDNUMBER: $(BUILDNUMBER)
+
+- stage: GenerateBetaModules
+  displayName: 'Generate Beta Modules (Microsoft.Graph.*)'
+  jobs:
+  - template: ./generate-modules-template.yml
+    parameters:
+      Api_Key: $(Api_Key)
+      MODULE_PREFIX: $(MODULE_PREFIX)
+      WORKLOAD_MODULE_PATH: $(WORKLOAD_MODULE_PATH)
+      GRAPH_VERSION: $(GRAPH_VERSION)
+      AUTH_MODULE_PATH: $(AUTH_MODULE_PATH)
+      AUTH_MODULE_DLL_PATTERN: $(AUTH_MODULE_DLL_PATTERN)
+      EnableSigning: true
+      BUILDNUMBER: $(BUILDNUMBER)
+
+- stage: GenerateRollUpModule
+  displayName: 'Generate Roll-Up Module'
+  jobs:
+  - template: ./generate-rollup-module-template.yml
+    parameters:
+      Api_Key: $(Api_Key)
+      ROLLUP_MODULE_PATH: $(ROLLUP_MODULE_PATH)
+      ROLLUP_MODULE_NAME: $(ROLLUP_MODULE_NAME)
+      GRAPH_VERSION: $(GRAPH_VERSION)
+      MODULE_PREFIX: $(MODULE_PREFIX)
+      EnableSigning: true
+      BUILDNUMBER: $(BUILDNUMBER)
+
+- stage: SecurityPostChecks
+  displayName: 'Security Post Checks'
+  jobs:
+  - template: ./security-postchecks-template.yml

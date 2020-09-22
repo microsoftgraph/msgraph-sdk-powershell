@@ -69,18 +69,41 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     if (-not (Test-Path $GraphModuleLocation)) {
         New-Item -Path $GraphModuleLocation -Type Directory
     }
+    $AllowPreRelease = $true
+    if($ModulePreviewNumber -eq -1) {
+        $AllowPreRelease = $false
+    }
 
     # Add auth module as a dependency.
-    $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication"
-    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -AllowPrerelease -Force
-    $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+    $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+    Write-Warning "Installing $ExistingAuthModule.Name $ExistingAuthModule.Version"
+    Install-Module $ExistingAuthModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
+    
+    if($ExistingAuthModule.Version -like '*preview*' ) {
+        $version = $ExistingAuthModule.Version.Remove($ExistingAuthModule.Version.IndexOf('-'))
+        Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $version }
+    }
+    else {
+        $RequiredGraphModules += @{ ModuleName = $ExistingAuthModule.Name ; ModuleVersion = $ExistingAuthModule.Version }
+    }
 
     foreach ($RequiredModule in $ModuleMapping.Keys) {
         # Install module locally in order to specify it as a dependency of the roll-up module down the generation pipeline.
         # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
-        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule"
-        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -AllowPrerelease -Force
-        $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+        $ExistingWorkloadModule = Find-Module "$ModulePrefix.$RequiredModule" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease
+        Write-Warning "Installing $ModulePrefix.$RequiredModule Version: $ExistingWorkloadModule.Version"
+        Install-Module $ExistingWorkloadModule.Name -Repository $RepositoryName -Force -AllowClobber -AllowPrerelease:$AllowPreRelease
+        #Remove "-preview" from Version Name if present
+        if($ExistingWorkloadModule.Version -like '*preview*' ) {
+            $version = $ExistingWorkloadModule.Version.Remove($ExistingWorkloadModule.Version.IndexOf('-'))
+            Write-Warning "Required Version:  $ModulePrefix.$RequiredModule Version: $version"
+            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $version }
+        }
+        else {
+            $RequiredGraphModules += @{ ModuleName = $ExistingWorkloadModule.Name ; RequiredVersion = $ExistingWorkloadModule.Version }
+        }
     }
 
     [HashTable]$ModuleManifestSettings = @{
@@ -99,6 +122,9 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
         ProjectUri             = $NuspecMetadata["projectUri"]
         IconUri                = $NuspecMetadata["iconUri"]
         ReleaseNotes           = $NuspecMetadata["releaseNotes"]
+        AliasesToExport        = @()
+        CmdletsToExport        = @()
+        FunctionsToExport      = @()
     }
 
     Write-Host -ForegroundColor Green "Creating '$ModulePrefix' module manifest and nuspec..."

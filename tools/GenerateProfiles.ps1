@@ -7,7 +7,7 @@ Param(
 try {
     # Install dependencies.
     if (!(Get-Module "powershell-yaml" -ListAvailable -ErrorAction SilentlyContinue)){
-        Install-Module "powershell-yaml"
+        Install-Module "powershell-yaml" -AcceptLicense -Scope CurrentUser -Force
     }
 
     if(!(Test-Path -Path $OpenApiDocsDirectory)){

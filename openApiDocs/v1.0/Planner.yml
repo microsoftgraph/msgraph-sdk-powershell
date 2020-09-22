@@ -53,6 +53,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerGroup'
+          links:
+            plans:
+              operationId: groups.Planner.ListPlans
+              parameters:
+                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -161,9 +166,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -176,9 +181,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -269,9 +274,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -284,9 +289,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -295,6 +300,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            buckets:
+              operationId: groups.planner.Plans.ListBuckets
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+            details:
+              operationId: groups.planner.Plans.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+            tasks:
+              operationId: groups.planner.Plans.ListTasks
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -402,10 +423,10 @@ paths:
                 - id desc
                 - name
                 - name desc
-                - planId
-                - planId desc
                 - orderHint
                 - orderHint desc
+                - planId
+                - planId desc
               type: string
         - name: $select
           in: query
@@ -419,8 +440,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -536,8 +557,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -560,6 +581,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: groups.planner.plans.Buckets.ListTasks
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -686,46 +714,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -738,30 +766,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -774,10 +802,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -892,30 +920,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -928,10 +956,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -940,6 +968,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: groups.planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: groups.planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: groups.planner.plans.buckets.Tasks.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: groups.planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1081,8 +1138,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -1406,10 +1463,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -1719,8 +1776,8 @@ paths:
             items:
               enum:
                 - id
-                - sharedWith
                 - categoryDescriptions
+                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -1846,46 +1903,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -1898,30 +1955,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -1934,10 +1991,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -2038,30 +2095,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -2074,10 +2131,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -2086,6 +2143,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: groups.planner.plans.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: groups.planner.plans.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: groups.planner.plans.Tasks.GetDetails
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: groups.planner.plans.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                group-id: $request.path.group-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2206,8 +2288,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -2489,10 +2571,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -2753,9 +2835,9 @@ paths:
             items:
               enum:
                 - id
-                - tasks
-                - plans
                 - buckets
+                - plans
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -2768,9 +2850,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
-                - plans
                 - buckets
+                - plans
+                - tasks
               type: string
       responses:
         '200':
@@ -2779,6 +2861,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.planner'
+          links:
+            buckets:
+              operationId: planner.ListBuckets
+            plans:
+              operationId: planner.ListPlans
+            tasks:
+              operationId: planner.ListTasks
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2826,10 +2915,10 @@ paths:
                 - id desc
                 - name
                 - name desc
-                - planId
-                - planId desc
                 - orderHint
                 - orderHint desc
+                - planId
+                - planId desc
               type: string
         - name: $select
           in: query
@@ -2843,8 +2932,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -2931,8 +3020,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -2955,6 +3044,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: planner.Buckets.ListTasks
+              parameters:
+                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3039,46 +3133,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -3091,30 +3185,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -3127,10 +3221,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -3217,30 +3311,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -3253,10 +3347,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -3265,6 +3359,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: planner.buckets.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: planner.buckets.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: planner.buckets.Tasks.GetDetails
+              parameters:
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: planner.buckets.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3364,8 +3479,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -3605,10 +3720,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -3864,9 +3979,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -3879,9 +3994,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -3957,9 +4072,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -3972,9 +4087,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -3983,6 +4098,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            buckets:
+              operationId: planner.Plans.ListBuckets
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+            details:
+              operationId: planner.Plans.GetDetails
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+            tasks:
+              operationId: planner.Plans.ListTasks
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4069,10 +4197,10 @@ paths:
                 - id desc
                 - name
                 - name desc
-                - planId
-                - planId desc
                 - orderHint
                 - orderHint desc
+                - planId
+                - planId desc
               type: string
         - name: $select
           in: query
@@ -4086,8 +4214,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -4189,8 +4317,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -4213,6 +4341,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: planner.plans.Buckets.ListTasks
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4318,46 +4452,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -4370,30 +4504,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -4406,10 +4540,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -4510,30 +4644,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -4546,10 +4680,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -4558,6 +4692,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: planner.plans.buckets.Tasks.GetDetails
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4678,8 +4837,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -4961,10 +5120,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -5232,8 +5391,8 @@ paths:
             items:
               enum:
                 - id
-                - sharedWith
                 - categoryDescriptions
+                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -5338,46 +5497,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -5390,30 +5549,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -5426,10 +5585,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -5516,30 +5675,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -5552,10 +5711,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -5564,6 +5723,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: planner.plans.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: planner.plans.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: planner.plans.Tasks.GetDetails
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: planner.plans.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5663,8 +5843,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -5904,10 +6084,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -6139,46 +6319,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -6191,30 +6371,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -6227,10 +6407,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -6302,30 +6482,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -6338,10 +6518,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -6350,6 +6530,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: planner.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: planner.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: planner.Tasks.GetDetails
+              parameters:
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: planner.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6428,8 +6625,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -6627,10 +6824,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -6828,8 +7025,8 @@ paths:
             items:
               enum:
                 - id
-                - tasks
                 - plans
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -6842,8 +7039,8 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - plans
+                - tasks
               type: string
       responses:
         '200':
@@ -6852,6 +7049,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerUser'
+          links:
+            plans:
+              operationId: users.Planner.ListPlans
+              parameters:
+                user-id: $request.path.user-id
+            tasks:
+              operationId: users.Planner.ListTasks
+              parameters:
+                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6960,9 +7166,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -6975,9 +7181,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -7068,9 +7274,9 @@ paths:
                 - createdDateTime
                 - owner
                 - title
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
         - name: $expand
           in: query
@@ -7083,9 +7289,9 @@ paths:
             items:
               enum:
                 - '*'
-                - tasks
                 - buckets
                 - details
+                - tasks
               type: string
       responses:
         '200':
@@ -7094,6 +7300,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+          links:
+            buckets:
+              operationId: users.planner.Plans.ListBuckets
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+            details:
+              operationId: users.planner.Plans.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+            tasks:
+              operationId: users.planner.Plans.ListTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7201,10 +7423,10 @@ paths:
                 - id desc
                 - name
                 - name desc
-                - planId
-                - planId desc
                 - orderHint
                 - orderHint desc
+                - planId
+                - planId desc
               type: string
         - name: $select
           in: query
@@ -7218,8 +7440,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -7335,8 +7557,8 @@ paths:
               enum:
                 - id
                 - name
-                - planId
                 - orderHint
+                - planId
                 - tasks
               type: string
         - name: $expand
@@ -7359,6 +7581,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
+          links:
+            tasks:
+              operationId: users.planner.plans.Buckets.ListTasks
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7485,46 +7714,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -7537,30 +7766,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -7573,10 +7802,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -7691,30 +7920,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -7727,10 +7956,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -7739,6 +7968,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: users.planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: users.planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: users.planner.plans.buckets.Tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: users.planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerBucket-id: $request.path.plannerBucket-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7880,8 +8138,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -8205,10 +8463,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -8518,8 +8776,8 @@ paths:
             items:
               enum:
                 - id
-                - sharedWith
                 - categoryDescriptions
+                - sharedWith
               type: string
         - name: $expand
           in: query
@@ -8645,46 +8903,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -8697,30 +8955,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -8733,10 +8991,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -8837,30 +9095,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -8873,10 +9131,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -8885,6 +9143,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: users.planner.plans.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: users.planner.plans.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: users.planner.plans.Tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: users.planner.plans.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerPlan-id: $request.path.plannerPlan-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9005,8 +9288,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -9288,10 +9571,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -9565,46 +9848,46 @@ paths:
               enum:
                 - id
                 - id desc
-                - createdBy
-                - createdBy desc
-                - planId
-                - planId desc
-                - bucketId
-                - bucketId desc
-                - title
-                - title desc
-                - orderHint
-                - orderHint desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
                 - assigneePriority
                 - assigneePriority desc
-                - percentComplete
-                - percentComplete desc
-                - startDateTime
-                - startDateTime desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
                 - createdDateTime
                 - createdDateTime desc
                 - dueDateTime
                 - dueDateTime desc
                 - hasDescription
                 - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
                 - previewType
                 - previewType desc
-                - completedDateTime
-                - completedDateTime desc
-                - completedBy
-                - completedBy desc
                 - referenceCount
                 - referenceCount desc
-                - checklistItemCount
-                - checklistItemCount desc
-                - activeChecklistItemCount
-                - activeChecklistItemCount desc
-                - appliedCategories
-                - appliedCategories desc
-                - assignments
-                - assignments desc
-                - conversationThreadId
-                - conversationThreadId desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
               type: string
         - name: $select
           in: query
@@ -9617,30 +9900,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -9653,10 +9936,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -9743,30 +10026,30 @@ paths:
             items:
               enum:
                 - id
-                - createdBy
-                - planId
-                - bucketId
-                - title
-                - orderHint
+                - activeChecklistItemCount
+                - appliedCategories
                 - assigneePriority
-                - percentComplete
-                - startDateTime
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
                 - createdDateTime
                 - dueDateTime
                 - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
                 - previewType
-                - completedDateTime
-                - completedBy
                 - referenceCount
-                - checklistItemCount
-                - activeChecklistItemCount
-                - appliedCategories
-                - assignments
-                - conversationThreadId
-                - details
+                - startDateTime
+                - title
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
         - name: $expand
           in: query
@@ -9779,10 +10062,10 @@ paths:
             items:
               enum:
                 - '*'
-                - details
                 - assignedToTaskBoardFormat
-                - progressTaskBoardFormat
                 - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
               type: string
       responses:
         '200':
@@ -9791,6 +10074,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: users.planner.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+            bucketTaskBoardFormat:
+              operationId: users.planner.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+            details:
+              operationId: users.planner.Tasks.GetDetails
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
+            progressTaskBoardFormat:
+              operationId: users.planner.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                user-id: $request.path.user-id
+                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9890,8 +10194,8 @@ paths:
             items:
               enum:
                 - id
-                - unassignedOrderHint
                 - orderHintsByAssignee
+                - unassignedOrderHint
               type: string
         - name: $expand
           in: query
@@ -10131,10 +10435,10 @@ paths:
             items:
               enum:
                 - id
+                - checklist
                 - description
                 - previewType
                 - references
-                - checklist
               type: string
         - name: $expand
           in: query
@@ -10378,11 +10682,6 @@ components:
             title:
               type: string
               description: Required. Title of the plan.
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Collection of tasks in the plan.
             buckets:
               type: array
               items:
@@ -10390,6 +10689,11 @@ components:
               description: Read-only. Nullable. Collection of buckets in the plan.
             details:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanDetails'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Collection of tasks in the plan.
           additionalProperties:
             type: object
     microsoft.graph.plannerBucket:
@@ -10401,13 +10705,13 @@ components:
             name:
               type: string
               description: Name of the bucket.
-            planId:
-              type: string
-              description: Plan ID to which the bucket belongs.
-              nullable: true
             orderHint:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the bucket belongs.
               nullable: true
             tasks:
               type: array
@@ -10422,40 +10726,46 @@ components:
         - title: plannerTask
           type: object
           properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            planId:
-              type: string
-              description: Plan ID to which the task belongs.
+            activeChecklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              format: int32
               nullable: true
-            bucketId:
-              type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
-              nullable: true
-            title:
-              type: string
-              description: Title of the task.
-            orderHint:
-              type: string
-              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
-              nullable: true
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
             assigneePriority:
               type: string
               description: Hint used to order items of this type in a list view. The format is defined as outlined here.
               nullable: true
-            percentComplete:
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
+            bucketId:
+              type: string
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              nullable: true
+            checklistItemCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              description: Number of checklist items that are present on the task.
               format: int32
               nullable: true
-            startDateTime:
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
               nullable: true
+            conversationThreadId:
+              type: string
+              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -10472,16 +10782,23 @@ components:
               type: boolean
               description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
               nullable: true
+            orderHint:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              format: int32
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the task belongs.
+              nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
-              format: date-time
-              nullable: true
-            completedBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
             referenceCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -10489,36 +10806,23 @@ components:
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
-            checklistItemCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of checklist items that are present on the task.
-              format: int32
-              nullable: true
-            activeChecklistItemCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Number of checklist items with value set to false, representing incomplete items.'
-              format: int32
-              nullable: true
-            appliedCategories:
-              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
-            assignments:
-              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
-            conversationThreadId:
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              format: date-time
               nullable: true
-            details:
-              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            title:
+              type: string
+              description: Title of the task.
             assignedToTaskBoardFormat:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
-            progressTaskBoardFormat:
-              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
             bucketTaskBoardFormat:
               $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            progressTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
           additionalProperties:
             type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -10527,12 +10831,12 @@ components:
         - title: plannerAssignedToTaskBoardTaskFormat
           type: object
           properties:
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
               description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
-            orderHintsByAssignee:
-              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
           additionalProperties:
             type: object
     microsoft.graph.plannerBucketTaskBoardTaskFormat:
@@ -10553,6 +10857,8 @@ components:
         - title: plannerTaskDetails
           type: object
           properties:
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
               description: Description of the task
@@ -10561,8 +10867,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
             references:
               $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
-            checklist:
-              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
           additionalProperties:
             type: object
     microsoft.graph.plannerProgressTaskBoardTaskFormat:
@@ -10583,10 +10887,10 @@ components:
         - title: plannerPlanDetails
           type: object
           properties:
-            sharedWith:
-              $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
             categoryDescriptions:
               $ref: '#/components/schemas/microsoft.graph.plannerCategoryDescriptions'
+            sharedWith:
+              $ref: '#/components/schemas/microsoft.graph.plannerUserIds'
           additionalProperties:
             type: object
     microsoft.graph.planner:
@@ -10595,21 +10899,21 @@ components:
         - title: planner
           type: object
           properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns a collection of the specified tasks
-            plans:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-              description: Read-only. Nullable. Returns a collection of the specified plans
             buckets:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
               description: Read-only. Nullable. Returns a collection of the specified buckets
+            plans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+              description: Read-only. Nullable. Returns a collection of the specified plans
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns a collection of the specified tasks
           additionalProperties:
             type: object
     microsoft.graph.plannerUser:
@@ -10618,16 +10922,16 @@ components:
         - title: plannerUser
           type: object
           properties:
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.plannerTask'
-              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
             plans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
               description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerTask'
+              description: Read-only. Nullable. Returns the plannerPlans shared with the user.
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -10651,15 +10955,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
       additionalProperties:
         type: object
-    microsoft.graph.plannerPreviewType:
-      title: plannerPreviewType
-      enum:
-        - automatic
-        - noPreview
-        - checklist
-        - description
-        - reference
-      type: string
     microsoft.graph.plannerAppliedCategories:
       title: plannerAppliedCategories
       type: object
@@ -10670,13 +10965,17 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerExternalReferences:
-      title: plannerExternalReferences
       type: object
       additionalProperties:
         type: object
@@ -10685,8 +10984,8 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.plannerUserIds:
-      title: plannerUserIds
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
       type: object
       additionalProperties:
         type: object
@@ -10718,6 +11017,11 @@ components:
           type: string
           description: The label associated with Category 6
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerUserIds:
+      title: plannerUserIds
+      type: object
       additionalProperties:
         type: object
     odata.error:
