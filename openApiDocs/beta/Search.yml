@@ -100,6 +100,8 @@ paths:
                 - description desc
                 - name
                 - name desc
+                - state
+                - state desc
               type: string
         - name: $select
           in: query
@@ -115,6 +117,7 @@ paths:
                 - configuration
                 - description
                 - name
+                - state
                 - groups
                 - items
                 - operations
@@ -209,6 +212,7 @@ paths:
                 - configuration
                 - description
                 - name
+                - state
                 - groups
                 - items
                 - operations
@@ -426,6 +430,8 @@ components:
             name:
               type: string
               nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.connectionState'
             groups:
               type: array
               items:
@@ -453,6 +459,15 @@ components:
       title: searchRequest
       type: object
       properties:
+        aggregationFilters:
+          type: array
+          items:
+            type: string
+            nullable: true
+        aggregations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.aggregationOption'
         contentSources:
           type: array
           items:
@@ -465,6 +480,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
+        fields:
+          type: array
+          items:
+            type: string
+            nullable: true
         from:
           maximum: 2147483647
           minimum: -2147483648
@@ -477,6 +497,10 @@ components:
           minimum: -2147483648
           type: integer
           format: int32
+        sortProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sortProperty'
         stored_fields:
           type: array
           items:
@@ -519,6 +543,15 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.connectionState:
+      title: connectionState
+      enum:
+        - draft
+        - ready
+        - obsolete
+        - limitExceeded
+        - unknownFutureValue
+      type: string
     microsoft.graph.externalGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -579,14 +612,34 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.property'
           additionalProperties:
             type: object
+    microsoft.graph.aggregationOption:
+      title: aggregationOption
+      type: object
+      properties:
+        bucketDefinition:
+          $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
+        field:
+          type: string
+        size:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.entityType:
       title: entityType
       enum:
         - event
         - message
         - driveItem
-        - externalFile
         - externalItem
+        - site
+        - list
+        - listItem
+        - drive
+        - unknownfuturevalue
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -594,12 +647,30 @@ components:
       properties:
         query_string:
           $ref: '#/components/schemas/microsoft.graph.searchQueryString'
+        queryString:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sortProperty:
+      title: sortProperty
+      type: object
+      properties:
+        isDescending:
+          type: boolean
+          nullable: true
+        name:
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.searchHitsContainer:
       title: searchHitsContainer
       type: object
       properties:
+        aggregations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchAggregation'
         hits:
           type: array
           items:
@@ -724,12 +795,49 @@ components:
           $ref: '#/components/schemas/microsoft.graph.propertyType'
       additionalProperties:
         type: object
+    microsoft.graph.bucketAggregationDefinition:
+      title: bucketAggregationDefinition
+      type: object
+      properties:
+        isDescending:
+          type: boolean
+          nullable: true
+        minimumCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        prefixFilter:
+          type: string
+          nullable: true
+        ranges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bucketAggregationRange'
+        sortBy:
+          $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
+      additionalProperties:
+        type: object
     microsoft.graph.searchQueryString:
       title: searchQueryString
       type: object
       properties:
         query:
           type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAggregation:
+      title: searchAggregation
+      type: object
+      properties:
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchBucket'
+        field:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.searchHit:
@@ -745,13 +853,27 @@ components:
           type: integer
           format: int32
           nullable: true
-        _sortField:
-          type: string
-          nullable: true
         _summary:
           type: string
           nullable: true
+        contentSource:
+          type: string
+          nullable: true
+        hitId:
+          type: string
+          nullable: true
+        rank:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        summary:
+          type: string
+          nullable: true
         _source:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+        resource:
           $ref: '#/components/schemas/microsoft.graph.entity'
       additionalProperties:
         type: object
@@ -849,6 +971,41 @@ components:
         - DoubleCollection
         - DateTimeCollection
       type: string
+    microsoft.graph.bucketAggregationRange:
+      title: bucketAggregationRange
+      type: object
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bucketAggregationSortProperty:
+      title: bucketAggregationSortProperty
+      enum:
+        - count
+        - keyAsString
+        - keyAsNumber
+      type: string
+    microsoft.graph.searchBucket:
+      title: searchBucket
+      type: object
+      properties:
+        aggregationFilterToken:
+          type: string
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        key:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error.detail:
       required:
         - code
