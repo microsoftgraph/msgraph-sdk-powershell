@@ -62,12 +62,12 @@ jobs:
       targetType: 'inline'
       script: |
           git status
-          git checkout $(Build.SourceBranch)
-          git branch $(DocsBranch)
-          git checkout $(DocsBranch)
+          git checkout '$(Build.SourceBranchName)'
+          git branch '$(DocsBranch)'
+          git checkout '$(DocsBranch)'
           git status
           git add .
           git commit -m '$(BUILDNUMBER): Build OpenApiDocs Download [skip ci]'
           git status
-          git push --set-upstream origin $(DocsBranch)
+          git push --set-upstream origin '$(DocsBranch)'
           git status
