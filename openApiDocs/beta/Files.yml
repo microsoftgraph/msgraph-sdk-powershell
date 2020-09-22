@@ -815,6 +815,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -1419,7 +1485,7 @@ paths:
       tags:
         - drives.itemActivityOLD
       summary: Update the ref of navigation property analytics in drives
-      operationId: drives.activities.listItem_UpdateRefAnalytics
+      operationId: drives.activities.listItem_SetRefAnalytics
       parameters:
         - name: drive-id
           in: path
@@ -1704,6 +1770,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/activities/{itemActivityOLD-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -2796,6 +2928,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/bundles/{driveItem-id}/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/following':
     get:
       tags:
@@ -3252,6 +3450,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/following/{driveItem-id}/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/items':
     get:
       tags:
@@ -3702,6 +3966,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -4356,6 +4686,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -4960,7 +5356,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property analytics in drives
-      operationId: drives.list.activities.listItem_UpdateRefAnalytics
+      operationId: drives.list.activities.listItem_SetRefAnalytics
       parameters:
         - name: drive-id
           in: path
@@ -5245,6 +5641,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -7790,6 +8252,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -8184,7 +8726,7 @@ paths:
       tags:
         - drives.list
       summary: Update the ref of navigation property analytics in drives
-      operationId: drives.list.items_UpdateRefAnalytics
+      operationId: drives.list.items_SetRefAnalytics
       parameters:
         - name: drive-id
           in: path
@@ -8469,6 +9011,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/items/{listItem-id}/driveItem/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -9666,6 +10274,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/drives/{drive-id}/special':
     get:
       tags:
@@ -10116,6 +10776,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/special/{driveItem-id}/content':
+    get:
+      tags:
+        - drives.drive
+      summary: Get media content for drive from drives
+      operationId: drives.drive_GetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.drive
+      summary: Update media content for drive in drives
+      operationId: drives.drive_SetContent
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -11157,6 +11883,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/shares/{sharedDriveItem-id}/items':
     get:
       tags:
@@ -11607,6 +12385,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/items/{driveItem-id}/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: driveItem-id
+          in: path
+          description: 'key: id of driveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -12261,6 +13105,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -12865,7 +13775,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property analytics in shares
-      operationId: shares.list.activities.listItem_UpdateRefAnalytics
+      operationId: shares.list.activities.listItem_SetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13150,6 +14060,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/activities/{itemActivityOLD-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -15695,6 +16671,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -16089,7 +17145,7 @@ paths:
       tags:
         - shares.list
       summary: Update the ref of navigation property analytics in shares
-      operationId: shares.list.items_UpdateRefAnalytics
+      operationId: shares.list.items_SetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16374,6 +17430,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -17930,6 +19052,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/shares/{sharedDriveItem-id}/listItem/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -18269,7 +19457,7 @@ paths:
       tags:
         - shares.listItem
       summary: Update the ref of navigation property analytics in shares
-      operationId: shares.listItem_UpdateRefAnalytics
+      operationId: shares.listItem_SetRefAnalytics
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -18508,6 +19696,58 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -19395,6 +20635,58 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/root/content':
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get media content for sharedDriveItem from shares
+      operationId: shares.sharedDriveItem_GetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.sharedDriveItem
+      summary: Update media content for sharedDriveItem in shares
+      operationId: shares.sharedDriveItem_SetContent
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success

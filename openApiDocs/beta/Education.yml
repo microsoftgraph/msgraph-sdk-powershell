@@ -3441,7 +3441,7 @@ paths:
       tags:
         - education.educationClass
       summary: Update the ref of navigation property group in education
-      operationId: education.classes_UpdateRefGroup
+      operationId: education.classes_SetRefGroup
       parameters:
         - name: educationClass-id
           in: path
@@ -8197,7 +8197,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property user in education
-      operationId: education.me_UpdateRefUser
+      operationId: education.me_SetRefUser
       requestBody:
         description: New navigation property ref values
         content:
@@ -8619,7 +8619,7 @@ paths:
       tags:
         - education.educationSchool
       summary: Update the ref of navigation property administrativeUnit in education
-      operationId: education.schools_UpdateRefAdministrativeUnit
+      operationId: education.schools_SetRefAdministrativeUnit
       parameters:
         - name: educationSchool-id
           in: path
@@ -14618,7 +14618,7 @@ paths:
       tags:
         - education.educationUser
       summary: Update the ref of navigation property user in education
-      operationId: education.users_UpdateRefUser
+      operationId: education.users_SetRefUser
       parameters:
         - name: educationUser-id
           in: path

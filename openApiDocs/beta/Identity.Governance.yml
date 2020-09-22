@@ -3411,7 +3411,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -7897,7 +7897,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentPolicies.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentPolicy-id
           in: path
@@ -11002,7 +11002,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -11750,7 +11750,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -16451,7 +16451,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -19070,7 +19070,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -23556,7 +23556,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -29621,7 +29621,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -29927,7 +29927,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.accessPackageAssignment.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -30213,7 +30213,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentRequest-id
           in: path
@@ -31469,7 +31469,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -36739,7 +36739,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -39732,7 +39732,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -44817,7 +44817,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -48377,7 +48377,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -48975,7 +48975,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -49691,7 +49691,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageAssignments.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -51784,7 +51784,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignmentResourceRole-id
           in: path
@@ -52681,7 +52681,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -57382,7 +57382,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackage_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -60001,7 +60001,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -64487,7 +64487,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentPolicy.accessPackageCatalog.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -67651,7 +67651,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests_SetRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -68162,7 +68162,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -71235,7 +71235,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentResourceRoles.accessPackageSubject_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.accessPackageAssignmentResourceRoles.accessPackageSubject_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -71541,7 +71541,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.target_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageAssignments.target_SetRefConnectedOrganization
       parameters:
         - name: accessPackageAssignment-id
           in: path
@@ -76182,7 +76182,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -76589,7 +76589,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackageCatalogs.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackageCatalog-id
           in: path
@@ -79690,7 +79690,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageResource in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests_UpdateRefAccessPackageResource
+      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests_SetRefAccessPackageResource
       parameters:
         - name: accessPackageResourceRequest-id
           in: path
@@ -79956,7 +79956,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property connectedOrganization in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests.requestor_UpdateRefConnectedOrganization
+      operationId: identityGovernance.entitlementManagement.accessPackageResourceRequests.requestor_SetRefConnectedOrganization
       parameters:
         - name: accessPackageResourceRequest-id
           in: path
@@ -83756,7 +83756,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies_UpdateRefAccessPackage
+      operationId: identityGovernance.entitlementManagement.accessPackages.accessPackageAssignmentPolicies_SetRefAccessPackage
       parameters:
         - name: accessPackage-id
           in: path
@@ -88457,7 +88457,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackageCatalog in identityGovernance
-      operationId: identityGovernance.entitlementManagement.accessPackages_UpdateRefAccessPackageCatalog
+      operationId: identityGovernance.entitlementManagement.accessPackages_SetRefAccessPackageCatalog
       parameters:
         - name: accessPackage-id
           in: path
@@ -93658,7 +93658,7 @@ paths:
       tags:
         - privilegedApproval.privilegedRoleAssignmentRequest
       summary: Update the ref of navigation property request in privilegedApproval
-      operationId: privilegedApproval_UpdateRefRequest
+      operationId: privilegedApproval_SetRefRequest
       parameters:
         - name: privilegedApproval-id
           in: path

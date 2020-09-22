@@ -616,7 +616,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in chats
-      operationId: chats.installedApps_UpdateRefTeamsApp
+      operationId: chats.installedApps_SetRefTeamsApp
       parameters:
         - name: chat-id
           in: path
@@ -777,7 +777,7 @@ paths:
       tags:
         - chats.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in chats
-      operationId: chats.installedApps_UpdateRefTeamsAppDefinition
+      operationId: chats.installedApps_SetRefTeamsAppDefinition
       parameters:
         - name: chat-id
           in: path
@@ -1663,6 +1663,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - chats.chat
+      summary: Get media content for chat from chats
+      operationId: chats.chat_GetContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - chats.chat
+      summary: Update media content for chat in chats
+      operationId: chats.chat_SetContent
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -3186,6 +3266,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/members':
     get:
       tags:
@@ -4123,6 +4269,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -5041,7 +5281,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.channels.tabs_UpdateRefTeamsApp
+      operationId: teams.channels.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -5549,7 +5789,7 @@ paths:
       tags:
         - teams.group
       summary: Update the ref of navigation property group in teams
-      operationId: teams_UpdateRefGroup
+      operationId: teams_SetRefGroup
       parameters:
         - name: team-id
           in: path
@@ -5978,7 +6218,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.installedApps_UpdateRefTeamsApp
+      operationId: teams.installedApps_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -6139,7 +6379,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in teams
-      operationId: teams.installedApps_UpdateRefTeamsAppDefinition
+      operationId: teams.installedApps_SetRefTeamsAppDefinition
       parameters:
         - name: team-id
           in: path
@@ -7623,6 +7863,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/photo/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel':
     get:
       tags:
@@ -7945,6 +8237,58 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -8781,6 +9125,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -9589,7 +10013,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.primaryChannel.tabs_UpdateRefTeamsApp
+      operationId: teams.primaryChannel.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -12350,7 +12774,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Update the ref of navigation property template in teams
-      operationId: teams_UpdateRefTemplate
+      operationId: teams_SetRefTemplate
       parameters:
         - name: team-id
           in: path
@@ -13855,7 +14279,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Update the ref of navigation property chat in users
-      operationId: users.teamwork.installedApps_UpdateRefChat
+      operationId: users.teamwork.installedApps_SetRefChat
       parameters:
         - name: user-id
           in: path

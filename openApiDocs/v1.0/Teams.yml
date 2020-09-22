@@ -6,6 +6,216 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
+  /chats:
+    get:
+      tags:
+        - chats.chat
+      summary: Get entities from chats
+      operationId: chats.chat_ListChat
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entities
+          content:
+            application/json:
+              schema:
+                title: Collection of chat
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.chat'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - chats.chat
+      summary: Add new entity to chats
+      operationId: chats.chat_CreateChat
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/chats/{chat-id}':
+    get:
+      tags:
+        - chats.chat
+      summary: Get entity from chats by key
+      operationId: chats.chat_GetChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - chats.chat
+      summary: Update entity in chats
+      operationId: chats.chat_UpdateChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.chat'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - chats.chat
+      summary: Delete entity from chats
+      operationId: chats.chat_DeleteChat
+      parameters:
+        - name: chat-id
+          in: path
+          description: 'key: id of chat'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /chats/microsoft.graph.getAllMessages():
+    get:
+      tags:
+        - chats.Functions
+      summary: Invoke function getAllMessages
+      operationId: chats_getAllMessages
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/groups/{group-id}/team':
     get:
       tags:
@@ -976,6 +1186,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/members':
     get:
       tags:
@@ -1299,6 +1575,8 @@ paths:
                 - from desc
                 - importance
                 - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - locale
@@ -1338,6 +1616,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -1471,6 +1750,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -1897,6 +2177,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: 'key: id of channel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -1956,6 +2330,8 @@ paths:
                 - from desc
                 - importance
                 - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - locale
@@ -1995,6 +2371,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -2142,6 +2519,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -2695,7 +3073,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.channels.tabs_UpdateRefTeamsApp
+      operationId: teams.channels.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -3147,7 +3525,7 @@ paths:
       tags:
         - teams.group
       summary: Update the ref of navigation property group in teams
-      operationId: teams_UpdateRefGroup
+      operationId: teams_SetRefGroup
       parameters:
         - name: team-id
           in: path
@@ -3576,7 +3954,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.installedApps_UpdateRefTeamsApp
+      operationId: teams.installedApps_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -3731,7 +4109,7 @@ paths:
       tags:
         - teams.teamsAppInstallation
       summary: Update the ref of navigation property teamsAppDefinition in teams
-      operationId: teams.installedApps_UpdateRefTeamsAppDefinition
+      operationId: teams.installedApps_SetRefTeamsAppDefinition
       parameters:
         - name: team-id
           in: path
@@ -4707,6 +5085,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/filesFolder/content':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/members':
     get:
       tags:
@@ -4988,6 +5418,8 @@ paths:
                 - from desc
                 - importance
                 - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - locale
@@ -5027,6 +5459,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -5146,6 +5579,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -5521,6 +5955,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/hostedContents/{chatMessageHostedContent-id}/$value':
+    get:
+      tags:
+        - teams.team
+      summary: Get media content for team from teams
+      operationId: teams.team_GetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - teams.team
+      summary: Update media content for team in teams
+      operationId: teams.team_SetContent
+      parameters:
+        - name: team-id
+          in: path
+          description: 'key: id of team'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: chatMessage-id
+          in: path
+          description: 'key: id of chatMessage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessage
+        - name: chatMessageHostedContent-id
+          in: path
+          description: 'key: id of chatMessageHostedContent'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: chatMessageHostedContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies':
     get:
       tags:
@@ -5573,6 +6087,8 @@ paths:
                 - from desc
                 - importance
                 - importance desc
+                - lastEditedDateTime
+                - lastEditedDateTime desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - locale
@@ -5612,6 +6128,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -5745,6 +6262,7 @@ paths:
                 - etag
                 - from
                 - importance
+                - lastEditedDateTime
                 - lastModifiedDateTime
                 - locale
                 - mentions
@@ -6230,7 +6748,7 @@ paths:
       tags:
         - teams.channel
       summary: Update the ref of navigation property teamsApp in teams
-      operationId: teams.primaryChannel.tabs_UpdateRefTeamsApp
+      operationId: teams.primaryChannel.tabs_SetRefTeamsApp
       parameters:
         - name: team-id
           in: path
@@ -8979,7 +9497,7 @@ paths:
       tags:
         - teams.teamsTemplate
       summary: Update the ref of navigation property template in teams
-      operationId: teams_UpdateRefTemplate
+      operationId: teams_SetRefTemplate
       parameters:
         - name: team-id
           in: path
@@ -9027,6 +9545,24 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /teams/microsoft.graph.getAllMessages():
+    get:
+      tags:
+        - teams.Functions
+      summary: Invoke function getAllMessages
+      operationId: teams_getAllMessages
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.chatMessage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /teamwork:
     get:
       tags:
@@ -9670,6 +10206,99 @@ paths:
       x-ms-docs-operation-type: operation
 components:
   schemas:
+    microsoft.graph.chat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chat
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessage
+          type: object
+          properties:
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
+              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Read only. Timestamp of when the chat message was created.
+              format: date-time
+              nullable: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              format: date-time
+              nullable: true
+            etag:
+              type: string
+              description: Read-only. Version number of the chat message.
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
+            lastEditedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.'
+              format: date-time
+              nullable: true
+            locale:
+              type: string
+              description: Locale of the chat message set by the client.
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
+              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+            policyViolation:
+              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+            replyToId:
+              type: string
+              description: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
+              nullable: true
+            subject:
+              type: string
+              description: 'The subject of the chat message, in plaintext.'
+              nullable: true
+            summary:
+              type: string
+              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
+            hostedContents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+            replies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9892,86 +10521,6 @@ components:
                 type: string
                 nullable: true
               description: The roles for that user.
-          additionalProperties:
-            type: object
-    microsoft.graph.chatMessage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: chatMessage
-          type: object
-          properties:
-            attachments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
-              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Read only. Timestamp of when the chat message was created.
-              format: date-time
-              nullable: true
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
-              format: date-time
-              nullable: true
-            etag:
-              type: string
-              description: Read-only. Version number of the chat message.
-              nullable: true
-            from:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it''s a root chat message in a channel) or a reaction is added or removed.'
-              format: date-time
-              nullable: true
-            locale:
-              type: string
-              description: Locale of the chat message set by the client.
-            mentions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
-              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
-            messageType:
-              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
-            policyViolation:
-              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
-            reactions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
-            replyToId:
-              type: string
-              description: Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
-              nullable: true
-            subject:
-              type: string
-              description: 'The subject of the chat message, in plaintext.'
-              nullable: true
-            summary:
-              type: string
-              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
-              nullable: true
-            webUrl:
-              type: string
-              nullable: true
-            hostedContents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-            replies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessage'
           additionalProperties:
             type: object
     microsoft.graph.chatMessageHostedContent:
@@ -10697,6 +11246,126 @@ components:
         id:
           type: string
           description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageAttachment:
+      title: chatMessageAttachment
+      type: object
+      properties:
+        content:
+          type: string
+          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
+          nullable: true
+        contentType:
+          type: string
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.'
+          nullable: true
+        contentUrl:
+          type: string
+          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
+          nullable: true
+        id:
+          type: string
+          description: Read-only. Unique id of the attachment.
+          nullable: true
+        name:
+          type: string
+          description: Name of the attachment.
+          nullable: true
+        thumbnailUrl:
+          type: string
+          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageImportance:
+      title: chatMessageImportance
+      enum:
+        - normal
+        - high
+        - urgent
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageMention:
+      title: chatMessageMention
+      type: object
+      properties:
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
+          format: int32
+          nullable: true
+        mentioned:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        mentionText:
+          type: string
+          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessagePolicyViolation:
+      title: chatMessagePolicyViolation
+      type: object
+      properties:
+        dlpAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
+        justificationText:
+          type: string
+          nullable: true
+        policyTip:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
+        userAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
+        verdictDetails:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageReaction:
+      title: chatMessageReaction
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reactionType:
+          type: string
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
       additionalProperties:
         type: object
     microsoft.graph.teamFunSettings:
@@ -11475,14 +12144,28 @@ components:
               type: string
               description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
               nullable: true
+            encryptionCertificate:
+              type: string
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+              nullable: true
+            encryptionCertificateId:
+              type: string
+              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+              nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
               format: date-time
+            includeResourceData:
+              type: boolean
+              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
+              nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              nullable: true
+            lifecycleNotificationUrl:
+              type: string
               nullable: true
             notificationUrl:
               type: string
@@ -11526,126 +12209,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.chatMessageAttachment:
-      title: chatMessageAttachment
-      type: object
-      properties:
-        content:
-          type: string
-          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
-          nullable: true
-        contentType:
-          type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.file: Raw file attachment. Populate the contenturl field with the base64 encoding of the file in data: format.image/: Image type with the type of the image specified ex: image/png, image/jpeg, image/gif. Populate the contentUrl field with the base64 encoding of the file in data: format.video/: Video type with the format specified. Ex: video/mp4. Populate the contentUrl field with the base64 encoding of the file in data: format.audio/: Audio type with the format specified. Ex: audio/wmw. Populate the contentUrl field with the base64 encoding of the file in data: format.application/card type: Rich card attachment type with the card type specifying the exact card format to use. Set content with the json format of the card. Supported values for card type include:application/vnd.microsoft.card.adaptive: A rich card that can contain any combination of text, speech, images,,buttons, and input fields. Set the content property to,an AdaptiveCard object.application/vnd.microsoft.card.animation: A rich card that plays animation. Set the content property,to an AnimationCardobject.application/vnd.microsoft.card.audio: A rich card that plays audio files. Set the content property,to an AudioCard object.application/vnd.microsoft.card.video: A rich card that plays videos. Set the content property,to a VideoCard object.application/vnd.microsoft.card.hero: A Hero card. Set the content property to a HeroCard object.application/vnd.microsoft.card.thumbnail: A Thumbnail card. Set the content property to a ThumbnailCard object.application/vnd.microsoft.com.card.receipt: A Receipt card. Set the content property to a ReceiptCard object.application/vnd.microsoft.com.card.signin: A user Sign In card. Set the content property to a SignInCard object.'
-          nullable: true
-        contentUrl:
-          type: string
-          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
-          nullable: true
-        id:
-          type: string
-          description: Read-only. Unique id of the attachment.
-          nullable: true
-        name:
-          type: string
-          description: Name of the attachment.
-          nullable: true
-        thumbnailUrl:
-          type: string
-          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
-    microsoft.graph.identitySet:
-      title: identitySet
-      type: object
-      properties:
-        application:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        device:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identity'
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageImportance:
-      title: chatMessageImportance
-      enum:
-        - normal
-        - high
-        - urgent
-        - unknownFutureValue
-      type: string
-    microsoft.graph.chatMessageMention:
-      title: chatMessageMention
-      type: object
-      properties:
-        id:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
-          format: int32
-          nullable: true
-        mentioned:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        mentionText:
-          type: string
-          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageType:
-      title: chatMessageType
-      enum:
-        - message
-        - chatEvent
-        - typing
-        - unknownFutureValue
-      type: string
-    microsoft.graph.chatMessagePolicyViolation:
-      title: chatMessagePolicyViolation
-      type: object
-      properties:
-        dlpAction:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
-        justificationText:
-          type: string
-          nullable: true
-        policyTip:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
-        userAction:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
-        verdictDetails:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageReaction:
-      title: chatMessageReaction
-      type: object
-      properties:
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-        reactionType:
-          type: string
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-      additionalProperties:
-        type: object
     microsoft.graph.teamsTabConfiguration:
       title: teamsTabConfiguration
       type: object
@@ -12007,6 +12570,7 @@ components:
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
@@ -12522,6 +13086,66 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
+      title: chatMessagePolicyViolationDlpActionTypes
+      enum:
+        - none
+        - notifySender
+        - blockAccess
+        - blockAccessExternal
+      type: string
+    microsoft.graph.chatMessagePolicyViolationPolicyTip:
+      title: chatMessagePolicyViolationPolicyTip
+      type: object
+      properties:
+        complianceUrl:
+          type: string
+          nullable: true
+        generalText:
+          type: string
+          nullable: true
+        matchedConditionDescriptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
+      title: chatMessagePolicyViolationUserActionTypes
+      enum:
+        - none
+        - override
+        - reportFalsePositive
+      type: string
+    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
+      title: chatMessagePolicyViolationVerdictDetailsTypes
+      enum:
+        - none
+        - allowFalsePositiveOverride
+        - allowOverrideWithoutJustification
+        - allowOverrideWithJustification
+      type: string
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -13432,66 +14056,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
           additionalProperties:
             type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
-      title: chatMessagePolicyViolationDlpActionTypes
-      enum:
-        - none
-        - notifySender
-        - blockAccess
-        - blockAccessExternal
-      type: string
-    microsoft.graph.chatMessagePolicyViolationPolicyTip:
-      title: chatMessagePolicyViolationPolicyTip
-      type: object
-      properties:
-        complianceUrl:
-          type: string
-          nullable: true
-        generalText:
-          type: string
-          nullable: true
-        matchedConditionDescriptions:
-          type: array
-          items:
-            type: string
-            nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
-      title: chatMessagePolicyViolationUserActionTypes
-      enum:
-        - none
-        - override
-        - reportFalsePositive
-      type: string
-    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
-      title: chatMessagePolicyViolationVerdictDetailsTypes
-      enum:
-        - none
-        - allowFalsePositiveOverride
-        - allowOverrideWithoutJustification
-        - allowOverrideWithJustification
-      type: string
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -14671,8 +15235,10 @@ components:
           properties:
             administrativeUnitId:
               type: string
+              description: Unique identifier for the administrative unit that the directory role is scoped to
             roleId:
               type: string
+              description: Unique identifier for the directory role that the member is in.
             roleMemberInfo:
               $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:

@@ -1722,7 +1722,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
-      operationId: contacts_UpdateRefManager
+      operationId: contacts_SetRefManager
       parameters:
         - name: orgContact-id
           in: path
@@ -9232,6 +9232,204 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/brandings/{organizationalBranding-id}/backgroundImage':
+    get:
+      tags:
+        - organization.organization
+      summary: Get media content for organization from organization
+      operationId: organization.organization_GetBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organization
+      summary: Update media content for organization in organization
+      operationId: organization.organization_SetBackgroundImage
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/brandings/{organizationalBranding-id}/bannerLogo':
+    get:
+      tags:
+        - organization.organization
+      summary: Get media content for organization from organization
+      operationId: organization.organization_GetBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organization
+      summary: Update media content for organization in organization
+      operationId: organization.organization_SetBannerLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/brandings/{organizationalBranding-id}/squareLogo':
+    get:
+      tags:
+        - organization.organization
+      summary: Get media content for organization from organization
+      operationId: organization.organization_GetSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organization
+      summary: Update media content for organization in organization
+      operationId: organization.organization_SetSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBranding-id
+          in: path
+          description: 'key: id of organizationalBranding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBranding
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success

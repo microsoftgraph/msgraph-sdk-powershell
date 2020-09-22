@@ -11010,7 +11010,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.deviceStatuses_UpdateRefApp
+      operationId: deviceAppManagement.mobileApps.deviceStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -12097,7 +12097,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.userStatuses_UpdateRefApp
+      operationId: deviceAppManagement.mobileApps.userStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -12815,7 +12815,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Update the ref of navigation property app in deviceAppManagement
-      operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_UpdateRefApp
+      operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses_SetRefApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -16549,7 +16549,7 @@ paths:
       tags:
         - deviceAppManagement.windowsDefenderApplicationControlSupplementalPolicy
       summary: Update the ref of navigation property policy in deviceAppManagement
-      operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_UpdateRefPolicy
+      operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses_SetRefPolicy
       parameters:
         - name: windowsDefenderApplicationControlSupplementalPolicy-id
           in: path
@@ -17585,7 +17585,7 @@ paths:
       tags:
         - deviceAppManagement.windowsManagementApp
       summary: Update the ref of navigation property windowsManagementApp in deviceAppManagement
-      operationId: deviceAppManagement_UpdateRefWindowsManagementApp
+      operationId: deviceAppManagement_SetRefWindowsManagementApp
       requestBody:
         description: New navigation property ref values
         content:
@@ -18185,6 +18185,110 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/policyPayload':
+    get:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Get media content for the navigation property clientConfigurations from officeConfiguration
+      operationId: officeConfiguration.clientConfigurations_GetPolicyPayload
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Update media content for the navigation property clientConfigurations in officeConfiguration
+      operationId: officeConfiguration.clientConfigurations_SetPolicyPayload
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/officeConfiguration/clientConfigurations/{officeClientConfiguration-id}/userPreferencePayload':
+    get:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Get media content for the navigation property clientConfigurations from officeConfiguration
+      operationId: officeConfiguration.clientConfigurations_GetUserPreferencePayload
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - officeConfiguration.officeClientConfiguration
+      summary: Update media content for the navigation property clientConfigurations in officeConfiguration
+      operationId: officeConfiguration.clientConfigurations_SetUserPreferencePayload
+      parameters:
+        - name: officeClientConfiguration-id
+          in: path
+          description: 'key: id of officeClientConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: officeClientConfiguration
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /officeConfiguration/clientConfigurations/microsoft.graph.updatePriorities:
     post:
       tags:

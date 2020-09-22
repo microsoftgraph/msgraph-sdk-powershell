@@ -4052,7 +4052,7 @@ paths:
       tags:
         - invitations.user
       summary: Update the ref of navigation property invitedUser in invitations
-      operationId: invitations_UpdateRefInvitedUser
+      operationId: invitations_SetRefInvitedUser
       parameters:
         - name: invitation-id
           in: path
@@ -8815,6 +8815,58 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/trustFramework/policies/{trustFrameworkPolicy-id}/$value':
+    get:
+      tags:
+        - trustFramework.trustFrameworkPolicy
+      summary: Get media content for the navigation property policies from trustFramework
+      operationId: trustFramework.policies_GetContent
+      parameters:
+        - name: trustFrameworkPolicy-id
+          in: path
+          description: 'key: id of trustFrameworkPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trustFrameworkPolicy
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - trustFramework.trustFrameworkPolicy
+      summary: Update media content for the navigation property policies in trustFramework
+      operationId: trustFramework.policies_SetContent
+      parameters:
+        - name: trustFrameworkPolicy-id
+          in: path
+          description: 'key: id of trustFrameworkPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trustFrameworkPolicy
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success

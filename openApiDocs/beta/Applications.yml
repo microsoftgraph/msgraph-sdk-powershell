@@ -477,7 +477,7 @@ paths:
       tags:
         - applications.connectorGroup
       summary: Update the ref of navigation property connectorGroup in applications
-      operationId: applications_UpdateRefConnectorGroup
+      operationId: applications_SetRefConnectorGroup
       parameters:
         - name: application-id
           in: path
@@ -602,7 +602,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Update the ref of navigation property createdOnBehalfOf in applications
-      operationId: applications_UpdateRefCreatedOnBehalfOf
+      operationId: applications_SetRefCreatedOnBehalfOf
       parameters:
         - name: application-id
           in: path
@@ -1126,7 +1126,7 @@ paths:
       tags:
         - applications.application
       summary: Update media content for application in applications
-      operationId: applications.application_UpdateLogo
+      operationId: applications.application_SetLogo
       parameters:
         - name: application-id
           in: path

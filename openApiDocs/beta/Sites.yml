@@ -852,7 +852,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites_UpdateRefAnalytics
+      operationId: sites_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -3192,6 +3192,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -3881,7 +3961,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites.lists.activities.listItem_UpdateRefAnalytics
+      operationId: sites.lists.activities.listItem_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -4212,6 +4292,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/activities/{itemActivityOLD-id}/listItem/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -7096,6 +7256,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - name: itemActivityOLD-id
+          in: path
+          description: 'key: id of itemActivityOLD'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityOLD
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/activities/{itemActivityOLD-id}/listItem':
     get:
       tags:
@@ -7545,7 +7799,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites.lists.items_UpdateRefAnalytics
+      operationId: sites.lists.items_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -7876,6 +8130,86 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/lists/{list-id}/items/{listItem-id}/driveItem/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -9252,6 +9586,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -9867,6 +10309,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -10579,6 +11115,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -10963,6 +11565,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -11347,6 +12057,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -11892,6 +12696,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -12731,6 +13615,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/resources/{onenoteResource-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/microsoft.graph.copyNotebook':
     post:
       tags:
@@ -12913,6 +13863,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -13479,6 +14523,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
@@ -14325,6 +15463,86 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - sites.site
+      summary: Get media content for site from sites
+      operationId: sites.site_GetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - sites.site
+      summary: Update media content for site in sites
+      operationId: sites.site_SetContent
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.copyToSection':
     post:
       tags:
