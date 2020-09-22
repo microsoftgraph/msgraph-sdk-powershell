@@ -40,7 +40,7 @@ stages:
         targetType: 'inline'
         script: |
             printenv
-            if ($Env:BUILD_SOURCEBRANCHNAME -eq "master"){
+            if ($Env:BUILD_SOURCEBRANCHNAME -eq "release/0.9.3"){
                 Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
             }
             Write-Host $(BUILDNUMBER)
