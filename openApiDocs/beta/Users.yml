@@ -963,6 +963,152 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo/$value':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: 'key: id of contactFolder'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contacts/{contact-id}/photo/$value':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: 'key: id of contact'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/createdObjects':
     get:
       tags:
@@ -1854,7 +2000,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
-      operationId: users_UpdateRefManager
+      operationId: users_SetRefManager
       parameters:
         - name: user-id
           in: path
@@ -2325,6 +2471,890 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: 'key: id of notebook'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+        - name: onenotePage-id1
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/resources/{onenoteResource-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteResource-id
+          in: path
+          description: 'key: id of onenoteResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteResource
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: 'key: id of sectionGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: 'key: id of onenoteSection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - name: onenotePage-id
+          in: path
+          description: 'key: id of onenotePage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onenotePage
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -8986,6 +10016,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/photo/$value':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/photos':
     get:
       tags:
@@ -9216,6 +10298,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/photos/{profilePhoto-id}/$value':
+    get:
+      tags:
+        - users.user
+      summary: Get media content for user from users
+      operationId: users.user_GetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.user
+      summary: Update media content for user in users
+      operationId: users.user_SetContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: profilePhoto-id
+          in: path
+          description: 'key: id of profilePhoto'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: profilePhoto
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -9703,6 +10851,1581 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo':
+    get:
+      tags:
+        - users.todo
+      summary: Get todo from users
+      operationId: users_GetTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - lists
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - lists
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todo'
+          links:
+            lists:
+              operationId: users.Todo.ListLists
+              parameters:
+                user-id: $request.path.user-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property todo in users
+      operationId: users_UpdateTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todo'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property todo for users
+      operationId: users_DeleteTodo
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists':
+    get:
+      tags:
+        - users.todo
+      summary: Get lists from users
+      operationId: users.todo_ListLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - isOwner
+                - isOwner desc
+                - isShared
+                - isShared desc
+                - wellknownListName
+                - wellknownListName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOwner
+                - isShared
+                - wellknownListName
+                - extensions
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTaskList
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to lists for users
+      operationId: users.todo_CreateLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get lists from users
+      operationId: users.todo_GetLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - isOwner
+                - isShared
+                - wellknownListName
+                - extensions
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+          links:
+            extensions:
+              operationId: users.todo.Lists.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+            tasks:
+              operationId: users.todo.Lists.ListTasks
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property lists in users
+      operationId: users.todo_UpdateLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property lists for users
+      operationId: users.todo_DeleteLists
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists_ListExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to extensions for users
+      operationId: users.todo.lists_CreateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists_GetExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property extensions in users
+      operationId: users.todo.lists_UpdateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property extensions for users
+      operationId: users.todo.lists_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks':
+    get:
+      tags:
+        - users.todo
+      summary: Get tasks from users
+      operationId: users.todo.lists_ListTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - body
+                - body desc
+                - bodyLastModifiedDateTime
+                - bodyLastModifiedDateTime desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - dueDateTime
+                - dueDateTime desc
+                - importance
+                - importance desc
+                - isReminderOn
+                - isReminderOn desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - recurrence
+                - recurrence desc
+                - reminderDateTime
+                - reminderDateTime desc
+                - status
+                - status desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - bodyLastModifiedDateTime
+                - completedDateTime
+                - createdDateTime
+                - dueDateTime
+                - importance
+                - isReminderOn
+                - lastModifiedDateTime
+                - recurrence
+                - reminderDateTime
+                - status
+                - title
+                - extensions
+                - linkedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - linkedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of todoTask
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.todoTask'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to tasks for users
+      operationId: users.todo.lists_CreateTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTask'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get tasks from users
+      operationId: users.todo.lists_GetTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - body
+                - bodyLastModifiedDateTime
+                - completedDateTime
+                - createdDateTime
+                - dueDateTime
+                - importance
+                - isReminderOn
+                - lastModifiedDateTime
+                - recurrence
+                - reminderDateTime
+                - status
+                - title
+                - extensions
+                - linkedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - linkedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+          links:
+            extensions:
+              operationId: users.todo.lists.Tasks.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+                todoTask-id: $request.path.todoTask-id
+            linkedResources:
+              operationId: users.todo.lists.Tasks.ListLinkedResources
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+                todoTask-id: $request.path.todoTask-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property tasks in users
+      operationId: users.todo.lists_UpdateTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.todoTask'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property tasks for users
+      operationId: users.todo.lists_DeleteTasks
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists.tasks_ListExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of extension
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extension'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to extensions for users
+      operationId: users.todo.lists.tasks_CreateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get extensions from users
+      operationId: users.todo.lists.tasks_GetExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property extensions in users
+      operationId: users.todo.lists.tasks_UpdateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property extensions for users
+      operationId: users.todo.lists.tasks_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources':
+    get:
+      tags:
+        - users.todo
+      summary: Get linkedResources from users
+      operationId: users.todo.lists.tasks_ListLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - applicationName
+                - applicationName desc
+                - displayName
+                - displayName desc
+                - externalId
+                - externalId desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicationName
+                - displayName
+                - externalId
+                - webUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of linkedResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.linkedResource'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to linkedResources for users
+      operationId: users.todo.lists.tasks_CreateLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get linkedResources from users
+      operationId: users.todo.lists.tasks_GetLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - applicationName
+                - displayName
+                - externalId
+                - webUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property linkedResources in users
+      operationId: users.todo.lists.tasks_UpdateLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property linkedResources for users
+      operationId: users.todo.lists.tasks_DeleteLinkedResources
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: linkedResource-id
+          in: path
+          description: 'key: id of linkedResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: linkedResource
         - name: If-Match
           in: header
           description: ETag
@@ -10798,6 +13521,110 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.shiftAvailability'
               description: Availability of the user to be scheduled for work and its recurrence pattern.
+          additionalProperties:
+            type: object
+    microsoft.graph.todo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todo
+          type: object
+          properties:
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+          additionalProperties:
+            type: object
+    microsoft.graph.todoTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            isOwner:
+              type: boolean
+            isShared:
+              type: boolean
+            wellknownListName:
+              $ref: '#/components/schemas/microsoft.graph.wellknownListName'
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.todoTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: todoTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            completedDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            isReminderOn:
+              type: boolean
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            reminderDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus'
+            title:
+              type: string
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
+          additionalProperties:
+            type: object
+    microsoft.graph.linkedResource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource
+          type: object
+          properties:
+            applicationName:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            externalId:
+              type: string
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.signInActivity:
@@ -13772,18 +16599,6 @@ components:
               description: The apps installed in the personal scope of this user.
           additionalProperties:
             type: object
-    microsoft.graph.todo:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: todo
-          type: object
-          properties:
-            lists:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-          additionalProperties:
-            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -14045,6 +16860,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.wellknownListName:
+      title: wellknownListName
+      enum:
+        - none
+        - defaultList
+        - flaggedEmails
+        - unknownFutureValue
+      type: string
     odata.error:
       required:
         - error
@@ -18232,31 +21055,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chat'
           additionalProperties:
             type: object
-    microsoft.graph.todoTaskList:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: todoTaskList
-          type: object
-          properties:
-            displayName:
-              type: string
-              nullable: true
-            isOwner:
-              type: boolean
-            isShared:
-              type: boolean
-            wellknownListName:
-              $ref: '#/components/schemas/microsoft.graph.wellknownListName'
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.todoTask'
-          additionalProperties:
-            type: object
     microsoft.graph.visualProperties:
       title: visualProperties
       type: object
@@ -21538,61 +24336,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.wellknownListName:
-      title: wellknownListName
-      enum:
-        - none
-        - defaultList
-        - flaggedEmails
-        - unknownFutureValue
-      type: string
-    microsoft.graph.todoTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: todoTask
-          type: object
-          properties:
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            bodyLastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            completedDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            dueDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.importance'
-            isReminderOn:
-              type: boolean
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-            reminderDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.taskStatus'
-            title:
-              type: string
-              nullable: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-            linkedResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.linkedResource'
-          additionalProperties:
-            type: object
     microsoft.graph.weekIndex:
       title: weekIndex
       enum:
@@ -22764,26 +25507,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.linkedResource:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: linkedResource
-          type: object
-          properties:
-            applicationName:
-              type: string
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            externalId:
-              type: string
-              nullable: true
-            webUrl:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
