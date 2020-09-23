@@ -1,6 +1,6 @@
-$TenantId = "TENANT_ID"
-$ClientId = "CLIENT_ID"
-$CertThumbprint = "CERT_THUMBPRINT"
+$TenantId = "YOUR_TENANT_ID"
+$ClientId = "YOUR_CLIENT_ID"
+$CertThumbprint = "YOUR_CERTIFICATE_THUMBPRINT"
 $AdminMail = "ADMIN_MAIL"
 
 # Consent to permissions using app created in the last demo.
