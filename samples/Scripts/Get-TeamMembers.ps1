@@ -1,7 +1,7 @@
 # Replace with your ClientId
 # Replace with your TenantId
 # Replace with your Cert subject
-Connect-Graph -ClientId "YOUT_CLIENT_ID" `
+Connect-Graph -ClientId "YOUR_CLIENT_ID" `
               -TenantId "YOUT_TENANT_ID" `
               -CertificateName "YOUT_CERTIFICATE_NAME"
 
