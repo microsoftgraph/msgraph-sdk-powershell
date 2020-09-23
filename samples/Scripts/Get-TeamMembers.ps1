@@ -1,12 +1,17 @@
 # Replace with your ClientId
 # Replace with your TenantId
 # Replace with your Cert subject
-Connect-Graph -ClientId "1e4ee20b-9a64-44cb-bb6f-0d693e76490a" `
-              -TenantId "d5fe491b-5987-4770-a68f-477c204cd1ca" `
-              -CertificateName "CN=GraphPowerShellScriptCert"    
+Connect-Graph -ClientId "YOUR_CLIENT_ID" `
+              -TenantId "YOUR_TENANT_ID" `
+              -CertificateName "YOUR_CERTIFICATE_NAME"
+
+# Switch to beta profile to use these samples.
+Select-MgProfile -Name beta
+
 $groups = Get-MgGroup
 $teams = $groups | Where-Object { $_.ResourceProvisioningOptions -Contains "Team" }
 
+# List owners and memebers of all Teams team in your tenant.
 foreach($team in $teams) {
     Write-Host "Team: " + $team.DisplayName -ForegroundColor Blue
 
