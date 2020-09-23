@@ -1,4 +1,4 @@
-# Switch to beta profile. This loads cmddlets that call MS Graph beta endpoint.
+# Switch to beta profile. This loads cmdlets that call MS Graph beta endpoint.
 Select-MgProfile -Name beta
 
 # Create a new team.
