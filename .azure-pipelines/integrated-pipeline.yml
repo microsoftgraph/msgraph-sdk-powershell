@@ -60,6 +60,7 @@ stages:
         
 - stage: GenerateProfiles
   displayName: 'Generate Profiles'
+  enabled: false
   jobs:
   - job: GenerateProfiles
     steps:
