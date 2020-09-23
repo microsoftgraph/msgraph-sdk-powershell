@@ -32,10 +32,9 @@ title: $(service-name)
 subject-prefix: ''
 
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 0.9.2
+module-version: 1.0.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

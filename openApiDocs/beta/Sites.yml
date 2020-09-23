@@ -852,7 +852,7 @@ paths:
       tags:
         - sites.itemAnalytics
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites_UpdateRefAnalytics
+      operationId: sites_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -3881,7 +3881,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites.lists.activities.listItem_UpdateRefAnalytics
+      operationId: sites.lists.activities.listItem_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -7545,7 +7545,7 @@ paths:
       tags:
         - sites.list
       summary: Update the ref of navigation property analytics in sites
-      operationId: sites.lists.items_UpdateRefAnalytics
+      operationId: sites.lists.items_SetRefAnalytics
       parameters:
         - name: site-id
           in: path
@@ -16490,31 +16490,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/sites/microsoft.graph.delta(token=''{token}'')':
-    get:
-      tags:
-        - sites.Functions
-      summary: Invoke function delta
-      operationId: sites_delta
-      parameters:
-        - name: token
-          in: path
-          required: true
-          schema:
-            type: string
-            nullable: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.site'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   /sites/microsoft.graph.remove:
     post:
       tags:
@@ -17328,9 +17303,11 @@ components:
               nullable: true
             encryptionCertificate:
               type: string
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
               nullable: true
             encryptionCertificateId:
               type: string
+              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -17342,10 +17319,10 @@ components:
               nullable: true
             includeResourceData:
               type: boolean
+              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -20423,8 +20400,10 @@ components:
           properties:
             administrativeUnitId:
               type: string
+              description: Unique identifier for the administrative unit that the directory role is scoped to
             roleId:
               type: string
+              description: Unique identifier for the directory role that the member is in.
             roleMemberInfo:
               $ref: '#/components/schemas/microsoft.graph.identity'
           additionalProperties:
@@ -20665,6 +20644,7 @@ components:
               nullable: true
             transactionId:
               type: string
+              description: 'A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client''s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.'
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.eventType'
@@ -21915,6 +21895,8 @@ components:
               type: string
               description: Reports device management certificate expiration date. This property is read-only.
               format: date-time
+            managementFeatures:
+              $ref: '#/components/schemas/microsoft.graph.managedDeviceManagementFeatures'
             managementState:
               $ref: '#/components/schemas/microsoft.graph.managementState'
             manufacturer:
@@ -21991,6 +21973,12 @@ components:
               type: string
               description: Device sku family
               nullable: true
+            skuNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Device sku number, see also: https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              format: int32
             specificationVersion:
               type: string
               description: Specification version. This property is read-only.
@@ -25053,6 +25041,12 @@ components:
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
       type: string
+    microsoft.graph.managedDeviceManagementFeatures:
+      title: managedDeviceManagementFeatures
+      enum:
+        - none
+        - microsoftManagedDesktop
+      type: string
     microsoft.graph.managementState:
       title: managementState
       enum:
@@ -25127,6 +25121,10 @@ components:
             securityBaselineTemplateId:
               type: string
               description: The security baseline template id
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: User Principal Name
               nullable: true
             settingStates:
               type: array
@@ -26744,10 +26742,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             importance:
               $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
+            lastEditedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
+              format: date-time
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Read only. Timestamp of when the chat message is created or edited, including when a reply is made (if it''s a root chat message in a channel) or a reaction is added or removed.'
+              description: 'Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.'
               format: date-time
               nullable: true
             locale:
@@ -26942,6 +26946,8 @@ components:
               type: boolean
               description: Indicates whether time clock is enabled for the schedule.
               nullable: true
+            timeClockSettings:
+              $ref: '#/components/schemas/microsoft.graph.timeClockSettings'
             timeOffRequestsEnabled:
               type: boolean
               description: Indicates whether time off requests are enabled for the schedule.
@@ -26981,6 +26987,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            timeCards:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeCard'
             timeOffReasons:
               type: array
               items:
@@ -28196,13 +28206,35 @@ components:
         - title: securityBaselineSettingState
           type: object
           properties:
+            contributingPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.securityBaselineContributingPolicy'
+              description: The policies that contribute to this setting instance
+            errorCode:
+              type: string
+              description: The error code if the setting is in error state
+              nullable: true
             settingCategoryId:
               type: string
               description: The setting category id which this setting belongs to
               nullable: true
+            settingCategoryName:
+              type: string
+              description: The setting category name which this setting belongs to
+              nullable: true
+            settingId:
+              type: string
+              description: The setting id guid
+              nullable: true
             settingName:
               type: string
               description: The setting name that is being reported
+            sourcePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.settingSource'
+              description: The policies that contribute to this setting instance
             state:
               $ref: '#/components/schemas/microsoft.graph.securityBaselineComplianceState'
           additionalProperties:
@@ -28748,6 +28780,8 @@ components:
         - title: changeTrackedEntity
           type: object
           properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -29251,6 +29285,14 @@ components:
         - moderate
         - unknownFutureValue
       type: string
+    microsoft.graph.timeClockSettings:
+      title: timeClockSettings
+      type: object
+      properties:
+        approvedLocation:
+          $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
+      additionalProperties:
+        type: object
     microsoft.graph.offerShiftRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
@@ -29362,6 +29404,33 @@ components:
             recipientShiftId:
               type: string
               description: ShiftId for the recipient user with whom the request is to swap.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeCard:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeCard
+          type: object
+          properties:
+            breaks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+            clockInEvent:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+            clockOutEvent:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+            confirmedBy:
+              $ref: '#/components/schemas/microsoft.graph.confirmedBy'
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            originalEntry:
+              $ref: '#/components/schemas/microsoft.graph.timeCardEntry'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.timeCardState'
+            userId:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -29817,16 +29886,23 @@ components:
         - none
         - include
       type: string
-    microsoft.graph.securityBaselineComplianceState:
-      title: securityBaselineComplianceState
-      enum:
-        - unknown
-        - secure
-        - notApplicable
-        - notSecure
-        - error
-        - conflict
-      type: string
+    microsoft.graph.securityBaselineContributingPolicy:
+      title: securityBaselineContributingPolicy
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Name of the policy
+          nullable: true
+        sourceId:
+          type: string
+          description: Unique identifier of the policy
+          nullable: true
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.securityBaselinePolicySourceType'
+      additionalProperties:
+        type: object
+      description: The security baseline compliance state of a setting for a device
     microsoft.graph.settingSource:
       title: settingSource
       type: object
@@ -29839,8 +29915,20 @@ components:
           type: string
           description: Not yet documented
           nullable: true
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
+    microsoft.graph.securityBaselineComplianceState:
+      title: securityBaselineComplianceState
+      enum:
+        - unknown
+        - secure
+        - notApplicable
+        - notSecure
+        - error
+        - conflict
+      type: string
     microsoft.graph.windowsMalwareCategory:
       title: windowsMalwareCategory
       enum:
@@ -30293,6 +30381,66 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.timeCardBreak:
+      title: timeCardBreak
+      type: object
+      properties:
+        breakId:
+          type: string
+          nullable: true
+        end:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+        notes:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        start:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+      additionalProperties:
+        type: object
+    microsoft.graph.timeCardEvent:
+      title: timeCardEvent
+      type: object
+      properties:
+        atApprovedLocation:
+          type: boolean
+          nullable: true
+        dateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        notes:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+      additionalProperties:
+        type: object
+    microsoft.graph.confirmedBy:
+      title: confirmedBy
+      enum:
+        - none
+        - user
+        - manager
+        - unknownFutureValue
+      type: string
+    microsoft.graph.timeCardEntry:
+      title: timeCardEntry
+      type: object
+      properties:
+        breaks:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.timeCardBreak'
+        clockInEvent:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+        clockOutEvent:
+          $ref: '#/components/schemas/microsoft.graph.timeCardEvent'
+      additionalProperties:
+        type: object
+    microsoft.graph.timeCardState:
+      title: timeCardState
+      enum:
+        - clockedIn
+        - onBreak
+        - clockedOut
+        - unknownFutureValue
+      type: string
     microsoft.graph.timeOffReasonIconType:
       title: timeOffReasonIconType
       enum:
@@ -30452,6 +30600,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
+    microsoft.graph.securityBaselinePolicySourceType:
+      title: securityBaselinePolicySourceType
+      enum:
+        - deviceConfiguration
+        - deviceIntent
+      type: string
+    microsoft.graph.settingSourceType:
+      title: settingSourceType
+      enum:
+        - deviceConfiguration
+        - deviceIntent
+      type: string
     microsoft.graph.insightIdentity:
       title: insightIdentity
       type: object

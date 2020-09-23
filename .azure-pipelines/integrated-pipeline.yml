@@ -16,7 +16,7 @@ variables:
   BRANCH_PREFIX: 'releaseOpenApiDocs'
   GitUserEmail: 'GraphTooling@service.microsoft.com'
   GitUserName: 'Microsoft Graph DevX Tooling'
-  BUILDNUMBER: $[format('{0:yyMMddHH}', pipeline.startTime)]
+  BUILDNUMBER: -1
 
 pool: MsGraphDevXAzureAgents
 
@@ -40,7 +40,7 @@ stages:
         targetType: 'inline'
         script: |
             printenv
-            if ($Env:BUILD_SOURCEBRANCHNAME -eq "master"){
+            if ('$(Build.SourceBranchName)' -eq "master"){
                 Write-Host "##vso[task.setvariable variable=BUILDNUMBER;isOutput=true]-1"
             }
             Write-Host $(BUILDNUMBER)
