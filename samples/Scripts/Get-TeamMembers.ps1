@@ -2,7 +2,7 @@
 # Replace with your TenantId
 # Replace with your Cert subject
 Connect-Graph -ClientId "YOUR_CLIENT_ID" `
-              -TenantId "YOUT_TENANT_ID" `
+              -TenantId "YOUR_TENANT_ID" `
               -CertificateName "YOUR_CERTIFICATE_NAME"
 
 # Switch to beta profile to use these samples.
