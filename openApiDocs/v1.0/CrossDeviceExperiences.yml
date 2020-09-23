@@ -735,7 +735,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the ref of navigation property activity in users
-      operationId: users.activities.historyItems_UpdateRefActivity
+      operationId: users.activities.historyItems_SetRefActivity
       parameters:
         - name: user-id
           in: path

@@ -50,28 +50,22 @@ jobs:
         git config --global user.email 'GraphTooling@service.microsoft.com'
         git config --global user.name 'Microsoft Graph DevX Tooling'
 
-  - task: CmdLine@2
+  - task: PowerShell@2
     condition: and(succeeded(), eq(eq(variables['Build.SourceBranch'], 'refs/heads/master'), false))
     env: 
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     inputs:
       targetType: 'inline'
       script: |
-        @echo off
-        ECHO SOURCE BRANCH IS %BUILD_SOURCEBRANCH%
-        IF %BUILD_SOURCEBRANCH% == refs/heads/master (
-            ECHO Building master branch so no merge is needed.
-        EXIT
-        )
-        SET sourceBranch=origin/%BUILD_SOURCEBRANCH:refs/heads/=%
-        git status
-        git checkout %sourceBranch%
-        git pull origin %sourceBranch%
-        git add -A
-        git commit -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
-        git pull origin %sourceBranch%
-        git push --set-upstream origin %sourceBranch%
-        git push origin HEAD:%sourceBranch%
-        git merge %sourceBranch% -m "$(BUILDNUMBER):  Release OpenApiDocs Download for $(BUILDNUMBER)[skip ci]"
-        git push origin %sourceBranch%
-        git status
+          $date = Get-Date -Format yyyyMMddHH
+          $docsBranch = "{0}{1}" -f $date, "buildDocsDownload"
+          git status
+          git checkout '$(Build.SourceBranchName)'
+          git branch $docsBranch
+          git checkout $docsBranch
+          git status
+          git add .
+          git commit -m '$(BUILDNUMBER): Build OpenApiDocs Download [skip ci]'
+          git status
+          git push --set-upstream origin $docsBranch
+          git status
