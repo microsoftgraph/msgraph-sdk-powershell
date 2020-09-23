@@ -57,6 +57,7 @@ steps:
       inputs:
         targetType: inline
         pwsh: true
+        errorActionPreference: 'continue'
         script: |
           $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Continue
           Get-PSRepository
