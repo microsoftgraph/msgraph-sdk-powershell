@@ -57,14 +57,6 @@ stages:
   - template: ./download-openapidocs-template.yml
     parameters:
       BUILDNUMBER: $(BUILDNUMBER)
-        
-- stage: GenerateProfiles
-  displayName: 'Generate Profiles'
-  enabled: false
-  jobs:
-  - job: GenerateProfiles
-    steps:
-    - template: ./generate-profiles-template.yml
 
 - stage: GenerateAuthModule
   displayName: 'Generate Authentication Module (Microsoft.Graph.Authentication)'
