@@ -3,7 +3,7 @@
 # Replace with your Cert subject
 Connect-Graph -ClientId "YOUR_CLIENT_ID" `
               -TenantId "YOUT_TENANT_ID" `
-              -CertificateName "YOUT_CERTIFICATE_NAME"
+              -CertificateName "YOUR_CERTIFICATE_NAME"
 
 # Switch to beta profile to use these samples.
 Select-MgProfile -Name beta
